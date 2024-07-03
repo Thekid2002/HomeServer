@@ -5,7 +5,7 @@ let defaultLayout = `<a href="/files.html">Back</a><div style="display: flex; ju
 
 export function displayVideo(fileName) {
     return defaultLayout.replace('alsdbsadksad', `
-    <video style="width: 50%;" height="100" controls>
+    <video style="width: 70%; height: 90vh"  controls>
         <source src="/documents/${fileName}" type="video/mp4">
         Your browser does not support the video tag.
     </video>`);
@@ -20,9 +20,8 @@ export function displayAudio(fileName) {
 }
 
 export function displayPdf(fileName) {
-
     return defaultLayout.replace('alsdbsadksad', `
-    <embed src="/documents/${fileName}" height="100vh" style="width: 50%" />`);
+    <embed src="/documents/${fileName}" height="700px" width="1000px" style="width: 50% height: 70vh" />`);
 }
 
 
