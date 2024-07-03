@@ -66,7 +66,7 @@ app.get('/files/:name', (req, res) => {
         return res.send(displayPdf(fileName));
     }
 
-    if(fileName.toLowerCase().includes('.jpg') || fileName.toLowerCase().includes('.jpeg') || fileName.toLowerCase().includes('.png')) {
+    if(fileName.toLowerCase().includes('.jpg') || fileName.toLowerCase().includes('.jpeg') || fileName.toLowerCase().includes('.png') || fileName.toLowerCase().includes('.heic')) {
         return res.send(displayImage(fileName));
     }
 
