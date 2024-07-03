@@ -54,19 +54,19 @@ app.get('/files/:name', (req, res) => {
     let fileName = req.params.name;
     let filePath = path.resolve('Frontend/public/documents', fileName);
 
-    if(fileName.includes('.mov') || fileName.includes('.mp4')) {
+    if(fileName.toLowerCase().includes('.mov') || fileName.includes('.mp4')) {
         return res.send(displayVideo(fileName));
     }
 
-    if(fileName.includes('.mp3')) {
+    if(fileName.toLowerCase().includes('.mp3')) {
         return res.send(displayAudio(fileName));
     }
 
-    if(fileName.includes('.pdf')) {
+    if(fileName.toLowerCase().includes('.pdf')) {
         return res.send(displayPdf(fileName));
     }
 
-    if(fileName.includes('.jpg') || fileName.includes('.jpeg') || fileName.includes('.png')) {
+    if(fileName.toLowerCase().includes('.jpg') || fileName.toLowerCase().includes('.jpeg') || fileName.toLowerCase().includes('.png')) {
         return res.send(displayImage(fileName));
     }
 
