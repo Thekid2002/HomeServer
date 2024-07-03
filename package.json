@@ -1,0 +1,29 @@
+{
+  "name": "homeserver",
+  "version": "1.0.0",
+  "main": "Backend/index.js",
+  "scripts": {
+    "test": "node Frontend/tests",
+    "asbuild:debug": "asc Frontend/assembly/index.ts --target debug",
+    "asbuild:release": "asc Frontend/assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npm run asbuild:debug && npm run asbuild:release && node Frontend/tests && node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "assemblyscript": "^0.27.28"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}

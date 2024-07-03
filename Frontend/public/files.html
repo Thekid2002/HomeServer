@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Files</title>
+</head>
+<body>
+<h1>Files</h1>
+<div>
+    <a href="/index.html">Upload</a>
+    <a href="/files.html">Files</a>
+</div>
+<div>
+    <h4>Files</h4>
+</div>
+</body>
+<script>
+    fetch('/files')
+        .then(response => response.text()).then(data => {
+        document.body.innerHTML += data
+        console.log(data)
+        })
+    function deleteFile(fileName) {
+        if (confirm('Are you sure you want to delete ' + fileName + '?')) {
+            fetch('/files/' + fileName, {
+                method: 'DELETE',
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    }
+</script>
+</html>
