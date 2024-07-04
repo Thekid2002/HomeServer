@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.timeline{
+    grid-auto-flow: column;
+    width: 30500px;
+    display: grid;
+    grid-auto-columns: 10px;
+    gap: 5px;
+    background-color: #fff;
+    overflow-x: scroll;
+    position: relative;
+}
+
+.timestamp{
+    text-align: center;
+}
+
+.horizontal-line {
+    width: 30500px;
+    height: 4px;
+    background-color: #000;
+    position: relative;
+    top: 50%;
+    margin: 4px;
+}
+
+.line-of-time {
+    width: 30500px;
+    height: 4px;
+    background-color: #000;
+    position: relative;
+    top: 50%;
+    margin: 4px;
+}
+
+.video-clip {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clip-slot {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-clip {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-clip.dragging {
+    opacity: 0.5;
+}
+
+.video-clip.dragging {
+    opacity: 0.5;
+}

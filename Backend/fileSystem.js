@@ -29,18 +29,3 @@ export function displayImage(fileName) {
 return defaultLayout.replace('alsdbsadksad', `
     <img src="/documents/${fileName}" alt="${fileName}" style="width:50%;">`);
 }
-
-export function getFiles(directoryPath, res) {
-    fs.readdir(directoryPath, function (err, files) {
-        if (err) {
-            return res.send('Unable to scan directory: ' + err);
-        }
-
-        res.send( files.map(file => `
-                <div>
-                    <a href="/files/${file}">${file}</a>
-                    <button onclick="deleteFile('${file}')">Delete</button>
-                </div>
-            `).join(""));
-    });
-}

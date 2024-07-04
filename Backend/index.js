@@ -2,7 +2,10 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
-import {displayAudio, displayImage, displayPdf, displayVideo, getFiles} from "./fileSystem.js";
+import {displayAudio, displayImage, displayPdf, displayVideo} from "./fileSystem.js";
+import {File} from "./class/File.js";
+import ffmpeg from "fluent-ffmpeg";
+import mime from "mime";
 
 const app = express()
 const port = 3000
@@ -30,11 +33,42 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/files', (req, res) => {
+app.get('/files', async (req, res) => {
     const directoryPath = path.resolve('Frontend/public/documents');
 
-    getFiles(directoryPath, res);
+    fs.readdir(directoryPath, async function (err, files) {
+        if (err) {
+            return res.status(500).send('Unable to scan directory: ' + err);
+        }
+
+        const fileDetails = await Promise.all(files.map(async (file) => {
+            const filePath = path.join(directoryPath, file);
+            const stats = fs.statSync(filePath);
+            const mimeType = mime.getType(filePath);
+            let duration = 0;
+
+            if (mimeType && mimeType.startsWith('video')) {
+                duration = await getVideoDuration(filePath);
+            }
+
+            return new File(file, mimeType, stats.size, duration);
+        }));
+
+        res.json(fileDetails);
+    });
 });
+
+function getVideoDuration(filePath) {
+    return new Promise((resolve, reject) => {
+        ffmpeg.ffprobe(filePath, (err, metadata) => {
+            if (err) {
+                return reject(err);
+            }
+            const duration = metadata.format.duration;
+            resolve(duration);
+        });
+    });
+}
 
 app.delete('/files/:name', (req, res) => {
     let fileName = req.params.name;

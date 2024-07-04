@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Timeline</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div>
+    <a href="/index.html">Upload</a>
+    <a href="/files.html">Files</a>
+    <a href="/editVideo.html">Edit Video</a>
+</div>
+<div style="display: flex; height: 40vh">
+    <div id="displayFiles" style="display: flex; width: 100%;">
+
+    </div>
+    <div id="displayVideo" style="display: flex; width: 100%;">
+        <video id="video" controls>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div style="display: flex; flex-direction: column; width: 100%">
+    <div class="timeline-container">
+        <div id="video-timeline" class="timeline">
+            <div class="video-clip" draggable="true" style="grid-column: span 20;">Clip 1</div>
+            <div class="video-clip" draggable="true" style="grid-column: span 30;">Clip 2</div>
+            <div class="video-clip" draggable="true" style="grid-column: span 40;">Clip 3</div>
+            <div class="video-clip" draggable="true" style="grid-column: span 10">Clip 4</div>
+        </div>
+
+        <div class="horizontal-line">
+
+        </div>
+
+        <div id="audio-timeline" class="timeline">
+            <div class="audio-clip" draggable="true" style="grid-column: span 20;">Clip 1</div>
+            <div class="audio-clip" draggable="true" style="grid-column: span 30;">Clip 2</div>
+            <div class="audio-clip" draggable="true" style="grid-column: span 40;">Clip 3</div>
+            <div class="audio-clip" draggable="true" style="grid-column: span 10;">Clip 4</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column">
+            <div id="timestamps" style="display: flex; gap: 10px;">
+            </div>
+            <div class="line-of-time">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
