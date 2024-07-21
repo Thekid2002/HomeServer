@@ -1,17 +1,15 @@
-import {Token} from "../../../Lexer/Token";
-import { Visitor } from "../../Visitor";
-import {Term} from "./Term";
 import {AbstractTerm} from "./AbstractTerm";
+import {ASTVisitor} from "../../ASTVisitor";
 
 export class Identifier extends AbstractTerm {
-    name: Token;
+    name: string;
 
-    constructor(name: Token) {
+    constructor(name: string) {
         super();
         this.name = name
     }
 
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitIdentifier(this);
     }
 }

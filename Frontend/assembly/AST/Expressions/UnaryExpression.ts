@@ -1,18 +1,17 @@
-import {Token} from "../../Lexer/Token";
-import {Visitor} from "../Visitor";
 import {AbstractExpression} from "./AbstractExpression";
+import {ASTVisitor} from "../ASTVisitor";
 
 export class UnaryExpression extends AbstractExpression {
-    operator: Token | null;
+    operator: string;
     primaryOrRight: AbstractExpression;
 
-    constructor(operator: Token | null, primaryOrRight: AbstractExpression) {
+    constructor(operator: string, primaryOrRight: AbstractExpression) {
         super();
         this.operator = operator;
         this.primaryOrRight = primaryOrRight;
     }
 
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitUnaryExpression(this);
     }
 }

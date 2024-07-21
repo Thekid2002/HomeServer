@@ -1,6 +1,6 @@
-namespace DefaultNamespace;
+import { ParseTreeNode } from "../ParseTreeNode";
 
-public class AbstractExpression
+export abstract class AbstractExpression extends ParseTreeNode
 {
-    
+
 }

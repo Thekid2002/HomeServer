@@ -1,22 +1,21 @@
-import { Visitor } from "../Visitor";
-import {Expression} from "./Expression";
 import {Token} from "../../Lexer/Token";
 import {AbstractExpression} from "./AbstractExpression";
 import {RelationalExpression} from "./RelationalExpression";
+import {ASTVisitor} from "../ASTVisitor";
 
 export class EqualityExpression extends AbstractExpression {
-    primaryOrLeft: RelationalExpression;
-    operator: Token | null;
-    right: AbstractExpression | null;
+    primaryOrLeft: AbstractExpression;
+    operator: string;
+    right: AbstractExpression;
 
-    constructor(primaryOrLeft: RelationalExpression, operator: Token | null, right: AbstractExpression | null) {
+    constructor(primaryOrLeft: AbstractExpression, operator: string, right: AbstractExpression) {
         super();
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
         this.right = right;
     }
 
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitEqualityExpression(this);
     }
 

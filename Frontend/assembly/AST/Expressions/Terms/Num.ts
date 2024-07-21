@@ -1,15 +1,13 @@
-import {Visitor} from "../../Visitor";
-import {Term} from "./Term";
-import {Token} from "../../../Lexer/Token";
 import {AbstractTerm} from "./AbstractTerm";
+import {ASTVisitor} from "../../ASTVisitor";
 
 export class Num extends AbstractTerm {
-    value: Token;
-    constructor(value: Token) {
+    value: string;
+    constructor(value: string) {
         super();
         this.value = value;
     }
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitNumber(this);
     }
 }

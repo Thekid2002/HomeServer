@@ -1,14 +1,14 @@
-import {BinaryExpression} from "./Expressions/BinaryExpression";
 import {Expression} from "./Expressions/Expression";
-import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {EqualityExpression} from "./Expressions/EqualityExpression";
+import {RelationalExpression} from "./Expressions/RelationalExpression";
+import {BinaryExpression} from "./Expressions/BinaryExpression";
 import {MultiplicativeExpression} from "./Expressions/MultiplicativeExpression";
 import {UnaryExpression} from "./Expressions/UnaryExpression";
-import {Num} from "./Expressions/Terms/Num";
 import {Term} from "./Expressions/Terms/Term";
+import {Num} from "./Expressions/Terms/Num";
 import {Identifier} from "./Expressions/Terms/Identifier";
 
-export interface ParseVisitor<T> {
+export interface ASTVisitor<T> {
     visitExpression(expression: Expression): T;
     visitEqualityExpression(expression: EqualityExpression): T;
     visitRelationalExpression(expression: RelationalExpression): T;

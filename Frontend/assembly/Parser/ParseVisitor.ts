@@ -8,7 +8,7 @@ import {Num} from "./Expressions/Terms/Num";
 import {Term} from "./Expressions/Terms/Term";
 import {Identifier} from "./Expressions/Terms/Identifier";
 
-export interface Visitor<T> {
+export interface ParseVisitor<T> {
     visitExpression(expression: Expression): T;
     visitEqualityExpression(expression: EqualityExpression): T;
     visitRelationalExpression(expression: RelationalExpression): T;

@@ -1,13 +1,15 @@
-import {Visitor} from "../../Visitor";
+import {ParseVisitor} from "../../ParseVisitor";
 import {Term} from "./Term";
+import {Token} from "../../../Lexer/Token";
+import {AbstractTerm} from "./AbstractTerm";
 
-export class Number extends Term {
-    value: number;
-    constructor(value: number) {
+export class Num extends AbstractTerm {
+    value: Token;
+    constructor(value: Token) {
         super();
         this.value = value;
     }
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ParseVisitor<T>): T {
         return visitor.visitNumber(this);
     }
 }

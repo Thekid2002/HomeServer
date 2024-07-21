@@ -1,6 +1,6 @@
-namespace DefaultNamespace;
+import { AbstractExpression } from "../AbstractExpression";
 
-public class AbstractTerm
+export abstract class AbstractTerm extends AbstractExpression
 {
-    
+
 }

@@ -1,5 +1,5 @@
-import {Visitor} from "../../Visitor";
 import {AbstractTerm} from "./AbstractTerm";
+import {ASTVisitor} from "../../ASTVisitor";
 
 export class Term extends AbstractTerm{
     value: string;
@@ -9,7 +9,7 @@ export class Term extends AbstractTerm{
         this.value = value;
     }
 
-    accept<T>(visitor: Visitor<T>): T {
+    accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitTerm(this);
     }
 

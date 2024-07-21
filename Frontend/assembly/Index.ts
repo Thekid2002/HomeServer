@@ -6,7 +6,7 @@ import {AbstractSyntaxNode} from "./AST/AbstractSyntaxNode";
 import {ASTPrinter} from "./AST/ASTPrinter";
 import {Interpreter} from "./Interpreter/Interpreter";
 
-export function calculateViaLanguage(string: string): f64{
+export function calculateViaLanguage(string: string): string {
     let scanner = new Scanner(string);
     let tokens = scanner.scanTokens();
     let parser = new Parser(tokens);
@@ -41,5 +41,39 @@ export function calculateViaLanguage(string: string): f64{
     let interpreter = new Interpreter();
 
     let finalValue: f64 = ast.accept<f64>(interpreter);
-    return finalValue;
+    return new value(parseTreePrinter.tree, astPrinter.tree, finalValue).toJsonString();
+}
+
+class value {
+    parse: string[];
+    ast: string[];
+    value: f64;
+    constructor(parse: string[], ast: string[], value: f64){
+        this.parse = parse;
+        this.ast = ast;
+        this.value = value;
+    }
+
+    toJsonString(): string {
+        let string = "{\n";
+        string += "\"parse\": [";
+        for (let i = 0; i < this.parse.length; i++) {
+            string += "\"" + this.parse[i] + "\"";
+            if (i < this.parse.length - 1) {
+                string += ", ";
+            }
+        }
+        string += "],\n";
+        string += "\"ast\": [";
+        for (let i = 0; i < this.ast.length; i++) {
+            string += "\"" + this.ast[i] + "\"";
+            if (i < this.ast.length - 1) {
+                string += ", ";
+            }
+        }
+        string += "],\n";
+        string += "\"value\": " + this.value.toString() + "\n";
+        string += "}";
+        return string;
+    }
 }
