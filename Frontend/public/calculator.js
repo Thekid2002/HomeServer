@@ -51,7 +51,7 @@ function calculate(){
 }
 
 function printLexerErrors(errors) {
-    astOutput.innerHTML = "<pre>" + "---PARSE ERRORS---" + "</pre><br>";
+    astOutput.innerHTML = "<pre>" + "---LEXER ERRORS---" + "</pre><br>";
     for (let i = errors.length; i > 0; i--) {
         astOutput.innerHTML += "<pre>" + errors[i-1] + "</pre><br>";
     }
@@ -59,7 +59,7 @@ function printLexerErrors(errors) {
 
 
 function printAstErrors(errors) {
-    parseOutput.innerHTML = "<pre>" + "---AST ERRORS---" + "</pre><br>";
+    parseOutput.innerHTML = "<pre>" + "---PARSE ERRORS---" + "</pre><br>";
     for (let i = errors.length; i > 0; i--) {
         parseOutput.innerHTML += "<pre>" + errors[i-1] + "</pre><br>";
     }
