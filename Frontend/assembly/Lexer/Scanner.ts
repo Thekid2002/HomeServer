@@ -115,6 +115,10 @@ export class Scanner {
             return;
         }
 
+        if(c == '^'){
+            return this.addToken(TokenType.POW, '^');
+        }
+
         if (c == '(') {
             return this.addToken(TokenType.LEFT_PAREN, '(');
         }

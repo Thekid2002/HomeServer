@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="calculator-body">
-    <h1>Calculator JS</h1>
+    <h1 class="headline">(CARL) Calculator Algorithm Representation Language</h1>
 
     <div class="calculator">
         <input id="numInput" class="calculator-input">
@@ -93,11 +93,13 @@
             </div>
         </div>
     </div>
-
+    <div style="display: flex; width: 100%; flex-direction: row">
+        <div id="parseErrors"></div>
+        <div id="astErrors"></div>
+    </div>
+    <div id="tokensOutput" style="width: 100%; resize: none"></div>
     <div id="parseOutput" style="width: 100%; resize: none"></div>
     <div id="astOutput" style="width: 100%; resize: none"></div>
-
-
 </div>
 </body>
 <script type="module">

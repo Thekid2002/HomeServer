@@ -11,6 +11,7 @@ import {Identifier} from "./Expressions/Terms/Identifier";
 import {Expression} from "./Expressions/Expression";
 import {AbstractTerm} from "./Expressions/Terms/AbstractTerm";
 import {AbstractExpression} from "./Expressions/AbstractExpression";
+import {PowExpression} from "./Expressions/PowExpression";
 
 export class Parser {
     tokens: Token[];
@@ -116,7 +117,7 @@ export class Parser {
     }
 
     private multExpression(): MultiplicativeExpression {
-        let left: UnaryExpression = this.unaryExpression();
+        let left: PowExpression = this.powerExpression();
         let operator: Token | null = null;
         let right: MultiplicativeExpression | null = null;
 
@@ -128,11 +129,34 @@ export class Parser {
         return new MultiplicativeExpression(left, operator, right);
     }
 
+    private powerExpression(): PowExpression {
+        let left: UnaryExpression = this.unaryExpression();
+        let operator: Token | null = null;
+        let right: PowExpression | null = null;
+
+        if (this.match([TokenType.POW])) {
+            operator = this.previous();
+            right = this.powerExpression();
+        }
+
+        return new PowExpression(left, operator, right);
+    }
+
     private unaryExpression(): UnaryExpression {
+        if(this.match([TokenType.LEFT_PAREN])) {
+            let expr = this.expression();
+            if(this.match([TokenType.RIGHT_PAREN])) {
+                return new UnaryExpression(null, expr);
+            }
+            this.errors.push("Expected ')' at line: " + this.peek().line.toString());
+            return new UnaryExpression(null, new Term("ERROR"));
+        }
+
         let operator: Token | null = null;
         let rightOrPrimary: AbstractExpression;
 
-        if (this.match([TokenType.BANG, TokenType.MINUS])) {
+        if (this.match([TokenType.BANG, TokenType.MINUS, TokenType.SIN, TokenType.SQRT, TokenType.TAN, TokenType.COS,
+            TokenType.ASIN, TokenType.ACOS, TokenType.ATAN])) {
             operator = this.previous();
             rightOrPrimary = this.unaryExpression();
         }else {
@@ -143,6 +167,7 @@ export class Parser {
     }
 
     private term(): AbstractTerm {
+
         if (this.match([TokenType.NUMBER])) {
             return new Num(this.previous());
         }

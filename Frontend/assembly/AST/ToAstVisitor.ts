@@ -1,12 +1,9 @@
 import {ParseVisitor} from "../Parser/ParseVisitor";
 import {AbstractSyntaxNode} from "./AbstractSyntaxNode";
-import {EqualityExpression as ASTEqualityExpression} from "./Expressions/EqualityExpression";
 import {EqualityExpression as ParseEqualityExpression} from "../Parser/Expressions/EqualityExpression";
-import {Expression as ASTExpression} from "./Expressions/Expression";
 import {Expression as ParseExpression} from "../Parser/Expressions/Expression";
 import {Identifier as ASTIdentifier} from "./Expressions/Terms/Identifier";
 import {Identifier as ParseIdentifier} from "../Parser/Expressions/Terms/Identifier";
-import {MultiplicativeExpression as ASTMultiplicativeExpression} from "./Expressions/MultiplicativeExpression";
 import {MultiplicativeExpression as ParseMultiplicativeExpression} from "../Parser/Expressions/MultiplicativeExpression";
 import {Num as ASTNum} from "./Expressions/Terms/Num";
 import {Num as ParseNum} from "../Parser/Expressions/Terms/Num";
@@ -17,12 +14,20 @@ import {UnaryExpression as ASTUnaryExpression} from "./Expressions/UnaryExpressi
 import {Term as ASTTerm} from "./Expressions/Terms/Term";
 import {Term as ParseTerm} from "../Parser/Expressions/Terms/Term";
 import {RelationalExpression as ParseRelationalExpression} from "../Parser/Expressions/RelationalExpression";
-import {RelationalExpression as ASTRelationalExpression} from "./Expressions/RelationalExpression";
 import {AbstractExpression} from "./Expressions/AbstractExpression";
+import { PowExpression } from "../Parser/Expressions/PowExpression";
 
 
+export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
+    visitPowExpression(expression: PowExpression): AbstractSyntaxNode {
+        if(expression.right === null){
+            return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
+        }
+        let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
+        let right: AbstractExpression = expression.right!.accept<AbstractSyntaxNode>(this) as AbstractExpression;
+        return new ASTBinaryExpression(left, expression.operator!.literal!, right);
+    }
 
-export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode>{
     visitBinaryExpression(expression: ParseBinaryExpression): AbstractSyntaxNode {
         if(expression.right === null){
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
@@ -38,7 +43,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode>{
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractSyntaxNode>(this) as AbstractExpression;
-        return new ASTEqualityExpression(left, expression.operator!.literal!, right);
+        return new ASTBinaryExpression(left, expression.operator!.literal!, right);
     }
 
     visitExpression(expression: ParseExpression): AbstractSyntaxNode {
@@ -47,7 +52,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode>{
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractSyntaxNode>(this) as AbstractExpression;
-        return new ASTExpression(left, expression.operator!.literal!, right);
+        return new ASTBinaryExpression(left, expression.operator!.literal!, right);
 
     }
 
@@ -61,7 +66,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode>{
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractSyntaxNode>(this) as AbstractExpression;
-        return new ASTMultiplicativeExpression(left, expression.operator!.literal!, right);
+        return new ASTBinaryExpression(left, expression.operator!.literal!, right);
     }
 
     visitNumber(term: ParseNum): AbstractSyntaxNode {
@@ -74,7 +79,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode>{
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractSyntaxNode>(this) as AbstractExpression;
-        return new ASTRelationalExpression(left, expression.operator!.literal!, right);
+        return new ASTBinaryExpression(left, expression.operator!.literal!, right);
     }
 
     visitTerm(term: ParseTerm): AbstractSyntaxNode {

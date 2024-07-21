@@ -13,19 +13,11 @@ pre {
 
 .calculator-input{
     display: flex;
-    height: 2em;
-    font-size: 18px;
-    padding: 0;
+    height: 1.4em;
+    font-size: 2em;
+    padding: 10px;
 }
 
-.calculator-body {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 10%;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
 
 .calculator{
     display: flex;
@@ -42,6 +34,10 @@ pre {
 }
 
 @media (min-width: 510px) {
+    .headline{
+        font-family: Arial;
+        font-size: 20px
+    }
     .calculator-grid-pc{
         display: flex;
         flex-direction: row;
@@ -63,6 +59,10 @@ pre {
 }
 
 @media (min-width: 710px) {
+    .headline{
+        font-family: Arial;
+        font-size: 24px
+    }
     .calculator-grid-pc{
         display: flex;
         flex-direction: row;
@@ -81,9 +81,22 @@ pre {
     .calculator-button {
         font-size: 1.6em;
     }
+    .calculator-body {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 12%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 @media (min-width: 910px) {
+    .headline{
+        font-family: Arial;
+        font-size: 30px
+    }
     .calculator-grid-pc{
         display: flex;
         flex-direction: row;
@@ -102,9 +115,26 @@ pre {
     .calculator-button {
         font-size: 2em;
     }
+    .calculator-body {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 20%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.headline{
+    text-align: center;
 }
 
 @media (max-width: 510px) {
+    .headline{
+        font-family: Arial;
+        font-size: 10px
+    }
     .calculator-grid-pc{
         display: none;
     }
@@ -123,6 +153,15 @@ pre {
     .calculator-button {
         font-size: 1.25em;
     }
+    .calculator-body {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 10%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 .different {

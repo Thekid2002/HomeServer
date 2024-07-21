@@ -16,4 +16,8 @@ export class Token {
     toString(): string {
         return " " + TokenTypes[this.type] + " " + this.lexeme + " " + (this.literal != null ? this.literal!.toString() : "");
     }
+
+    toJsonString(): string {
+        return "{ \"type\": " + this.type.toString() + ", \"lexeme\": \"" + this.lexeme + "\", \"literal\": \"" + (this.literal != null ? this.literal!.toString() : "") + "\", \"line\": " + this.line.toString() + "}";
+    }
 }

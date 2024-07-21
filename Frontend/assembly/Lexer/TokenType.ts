@@ -11,6 +11,7 @@ export enum TokenType {
     SEMICOLON,     // ;
     SLASH,         // /
     STAR,         // *
+    POW,          // ^
 
     // One or two character tokens.
     BANG,         // !
@@ -28,6 +29,13 @@ export enum TokenType {
     NUMBER,       // number
 
     // Keywords.
+    SIN,          // sin
+    COS,          // cos
+    TAN,          // tan
+    ASIN,         // asin
+    ACOS,         // acos
+    ATAN,         // atan
+    SQRT,         // sqrt
     AND,          // and
     CLASS,        // class
     ELSE,         // else
@@ -61,6 +69,7 @@ export const TokenTypes: string[] = [
     "SEMICOLON",     // ;
     "SLASH",         // /
     "STAR",         // *
+    "POW",          // ^
 
     // One or two character tokens.
     "BANG",         // !
@@ -78,6 +87,13 @@ export const TokenTypes: string[] = [
     "NUMBER",       // number
 
     // Keywords.
+    "SIN",          // sin
+    "COS",          // cos
+    "TAN",          // tan
+    "ASIN",         // asin
+    "ACOS",         // acos
+    "ATAN",         // atan
+    "SQRT",         // sqrt
     "AND",          // and
     "CLASS",        // class
     "ELSE",         // else

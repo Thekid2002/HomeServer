@@ -7,6 +7,7 @@ import {UnaryExpression} from "./Expressions/UnaryExpression";
 import {Num} from "./Expressions/Terms/Num";
 import {Term} from "./Expressions/Terms/Term";
 import {Identifier} from "./Expressions/Terms/Identifier";
+import {PowExpression} from "./Expressions/PowExpression";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: Expression): T;
@@ -15,9 +16,9 @@ export interface ParseVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
     visitMultiplicativeExpression(expression: MultiplicativeExpression): T;
     visitUnaryExpression(expression: UnaryExpression): T;
+    visitPowExpression(expression: PowExpression): T;
 
     visitTerm(term: Term): T;
     visitNumber(term: Num): T;
-
     visitIdentifier(term: Identifier): T;
 }

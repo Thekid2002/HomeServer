@@ -8,10 +8,23 @@ import {Num} from "./Expressions/Terms/Num";
 import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {Term} from "./Expressions/Terms/Term";
 import {Identifier} from "./Expressions/Terms/Identifier";
+import { PowExpression } from "./Expressions/PowExpression";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
     tree: string[] = [];
+
+    visitPowExpression(expression: PowExpression): void {
+        this.number++;
+        expression.primaryOrLeft.accept<void>(this);
+        this.number--;
+        if(expression.right !== null) {
+            this.number++;
+            expression.right!.accept<void>(this);
+            this.number--;
+        }
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": PowExpression " + (expression.operator !== null ? expression.operator!.literal! : ""));
+    }
 
     visitBinaryExpression(expression: BinaryExpression): void {
         this.number++;
