@@ -5,14 +5,6 @@ body {
     background-color: #f0f0f0;
 }
 
-.file {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    padding: 10px;
-}
-
 .timeline-container {
     display: flex;
     flex-direction: column;
@@ -31,6 +23,7 @@ body {
     background-color: #fff;
     overflow-x: scroll;
     position: relative;
+    height: 60px;
 }
 
 .timestamp{
@@ -63,10 +56,11 @@ body {
     border-radius: 3px;
     cursor: pointer;
     user-select: none;
-    height: 40px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .clip-slot {
@@ -77,7 +71,8 @@ body {
     border-radius: 3px;
     cursor: pointer;
     user-select: none;
-    height: 40px;
+    height: 60px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,4 +98,12 @@ body {
 
 .video-clip.dragging {
     opacity: 0.5;
+}
+
+.display-files {
+    display: grid;
+    width: 100%;
+    grid-auto-columns: 10px;
+    gap: 5px;
+    grid-auto-flow: column;
 }

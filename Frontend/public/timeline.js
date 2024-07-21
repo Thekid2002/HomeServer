@@ -118,13 +118,28 @@ function setupVideoClipEventListener() {
     });
 }
 
-async function initial() {
+function setupFileEventListener() {
+    const fileContainer = document.getElementById('displayFiles');
+    fileContainer.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+    const dragging = document.querySelector('.dragging');
+    if(draggingVideoClip != null) {
+        fileContainer.appendChild(dragging);
+    }else {
+        fileContainer.appendChild(dragging);
+
+    }
+}
+
+    async function initial() {
     await start();
     await printTimeStamps();
     printFiles()
 
     setupAudioClipEventListener();
     setupVideoClipEventListener();
+    setupFileEventListener();
 }
 
 function videoGetDragAfterElement(container, x) {

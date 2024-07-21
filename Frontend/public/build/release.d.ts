@@ -1,44 +1,16 @@
 /** Exported memory */
 export declare const memory: WebAssembly.Memory;
 /**
- * Frontend/assembly/index/add
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
+ * Frontend/assembly/calculator/calculate
+ * @param val1 `f64`
+ * @param val2 `f64`
+ * @param operator `~lib/string/String`
+ * @returns `f64`
  */
-export declare function add(a: number, b: number): number;
+export declare function calculate(val1: number, val2: number, operator: string): number;
 /**
- * Frontend/assembly/index/subtract
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
+ * Frontend/assembly/Index/calculateViaLanguage
+ * @param string `~lib/string/String`
+ * @returns `~lib/string/String`
  */
-export declare function subtract(a: number, b: number): number;
-/**
- * Frontend/assembly/index/multiply
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
- */
-export declare function multiply(a: number, b: number): number;
-/**
- * Frontend/assembly/index/divide
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
- */
-export declare function divide(a: number, b: number): number;
-/**
- * Frontend/assembly/index/remainder
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
- */
-export declare function remainder(a: number, b: number): number;
-/**
- * Frontend/assembly/index/power
- * @param a `i32`
- * @param b `i32`
- * @returns `i32`
- */
-export declare function power(a: number, b: number): number;
+export declare function calculateViaLanguage(string: string): string;
