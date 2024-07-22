@@ -5,11 +5,11 @@ import {AbstractExpression} from "./AbstractExpression";
 import {RelationalExpression} from "./RelationalExpression";
 
 export class EqualityExpression extends AbstractExpression {
-    primaryOrLeft: RelationalExpression;
+    primaryOrLeft: AbstractExpression;
     operator: Token | null;
     right: AbstractExpression | null;
 
-    constructor(primaryOrLeft: RelationalExpression, operator: Token | null, right: AbstractExpression | null) {
+    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null) {
         super();
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;

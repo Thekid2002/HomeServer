@@ -1,6 +1,6 @@
 import {UnaryExpression} from "./Expressions/UnaryExpression";
 import {ParseVisitor} from "./ParseVisitor";
-import {BinaryExpression} from "./Expressions/BinaryExpression";
+import {AdditiveExpression} from "./Expressions/AdditiveExpression";
 import {EqualityExpression} from "./Expressions/EqualityExpression";
 import {Expression} from "./Expressions/Expression";
 import {MultiplicativeExpression} from "./Expressions/MultiplicativeExpression";
@@ -26,7 +26,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": PowExpression " + (expression.operator !== null ? expression.operator!.literal! : ""));
     }
 
-    visitBinaryExpression(expression: BinaryExpression): void {
+    visitBinaryExpression(expression: AdditiveExpression): void {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;

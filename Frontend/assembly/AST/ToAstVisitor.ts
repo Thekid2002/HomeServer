@@ -8,7 +8,7 @@ import {MultiplicativeExpression as ParseMultiplicativeExpression} from "../Pars
 import {Num as ASTNum} from "./Expressions/Terms/Num";
 import {Num as ParseNum} from "../Parser/Expressions/Terms/Num";
 import {BinaryExpression as ASTBinaryExpression} from "./Expressions/BinaryExpression";
-import {BinaryExpression as ParseBinaryExpression } from "../Parser/Expressions/BinaryExpression";
+import {AdditiveExpression } from "../Parser/Expressions/AdditiveExpression";
 import {UnaryExpression as ParseUnaryExpression} from "../Parser/Expressions/UnaryExpression";
 import {UnaryExpression as ASTUnaryExpression} from "./Expressions/UnaryExpression";
 import {Term as ASTTerm} from "./Expressions/Terms/Term";
@@ -28,7 +28,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
         return new ASTBinaryExpression(left, expression.operator!.literal!, right);
     }
 
-    visitBinaryExpression(expression: ParseBinaryExpression): AbstractSyntaxNode {
+    visitBinaryExpression(expression: AdditiveExpression): AbstractSyntaxNode {
         if(expression.right === null){
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }

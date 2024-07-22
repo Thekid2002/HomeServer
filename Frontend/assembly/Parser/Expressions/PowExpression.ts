@@ -5,11 +5,11 @@ import {MultiplicativeExpression} from "./MultiplicativeExpression";
 import {UnaryExpression} from "./UnaryExpression";
 
 export class PowExpression extends AbstractExpression {
-    primaryOrLeft: UnaryExpression;
+    primaryOrLeft: AbstractExpression;
     operator: Token | null;
     right: AbstractExpression | null;
 
-    constructor(primaryOrLeft: UnaryExpression, operator: Token | null, right: AbstractExpression | null) {
+    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null) {
         super();
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
@@ -19,5 +19,4 @@ export class PowExpression extends AbstractExpression {
     accept<T>(visitor: ParseVisitor<T>): T {
         return visitor.visitPowExpression(this);
     }
-
 }

@@ -1,4 +1,4 @@
-import {BinaryExpression} from "./Expressions/BinaryExpression";
+import {AdditiveExpression} from "./Expressions/AdditiveExpression";
 import {Expression} from "./Expressions/Expression";
 import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {EqualityExpression} from "./Expressions/EqualityExpression";
@@ -13,7 +13,7 @@ export interface ParseVisitor<T> {
     visitExpression(expression: Expression): T;
     visitEqualityExpression(expression: EqualityExpression): T;
     visitRelationalExpression(expression: RelationalExpression): T;
-    visitBinaryExpression(expression: BinaryExpression): T;
+    visitBinaryExpression(expression: AdditiveExpression): T;
     visitMultiplicativeExpression(expression: MultiplicativeExpression): T;
     visitUnaryExpression(expression: UnaryExpression): T;
     visitPowExpression(expression: PowExpression): T;

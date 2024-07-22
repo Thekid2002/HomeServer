@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "Backend/index.js",
   "scripts": {
-    "test": "node Frontend/tests",
+    "test": "node Frontend/assembly/tests",
     "asbuild:debug": "asc Frontend/assembly/calculator.ts Frontend/assembly/Index.ts --target debug",
     "asbuild:release": "asc Frontend/assembly/calculator.ts Frontend/assembly/Index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
-    "start": "npm run asbuild:debug && npm run asbuild:release && node Frontend/tests && node ."
+    "start": "npm run asbuild:debug && npm run asbuild:release && node Frontend/assembly/tests && node ."
   },
   "author": "",
   "license": "ISC",

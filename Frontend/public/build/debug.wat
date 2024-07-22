@@ -318,42 +318,42 @@
  (data $206 (i32.const 13516) "\\\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00D\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00P\00a\00r\00s\00e\00r\00/\00P\00a\00r\00s\00e\00r\00.\00t\00s\00\00\00\00\00\00\00\00\00")
  (data $207 (i32.const 13612) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\14\00\00\00 \00a\00t\00 \00l\00i\00n\00e\00:\00 \00\00\00\00\00\00\00\00\00")
  (data $208 (i32.const 13660) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\04\00\00\00\0b\00\00\00\00\00\00\00\00\00\00\00")
- (data $209 (i32.const 13692) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\t\00\00\00\n\00\00\00\00\00\00\00")
- (data $210 (i32.const 13724) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\06\00\00\00\07\00\00\00\00\00\00\00")
- (data $211 (i32.const 13756) ",\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\10\00\00\00\10\00\00\00\11\00\00\00\12\00\00\00\13\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $212 (i32.const 13804) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\r\00\00\00\0f\00\00\00\00\00\00\00")
- (data $213 (i32.const 13836) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\1e\00\00\00&\00\00\00\00\00\00\00")
- (data $214 (i32.const 13868) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $215 (i32.const 13900) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $216 (i32.const 13932) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00{\00\n\00\00\00\00\00\00\00\00\00")
- (data $217 (i32.const 13964) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\14\00\00\00\"\00p\00a\00r\00s\00e\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00")
- (data $218 (i32.const 14012) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00,\00 \00\00\00\00\00\00\00\00\00")
- (data $219 (i32.const 14044) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\00]\00,\00\n\00\00\00\00\00\00\00")
- (data $220 (i32.const 14076) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\10\00\00\00\"\00a\00s\00t\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $221 (i32.const 14124) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\12\00\00\00\"\00v\00a\00l\00u\00e\00\"\00:\00 \00\00\00\00\00\00\00\00\00\00\00")
- (data $222 (i32.const 14172) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\000\00.\000\00\00\00\00\00\00\00")
- (data $223 (i32.const 14204) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\00N\00a\00N\00\00\00\00\00\00\00")
- (data $224 (i32.const 14236) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y\00\00\00\00\00\00\00\00\00\00\00")
- (data $225 (i32.const 14284) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $226 (i32.const 14336) "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $227 (i32.const 14392) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
- (data $228 (i32.const 15088) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
- (data $229 (i32.const 15264) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
- (data $230 (i32.const 15308) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00,\00\n\00\00\00\00\00\00\00\00\00")
- (data $231 (i32.const 15340) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\16\00\00\00\"\00t\00o\00k\00e\00n\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00")
- (data $232 (i32.const 15388) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\14\00\00\00{\00 \00\"\00t\00y\00p\00e\00\"\00:\00 \00\00\00\00\00\00\00\00\00")
- (data $233 (i32.const 15436) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1a\00\00\00,\00 \00\"\00l\00e\00x\00e\00m\00e\00\"\00:\00 \00\"\00\00\00")
- (data $234 (i32.const 15484) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1e\00\00\00\"\00,\00 \00\"\00l\00i\00t\00e\00r\00a\00l\00\"\00:\00 \00\"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $235 (i32.const 15548) "\\\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00@\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00L\00e\00x\00e\00r\00/\00T\00o\00k\00e\00n\00.\00t\00s\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $236 (i32.const 15644) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\16\00\00\00\"\00,\00 \00\"\00l\00i\00n\00e\00\"\00:\00 \00\00\00\00\00\00\00")
- (data $237 (i32.const 15692) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00\"\00l\00e\00x\00e\00r\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $238 (i32.const 15756) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00\"\00p\00a\00r\00s\00e\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $239 (i32.const 15820) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00]\00\n\00\00\00\00\00\00\00\00\00")
- (data $240 (i32.const 15852) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d\00\00\00")
- (data $241 (i32.const 15916) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d\00\00\00\00\00")
- (data $242 (i32.const 15980) "l\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00X\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00P\00a\00r\00s\00e\00r\00/\00P\00a\00r\00s\00e\00T\00r\00e\00e\00P\00r\00i\00n\00t\00e\00r\00.\00t\00s\00\00\00\00\00")
- (data $243 (i32.const 16092) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00 \00 \00\00\00\00\00\00\00\00\00")
- (data $244 (i32.const 16124) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00&\00\00\00:\00 \00B\00i\00n\00a\00r\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00\00\00\00\00")
+ (data $209 (i32.const 13692) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00i\00n\00v\00a\00l\00i\00d\00 \00d\00o\00w\00n\00c\00a\00s\00t\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $210 (i32.const 13756) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\t\00\00\00\n\00\00\00\00\00\00\00")
+ (data $211 (i32.const 13788) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\06\00\00\00\07\00\00\00\00\00\00\00")
+ (data $212 (i32.const 13820) ",\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\10\00\00\00\10\00\00\00\11\00\00\00\12\00\00\00\13\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $213 (i32.const 13868) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\r\00\00\00\0f\00\00\00\00\00\00\00")
+ (data $214 (i32.const 13900) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\08\00\00\00\1e\00\00\00&\00\00\00\00\00\00\00")
+ (data $215 (i32.const 13932) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $216 (i32.const 13964) "\1c\00\00\00\00\00\00\00\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $217 (i32.const 13996) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00{\00\n\00\00\00\00\00\00\00\00\00")
+ (data $218 (i32.const 14028) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\14\00\00\00\"\00p\00a\00r\00s\00e\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00")
+ (data $219 (i32.const 14076) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00,\00 \00\00\00\00\00\00\00\00\00")
+ (data $220 (i32.const 14108) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\00]\00,\00\n\00\00\00\00\00\00\00")
+ (data $221 (i32.const 14140) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\10\00\00\00\"\00a\00s\00t\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $222 (i32.const 14188) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\12\00\00\00\"\00v\00a\00l\00u\00e\00\"\00:\00 \00\00\00\00\00\00\00\00\00\00\00")
+ (data $223 (i32.const 14236) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\000\00.\000\00\00\00\00\00\00\00")
+ (data $224 (i32.const 14268) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\06\00\00\00N\00a\00N\00\00\00\00\00\00\00")
+ (data $225 (i32.const 14300) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y\00\00\00\00\00\00\00\00\00\00\00")
+ (data $226 (i32.const 14348) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $227 (i32.const 14400) "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $228 (i32.const 14456) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
+ (data $229 (i32.const 15152) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
+ (data $230 (i32.const 15328) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
+ (data $231 (i32.const 15372) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00,\00\n\00\00\00\00\00\00\00\00\00")
+ (data $232 (i32.const 15404) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\16\00\00\00\"\00t\00o\00k\00e\00n\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00")
+ (data $233 (i32.const 15452) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\14\00\00\00{\00 \00\"\00t\00y\00p\00e\00\"\00:\00 \00\00\00\00\00\00\00\00\00")
+ (data $234 (i32.const 15500) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1a\00\00\00,\00 \00\"\00l\00e\00x\00e\00m\00e\00\"\00:\00 \00\"\00\00\00")
+ (data $235 (i32.const 15548) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1e\00\00\00\"\00,\00 \00\"\00l\00i\00t\00e\00r\00a\00l\00\"\00:\00 \00\"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $236 (i32.const 15612) "\\\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00@\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00L\00e\00x\00e\00r\00/\00T\00o\00k\00e\00n\00.\00t\00s\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $237 (i32.const 15708) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\16\00\00\00\"\00,\00 \00\"\00l\00i\00n\00e\00\"\00:\00 \00\00\00\00\00\00\00")
+ (data $238 (i32.const 15756) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00\"\00l\00e\00x\00e\00r\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $239 (i32.const 15820) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00\"\00p\00a\00r\00s\00e\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $240 (i32.const 15884) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00]\00\n\00\00\00\00\00\00\00\00\00")
+ (data $241 (i32.const 15916) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d\00\00\00")
+ (data $242 (i32.const 15980) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d\00\00\00\00\00")
+ (data $243 (i32.const 16044) "l\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00X\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00P\00a\00r\00s\00e\00r\00/\00P\00a\00r\00s\00e\00T\00r\00e\00e\00P\00r\00i\00n\00t\00e\00r\00.\00t\00s\00\00\00\00\00")
+ (data $244 (i32.const 16156) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\04\00\00\00 \00 \00\00\00\00\00\00\00\00\00")
  (data $245 (i32.const 16188) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00*\00\00\00:\00 \00E\00q\00u\00a\00l\00i\00t\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00")
  (data $246 (i32.const 16252) "L\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00.\00\00\00:\00 \00R\00e\00l\00a\00t\00i\00o\00n\00a\00l\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
  (data $247 (i32.const 16332) "L\00\00\00\00\00\00\00\00\00\00\00\02\00\00\006\00\00\00:\00 \00M\00u\00l\00t\00i\00p\00l\00i\00c\00a\00t\00i\00v\00e\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00\00\00\00\00")
@@ -363,7 +363,7 @@
  (data $251 (i32.const 16572) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1a\00\00\00:\00 \00I\00d\00e\00n\00t\00i\00f\00i\00e\00r\00 \00\00\00")
  (data $252 (i32.const 16620) ",\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\1a\00\00\00:\00 \00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00")
  (data $253 (i32.const 16668) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00:\00 \00P\00o\00w\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00\00\00\00\00\00\00\00\00\00\00")
- (data $254 (i32.const 16732) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00 \00\00\00i\00n\00v\00a\00l\00i\00d\00 \00d\00o\00w\00n\00c\00a\00s\00t\00\00\00\00\00\00\00\00\00\00\00\00\00")
+ (data $254 (i32.const 16732) "<\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00&\00\00\00:\00 \00B\00i\00n\00a\00r\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 \00\00\00\00\00\00\00")
  (data $255 (i32.const 16796) "\\\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00J\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00A\00S\00T\00/\00T\00o\00A\00s\00t\00V\00i\00s\00i\00t\00o\00r\00.\00t\00s\00\00\00")
  (data $256 (i32.const 16892) "\1c\00\00\00\00\00\00\00\00\00\00\00\02\00\00\00\0c\00\00\00:\00 \00N\00u\00m\00 \00")
  (data $257 (i32.const 16924) "L\00\00\00\00\00\00\00\00\00\00\00\02\00\00\006\00\00\00I\00d\00e\00n\00t\00i\00f\00i\00e\00r\00s\00 \00n\00o\00t\00 \00i\00m\00p\00l\00e\00m\00e\00n\00t\00e\00d\00\00\00\00\00\00\00")
@@ -7042,7 +7042,7 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:primaryOrLeft (param $this i32) (param $primaryOrLeft i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:primaryOrLeft (param $this i32) (param $primaryOrLeft i32)
   local.get $this
   local.get $primaryOrLeft
   i32.store
@@ -7051,7 +7051,7 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:operator (param $this i32) (param $operator i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:operator (param $this i32) (param $operator i32)
   local.get $this
   local.get $operator
   i32.store offset=4
@@ -7060,7 +7060,7 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:right (param $this i32) (param $right i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:right (param $this i32) (param $right i32)
   local.get $this
   local.get $right
   i32.store offset=8
@@ -7533,7 +7533,7 @@
      local.set $delta|21
      local.get $tmp
      local.set $rest
-     i32.const 15264
+     i32.const 15328
      local.get $kappa
      i32.const 2
      i32.shl
@@ -7670,7 +7670,7 @@
      i32.add
      global.set $~lib/util/number/_K
      local.get $wp_w_frc
-     i32.const 15264
+     i32.const 15328
      i32.const 0
      local.get $kappa
      i32.sub
@@ -8295,14 +8295,14 @@
    i32.shl
    i32.sub
    global.set $~lib/util/number/_K
-   i32.const 14392
+   i32.const 14456
    local.get $index
    i32.const 3
    i32.shl
    i32.add
    i64.load
    global.set $~lib/util/number/_frc_pow
-   i32.const 15088
+   i32.const 15152
    local.get $index
    i32.const 1
    i32.shl
@@ -8614,7 +8614,7 @@
    i32.const 3
    i32.eq
    if
-    i32.const 15872
+    i32.const 15936
     i32.const 6992
     i32.const 338
     i32.const 7
@@ -8647,7 +8647,7 @@
   i32.const 3
   i32.ne
   if
-   i32.const 15936
+   i32.const 16000
    i32.const 6992
    i32.const 352
    i32.const 5
@@ -8715,9 +8715,6 @@
   i32.const 0
   drop
  )
- (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression (param $this i32) (param $expression i32)
-  unreachable
- )
  (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression (param $this i32) (param $expression i32)
   unreachable
  )
@@ -8745,7 +8742,7 @@
  (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression (param $this i32) (param $expression i32)
   unreachable
  )
- (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression (param $this i32) (param $expression i32) (result i32)
+ (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression (param $this i32) (param $expression i32)
   unreachable
  )
  (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitEqualityExpression (param $this i32) (param $expression i32) (result i32)
@@ -8775,21 +8772,12 @@
  (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitPowExpression (param $this i32) (param $expression i32) (result i32)
   unreachable
  )
+ (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression (param $this i32) (param $expression i32) (result i32)
+  unreachable
+ )
  (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number (param $this i32) (result i32)
   local.get $this
   i32.load
- )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:primaryOrLeft (param $this i32) (result i32)
-  local.get $this
-  i32.load
- )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:right (param $this i32) (result i32)
-  local.get $this
-  i32.load offset=8
- )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:operator (param $this i32) (result i32)
-  local.get $this
-  i32.load offset=4
  )
  (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#get:primaryOrLeft (param $this i32) (result i32)
   local.get $this
@@ -8868,6 +8856,18 @@
   i32.load offset=8
  )
  (func $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#get:operator (param $this i32) (result i32)
+  local.get $this
+  i32.load offset=4
+ )
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:primaryOrLeft (param $this i32) (result i32)
+  local.get $this
+  i32.load
+ )
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:right (param $this i32) (result i32)
+  local.get $this
+  i32.load offset=8
+ )
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:operator (param $this i32) (result i32)
   local.get $this
   i32.load offset=4
  )
@@ -10479,95 +10479,95 @@
              i32.load
              local.set $2
              local.get $2
-             i32.const 16
+             i32.const 14
              i32.eq
              br_if $case0
              local.get $2
-             i32.const 14
+             i32.const 15
              i32.eq
              br_if $case1
              local.get $2
-             i32.const 15
+             i32.const 17
              i32.eq
              br_if $case2
              local.get $2
-             i32.const 17
+             i32.const 19
              i32.eq
              br_if $case3
              local.get $2
-             i32.const 19
+             i32.const 20
              i32.eq
              br_if $case4
              local.get $2
-             i32.const 20
+             i32.const 22
              i32.eq
              br_if $case5
              local.get $2
-             i32.const 22
+             i32.const 23
              i32.eq
              br_if $case6
              local.get $2
-             i32.const 23
+             i32.const 13
              i32.eq
              br_if $case7
              local.get $2
-             i32.const 13
+             i32.const 18
              i32.eq
              br_if $case8
              local.get $2
-             i32.const 18
+             i32.const 16
              i32.eq
              br_if $case9
              br $default
             end
             local.get $0
             local.get $1
-            call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void>
+            call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void>
             return
            end
            local.get $0
            local.get $1
-           call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void>
+           call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void>
            return
           end
           local.get $0
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void>
+          call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void>
           return
          end
          local.get $0
          local.get $1
-         call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void>
+         call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void>
          return
         end
         local.get $0
         local.get $1
-        call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void>
+        call $Frontend/assembly/Parser/Expressions/Terms/Term/Term#accept<void>
         return
        end
        local.get $0
        local.get $1
-       call $Frontend/assembly/Parser/Expressions/Terms/Term/Term#accept<void>
+       call $Frontend/assembly/Parser/Expressions/Terms/Num/Num#accept<void>
        return
       end
       local.get $0
       local.get $1
-      call $Frontend/assembly/Parser/Expressions/Terms/Num/Num#accept<void>
+      call $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier#accept<void>
       return
      end
      local.get $0
      local.get $1
-     call $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier#accept<void>
+     call $Frontend/assembly/Parser/Expressions/Expression/Expression#accept<void>
      return
     end
     local.get $0
     local.get $1
-    call $Frontend/assembly/Parser/Expressions/Expression/Expression#accept<void>
+    call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void>
     return
    end
    local.get $0
    local.get $1
-   call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void>
+   call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#accept<void>
    return
   end
   unreachable
@@ -10591,95 +10591,95 @@
              i32.load
              local.set $2
              local.get $2
-             i32.const 16
+             i32.const 14
              i32.eq
              br_if $case0
              local.get $2
-             i32.const 14
+             i32.const 15
              i32.eq
              br_if $case1
              local.get $2
-             i32.const 15
+             i32.const 17
              i32.eq
              br_if $case2
              local.get $2
-             i32.const 17
+             i32.const 19
              i32.eq
              br_if $case3
              local.get $2
-             i32.const 19
+             i32.const 20
              i32.eq
              br_if $case4
              local.get $2
-             i32.const 20
+             i32.const 22
              i32.eq
              br_if $case5
              local.get $2
-             i32.const 22
+             i32.const 23
              i32.eq
              br_if $case6
              local.get $2
-             i32.const 23
+             i32.const 13
              i32.eq
              br_if $case7
              local.get $2
-             i32.const 13
+             i32.const 18
              i32.eq
              br_if $case8
              local.get $2
-             i32.const 18
+             i32.const 16
              i32.eq
              br_if $case9
              br $default
             end
             local.get $0
             local.get $1
-            call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+            call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
             return
            end
            local.get $0
            local.get $1
-           call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+           call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
            return
           end
           local.get $0
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+          call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
           return
          end
          local.get $0
          local.get $1
-         call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+         call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
          return
         end
         local.get $0
         local.get $1
-        call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+        call $Frontend/assembly/Parser/Expressions/Terms/Term/Term#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
         return
        end
        local.get $0
        local.get $1
-       call $Frontend/assembly/Parser/Expressions/Terms/Term/Term#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+       call $Frontend/assembly/Parser/Expressions/Terms/Num/Num#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
        return
       end
       local.get $0
       local.get $1
-      call $Frontend/assembly/Parser/Expressions/Terms/Num/Num#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+      call $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
       return
      end
      local.get $0
      local.get $1
-     call $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+     call $Frontend/assembly/Parser/Expressions/Expression/Expression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
      return
     end
     local.get $0
     local.get $1
-    call $Frontend/assembly/Parser/Expressions/Expression/Expression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+    call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
     return
    end
    local.get $0
    local.get $1
-   call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
    return
   end
   unreachable
@@ -10804,28 +10804,6 @@
    local.get $0
    local.get $1
    call $Frontend/assembly/AST/Expressions/Terms/Term/Term#accept<f64>
-   return
-  end
-  unreachable
- )
- (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override (param $0 i32) (param $1 i32)
-  (local $2 i32)
-  block $default
-   block $case0
-    local.get $0
-    i32.const 8
-    i32.sub
-    i32.load
-    local.set $2
-    local.get $2
-    i32.const 24
-    i32.eq
-    br_if $case0
-    br $default
-   end
-   local.get $0
-   local.get $1
-   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression
    return
   end
   unreachable
@@ -11028,7 +11006,7 @@
   end
   unreachable
  )
- (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override (param $0 i32) (param $1 i32) (result i32)
+ (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override (param $0 i32) (param $1 i32)
   (local $2 i32)
   block $default
    block $case0
@@ -11038,14 +11016,14 @@
     i32.load
     local.set $2
     local.get $2
-    i32.const 26
+    i32.const 24
     i32.eq
     br_if $case0
     br $default
    end
    local.get $0
    local.get $1
-   call $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitBinaryExpression
+   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression
    return
   end
   unreachable
@@ -11244,6 +11222,28 @@
    local.get $0
    local.get $1
    call $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitPowExpression
+   return
+  end
+  unreachable
+ )
+ (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
+  block $default
+   block $case0
+    local.get $0
+    i32.const 8
+    i32.sub
+    i32.load
+    local.set $2
+    local.get $2
+    i32.const 26
+    i32.eq
+    br_if $case0
+    br $default
+   end
+   local.get $0
+   local.get $1
+   call $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitBinaryExpression
    return
   end
   unreachable
@@ -11468,6 +11468,108 @@
   end
   unreachable
  )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/PowExpression/PowExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 18
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 17
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 16
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 15
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 14
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
+ (func $~instanceof|Frontend/assembly/Parser/Expressions/Expression/Expression (param $0 i32) (result i32)
+  (local $1 i32)
+  block $is_instance
+   local.get $0
+   i32.const 8
+   i32.sub
+   i32.load
+   local.set $1
+   local.get $1
+   i32.const 13
+   i32.eq
+   br_if $is_instance
+   i32.const 0
+   return
+  end
+  i32.const 1
+ )
  (func $~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression (param $0 i32) (result i32)
   (local $1 i32)
   block $is_instance
@@ -11526,10 +11628,10 @@
   i32.const 6928
   local.get $0
   call $~lib/rt/itcms/__visit
-  i32.const 15872
+  i32.const 15936
   local.get $0
   call $~lib/rt/itcms/__visit
-  i32.const 15936
+  i32.const 16000
   local.get $0
   call $~lib/rt/itcms/__visit
   i32.const 11280
@@ -11787,7 +11889,7 @@
    call $~lib/rt/itcms/__visit
   end
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression~visit (param $0 i32) (param $1 i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression~visit (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $0
   local.get $1
@@ -12155,7 +12257,7 @@
                         block $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression
                          block $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression
                           block $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression
-                           block $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression
+                           block $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression
                             block $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression
                              block $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression
                               block $Frontend/assembly/Parser/Expressions/Expression/Expression
@@ -12176,7 +12278,7 @@
                                             i32.const 8
                                             i32.sub
                                             i32.load
-                                            br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/array/Array<~lib/string/String> $"~lib/map/Map<~lib/string/String,i32>" $Frontend/assembly/Lexer/Scanner/Scanner $Frontend/assembly/Lexer/Token/Token $~lib/array/Array<Frontend/assembly/Lexer/Token/Token> $~lib/array/Array<i32> $Frontend/assembly/Parser/Parser/Parser $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode $Frontend/assembly/Parser/Expressions/Expression/Expression $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression $Frontend/assembly/Parser/Expressions/Terms/Term/Term $Frontend/assembly/Parser/Expressions/Terms/AbstractTerm/AbstractTerm $Frontend/assembly/Parser/Expressions/Terms/Num/Num $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void> $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor $Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> $Frontend/assembly/AST/ASTPrinter/ASTPrinter $Frontend/assembly/AST/ASTVisitor/ASTVisitor<void> $Frontend/assembly/Interpreter/Interpreter/Interpreter $Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64> $Frontend/assembly/Index/value $Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression $Frontend/assembly/AST/Expressions/UnaryExpression/UnaryExpression $Frontend/assembly/AST/Expressions/Terms/Term/Term $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm $Frontend/assembly/AST/Expressions/Terms/Num/Num $Frontend/assembly/AST/Expressions/Terms/Identifier/Identifier $invalid
+                                            br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/array/Array<~lib/string/String> $"~lib/map/Map<~lib/string/String,i32>" $Frontend/assembly/Lexer/Scanner/Scanner $Frontend/assembly/Lexer/Token/Token $~lib/array/Array<Frontend/assembly/Lexer/Token/Token> $~lib/array/Array<i32> $Frontend/assembly/Parser/Parser/Parser $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode $Frontend/assembly/Parser/Expressions/Expression/Expression $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression $Frontend/assembly/Parser/Expressions/Terms/Term/Term $Frontend/assembly/Parser/Expressions/Terms/AbstractTerm/AbstractTerm $Frontend/assembly/Parser/Expressions/Terms/Num/Num $Frontend/assembly/Parser/Expressions/Terms/Identifier/Identifier $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void> $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor $Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> $Frontend/assembly/AST/ASTPrinter/ASTPrinter $Frontend/assembly/AST/ASTVisitor/ASTVisitor<void> $Frontend/assembly/Interpreter/Interpreter/Interpreter $Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64> $Frontend/assembly/Index/value $Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression $Frontend/assembly/AST/Expressions/UnaryExpression/UnaryExpression $Frontend/assembly/AST/Expressions/Terms/Term/Term $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm $Frontend/assembly/AST/Expressions/Terms/Num/Num $Frontend/assembly/AST/Expressions/Terms/Identifier/Identifier $invalid
                                            end
                                            return
                                           end
@@ -12245,7 +12347,7 @@
                            end
                            local.get $0
                            local.get $1
-                           call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression~visit
+                           call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression~visit
                            return
                           end
                           local.get $0
@@ -19403,7 +19505,7 @@
   else
    i32.const 13408
    i32.const 13536
-   i32.const 179
+   i32.const 206
    i32.const 49
    call $~lib/builtins/abort
    unreachable
@@ -19813,22 +19915,24 @@
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Parser/Parser#unaryExpression
   local.tee $left
   i32.store offset=4
@@ -19836,71 +19940,134 @@
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 1
+   i32.const 2
+   i32.const 9
+   i32.const 13680
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#unaryExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $left
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#constructor
+    local.tee $left
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $left
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 1
-  i32.const 2
-  i32.const 9
-  i32.const 13680
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/PowExpression/PowExpression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
+   local.get $left
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/PowExpression/PowExpression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 166
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#powerExpression
-   local.tee $right
-   i32.store offset=16
+   i32.const 32
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   local.get $8
+   return
   end
   i32.const 0
   local.get $left
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#constructor
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
  (func $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
@@ -20008,103 +20175,168 @@
   local.get $4
  )
  (func $Frontend/assembly/Parser/Parser/Parser#multExpression (param $this i32) (result i32)
-  (local $left i32)
+  (local $leftOrPrimary i32)
   (local $operator i32)
   (local $right i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Parser/Parser#powerExpression
-  local.tee $left
+  local.tee $leftOrPrimary
   i32.store offset=4
   i32.const 0
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 2
+   i32.const 2
+   i32.const 9
+   i32.const 13776
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#powerExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $leftOrPrimary
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor
+    local.tee $leftOrPrimary
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $leftOrPrimary
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 2
-  i32.const 2
-  i32.const 9
-  i32.const 13712
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
+   local.get $leftOrPrimary
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 148
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#multExpression
-   local.tee $right
-   i32.store offset=16
+   i32.const 32
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   local.get $8
+   return
   end
   i32.const 0
-  local.get $left
-  local.set $6
+  local.get $leftOrPrimary
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -20134,7 +20366,7 @@
   i32.store offset=4
   local.get $4
   i32.const 0
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:primaryOrLeft
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:primaryOrLeft
   local.get $this
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -20142,7 +20374,7 @@
   i32.store offset=4
   local.get $4
   i32.const 0
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:operator
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:operator
   local.get $this
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -20150,7 +20382,7 @@
   i32.store offset=4
   local.get $4
   i32.const 0
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:right
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:right
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.set $4
@@ -20173,7 +20405,7 @@
   local.get $4
   i32.store offset=8
   local.get $4
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:primaryOrLeft
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:primaryOrLeft
   local.get $this
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -20186,7 +20418,7 @@
   local.get $4
   i32.store offset=8
   local.get $4
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:operator
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:operator
   local.get $this
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -20199,7 +20431,7 @@
   local.get $4
   i32.store offset=8
   local.get $4
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#set:right
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#set:right
   local.get $this
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -20208,29 +20440,31 @@
   global.set $~lib/memory/__stack_pointer
   local.get $4
  )
- (func $Frontend/assembly/Parser/Parser/Parser#binaryExpression (param $this i32) (result i32)
+ (func $Frontend/assembly/Parser/Parser/Parser#additiveExpression (param $this i32) (result i32)
   (local $leftOrPrimary i32)
   (local $operator i32)
   (local $right i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Parser/Parser#multExpression
   local.tee $leftOrPrimary
   i32.store offset=4
@@ -20238,71 +20472,134 @@
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 2
+   i32.const 2
+   i32.const 9
+   i32.const 13808
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#multExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $leftOrPrimary
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor
+    local.tee $leftOrPrimary
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $leftOrPrimary
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 2
-  i32.const 2
-  i32.const 9
-  i32.const 13744
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
+   local.get $leftOrPrimary
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 130
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#binaryExpression
-   local.tee $right
-   i32.store offset=16
+   i32.const 32
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   local.get $8
+   return
   end
   i32.const 0
   local.get $leftOrPrimary
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#constructor
-  local.set $6
+  local.get $8
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
  (func $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
@@ -20416,121 +20713,159 @@
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#binaryExpression
+  local.get $8
+  call $Frontend/assembly/Parser/Parser/Parser#additiveExpression
   local.tee $leftOrPrimary
   i32.store offset=4
   i32.const 0
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 4
+   i32.const 2
+   i32.const 9
+   i32.const 13840
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#additiveExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $leftOrPrimary
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
+    local.tee $leftOrPrimary
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $leftOrPrimary
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 4
-  i32.const 2
-  i32.const 9
-  i32.const 13776
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#relationExpression
-   local.tee $right
-   i32.store offset=16
-   i32.const 0
    local.get $leftOrPrimary
-   local.set $6
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 82
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   local.get $operator
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=8
-   local.get $6
-   local.get $right
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=20
-   local.get $6
-   call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $6
+   local.get $8
    return
   end
   i32.const 0
   local.get $leftOrPrimary
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
  (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
@@ -20644,22 +20979,24 @@
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Parser/Parser#relationExpression
   local.tee $leftOrPrimary
   i32.store offset=4
@@ -20667,98 +21004,134 @@
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 2
+   i32.const 2
+   i32.const 9
+   i32.const 13888
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#relationExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $leftOrPrimary
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
+    local.tee $leftOrPrimary
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $leftOrPrimary
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 2
-  i32.const 2
-  i32.const 9
-  i32.const 13824
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
-   local.tee $right
-   i32.store offset=16
-   i32.const 0
    local.get $leftOrPrimary
-   local.set $6
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 64
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   local.get $operator
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=8
-   local.get $6
-   local.get $right
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=20
-   local.get $6
-   call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $6
+   local.get $8
    return
   end
   i32.const 0
   local.get $leftOrPrimary
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
  (func $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor (param $this i32) (param $primaryOrLeft i32) (param $operator i32) (param $right i32) (result i32)
@@ -20872,22 +21245,24 @@
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $this
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
   local.tee $leftOrPrimary
   i32.store offset=4
@@ -20895,98 +21270,134 @@
   local.set $operator
   i32.const 0
   local.set $right
-  local.get $this
-  local.set $6
+  loop $while-continue|0
+   local.get $this
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store
+   local.get $8
+   i32.const 2
+   i32.const 2
+   i32.const 9
+   i32.const 13920
+   call $~lib/rt/__newArray
+   local.set $8
+   global.get $~lib/memory/__stack_pointer
+   local.get $8
+   i32.store offset=8
+   local.get $8
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $operator
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $this
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
+    local.tee $right
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 0
+    local.get $leftOrPrimary
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store
+    local.get $8
+    local.get $operator
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=8
+    local.get $8
+    local.get $right
+    local.set $8
+    global.get $~lib/memory/__stack_pointer
+    local.get $8
+    i32.store offset=20
+    local.get $8
+    call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
+    local.tee $leftOrPrimary
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
   global.get $~lib/memory/__stack_pointer
+  local.get $leftOrPrimary
+  local.tee $6
+  i32.store offset=24
   local.get $6
-  i32.store
-  local.get $6
-  i32.const 2
-  i32.const 2
-  i32.const 9
-  i32.const 13856
-  call $~lib/rt/__newArray
-  local.set $6
-  global.get $~lib/memory/__stack_pointer
-  local.get $6
-  i32.store offset=8
-  local.get $6
-  call $Frontend/assembly/Parser/Parser/Parser#match
+  i32.eqz
+  if (result i32)
+   i32.const 0
+  else
+   local.get $6
+   call $~instanceof|Frontend/assembly/Parser/Expressions/Expression/Expression
+  end
   if
    global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $operator
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $this
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $Frontend/assembly/Parser/Parser/Parser#expression
-   local.tee $right
-   i32.store offset=16
-   i32.const 0
    local.get $leftOrPrimary
-   local.set $6
+   local.tee $7
+   i32.store offset=28
+   local.get $7
+   call $~instanceof|Frontend/assembly/Parser/Expressions/Expression/Expression
+   if (result i32)
+    local.get $7
+   else
+    i32.const 13712
+    i32.const 13536
+    i32.const 46
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $8
    global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   local.get $operator
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=8
-   local.get $6
-   local.get $right
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=20
-   local.get $6
-   call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $6
+   local.get $8
    return
   end
   i32.const 0
   local.get $leftOrPrimary
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store
-  local.get $6
+  local.get $8
   local.get $operator
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=8
-  local.get $6
+  local.get $8
   local.get $right
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   i32.store offset=20
-  local.get $6
+  local.get $8
   call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
-  local.set $6
+  local.set $8
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $6
+  local.get $8
   return
  )
  (func $Frontend/assembly/Parser/Parser/Parser#parse (param $this i32) (result i32)
@@ -21179,7 +21590,7 @@
   i32.const 0
   i32.const 2
   i32.const 4
-  i32.const 13888
+  i32.const 13952
   call $~lib/rt/__newArray
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -21285,7 +21696,7 @@
   i32.const 0
   i32.const 2
   i32.const 4
-  i32.const 13920
+  i32.const 13984
   call $~lib/rt/__newArray
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -21620,7 +22031,7 @@
   i32.const 0
   i32.const 72
   memory.fill
-  i32.const 15408
+  i32.const 15472
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -21646,7 +22057,7 @@
   local.get $2
   i32.store offset=48
   local.get $2
-  i32.const 15456
+  i32.const 15520
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -21676,7 +22087,7 @@
   local.get $2
   i32.store offset=32
   local.get $2
-  i32.const 15504
+  i32.const 15568
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -21718,7 +22129,7 @@
     local.get $1
    else
     i32.const 13408
-    i32.const 15568
+    i32.const 15632
     i32.const 21
     i32.const 139
     call $~lib/builtins/abort
@@ -21744,7 +22155,7 @@
   local.get $2
   i32.store offset=16
   local.get $2
-  i32.const 15664
+  i32.const 15728
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -21809,7 +22220,7 @@
   i32.const 36
   memory.fill
   global.get $~lib/memory/__stack_pointer
-  i32.const 13952
+  i32.const 14016
   local.tee $string
   i32.store
   global.get $~lib/memory/__stack_pointer
@@ -21819,7 +22230,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 13984
+  i32.const 14048
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -21925,7 +22336,7 @@
      local.get $7
      i32.store offset=4
      local.get $7
-     i32.const 14032
+     i32.const 14096
      local.set $7
      global.get $~lib/memory/__stack_pointer
      local.get $7
@@ -21949,7 +22360,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14064
+  i32.const 14128
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -21965,7 +22376,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14096
+  i32.const 14160
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22071,7 +22482,7 @@
      local.get $7
      i32.store offset=4
      local.get $7
-     i32.const 14032
+     i32.const 14096
      local.set $7
      global.get $~lib/memory/__stack_pointer
      local.get $7
@@ -22095,7 +22506,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14064
+  i32.const 14128
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22111,7 +22522,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14144
+  i32.const 14208
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22137,7 +22548,7 @@
   local.get $7
   i32.store offset=12
   local.get $7
-  i32.const 15328
+  i32.const 15392
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22159,7 +22570,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 15360
+  i32.const 15424
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22247,7 +22658,7 @@
      local.get $7
      i32.store offset=4
      local.get $7
-     i32.const 14032
+     i32.const 14096
      local.set $7
      global.get $~lib/memory/__stack_pointer
      local.get $7
@@ -22271,7 +22682,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14064
+  i32.const 14128
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22287,7 +22698,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 15712
+  i32.const 15776
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22393,7 +22804,7 @@
      local.get $7
      i32.store offset=4
      local.get $7
-     i32.const 14032
+     i32.const 14096
      local.set $7
      global.get $~lib/memory/__stack_pointer
      local.get $7
@@ -22417,7 +22828,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 14064
+  i32.const 14128
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22433,7 +22844,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 15776
+  i32.const 15840
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22539,7 +22950,7 @@
      local.get $7
      i32.store offset=4
      local.get $7
-     i32.const 14032
+     i32.const 14096
      local.set $7
      global.get $~lib/memory/__stack_pointer
      local.get $7
@@ -22563,7 +22974,7 @@
   local.get $7
   i32.store offset=4
   local.get $7
-  i32.const 15840
+  i32.const 15904
   local.set $7
   global.get $~lib/memory/__stack_pointer
   local.get $7
@@ -22805,35 +23216,6 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $11
-  return
- )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void> (param $this i32) (param $visitor i32)
-  (local $2 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  local.get $visitor
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  local.get $this
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=4
-  local.get $2
-  call $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
   return
  )
  (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void> (param $this i32) (param $visitor i32)
@@ -23097,7 +23479,7 @@
   global.set $~lib/memory/__stack_pointer
   return
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $this i32) (param $visitor i32) (result i32)
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#accept<void> (param $this i32) (param $visitor i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 8
@@ -23119,13 +23501,11 @@
   local.get $2
   i32.store offset=4
   local.get $2
-  call $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override
-  local.set $2
+  call $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override
   global.get $~lib/memory/__stack_pointer
   i32.const 8
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $2
   return
  )
  (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $this i32) (param $visitor i32) (result i32)
@@ -23407,6 +23787,37 @@
   local.get $2
   return
  )
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $this i32) (param $visitor i32) (result i32)
+  (local $2 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 8
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i64.const 0
+  i64.store
+  local.get $visitor
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store
+  local.get $2
+  local.get $this
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=4
+  local.get $2
+  call $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  i32.const 8
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $2
+  return
+ )
  (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace (param $this i32) (param $num i32) (result i32)
   (local $space i32)
   (local $i i32)
@@ -23440,7 +23851,7 @@
     local.get $4
     i32.store offset=4
     local.get $4
-    i32.const 16112
+    i32.const 16176
     local.set $4
     global.get $~lib/memory/__stack_pointer
     local.get $4
@@ -23464,282 +23875,6 @@
   global.set $~lib/memory/__stack_pointer
   local.get $4
   return
- )
- (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression (param $this i32) (param $expression i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 52
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 52
-  memory.fill
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=4
-  local.get $5
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-  i32.const 1
-  i32.add
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
-  local.get $expression
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=8
-  local.get $5
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:primaryOrLeft
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=4
-  local.get $5
-  call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void>
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=4
-  local.get $5
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-  i32.const 1
-  i32.sub
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
-  local.get $expression
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store
-  local.get $5
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:right
-  i32.const 0
-  i32.ne
-  if
-   local.get $this
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store
-   local.get $5
-   local.get $this
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=4
-   local.get $5
-   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-   i32.const 1
-   i32.add
-   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
-   global.get $~lib/memory/__stack_pointer
-   local.get $expression
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=8
-   local.get $5
-   call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:right
-   local.tee $2
-   i32.store offset=12
-   local.get $2
-   if (result i32)
-    local.get $2
-   else
-    i32.const 13408
-    i32.const 16000
-    i32.const 35
-    i32.const 13
-    call $~lib/builtins/abort
-    unreachable
-   end
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store
-   local.get $5
-   local.get $this
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=4
-   local.get $5
-   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
-   local.get $this
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store
-   local.get $5
-   local.get $this
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=4
-   local.get $5
-   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-   i32.const 1
-   i32.sub
-   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
-  end
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=8
-  local.get $5
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:tree
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=36
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=40
-  local.get $5
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=28
-  local.get $5
-  local.get $this
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=36
-  local.get $5
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
-  i32.const 10
-  call $~lib/number/I32#toString
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=32
-  local.get $5
-  call $~lib/string/String.__concat
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=20
-  local.get $5
-  i32.const 16144
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=24
-  local.get $5
-  call $~lib/string/String.__concat
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=8
-  local.get $5
-  local.get $expression
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=20
-  local.get $5
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:operator
-  i32.const 0
-  i32.ne
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   local.get $expression
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=24
-   local.get $5
-   call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:operator
-   local.tee $3
-   i32.store offset=44
-   local.get $3
-   if (result i32)
-    local.get $3
-   else
-    i32.const 13408
-    i32.const 16000
-    i32.const 38
-    i32.const 134
-    call $~lib/builtins/abort
-    unreachable
-   end
-   local.set $5
-   global.get $~lib/memory/__stack_pointer
-   local.get $5
-   i32.store offset=20
-   local.get $5
-   call $Frontend/assembly/Lexer/Token/Token#get:literal
-   local.tee $4
-   i32.store offset=48
-   local.get $4
-   if (result i32)
-    local.get $4
-   else
-    i32.const 13408
-    i32.const 16000
-    i32.const 38
-    i32.const 134
-    call $~lib/builtins/abort
-    unreachable
-   end
-  else
-   i32.const 8016
-  end
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=16
-  local.get $5
-  call $~lib/string/String.__concat
-  local.set $5
-  global.get $~lib/memory/__stack_pointer
-  local.get $5
-  i32.store offset=4
-  local.get $5
-  call $~lib/array/Array<~lib/string/String>#push
-  drop
-  global.get $~lib/memory/__stack_pointer
-  i32.const 52
-  i32.add
-  global.set $~lib/memory/__stack_pointer
  )
  (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression (param $this i32) (param $expression i32)
   (local $2 i32)
@@ -23789,7 +23924,7 @@
   local.get $5
   i32.store offset=4
   local.get $5
-  call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   local.get $this
   local.set $5
   global.get $~lib/memory/__stack_pointer
@@ -23847,7 +23982,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 47
     i32.const 13
     call $~lib/builtins/abort
@@ -23971,7 +24106,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 50
     i32.const 136
     call $~lib/builtins/abort
@@ -23990,7 +24125,7 @@
     local.get $4
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 50
     i32.const 136
     call $~lib/builtins/abort
@@ -24065,7 +24200,7 @@
   local.get $5
   i32.store offset=4
   local.get $5
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   local.get $this
   local.set $5
   global.get $~lib/memory/__stack_pointer
@@ -24123,7 +24258,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 87
     i32.const 13
     call $~lib/builtins/abort
@@ -24247,7 +24382,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 90
     i32.const 138
     call $~lib/builtins/abort
@@ -24266,7 +24401,7 @@
     local.get $4
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 90
     i32.const 138
     call $~lib/builtins/abort
@@ -24341,7 +24476,7 @@
   local.get $5
   i32.store offset=4
   local.get $5
-  call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   local.get $this
   local.set $5
   global.get $~lib/memory/__stack_pointer
@@ -24399,7 +24534,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 71
     i32.const 13
     call $~lib/builtins/abort
@@ -24523,7 +24658,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 74
     i32.const 142
     call $~lib/builtins/abort
@@ -24542,7 +24677,7 @@
     local.get $4
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 74
     i32.const 142
     call $~lib/builtins/abort
@@ -24722,7 +24857,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 101
     i32.const 133
     call $~lib/builtins/abort
@@ -24741,7 +24876,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 101
     i32.const 133
     call $~lib/builtins/abort
@@ -24963,7 +25098,7 @@
    local.get $2
   else
    i32.const 13408
-   i32.const 16000
+   i32.const 16064
    i32.const 78
    i32.const 92
    call $~lib/builtins/abort
@@ -25083,7 +25218,7 @@
    local.get $2
   else
    i32.const 13408
-   i32.const 16000
+   i32.const 16064
    i32.const 105
    i32.const 96
    call $~lib/builtins/abort
@@ -25155,7 +25290,7 @@
   local.get $5
   i32.store offset=4
   local.get $5
-  call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   local.get $this
   local.set $5
   global.get $~lib/memory/__stack_pointer
@@ -25213,7 +25348,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 59
     i32.const 13
     call $~lib/builtins/abort
@@ -25337,7 +25472,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 62
     i32.const 128
     call $~lib/builtins/abort
@@ -25356,7 +25491,7 @@
     local.get $4
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 62
     i32.const 128
     call $~lib/builtins/abort
@@ -25431,7 +25566,7 @@
   local.get $5
   i32.store offset=4
   local.get $5
-  call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   local.get $this
   local.set $5
   global.get $~lib/memory/__stack_pointer
@@ -25489,7 +25624,7 @@
     local.get $2
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 23
     i32.const 13
     call $~lib/builtins/abort
@@ -25613,7 +25748,7 @@
     local.get $3
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 26
     i32.const 131
     call $~lib/builtins/abort
@@ -25632,9 +25767,285 @@
     local.get $4
    else
     i32.const 13408
-    i32.const 16000
+    i32.const 16064
     i32.const 26
     i32.const 131
+    call $~lib/builtins/abort
+    unreachable
+   end
+  else
+   i32.const 8016
+  end
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=16
+  local.get $5
+  call $~lib/string/String.__concat
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=4
+  local.get $5
+  call $~lib/array/Array<~lib/string/String>#push
+  drop
+  global.get $~lib/memory/__stack_pointer
+  i32.const 52
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+ )
+ (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression (param $this i32) (param $expression i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 52
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 52
+  memory.fill
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=4
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+  i32.const 1
+  i32.add
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
+  local.get $expression
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=8
+  local.get $5
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:primaryOrLeft
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=4
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=4
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+  i32.const 1
+  i32.sub
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
+  local.get $expression
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store
+  local.get $5
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:right
+  i32.const 0
+  i32.ne
+  if
+   local.get $this
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store
+   local.get $5
+   local.get $this
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=4
+   local.get $5
+   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+   i32.const 1
+   i32.add
+   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
+   global.get $~lib/memory/__stack_pointer
+   local.get $expression
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=8
+   local.get $5
+   call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:right
+   local.tee $2
+   i32.store offset=12
+   local.get $2
+   if (result i32)
+    local.get $2
+   else
+    i32.const 13408
+    i32.const 16064
+    i32.const 35
+    i32.const 13
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store
+   local.get $5
+   local.get $this
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=4
+   local.get $5
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+   local.get $this
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store
+   local.get $5
+   local.get $this
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=4
+   local.get $5
+   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+   i32.const 1
+   i32.sub
+   call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#set:number
+  end
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=8
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:tree
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=36
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=40
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=28
+  local.get $5
+  local.get $this
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=36
+  local.get $5
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#get:number
+  i32.const 10
+  call $~lib/number/I32#toString
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=32
+  local.get $5
+  call $~lib/string/String.__concat
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=20
+  local.get $5
+  i32.const 16752
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=24
+  local.get $5
+  call $~lib/string/String.__concat
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=8
+  local.get $5
+  local.get $expression
+  local.set $5
+  global.get $~lib/memory/__stack_pointer
+  local.get $5
+  i32.store offset=20
+  local.get $5
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:operator
+  i32.const 0
+  i32.ne
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   global.get $~lib/memory/__stack_pointer
+   local.get $expression
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=24
+   local.get $5
+   call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:operator
+   local.tee $3
+   i32.store offset=44
+   local.get $3
+   if (result i32)
+    local.get $3
+   else
+    i32.const 13408
+    i32.const 16064
+    i32.const 38
+    i32.const 134
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.set $5
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=20
+   local.get $5
+   call $Frontend/assembly/Lexer/Token/Token#get:literal
+   local.tee $4
+   i32.store offset=48
+   local.get $4
+   if (result i32)
+    local.get $4
+   else
+    i32.const 13408
+    i32.const 16064
+    i32.const 38
+    i32.const 134
     call $~lib/builtins/abort
     unreachable
    end
@@ -25839,217 +26250,6 @@
   global.set $~lib/memory/__stack_pointer
   local.get $4
  )
- (func $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitBinaryExpression (param $this i32) (param $expression i32) (result i32)
-  (local $2 i32)
-  (local $left i32)
-  (local $4 i32)
-  (local $5 i32)
-  (local $right i32)
-  (local $7 i32)
-  (local $8 i32)
-  (local $9 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 48
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 48
-  memory.fill
-  local.get $expression
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store
-  local.get $9
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:right
-  i32.const 0
-  i32.eq
-  if
-   local.get $expression
-   local.set $9
-   global.get $~lib/memory/__stack_pointer
-   local.get $9
-   i32.store offset=8
-   local.get $9
-   call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:primaryOrLeft
-   local.set $9
-   global.get $~lib/memory/__stack_pointer
-   local.get $9
-   i32.store
-   local.get $9
-   local.get $this
-   local.set $9
-   global.get $~lib/memory/__stack_pointer
-   local.get $9
-   i32.store offset=4
-   local.get $9
-   call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-   local.set $9
-   global.get $~lib/memory/__stack_pointer
-   i32.const 48
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $9
-   return
-  end
-  global.get $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  local.get $expression
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=8
-  local.get $9
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:primaryOrLeft
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store
-  local.get $9
-  local.get $this
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=4
-  local.get $9
-  call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-  local.tee $2
-  i32.store offset=12
-  local.get $2
-  call $~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression
-  if (result i32)
-   local.get $2
-  else
-   i32.const 16752
-   i32.const 16816
-   i32.const 35
-   i32.const 40
-   call $~lib/builtins/abort
-   unreachable
-  end
-  local.tee $left
-  i32.store offset=16
-  global.get $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  local.get $expression
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=8
-  local.get $9
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:right
-  local.tee $4
-  i32.store offset=20
-  local.get $4
-  if (result i32)
-   local.get $4
-  else
-   i32.const 13408
-   i32.const 16816
-   i32.const 36
-   i32.const 41
-   call $~lib/builtins/abort
-   unreachable
-  end
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store
-  local.get $9
-  local.get $this
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=4
-  local.get $9
-  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-  local.tee $5
-  i32.store offset=24
-  local.get $5
-  call $~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression
-  if (result i32)
-   local.get $5
-  else
-   i32.const 16752
-   i32.const 16816
-   i32.const 36
-   i32.const 41
-   call $~lib/builtins/abort
-   unreachable
-  end
-  local.tee $right
-  i32.store offset=28
-  i32.const 0
-  local.get $left
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store
-  local.get $9
-  global.get $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  local.get $expression
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=36
-  local.get $9
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#get:operator
-  local.tee $7
-  i32.store offset=40
-  local.get $7
-  if (result i32)
-   local.get $7
-  else
-   i32.const 13408
-   i32.const 16816
-   i32.const 37
-   i32.const 46
-   call $~lib/builtins/abort
-   unreachable
-  end
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=32
-  local.get $9
-  call $Frontend/assembly/Lexer/Token/Token#get:literal
-  local.tee $8
-  i32.store offset=44
-  local.get $8
-  if (result i32)
-   local.get $8
-  else
-   i32.const 13408
-   i32.const 16816
-   i32.const 37
-   i32.const 46
-   call $~lib/builtins/abort
-   unreachable
-  end
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=4
-  local.get $9
-  local.get $right
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  local.get $9
-  i32.store offset=8
-  local.get $9
-  call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-  local.set $9
-  global.get $~lib/memory/__stack_pointer
-  i32.const 48
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $9
-  return
- )
  (func $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression (param $this i32) (param $expression i32) (result i32)
   (local $2 i32)
   (local $left i32)
@@ -26096,7 +26296,7 @@
    local.get $9
    i32.store offset=4
    local.get $9
-   call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
    local.set $9
    global.get $~lib/memory/__stack_pointer
    i32.const 48
@@ -26125,7 +26325,7 @@
   local.get $9
   i32.store offset=4
   local.get $9
-  call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
   local.tee $2
   i32.store offset=12
   local.get $2
@@ -26133,7 +26333,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 44
    i32.const 40
@@ -26184,7 +26384,7 @@
   if (result i32)
    local.get $5
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 45
    i32.const 41
@@ -26307,7 +26507,7 @@
    local.get $9
    i32.store offset=4
    local.get $9
-   call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
    local.set $9
    global.get $~lib/memory/__stack_pointer
    i32.const 48
@@ -26336,7 +26536,7 @@
   local.get $9
   i32.store offset=4
   local.get $9
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
   local.tee $2
   i32.store offset=12
   local.get $2
@@ -26344,7 +26544,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 80
    i32.const 40
@@ -26395,7 +26595,7 @@
   if (result i32)
    local.get $5
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 81
    i32.const 41
@@ -26518,7 +26718,7 @@
    local.get $9
    i32.store offset=4
    local.get $9
-   call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
    local.set $9
    global.get $~lib/memory/__stack_pointer
    i32.const 48
@@ -26547,7 +26747,7 @@
   local.get $9
   i32.store offset=4
   local.get $9
-  call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
   local.tee $2
   i32.store offset=12
   local.get $2
@@ -26555,7 +26755,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 67
    i32.const 40
@@ -26606,7 +26806,7 @@
   if (result i32)
    local.get $5
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 68
    i32.const 41
@@ -26846,7 +27046,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 93
    i32.const 50
@@ -27331,7 +27531,7 @@
    local.get $9
    i32.store offset=4
    local.get $9
-   call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
    local.set $9
    global.get $~lib/memory/__stack_pointer
    i32.const 48
@@ -27360,7 +27560,7 @@
   local.get $9
   i32.store offset=4
   local.get $9
-  call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
   local.tee $2
   i32.store offset=12
   local.get $2
@@ -27368,7 +27568,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 53
    i32.const 40
@@ -27419,7 +27619,7 @@
   if (result i32)
    local.get $5
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 54
    i32.const 41
@@ -27542,7 +27742,7 @@
    local.get $9
    i32.store offset=4
    local.get $9
-   call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
    local.set $9
    global.get $~lib/memory/__stack_pointer
    i32.const 48
@@ -27571,7 +27771,7 @@
   local.get $9
   i32.store offset=4
   local.get $9
-  call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
   local.tee $2
   i32.store offset=12
   local.get $2
@@ -27579,7 +27779,7 @@
   if (result i32)
    local.get $2
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 26
    i32.const 40
@@ -27630,7 +27830,7 @@
   if (result i32)
    local.get $5
   else
-   i32.const 16752
+   i32.const 13712
    i32.const 16816
    i32.const 27
    i32.const 41
@@ -27683,6 +27883,217 @@
    i32.const 13408
    i32.const 16816
    i32.const 28
+   i32.const 46
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=4
+  local.get $9
+  local.get $right
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=8
+  local.get $9
+  call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  i32.const 48
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $9
+  return
+ )
+ (func $Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitBinaryExpression (param $this i32) (param $expression i32) (result i32)
+  (local $2 i32)
+  (local $left i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $right i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 48
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 48
+  memory.fill
+  local.get $expression
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store
+  local.get $9
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:right
+  i32.const 0
+  i32.eq
+  if
+   local.get $expression
+   local.set $9
+   global.get $~lib/memory/__stack_pointer
+   local.get $9
+   i32.store offset=8
+   local.get $9
+   call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:primaryOrLeft
+   local.set $9
+   global.get $~lib/memory/__stack_pointer
+   local.get $9
+   i32.store
+   local.get $9
+   local.get $this
+   local.set $9
+   global.get $~lib/memory/__stack_pointer
+   local.get $9
+   i32.store offset=4
+   local.get $9
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+   local.set $9
+   global.get $~lib/memory/__stack_pointer
+   i32.const 48
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   local.get $9
+   return
+  end
+  global.get $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  local.get $expression
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=8
+  local.get $9
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:primaryOrLeft
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store
+  local.get $9
+  local.get $this
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=4
+  local.get $9
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+  local.tee $2
+  i32.store offset=12
+  local.get $2
+  call $~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression
+  if (result i32)
+   local.get $2
+  else
+   i32.const 13712
+   i32.const 16816
+   i32.const 35
+   i32.const 40
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.tee $left
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  local.get $expression
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=8
+  local.get $9
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:right
+  local.tee $4
+  i32.store offset=20
+  local.get $4
+  if (result i32)
+   local.get $4
+  else
+   i32.const 13408
+   i32.const 16816
+   i32.const 36
+   i32.const 41
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store
+  local.get $9
+  local.get $this
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=4
+  local.get $9
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+  local.tee $5
+  i32.store offset=24
+  local.get $5
+  call $~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression
+  if (result i32)
+   local.get $5
+  else
+   i32.const 13712
+   i32.const 16816
+   i32.const 36
+   i32.const 41
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.tee $right
+  i32.store offset=28
+  i32.const 0
+  local.get $left
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store
+  local.get $9
+  global.get $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  local.get $expression
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=36
+  local.get $9
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#get:operator
+  local.tee $7
+  i32.store offset=40
+  local.get $7
+  if (result i32)
+   local.get $7
+  else
+   i32.const 13408
+   i32.const 16816
+   i32.const 37
+   i32.const 46
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.set $9
+  global.get $~lib/memory/__stack_pointer
+  local.get $9
+  i32.store offset=32
+  local.get $9
+  call $Frontend/assembly/Lexer/Token/Token#get:literal
+  local.tee $8
+  i32.store offset=44
+  local.get $8
+  if (result i32)
+   local.get $8
+  else
+   i32.const 13408
+   i32.const 16816
+   i32.const 37
    i32.const 46
    call $~lib/builtins/abort
    unreachable
@@ -28449,7 +28860,7 @@
   local.get $2
   i32.store offset=16
   local.get $2
-  i32.const 16144
+  i32.const 16752
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -31449,7 +31860,7 @@
   f64.const 0
   f64.eq
   if
-   i32.const 14192
+   i32.const 14256
    local.set $3
    global.get $~lib/memory/__stack_pointer
    i32.const 4
@@ -31469,7 +31880,7 @@
    local.get $value
    f64.ne
    if
-    i32.const 14224
+    i32.const 14288
     local.set $3
     global.get $~lib/memory/__stack_pointer
     i32.const 4
@@ -31478,8 +31889,8 @@
     local.get $3
     return
    end
-   i32.const 14256
-   i32.const 14304
+   i32.const 14320
+   i32.const 14368
    local.get $value
    f64.const 0
    f64.lt
@@ -31492,7 +31903,7 @@
    local.get $3
    return
   end
-  i32.const 14336
+  i32.const 14400
   local.get $value
   call $~lib/util/number/dtoa_core
   i32.const 1
@@ -31505,7 +31916,7 @@
   local.tee $result
   i32.store
   local.get $result
-  i32.const 14336
+  i32.const 14400
   local.get $size
   memory.copy
   local.get $result

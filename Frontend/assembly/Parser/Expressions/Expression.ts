@@ -4,11 +4,11 @@ import {AbstractExpression} from "./AbstractExpression";
 import {EqualityExpression} from "./EqualityExpression";
 
 export class Expression extends AbstractExpression {
-    primaryOrLeft: EqualityExpression;
+    primaryOrLeft: AbstractExpression;
     operator: Token | null;
     right: AbstractExpression | null;
 
-    constructor(primaryOrLeft: EqualityExpression, operator: Token | null, right: AbstractExpression | null) {
+    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null) {
         super();
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
@@ -18,5 +18,4 @@ export class Expression extends AbstractExpression {
     accept<T>(visitor: ParseVisitor<T>): T {
         return visitor.visitExpression(this);
     }
-
 }

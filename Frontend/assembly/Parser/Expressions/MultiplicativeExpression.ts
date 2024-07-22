@@ -7,11 +7,11 @@ import {PowExpression} from "./PowExpression";
 
 export class MultiplicativeExpression extends AbstractExpression
 {
-    primaryOrLeft: PowExpression;
+    primaryOrLeft: AbstractExpression;
     operator: Token | null;
     right: AbstractExpression | null;
 
-    constructor(primaryOrLeft: PowExpression, operator: Token | null, right: AbstractExpression | null) {
+    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null) {
         super();
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
@@ -22,5 +22,4 @@ export class MultiplicativeExpression extends AbstractExpression
     {
         return visitor.visitMultiplicativeExpression(this);
     }
-
 }

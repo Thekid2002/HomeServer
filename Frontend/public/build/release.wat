@@ -1,10 +1,10 @@
 (module
  (type $0 (func (param i32) (result i32)))
- (type $1 (func (param i32 i32) (result i32)))
- (type $2 (func (param i32 i32)))
- (type $3 (func (param f64) (result f64)))
- (type $4 (func (param i32)))
- (type $5 (func (param i32 i32 i32) (result i32)))
+ (type $1 (func (param i32 i32)))
+ (type $2 (func (param i32 i32) (result i32)))
+ (type $3 (func (param i32 i32 i32) (result i32)))
+ (type $4 (func (param f64) (result f64)))
+ (type $5 (func (param i32)))
  (type $6 (func))
  (type $7 (func (param i32 i32 i32)))
  (type $8 (func (param f64 f64) (result f64)))
@@ -453,73 +453,73 @@
  (data $207.1 (i32.const 14648) "\02\00\00\00\14\00\00\00 \00a\00t\00 \00l\00i\00n\00e\00:\00 ")
  (data $208 (i32.const 14684) "\1c")
  (data $208.1 (i32.const 14696) "\01\00\00\00\04\00\00\00\0b")
- (data $209 (i32.const 14716) "\1c")
- (data $209.1 (i32.const 14728) "\01\00\00\00\08\00\00\00\t\00\00\00\n")
- (data $210 (i32.const 14748) "\1c")
- (data $210.1 (i32.const 14760) "\01\00\00\00\08\00\00\00\06\00\00\00\07")
- (data $211 (i32.const 14780) ",")
- (data $211.1 (i32.const 14792) "\01\00\00\00\10\00\00\00\10\00\00\00\11\00\00\00\12\00\00\00\13")
- (data $212 (i32.const 14828) "\1c")
- (data $212.1 (i32.const 14840) "\01\00\00\00\08\00\00\00\r\00\00\00\0f")
- (data $213 (i32.const 14860) "\1c")
- (data $213.1 (i32.const 14872) "\01\00\00\00\08\00\00\00\1e\00\00\00&")
- (data $214 (i32.const 14892) "\1c")
- (data $214.1 (i32.const 14904) "\01")
- (data $215 (i32.const 14924) "\1c")
- (data $215.1 (i32.const 14936) "\01")
- (data $216 (i32.const 14956) "\1c")
- (data $216.1 (i32.const 14968) "\02\00\00\00\04\00\00\00{\00\n")
- (data $217 (i32.const 14988) ",")
- (data $217.1 (i32.const 15000) "\02\00\00\00\14\00\00\00\"\00p\00a\00r\00s\00e\00\"\00:\00 \00[")
- (data $218 (i32.const 15036) "\1c")
- (data $218.1 (i32.const 15048) "\02\00\00\00\04\00\00\00,\00 ")
- (data $219 (i32.const 15068) "\1c")
- (data $219.1 (i32.const 15080) "\02\00\00\00\06\00\00\00]\00,\00\n")
- (data $220 (i32.const 15100) ",")
- (data $220.1 (i32.const 15112) "\02\00\00\00\10\00\00\00\"\00a\00s\00t\00\"\00:\00 \00[")
- (data $221 (i32.const 15148) ",")
- (data $221.1 (i32.const 15160) "\02\00\00\00\12\00\00\00\"\00v\00a\00l\00u\00e\00\"\00:\00 ")
- (data $222 (i32.const 15196) "\1c")
- (data $222.1 (i32.const 15208) "\02\00\00\00\06\00\00\000\00.\000")
- (data $223 (i32.const 15228) "\1c")
- (data $223.1 (i32.const 15240) "\02\00\00\00\06\00\00\00N\00a\00N")
- (data $224 (i32.const 15260) ",")
- (data $224.1 (i32.const 15272) "\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y")
- (data $225 (i32.const 15308) ",")
- (data $225.1 (i32.const 15320) "\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y")
- (data $227 (i32.const 15416) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
- (data $228 (i32.const 16112) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
- (data $229 (i32.const 16288) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
- (data $230 (i32.const 16332) "\1c")
- (data $230.1 (i32.const 16344) "\02\00\00\00\04\00\00\00,\00\n")
- (data $231 (i32.const 16364) ",")
- (data $231.1 (i32.const 16376) "\02\00\00\00\16\00\00\00\"\00t\00o\00k\00e\00n\00s\00\"\00:\00 \00[")
- (data $232 (i32.const 16412) ",")
- (data $232.1 (i32.const 16424) "\02\00\00\00\14\00\00\00{\00 \00\"\00t\00y\00p\00e\00\"\00:\00 ")
- (data $233 (i32.const 16460) ",")
- (data $233.1 (i32.const 16472) "\02\00\00\00\1a\00\00\00,\00 \00\"\00l\00e\00x\00e\00m\00e\00\"\00:\00 \00\"")
- (data $234 (i32.const 16508) "<")
- (data $234.1 (i32.const 16520) "\02\00\00\00\1e\00\00\00\"\00,\00 \00\"\00l\00i\00t\00e\00r\00a\00l\00\"\00:\00 \00\"")
- (data $235 (i32.const 16572) "\\")
- (data $235.1 (i32.const 16584) "\02\00\00\00@\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00L\00e\00x\00e\00r\00/\00T\00o\00k\00e\00n\00.\00t\00s")
- (data $236 (i32.const 16668) ",")
- (data $236.1 (i32.const 16680) "\02\00\00\00\16\00\00\00\"\00,\00 \00\"\00l\00i\00n\00e\00\"\00:\00 ")
- (data $237 (i32.const 16716) "<")
- (data $237.1 (i32.const 16728) "\02\00\00\00 \00\00\00\"\00l\00e\00x\00e\00r\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[")
+ (data $209 (i32.const 14716) "<")
+ (data $209.1 (i32.const 14728) "\02\00\00\00 \00\00\00i\00n\00v\00a\00l\00i\00d\00 \00d\00o\00w\00n\00c\00a\00s\00t")
+ (data $210 (i32.const 14780) "\1c")
+ (data $210.1 (i32.const 14792) "\01\00\00\00\08\00\00\00\t\00\00\00\n")
+ (data $211 (i32.const 14812) "\1c")
+ (data $211.1 (i32.const 14824) "\01\00\00\00\08\00\00\00\06\00\00\00\07")
+ (data $212 (i32.const 14844) ",")
+ (data $212.1 (i32.const 14856) "\01\00\00\00\10\00\00\00\10\00\00\00\11\00\00\00\12\00\00\00\13")
+ (data $213 (i32.const 14892) "\1c")
+ (data $213.1 (i32.const 14904) "\01\00\00\00\08\00\00\00\r\00\00\00\0f")
+ (data $214 (i32.const 14924) "\1c")
+ (data $214.1 (i32.const 14936) "\01\00\00\00\08\00\00\00\1e\00\00\00&")
+ (data $215 (i32.const 14956) "\1c")
+ (data $215.1 (i32.const 14968) "\01")
+ (data $216 (i32.const 14988) "\1c")
+ (data $216.1 (i32.const 15000) "\01")
+ (data $217 (i32.const 15020) "\1c")
+ (data $217.1 (i32.const 15032) "\02\00\00\00\04\00\00\00{\00\n")
+ (data $218 (i32.const 15052) ",")
+ (data $218.1 (i32.const 15064) "\02\00\00\00\14\00\00\00\"\00p\00a\00r\00s\00e\00\"\00:\00 \00[")
+ (data $219 (i32.const 15100) "\1c")
+ (data $219.1 (i32.const 15112) "\02\00\00\00\04\00\00\00,\00 ")
+ (data $220 (i32.const 15132) "\1c")
+ (data $220.1 (i32.const 15144) "\02\00\00\00\06\00\00\00]\00,\00\n")
+ (data $221 (i32.const 15164) ",")
+ (data $221.1 (i32.const 15176) "\02\00\00\00\10\00\00\00\"\00a\00s\00t\00\"\00:\00 \00[")
+ (data $222 (i32.const 15212) ",")
+ (data $222.1 (i32.const 15224) "\02\00\00\00\12\00\00\00\"\00v\00a\00l\00u\00e\00\"\00:\00 ")
+ (data $223 (i32.const 15260) "\1c")
+ (data $223.1 (i32.const 15272) "\02\00\00\00\06\00\00\000\00.\000")
+ (data $224 (i32.const 15292) "\1c")
+ (data $224.1 (i32.const 15304) "\02\00\00\00\06\00\00\00N\00a\00N")
+ (data $225 (i32.const 15324) ",")
+ (data $225.1 (i32.const 15336) "\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y")
+ (data $226 (i32.const 15372) ",")
+ (data $226.1 (i32.const 15384) "\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y")
+ (data $228 (i32.const 15480) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
+ (data $229 (i32.const 16176) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
+ (data $230 (i32.const 16352) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
+ (data $231 (i32.const 16396) "\1c")
+ (data $231.1 (i32.const 16408) "\02\00\00\00\04\00\00\00,\00\n")
+ (data $232 (i32.const 16428) ",")
+ (data $232.1 (i32.const 16440) "\02\00\00\00\16\00\00\00\"\00t\00o\00k\00e\00n\00s\00\"\00:\00 \00[")
+ (data $233 (i32.const 16476) ",")
+ (data $233.1 (i32.const 16488) "\02\00\00\00\14\00\00\00{\00 \00\"\00t\00y\00p\00e\00\"\00:\00 ")
+ (data $234 (i32.const 16524) ",")
+ (data $234.1 (i32.const 16536) "\02\00\00\00\1a\00\00\00,\00 \00\"\00l\00e\00x\00e\00m\00e\00\"\00:\00 \00\"")
+ (data $235 (i32.const 16572) "<")
+ (data $235.1 (i32.const 16584) "\02\00\00\00\1e\00\00\00\"\00,\00 \00\"\00l\00i\00t\00e\00r\00a\00l\00\"\00:\00 \00\"")
+ (data $236 (i32.const 16636) "\\")
+ (data $236.1 (i32.const 16648) "\02\00\00\00@\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00L\00e\00x\00e\00r\00/\00T\00o\00k\00e\00n\00.\00t\00s")
+ (data $237 (i32.const 16732) ",")
+ (data $237.1 (i32.const 16744) "\02\00\00\00\16\00\00\00\"\00,\00 \00\"\00l\00i\00n\00e\00\"\00:\00 ")
  (data $238 (i32.const 16780) "<")
- (data $238.1 (i32.const 16792) "\02\00\00\00 \00\00\00\"\00p\00a\00r\00s\00e\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[")
- (data $239 (i32.const 16844) "\1c")
- (data $239.1 (i32.const 16856) "\02\00\00\00\04\00\00\00]\00\n")
- (data $240 (i32.const 16876) "<")
- (data $240.1 (i32.const 16888) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
+ (data $238.1 (i32.const 16792) "\02\00\00\00 \00\00\00\"\00l\00e\00x\00e\00r\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[")
+ (data $239 (i32.const 16844) "<")
+ (data $239.1 (i32.const 16856) "\02\00\00\00 \00\00\00\"\00p\00a\00r\00s\00e\00E\00r\00r\00o\00r\00s\00\"\00:\00 \00[")
+ (data $240 (i32.const 16908) "\1c")
+ (data $240.1 (i32.const 16920) "\02\00\00\00\04\00\00\00]\00\n")
  (data $241 (i32.const 16940) "<")
- (data $241.1 (i32.const 16952) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
- (data $242 (i32.const 17004) "l")
- (data $242.1 (i32.const 17016) "\02\00\00\00X\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00P\00a\00r\00s\00e\00r\00/\00P\00a\00r\00s\00e\00T\00r\00e\00e\00P\00r\00i\00n\00t\00e\00r\00.\00t\00s")
- (data $243 (i32.const 17116) "\1c")
- (data $243.1 (i32.const 17128) "\02\00\00\00\04\00\00\00 \00 ")
- (data $244 (i32.const 17148) "<")
- (data $244.1 (i32.const 17160) "\02\00\00\00&\00\00\00:\00 \00B\00i\00n\00a\00r\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 ")
+ (data $241.1 (i32.const 16952) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
+ (data $242 (i32.const 17004) "<")
+ (data $242.1 (i32.const 17016) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
+ (data $243 (i32.const 17068) "l")
+ (data $243.1 (i32.const 17080) "\02\00\00\00X\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00P\00a\00r\00s\00e\00r\00/\00P\00a\00r\00s\00e\00T\00r\00e\00e\00P\00r\00i\00n\00t\00e\00r\00.\00t\00s")
+ (data $244 (i32.const 17180) "\1c")
+ (data $244.1 (i32.const 17192) "\02\00\00\00\04\00\00\00 \00 ")
  (data $245 (i32.const 17212) "<")
  (data $245.1 (i32.const 17224) "\02\00\00\00*\00\00\00:\00 \00E\00q\00u\00a\00l\00i\00t\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 ")
  (data $246 (i32.const 17276) "L")
@@ -539,7 +539,7 @@
  (data $253 (i32.const 17692) "<")
  (data $253.1 (i32.const 17704) "\02\00\00\00 \00\00\00:\00 \00P\00o\00w\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 ")
  (data $254 (i32.const 17756) "<")
- (data $254.1 (i32.const 17768) "\02\00\00\00 \00\00\00i\00n\00v\00a\00l\00i\00d\00 \00d\00o\00w\00n\00c\00a\00s\00t")
+ (data $254.1 (i32.const 17768) "\02\00\00\00&\00\00\00:\00 \00B\00i\00n\00a\00r\00y\00E\00x\00p\00r\00e\00s\00s\00i\00o\00n\00 ")
  (data $255 (i32.const 17820) "\\")
  (data $255.1 (i32.const 17832) "\02\00\00\00J\00\00\00F\00r\00o\00n\00t\00e\00n\00d\00/\00a\00s\00s\00e\00m\00b\00l\00y\00/\00A\00S\00T\00/\00T\00o\00A\00s\00t\00V\00i\00s\00i\00t\00o\00r\00.\00t\00s")
  (data $256 (i32.const 17916) "\1c")
@@ -3402,9 +3402,9 @@
   call $~lib/rt/itcms/__visit
   i32.const 7952
   call $~lib/rt/itcms/__visit
-  i32.const 16896
-  call $~lib/rt/itcms/__visit
   i32.const 16960
+  call $~lib/rt/itcms/__visit
+  i32.const 17024
   call $~lib/rt/itcms/__visit
   i32.const 12304
   call $~lib/rt/itcms/__visit
@@ -5403,7 +5403,7 @@
      local.get $2
      i32.const 1
      i32.shl
-     i32.const 15360
+     i32.const 15424
      i32.add
      local.get $6
      i32.const 65535
@@ -5435,7 +5435,7 @@
      local.get $8
      i32.const 2
      i32.shl
-     i32.const 16288
+     i32.const 16352
      i32.add
      i64.load32_u
      local.get $1
@@ -5444,7 +5444,7 @@
      local.get $4
      i32.const 1
      i32.shl
-     i32.const 15358
+     i32.const 15422
      i32.add
      local.tee $2
      i32.load16_u
@@ -5525,7 +5525,7 @@
     local.get $2
     i32.const 1
     i32.shl
-    i32.const 15360
+    i32.const 15424
     i32.add
     local.get $0
     i32.wrap_i64
@@ -5557,7 +5557,7 @@
   i32.sub
   i32.const 2
   i32.shl
-  i32.const 16288
+  i32.const 16352
   i32.add
   i64.load32_u
   i64.mul
@@ -5565,7 +5565,7 @@
   local.get $4
   i32.const 1
   i32.shl
-  i32.const 15358
+  i32.const 15422
   i32.add
   local.tee $2
   i32.load16_u
@@ -5963,7 +5963,7 @@
   f64.lt
   local.tee $2
   if (result f64)
-   i32.const 15360
+   i32.const 15424
    i32.const 45
    i32.store16
    local.get $0
@@ -6062,14 +6062,14 @@
   i32.sub
   global.set $~lib/util/number/_K
   local.get $8
-  i32.const 15416
+  i32.const 15480
   i32.add
   i64.load
   global.set $~lib/util/number/_frc_pow
   local.get $4
   i32.const 1
   i32.shl
-  i32.const 16112
+  i32.const 16176
   i32.add
   i32.load16_s
   global.set $~lib/util/number/_exp_pow
@@ -6137,7 +6137,7 @@
   local.get $2
   i32.const 1
   i32.shl
-  i32.const 15360
+  i32.const 15424
   i32.add
   local.get $1
   local.get $10
@@ -6236,7 +6236,7 @@
    i32.const 3
    i32.eq
    if
-    i32.const 16896
+    i32.const 16960
     i32.const 8016
     i32.const 338
     i32.const 7
@@ -6289,7 +6289,7 @@
   i32.const 3
   i32.ne
   if
-   i32.const 16960
+   i32.const 17024
    i32.const 8016
    i32.const 352
    i32.const 5
@@ -7310,8 +7310,8 @@
  (func $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
-  block $folding-inner1
-   block $folding-inner0
+  block $folding-inner2
+   block $folding-inner1
     block $default
      block $case9
       block $case8
@@ -7329,32 +7329,410 @@
                i32.load
                i32.const 13
                i32.sub
-               br_table $case8 $case1 $case2 $case0 $case3 $case9 $case4 $case5 $default $case6 $case7 $default
+               br_table $case7 $case0 $case1 $case9 $case2 $case8 $case3 $case4 $default $case5 $case6 $default
               end
-              local.get $0
+              global.get $~lib/memory/__stack_pointer
+              i32.const 8
+              i32.sub
+              global.set $~lib/memory/__stack_pointer
+              global.get $~lib/memory/__stack_pointer
+              i32.const 24776
+              i32.lt_s
+              br_if $folding-inner2
+              global.get $~lib/memory/__stack_pointer
+              i64.const 0
+              i64.store
+              global.get $~lib/memory/__stack_pointer
               local.get $1
-              call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void>
-              return
+              i32.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$782
+               local.get $1
+               i32.const 8
+               i32.sub
+               i32.load
+               i32.const 24
+               i32.eq
+               if
+                local.get $1
+                local.get $0
+                call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
+                br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$782
+               end
+               unreachable
+              end
+              br $folding-inner1
              end
-             local.get $0
+             global.get $~lib/memory/__stack_pointer
+             i32.const 8
+             i32.sub
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 24776
+             i32.lt_s
+             br_if $folding-inner2
+             global.get $~lib/memory/__stack_pointer
+             i64.const 0
+             i64.store
+             global.get $~lib/memory/__stack_pointer
              local.get $1
-             call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void>
-             return
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=4
+             block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$784
+              local.get $1
+              i32.const 8
+              i32.sub
+              i32.load
+              i32.const 24
+              i32.eq
+              if
+               local.get $1
+               local.get $0
+               call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitRelationalExpression
+               br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$784
+              end
+              unreachable
+             end
+             br $folding-inner1
             end
-            local.get $0
+            global.get $~lib/memory/__stack_pointer
+            i32.const 8
+            i32.sub
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 24776
+            i32.lt_s
+            br_if $folding-inner2
+            global.get $~lib/memory/__stack_pointer
+            i64.const 0
+            i64.store
+            global.get $~lib/memory/__stack_pointer
             local.get $1
-            call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void>
-            return
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=4
+            block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$786
+             local.get $1
+             i32.const 8
+             i32.sub
+             i32.load
+             i32.const 24
+             i32.eq
+             if
+              local.get $1
+              local.get $0
+              call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitMultiplicativeExpression
+              br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$786
+             end
+             unreachable
+            end
+            br $folding-inner1
            end
-           local.get $0
+           global.get $~lib/memory/__stack_pointer
+           i32.const 8
+           i32.sub
+           global.set $~lib/memory/__stack_pointer
+           global.get $~lib/memory/__stack_pointer
+           i32.const 24776
+           i32.lt_s
+           br_if $folding-inner2
+           global.get $~lib/memory/__stack_pointer
+           i64.const 0
+           i64.store
+           global.get $~lib/memory/__stack_pointer
            local.get $1
-           call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void>
-           return
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=4
+           block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$788
+            local.get $1
+            i32.const 8
+            i32.sub
+            i32.load
+            i32.const 24
+            i32.eq
+            if
+             global.get $~lib/memory/__stack_pointer
+             i32.const 48
+             i32.sub
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 24776
+             i32.lt_s
+             br_if $folding-inner2
+             global.get $~lib/memory/__stack_pointer
+             i32.const 0
+             i32.const 48
+             memory.fill
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             local.get $1
+             local.get $1
+             i32.load
+             i32.const 1
+             i32.add
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=8
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.load offset=4
+             local.tee $2
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             local.get $2
+             local.get $1
+             call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             local.get $1
+             local.get $1
+             i32.load
+             i32.const 1
+             i32.sub
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=8
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.load offset=4
+             local.tee $2
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=32
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=36
+             local.get $1
+             i32.load
+             call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+             local.set $3
+             global.get $~lib/memory/__stack_pointer
+             local.get $3
+             i32.store offset=24
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=32
+             local.get $1
+             i32.load
+             call $~lib/number/I32#toString
+             local.set $1
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=28
+             local.get $3
+             local.get $1
+             call $~lib/string/String.__concat
+             local.set $1
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=16
+             global.get $~lib/memory/__stack_pointer
+             i32.const 17456
+             i32.store offset=20
+             local.get $1
+             i32.const 17456
+             call $~lib/string/String.__concat
+             local.set $1
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=8
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=16
+             global.get $~lib/memory/__stack_pointer
+             local.set $3
+             block $folding-inner00
+              local.get $0
+              i32.load
+              if
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.store offset=20
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.load
+               local.tee $0
+               i32.store offset=40
+               local.get $0
+               i32.eqz
+               br_if $folding-inner00
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.store offset=16
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.load offset=8
+               local.tee $0
+               i32.store offset=44
+               local.get $0
+               i32.eqz
+               br_if $folding-inner00
+              else
+               i32.const 9040
+               local.set $0
+              end
+              local.get $3
+              local.get $0
+              i32.store offset=12
+              local.get $1
+              local.get $0
+              call $~lib/string/String.__concat
+              local.set $0
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              local.get $2
+              local.get $0
+              call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
+              global.get $~lib/memory/__stack_pointer
+              i32.const 48
+              i32.add
+              global.set $~lib/memory/__stack_pointer
+              br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$788
+             end
+             i32.const 14432
+             i32.const 17088
+             i32.const 101
+             i32.const 133
+             call $~lib/builtins/abort
+             unreachable
+            end
+            unreachable
+           end
+           br $folding-inner1
           end
-          local.get $0
+          global.get $~lib/memory/__stack_pointer
+          i32.const 8
+          i32.sub
+          global.set $~lib/memory/__stack_pointer
+          global.get $~lib/memory/__stack_pointer
+          i32.const 24776
+          i32.lt_s
+          br_if $folding-inner2
+          global.get $~lib/memory/__stack_pointer
+          i64.const 0
+          i64.store
+          global.get $~lib/memory/__stack_pointer
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void>
-          return
+          i32.store
+          global.get $~lib/memory/__stack_pointer
+          local.get $0
+          i32.store offset=4
+          block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$790
+           local.get $1
+           i32.const 8
+           i32.sub
+           i32.load
+           i32.const 24
+           i32.eq
+           if
+            global.get $~lib/memory/__stack_pointer
+            i32.const 40
+            i32.sub
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 24776
+            i32.lt_s
+            br_if $folding-inner2
+            global.get $~lib/memory/__stack_pointer
+            i32.const 0
+            i32.const 40
+            memory.fill
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.load offset=4
+            local.tee $2
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=32
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=36
+            local.get $1
+            i32.load
+            call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+            local.set $3
+            global.get $~lib/memory/__stack_pointer
+            local.get $3
+            i32.store offset=24
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=32
+            local.get $1
+            i32.load
+            call $~lib/number/I32#toString
+            local.set $1
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=28
+            local.get $3
+            local.get $1
+            call $~lib/string/String.__concat
+            local.set $1
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=16
+            global.get $~lib/memory/__stack_pointer
+            i32.const 17520
+            i32.store offset=20
+            local.get $1
+            i32.const 17520
+            call $~lib/string/String.__concat
+            local.set $1
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=16
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load
+            local.tee $0
+            i32.store offset=12
+            local.get $1
+            local.get $0
+            call $~lib/string/String.__concat
+            local.set $0
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=4
+            local.get $2
+            local.get $0
+            call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
+            global.get $~lib/memory/__stack_pointer
+            i32.const 40
+            i32.add
+            global.set $~lib/memory/__stack_pointer
+            br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$790
+           end
+           unreachable
+          end
+          br $folding-inner1
          end
          global.get $~lib/memory/__stack_pointer
          i32.const 8
@@ -7363,7 +7741,7 @@
          global.get $~lib/memory/__stack_pointer
          i32.const 24776
          i32.lt_s
-         br_if $folding-inner0
+         br_if $folding-inner2
          global.get $~lib/memory/__stack_pointer
          i64.const 0
          i64.store
@@ -7373,7 +7751,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$781
+         block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$792
           local.get $1
           i32.const 8
           i32.sub
@@ -7382,16 +7760,16 @@
           i32.eq
           if
            global.get $~lib/memory/__stack_pointer
-           i32.const 40
+           i32.const 44
            i32.sub
            global.set $~lib/memory/__stack_pointer
            global.get $~lib/memory/__stack_pointer
            i32.const 24776
            i32.lt_s
-           br_if $folding-inner0
+           br_if $folding-inner2
            global.get $~lib/memory/__stack_pointer
            i32.const 0
-           i32.const 40
+           i32.const 44
            memory.fill
            global.get $~lib/memory/__stack_pointer
            local.get $1
@@ -7432,10 +7810,10 @@
            local.get $1
            i32.store offset=16
            global.get $~lib/memory/__stack_pointer
-           i32.const 17520
+           i32.const 17568
            i32.store offset=20
            local.get $1
-           i32.const 17520
+           i32.const 17568
            call $~lib/string/String.__concat
            local.set $1
            global.get $~lib/memory/__stack_pointer
@@ -7443,11 +7821,29 @@
            i32.store offset=8
            global.get $~lib/memory/__stack_pointer
            local.get $0
-           i32.store offset=16
+           i32.store offset=20
            global.get $~lib/memory/__stack_pointer
            local.get $0
            i32.load
            local.tee $0
+           i32.store offset=16
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load offset=8
+           local.tee $0
+           i32.store offset=40
+           local.get $0
+           i32.eqz
+           if
+            i32.const 14432
+            i32.const 17088
+            i32.const 78
+            i32.const 92
+            call $~lib/builtins/abort
+            unreachable
+           end
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
            i32.store offset=12
            local.get $1
            local.get $0
@@ -7460,10 +7856,10 @@
            local.get $0
            call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
            global.get $~lib/memory/__stack_pointer
-           i32.const 40
+           i32.const 44
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$781
+           br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$792
           end
           unreachable
          end
@@ -7476,7 +7872,7 @@
         global.get $~lib/memory/__stack_pointer
         i32.const 24776
         i32.lt_s
-        br_if $folding-inner0
+        br_if $folding-inner2
         global.get $~lib/memory/__stack_pointer
         i64.const 0
         i64.store
@@ -7486,7 +7882,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$783
+        block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$794
          local.get $1
          i32.const 8
          i32.sub
@@ -7501,7 +7897,7 @@
           global.get $~lib/memory/__stack_pointer
           i32.const 24776
           i32.lt_s
-          br_if $folding-inner0
+          br_if $folding-inner2
           global.get $~lib/memory/__stack_pointer
           i32.const 0
           i32.const 44
@@ -7545,10 +7941,10 @@
           local.get $1
           i32.store offset=16
           global.get $~lib/memory/__stack_pointer
-          i32.const 17568
+          i32.const 17616
           i32.store offset=20
           local.get $1
-          i32.const 17568
+          i32.const 17616
           call $~lib/string/String.__concat
           local.set $1
           global.get $~lib/memory/__stack_pointer
@@ -7571,9 +7967,9 @@
           i32.eqz
           if
            i32.const 14432
-           i32.const 17024
-           i32.const 78
-           i32.const 92
+           i32.const 17088
+           i32.const 105
+           i32.const 96
            call $~lib/builtins/abort
            unreachable
           end
@@ -7594,7 +7990,7 @@
           i32.const 44
           i32.add
           global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$783
+          br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$794
          end
          unreachable
         end
@@ -7607,7 +8003,7 @@
        global.get $~lib/memory/__stack_pointer
        i32.const 24776
        i32.lt_s
-       br_if $folding-inner0
+       br_if $folding-inner2
        global.get $~lib/memory/__stack_pointer
        i64.const 0
        i64.store
@@ -7617,7 +8013,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$785
+       block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$796
         local.get $1
         i32.const 8
         i32.sub
@@ -7625,107 +8021,10 @@
         i32.const 24
         i32.eq
         if
-         global.get $~lib/memory/__stack_pointer
-         i32.const 44
-         i32.sub
-         global.set $~lib/memory/__stack_pointer
-         global.get $~lib/memory/__stack_pointer
-         i32.const 24776
-         i32.lt_s
-         br_if $folding-inner0
-         global.get $~lib/memory/__stack_pointer
-         i32.const 0
-         i32.const 44
-         memory.fill
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=8
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.load offset=4
-         local.tee $2
-         i32.store
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=32
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=36
-         local.get $1
-         i32.load
-         call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-         local.set $3
-         global.get $~lib/memory/__stack_pointer
-         local.get $3
-         i32.store offset=24
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=32
-         local.get $1
-         i32.load
-         call $~lib/number/I32#toString
-         local.set $1
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=28
-         local.get $3
-         local.get $1
-         call $~lib/string/String.__concat
-         local.set $1
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=16
-         global.get $~lib/memory/__stack_pointer
-         i32.const 17616
-         i32.store offset=20
-         local.get $1
-         i32.const 17616
-         call $~lib/string/String.__concat
-         local.set $1
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=8
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.store offset=20
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.load
-         local.tee $0
-         i32.store offset=16
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.load offset=8
-         local.tee $0
-         i32.store offset=40
-         local.get $0
-         i32.eqz
-         if
-          i32.const 14432
-          i32.const 17024
-          i32.const 105
-          i32.const 96
-          call $~lib/builtins/abort
-          unreachable
-         end
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.store offset=12
          local.get $1
          local.get $0
-         call $~lib/string/String.__concat
-         local.set $0
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.store offset=4
-         local.get $2
-         local.get $0
-         call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
-         global.get $~lib/memory/__stack_pointer
-         i32.const 44
-         i32.add
-         global.set $~lib/memory/__stack_pointer
-         br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$785
+         call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitExpression
+         br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$796
         end
         unreachable
        end
@@ -7738,7 +8037,7 @@
       global.get $~lib/memory/__stack_pointer
       i32.const 24776
       i32.lt_s
-      br_if $folding-inner0
+      br_if $folding-inner2
       global.get $~lib/memory/__stack_pointer
       i64.const 0
       i64.store
@@ -7748,7 +8047,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$787
+      block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$798
        local.get $1
        i32.const 8
        i32.sub
@@ -7758,82 +8057,1234 @@
        if
         local.get $1
         local.get $0
-        call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitExpression
-        br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$787
+        call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPowExpression
+        br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$798
        end
        unreachable
       end
       br $folding-inner1
      end
-     local.get $0
+     global.get $~lib/memory/__stack_pointer
+     i32.const 8
+     i32.sub
+     global.set $~lib/memory/__stack_pointer
+     global.get $~lib/memory/__stack_pointer
+     i32.const 24776
+     i32.lt_s
+     br_if $folding-inner2
+     global.get $~lib/memory/__stack_pointer
+     i64.const 0
+     i64.store
+     global.get $~lib/memory/__stack_pointer
      local.get $1
-     call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void>
-     return
+     i32.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $0
+     i32.store offset=4
+     block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override$800
+      local.get $1
+      i32.const 8
+      i32.sub
+      i32.load
+      i32.const 24
+      i32.eq
+      if
+       local.get $1
+       local.get $0
+       call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression
+       br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override$800
+      end
+      unreachable
+     end
+     br $folding-inner1
     end
     unreachable
    end
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
+   global.get $~lib/memory/__stack_pointer
+   i32.const 8
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   return
   end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
+  i32.const 57568
+  i32.const 57616
+  i32.const 1
+  i32.const 1
+  call $~lib/builtins/abort
+  unreachable
  )
  (func $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  block $folding-inner2
-   block $folding-inner1
-    block $default
-     block $case9
-      block $case8
-       block $case7
-        block $case6
-         block $case5
-          block $case4
-           block $case3
-            block $case2
-             block $case1
-              block $case0
+  block $folding-inner3
+   block $folding-inner2
+    block $folding-inner1
+     block $default
+      block $case9
+       block $case8
+        block $case7
+         block $case6
+          block $case5
+           block $case4
+            block $case3
+             block $case2
+              block $case1
+               block $case0
+                local.get $0
+                i32.const 8
+                i32.sub
+                i32.load
+                i32.const 13
+                i32.sub
+                br_table $case7 $case0 $case1 $case9 $case2 $case8 $case3 $case4 $default $case5 $case6 $default
+               end
+               global.get $~lib/memory/__stack_pointer
+               i32.const 8
+               i32.sub
+               global.set $~lib/memory/__stack_pointer
+               global.get $~lib/memory/__stack_pointer
+               i32.const 24776
+               i32.lt_s
+               br_if $folding-inner3
+               global.get $~lib/memory/__stack_pointer
+               i64.const 0
+               i64.store
+               global.get $~lib/memory/__stack_pointer
+               local.get $1
+               i32.store
+               global.get $~lib/memory/__stack_pointer
                local.get $0
+               i32.store offset=4
+               block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitEqualityExpression@override$802
+                local.get $1
+                i32.const 8
+                i32.sub
+                i32.load
+                i32.const 26
+                i32.eq
+                if
+                 global.get $~lib/memory/__stack_pointer
+                 i32.const 48
+                 i32.sub
+                 global.set $~lib/memory/__stack_pointer
+                 global.get $~lib/memory/__stack_pointer
+                 i32.const 24776
+                 i32.lt_s
+                 br_if $folding-inner3
+                 global.get $~lib/memory/__stack_pointer
+                 i32.const 0
+                 i32.const 48
+                 memory.fill
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store
+                 block $folding-inner10
+                  local.get $0
+                  i32.load offset=8
+                  i32.eqz
+                  if
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.store offset=8
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.load
+                   local.tee $0
+                   i32.store
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $1
+                   i32.store offset=4
+                   local.get $0
+                   local.get $1
+                   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                   local.set $1
+                   br $folding-inner10
+                  end
+                  global.get $~lib/memory/__stack_pointer
+                  local.set $2
+                  block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$621 (result i32)
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.store offset=8
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.load
+                   local.tee $3
+                   i32.store
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $1
+                   i32.store offset=4
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $3
+                   local.get $1
+                   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                   local.tee $3
+                   i32.store offset=12
+                   block $is_instance
+                    block $tablify|0
+                     local.get $3
+                     i32.const 8
+                     i32.sub
+                     i32.load
+                     i32.const 34
+                     i32.sub
+                     br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
+                    end
+                    i32.const 0
+                    br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$621
+                   end
+                   i32.const 1
+                  end
+                  i32.eqz
+                  if
+                   i32.const 14736
+                   i32.const 17840
+                   i32.const 44
+                   i32.const 40
+                   call $~lib/builtins/abort
+                   unreachable
+                  end
+                  local.get $2
+                  local.get $3
+                  i32.store offset=16
+                  global.get $~lib/memory/__stack_pointer
+                  local.set $2
+                  block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$623 (result i32)
+                   global.get $~lib/memory/__stack_pointer
+                   local.set $4
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.store offset=8
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.load offset=8
+                   local.tee $5
+                   i32.store offset=20
+                   local.get $5
+                   i32.eqz
+                   if
+                    i32.const 14432
+                    i32.const 17840
+                    i32.const 45
+                    i32.const 41
+                    call $~lib/builtins/abort
+                    unreachable
+                   end
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $5
+                   i32.store
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $1
+                   i32.store offset=4
+                   local.get $4
+                   local.get $5
+                   local.get $1
+                   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                   local.tee $1
+                   i32.store offset=24
+                   block $is_instance0
+                    block $tablify|00
+                     local.get $1
+                     i32.const 8
+                     i32.sub
+                     i32.load
+                     i32.const 34
+                     i32.sub
+                     br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
+                    end
+                    i32.const 0
+                    br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$623
+                   end
+                   i32.const 1
+                  end
+                  i32.eqz
+                  if
+                   i32.const 14736
+                   i32.const 17840
+                   i32.const 45
+                   i32.const 41
+                   call $~lib/builtins/abort
+                   unreachable
+                  end
+                  local.get $2
+                  local.get $1
+                  i32.store offset=28
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $3
+                  i32.store
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=36
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.load offset=4
+                  local.tee $0
+                  i32.store offset=40
+                  block $folding-inner01
+                   local.get $0
+                   i32.eqz
+                   br_if $folding-inner01
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.store offset=32
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.load offset=8
+                   local.tee $0
+                   i32.store offset=44
+                   local.get $0
+                   i32.eqz
+                   br_if $folding-inner01
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $0
+                   i32.store offset=4
+                   global.get $~lib/memory/__stack_pointer
+                   local.get $1
+                   i32.store offset=8
+                   local.get $3
+                   local.get $0
+                   local.get $1
+                   call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+                   local.set $1
+                   br $folding-inner10
+                  end
+                  i32.const 14432
+                  i32.const 17840
+                  i32.const 46
+                  i32.const 46
+                  call $~lib/builtins/abort
+                  unreachable
+                 end
+                 global.get $~lib/memory/__stack_pointer
+                 i32.const 48
+                 i32.add
+                 global.set $~lib/memory/__stack_pointer
+                 br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitEqualityExpression@override$802
+                end
+                unreachable
+               end
+               br $folding-inner1
+              end
+              global.get $~lib/memory/__stack_pointer
+              i32.const 8
+              i32.sub
+              global.set $~lib/memory/__stack_pointer
+              global.get $~lib/memory/__stack_pointer
+              i32.const 24776
+              i32.lt_s
+              br_if $folding-inner3
+              global.get $~lib/memory/__stack_pointer
+              i64.const 0
+              i64.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $1
+              i32.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitRelationalExpression@override$804
+               local.get $1
                i32.const 8
                i32.sub
                i32.load
-               i32.const 13
-               i32.sub
-               br_table $case8 $case1 $case2 $case0 $case3 $case9 $case4 $case5 $default $case6 $case7 $default
+               i32.const 26
+               i32.eq
+               if
+                global.get $~lib/memory/__stack_pointer
+                i32.const 48
+                i32.sub
+                global.set $~lib/memory/__stack_pointer
+                global.get $~lib/memory/__stack_pointer
+                i32.const 24776
+                i32.lt_s
+                br_if $folding-inner3
+                global.get $~lib/memory/__stack_pointer
+                i32.const 0
+                i32.const 48
+                memory.fill
+                global.get $~lib/memory/__stack_pointer
+                local.get $0
+                i32.store
+                block $folding-inner11
+                 local.get $0
+                 i32.load offset=8
+                 i32.eqz
+                 if
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=8
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.load
+                  local.tee $0
+                  i32.store
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $1
+                  i32.store offset=4
+                  local.get $0
+                  local.get $1
+                  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                  local.set $1
+                  br $folding-inner11
+                 end
+                 global.get $~lib/memory/__stack_pointer
+                 local.set $2
+                 block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$630 (result i32)
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=8
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.load
+                  local.tee $3
+                  i32.store
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $1
+                  i32.store offset=4
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $3
+                  local.get $1
+                  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                  local.tee $3
+                  i32.store offset=12
+                  block $is_instance2
+                   block $tablify|03
+                    local.get $3
+                    i32.const 8
+                    i32.sub
+                    i32.load
+                    i32.const 34
+                    i32.sub
+                    br_table $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $tablify|03
+                   end
+                   i32.const 0
+                   br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$630
+                  end
+                  i32.const 1
+                 end
+                 i32.eqz
+                 if
+                  i32.const 14736
+                  i32.const 17840
+                  i32.const 80
+                  i32.const 40
+                  call $~lib/builtins/abort
+                  unreachable
+                 end
+                 local.get $2
+                 local.get $3
+                 i32.store offset=16
+                 global.get $~lib/memory/__stack_pointer
+                 local.set $2
+                 block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$632 (result i32)
+                  global.get $~lib/memory/__stack_pointer
+                  local.set $4
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=8
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.load offset=8
+                  local.tee $5
+                  i32.store offset=20
+                  local.get $5
+                  i32.eqz
+                  if
+                   i32.const 14432
+                   i32.const 17840
+                   i32.const 81
+                   i32.const 41
+                   call $~lib/builtins/abort
+                   unreachable
+                  end
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $5
+                  i32.store
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $1
+                  i32.store offset=4
+                  local.get $4
+                  local.get $5
+                  local.get $1
+                  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                  local.tee $1
+                  i32.store offset=24
+                  block $is_instance04
+                   block $tablify|005
+                    local.get $1
+                    i32.const 8
+                    i32.sub
+                    i32.load
+                    i32.const 34
+                    i32.sub
+                    br_table $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $tablify|005
+                   end
+                   i32.const 0
+                   br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$632
+                  end
+                  i32.const 1
+                 end
+                 i32.eqz
+                 if
+                  i32.const 14736
+                  i32.const 17840
+                  i32.const 81
+                  i32.const 41
+                  call $~lib/builtins/abort
+                  unreachable
+                 end
+                 local.get $2
+                 local.get $1
+                 i32.store offset=28
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $3
+                 i32.store
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=36
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.load offset=4
+                 local.tee $0
+                 i32.store offset=40
+                 block $folding-inner06
+                  local.get $0
+                  i32.eqz
+                  br_if $folding-inner06
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=32
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.load offset=8
+                  local.tee $0
+                  i32.store offset=44
+                  local.get $0
+                  i32.eqz
+                  br_if $folding-inner06
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $0
+                  i32.store offset=4
+                  global.get $~lib/memory/__stack_pointer
+                  local.get $1
+                  i32.store offset=8
+                  local.get $3
+                  local.get $0
+                  local.get $1
+                  call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+                  local.set $1
+                  br $folding-inner11
+                 end
+                 i32.const 14432
+                 i32.const 17840
+                 i32.const 82
+                 i32.const 46
+                 call $~lib/builtins/abort
+                 unreachable
+                end
+                global.get $~lib/memory/__stack_pointer
+                i32.const 48
+                i32.add
+                global.set $~lib/memory/__stack_pointer
+                br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitRelationalExpression@override$804
+               end
+               unreachable
               end
+              br $folding-inner1
+             end
+             global.get $~lib/memory/__stack_pointer
+             i32.const 8
+             i32.sub
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 24776
+             i32.lt_s
+             br_if $folding-inner3
+             global.get $~lib/memory/__stack_pointer
+             i64.const 0
+             i64.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=4
+             block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitMultiplicativeExpression@override$806
+              local.get $1
+              i32.const 8
+              i32.sub
+              i32.load
+              i32.const 26
+              i32.eq
+              if
+               global.get $~lib/memory/__stack_pointer
+               i32.const 48
+               i32.sub
+               global.set $~lib/memory/__stack_pointer
+               global.get $~lib/memory/__stack_pointer
+               i32.const 24776
+               i32.lt_s
+               br_if $folding-inner3
+               global.get $~lib/memory/__stack_pointer
+               i32.const 0
+               i32.const 48
+               memory.fill
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.store
+               block $folding-inner12
+                local.get $0
+                i32.load offset=8
+                i32.eqz
+                if
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=8
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.load
+                 local.tee $0
+                 i32.store
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $1
+                 i32.store offset=4
+                 local.get $0
+                 local.get $1
+                 call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                 local.set $1
+                 br $folding-inner12
+                end
+                global.get $~lib/memory/__stack_pointer
+                local.set $2
+                block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$639 (result i32)
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=8
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.load
+                 local.tee $3
+                 i32.store
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $1
+                 i32.store offset=4
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $3
+                 local.get $1
+                 call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                 local.tee $3
+                 i32.store offset=12
+                 block $is_instance3
+                  block $tablify|04
+                   local.get $3
+                   i32.const 8
+                   i32.sub
+                   i32.load
+                   i32.const 34
+                   i32.sub
+                   br_table $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $tablify|04
+                  end
+                  i32.const 0
+                  br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$639
+                 end
+                 i32.const 1
+                end
+                i32.eqz
+                if
+                 i32.const 14736
+                 i32.const 17840
+                 i32.const 67
+                 i32.const 40
+                 call $~lib/builtins/abort
+                 unreachable
+                end
+                local.get $2
+                local.get $3
+                i32.store offset=16
+                global.get $~lib/memory/__stack_pointer
+                local.set $2
+                block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$641 (result i32)
+                 global.get $~lib/memory/__stack_pointer
+                 local.set $4
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=8
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.load offset=8
+                 local.tee $5
+                 i32.store offset=20
+                 local.get $5
+                 i32.eqz
+                 if
+                  i32.const 14432
+                  i32.const 17840
+                  i32.const 68
+                  i32.const 41
+                  call $~lib/builtins/abort
+                  unreachable
+                 end
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $5
+                 i32.store
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $1
+                 i32.store offset=4
+                 local.get $4
+                 local.get $5
+                 local.get $1
+                 call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+                 local.tee $1
+                 i32.store offset=24
+                 block $is_instance05
+                  block $tablify|006
+                   local.get $1
+                   i32.const 8
+                   i32.sub
+                   i32.load
+                   i32.const 34
+                   i32.sub
+                   br_table $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $tablify|006
+                  end
+                  i32.const 0
+                  br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$641
+                 end
+                 i32.const 1
+                end
+                i32.eqz
+                if
+                 i32.const 14736
+                 i32.const 17840
+                 i32.const 68
+                 i32.const 41
+                 call $~lib/builtins/abort
+                 unreachable
+                end
+                local.get $2
+                local.get $1
+                i32.store offset=28
+                global.get $~lib/memory/__stack_pointer
+                local.get $3
+                i32.store
+                global.get $~lib/memory/__stack_pointer
+                local.get $0
+                i32.store offset=36
+                global.get $~lib/memory/__stack_pointer
+                local.get $0
+                i32.load offset=4
+                local.tee $0
+                i32.store offset=40
+                block $folding-inner07
+                 local.get $0
+                 i32.eqz
+                 br_if $folding-inner07
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=32
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.load offset=8
+                 local.tee $0
+                 i32.store offset=44
+                 local.get $0
+                 i32.eqz
+                 br_if $folding-inner07
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $0
+                 i32.store offset=4
+                 global.get $~lib/memory/__stack_pointer
+                 local.get $1
+                 i32.store offset=8
+                 local.get $3
+                 local.get $0
+                 local.get $1
+                 call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+                 local.set $1
+                 br $folding-inner12
+                end
+                i32.const 14432
+                i32.const 17840
+                i32.const 69
+                i32.const 46
+                call $~lib/builtins/abort
+                unreachable
+               end
+               global.get $~lib/memory/__stack_pointer
+               i32.const 48
+               i32.add
+               global.set $~lib/memory/__stack_pointer
+               br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitMultiplicativeExpression@override$806
+              end
+              unreachable
+             end
+             br $folding-inner1
+            end
+            global.get $~lib/memory/__stack_pointer
+            i32.const 8
+            i32.sub
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 24776
+            i32.lt_s
+            br_if $folding-inner3
+            global.get $~lib/memory/__stack_pointer
+            i64.const 0
+            i64.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=4
+            block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitUnaryExpression@override$808
+             local.get $1
+             i32.const 8
+             i32.sub
+             i32.load
+             i32.const 26
+             i32.eq
+             if
+              global.get $~lib/memory/__stack_pointer
+              i32.const 32
+              i32.sub
+              global.set $~lib/memory/__stack_pointer
+              global.get $~lib/memory/__stack_pointer
+              i32.const 24776
+              i32.lt_s
+              br_if $folding-inner3
+              global.get $~lib/memory/__stack_pointer
+              i32.const 0
+              i32.const 32
+              memory.fill
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store
+              local.get $0
+              i32.load
+              i32.eqz
+              if
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.store offset=8
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.load offset=4
+               local.tee $0
+               i32.store
+               global.get $~lib/memory/__stack_pointer
+               local.get $1
+               i32.store offset=4
+               local.get $0
+               local.get $1
+               call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+               local.set $0
+               br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitUnaryExpression@override$808
+              end
+              global.get $~lib/memory/__stack_pointer
+              local.set $2
+              block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$928 (result i32)
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.store offset=8
+               global.get $~lib/memory/__stack_pointer
+               local.get $0
+               i32.load offset=4
+               local.tee $3
+               i32.store
+               global.get $~lib/memory/__stack_pointer
+               local.get $1
+               i32.store offset=4
+               global.get $~lib/memory/__stack_pointer
+               local.get $3
+               local.get $1
+               call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+               local.tee $1
+               i32.store offset=12
+               block $is_instance27
+                block $tablify|003
+                 local.get $1
+                 i32.const 8
+                 i32.sub
+                 i32.load
+                 i32.const 34
+                 i32.sub
+                 br_table $is_instance27 $is_instance27 $is_instance27 $is_instance27 $is_instance27 $is_instance27 $is_instance27 $tablify|003
+                end
+                i32.const 0
+                br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$928
+               end
+               i32.const 1
+              end
+              i32.eqz
+              if
+               i32.const 14736
+               i32.const 17840
+               i32.const 93
+               i32.const 50
+               call $~lib/builtins/abort
+               unreachable
+              end
+              local.get $2
+              local.get $1
+              i32.store offset=16
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=20
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.load
+              local.tee $0
+              i32.store offset=24
+              local.get $0
+              i32.eqz
+              br_if $folding-inner2
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=8
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.load offset=8
+              local.tee $2
+              i32.store offset=28
+              local.get $2
+              i32.eqz
+              br_if $folding-inner2
+              global.get $~lib/memory/__stack_pointer
+              local.get $2
+              i32.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $1
+              i32.store offset=4
+              global.get $~lib/memory/__stack_pointer
+              i32.const 12
+              i32.sub
+              global.set $~lib/memory/__stack_pointer
+              global.get $~lib/memory/__stack_pointer
+              i32.const 24776
+              i32.lt_s
+              br_if $folding-inner3
+              global.get $~lib/memory/__stack_pointer
+              i64.const 0
+              i64.store
+              global.get $~lib/memory/__stack_pointer
+              i32.const 0
+              i32.store offset=8
+              global.get $~lib/memory/__stack_pointer
+              i32.const 8
+              i32.const 36
+              call $~lib/rt/itcms/__new
+              local.tee $0
+              i32.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              local.get $0
+              i32.const 0
+              i32.store
+              local.get $0
+              i32.const 0
+              i32.const 0
+              call $~lib/rt/itcms/__link
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              local.get $0
+              i32.const 0
+              i32.store offset=4
+              local.get $0
+              i32.const 0
+              i32.const 0
+              call $~lib/rt/itcms/__link
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              call $Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression#constructor
+              local.tee $0
+              i32.store
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              global.get $~lib/memory/__stack_pointer
+              local.get $2
+              i32.store offset=8
+              local.get $0
+              local.get $2
+              i32.store
+              local.get $0
+              local.get $2
+              i32.const 0
+              call $~lib/rt/itcms/__link
+              global.get $~lib/memory/__stack_pointer
+              local.get $0
+              i32.store offset=4
+              global.get $~lib/memory/__stack_pointer
+              local.get $1
+              i32.store offset=8
               local.get $0
               local.get $1
-              call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-              return
+              i32.store offset=4
+              local.get $0
+              local.get $1
+              i32.const 0
+              call $~lib/rt/itcms/__link
+              global.get $~lib/memory/__stack_pointer
+              i32.const 12
+              i32.add
+              global.set $~lib/memory/__stack_pointer
+              br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitUnaryExpression@override$808
              end
-             local.get $0
-             local.get $1
-             call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-             return
+             unreachable
             end
+            global.get $~lib/memory/__stack_pointer
+            i32.const 32
+            i32.add
+            global.set $~lib/memory/__stack_pointer
             local.get $0
-            local.get $1
-            call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-            return
+            local.set $1
+            br $folding-inner1
            end
-           local.get $0
+           global.get $~lib/memory/__stack_pointer
+           i32.const 8
+           i32.sub
+           global.set $~lib/memory/__stack_pointer
+           global.get $~lib/memory/__stack_pointer
+           i32.const 24776
+           i32.lt_s
+           br_if $folding-inner3
+           global.get $~lib/memory/__stack_pointer
+           i64.const 0
+           i64.store
+           global.get $~lib/memory/__stack_pointer
            local.get $1
-           call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-           return
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=4
+           block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitTerm@override$810
+            local.get $1
+            i32.const 8
+            i32.sub
+            i32.load
+            i32.const 26
+            i32.eq
+            if
+             global.get $~lib/memory/__stack_pointer
+             i32.const 8
+             i32.sub
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 24776
+             i32.lt_s
+             br_if $folding-inner3
+             global.get $~lib/memory/__stack_pointer
+             i64.const 0
+             i64.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=4
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.load
+             local.tee $0
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             i32.const 12
+             i32.sub
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 24776
+             i32.lt_s
+             br_if $folding-inner3
+             global.get $~lib/memory/__stack_pointer
+             i64.const 0
+             i64.store
+             global.get $~lib/memory/__stack_pointer
+             i32.const 0
+             i32.store offset=8
+             global.get $~lib/memory/__stack_pointer
+             i32.const 4
+             i32.const 37
+             call $~lib/rt/itcms/__new
+             local.tee $1
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             local.get $1
+             i32.const 0
+             i32.store
+             local.get $1
+             i32.const 0
+             i32.const 0
+             call $~lib/rt/itcms/__link
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             call $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm#constructor
+             local.tee $1
+             i32.store
+             global.get $~lib/memory/__stack_pointer
+             local.get $1
+             i32.store offset=4
+             global.get $~lib/memory/__stack_pointer
+             local.get $0
+             i32.store offset=8
+             local.get $1
+             local.get $0
+             i32.store
+             local.get $1
+             local.get $0
+             i32.const 0
+             call $~lib/rt/itcms/__link
+             global.get $~lib/memory/__stack_pointer
+             i32.const 12
+             i32.add
+             global.set $~lib/memory/__stack_pointer
+             global.get $~lib/memory/__stack_pointer
+             i32.const 8
+             i32.add
+             global.set $~lib/memory/__stack_pointer
+             br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitTerm@override$810
+            end
+            unreachable
+           end
+           br $folding-inner1
           end
-          local.get $0
+          global.get $~lib/memory/__stack_pointer
+          i32.const 8
+          i32.sub
+          global.set $~lib/memory/__stack_pointer
+          global.get $~lib/memory/__stack_pointer
+          i32.const 24776
+          i32.lt_s
+          br_if $folding-inner3
+          global.get $~lib/memory/__stack_pointer
+          i64.const 0
+          i64.store
+          global.get $~lib/memory/__stack_pointer
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-          return
+          i32.store
+          global.get $~lib/memory/__stack_pointer
+          local.get $0
+          i32.store offset=4
+          block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitNumber@override$812
+           local.get $1
+           i32.const 8
+           i32.sub
+           i32.load
+           i32.const 26
+           i32.eq
+           if
+            global.get $~lib/memory/__stack_pointer
+            i32.const 16
+            i32.sub
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 24776
+            i32.lt_s
+            br_if $folding-inner3
+            global.get $~lib/memory/__stack_pointer
+            i64.const 0
+            i64.store
+            global.get $~lib/memory/__stack_pointer
+            i64.const 0
+            i64.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load
+            local.tee $0
+            i32.store offset=4
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load offset=8
+            local.tee $0
+            i32.store offset=12
+            local.get $0
+            i32.eqz
+            if
+             i32.const 14432
+             i32.const 17840
+             i32.const 73
+             i32.const 27
+             call $~lib/builtins/abort
+             unreachable
+            end
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            i32.const 12
+            i32.sub
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 24776
+            i32.lt_s
+            br_if $folding-inner3
+            global.get $~lib/memory/__stack_pointer
+            i64.const 0
+            i64.store
+            global.get $~lib/memory/__stack_pointer
+            i32.const 0
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            i32.const 4
+            i32.const 39
+            call $~lib/rt/itcms/__new
+            local.tee $1
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            local.get $1
+            i32.const 0
+            i32.store
+            local.get $1
+            i32.const 0
+            i32.const 0
+            call $~lib/rt/itcms/__link
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            call $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm#constructor
+            local.tee $1
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=8
+            local.get $1
+            local.get $0
+            i32.store
+            local.get $1
+            local.get $0
+            i32.const 0
+            call $~lib/rt/itcms/__link
+            global.get $~lib/memory/__stack_pointer
+            i32.const 12
+            i32.add
+            global.set $~lib/memory/__stack_pointer
+            global.get $~lib/memory/__stack_pointer
+            i32.const 16
+            i32.add
+            global.set $~lib/memory/__stack_pointer
+            br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitNumber@override$812
+           end
+           unreachable
+          end
+          br $folding-inner1
          end
          global.get $~lib/memory/__stack_pointer
          i32.const 8
@@ -7842,7 +9293,7 @@
          global.get $~lib/memory/__stack_pointer
          i32.const 24776
          i32.lt_s
-         br_if $folding-inner2
+         br_if $folding-inner3
          global.get $~lib/memory/__stack_pointer
          i64.const 0
          i64.store
@@ -7852,7 +9303,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitTerm@override$789
+         block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitIdentifier@override$814
           local.get $1
           i32.const 8
           i32.sub
@@ -7861,23 +9312,44 @@
           i32.eq
           if
            global.get $~lib/memory/__stack_pointer
-           i32.const 8
+           i32.const 16
            i32.sub
            global.set $~lib/memory/__stack_pointer
            global.get $~lib/memory/__stack_pointer
            i32.const 24776
            i32.lt_s
-           br_if $folding-inner2
+           br_if $folding-inner3
            global.get $~lib/memory/__stack_pointer
            i64.const 0
            i64.store
            global.get $~lib/memory/__stack_pointer
+           i64.const 0
+           i64.store offset=8
+           global.get $~lib/memory/__stack_pointer
            local.get $0
-           i32.store offset=4
+           i32.store offset=8
            global.get $~lib/memory/__stack_pointer
            local.get $0
            i32.load
            local.tee $0
+           i32.store offset=4
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load offset=8
+           local.tee $0
+           i32.store offset=12
+           local.get $0
+           i32.eqz
+           if
+            i32.const 14432
+            i32.const 17840
+            i32.const 60
+            i32.const 34
+            call $~lib/builtins/abort
+            unreachable
+           end
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
            i32.store
            global.get $~lib/memory/__stack_pointer
            i32.const 12
@@ -7886,7 +9358,7 @@
            global.get $~lib/memory/__stack_pointer
            i32.const 24776
            i32.lt_s
-           br_if $folding-inner2
+           br_if $folding-inner3
            global.get $~lib/memory/__stack_pointer
            i64.const 0
            i64.store
@@ -7895,7 +9367,7 @@
            i32.store offset=8
            global.get $~lib/memory/__stack_pointer
            i32.const 4
-           i32.const 37
+           i32.const 40
            call $~lib/rt/itcms/__new
            local.tee $1
            i32.store
@@ -7935,10 +9407,10 @@
            i32.add
            global.set $~lib/memory/__stack_pointer
            global.get $~lib/memory/__stack_pointer
-           i32.const 8
+           i32.const 16
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitTerm@override$789
+           br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitIdentifier@override$814
           end
           unreachable
          end
@@ -7951,7 +9423,7 @@
         global.get $~lib/memory/__stack_pointer
         i32.const 24776
         i32.lt_s
-        br_if $folding-inner2
+        br_if $folding-inner3
         global.get $~lib/memory/__stack_pointer
         i64.const 0
         i64.store
@@ -7961,7 +9433,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitNumber@override$791
+        block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitExpression@override$816
          local.get $1
          i32.const 8
          i32.sub
@@ -7970,105 +9442,202 @@
          i32.eq
          if
           global.get $~lib/memory/__stack_pointer
-          i32.const 16
+          i32.const 48
           i32.sub
           global.set $~lib/memory/__stack_pointer
           global.get $~lib/memory/__stack_pointer
           i32.const 24776
           i32.lt_s
-          br_if $folding-inner2
+          br_if $folding-inner3
           global.get $~lib/memory/__stack_pointer
-          i64.const 0
-          i64.store
-          global.get $~lib/memory/__stack_pointer
-          i64.const 0
-          i64.store offset=8
+          i32.const 0
+          i32.const 48
+          memory.fill
           global.get $~lib/memory/__stack_pointer
           local.get $0
-          i32.store offset=8
-          global.get $~lib/memory/__stack_pointer
-          local.get $0
-          i32.load
-          local.tee $0
-          i32.store offset=4
-          global.get $~lib/memory/__stack_pointer
-          local.get $0
-          i32.load offset=8
-          local.tee $0
-          i32.store offset=12
-          local.get $0
-          i32.eqz
-          if
+          i32.store
+          block $folding-inner13
+           local.get $0
+           i32.load offset=8
+           i32.eqz
+           if
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load
+            local.tee $0
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            local.get $0
+            local.get $1
+            call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+            local.set $1
+            br $folding-inner13
+           end
+           global.get $~lib/memory/__stack_pointer
+           local.set $2
+           block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$663 (result i32)
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load
+            local.tee $3
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            global.get $~lib/memory/__stack_pointer
+            local.get $3
+            local.get $1
+            call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+            local.tee $3
+            i32.store offset=12
+            block $is_instance4
+             block $tablify|05
+              local.get $3
+              i32.const 8
+              i32.sub
+              i32.load
+              i32.const 34
+              i32.sub
+              br_table $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $tablify|05
+             end
+             i32.const 0
+             br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$663
+            end
+            i32.const 1
+           end
+           i32.eqz
+           if
+            i32.const 14736
+            i32.const 17840
+            i32.const 53
+            i32.const 40
+            call $~lib/builtins/abort
+            unreachable
+           end
+           local.get $2
+           local.get $3
+           i32.store offset=16
+           global.get $~lib/memory/__stack_pointer
+           local.set $2
+           block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$665 (result i32)
+            global.get $~lib/memory/__stack_pointer
+            local.set $4
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=8
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load offset=8
+            local.tee $5
+            i32.store offset=20
+            local.get $5
+            i32.eqz
+            if
+             i32.const 14432
+             i32.const 17840
+             i32.const 54
+             i32.const 41
+             call $~lib/builtins/abort
+             unreachable
+            end
+            global.get $~lib/memory/__stack_pointer
+            local.get $5
+            i32.store
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=4
+            local.get $4
+            local.get $5
+            local.get $1
+            call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+            local.tee $1
+            i32.store offset=24
+            block $is_instance06
+             block $tablify|007
+              local.get $1
+              i32.const 8
+              i32.sub
+              i32.load
+              i32.const 34
+              i32.sub
+              br_table $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $tablify|007
+             end
+             i32.const 0
+             br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$665
+            end
+            i32.const 1
+           end
+           i32.eqz
+           if
+            i32.const 14736
+            i32.const 17840
+            i32.const 54
+            i32.const 41
+            call $~lib/builtins/abort
+            unreachable
+           end
+           local.get $2
+           local.get $1
+           i32.store offset=28
+           global.get $~lib/memory/__stack_pointer
+           local.get $3
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=36
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load offset=4
+           local.tee $0
+           i32.store offset=40
+           block $folding-inner08
+            local.get $0
+            i32.eqz
+            br_if $folding-inner08
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=32
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.load offset=8
+            local.tee $0
+            i32.store offset=44
+            local.get $0
+            i32.eqz
+            br_if $folding-inner08
+            global.get $~lib/memory/__stack_pointer
+            local.get $0
+            i32.store offset=4
+            global.get $~lib/memory/__stack_pointer
+            local.get $1
+            i32.store offset=8
+            local.get $3
+            local.get $0
+            local.get $1
+            call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+            local.set $1
+            br $folding-inner13
+           end
            i32.const 14432
            i32.const 17840
-           i32.const 73
-           i32.const 27
+           i32.const 55
+           i32.const 46
            call $~lib/builtins/abort
            unreachable
           end
           global.get $~lib/memory/__stack_pointer
-          local.get $0
-          i32.store
-          global.get $~lib/memory/__stack_pointer
-          i32.const 12
-          i32.sub
-          global.set $~lib/memory/__stack_pointer
-          global.get $~lib/memory/__stack_pointer
-          i32.const 24776
-          i32.lt_s
-          br_if $folding-inner2
-          global.get $~lib/memory/__stack_pointer
-          i64.const 0
-          i64.store
-          global.get $~lib/memory/__stack_pointer
-          i32.const 0
-          i32.store offset=8
-          global.get $~lib/memory/__stack_pointer
-          i32.const 4
-          i32.const 39
-          call $~lib/rt/itcms/__new
-          local.tee $1
-          i32.store
-          global.get $~lib/memory/__stack_pointer
-          local.get $1
-          i32.store offset=4
-          local.get $1
-          i32.const 0
-          i32.store
-          local.get $1
-          i32.const 0
-          i32.const 0
-          call $~lib/rt/itcms/__link
-          global.get $~lib/memory/__stack_pointer
-          local.get $1
-          i32.store offset=4
-          global.get $~lib/memory/__stack_pointer
-          local.get $1
-          call $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm#constructor
-          local.tee $1
-          i32.store
-          global.get $~lib/memory/__stack_pointer
-          local.get $1
-          i32.store offset=4
-          global.get $~lib/memory/__stack_pointer
-          local.get $0
-          i32.store offset=8
-          local.get $1
-          local.get $0
-          i32.store
-          local.get $1
-          local.get $0
-          i32.const 0
-          call $~lib/rt/itcms/__link
-          global.get $~lib/memory/__stack_pointer
-          i32.const 12
+          i32.const 48
           i32.add
           global.set $~lib/memory/__stack_pointer
-          global.get $~lib/memory/__stack_pointer
-          i32.const 16
-          i32.add
-          global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitNumber@override$791
+          br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitExpression@override$816
          end
          unreachable
         end
@@ -8081,7 +9650,7 @@
        global.get $~lib/memory/__stack_pointer
        i32.const 24776
        i32.lt_s
-       br_if $folding-inner2
+       br_if $folding-inner3
        global.get $~lib/memory/__stack_pointer
        i64.const 0
        i64.store
@@ -8091,7 +9660,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitIdentifier@override$793
+       block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitPowExpression@override$818
         local.get $1
         i32.const 8
         i32.sub
@@ -8100,105 +9669,202 @@
         i32.eq
         if
          global.get $~lib/memory/__stack_pointer
-         i32.const 16
+         i32.const 48
          i32.sub
          global.set $~lib/memory/__stack_pointer
          global.get $~lib/memory/__stack_pointer
          i32.const 24776
          i32.lt_s
-         br_if $folding-inner2
+         br_if $folding-inner3
          global.get $~lib/memory/__stack_pointer
-         i64.const 0
-         i64.store
-         global.get $~lib/memory/__stack_pointer
-         i64.const 0
-         i64.store offset=8
+         i32.const 0
+         i32.const 48
+         memory.fill
          global.get $~lib/memory/__stack_pointer
          local.get $0
-         i32.store offset=8
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.load
-         local.tee $0
-         i32.store offset=4
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.load offset=8
-         local.tee $0
-         i32.store offset=12
-         local.get $0
-         i32.eqz
-         if
+         i32.store
+         block $folding-inner14
+          local.get $0
+          i32.load offset=8
+          i32.eqz
+          if
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=8
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load
+           local.tee $0
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $1
+           i32.store offset=4
+           local.get $0
+           local.get $1
+           call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+           local.set $1
+           br $folding-inner14
+          end
+          global.get $~lib/memory/__stack_pointer
+          local.set $2
+          block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$672 (result i32)
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=8
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load
+           local.tee $3
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $1
+           i32.store offset=4
+           global.get $~lib/memory/__stack_pointer
+           local.get $3
+           local.get $1
+           call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+           local.tee $3
+           i32.store offset=12
+           block $is_instance5
+            block $tablify|06
+             local.get $3
+             i32.const 8
+             i32.sub
+             i32.load
+             i32.const 34
+             i32.sub
+             br_table $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $tablify|06
+            end
+            i32.const 0
+            br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$672
+           end
+           i32.const 1
+          end
+          i32.eqz
+          if
+           i32.const 14736
+           i32.const 17840
+           i32.const 26
+           i32.const 40
+           call $~lib/builtins/abort
+           unreachable
+          end
+          local.get $2
+          local.get $3
+          i32.store offset=16
+          global.get $~lib/memory/__stack_pointer
+          local.set $2
+          block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$674 (result i32)
+           global.get $~lib/memory/__stack_pointer
+           local.set $4
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=8
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load offset=8
+           local.tee $5
+           i32.store offset=20
+           local.get $5
+           i32.eqz
+           if
+            i32.const 14432
+            i32.const 17840
+            i32.const 27
+            i32.const 41
+            call $~lib/builtins/abort
+            unreachable
+           end
+           global.get $~lib/memory/__stack_pointer
+           local.get $5
+           i32.store
+           global.get $~lib/memory/__stack_pointer
+           local.get $1
+           i32.store offset=4
+           local.get $4
+           local.get $5
+           local.get $1
+           call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+           local.tee $1
+           i32.store offset=24
+           block $is_instance07
+            block $tablify|008
+             local.get $1
+             i32.const 8
+             i32.sub
+             i32.load
+             i32.const 34
+             i32.sub
+             br_table $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $tablify|008
+            end
+            i32.const 0
+            br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$674
+           end
+           i32.const 1
+          end
+          i32.eqz
+          if
+           i32.const 14736
+           i32.const 17840
+           i32.const 27
+           i32.const 41
+           call $~lib/builtins/abort
+           unreachable
+          end
+          local.get $2
+          local.get $1
+          i32.store offset=28
+          global.get $~lib/memory/__stack_pointer
+          local.get $3
+          i32.store
+          global.get $~lib/memory/__stack_pointer
+          local.get $0
+          i32.store offset=36
+          global.get $~lib/memory/__stack_pointer
+          local.get $0
+          i32.load offset=4
+          local.tee $0
+          i32.store offset=40
+          block $folding-inner09
+           local.get $0
+           i32.eqz
+           br_if $folding-inner09
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=32
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.load offset=8
+           local.tee $0
+           i32.store offset=44
+           local.get $0
+           i32.eqz
+           br_if $folding-inner09
+           global.get $~lib/memory/__stack_pointer
+           local.get $0
+           i32.store offset=4
+           global.get $~lib/memory/__stack_pointer
+           local.get $1
+           i32.store offset=8
+           local.get $3
+           local.get $0
+           local.get $1
+           call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
+           local.set $1
+           br $folding-inner14
+          end
           i32.const 14432
           i32.const 17840
-          i32.const 60
-          i32.const 34
+          i32.const 28
+          i32.const 46
           call $~lib/builtins/abort
           unreachable
          end
          global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.store
-         global.get $~lib/memory/__stack_pointer
-         i32.const 12
-         i32.sub
-         global.set $~lib/memory/__stack_pointer
-         global.get $~lib/memory/__stack_pointer
-         i32.const 24776
-         i32.lt_s
-         br_if $folding-inner2
-         global.get $~lib/memory/__stack_pointer
-         i64.const 0
-         i64.store
-         global.get $~lib/memory/__stack_pointer
-         i32.const 0
-         i32.store offset=8
-         global.get $~lib/memory/__stack_pointer
-         i32.const 4
-         i32.const 40
-         call $~lib/rt/itcms/__new
-         local.tee $1
-         i32.store
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=4
-         local.get $1
-         i32.const 0
-         i32.store
-         local.get $1
-         i32.const 0
-         i32.const 0
-         call $~lib/rt/itcms/__link
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=4
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         call $Frontend/assembly/AST/Expressions/Terms/AbstractTerm/AbstractTerm#constructor
-         local.tee $1
-         i32.store
-         global.get $~lib/memory/__stack_pointer
-         local.get $1
-         i32.store offset=4
-         global.get $~lib/memory/__stack_pointer
-         local.get $0
-         i32.store offset=8
-         local.get $1
-         local.get $0
-         i32.store
-         local.get $1
-         local.get $0
-         i32.const 0
-         call $~lib/rt/itcms/__link
-         global.get $~lib/memory/__stack_pointer
-         i32.const 12
+         i32.const 48
          i32.add
          global.set $~lib/memory/__stack_pointer
-         global.get $~lib/memory/__stack_pointer
-         i32.const 16
-         i32.add
-         global.set $~lib/memory/__stack_pointer
-         br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitIdentifier@override$793
+         br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitPowExpression@override$818
         end
         unreachable
        end
@@ -8211,7 +9877,7 @@
       global.get $~lib/memory/__stack_pointer
       i32.const 24776
       i32.lt_s
-      br_if $folding-inner2
+      br_if $folding-inner3
       global.get $~lib/memory/__stack_pointer
       i64.const 0
       i64.store
@@ -8221,7 +9887,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitExpression@override$795
+      block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override$820
        local.get $1
        i32.const 8
        i32.sub
@@ -8236,7 +9902,7 @@
         global.get $~lib/memory/__stack_pointer
         i32.const 24776
         i32.lt_s
-        br_if $folding-inner2
+        br_if $folding-inner3
         global.get $~lib/memory/__stack_pointer
         i32.const 0
         i32.const 48
@@ -8244,7 +9910,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store
-        block $folding-inner10
+        block $folding-inner15
          local.get $0
          i32.load offset=8
          i32.eqz
@@ -8262,13 +9928,13 @@
           i32.store offset=4
           local.get $0
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
+          call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
           local.set $1
-          br $folding-inner10
+          br $folding-inner15
          end
          global.get $~lib/memory/__stack_pointer
          local.set $2
-         block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$671 (result i32)
+         block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$681 (result i32)
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=8
@@ -8283,100 +9949,100 @@
           global.get $~lib/memory/__stack_pointer
           local.get $3
           local.get $1
-          call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-          local.tee $4
+          call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
+          local.tee $3
           i32.store offset=12
-          block $is_instance
-           block $tablify|0
-            local.get $4
+          block $is_instance6
+           block $tablify|07
+            local.get $3
             i32.const 8
             i32.sub
             i32.load
             i32.const 34
             i32.sub
-            br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
+            br_table $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $tablify|07
            end
            i32.const 0
-           br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$671
+           br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$681
           end
           i32.const 1
          end
          i32.eqz
          if
-          i32.const 17776
+          i32.const 14736
           i32.const 17840
-          i32.const 53
+          i32.const 35
           i32.const 40
           call $~lib/builtins/abort
           unreachable
          end
          local.get $2
-         local.get $4
+         local.get $3
          i32.store offset=16
          global.get $~lib/memory/__stack_pointer
-         local.set $5
-         block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$673 (result i32)
+         local.set $2
+         block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$683 (result i32)
           global.get $~lib/memory/__stack_pointer
-          local.set $3
+          local.set $4
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=8
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.load offset=8
-          local.tee $2
+          local.tee $5
           i32.store offset=20
-          local.get $2
+          local.get $5
           i32.eqz
           if
            i32.const 14432
            i32.const 17840
-           i32.const 54
+           i32.const 36
            i32.const 41
            call $~lib/builtins/abort
            unreachable
           end
           global.get $~lib/memory/__stack_pointer
-          local.get $2
+          local.get $5
           i32.store
           global.get $~lib/memory/__stack_pointer
           local.get $1
           i32.store offset=4
-          local.get $3
-          local.get $2
+          local.get $4
+          local.get $5
           local.get $1
           call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
           local.tee $1
           i32.store offset=24
-          block $is_instance0
-           block $tablify|00
+          block $is_instance08
+           block $tablify|009
             local.get $1
             i32.const 8
             i32.sub
             i32.load
             i32.const 34
             i32.sub
-            br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
+            br_table $is_instance08 $is_instance08 $is_instance08 $is_instance08 $is_instance08 $is_instance08 $is_instance08 $tablify|009
            end
            i32.const 0
-           br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$673
+           br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$683
           end
           i32.const 1
          end
          i32.eqz
          if
-          i32.const 17776
+          i32.const 14736
           i32.const 17840
-          i32.const 54
+          i32.const 36
           i32.const 41
           call $~lib/builtins/abort
           unreachable
          end
-         local.get $5
+         local.get $2
          local.get $1
          i32.store offset=28
          global.get $~lib/memory/__stack_pointer
-         local.get $4
+         local.get $3
          i32.store
          global.get $~lib/memory/__stack_pointer
          local.get $0
@@ -8386,10 +10052,10 @@
          i32.load offset=4
          local.tee $0
          i32.store offset=40
-         block $folding-inner01
+         block $folding-inner010
           local.get $0
           i32.eqz
-          br_if $folding-inner01
+          br_if $folding-inner010
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=32
@@ -8400,23 +10066,23 @@
           i32.store offset=44
           local.get $0
           i32.eqz
-          br_if $folding-inner01
+          br_if $folding-inner010
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
           global.get $~lib/memory/__stack_pointer
           local.get $1
           i32.store offset=8
-          local.get $4
+          local.get $3
           local.get $0
           local.get $1
           call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
           local.set $1
-          br $folding-inner10
+          br $folding-inner15
          end
          i32.const 14432
          i32.const 17840
-         i32.const 55
+         i32.const 37
          i32.const 46
          call $~lib/builtins/abort
          unreachable
@@ -8425,25 +10091,27 @@
         i32.const 48
         i32.add
         global.set $~lib/memory/__stack_pointer
-        br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitExpression@override$795
+        br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override$820
        end
        unreachable
       end
       br $folding-inner1
      end
-     local.get $0
-     local.get $1
-     call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-     return
+     unreachable
     end
-    unreachable
+    global.get $~lib/memory/__stack_pointer
+    i32.const 8
+    i32.add
+    global.set $~lib/memory/__stack_pointer
+    local.get $1
+    return
    end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $1
-   return
+   i32.const 14432
+   i32.const 17840
+   i32.const 94
+   i32.const 39
+   call $~lib/builtins/abort
+   unreachable
   end
   i32.const 57568
   i32.const 57616
@@ -8488,7 +10156,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$797
+         block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$822
           local.get $1
           i32.const 8
           i32.sub
@@ -8578,7 +10246,7 @@
            i32.const 40
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$797
+           br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$822
           end
           unreachable
          end
@@ -8601,7 +10269,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$799
+        block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$824
          local.get $1
          i32.const 8
          i32.sub
@@ -8694,7 +10362,7 @@
           i32.const 40
           i32.add
           global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$799
+          br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$824
          end
          unreachable
         end
@@ -8717,7 +10385,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$801
+       block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$826
         local.get $1
         i32.const 8
         i32.sub
@@ -8859,10 +10527,10 @@
          local.get $1
          i32.store offset=16
          global.get $~lib/memory/__stack_pointer
-         i32.const 17168
+         i32.const 17776
          i32.store offset=20
          local.get $1
-         i32.const 17168
+         i32.const 17776
          call $~lib/string/String.__concat
          local.set $1
          global.get $~lib/memory/__stack_pointer
@@ -8906,7 +10574,7 @@
          i32.const 40
          i32.add
          global.set $~lib/memory/__stack_pointer
-         br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$801
+         br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$826
         end
         unreachable
        end
@@ -8929,7 +10597,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1
+      block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$2
        local.get $1
        i32.const 8
        i32.sub
@@ -9073,7 +10741,7 @@
         i32.const 40
         i32.add
         global.set $~lib/memory/__stack_pointer
-        br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1
+        br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$2
        end
        unreachable
       end
@@ -9096,7 +10764,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$804
+     block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$829
       local.get $1
       i32.const 8
       i32.sub
@@ -9186,7 +10854,7 @@
        i32.const 40
        i32.add
        global.set $~lib/memory/__stack_pointer
-       br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$804
+       br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$829
       end
       unreachable
      end
@@ -9275,7 +10943,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitNumber@override$808
+        block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitNumber@override$833
          local.get $1
          i32.const 8
          i32.sub
@@ -9327,7 +10995,7 @@
           i32.const 8
           i32.add
           global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitNumber@override$808
+          br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitNumber@override$833
          end
          unreachable
         end
@@ -9350,7 +11018,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitBinaryExpression@override$810
+       block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitBinaryExpression@override$835
         local.get $1
         i32.const 8
         i32.sub
@@ -9362,7 +11030,7 @@
          local.get $0
          call $Frontend/assembly/Interpreter/Interpreter/Interpreter#visitBinaryExpression
          local.set $2
-         br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitBinaryExpression@override$810
+         br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitBinaryExpression@override$835
         end
         unreachable
        end
@@ -9385,7 +11053,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitUnaryExpression@override$812
+      block $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitUnaryExpression@override$837
        local.get $1
        i32.const 8
        i32.sub
@@ -9397,7 +11065,7 @@
         local.get $0
         call $Frontend/assembly/Interpreter/Interpreter/Interpreter#visitUnaryExpression
         local.set $2
-        br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitUnaryExpression@override$812
+        br $__inlined_func$Frontend/assembly/AST/ASTVisitor/ASTVisitor<f64>#visitUnaryExpression@override$837
        end
        unreachable
       end
@@ -9485,232 +11153,6 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $2
- )
- (func $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitUnaryExpression@override (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  block $folding-inner1
-   block $folding-inner0
-    local.get $0
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 32
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner0
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 32
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store
-     block $__inlined_func$Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitUnaryExpression$110
-      local.get $1
-      i32.load
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.load offset=4
-       local.tee $1
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       local.get $1
-       local.get $0
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.set $0
-       br $__inlined_func$Frontend/assembly/AST/ToAstVisitor/ToAstVisitor#visitUnaryExpression$110
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$819 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.load offset=4
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $0
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $3
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $3
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$819
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 93
-       i32.const 50
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $3
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.get $1
-      i32.store offset=20
-      global.get $~lib/memory/__stack_pointer
-      local.get $1
-      i32.load
-      local.tee $0
-      i32.store offset=24
-      local.get $0
-      i32.eqz
-      br_if $folding-inner1
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=8
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=8
-      local.tee $1
-      i32.store offset=28
-      local.get $1
-      i32.eqz
-      br_if $folding-inner1
-      global.get $~lib/memory/__stack_pointer
-      local.get $1
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $3
-      i32.store offset=4
-      global.get $~lib/memory/__stack_pointer
-      i32.const 12
-      i32.sub
-      global.set $~lib/memory/__stack_pointer
-      global.get $~lib/memory/__stack_pointer
-      i32.const 24776
-      i32.lt_s
-      br_if $folding-inner0
-      global.get $~lib/memory/__stack_pointer
-      i64.const 0
-      i64.store
-      global.get $~lib/memory/__stack_pointer
-      i32.const 0
-      i32.store offset=8
-      global.get $~lib/memory/__stack_pointer
-      i32.const 8
-      i32.const 36
-      call $~lib/rt/itcms/__new
-      local.tee $0
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      local.get $0
-      i32.const 0
-      i32.store
-      local.get $0
-      i32.const 0
-      i32.const 0
-      call $~lib/rt/itcms/__link
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      local.get $0
-      i32.const 0
-      i32.store offset=4
-      local.get $0
-      i32.const 0
-      i32.const 0
-      call $~lib/rt/itcms/__link
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      call $Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression#constructor
-      local.tee $0
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      global.get $~lib/memory/__stack_pointer
-      local.get $1
-      i32.store offset=8
-      local.get $0
-      local.get $1
-      i32.store
-      local.get $0
-      local.get $1
-      i32.const 0
-      call $~lib/rt/itcms/__link
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      global.get $~lib/memory/__stack_pointer
-      local.get $3
-      i32.store offset=8
-      local.get $0
-      local.get $3
-      i32.store offset=4
-      local.get $0
-      local.get $3
-      i32.const 0
-      call $~lib/rt/itcms/__link
-      global.get $~lib/memory/__stack_pointer
-      i32.const 12
-      i32.add
-      global.set $~lib/memory/__stack_pointer
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 32
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     local.get $0
-     return
-    end
-    unreachable
-   end
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  i32.const 14432
-  i32.const 17840
-  i32.const 94
-  i32.const 39
-  call $~lib/builtins/abort
-  unreachable
  )
  (func $~lib/array/Array<~lib/string/String>~visit (param $0 i32)
   (local $1 i32)
@@ -10225,7 +11667,7 @@
      end
     end
    end
-   block $__inlined_func$~lib/util/string/compareImpl$138
+   block $__inlined_func$~lib/util/string/compareImpl$150
     loop $while-continue|1
      local.get $0
      local.tee $3
@@ -10245,7 +11687,7 @@
       local.get $4
       local.get $5
       i32.ne
-      br_if $__inlined_func$~lib/util/string/compareImpl$138
+      br_if $__inlined_func$~lib/util/string/compareImpl$150
       local.get $2
       i32.const 2
       i32.add
@@ -12261,7 +13703,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $0
     i32.store
-    block $__inlined_func$~lib/rt/itcms/__renew$865
+    block $__inlined_func$~lib/rt/itcms/__renew$882
      i32.const 1073741820
      local.get $3
      i32.const 1
@@ -12304,7 +13746,7 @@
       i32.store offset=16
       local.get $3
       local.set $2
-      br $__inlined_func$~lib/rt/itcms/__renew$865
+      br $__inlined_func$~lib/rt/itcms/__renew$882
      end
      local.get $4
      local.get $7
@@ -13611,7 +15053,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store
-   block $__inlined_func$~lib/string/String#concat$945
+   block $__inlined_func$~lib/string/String#concat$967
     local.get $1
     i32.const 20
     i32.sub
@@ -13630,7 +15072,7 @@
      global.set $~lib/memory/__stack_pointer
      i32.const 9040
      local.set $0
-     br $__inlined_func$~lib/string/String#concat$945
+     br $__inlined_func$~lib/string/String#concat$967
     end
     global.get $~lib/memory/__stack_pointer
     local.get $0
@@ -15611,7 +17053,7 @@
     if
      i32.const 14432
      i32.const 14560
-     i32.const 179
+     i32.const 206
      i32.const 49
      call $~lib/builtins/abort
      unreachable
@@ -15898,32 +17340,151 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
+ (func $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#constructor (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i64.const 0
+  i64.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.const 18
+  call $~lib/rt/itcms/__new
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=8
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  local.get $3
+  local.get $0
+  i32.store
+  local.get $3
+  local.get $0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=8
+  local.get $3
+  local.get $1
+  i32.store offset=4
+  local.get $3
+  local.get $1
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $3
+ )
  (func $Frontend/assembly/Parser/Parser/Parser#powerExpression (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
-  block $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.const 24
-   memory.fill
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#unaryExpression
-   local.tee $1
-   i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 32
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  call $Frontend/assembly/Parser/Parser/Parser#unaryExpression
+  local.tee $1
+  i32.store offset=4
+  loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
@@ -15952,133 +17513,205 @@
     i32.store
     global.get $~lib/memory/__stack_pointer
     local.get $0
-    call $Frontend/assembly/Parser/Parser/Parser#powerExpression
+    call $Frontend/assembly/Parser/Parser/Parser#unaryExpression
     local.tee $3
     i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
+   local.get $1
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 18
+   i32.eq
+  else
+   i32.const 0
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/PowExpression/PowExpression$382 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 18
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/PowExpression/PowExpression$382
+    drop
+    i32.const 1
+   end
+   i32.eqz
+   if
+    i32.const 14736
+    i32.const 14560
+    i32.const 166
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.sub
-   global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.const 18
-   call $~lib/rt/itcms/__new
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=8
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=8
-   local.get $0
-   local.get $1
-   i32.store
-   local.get $0
-   local.get $1
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   local.get $0
-   local.get $2
-   i32.store offset=4
-   local.get $0
-   local.get $2
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $1
    return
   end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=20
+  local.get $1
+  local.get $2
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 32
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i64.const 0
+  i64.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.const 17
+  call $~lib/rt/itcms/__new
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=8
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  local.get $3
+  local.get $0
+  i32.store
+  local.get $3
+  local.get $0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=8
+  local.get $3
+  local.get $1
+  i32.store offset=4
+  local.get $3
+  local.get $1
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $3
  )
  (func $Frontend/assembly/Parser/Parser/Parser#multExpression (param $0 i32) (result i32)
   (local $1 i32)
@@ -16086,32 +17719,300 @@
   (local $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
-  block $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.const 24
-   memory.fill
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#powerExpression
-   local.tee $1
-   i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 32
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  call $Frontend/assembly/Parser/Parser/Parser#powerExpression
+  local.tee $1
+  i32.store offset=4
+  loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
    i32.const 2
    i32.const 9
-   i32.const 14736
+   i32.const 14800
+   call $~lib/rt/__newArray
+   local.set $4
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=8
+   local.get $0
+   local.get $4
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $2
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#powerExpression
+    local.tee $3
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
+   local.get $1
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 17
+   i32.eq
+  else
+   i32.const 0
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression$392 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 17
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression$392
+    drop
+    i32.const 1
+   end
+   i32.eqz
+   if
+    i32.const 14736
+    i32.const 14560
+    i32.const 148
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   i32.const 32
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   local.get $1
+   return
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=20
+  local.get $1
+  local.get $2
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 32
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i64.const 0
+  i64.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.const 16
+  call $~lib/rt/itcms/__new
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $3
+  i32.const 0
+  i32.store offset=8
+  local.get $3
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
+  local.tee $3
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  local.get $3
+  local.get $0
+  i32.store
+  local.get $3
+  local.get $0
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=8
+  local.get $3
+  local.get $1
+  i32.store offset=4
+  local.get $3
+  local.get $1
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.store offset=8
+  local.get $3
+  local.get $2
+  i32.const 0
+  call $~lib/rt/itcms/__link
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $3
+ )
+ (func $Frontend/assembly/Parser/Parser/Parser#additiveExpression (param $0 i32) (result i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 32
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 32
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  call $Frontend/assembly/Parser/Parser/Parser#multExpression
+  local.tee $1
+  i32.store offset=4
+  loop $while-continue|0
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   i32.const 2
+   i32.const 9
+   i32.const 14832
    call $~lib/rt/__newArray
    local.set $4
    global.get $~lib/memory/__stack_pointer
@@ -16137,312 +18038,90 @@
     call $Frontend/assembly/Parser/Parser/Parser#multExpression
     local.tee $3
     i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
    end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.sub
-   global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.const 17
-   call $~lib/rt/itcms/__new
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=8
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=8
-   local.get $0
-   local.get $1
-   i32.store
-   local.get $0
-   local.get $1
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   local.get $0
-   local.get $2
-   i32.store offset=4
-   local.get $0
-   local.get $2
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
   end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Parser/Parser#binaryExpression (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
+   local.get $1
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 16
+   i32.eq
+  else
    i32.const 0
-   i32.const 24
-   memory.fill
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#multExpression
-   local.tee $1
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   i32.const 2
-   i32.const 9
-   i32.const 14768
-   call $~lib/rt/__newArray
-   local.set $4
-   global.get $~lib/memory/__stack_pointer
-   local.get $4
-   i32.store offset=8
-   local.get $0
-   local.get $4
-   call $Frontend/assembly/Parser/Parser/Parser#match
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression$402 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 16
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression$402
+    drop
+    i32.const 1
+   end
+   i32.eqz
    if
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    call $Frontend/assembly/Parser/Parser/Parser#previous
-    local.tee $2
-    i32.store offset=12
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    call $Frontend/assembly/Parser/Parser/Parser#binaryExpression
-    local.tee $3
-    i32.store offset=16
+    i32.const 14736
+    i32.const 14560
+    i32.const 130
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.sub
-   global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner0
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
-   i32.const 16
-   call $~lib/rt/itcms/__new
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   i32.const 0
-   i32.store offset=8
-   local.get $0
-   i32.const 0
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/AbstractExpression/AbstractExpression#constructor
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=8
-   local.get $0
-   local.get $1
-   i32.store
-   local.get $0
-   local.get $1
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=8
-   local.get $0
-   local.get $2
-   i32.store offset=4
-   local.get $0
-   local.get $2
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.store offset=8
-   local.get $0
-   local.get $3
-   i32.const 0
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   i32.const 12
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $1
    return
   end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=20
+  local.get $1
+  local.get $2
+  local.get $3
+  call $Frontend/assembly/Parser/Expressions/AdditiveExpression/AdditiveExpression#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 32
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
  )
  (func $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
@@ -16559,8 +18238,10 @@
  (func $Frontend/assembly/Parser/Parser/Parser#relationExpression (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
@@ -16576,84 +18257,129 @@
   end
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  call $Frontend/assembly/Parser/Parser/Parser#binaryExpression
+  call $Frontend/assembly/Parser/Parser/Parser#additiveExpression
   local.tee $1
   i32.store offset=4
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  i32.const 4
-  i32.const 9
-  i32.const 14800
-  call $~lib/rt/__newArray
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=8
-  local.get $0
-  local.get $2
-  call $Frontend/assembly/Parser/Parser/Parser#match
-  if
+  loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
+   i32.const 4
+   i32.const 9
+   i32.const 14864
+   call $~lib/rt/__newArray
+   local.set $4
    global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $2
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#relationExpression
-   local.tee $0
-   i32.store offset=16
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $4
    i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
    local.get $0
-   i32.store offset=20
+   local.get $4
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $2
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#additiveExpression
+    local.tee $3
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
    local.get $1
-   local.get $2
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
-   local.set $0
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 15
+   i32.eq
+  else
+   i32.const 0
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression$412 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 15
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression$412
+    drop
+    i32.const 1
+   end
+   i32.eqz
+   if
+    i32.const 14736
+    i32.const 14560
+    i32.const 82
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
    global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $1
    return
   end
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $2
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $3
   i32.store offset=20
   local.get $1
-  i32.const 0
-  i32.const 0
+  local.get $2
+  local.get $3
   call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0
@@ -16773,8 +18499,10 @@
  (func $Frontend/assembly/Parser/Parser/Parser#equalityExpression (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
@@ -16790,7 +18518,7 @@
   end
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $0
@@ -16800,74 +18528,119 @@
   call $Frontend/assembly/Parser/Parser/Parser#relationExpression
   local.tee $1
   i32.store offset=4
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  i32.const 2
-  i32.const 9
-  i32.const 14848
-  call $~lib/rt/__newArray
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=8
-  local.get $0
-  local.get $2
-  call $Frontend/assembly/Parser/Parser/Parser#match
-  if
+  loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
+   i32.const 2
+   i32.const 9
+   i32.const 14912
+   call $~lib/rt/__newArray
+   local.set $4
    global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $2
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
-   local.tee $0
-   i32.store offset=16
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $4
    i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
    local.get $0
-   i32.store offset=20
+   local.get $4
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $2
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#relationExpression
+    local.tee $3
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
    local.get $1
-   local.get $2
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
-   local.set $0
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 14
+   i32.eq
+  else
+   i32.const 0
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression$422 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 14
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression$422
+    drop
+    i32.const 1
+   end
+   i32.eqz
+   if
+    i32.const 14736
+    i32.const 14560
+    i32.const 64
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
    global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $1
    return
   end
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $2
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $3
   i32.store offset=20
   local.get $1
-  i32.const 0
-  i32.const 0
+  local.get $2
+  local.get $3
   call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0
@@ -16987,8 +18760,10 @@
  (func $Frontend/assembly/Parser/Parser/Parser#expression (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
@@ -17004,7 +18779,7 @@
   end
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 24
+  i32.const 32
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.get $0
@@ -17014,74 +18789,119 @@
   call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
   local.tee $1
   i32.store offset=4
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  i32.const 2
-  i32.const 9
-  i32.const 14880
-  call $~lib/rt/__newArray
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=8
-  local.get $0
-  local.get $2
-  call $Frontend/assembly/Parser/Parser/Parser#match
-  if
+  loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
+   i32.const 2
+   i32.const 9
+   i32.const 14944
+   call $~lib/rt/__newArray
+   local.set $4
    global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#previous
-   local.tee $2
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $Frontend/assembly/Parser/Parser/Parser#expression
-   local.tee $0
-   i32.store offset=16
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $4
    i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
    local.get $0
-   i32.store offset=20
+   local.get $4
+   call $Frontend/assembly/Parser/Parser/Parser#match
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#previous
+    local.tee $2
+    i32.store offset=12
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $Frontend/assembly/Parser/Parser/Parser#equalityExpression
+    local.tee $3
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    local.get $3
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    local.get $2
+    local.get $3
+    call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
+    local.tee $1
+    i32.store offset=4
+    br $while-continue|0
+   end
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=24
+  local.get $1
+  if (result i32)
    local.get $1
-   local.get $2
-   local.get $0
-   call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
-   local.set $0
+   i32.const 8
+   i32.sub
+   i32.load
+   i32.const 13
+   i32.eq
+  else
+   i32.const 0
+  end
+  if
+   block $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/Expression/Expression$432 (result i32)
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=28
+    i32.const 0
+    local.get $1
+    i32.const 8
+    i32.sub
+    i32.load
+    i32.const 13
+    i32.ne
+    br_if $__inlined_func$~instanceof|Frontend/assembly/Parser/Expressions/Expression/Expression$432
+    drop
+    i32.const 1
+   end
+   i32.eqz
+   if
+    i32.const 14736
+    i32.const 14560
+    i32.const 46
+    i32.const 20
+    call $~lib/builtins/abort
+    unreachable
+   end
    global.get $~lib/memory/__stack_pointer
-   i32.const 24
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $1
    return
   end
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $2
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
-  i32.const 0
+  local.get $3
   i32.store offset=20
   local.get $1
-  i32.const 0
-  i32.const 0
+  local.get $2
+  local.get $3
   call $Frontend/assembly/Parser/Expressions/Expression/Expression#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 24
+  i32.const 32
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0
@@ -17108,17 +18928,17 @@
    i32.const 36
    memory.fill
    global.get $~lib/memory/__stack_pointer
-   i32.const 14976
+   i32.const 15040
    i32.store
    global.get $~lib/memory/__stack_pointer
-   i32.const 14976
+   i32.const 15040
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15008
+   i32.const 15072
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
-   i32.const 14976
-   i32.const 15008
+   i32.const 15040
+   i32.const 15072
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17201,11 +19021,11 @@
       local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      i32.const 15056
+      i32.const 15120
       i32.store offset=8
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.const 15056
+      i32.const 15120
       call $~lib/string/String.__concat
       local.tee $1
       i32.store
@@ -17221,11 +19041,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15088
+   i32.const 15152
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 15088
+   i32.const 15152
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17233,11 +19053,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15120
+   i32.const 15184
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 15120
+   i32.const 15184
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17322,11 +19142,11 @@
       local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      i32.const 15056
+      i32.const 15120
       i32.store offset=8
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.const 15056
+      i32.const 15120
       call $~lib/string/String.__concat
       local.tee $1
       i32.store
@@ -17342,11 +19162,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15088
+   i32.const 15152
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 15088
+   i32.const 15152
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17356,7 +19176,7 @@
    global.get $~lib/memory/__stack_pointer
    local.set $3
    global.get $~lib/memory/__stack_pointer
-   i32.const 15168
+   i32.const 15232
    i32.store offset=20
    global.get $~lib/memory/__stack_pointer
    local.get $0
@@ -17384,7 +19204,7 @@
      i32.const 4
      i32.add
      global.set $~lib/memory/__stack_pointer
-     i32.const 15216
+     i32.const 15280
      local.set $2
      br $__inlined_func$~lib/util/number/dtoa$88
     end
@@ -17402,7 +19222,7 @@
       i32.const 4
       i32.add
       global.set $~lib/memory/__stack_pointer
-      i32.const 15248
+      i32.const 15312
       local.set $2
       br $__inlined_func$~lib/util/number/dtoa$88
      end
@@ -17410,8 +19230,8 @@
      i32.const 4
      i32.add
      global.set $~lib/memory/__stack_pointer
-     i32.const 15280
-     i32.const 15328
+     i32.const 15344
+     i32.const 15392
      local.get $4
      f64.const 0
      f64.lt
@@ -17431,7 +19251,7 @@
     local.tee $2
     i32.store
     local.get $2
-    i32.const 15360
+    i32.const 15424
     local.get $5
     memory.copy
     global.get $~lib/memory/__stack_pointer
@@ -17442,7 +19262,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $2
    i32.store offset=24
-   i32.const 15168
+   i32.const 15232
    local.get $2
    call $~lib/string/String.__concat
    local.set $2
@@ -17450,10 +19270,10 @@
    local.get $2
    i32.store offset=12
    global.get $~lib/memory/__stack_pointer
-   i32.const 16352
+   i32.const 16416
    i32.store offset=16
    local.get $2
-   i32.const 16352
+   i32.const 16416
    call $~lib/string/String.__concat
    local.set $2
    global.get $~lib/memory/__stack_pointer
@@ -17469,11 +19289,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 16384
+   i32.const 16448
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 16384
+   i32.const 16448
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17526,7 +19346,7 @@
      i32.const 72
      memory.fill
      global.get $~lib/memory/__stack_pointer
-     i32.const 16432
+     i32.const 16496
      i32.store offset=56
      global.get $~lib/memory/__stack_pointer
      local.get $6
@@ -17538,7 +19358,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $2
      i32.store offset=60
-     i32.const 16432
+     i32.const 16496
      local.get $2
      call $~lib/string/String.__concat
      local.set $2
@@ -17546,10 +19366,10 @@
      local.get $2
      i32.store offset=48
      global.get $~lib/memory/__stack_pointer
-     i32.const 16480
+     i32.const 16544
      i32.store offset=52
      local.get $2
-     i32.const 16480
+     i32.const 16544
      call $~lib/string/String.__concat
      local.set $2
      global.get $~lib/memory/__stack_pointer
@@ -17571,10 +19391,10 @@
      local.get $2
      i32.store offset=32
      global.get $~lib/memory/__stack_pointer
-     i32.const 16528
+     i32.const 16592
      i32.store offset=36
      local.get $2
-     i32.const 16528
+     i32.const 16592
      call $~lib/string/String.__concat
      local.set $7
      global.get $~lib/memory/__stack_pointer
@@ -17604,7 +19424,7 @@
       i32.eqz
       if
        i32.const 14432
-       i32.const 16592
+       i32.const 16656
        i32.const 21
        i32.const 139
        call $~lib/builtins/abort
@@ -17628,10 +19448,10 @@
      local.get $2
      i32.store offset=16
      global.get $~lib/memory/__stack_pointer
-     i32.const 16688
+     i32.const 16752
      i32.store offset=20
      local.get $2
-     i32.const 16688
+     i32.const 16752
      call $~lib/string/String.__concat
      local.set $2
      global.get $~lib/memory/__stack_pointer
@@ -17693,11 +19513,11 @@
       local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      i32.const 15056
+      i32.const 15120
       i32.store offset=8
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.const 15056
+      i32.const 15120
       call $~lib/string/String.__concat
       local.tee $1
       i32.store
@@ -17713,11 +19533,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15088
+   i32.const 15152
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 15088
+   i32.const 15152
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17725,11 +19545,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 16736
+   i32.const 16800
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 16736
+   i32.const 16800
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17814,11 +19634,11 @@
       local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      i32.const 15056
+      i32.const 15120
       i32.store offset=8
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.const 15056
+      i32.const 15120
       call $~lib/string/String.__concat
       local.tee $1
       i32.store
@@ -17834,11 +19654,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 15088
+   i32.const 15152
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 15088
+   i32.const 15152
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17846,11 +19666,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 16800
+   i32.const 16864
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 16800
+   i32.const 16864
    call $~lib/string/String.__concat
    local.tee $1
    i32.store
@@ -17935,11 +19755,11 @@
       local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      i32.const 15056
+      i32.const 15120
       i32.store offset=8
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.const 15056
+      i32.const 15120
       call $~lib/string/String.__concat
       local.tee $1
       i32.store
@@ -17955,11 +19775,11 @@
    local.get $1
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 16864
+   i32.const 16928
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.const 16864
+   i32.const 16928
    call $~lib/string/String.__concat
    local.tee $0
    i32.store
@@ -18124,7 +19944,7 @@
    local.get $3
    i32.store
    global.get $~lib/memory/__stack_pointer
-   block $__inlined_func$Frontend/assembly/Lexer/Scanner/Scanner#scanTokens$10 (result i32)
+   block $__inlined_func$Frontend/assembly/Lexer/Scanner/Scanner#scanTokens$11 (result i32)
     global.get $~lib/memory/__stack_pointer
     i32.const 16
     i32.sub
@@ -18237,7 +20057,7 @@
      i32.add
      global.set $~lib/memory/__stack_pointer
      local.get $0
-     br $__inlined_func$Frontend/assembly/Lexer/Scanner/Scanner#scanTokens$10
+     br $__inlined_func$Frontend/assembly/Lexer/Scanner/Scanner#scanTokens$11
     end
     br $folding-inner1
    end
@@ -18486,7 +20306,7 @@
    i32.store offset=4
    i32.const 0
    i32.const 4
-   i32.const 14912
+   i32.const 14976
    call $~lib/rt/__newArray
    local.set $7
    global.get $~lib/memory/__stack_pointer
@@ -18602,7 +20422,7 @@
    i32.store offset=4
    i32.const 0
    i32.const 4
-   i32.const 14944
+   i32.const 15008
    call $~lib/rt/__newArray
    local.set $8
    global.get $~lib/memory/__stack_pointer
@@ -18881,1694 +20701,6 @@
   call $~lib/builtins/abort
   unreachable
  )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void> (param $0 i32) (param $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override$464
-   local.get $1
-   i32.const 8
-   i32.sub
-   i32.load
-   i32.const 24
-   i32.eq
-   if
-    local.get $1
-    local.get $0
-    call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression
-    br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBinaryExpression@override$464
-   end
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void> (param $0 i32) (param $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$466
-   local.get $1
-   i32.const 8
-   i32.sub
-   i32.load
-   i32.const 24
-   i32.eq
-   if
-    local.get $1
-    local.get $0
-    call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-    br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$466
-   end
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void> (param $0 i32) (param $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$468
-   local.get $1
-   i32.const 8
-   i32.sub
-   i32.load
-   i32.const 24
-   i32.eq
-   if
-    local.get $1
-    local.get $0
-    call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitRelationalExpression
-    br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$468
-   end
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void> (param $0 i32) (param $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$470
-   local.get $1
-   i32.const 8
-   i32.sub
-   i32.load
-   i32.const 24
-   i32.eq
-   if
-    local.get $1
-    local.get $0
-    call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitMultiplicativeExpression
-    br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$470
-   end
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void> (param $0 i32) (param $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner1
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner1
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$472
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 24
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner1
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=4
-     local.get $1
-     local.get $1
-     i32.load
-     i32.const 1
-     i32.add
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.load offset=4
-     local.tee $2
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=4
-     local.get $2
-     local.get $1
-     call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=4
-     local.get $1
-     local.get $1
-     i32.load
-     i32.const 1
-     i32.sub
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.load offset=4
-     local.tee $2
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=32
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=36
-     local.get $1
-     i32.load
-     call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-     local.set $3
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store offset=24
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=32
-     local.get $1
-     i32.load
-     call $~lib/number/I32#toString
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=28
-     local.get $3
-     local.get $1
-     call $~lib/string/String.__concat
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=16
-     global.get $~lib/memory/__stack_pointer
-     i32.const 17456
-     i32.store offset=20
-     local.get $1
-     i32.const 17456
-     call $~lib/string/String.__concat
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store offset=16
-     global.get $~lib/memory/__stack_pointer
-     local.set $3
-     block $folding-inner0
-      local.get $0
-      i32.load
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=20
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store offset=40
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=16
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-      else
-       i32.const 9040
-       local.set $0
-      end
-      local.get $3
-      local.get $0
-      i32.store offset=12
-      local.get $1
-      local.get $0
-      call $~lib/string/String.__concat
-      local.set $0
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=4
-      local.get $2
-      local.get $0
-      call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
-      global.get $~lib/memory/__stack_pointer
-      i32.const 48
-      i32.add
-      global.set $~lib/memory/__stack_pointer
-      br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$472
-     end
-     i32.const 14432
-     i32.const 17024
-     i32.const 101
-     i32.const 133
-     call $~lib/builtins/abort
-     unreachable
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void> (param $0 i32) (param $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$474
-   local.get $1
-   i32.const 8
-   i32.sub
-   i32.load
-   i32.const 24
-   i32.eq
-   if
-    local.get $1
-    local.get $0
-    call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPowExpression
-    br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$474
-   end
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override$476
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     block $folding-inner1
-      local.get $0
-      i32.load offset=8
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.set $0
-       br $folding-inner1
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$620 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.tee $4
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $4
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$620
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 35
-       i32.const 40
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $4
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.set $5
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$622 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.set $3
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $2
-       i32.store offset=20
-       local.get $2
-       i32.eqz
-       if
-        i32.const 14432
-        i32.const 17840
-        i32.const 36
-        i32.const 41
-        call $~lib/builtins/abort
-        unreachable
-       end
-       global.get $~lib/memory/__stack_pointer
-       local.get $2
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $3
-       local.get $2
-       local.get $1
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $1
-       i32.store offset=24
-       block $is_instance0
-        block $tablify|00
-         local.get $1
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$622
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 36
-       i32.const 41
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $5
-      local.get $1
-      i32.store offset=28
-      global.get $~lib/memory/__stack_pointer
-      local.get $4
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=36
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=4
-      local.tee $0
-      i32.store offset=40
-      block $folding-inner0
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=32
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       local.get $4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-       local.set $0
-       br $folding-inner1
-      end
-      i32.const 14432
-      i32.const 17840
-      i32.const 37
-      i32.const 46
-      call $~lib/builtins/abort
-      unreachable
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitBinaryExpression@override$476
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitEqualityExpression@override$478
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     block $folding-inner1
-      local.get $0
-      i32.load offset=8
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.set $0
-       br $folding-inner1
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$629 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.tee $4
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $4
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$629
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 44
-       i32.const 40
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $4
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.set $5
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$631 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.set $3
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $2
-       i32.store offset=20
-       local.get $2
-       i32.eqz
-       if
-        i32.const 14432
-        i32.const 17840
-        i32.const 45
-        i32.const 41
-        call $~lib/builtins/abort
-        unreachable
-       end
-       global.get $~lib/memory/__stack_pointer
-       local.get $2
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $3
-       local.get $2
-       local.get $1
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $1
-       i32.store offset=24
-       block $is_instance0
-        block $tablify|00
-         local.get $1
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$631
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 45
-       i32.const 41
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $5
-      local.get $1
-      i32.store offset=28
-      global.get $~lib/memory/__stack_pointer
-      local.get $4
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=36
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=4
-      local.tee $0
-      i32.store offset=40
-      block $folding-inner0
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=32
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       local.get $4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-       local.set $0
-       br $folding-inner1
-      end
-      i32.const 14432
-      i32.const 17840
-      i32.const 46
-      i32.const 46
-      call $~lib/builtins/abort
-      unreachable
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitEqualityExpression@override$478
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitRelationalExpression@override$480
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     block $folding-inner1
-      local.get $0
-      i32.load offset=8
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.set $0
-       br $folding-inner1
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$638 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.tee $4
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $4
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$638
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 80
-       i32.const 40
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $4
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.set $5
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$640 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.set $3
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $2
-       i32.store offset=20
-       local.get $2
-       i32.eqz
-       if
-        i32.const 14432
-        i32.const 17840
-        i32.const 81
-        i32.const 41
-        call $~lib/builtins/abort
-        unreachable
-       end
-       global.get $~lib/memory/__stack_pointer
-       local.get $2
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $3
-       local.get $2
-       local.get $1
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $1
-       i32.store offset=24
-       block $is_instance0
-        block $tablify|00
-         local.get $1
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$640
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 81
-       i32.const 41
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $5
-      local.get $1
-      i32.store offset=28
-      global.get $~lib/memory/__stack_pointer
-      local.get $4
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=36
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=4
-      local.tee $0
-      i32.store offset=40
-      block $folding-inner0
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=32
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       local.get $4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-       local.set $0
-       br $folding-inner1
-      end
-      i32.const 14432
-      i32.const 17840
-      i32.const 82
-      i32.const 46
-      call $~lib/builtins/abort
-      unreachable
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitRelationalExpression@override$480
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitMultiplicativeExpression@override$482
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     block $folding-inner1
-      local.get $0
-      i32.load offset=8
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.set $0
-       br $folding-inner1
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$647 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.tee $4
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $4
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$647
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 67
-       i32.const 40
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $4
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.set $5
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$649 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.set $3
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $2
-       i32.store offset=20
-       local.get $2
-       i32.eqz
-       if
-        i32.const 14432
-        i32.const 17840
-        i32.const 68
-        i32.const 41
-        call $~lib/builtins/abort
-        unreachable
-       end
-       global.get $~lib/memory/__stack_pointer
-       local.get $2
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $3
-       local.get $2
-       local.get $1
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $1
-       i32.store offset=24
-       block $is_instance0
-        block $tablify|00
-         local.get $1
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$649
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 68
-       i32.const 41
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $5
-      local.get $1
-      i32.store offset=28
-      global.get $~lib/memory/__stack_pointer
-      local.get $4
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=36
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=4
-      local.tee $0
-      i32.store offset=40
-      block $folding-inner0
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=32
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       local.get $4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-       local.set $0
-       br $folding-inner1
-      end
-      i32.const 14432
-      i32.const 17840
-      i32.const 69
-      i32.const 46
-      call $~lib/builtins/abort
-      unreachable
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitMultiplicativeExpression@override$482
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
- (func $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $1
-  local.get $0
-  call $Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitUnaryExpression@override
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $0
- )
- (func $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  block $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i32.const 24776
-   i32.lt_s
-   br_if $folding-inner2
-   global.get $~lib/memory/__stack_pointer
-   i64.const 0
-   i64.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   block $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitPowExpression@override$485
-    local.get $1
-    i32.const 8
-    i32.sub
-    i32.load
-    i32.const 26
-    i32.eq
-    if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 24776
-     i32.lt_s
-     br_if $folding-inner2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 48
-     memory.fill
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     block $folding-inner1
-      local.get $0
-      i32.load offset=8
-      i32.eqz
-      if
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $0
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.set $0
-       br $folding-inner1
-      end
-      global.get $~lib/memory/__stack_pointer
-      local.set $2
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$680 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load
-       local.tee $3
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $3
-       local.get $1
-       call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>
-       local.tee $4
-       i32.store offset=12
-       block $is_instance
-        block $tablify|0
-         local.get $4
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$680
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 26
-       i32.const 40
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $2
-      local.get $4
-      i32.store offset=16
-      global.get $~lib/memory/__stack_pointer
-      local.set $5
-      block $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$682 (result i32)
-       global.get $~lib/memory/__stack_pointer
-       local.set $3
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=8
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $2
-       i32.store offset=20
-       local.get $2
-       i32.eqz
-       if
-        i32.const 14432
-        i32.const 17840
-        i32.const 27
-        i32.const 41
-        call $~lib/builtins/abort
-        unreachable
-       end
-       global.get $~lib/memory/__stack_pointer
-       local.get $2
-       i32.store
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=4
-       local.get $3
-       local.get $2
-       local.get $1
-       call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>@override
-       local.tee $1
-       i32.store offset=24
-       block $is_instance0
-        block $tablify|00
-         local.get $1
-         i32.const 8
-         i32.sub
-         i32.load
-         i32.const 34
-         i32.sub
-         br_table $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
-        end
-        i32.const 0
-        br $__inlined_func$~instanceof|Frontend/assembly/AST/Expressions/AbstractExpression/AbstractExpression$682
-       end
-       i32.const 1
-      end
-      i32.eqz
-      if
-       i32.const 17776
-       i32.const 17840
-       i32.const 27
-       i32.const 41
-       call $~lib/builtins/abort
-       unreachable
-      end
-      local.get $5
-      local.get $1
-      i32.store offset=28
-      global.get $~lib/memory/__stack_pointer
-      local.get $4
-      i32.store
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store offset=36
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.load offset=4
-      local.tee $0
-      i32.store offset=40
-      block $folding-inner0
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=32
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.load offset=8
-       local.tee $0
-       i32.store offset=44
-       local.get $0
-       i32.eqz
-       br_if $folding-inner0
-       global.get $~lib/memory/__stack_pointer
-       local.get $0
-       i32.store offset=4
-       global.get $~lib/memory/__stack_pointer
-       local.get $1
-       i32.store offset=8
-       local.get $4
-       local.get $0
-       local.get $1
-       call $Frontend/assembly/AST/Expressions/BinaryExpression/BinaryExpression#constructor
-       local.set $0
-       br $folding-inner1
-      end
-      i32.const 14432
-      i32.const 17840
-      i32.const 28
-      i32.const 46
-      call $~lib/builtins/abort
-      unreachable
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 48
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$Frontend/assembly/Parser/ParseVisitor/ParseVisitor<Frontend/assembly/AST/AbstractSyntaxNode/AbstractSyntaxNode>#visitPowExpression@override$485
-    end
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  i32.const 57568
-  i32.const 57616
-  i32.const 1
-  i32.const 1
-  call $~lib/builtins/abort
-  unreachable
- )
  (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
@@ -20607,11 +20739,11 @@
     local.get $1
     i32.store offset=4
     global.get $~lib/memory/__stack_pointer
-    i32.const 17136
+    i32.const 17200
     i32.store offset=8
     global.get $~lib/memory/__stack_pointer
     local.get $1
-    i32.const 17136
+    i32.const 17200
     call $~lib/string/String.__concat
     local.tee $1
     i32.store
@@ -20627,234 +20759,6 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $1
- )
- (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression (param $0 i32) (param $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 52
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 24776
-  i32.lt_s
-  if
-   i32.const 57568
-   i32.const 57616
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 52
-  memory.fill
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $0
-  local.get $0
-  i32.load
-  i32.const 1
-  i32.add
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.load
-  local.tee $2
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $2
-  local.get $0
-  call $Frontend/assembly/Parser/Expressions/MultiplicativeExpression/MultiplicativeExpression#accept<void>
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $0
-  local.get $0
-  i32.load
-  i32.const 1
-  i32.sub
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  local.get $1
-  i32.load offset=8
-  if
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   local.get $0
-   i32.load
-   i32.const 1
-   i32.add
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $2
-   i32.store offset=12
-   local.get $2
-   i32.eqz
-   if
-    i32.const 14432
-    i32.const 17024
-    i32.const 35
-    i32.const 13
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $2
-   local.get $0
-   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $0
-   local.get $0
-   i32.load
-   i32.const 1
-   i32.sub
-   i32.store
-  end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $2
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $3
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 17168
-  i32.store offset=24
-  local.get $0
-  i32.const 17168
-  call $~lib/string/String.__concat
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  local.set $4
-  block $folding-inner0
-   local.get $1
-   i32.load offset=4
-   if
-    global.get $~lib/memory/__stack_pointer
-    local.get $1
-    i32.store offset=24
-    global.get $~lib/memory/__stack_pointer
-    local.get $1
-    i32.load offset=4
-    local.tee $0
-    i32.store offset=44
-    local.get $0
-    i32.eqz
-    br_if $folding-inner0
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    i32.store offset=20
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    i32.load offset=8
-    local.tee $0
-    i32.store offset=48
-    local.get $0
-    i32.eqz
-    br_if $folding-inner0
-   else
-    i32.const 9040
-    local.set $0
-   end
-   local.get $4
-   local.get $0
-   i32.store offset=16
-   local.get $3
-   local.get $0
-   call $~lib/string/String.__concat
-   local.set $0
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   local.get $2
-   local.get $0
-   call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
-   global.get $~lib/memory/__stack_pointer
-   i32.const 52
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   return
-  end
-  i32.const 14432
-  i32.const 17024
-  i32.const 38
-  i32.const 134
-  call $~lib/builtins/abort
-  unreachable
  )
  (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
@@ -20904,7 +20808,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $Frontend/assembly/Parser/Expressions/RelationalExpression/RelationalExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -20947,7 +20851,7 @@
    i32.eqz
    if
     i32.const 14432
-    i32.const 17024
+    i32.const 17088
     i32.const 47
     i32.const 13
     call $~lib/builtins/abort
@@ -21078,7 +20982,7 @@
    return
   end
   i32.const 14432
-  i32.const 17024
+  i32.const 17088
   i32.const 50
   i32.const 136
   call $~lib/builtins/abort
@@ -21132,7 +21036,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $Frontend/assembly/Parser/Expressions/BinaryExpression/BinaryExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -21175,7 +21079,7 @@
    i32.eqz
    if
     i32.const 14432
-    i32.const 17024
+    i32.const 17088
     i32.const 87
     i32.const 13
     call $~lib/builtins/abort
@@ -21306,7 +21210,7 @@
    return
   end
   i32.const 14432
-  i32.const 17024
+  i32.const 17088
   i32.const 90
   i32.const 138
   call $~lib/builtins/abort
@@ -21360,7 +21264,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $Frontend/assembly/Parser/Expressions/PowExpression/PowExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -21403,7 +21307,7 @@
    i32.eqz
    if
     i32.const 14432
-    i32.const 17024
+    i32.const 17088
     i32.const 71
     i32.const 13
     call $~lib/builtins/abort
@@ -21534,7 +21438,7 @@
    return
   end
   i32.const 14432
-  i32.const 17024
+  i32.const 17088
   i32.const 74
   i32.const 142
   call $~lib/builtins/abort
@@ -21588,7 +21492,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $Frontend/assembly/Parser/Expressions/EqualityExpression/EqualityExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -21631,7 +21535,7 @@
    i32.eqz
    if
     i32.const 14432
-    i32.const 17024
+    i32.const 17088
     i32.const 59
     i32.const 13
     call $~lib/builtins/abort
@@ -21762,7 +21666,7 @@
    return
   end
   i32.const 14432
-  i32.const 17024
+  i32.const 17088
   i32.const 62
   i32.const 128
   call $~lib/builtins/abort
@@ -21816,7 +21720,7 @@
   i32.store offset=4
   local.get $2
   local.get $0
-  call $Frontend/assembly/Parser/Expressions/UnaryExpression/UnaryExpression#accept<void>
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -21859,7 +21763,7 @@
    i32.eqz
    if
     i32.const 14432
-    i32.const 17024
+    i32.const 17088
     i32.const 23
     i32.const 13
     call $~lib/builtins/abort
@@ -21990,9 +21894,237 @@
    return
   end
   i32.const 14432
-  i32.const 17024
+  i32.const 17088
   i32.const 26
   i32.const 131
+  call $~lib/builtins/abort
+  unreachable
+ )
+ (func $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitBinaryExpression (param $0 i32) (param $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 52
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  global.get $~lib/memory/__stack_pointer
+  i32.const 24776
+  i32.lt_s
+  if
+   i32.const 57568
+   i32.const 57616
+   i32.const 1
+   i32.const 1
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 52
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  local.get $0
+  local.get $0
+  i32.load
+  i32.const 1
+  i32.add
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.load
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  local.get $2
+  local.get $0
+  call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  local.get $0
+  local.get $0
+  i32.load
+  i32.const 1
+  i32.sub
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store
+  local.get $1
+  i32.load offset=8
+  if
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store offset=4
+   local.get $0
+   local.get $0
+   i32.load
+   i32.const 1
+   i32.add
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=8
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $2
+   i32.store offset=12
+   local.get $2
+   i32.eqz
+   if
+    i32.const 14432
+    i32.const 17088
+    i32.const 35
+    i32.const 13
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store offset=4
+   local.get $2
+   local.get $0
+   call $Frontend/assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store offset=4
+   local.get $0
+   local.get $0
+   i32.load
+   i32.const 1
+   i32.sub
+   i32.store
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=40
+  local.get $0
+  i32.load
+  call $Frontend/assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=28
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $3
+  local.get $0
+  call $~lib/string/String.__concat
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=20
+  global.get $~lib/memory/__stack_pointer
+  i32.const 17776
+  i32.store offset=24
+  local.get $0
+  i32.const 17776
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=20
+  global.get $~lib/memory/__stack_pointer
+  local.set $4
+  block $folding-inner0
+   local.get $1
+   i32.load offset=4
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store offset=24
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.load offset=4
+    local.tee $0
+    i32.store offset=44
+    local.get $0
+    i32.eqz
+    br_if $folding-inner0
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=20
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.load offset=8
+    local.tee $0
+    i32.store offset=48
+    local.get $0
+    i32.eqz
+    br_if $folding-inner0
+   else
+    i32.const 9040
+    local.set $0
+   end
+   local.get $4
+   local.get $0
+   i32.store offset=16
+   local.get $3
+   local.get $0
+   call $~lib/string/String.__concat
+   local.set $0
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store offset=4
+   local.get $2
+   local.get $0
+   call $~lib/array/Array<Frontend/assembly/Lexer/Token/Token>#push
+   global.get $~lib/memory/__stack_pointer
+   i32.const 52
+   i32.add
+   global.set $~lib/memory/__stack_pointer
+   return
+  end
+  i32.const 14432
+  i32.const 17088
+  i32.const 38
+  i32.const 134
   call $~lib/builtins/abort
   unreachable
  )
@@ -22344,7 +22476,7 @@
     loop $while-continue|0
      local.get $5
      if (result i32)
-      block $__inlined_func$~lib/util/string/isSpace$704 (result i32)
+      block $__inlined_func$~lib/util/string/isSpace$705 (result i32)
        local.get $4
        i32.const 128
        i32.or
@@ -22359,7 +22491,7 @@
        local.get $4
        i32.const 5760
        i32.lt_u
-       br_if $__inlined_func$~lib/util/string/isSpace$704
+       br_if $__inlined_func$~lib/util/string/isSpace$705
        drop
        i32.const 1
        local.get $4
@@ -22367,7 +22499,7 @@
        i32.add
        i32.const 10
        i32.le_u
-       br_if $__inlined_func$~lib/util/string/isSpace$704
+       br_if $__inlined_func$~lib/util/string/isSpace$705
        drop
        block $break|0
         block $case0|0
@@ -22402,7 +22534,7 @@
          br $break|0
         end
         i32.const 1
-        br $__inlined_func$~lib/util/string/isSpace$704
+        br $__inlined_func$~lib/util/string/isSpace$705
        end
        i32.const 0
       end

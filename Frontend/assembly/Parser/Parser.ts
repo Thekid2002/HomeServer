@@ -1,6 +1,5 @@
 import {Token} from "../Lexer/Token";
 import {TokenType} from "../Lexer/TokenType";
-import {BinaryExpression} from "./Expressions/BinaryExpression";
 import {EqualityExpression} from "./Expressions/EqualityExpression";
 import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {MultiplicativeExpression} from "./Expressions/MultiplicativeExpression";
@@ -12,6 +11,7 @@ import {Expression} from "./Expressions/Expression";
 import {AbstractTerm} from "./Expressions/Terms/AbstractTerm";
 import {AbstractExpression} from "./Expressions/AbstractExpression";
 import {PowExpression} from "./Expressions/PowExpression";
+import {AdditiveExpression} from "./Expressions/AdditiveExpression";
 
 export class Parser {
     tokens: Token[];
@@ -24,7 +24,7 @@ export class Parser {
     }
 
     parse(): AbstractExpression {
-        var expr = this.expression();
+        let expr = this.expression();
         if (!this.isAtEnd()) {
             this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
         }
@@ -32,42 +32,54 @@ export class Parser {
     }
 
     private expression(): Expression {
-        let leftOrPrimary: EqualityExpression = this.equalityExpression();
+        let leftOrPrimary: AbstractExpression = this.equalityExpression();
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.AND, TokenType.OR])) {
+        while (this.match([TokenType.AND, TokenType.OR])) {
             operator = this.previous();
-            right = this.expression();
-            return new Expression(leftOrPrimary, operator, right);
+            right = this.equalityExpression();
+            leftOrPrimary = new Expression(leftOrPrimary, operator, right);
+        }
+
+        if(leftOrPrimary instanceof Expression){
+            return leftOrPrimary as Expression;
         }
 
         return new Expression(leftOrPrimary, operator, right);
     }
 
-    private equalityExpression(): EqualityExpression {
-        let leftOrPrimary: RelationalExpression = this.relationExpression();
+    private  equalityExpression(): EqualityExpression {
+        let leftOrPrimary: AbstractExpression = this.relationExpression();
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.BANG_EQUAL, TokenType.EQUAL_EQUAL])) {
+        while (this.match([TokenType.BANG_EQUAL, TokenType.EQUAL_EQUAL])) {
             operator = this.previous();
-            right = this.equalityExpression();
-            return new EqualityExpression(leftOrPrimary, operator, right);
+            right = this.relationExpression();
+            leftOrPrimary = new EqualityExpression(leftOrPrimary, operator, right);
+        }
+
+        if(leftOrPrimary instanceof EqualityExpression){
+            return leftOrPrimary as EqualityExpression;
         }
 
         return new EqualityExpression(leftOrPrimary, operator, right);
     }
 
     private relationExpression(): RelationalExpression {
-        let leftOrPrimary: BinaryExpression = this.binaryExpression();
+        let leftOrPrimary: AbstractExpression = this.additiveExpression();
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.GREATER, TokenType.GREATER_EQUAL, TokenType.LESS, TokenType.LESS_EQUAL])) {
+        while (this.match([TokenType.GREATER, TokenType.GREATER_EQUAL, TokenType.LESS, TokenType.LESS_EQUAL])) {
             operator = this.previous();
-            right = this.relationExpression();
-            return new RelationalExpression(leftOrPrimary, operator, right);
+            right = this.additiveExpression();
+            leftOrPrimary = new RelationalExpression(leftOrPrimary, operator, right);
+        }
+
+        if(leftOrPrimary instanceof RelationalExpression){
+            return leftOrPrimary as RelationalExpression;
         }
 
         return new RelationalExpression(leftOrPrimary, operator, right);
@@ -103,40 +115,55 @@ export class Parser {
         return false;
     }
 
-    private binaryExpression(): BinaryExpression {
-        let leftOrPrimary: MultiplicativeExpression = this.multExpression();
+    private additiveExpression(): AdditiveExpression {
+        let leftOrPrimary: AbstractExpression = this.multExpression();
         let operator: Token | null = null;
-        let right: BinaryExpression | null = null;
+        let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.MINUS, TokenType.PLUS])) {
+        while (this.match([TokenType.MINUS, TokenType.PLUS])) {
             operator = this.previous();
-            right = this.binaryExpression();
+            right = this.multExpression();
+            leftOrPrimary = new AdditiveExpression(leftOrPrimary, operator, right);
         }
 
-        return new BinaryExpression(leftOrPrimary, operator, right);
+        if(leftOrPrimary instanceof AdditiveExpression){
+            return leftOrPrimary as AdditiveExpression;
+        }
+
+        return new AdditiveExpression(leftOrPrimary, operator, right);
     }
 
     private multExpression(): MultiplicativeExpression {
-        let left: PowExpression = this.powerExpression();
+        let leftOrPrimary: AbstractExpression = this.powerExpression();
         let operator: Token | null = null;
-        let right: MultiplicativeExpression | null = null;
+        let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.SLASH, TokenType.STAR])) {
+        while (this.match([TokenType.SLASH, TokenType.STAR])) {
             operator = this.previous();
-            right = this.multExpression();
+            right = this.powerExpression();
+            leftOrPrimary = new MultiplicativeExpression(leftOrPrimary, operator, right);
         }
 
-        return new MultiplicativeExpression(left, operator, right);
+        if(leftOrPrimary instanceof MultiplicativeExpression){
+            return leftOrPrimary as MultiplicativeExpression;
+        }
+
+        return new MultiplicativeExpression(leftOrPrimary, operator, right);
     }
 
     private powerExpression(): PowExpression {
-        let left: UnaryExpression = this.unaryExpression();
+        let left: AbstractExpression = this.unaryExpression();
         let operator: Token | null = null;
-        let right: PowExpression | null = null;
+        let right: AbstractExpression | null = null;
 
-        if (this.match([TokenType.POW])) {
+        while (this.match([TokenType.POW])) {
             operator = this.previous();
-            right = this.powerExpression();
+            right = this.unaryExpression();
+            left = new PowExpression(left, operator, right);
+        }
+
+        if(left instanceof PowExpression){
+            return left as PowExpression;
         }
 
         return new PowExpression(left, operator, right);
