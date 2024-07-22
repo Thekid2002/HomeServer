@@ -57,7 +57,7 @@ pre {
     .calculator-body {
         display: flex;
         flex-direction: column;
-        padding-inline: 20%;
+        padding-inline: 2%;
         gap: 10px;
         justify-content: center;
         align-items: center;
