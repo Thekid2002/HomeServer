@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/assembly/tests/expressionsTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/AST/ToAstVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/AST/ToAstVisitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/BinaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/AdditiveExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/EqualityExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/EqualityExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/Expression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/Expression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/MultiplicativeExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/MultiplicativeExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/PowExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/PowExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/RelationalExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Expressions/RelationalExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/ParseTreePrinter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/ParseTreePrinter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/ParseVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/ParseVisitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/assembly/Parser/Parser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/Parser/Parser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/debug.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/debug.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/debug.wasm.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/debug.wasm.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/debug.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/debug.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/release.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/release.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/release.wasm.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/release.wasm.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/release.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/release.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/tests/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/assembly/tests/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/calculator.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721638435928</updated>
-      <workItem from="1721638437352" duration="12552000" />
+      <workItem from="1721638437352" duration="12937000" />
     </task>
     <servers />
   </component>

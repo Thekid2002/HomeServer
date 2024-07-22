@@ -32,67 +32,6 @@ pre {
     flex-direction: column;
     width: 100%;
 }
-
-@media (min-width: 510px) {
-    .headline{
-        font-family: Arial;
-        font-size: 20px
-    }
-    .calculator-grid-pc{
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-    .calculator-grid-pad {
-        display: none;
-    }
-    .calculator-grid {
-        gap: 6px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-column: 9;
-        width: 100%;
-    }
-    .calculator-button {
-        font-size: 1em;
-    }
-}
-
-@media (min-width: 710px) {
-    .headline{
-        font-family: Arial;
-        font-size: 24px
-    }
-    .calculator-grid-pc{
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-    }
-    .calculator-grid-pad {
-        display: none;
-    }
-    .calculator-grid {
-        gap: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-column: 9;
-        width: 100%;
-    }
-    .calculator-button {
-        font-size: 1.6em;
-    }
-    .calculator-body {
-        display: flex;
-        flex-direction: column;
-        padding-inline: 12%;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-    }
-
-}
-
-@media (min-width: 910px) {
     .headline{
         font-family: Arial;
         font-size: 30px
@@ -124,44 +63,8 @@ pre {
         align-items: center;
     }
 
-}
-
 .headline{
     text-align: center;
-}
-
-@media (max-width: 510px) {
-    .headline{
-        font-family: Arial;
-        font-size: 10px
-    }
-    .calculator-grid-pc{
-        display: none;
-    }
-    .calculator-grid-pad {
-        display: flex;
-        width: 100%;
-        gap: 20px;
-    }
-    .calculator-grid {
-        gap: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        width: 100%;
-    }
-
-    .calculator-button {
-        font-size: 1.25em;
-    }
-    .calculator-body {
-        display: flex;
-        flex-direction: column;
-        padding-inline: 10%;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-    }
-
 }
 
 .different {
