@@ -203,7 +203,11 @@ export class Parser {
             return new Identifier(this.previous());
         }
 
-        this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
+        if(!this.isAtEnd()) {
+            this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
+        }else {
+            this.errors.push("Unexpected end of input");
+        }
         return new Term("ERROR");
     }
 }
