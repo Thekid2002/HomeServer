@@ -63,10 +63,10 @@ class value {
         }
         string += "],\n";
         if(isNaN(this.value)) {
-            string += "\"value\": " + "NaN" + ",\n";
+            string += "\"value\": " + "\"NaN\"" + ",\n";
         }
         else if(!isFinite(this.value)) {
-            string += "\"value\": " + (this.value < 0 ? "-" : "") + "Infinity" + ",\n";
+            string += "\"value\": " + (this.value < 0 ? "-" : "") + "\"Infinity\"" + ",\n";
         }
         else {
             string += "\"value\": " + this.value.toString() + ",\n";
