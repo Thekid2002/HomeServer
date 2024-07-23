@@ -62,7 +62,15 @@ class value {
             }
         }
         string += "],\n";
-        string += "\"value\": " + this.value.toString() + ",\n";
+        if(isNaN(this.value)) {
+            string += "\"value\": " + "NaN" + ",\n";
+        }
+        else if(!isFinite(this.value)) {
+            string += "\"value\": " + (this.value < 0 ? "-" : "") + "Infinity" + ",\n";
+        }
+        else {
+            string += "\"value\": " + this.value.toString() + ",\n";
+        }
 
         string += "\"tokens\": [";
         for (let i = 0; i < this.tokens.length; i++) {
