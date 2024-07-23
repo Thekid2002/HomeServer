@@ -14,6 +14,9 @@ export function calculateViaLanguage(string: string): string {
     let syntaxTree = parser.parse();
     let parseTreePrinter = new ParseTreePrinter();
     syntaxTree.accept<void>(parseTreePrinter);
+    if(parser.errors.length > 0){
+        return new value(parseTreePrinter.tree, [], 0, tokens, scanner.errors, parser.errors).toJsonString();
+    }
     let toAstVisitor = new ToAstVisitor();
     let ast = syntaxTree.accept<AbstractSyntaxNode>(toAstVisitor);
     let astPrinter = new ASTPrinter();

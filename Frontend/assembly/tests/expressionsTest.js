@@ -2,9 +2,8 @@ import {calculateViaLanguage} from "../../public/build/debug.js";
 import assert from "assert";
 
 export class ExpressionsTest {
-
     static runTests() {
-        console.log("Running Expressions tests");
+        console.error("---Running Expressions tests---");
         for (let i = 0; i < 10; i++) {
             this.testCalculateAddition();
             this.testCalculateSubtraction();
@@ -12,7 +11,7 @@ export class ExpressionsTest {
             this.testCalculateDivision();
             this.testCalculateMixed();
         }
-        console.log("Tests passed");
+        console.error("---Expressions tests passed---");
     }
 
     static testCalculateAddition() {

@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 pre {
     margin: 0;
 }
@@ -16,14 +22,17 @@ pre {
     height: 1.4em;
     font-size: 2em;
     padding: 10px;
+    width: 97.5%;
 }
 
 
 .calculator{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .calculator-column {
@@ -39,20 +48,23 @@ pre {
     .calculator-grid-pc{
         display: flex;
         flex-direction: row;
+        width: 100%;
         gap: 70px;
+        justify-content: center;
+        align-items: center;
     }
     .calculator-grid-pad {
         display: none;
     }
     .calculator-grid {
-        gap: 20px;
+        gap: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column: 9;
         width: 100%;
     }
     .calculator-button {
-        font-size: 2em;
+        font-size: 1.4em;
     }
     .calculator-body {
         display: flex;
@@ -61,10 +73,37 @@ pre {
         gap: 10px;
         justify-content: center;
         align-items: center;
+        width: 860px;
     }
 
 .headline{
     text-align: center;
+}
+
+.setInputButton {
+    color: white;
+    width: 100%;
+    border: 0;
+    font-family: Arial;
+    font-size: 1.5em;
+    background-color: #c8e2ff !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.previousInputs > :last-child {
+    background-color: #77b1f5 !important;
+    color: white;
+    font-size: 2em;
+}
+
+
+.previousInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
 .different {

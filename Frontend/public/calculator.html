@@ -11,43 +11,8 @@
     <h1 class="headline">(CARL) Calculator Algorithm Representation Language</h1>
 
     <div class="calculator">
+        <div class="previousInputs" id="previousInputs"></div>
         <input id="numInput" class="calculator-input">
-        <div class="calculator-grid-pad">
-            <div class="calculator-grid">
-                <button class="calculator-button"  onclick="pressKey('1')">1</button>
-                <button class="calculator-button"  onclick="pressKey('2')">2</button>
-                <button class="calculator-button"  onclick="pressKey('3')">3</button>
-                <button class="calculator-button operator"  onclick="pressKey('+')">+</button>
-                <button class="calculator-button"  onclick="pressKey('4')">4</button>
-                <button class="calculator-button"  onclick="pressKey('5')">5</button>
-                <button class="calculator-button"  onclick="pressKey('6')">6</button>
-                <button class="calculator-button operator"  onclick="pressKey('-')">-</button>
-                <button class="calculator-button"  onclick="pressKey('7')">7</button>
-                <button class="calculator-button"  onclick="pressKey('8')">8</button>
-                <button class="calculator-button"  onclick="pressKey('9')">9</button>
-                <button class="calculator-button operator"  onclick="pressKey('*')">*</button>
-                <button class="calculator-button"  onclick="pressKey('0')">0</button>
-                <button class="calculator-button operator"  onclick="pressKey('/')">/</button>
-                <button class="calculator-button different"  onclick="pressKey('=')">=</button>
-                <button class="calculator-button accent"  onclick="pressKey('C')">C</button>
-                <button class="calculator-button operator"  onclick="pressKey('.')">.</button>
-                <button class="calculator-button"  onclick="pressKey('00')">00</button>
-                <button class="calculator-button"  onclick="pressKey('000')">000</button>
-                <button class="calculator-button"  onclick="pressKey('**')">^</button>
-                <button class="calculator-button"  onclick="pressKey('(')">(</button>
-                <button class="calculator-button"  onclick="pressKey(')')">)</button>
-                <button class="calculator-button operator"  onclick="pressKey('sqrt')">sqrt</button>
-                <button class="calculator-button "  onclick="pressKey('^')">^</button>
-                <button class="calculator-button accent"  onclick="pressKey('sin')">sin</button>
-                <button class="calculator-button accent"  onclick="pressKey('cos')">cos</button>
-                <button class="calculator-button accent"  onclick="pressKey('tan')">tan</button>
-                <button class="calculator-button"  onclick="pressKey('**')">^</button>
-                <button class="calculator-button different"  onclick="pressKey('asin')">asin</button>
-                <button class="calculator-button different"  onclick="pressKey('acos')">acos</button>
-                <button class="calculator-button different"  onclick="pressKey('atan')">atan</button>
-                <button class="calculator-button"  onclick="pressKey('**')">^</button>
-            </div>
-        </div>
         <div class="calculator-grid-pc">
             <div class="calculator-grid">
                 <button class="calculator-button"  onclick="pressKey('1')">1</button>
@@ -103,10 +68,11 @@
 </div>
 </body>
 <script type="module">
-    import { pressKey, clearDisplay } from './calculator.js';
+    import { pressKey, clearDisplay, setInput } from './calculator.js';
     import {calculateViaLanguage} from "./build/debug.js";
     window.pressKey = pressKey;
     window.clearDisplay = clearDisplay;
     window.calculate = calculateViaLanguage;
+    window.setInput = setInput
 </script>
 </html>
