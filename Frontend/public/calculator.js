@@ -42,6 +42,7 @@ function calculate(){
     let value = JSON.parse(jsonValue);
     inputPreviousInput(input, value.value);
     prevInputs.innerHTML = getPreviousInputsHtml();
+    resetOutputs();
 
     console.log(value);
     if(value.lexerErrors.length > 0) {
@@ -78,14 +79,14 @@ function printAstErrors(errors) {
 }
 
 function printAst(ast) {
-    astOutput.innerHTML = "<pre>" + "---AST---" + "</pre><br>";
+    astOutput.innerHTML += "<pre>" + "---AST---" + "</pre><br>";
     for (let i = ast.length; i > 0; i--) {
         astOutput.innerHTML += "<pre>" +  ast[i-1] + "</pre><br>";
     }
 }
 
 function printTokens(tokens) {
-    tokensOutput.innerHTML = "<pre>" + "---TOKENS---" + "</pre><br>";
+    tokensOutput.innerHTML += "<pre>" + "---TOKENS---" + "</pre><br>";
 
     for (let i = 0; i < tokens.length; i++) {
         tokensOutput.innerHTML += "<pre>" + tokens[i].lexeme + "</pre><br>";
@@ -93,11 +94,17 @@ function printTokens(tokens) {
 }
 
 function printParse(parse) {
-    parseOutput.innerHTML = "<pre>" + "---PARSE---" + "</pre><br>";
+    parseOutput.innerHTML += "<pre>" + "---PARSE---" + "</pre><br>";
 
     for (let i = parse.length; i > 0; i--) {
        parseOutput.innerHTML += "<pre>" + parse[i-1] + "</pre><br>";
     }
+}
+
+function resetOutputs() {
+    parseOutput.innerHTML = "";
+    tokensOutput.innerHTML = "";
+    astOutput.innerHTML = "";
 }
 
 
