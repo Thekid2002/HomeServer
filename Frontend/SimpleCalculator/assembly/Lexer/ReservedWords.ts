@@ -1,4 +1,4 @@
-import { TokenType } from "./TokenType";
+import {TokenType} from "./TokenType";
 
 export const ReservedWords: Map<string, i32> = new Map<string, i32>();
 

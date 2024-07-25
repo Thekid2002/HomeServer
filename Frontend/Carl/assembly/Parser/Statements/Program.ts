@@ -1,4 +1,4 @@
-import { ParseVisitor } from "../ParseVisitor";
+import {ParseVisitor} from "../ParseVisitor";
 import {AbstractStatement} from "./AbstractStatement";
 
 export class Program extends AbstractStatement {

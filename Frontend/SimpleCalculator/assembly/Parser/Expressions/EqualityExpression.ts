@@ -1,4 +1,4 @@
-import { ParseVisitor } from "../ParseVisitor";
+import {ParseVisitor} from "../ParseVisitor";
 import {Expression} from "./Expression";
 import {Token} from "../../Lexer/Token";
 import {AbstractExpression} from "./AbstractExpression";

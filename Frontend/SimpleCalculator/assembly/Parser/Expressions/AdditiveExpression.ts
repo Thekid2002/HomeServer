@@ -1,5 +1,5 @@
-import { Token } from "../../Lexer/Token";
-import { ParseVisitor } from "../ParseVisitor";
+import {Token} from "../../Lexer/Token";
+import {ParseVisitor} from "../ParseVisitor";
 import {AbstractExpression} from "./AbstractExpression";
 import {MultiplicativeExpression} from "./MultiplicativeExpression";
 

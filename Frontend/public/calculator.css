@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ pre {
     margin: 0;
 }
 
-.calculator-input{
+.calculator-input {
     display: flex;
     height: 1.4em;
     font-size: 2em;
@@ -25,8 +25,17 @@ pre {
     width: 97.5%;
 }
 
+.calculator-area {
+    display: flex;
+    height: 80vh !important;
+    font-size: 2em;
+    padding: 10px;
+    width: 97.5%;
+    resize: none;
+}
 
-.calculator{
+
+.calculator {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -41,42 +50,48 @@ pre {
     flex-direction: column;
     width: 100%;
 }
-    .headline{
-        font-family: Arial;
-        font-size: 30px
-    }
-    .calculator-grid-pc{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        gap: 70px;
-        justify-content: center;
-        align-items: center;
-    }
-    .calculator-grid-pad {
-        display: none;
-    }
-    .calculator-grid {
-        gap: 5px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-column: 9;
-        width: 100%;
-    }
-    .calculator-button {
-        font-size: 1.4em;
-    }
-    .calculator-body {
-        display: flex;
-        flex-direction: column;
-        padding-inline: 2%;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        width: 860px;
-    }
 
-.headline{
+.headline {
+    font-family: Arial;
+    font-size: 30px
+}
+
+.calculator-grid-pc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-grid-pad {
+    display: none;
+}
+
+.calculator-grid {
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 9;
+    width: 100%;
+}
+
+.calculator-button {
+    font-size: 1.4em;
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+}
+
+.headline {
     text-align: center;
 }
 

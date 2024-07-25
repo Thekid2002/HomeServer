@@ -37,14 +37,14 @@ export class Parser {
         return prg;
     }
 
-    private program(): Program | null{
+    private program(): Program | null {
         let statements: AbstractStatement[] = [];
 
-        while (!this.isAtEnd()){
+        while (!this.isAtEnd()) {
             let statement = this.statement();
-            if(statement !== null){
+            if (statement !== null) {
                 statements.push(statement);
-            }else {
+            } else {
                 this.errors.push("Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
                 break;
             }
@@ -56,7 +56,7 @@ export class Parser {
     }
 
     private toCompound(statements: AbstractStatement[]): AbstractStatement {
-        if(statements.length === 1) {
+        if (statements.length === 1) {
             return statements[0];
         }
 
@@ -92,14 +92,14 @@ export class Parser {
 
     private declaration(): Declaration | null {
         let type = this.type();
-        if(type === null) {
+        if (type === null) {
             this.errors.push("Error in type");
             console.log("Error in type");
             return null;
         }
         let identifier = this.term() as Identifier;
         let expression: AbstractExpression | null = null;
-        if(this.matchAdvance([TokenType.EQUAL])) {
+        if (this.matchAdvance([TokenType.EQUAL])) {
             expression = this.expression();
         }
         return new Declaration(identifier, type, expression, identifier.lineNum);
@@ -116,14 +116,14 @@ export class Parser {
             leftOrPrimary = new Expression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof Expression){
+        if (leftOrPrimary instanceof Expression) {
             return leftOrPrimary as Expression;
         }
 
         return new Expression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
     }
 
-    private  equalityExpression(): EqualityExpression {
+    private equalityExpression(): EqualityExpression {
         let leftOrPrimary: AbstractExpression = this.relationExpression();
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
@@ -134,7 +134,7 @@ export class Parser {
             leftOrPrimary = new EqualityExpression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof EqualityExpression){
+        if (leftOrPrimary instanceof EqualityExpression) {
             return leftOrPrimary as EqualityExpression;
         }
 
@@ -152,7 +152,7 @@ export class Parser {
             leftOrPrimary = new RelationalExpression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof RelationalExpression){
+        if (leftOrPrimary instanceof RelationalExpression) {
             return leftOrPrimary as RelationalExpression;
         }
 
@@ -212,7 +212,7 @@ export class Parser {
             leftOrPrimary = new AdditiveExpression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof AdditiveExpression){
+        if (leftOrPrimary instanceof AdditiveExpression) {
             return leftOrPrimary as AdditiveExpression;
         }
 
@@ -224,13 +224,13 @@ export class Parser {
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
 
-        while (this.matchAdvance([TokenType.SLASH, TokenType.STAR])) {
+        while (this.matchAdvance([TokenType.SLASH, TokenType.STAR, TokenType.MOD])) {
             operator = this.previous();
             right = this.powerExpression();
             leftOrPrimary = new MultiplicativeExpression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof MultiplicativeExpression){
+        if (leftOrPrimary instanceof MultiplicativeExpression) {
             return leftOrPrimary as MultiplicativeExpression;
         }
 
@@ -248,7 +248,7 @@ export class Parser {
             leftOrPrimary = new PowExpression(leftOrPrimary, operator, right, leftOrPrimary.lineNum);
         }
 
-        if(leftOrPrimary instanceof PowExpression){
+        if (leftOrPrimary instanceof PowExpression) {
             return leftOrPrimary as PowExpression;
         }
 
@@ -256,9 +256,9 @@ export class Parser {
     }
 
     private unaryExpression(): UnaryExpression {
-        if(this.matchAdvance([TokenType.LEFT_PAREN])) {
+        if (this.matchAdvance([TokenType.LEFT_PAREN])) {
             let expr = this.expression();
-            if(this.matchAdvance([TokenType.RIGHT_PAREN])) {
+            if (this.matchAdvance([TokenType.RIGHT_PAREN])) {
                 return new UnaryExpression(null, expr, expr.lineNum);
             }
             this.errors.push("Expected ')' at line: " + this.peek().line.toString());
@@ -272,7 +272,7 @@ export class Parser {
             TokenType.ASIN, TokenType.ACOS, TokenType.ATAN])) {
             operator = this.previous();
             rightOrPrimary = this.unaryExpression();
-        }else {
+        } else {
             rightOrPrimary = this.term();
         }
 
@@ -280,14 +280,14 @@ export class Parser {
     }
 
     private type(): Type | null {
-        if(this.matchAdvance([TokenType.NUM, TokenType.BOOL, TokenType.STRING])) {
+        if (this.matchAdvance([TokenType.NUM, TokenType.BOOL, TokenType.STRING])) {
             return new Type(this.previous(), this.previous().line);
         }
 
-        if(!this.isAtEnd()) {
+        if (!this.isAtEnd()) {
             this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
             console.log("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-        }else {
+        } else {
             this.errors.push("Unexpected end of input");
             console.log("Unexpected end of input");
         }
@@ -299,14 +299,14 @@ export class Parser {
             return new Num(this.previous(), this.previous().line);
         }
 
-        if(this.matchAdvance([TokenType.IDENTIFIER])) {
+        if (this.matchAdvance([TokenType.IDENTIFIER])) {
             return new Identifier(this.previous(), this.previous().line);
         }
 
-        if(!this.isAtEnd()) {
+        if (!this.isAtEnd()) {
             this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
             console.log("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-        }else {
+        } else {
             this.errors.push("Unexpected end of input");
             console.log("Unexpected end of input");
         }

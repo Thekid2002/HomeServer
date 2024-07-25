@@ -1,5 +1,5 @@
 import {Token} from "../../../Lexer/Token";
-import { ParseVisitor } from "../../ParseVisitor";
+import {ParseVisitor} from "../../ParseVisitor";
 import {Term} from "./Term";
 import {AbstractTerm} from "./AbstractTerm";
 

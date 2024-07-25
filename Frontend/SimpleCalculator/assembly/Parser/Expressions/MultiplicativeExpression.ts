@@ -1,12 +1,11 @@
-import { Token } from "../../Lexer/Token";
-import { ParseVisitor } from "../ParseVisitor";
-import { Expression } from "./Expression";
+import {Token} from "../../Lexer/Token";
+import {ParseVisitor} from "../ParseVisitor";
+import {Expression} from "./Expression";
 import {AbstractExpression} from "./AbstractExpression";
 import {UnaryExpression} from "./UnaryExpression";
 import {PowExpression} from "./PowExpression";
 
-export class MultiplicativeExpression extends AbstractExpression
-{
+export class MultiplicativeExpression extends AbstractExpression {
     primaryOrLeft: AbstractExpression;
     operator: Token | null;
     right: AbstractExpression | null;
@@ -18,8 +17,7 @@ export class MultiplicativeExpression extends AbstractExpression
         this.right = right;
     }
 
-    accept<T>(visitor: ParseVisitor<T>): T
-    {
+    accept<T>(visitor: ParseVisitor<T>): T {
         return visitor.visitMultiplicativeExpression(this);
     }
 }

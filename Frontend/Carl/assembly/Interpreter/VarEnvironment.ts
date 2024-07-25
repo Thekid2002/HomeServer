@@ -4,7 +4,7 @@ export class VarEnvironment {
     public vars: Map<string, ValObject | null>;
 
     constructor() {
-        this.vars = new Map<string, ValObject | null >();
+        this.vars = new Map<string, ValObject | null>();
     }
 
     public addVar(name: string, value: ValObject | null): void {
@@ -12,7 +12,7 @@ export class VarEnvironment {
     }
 
     public lookUp(name: string): ValObject | null {
-        if(this.vars.has(name)) {
+        if (this.vars.has(name)) {
             return this.vars.get(name);
         }
         return null;
@@ -26,7 +26,10 @@ export class VarEnvironment {
         let string = "{\n";
         string += "\"vars\": {\n";
         for (let i = 0; i < this.vars.size; i++) {
-           string += "\"" + this.vars.keys()[i].toString() + "\": " + (this.vars.get(this.vars.keys()[i]) !== null ? this.vars.get(this.vars.keys()[i])!.toJsonString() : "null");
+            string += "\"" + this.vars.keys()[i].toString() + "\": " + (this.vars.get(this.vars.keys()[i]) !== null ? this.vars.get(this.vars.keys()[i])!.toJsonString() : "null");
+            if (i < this.vars.size - 1) {
+                string += ", ";
+            }
         }
         string += "}\n";
         string += "}\n";

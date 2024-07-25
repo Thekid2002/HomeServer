@@ -14,7 +14,7 @@ body {
     padding-top: 30px;
 }
 
-.timeline{
+.timeline {
     grid-auto-flow: column;
     width: 30500px;
     display: grid;
@@ -26,7 +26,7 @@ body {
     height: 60px;
 }
 
-.timestamp{
+.timestamp {
     text-align: center;
 }
 

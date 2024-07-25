@@ -9,10 +9,12 @@ export class ValType extends ValObject {
         super();
         this.type = type;
     }
-    toString(): string{
+
+    toString(): string {
         return "type";
     }
-    toJsonString(): string{
+
+    toJsonString(): string {
         return "type";
     }
 }

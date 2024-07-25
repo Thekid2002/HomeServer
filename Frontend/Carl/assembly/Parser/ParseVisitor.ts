@@ -16,15 +16,23 @@ import {Print} from "./Statements/Print";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: Expression): T;
+
     visitEqualityExpression(expression: EqualityExpression): T;
+
     visitRelationalExpression(expression: RelationalExpression): T;
+
     visitMultiplicativeExpression(expression: MultiplicativeExpression): T;
+
     visitUnaryExpression(expression: UnaryExpression): T;
+
     visitPowExpression(expression: PowExpression): T;
+
     visitAdditiveExpression(expression: AdditiveExpression): T;
 
     visitTerm(term: Term): T;
+
     visitNumber(term: Num): T;
+
     visitIdentifier(term: Identifier): T;
 
     visitDeclaration(statement: Declaration): T;

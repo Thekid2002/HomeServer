@@ -19,12 +19,12 @@ async function start() {
 
 async function printTimeStamps() {
     const timeLine = document.getElementById('timestamps');
-    for (let i = 0; i < amountOfTimeStamps; i+=1) {
-        if( i*timeOffset%60 < 10){
-            timeLine.innerHTML += `<div class="timestamp" style="grid-column: span 1;">${Math.floor(i*timeOffset/60) + ":0" + i*timeOffset%60}</div>`;
+    for (let i = 0; i < amountOfTimeStamps; i += 1) {
+        if (i * timeOffset % 60 < 10) {
+            timeLine.innerHTML += `<div class="timestamp" style="grid-column: span 1;">${Math.floor(i * timeOffset / 60) + ":0" + i * timeOffset % 60}</div>`;
             continue;
         }
-        timeLine.innerHTML += `<div class="timestamp" style="grid-column: span 1;">${Math.floor(i*timeOffset/60) + ":" + i*timeOffset%60}</div>`;
+        timeLine.innerHTML += `<div class="timestamp" style="grid-column: span 1;">${Math.floor(i * timeOffset / 60) + ":" + i * timeOffset % 60}</div>`;
     }
 }
 
@@ -37,7 +37,7 @@ function printFiles() {
                 const fileElement = document.createElement('div');
                 fileElement.classList.add('file');
                 fileElement.classList.add('video-clip');
-                fileElement.style.gridColumn = "span " + Math.round(file.duration*3/ timeOffset);
+                fileElement.style.gridColumn = "span " + Math.round(file.duration * 3 / timeOffset);
                 fileElement.innerText = file.name;
                 fileElement.draggable = true;
                 fileElement.dataset.duration = file.duration; // assuming the backend provides the duration
@@ -124,15 +124,15 @@ function setupFileEventListener() {
         e.preventDefault();
     });
     const dragging = document.querySelector('.dragging');
-    if(draggingVideoClip != null) {
+    if (draggingVideoClip != null) {
         fileContainer.appendChild(dragging);
-    }else {
+    } else {
         fileContainer.appendChild(dragging);
 
     }
 }
 
-    async function initial() {
+async function initial() {
     await start();
     await printTimeStamps();
     printFiles()
@@ -151,11 +151,11 @@ function videoGetDragAfterElement(container, x) {
         const box = child.getBoundingClientRect();
         const offset = x - box.left - box.width / 2;
         if (offset < 0 && offset > closest.offset) {
-            return { offset: offset, element: child };
+            return {offset: offset, element: child};
         } else {
             return closest;
         }
-    }, { offset: Number.NEGATIVE_INFINITY }).element || null;
+    }, {offset: Number.NEGATIVE_INFINITY}).element || null;
 }
 
 function audioGetDragAfterElement(container, x) {
@@ -167,9 +167,9 @@ function audioGetDragAfterElement(container, x) {
         const box = child.getBoundingClientRect();
         const offset = x - box.left - box.width / 2;
         if (offset < 0 && offset > closest.offset) {
-            return { offset: offset, element: child };
+            return {offset: offset, element: child};
         } else {
             return closest;
         }
-    }, { offset: Number.NEGATIVE_INFINITY }).element || null;
+    }, {offset: Number.NEGATIVE_INFINITY}).element || null;
 }

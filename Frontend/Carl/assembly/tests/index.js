@@ -10,5 +10,6 @@ export class Tests {
         console.error("---All Tests passed---");
     }
 }
+
 Tests.runTests();
 

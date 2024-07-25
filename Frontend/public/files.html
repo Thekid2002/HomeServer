@@ -20,7 +20,8 @@
         .then(response => response.text()).then(data => {
         document.body.innerHTML += data
         console.log(data)
-        })
+    })
+
     function deleteFile(fileName) {
         if (confirm('Are you sure you want to delete ' + fileName + '?')) {
             fetch('/files/' + fileName, {

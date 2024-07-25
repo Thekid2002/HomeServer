@@ -1,4 +1,3 @@
-
 import assert from "assert";
 import {calculateViaLanguage} from "../../../public/build/simpleCalculator/SCDebug.js";
 
@@ -16,61 +15,61 @@ export class ExpressionsTest {
     }
 
     static testCalculateAddition() {
-        let amountOfAdditions = Math.round(Math.random()*10);
-        let val = (Math.random()-0.5)*10000;
+        let amountOfAdditions = Math.round(Math.random() * 10);
+        let val = (Math.random() - 0.5) * 10000;
         let calcString = val + "";
         for (let i = 0; i < amountOfAdditions; i++) {
-            let a = (Math.random()-0.5)*10000;
+            let a = (Math.random() - 0.5) * 10000;
             calcString += ` + ${a}`;
             val += a;
         }
-        val = Math.round(val*1000)/1000;
-        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value*1000)/1000;
+        val = Math.round(val * 1000) / 1000;
+        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value * 1000) / 1000;
         assert.strictEqual(calcVal, val);
         console.log(`   Tested ${amountOfAdditions} additions with value ${val} and string ${calcString}`)
     }
 
     static testCalculateSubtraction() {
-        let amountOfSubtractions = Math.round(Math.random()*10);
-        let val = (Math.random()-0.5)*10000;
+        let amountOfSubtractions = Math.round(Math.random() * 10);
+        let val = (Math.random() - 0.5) * 10000;
         let calcString = val + "";
         for (let i = 0; i < amountOfSubtractions; i++) {
-            let a = (Math.random()-0.5)*10000;
+            let a = (Math.random() - 0.5) * 10000;
             calcString += ` - ${a}`;
             val -= a;
         }
-        val = Math.round(val*1000)/1000;
-        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value*1000)/1000;
+        val = Math.round(val * 1000) / 1000;
+        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value * 1000) / 1000;
         console.log(`   Tested ${amountOfSubtractions} subtractions with value ${val} and string ${calcString}`)
         assert.strictEqual(calcVal, val);
     }
 
     static testCalculateMultiplication() {
-        let amountOfMultiplications = Math.round(Math.random()*10);
-        let val = (Math.random()-0.5)*10000;
+        let amountOfMultiplications = Math.round(Math.random() * 10);
+        let val = (Math.random() - 0.5) * 10000;
         let calcString = val + "";
         for (let i = 0; i < amountOfMultiplications; i++) {
-            let a = (Math.random()-0.5)*10000;
+            let a = (Math.random() - 0.5) * 10000;
             calcString += ` * ${a}`;
             val *= a;
         }
-        val = Math.round(val*1000)/1000;
-        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value*1000)/1000;
+        val = Math.round(val * 1000) / 1000;
+        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value * 1000) / 1000;
         console.log(`   Tested ${amountOfMultiplications} multiplications with value ${val} and string ${calcString}`)
         assert.strictEqual(calcVal, val);
     }
 
     static testCalculateDivision() {
-        let amountOfDivisions = Math.round(Math.random()*10);
-        let val = (Math.random()-0.5)*10000;
+        let amountOfDivisions = Math.round(Math.random() * 10);
+        let val = (Math.random() - 0.5) * 10000;
         let calcString = val + "";
         for (let i = 0; i < amountOfDivisions; i++) {
-            let a = (Math.random()-0.5)*10000;
+            let a = (Math.random() - 0.5) * 10000;
             calcString += ` / ${a}`;
             val /= a;
         }
-        val = Math.round(val*1000)/1000;
-        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value*1000)/1000;
+        val = Math.round(val * 1000) / 1000;
+        let calcVal = Math.round(JSON.parse(calculateViaLanguage(calcString)).value * 1000) / 1000;
         console.log(`   Tested ${amountOfDivisions} divisions with value ${val} and string ${calcString}`)
         assert.strictEqual(calcVal, val);
     }

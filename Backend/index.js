@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
         cb(null, file.originalname)
     }
 })
-const upload = multer({ storage: storage })
+const upload = multer({storage: storage})
 
 app.use(express.static('Frontend/public'))
 
@@ -29,7 +29,7 @@ app.post('/upload', upload.single('myFile'), (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.redirect( '/index.html')
+    res.redirect('/index.html')
 })
 
 
@@ -88,19 +88,19 @@ app.get('/files/:name', (req, res) => {
     let fileName = req.params.name;
     let filePath = path.resolve('Frontend/public/documents', fileName);
 
-    if(fileName.toLowerCase().includes('.mov') || fileName.includes('.mp4')) {
+    if (fileName.toLowerCase().includes('.mov') || fileName.includes('.mp4')) {
         return res.send(displayVideo(fileName));
     }
 
-    if(fileName.toLowerCase().includes('.mp3')) {
+    if (fileName.toLowerCase().includes('.mp3')) {
         return res.send(displayAudio(fileName));
     }
 
-    if(fileName.toLowerCase().includes('.pdf')) {
+    if (fileName.toLowerCase().includes('.pdf')) {
         return res.send(displayPdf(fileName));
     }
 
-    if(fileName.toLowerCase().includes('.jpg') || fileName.toLowerCase().includes('.jpeg') || fileName.toLowerCase().includes('.png') || fileName.toLowerCase().includes('.heic')) {
+    if (fileName.toLowerCase().includes('.jpg') || fileName.toLowerCase().includes('.jpeg') || fileName.toLowerCase().includes('.png') || fileName.toLowerCase().includes('.heic')) {
         return res.send(displayImage(fileName));
     }
 

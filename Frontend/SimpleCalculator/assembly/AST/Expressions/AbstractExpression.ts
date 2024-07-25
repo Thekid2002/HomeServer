@@ -1,6 +1,5 @@
 import {AbstractSyntaxNode} from "../AbstractSyntaxNode";
 
-export abstract class AbstractExpression extends AbstractSyntaxNode
-{
+export abstract class AbstractExpression extends AbstractSyntaxNode {
 
 }

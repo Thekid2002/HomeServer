@@ -12,6 +12,7 @@ export enum TokenType {
     SLASH,         // /
     STAR,         // *
     POW,          // ^
+    MOD,          // %
 
     // One or two character tokens.
     BANG,         // !
@@ -70,8 +71,9 @@ export const TokenTypes: string[] = [
     "PLUS",          // +
     "SEMICOLON",     // ;
     "SLASH",         // /
-    "STAR",         // *
-    "POW",          // ^
+    "STAR",          // *
+    "POW",           // ^
+    "MOD",           // %
 
     // One or two character tokens.
     "BANG",         // !

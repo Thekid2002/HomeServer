@@ -1,7 +1,7 @@
 import {AbstractTerm} from "./AbstractTerm";
 import {ASTVisitor} from "../../ASTVisitor";
 
-export class Term extends AbstractTerm{
+export class Term extends AbstractTerm {
     value: string;
 
     constructor(value: string) {

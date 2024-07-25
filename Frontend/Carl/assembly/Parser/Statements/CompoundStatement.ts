@@ -1,13 +1,11 @@
 import {AbstractStatement} from "./AbstractStatement";
 import {ParseVisitor} from "../ParseVisitor";
 
-export class CompoundStatement extends AbstractStatement
-{
+export class CompoundStatement extends AbstractStatement {
     left: AbstractStatement;
     right: AbstractStatement;
 
-    constructor(left: AbstractStatement, right: AbstractStatement, lineNum: i32)
-    {
+    constructor(left: AbstractStatement, right: AbstractStatement, lineNum: i32) {
         super(lineNum);
         this.left = left;
         this.right = right;

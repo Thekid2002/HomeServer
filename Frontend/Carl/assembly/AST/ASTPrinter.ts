@@ -6,9 +6,9 @@ import {Term} from "./Nodes/Expressions/Terms/Term";
 import {UnaryExpression} from "./Nodes/Expressions/UnaryExpression";
 import {ValueType} from "./Nodes/Types/ValueType";
 import {Declaration} from "./Nodes/Statements/Declaration";
-import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
-import { Program } from "./Nodes/Statements/Program";
-import { Print } from "./Nodes/Statements/Print";
+import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
+import {Program} from "./Nodes/Statements/Program";
+import {Print} from "./Nodes/Statements/Print";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
@@ -22,19 +22,26 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitCompoundStatement(statement: CompoundStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": CompoundStatement");
+        this.number++;
         statement.left.accept<void>(this);
-        if(statement.right !== null) {
+        if (statement.right !== null) {
             statement.right.accept<void>(this);
         }
+        this.number--;
     }
+
     visitProgram(statement: Program): void {
-         statement.statement.accept<void>(this);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Program");
+        this.number++;
+        statement.statement.accept<void>(this);
     };
+
     visitBinaryExpression(expression: BinaryExpression): void {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right.accept<void>(this);
             this.number--;
@@ -63,7 +70,7 @@ export class ASTPrinter implements ASTVisitor<void> {
 
     private getSpace(num: i32): string {
         let space: string = "";
-        for(let i: i32 = 0; i < num; i++) {
+        for (let i: i32 = 0; i < num; i++) {
             space += " ";
         }
         return space;
@@ -74,7 +81,7 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.number++;
         statement.type.accept<void>(this);
         this.number--;
-        if(statement.expression !== null) {
+        if (statement.expression !== null) {
             this.number++;
             statement.expression!.accept<void>(this);
             this.number--;

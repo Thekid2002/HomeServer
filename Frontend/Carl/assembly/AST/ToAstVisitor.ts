@@ -36,39 +36,43 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         let right = statement.right.accept<AbstractNode>(this) as AbstractStatement;
         return new ASTCompoundStatement(left, right, statement.lineNum);
     }
+
     visitProgram(statement: ParseProgram): AbstractNode {
         let compoundStatement = statement.statement.accept<AbstractNode>(this) as AbstractStatement;
         return new ASTProgram(compoundStatement, statement.lineNum);
     }
+
     visitDeclaration(statement: ParseDeclaration): AbstractNode {
         let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
         let type = statement.type.accept<AbstractNode>(this) as ValueType;
         let expression: AbstractExpression | null = null;
-        if(statement.expression !== null) {
+        if (statement.expression !== null) {
             expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
         }
         return new ASTDeclaration(identifier, type, expression, statement.lineNum);
     }
+
     visitType(type: Type): AbstractNode {
         let typ: ValueTypeEnum = ValueTypeEnum.Error;
-        if(type.name.literal === "num"){
+        if (type.name.literal === "num") {
             typ = ValueTypeEnum.NUM;
         }
-        if(type.name.literal === "bool"){
+        if (type.name.literal === "bool") {
             typ = ValueTypeEnum.BOOL;
         }
-        if(type.name.literal === "string"){
+        if (type.name.literal === "string") {
             typ = ValueTypeEnum.STRING;
         }
 
-        if(typ === ValueTypeEnum.Error){
+        if (typ === ValueTypeEnum.Error) {
             throw new Error("Invalid type: " + type.name.literal + " at line: " + type.lineNum.toString());
         }
 
         return new ValueType(typ, type.lineNum);
     }
+
     visitPowExpression(expression: PowExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -77,7 +81,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitAdditiveExpression(expression: AdditiveExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -86,7 +90,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitEqualityExpression(expression: ParseEqualityExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -95,7 +99,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitExpression(expression: ParseExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -109,7 +113,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -122,7 +126,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitRelationalExpression(expression: ParseRelationalExpression): AbstractNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
@@ -135,7 +139,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitUnaryExpression(expression: ParseUnaryExpression): AbstractNode {
-        if(expression.operator === null) {
+        if (expression.operator === null) {
             return expression.primaryOrRight.accept<AbstractNode>(this);
         }
         let primaryOrRight: AbstractExpression = expression.primaryOrRight.accept<AbstractNode>(this) as AbstractExpression;

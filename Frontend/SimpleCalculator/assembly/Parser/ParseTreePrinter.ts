@@ -8,7 +8,7 @@ import {Num} from "./Expressions/Terms/Num";
 import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {Term} from "./Expressions/Terms/Term";
 import {Identifier} from "./Expressions/Terms/Identifier";
-import { PowExpression } from "./Expressions/PowExpression";
+import {PowExpression} from "./Expressions/PowExpression";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
@@ -18,7 +18,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -30,7 +30,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -42,7 +42,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -54,7 +54,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -66,7 +66,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -82,7 +82,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -107,7 +107,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
 
     getSpace(num: i32): string {
         let space: string = "";
-        for(let i = 0; i < num; i++) {
+        for (let i = 0; i < num; i++) {
             space += "  ";
         }
         return space;

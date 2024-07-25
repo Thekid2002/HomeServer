@@ -1,5 +1,5 @@
 import {AbstractStatement} from "./AbstractStatement";
-import { ASTVisitor } from "../../ASTVisitor";
+import {ASTVisitor} from "../../ASTVisitor";
 
 export class Program extends AbstractStatement {
     statement: AbstractStatement;

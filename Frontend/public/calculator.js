@@ -4,6 +4,8 @@ import {calculateViaLanguage as CarlCalculateViaLanguage} from "./build/carl/CaD
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");
 let tokensOutput = document.getElementById("tokensOutput");
+let printOutput = document.getElementById("printOutput");
+let evalOutput = document.getElementById("evalOutput");
 let astOutput = document.getElementById("astOutput");
 
 let isComplex = false;
@@ -18,7 +20,7 @@ display.addEventListener('keypress', function (e) {
 });
 
 export function pressKey(key) {
-    if(key === 'sin' || key === 'cos' || key === 'tan' || key === 'log' || key === 'sqrt') {
+    if (key === 'sin' || key === 'cos' || key === 'tan' || key === 'log' || key === 'sqrt') {
         return display.value += key + '(';
     }
 
@@ -33,17 +35,17 @@ export function pressKey(key) {
     display.value += key.toString();
 }
 
-function calculate(){
+function calculate() {
     let jsonValue;
     let input = display.value;
-    if(isComplex) {
+    if (isComplex) {
         input = document.getElementById("input").value;
         try {
             jsonValue = CarlCalculateViaLanguage(input);
         } catch (e) {
             alert(e.toString());
         }
-    }else {
+    } else {
         try {
             jsonValue = SimpleCalculateViaLanguage(input);
         } catch (e) {
@@ -52,22 +54,28 @@ function calculate(){
     }
     console.log(jsonValue);
     let value = JSON.parse(jsonValue);
-    if(!isComplex) {
+    if (!isComplex) {
         inputPreviousInput(input, value.value);
         prevInputs.innerHTML = getPreviousInputsHtml();
     }
     resetOutputs();
 
     console.log(value);
-    if(value.lexerErrors.length > 0) {
+    if (value.lexerErrors.length > 0) {
         printLexerErrors(value.lexerErrors);
-    }else {
+    } else {
         printParse(value.parse);
     }
-    if(value.parseErrors.length > 0) {
+    if (value.parseErrors.length > 0) {
         printAstErrors(value.parseErrors);
-    }else {
+    } else {
         printAst(value.ast);
+    }
+    if (value.varEnv.vars) {
+        printEval(value.varEnv.vars);
+    }
+    if (value.prints) {
+        printPrint(value.prints);
     }
     printTokens(value.tokens);
     return display.value = value.value;
@@ -80,7 +88,7 @@ export function setInput(value) {
 function printLexerErrors(errors) {
     astOutput.innerHTML = "<pre>" + "---LEXER ERRORS---" + "</pre><br>";
     for (let i = errors.length; i > 0; i--) {
-        astOutput.innerHTML += "<pre>" + errors[i-1] + "</pre><br>";
+        astOutput.innerHTML += "<pre>" + errors[i - 1] + "</pre><br>";
     }
 }
 
@@ -88,14 +96,14 @@ function printLexerErrors(errors) {
 function printAstErrors(errors) {
     parseOutput.innerHTML = "<pre>" + "---PARSE ERRORS---" + "</pre><br>";
     for (let i = errors.length; i > 0; i--) {
-        parseOutput.innerHTML += "<pre>" + errors[i-1] + "</pre><br>";
+        parseOutput.innerHTML += "<pre>" + errors[i - 1] + "</pre><br>";
     }
 }
 
 function printAst(ast) {
     astOutput.innerHTML += "<pre>" + "---AST---" + "</pre><br>";
     for (let i = ast.length; i > 0; i--) {
-        astOutput.innerHTML += "<pre>" +  ast[i-1] + "</pre><br>";
+        astOutput.innerHTML += "<pre>" + ast[i - 1] + "</pre><br>";
     }
 }
 
@@ -111,7 +119,25 @@ function printParse(parse) {
     parseOutput.innerHTML += "<pre>" + "---PARSE---" + "</pre><br>";
 
     for (let i = parse.length; i > 0; i--) {
-       parseOutput.innerHTML += "<pre>" + parse[i-1] + "</pre><br>";
+        parseOutput.innerHTML += "<pre>" + parse[i - 1] + "</pre><br>";
+    }
+}
+
+function printEval(evaluation) {
+    evalOutput.innerHTML += "<pre>" + "---ENV---" + "</pre><br>";
+    let keys = Object.keys(evaluation);
+    let values = Object.values(evaluation);
+
+    for (let i = keys.length - 1; i >= 0; i--) {
+        evalOutput.innerHTML += "<pre>" + keys[i] + " : " + values[i] + "</pre><br>";
+    }
+}
+
+function printPrint(print) {
+    printOutput.innerHTML += "<pre>" + "---PRINT---" + "</pre><br>";
+
+    for (let i = print.length; i > 0; i--) {
+        printOutput.innerHTML += "<pre>" + print[i - 1] + "</pre><br>";
     }
 }
 
@@ -119,6 +145,8 @@ function resetOutputs() {
     parseOutput.innerHTML = "";
     tokensOutput.innerHTML = "";
     astOutput.innerHTML = "";
+    printOutput.innerHTML = "";
+    evalOutput.innerHTML = "";
 }
 
 
@@ -127,11 +155,11 @@ export function clearDisplay() {
 }
 
 function inputPreviousInput(value, result) {
-    if(prevInputsValues.length >= 2) {
+    if (prevInputsValues.length >= 2) {
         prevInputsValues[2] = prevInputsValues[1];
         prevInputsResults[2] = prevInputsResults[1];
     }
-    if(prevInputsValues.length >= 1) {
+    if (prevInputsValues.length >= 1) {
         prevInputsValues[1] = prevInputsValues[0];
         prevInputsResults[1] = prevInputsResults[0];
     }
@@ -139,10 +167,10 @@ function inputPreviousInput(value, result) {
     prevInputsResults[0] = result;
 }
 
-function getPreviousInputsHtml(){
+function getPreviousInputsHtml() {
     let html = "";
     for (let i = Math.min(3, prevInputsValues.length); i > 0; i--) {
-        html += `<button class="setInputButton" onclick="setInput('${prevInputsValues[i-1]}')"><span>${prevInputsValues[i-1]}</span> <span>=</span> <span>${prevInputsResults[i-1]}</span></button>`;
+        html += `<button class="setInputButton" onclick="setInput('${prevInputsValues[i - 1]}')"><span>${prevInputsValues[i - 1]}</span> <span>=</span> <span>${prevInputsResults[i - 1]}</span></button>`;
     }
     return html;
 }

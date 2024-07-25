@@ -4,23 +4,25 @@ import {EqualityExpression as ParseEqualityExpression} from "../Parser/Expressio
 import {Expression as ParseExpression} from "../Parser/Expressions/Expression";
 import {Identifier as ASTIdentifier} from "./Expressions/Terms/Identifier";
 import {Identifier as ParseIdentifier} from "../Parser/Expressions/Terms/Identifier";
-import {MultiplicativeExpression as ParseMultiplicativeExpression} from "../Parser/Expressions/MultiplicativeExpression";
+import {
+    MultiplicativeExpression as ParseMultiplicativeExpression
+} from "../Parser/Expressions/MultiplicativeExpression";
 import {Num as ASTNum} from "./Expressions/Terms/Num";
 import {Num as ParseNum} from "../Parser/Expressions/Terms/Num";
 import {BinaryExpression as ASTBinaryExpression} from "./Expressions/BinaryExpression";
-import {AdditiveExpression } from "../Parser/Expressions/AdditiveExpression";
+import {AdditiveExpression} from "../Parser/Expressions/AdditiveExpression";
 import {UnaryExpression as ParseUnaryExpression} from "../Parser/Expressions/UnaryExpression";
 import {UnaryExpression as ASTUnaryExpression} from "./Expressions/UnaryExpression";
 import {Term as ASTTerm} from "./Expressions/Terms/Term";
 import {Term as ParseTerm} from "../Parser/Expressions/Terms/Term";
 import {RelationalExpression as ParseRelationalExpression} from "../Parser/Expressions/RelationalExpression";
 import {AbstractExpression} from "./Expressions/AbstractExpression";
-import { PowExpression } from "../Parser/Expressions/PowExpression";
+import {PowExpression} from "../Parser/Expressions/PowExpression";
 
 
 export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     visitPowExpression(expression: PowExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -29,7 +31,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitBinaryExpression(expression: AdditiveExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -38,7 +40,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitEqualityExpression(expression: ParseEqualityExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -47,7 +49,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitExpression(expression: ParseExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -61,7 +63,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -74,7 +76,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitRelationalExpression(expression: ParseRelationalExpression): AbstractSyntaxNode {
-        if(expression.right === null){
+        if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractSyntaxNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractSyntaxNode>(this) as AbstractExpression;
@@ -87,7 +89,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractSyntaxNode> {
     }
 
     visitUnaryExpression(expression: ParseUnaryExpression): AbstractSyntaxNode {
-        if(expression.operator === null) {
+        if (expression.operator === null) {
             return expression.primaryOrRight.accept<AbstractSyntaxNode>(this);
         }
         let primaryOrRight: AbstractExpression = expression.primaryOrRight.accept<AbstractSyntaxNode>(this) as AbstractExpression;

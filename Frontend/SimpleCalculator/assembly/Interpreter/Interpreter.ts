@@ -5,108 +5,109 @@ import {Num} from "../AST/Expressions/Terms/Num";
 import {Term} from "../AST/Expressions/Terms/Term";
 import {UnaryExpression} from "../AST/Expressions/UnaryExpression";
 
-export class Interpreter implements ASTVisitor<f64>{
+export class Interpreter implements ASTVisitor<f64> {
     visitUnaryExpression(expression: UnaryExpression): number {
         let right = expression.primaryOrRight.accept<f64>(this);
-        if(expression.operator == "!"){
+        if (expression.operator == "!") {
             return right == 0 ? 1 : 0;
         }
 
-        if(expression.operator == "-"){
+        if (expression.operator == "-") {
             return -right;
         }
 
-        if(expression.operator == "sin"){
+        if (expression.operator == "sin") {
             return Math.sin(right);
         }
 
-        if(expression.operator == "cos"){
+        if (expression.operator == "cos") {
             return Math.cos(right);
         }
 
-        if(expression.operator == "tan"){
+        if (expression.operator == "tan") {
             return Math.tan(right);
         }
 
-        if(expression.operator == "sqrt"){
+        if (expression.operator == "sqrt") {
             return Math.sqrt(right);
         }
 
-        if(expression.operator == "log"){
+        if (expression.operator == "log") {
             return Math.log(right);
         }
 
-        if(expression.operator == "asin"){
+        if (expression.operator == "asin") {
             return Math.asin(right);
         }
 
-        if(expression.operator == "acos"){
+        if (expression.operator == "acos") {
             return Math.acos(right);
         }
 
-        if(expression.operator == "atan"){
+        if (expression.operator == "atan") {
             return Math.atan(right);
         }
 
         throw new Error("Unknown operator: " + expression.operator);
     }
+
     visitBinaryExpression(expression: BinaryExpression): f64 {
         let left = expression.primaryOrLeft.accept<f64>(this);
         let right = expression.right.accept<f64>(this);
 
-        if(expression.operator == "+"){
+        if (expression.operator == "+") {
             return left + right;
         }
 
-        if(expression.operator == "-"){
+        if (expression.operator == "-") {
             return left - right;
         }
 
-        if (expression.operator == "=="){
+        if (expression.operator == "==") {
             return left == right ? 1 : 0;
         }
 
-        if (expression.operator == "!="){
+        if (expression.operator == "!=") {
             return left != right ? 1 : 0;
         }
 
-        if (expression.operator == "&&"){
+        if (expression.operator == "&&") {
             return left && right;
         }
 
-        if (expression.operator == "||"){
+        if (expression.operator == "||") {
             return left || right;
         }
 
-        if (expression.operator == "*"){
+        if (expression.operator == "*") {
             return left * right;
         }
 
-        if (expression.operator == "/"){
+        if (expression.operator == "/") {
             return left / right;
         }
 
-        if (expression.operator == "%"){
+        if (expression.operator == "%") {
             return left % right;
         }
 
-        if (expression.operator == "<"){
+        if (expression.operator == "<") {
             return left < right ? 1 : 0;
         }
 
-        if (expression.operator == "<="){
+        if (expression.operator == "<=") {
             return left <= right ? 1 : 0;
         }
 
-        if (expression.operator == ">"){
+        if (expression.operator == ">") {
             return left > right ? 1 : 0;
         }
 
-        if (expression.operator == ">="){
+        if (expression.operator == ">=") {
             return left >= right ? 1 : 0;
         }
 
-        if (expression.operator == "^"){
+        if (expression.operator == "^") {
             return Math.pow(left, right);
         }
 

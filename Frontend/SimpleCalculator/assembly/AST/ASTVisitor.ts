@@ -6,9 +6,11 @@ import {Identifier} from "./Expressions/Terms/Identifier";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
+
     visitUnaryExpression(expression: UnaryExpression): T;
 
     visitTerm(term: Term): T;
+
     visitNumber(term: Num): T;
 
     visitIdentifier(term: Identifier): T;

@@ -26,6 +26,6 @@ export function displayPdf(fileName) {
 
 
 export function displayImage(fileName) {
-return defaultLayout.replace('alsdbsadksad', `
+    return defaultLayout.replace('alsdbsadksad', `
     <img src="/documents/${fileName}" alt="${fileName}" style="width:50%;">`);
 }

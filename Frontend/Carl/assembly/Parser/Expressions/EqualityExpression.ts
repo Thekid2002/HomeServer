@@ -1,4 +1,4 @@
-import { ParseVisitor } from "../ParseVisitor";
+import {ParseVisitor} from "../ParseVisitor";
 import {Expression} from "./Expression";
 import {Token} from "../../Lexer/Token";
 import {AbstractExpression} from "./AbstractExpression";
@@ -26,7 +26,7 @@ export class EqualityExpression extends AbstractExpression {
 
     toJsonString(): string {
         return `{"type": "EqualityExpression", "primaryOrLeft": ${this.primaryOrLeft.toJsonString()},` +
-         `operator": ${this.operator ? this.operator!.toJsonString() : "\"\""},`+
-            `"right": ${this.right? this.right!.toJsonString(): "\"\""}}`;
+            `operator": ${this.operator ? this.operator!.toJsonString() : "\"\""},` +
+            `"right": ${this.right ? this.right!.toJsonString() : "\"\""}}`;
     }
 }

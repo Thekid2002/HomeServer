@@ -8,12 +8,12 @@ import {Num} from "./Expressions/Terms/Num";
 import {RelationalExpression} from "./Expressions/RelationalExpression";
 import {Term} from "./Expressions/Terms/Term";
 import {Identifier} from "./Expressions/Terms/Identifier";
-import { PowExpression } from "./Expressions/PowExpression";
+import {PowExpression} from "./Expressions/PowExpression";
 import {Type} from "./Expressions/Terms/Type";
 import {Declaration} from "./Statements/Declaration";
-import { CompoundStatement } from "./Statements/CompoundStatement";
-import { Program } from "./Statements/Program";
-import { Print } from "./Statements/Print";
+import {CompoundStatement} from "./Statements/CompoundStatement";
+import {Program} from "./Statements/Program";
+import {Print} from "./Statements/Print";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
@@ -27,10 +27,16 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     }
 
     visitCompoundStatement(statement: CompoundStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": CompoundStatement");
+        this.number++;
         statement.left.accept<void>(this);
         statement.right.accept<void>(this);
+        this.number--;
     }
+
     visitProgram(statement: Program): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Program");
+        this.number++;
         statement.statement.accept<void>(this);
     }
 
@@ -38,7 +44,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -50,7 +56,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -62,7 +68,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -74,7 +80,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -86,7 +92,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -102,7 +108,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right!.accept<void>(this);
             this.number--;
@@ -127,7 +133,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
 
     getSpace(num: i32): string {
         let space: string = "";
-        for(let i = 0; i < num; i++) {
+        for (let i = 0; i < num; i++) {
             space += "  ";
         }
         return space;
@@ -138,7 +144,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         statement.type.accept<void>(this);
         this.number--;
-        if(statement.expression !== null) {
+        if (statement.expression !== null) {
             this.number++;
             statement.expression!.accept<void>(this);
             this.number--;

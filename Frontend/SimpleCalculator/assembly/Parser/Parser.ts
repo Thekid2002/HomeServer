@@ -42,14 +42,14 @@ export class Parser {
             leftOrPrimary = new Expression(leftOrPrimary, operator, right);
         }
 
-        if(leftOrPrimary instanceof Expression){
+        if (leftOrPrimary instanceof Expression) {
             return leftOrPrimary as Expression;
         }
 
         return new Expression(leftOrPrimary, operator, right);
     }
 
-    private  equalityExpression(): EqualityExpression {
+    private equalityExpression(): EqualityExpression {
         let leftOrPrimary: AbstractExpression = this.relationExpression();
         let operator: Token | null = null;
         let right: AbstractExpression | null = null;
@@ -60,7 +60,7 @@ export class Parser {
             leftOrPrimary = new EqualityExpression(leftOrPrimary, operator, right);
         }
 
-        if(leftOrPrimary instanceof EqualityExpression){
+        if (leftOrPrimary instanceof EqualityExpression) {
             return leftOrPrimary as EqualityExpression;
         }
 
@@ -78,7 +78,7 @@ export class Parser {
             leftOrPrimary = new RelationalExpression(leftOrPrimary, operator, right);
         }
 
-        if(leftOrPrimary instanceof RelationalExpression){
+        if (leftOrPrimary instanceof RelationalExpression) {
             return leftOrPrimary as RelationalExpression;
         }
 
@@ -126,7 +126,7 @@ export class Parser {
             leftOrPrimary = new AdditiveExpression(leftOrPrimary, operator, right);
         }
 
-        if(leftOrPrimary instanceof AdditiveExpression){
+        if (leftOrPrimary instanceof AdditiveExpression) {
             return leftOrPrimary as AdditiveExpression;
         }
 
@@ -144,7 +144,7 @@ export class Parser {
             leftOrPrimary = new MultiplicativeExpression(leftOrPrimary, operator, right);
         }
 
-        if(leftOrPrimary instanceof MultiplicativeExpression){
+        if (leftOrPrimary instanceof MultiplicativeExpression) {
             return leftOrPrimary as MultiplicativeExpression;
         }
 
@@ -162,7 +162,7 @@ export class Parser {
             left = new PowExpression(left, operator, right);
         }
 
-        if(left instanceof PowExpression){
+        if (left instanceof PowExpression) {
             return left as PowExpression;
         }
 
@@ -170,9 +170,9 @@ export class Parser {
     }
 
     private unaryExpression(): UnaryExpression {
-        if(this.match([TokenType.LEFT_PAREN])) {
+        if (this.match([TokenType.LEFT_PAREN])) {
             let expr = this.expression();
-            if(this.match([TokenType.RIGHT_PAREN])) {
+            if (this.match([TokenType.RIGHT_PAREN])) {
                 return new UnaryExpression(null, expr);
             }
             this.errors.push("Expected ')' at line: " + this.peek().line.toString());
@@ -186,7 +186,7 @@ export class Parser {
             TokenType.ASIN, TokenType.ACOS, TokenType.ATAN])) {
             operator = this.previous();
             rightOrPrimary = this.unaryExpression();
-        }else {
+        } else {
             rightOrPrimary = this.term();
         }
 
@@ -199,13 +199,13 @@ export class Parser {
             return new Num(this.previous());
         }
 
-        if(this.match([TokenType.IDENTIFIER])) {
+        if (this.match([TokenType.IDENTIFIER])) {
             return new Identifier(this.previous());
         }
 
-        if(!this.isAtEnd()) {
+        if (!this.isAtEnd()) {
             this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
-        }else {
+        } else {
             this.errors.push("Unexpected end of input");
         }
         return new Term("ERROR");

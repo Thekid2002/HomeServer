@@ -93,7 +93,7 @@ export class Scanner {
             this.advance();
         }
 
-        if(ReservedWords.has(this.source.substring(this.start, this.current))) {
+        if (ReservedWords.has(this.source.substring(this.start, this.current))) {
             this.addToken(ReservedWords.get(this.source.substring(this.start, this.current)), this.source.substring(this.start, this.current));
             return;
         }
@@ -102,20 +102,20 @@ export class Scanner {
     }
 
 
-    charSwitch (c: string): void {
-        if(this.isDigit(c)){
+    charSwitch(c: string): void {
+        if (this.isDigit(c)) {
             return this.number();
         }
 
-        if(this.isAlpha(c)){
+        if (this.isAlpha(c)) {
             return this.identifier();
         }
 
-        if(c == ' ') {
+        if (c == ' ') {
             return;
         }
 
-        if(c == '^'){
+        if (c == '^') {
             return this.addToken(TokenType.POW, '^');
         }
 
@@ -149,15 +149,15 @@ export class Scanner {
         if (c == '*') {
             return this.addToken(TokenType.STAR, '*');
         }
-        if(c == '"'){
-            while(this.source.charAt(this.current) != '"' && !this.isAtEnd()){
-                if(this.source.charAt(this.current) == '\n'){
+        if (c == '"') {
+            while (this.source.charAt(this.current) != '"' && !this.isAtEnd()) {
+                if (this.source.charAt(this.current) == '\n') {
                     this.line++;
                 }
                 this.current++;
             }
 
-            if(this.isAtEnd()){
+            if (this.isAtEnd()) {
                 this.errors.push("Unterminated string at line " + this.line.toString());
                 return;
             }
@@ -170,13 +170,13 @@ export class Scanner {
             this.line++;
             return;
         }
-        if(c == '&'){
-            if(this.match('&')){
+        if (c == '&') {
+            if (this.match('&')) {
                 return this.addToken(TokenType.AND, "&&");
             }
         }
-        if(c == '|'){
-            if(this.match('|')){
+        if (c == '|') {
+            if (this.match('|')) {
                 return this.addToken(TokenType.OR, "||");
             }
         }
@@ -212,11 +212,12 @@ export class Scanner {
             }
             return this.addToken(TokenType.SLASH, '/');
         }
+        if(c == '%') {
+            return this.addToken(TokenType.MOD, '%');
+        }
+
         this.errors.push("Unexpected character: " + c + " at line " + this.line.toString());
     }
-
-
-
 
 
 }

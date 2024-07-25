@@ -13,7 +13,7 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
-        if(expression.right !== null) {
+        if (expression.right !== null) {
             this.number++;
             expression.right.accept<void>(this);
             this.number--;
@@ -42,7 +42,7 @@ export class ASTPrinter implements ASTVisitor<void> {
 
     private getSpace(num: i32): string {
         let space: string = "";
-        for(let i: i32 = 0; i < num; i++) {
+        for (let i: i32 = 0; i < num; i++) {
             space += " ";
         }
         return space;
