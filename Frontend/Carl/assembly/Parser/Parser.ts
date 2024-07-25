@@ -44,6 +44,9 @@ export class Parser {
             let statement = this.statement();
             if(statement !== null){
                 statements.push(statement);
+            }else {
+                this.errors.push("Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
+                break;
             }
         }
 
