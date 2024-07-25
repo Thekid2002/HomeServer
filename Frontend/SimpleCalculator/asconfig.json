@@ -1,0 +1,22 @@
+{
+  "targets": {
+    "debug": {
+      "outFile": "../public/build/simpleCalculator/SCDebug.wasm",
+      "textFile": "../public/build/simpleCalculator/SCDebug.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release": {
+      "outFile": "../public/build/simpleCalculator/SCRelease.wasm",
+      "textFile": "../public/build/simpleCalculator/SCRelease.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

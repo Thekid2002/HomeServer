@@ -1,9 +1,12 @@
-import {calculateViaLanguage} from "./build/debug.js";
+import {calculateViaLanguage as SimpleCalculateViaLanguage} from "./build/simpleCalculator/SCDebug.js";
+import {calculateViaLanguage as CarlCalculateViaLanguage} from "./build/carl/CaDebug.js";
 
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");
 let tokensOutput = document.getElementById("tokensOutput");
 let astOutput = document.getElementById("astOutput");
+
+let isComplex = false;
 
 let prevInputs = document.getElementById("previousInputs");
 let prevInputsValues = [];
@@ -33,15 +36,26 @@ export function pressKey(key) {
 function calculate(){
     let jsonValue;
     let input = display.value;
-    try {
-        jsonValue = calculateViaLanguage(input);
-    }catch (e) {
-        alert(e.toString());
+    if(isComplex) {
+        input = document.getElementById("input").value;
+        try {
+            jsonValue = CarlCalculateViaLanguage(input);
+        } catch (e) {
+            alert(e.toString());
+        }
+    }else {
+        try {
+            jsonValue = SimpleCalculateViaLanguage(input);
+        } catch (e) {
+            alert(e.toString());
+        }
     }
     console.log(jsonValue);
     let value = JSON.parse(jsonValue);
-    inputPreviousInput(input, value.value);
-    prevInputs.innerHTML = getPreviousInputsHtml();
+    if(!isComplex) {
+        inputPreviousInput(input, value.value);
+        prevInputs.innerHTML = getPreviousInputsHtml();
+    }
     resetOutputs();
 
     console.log(value);
@@ -131,4 +145,19 @@ function getPreviousInputsHtml(){
         html += `<button class="setInputButton" onclick="setInput('${prevInputsValues[i-1]}')"><span>${prevInputsValues[i-1]}</span> <span>=</span> <span>${prevInputsResults[i-1]}</span></button>`;
     }
     return html;
+}
+
+export function goToPage(page) {
+    switch (page) {
+        case "simpleCalculator":
+            document.getElementById("simpleCalculator").style.display = "block";
+            document.getElementById("complexCalculator").style.display = "none";
+            isComplex = false;
+            break;
+        case "complexCalculator":
+            document.getElementById("simpleCalculator").style.display = "none";
+            document.getElementById("complexCalculator").style.display = "block";
+            isComplex = true;
+            break;
+    }
 }
