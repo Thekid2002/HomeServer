@@ -78,91 +78,85 @@ export function pressKey(key) {
     display.value += key.toString();
 }
 
-async function calculatesync() {
-    let jsonValue;
-    let input = display.value;
-
-    // Force a small delay to allow the spinner to render
-    await new Promise(resolve => setTimeout(resolve, 100));
-
-    if (isComplex) {
-        input = codeEditor.value;
-        try {
-            jsonValue = await CarlCalculateViaLanguage(input);
-        } catch (e) {
-            alert(e.toString());
-            return;
-        }
-    } else {
-        try {
-            jsonValue = await SimpleCalculateViaLanguage(input);
-        } catch (e) {
-            alert(e.toString());
-            return;
-        }
-    }
-
-    let finalTime = Date.now() - startTime;
-    console.log("Time to calculate: " + finalTime + "ms");
-    console.log(jsonValue);
-    if (jsonValue === undefined || jsonValue === null) {
-        alert("Calculation error: JSON value is undefined or null.");
-        return;
-    }
-
-    let value;
-    try {
-        value = JSON.parse(jsonValue);
-    } catch (e) {
-        alert("Error parsing JSON: " + e.toString());
-        return;
-    }
-
-    if (!isComplex) {
-        inputPreviousInput(input, value.value);
-        prevInputs.innerHTML = getPreviousInputsHtml();
-    }
-
-    resetOutputs();
-
-    console.log(value);
-    if (value.lexerErrors && value.lexerErrors.length > 0) {
-        printLexerErrors(value.lexerErrors);
-    } else {
-        printParse(value.parse);
-    }
-
-    if (value.parseErrors && value.parseErrors.length > 0) {
-        printAstErrors(value.parseErrors);
-    } else {
-        printAst(value.ast);
-    }
-
-    if (value.varEnv) {
-        printEval(value.varEnv);
-    }
-
-    if (value.prints) {
-        printPrint(value.prints);
-    }
-
-    if (value.tokens) {
-        printTokens(value.tokens);
-    }
-    return display.value = value.value || "Error: No value returned.";
-}
-
-async function calculate() {
+function calculate() {
     startTime = Date.now();
     spinner.style.display = "flex";
 
-    try {
-        await calculatesync();
-    } finally {
+    setTimeout(() => {
+        let jsonValue;
+        let input = display.value;
+        if (isComplex) {
+            input = codeEditor.value;
+            try {
+                jsonValue = CarlCalculateViaLanguage(input);
+            } catch (e) {
+                alert(e.toString());
+                spinner.style.display = "none";
+                return;
+            }
+        } else {
+            try {
+                jsonValue = SimpleCalculateViaLanguage(input);
+            } catch (e) {
+                alert(e.toString());
+                spinner.style.display = "none";
+                return;
+            }
+        }
+        let finalTime = Date.now() - startTime;
+        console.log("Time to calculate: " + finalTime + "ms");
         spinner.style.display = "none";
-    }
-}
+        console.log(jsonValue);
+        if (jsonValue === undefined || jsonValue === null) {
+            alert("Calculation error: JSON value is undefined or null.");
+            spinner.style.display = "none";
+            return;
+        }
 
+        let value;
+        try {
+            value = JSON.parse(jsonValue);
+        } catch (e) {
+            alert("Error parsing JSON: " + e.toString());
+            spinner.style.display = "none";
+            return;
+        }
+
+        if (!isComplex) {
+            inputPreviousInput(input, value.value);
+            prevInputs.innerHTML = getPreviousInputsHtml();
+        }
+
+        resetOutputs();
+
+        console.log(value);
+        if (value.lexerErrors && value.lexerErrors.length > 0) {
+            printLexerErrors(value.lexerErrors);
+        } else {
+            printParse(value.parse);
+        }
+
+        if (value.parseErrors && value.parseErrors.length > 0) {
+            printAstErrors(value.parseErrors);
+        } else {
+            printAst(value.ast);
+        }
+
+        if (value.varEnv) {
+            printEval(value.varEnv);
+        }
+
+        if (value.prints) {
+            printPrint(value.prints);
+        }
+
+        if (value.tokens) {
+            printTokens(value.tokens);
+        }
+        spinner.style.display = "none";
+        return display.value = value.value || "Error: No value returned.";
+    }, 100);  // Adjust the delay as needed
+}
 export function setInput(value) {
     if(!isComplex) {
         return document.getElementById("numInput").value = value;
