@@ -14,6 +14,10 @@ export enum TokenType {
     POW,          // ^
     MOD,          // %
 
+    //Loops
+    WHILE,        // while
+    FOR,
+
     // One or two character tokens.
     BANG,         // !
     BANG_EQUAL,   // !=
@@ -44,7 +48,6 @@ export enum TokenType {
     ELSE,         // else
     FALSE,        // false
     FUN,          // fun
-    FOR,          // for
     IF,           // if
     NIL,          // nil
     OR,           // or
@@ -54,7 +57,6 @@ export enum TokenType {
     THIS,         // this
     TRUE,         // true
     VAR,          // var
-    WHILE,        // while
 
     EOF          // end of file
 }
@@ -74,6 +76,10 @@ export const TokenTypes: string[] = [
     "STAR",          // *
     "POW",           // ^
     "MOD",           // %
+
+    //Loops
+    "WHILE",         // while
+    "FOR",           // for
 
     // One or two character tokens.
     "BANG",         // !
@@ -105,7 +111,6 @@ export const TokenTypes: string[] = [
     "ELSE",         // else
     "FALSE",        // false
     "FUN",          // fun
-    "FOR",          // for
     "IF",           // if
     "NIL",          // nil
     "OR",           // or
@@ -115,7 +120,6 @@ export const TokenTypes: string[] = [
     "THIS",         // this
     "TRUE",         // true
     "VAR",          // var
-    "WHILE",        // while
 
     "EOF"          // end of file
 ];

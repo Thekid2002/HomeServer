@@ -13,6 +13,8 @@ import {Type} from "./Expressions/Terms/Type";
 import {CompoundStatement} from "./Statements/CompoundStatement";
 import {Program} from "./Statements/Program";
 import {Print} from "./Statements/Print";
+import {LoopStatement} from "./Statements/LoopStatement";
+import {Assignment} from "./Statements/Assignment";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: Expression): T;
@@ -41,7 +43,11 @@ export interface ParseVisitor<T> {
 
     visitCompoundStatement(statement: CompoundStatement): T;
 
-    visitProgram(param: Program): T;
+    visitProgram(statement: Program): T;
 
-    visitPrint(param: Print): T;
+    visitPrint(statement: Print): T;
+
+    visitLoopStatement(statement: LoopStatement): T;
+
+    visitAssignment(statement: Assignment): T;
 }

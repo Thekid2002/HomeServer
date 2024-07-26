@@ -14,10 +14,28 @@ import {Declaration} from "./Statements/Declaration";
 import {CompoundStatement} from "./Statements/CompoundStatement";
 import {Program} from "./Statements/Program";
 import {Print} from "./Statements/Print";
+import { LoopStatement } from "./Statements/LoopStatement";
+import { Assignment } from "./Statements/Assignment";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
     tree: string[] = [];
+
+    visitAssignment(statement: Assignment): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Assignment");
+        this.number++;
+        statement.identifier.accept<void>(this);
+        statement.expression.accept<void>(this);
+        this.number--;
+    }
+
+    visitLoopStatement(statement: LoopStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": While");
+        this.number++;
+        statement.expression.accept<void>(this);
+        statement.body.accept<void>(this);
+        this.number--;
+    }
 
     visitPrint(param: Print): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Print");

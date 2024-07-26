@@ -14,6 +14,8 @@ import {ValType} from "./Values/ValType";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import {Program} from "../AST/Nodes/Statements/Program";
 import {Print} from "../AST/Nodes/Statements/Print";
+import { While } from "../AST/Nodes/Statements/While";
+import { Assignment } from "../AST/Nodes/Statements/Assignment";
 
 export class Interpreter implements ASTVisitor<ValObject | null> {
     varEnv: VarEnvironment;
@@ -21,6 +23,41 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     constructor() {
         this.varEnv = new VarEnvironment();
+    }
+
+    visitAssignment(statement: Assignment): ValObject | null {
+        let value = statement.expression.accept<ValObject | null>(this);
+        if (value === null) {
+            throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
+        }
+
+        let prevVal = this.varEnv.lookUp(statement.identifier.name);
+        if (prevVal === null) {
+            throw new Error("Line: " + statement.lineNum.toString() + " Variable " + statement.identifier.name + " not declared");
+        }
+
+        this.varEnv.setVar(statement.identifier.name, value);
+        return null;
+    }
+
+    visitWhile(statement: While): ValObject | null {
+        if(statement.declaration !== null) {
+            statement.declaration!.accept<ValObject | null>(this);
+        }
+        let expression = statement.condition.accept<ValObject | null>(this);
+        if (expression === null) {
+            throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
+        }
+
+        while ((expression as ValBool).value) {
+            statement.body.accept<ValObject | null>(this);
+            expression = statement.condition.accept<ValObject | null>(this);
+            if (expression === null) {
+                throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
+            }
+        }
+
+        return null;
     }
 
     visitPrint(print: Print): ValObject | null {
@@ -94,6 +131,9 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     visitBinaryExpression(expression: BinaryExpression): ValObject | null {
         let left = expression.primaryOrLeft.accept<ValObject | null>(this);
         let right = expression.right.accept<ValObject | null>(this);
+        if (left === null || right === null) {
+            throw new Error("Line: " + expression.lineNum.toString() + " Value is null");
+        }
 
         if (expression.operator == "+") {
             return new ValNum((left as ValNum).value + (right as ValNum).value);
@@ -166,7 +206,11 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     }
 
     visitIdentifier(term: Identifier): ValObject | null {
-        return this.varEnv.lookUp(term.name);
+        let val = this.varEnv.lookUp(term.name);
+        if (val === null) {
+            throw new Error("Line: " + term.lineNum.toString() + " Variable " + term.name + " not declared");
+        }
+        return val;
     }
 
     visitNumber(term: Num): ValObject | null {
@@ -195,6 +239,5 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     visitValueType(type: ValueType): ValObject | null {
         return new ValType(type);
-
     }
 }

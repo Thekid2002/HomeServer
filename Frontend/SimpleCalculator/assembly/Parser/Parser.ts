@@ -26,7 +26,7 @@ export class Parser {
     parse(): AbstractExpression {
         let expr = this.expression();
         if (!this.isAtEnd()) {
-            this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
+            this.errors.push("Parse: Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
         }
         return expr;
     }
@@ -204,7 +204,7 @@ export class Parser {
         }
 
         if (!this.isAtEnd()) {
-            this.errors.push("Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
+            this.errors.push("Term: Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
         } else {
             this.errors.push("Unexpected end of input");
         }

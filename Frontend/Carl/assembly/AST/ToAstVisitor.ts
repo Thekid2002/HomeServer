@@ -29,8 +29,27 @@ import {Program as ASTProgram} from "./Nodes/Statements/Program";
 import {AbstractStatement} from "./Nodes/Statements/AbstractStatement";
 import {Print as ParsePrint} from "../Parser/Statements/Print";
 import {Print as ASTPrint} from "./Nodes/Statements/Print";
+import {LoopStatement as ParseLoopStatement} from "../Parser/Statements/LoopStatement";
+import {While} from "./Nodes/Statements/While";
+import { Assignment as ParseAssignment } from "../Parser/Statements/Assignment";
+import {Assignment as ASTAssignment} from "./Nodes/Statements/Assignment";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
+    visitAssignment(statement: ParseAssignment): AbstractNode {
+        let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
+        let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
+        return new ASTAssignment(identifier, expression, statement.lineNum);
+    }
+    visitLoopStatement(statement: ParseLoopStatement): AbstractNode {
+        let declaration: ASTDeclaration | null = null;
+        if(statement.declaration !== null) {
+            declaration = statement.declaration!.accept<AbstractNode>(this) as ASTDeclaration;
+        }
+        let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
+        let statementNode = statement.body.accept<AbstractNode>(this) as AbstractStatement;
+        return new While(declaration, expression, statementNode, statement.lineNum);
+    }
+
     visitCompoundStatement(statement: ParseCompoundStatement): AbstractNode {
         let left = statement.left.accept<AbstractNode>(this) as AbstractStatement;
         let right = statement.right.accept<AbstractNode>(this) as AbstractStatement;

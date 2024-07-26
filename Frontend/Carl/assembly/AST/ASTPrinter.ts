@@ -9,10 +9,28 @@ import {Declaration} from "./Nodes/Statements/Declaration";
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {Program} from "./Nodes/Statements/Program";
 import {Print} from "./Nodes/Statements/Print";
+import { While } from "./Nodes/Statements/While";
+import { Assignment } from "./Nodes/Statements/Assignment";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
-    tree: string[] = []
+    tree: string[] = [];
+
+    visitAssignment(statement: Assignment): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Assignment");
+        this.number++;
+        statement.identifier.accept<void>(this);
+        statement.expression.accept<void>(this);
+        this.number--;
+    }
+
+    visitWhile(statement: While): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": While");
+        this.number++;
+        statement.condition.accept<void>(this);
+        statement.body.accept<void>(this);
+        this.number--;
+    }
 
     visitPrint(param: Print): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Print");

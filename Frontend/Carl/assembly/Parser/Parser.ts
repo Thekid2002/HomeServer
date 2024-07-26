@@ -18,6 +18,8 @@ import {Declaration} from "./Statements/Declaration";
 import {Type} from "./Expressions/Terms/Type";
 import {AbstractStatement} from "./Statements/AbstractStatement";
 import {Print} from "./Statements/Print";
+import {LoopStatement} from "./Statements/LoopStatement";
+import {Assignment} from "./Statements/Assignment";
 
 export class Parser {
     tokens: Token[];
@@ -32,7 +34,7 @@ export class Parser {
     parse(): Program | null {
         let prg = this.program();
         if (!this.isAtEnd()) {
-            this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+            this.errors.push("Parse: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
         }
         return prg;
     }
@@ -45,7 +47,7 @@ export class Parser {
             if (statement !== null) {
                 statements.push(statement);
             } else {
-                this.errors.push("Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
+                this.errors.push("Program: Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
                 break;
             }
         }
@@ -73,7 +75,15 @@ export class Parser {
             return this.declaration();
         }
 
-        this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+        if (this.match([TokenType.IDENTIFIER])) {
+            return this.assignment();
+        }
+
+        if(this.match([TokenType.WHILE, TokenType.FOR])) {
+            return this.loop();
+        }
+
+        this.errors.push("Statement: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
         return null;
 
     }
@@ -285,11 +295,9 @@ export class Parser {
         }
 
         if (!this.isAtEnd()) {
-            this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-            console.log("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+            this.errors.push("Type: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
         } else {
-            this.errors.push("Unexpected end of input");
-            console.log("Unexpected end of input");
+            this.errors.push("Type: Unexpected end of input");
         }
         return null;
     }
@@ -304,12 +312,117 @@ export class Parser {
         }
 
         if (!this.isAtEnd()) {
-            this.errors.push("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-            console.log("Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+            this.errors.push("Term: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
         } else {
-            this.errors.push("Unexpected end of input");
-            console.log("Unexpected end of input");
+            this.errors.push("Term: Unexpected end of input");
         }
         return new Term("ERROR", this.peek().line);
+    }
+
+    private loop(): LoopStatement | null {
+        if (this.matchAdvance([TokenType.WHILE])) {
+            if(this.matchAdvance([TokenType.LEFT_PAREN])) {
+                return this.while();
+            }
+            this.errors.push("Expected '(' at line: " + this.peek().line.toString());
+        }
+        if(this.matchAdvance([TokenType.FOR])) {
+            if(this.matchAdvance([TokenType.LEFT_PAREN])) {
+                return this.for();
+            }
+            this.errors.push("Expected '(' at line: " + this.peek().line.toString());
+        }
+        this.errors.push("Loop: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+        return null;
+    }
+
+
+    private while(): LoopStatement | null {
+        let expression = this.expression();
+        if(!this.matchAdvance([TokenType.RIGHT_PAREN])) {
+            this.errors.push("Expected ')' at line: " + this.peek().line.toString());
+            return null;
+        }
+        if(this.match([TokenType.LEFT_BRACE])) {
+            this.advance();
+            let statements: AbstractStatement[] = [];
+            while(!this.match([TokenType.RIGHT_BRACE])) {
+                let statement = this.statement();
+                if (statement !== null) {
+                    statements.push(statement);
+                } else {
+                    this.errors.push("While: Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
+                    return null;
+                }
+            }
+            if(!this.matchAdvance([TokenType.RIGHT_BRACE])) {
+                this.errors.push("Expected '}' at line: " + this.peek().line.toString());
+                return null;
+            }
+            let statement = this.toCompound(statements);
+            return new LoopStatement(null, expression, statement, expression.lineNum);
+        }
+        this.errors.push("Expected '{' at line: " + this.peek().line.toString());
+        return null;
+    }
+
+    private for(): LoopStatement | null {
+        let declaration = this.declaration();
+        if(!this.matchAdvance([TokenType.SEMICOLON])) {
+            this.errors.push("Expected ';' at line: " + this.peek().line.toString());
+            return null;
+        }
+        let expression = this.expression();
+        if(!this.matchAdvance([TokenType.SEMICOLON])) {
+            this.errors.push("Expected ';' at line: " + this.peek().line.toString());
+            return null;
+        }
+        let assignment = this.assignment();
+        if (!this.matchAdvance([TokenType.RIGHT_PAREN])) {
+            this.errors.push("Expected ')' at line: " + this.peek().line.toString());
+            return null;
+        }
+        if(declaration == null|| assignment == null) {
+            this.errors.push("Error in for loop");
+            return null;
+        }
+        if(this.match([TokenType.LEFT_BRACE])) {
+            this.advance();
+            let statements: AbstractStatement[] = [];
+            while(!this.match([TokenType.RIGHT_BRACE])) {
+                let statement = this.statement();
+                if (statement !== null) {
+                    statements.push(statement);
+                } else {
+                    this.errors.push("Declaration: Unexpected token:" + this.peek().literal + " at line: " + this.peek().line.toString());
+                    return null;
+                }
+            }
+            statements.push(assignment);
+            if(!this.matchAdvance([TokenType.RIGHT_BRACE])) {
+                this.errors.push("Expected '}' at line: " + this.peek().line.toString());
+                return null;
+            }
+            let statement = this.toCompound(statements);
+            return new LoopStatement(declaration, expression, statement, expression.lineNum);
+        }
+        this.errors.push("Expected '{' at line: " + this.peek().line.toString());
+        return null;
+    }
+
+    private assignment(): Assignment | null {
+        if(this.match([TokenType.IDENTIFIER])) {
+            let identifier = this.term() as Identifier;
+
+            if (this.matchAdvance([TokenType.EQUAL])) {
+                let expression = this.expression();
+                return new Assignment(identifier, expression, identifier.lineNum);
+            }
+            this.errors.push("Expected '=' at line: " + this.peek().line.toString());
+        }
+        this.errors.push("Assignment: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+
+        return null;
+
     }
 }

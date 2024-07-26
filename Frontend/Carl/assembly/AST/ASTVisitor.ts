@@ -8,6 +8,8 @@ import {Declaration} from "./Nodes/Statements/Declaration";
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {Program} from "./Nodes/Statements/Program";
 import {Print} from "./Nodes/Statements/Print";
+import {While} from "./Nodes/Statements/While";
+import {Assignment} from "./Nodes/Statements/Assignment";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -24,9 +26,13 @@ export interface ASTVisitor<T> {
 
     visitValueType(type: ValueType): T;
 
-    visitCompoundStatement(param: CompoundStatement): T;
+    visitCompoundStatement(statement: CompoundStatement): T;
 
-    visitProgram(param: Program): T;
+    visitProgram(statement: Program): T;
 
-    visitPrint(param: Print): T;
+    visitPrint(statement: Print): T;
+
+    visitWhile(statement: While): T;
+
+    visitAssignment(statement: Assignment): T;
 }
