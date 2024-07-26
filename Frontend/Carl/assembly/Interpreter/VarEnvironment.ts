@@ -24,14 +24,12 @@ export class VarEnvironment {
 
     toJsonString(): string {
         let string = "{\n";
-        string += "\"vars\": {\n";
         for (let i = 0; i < this.vars.size; i++) {
             string += "\"" + this.vars.keys()[i].toString() + "\": " + (this.vars.get(this.vars.keys()[i]) !== null ? this.vars.get(this.vars.keys()[i])!.toJsonString() : "null");
             if (i < this.vars.size - 1) {
                 string += ", ";
             }
         }
-        string += "}\n";
         string += "}\n";
         return string;
     }

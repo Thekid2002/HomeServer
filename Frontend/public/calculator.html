@@ -5,9 +5,13 @@
     <title>Calculator</title>
     <base href="/HomeServer/Frontend/public/">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/calculator.css">
-    <!--<link rel="stylesheet" href="/calculator.css">!-->
+    <!--<link rel="stylesheet" href="/calculator.css">-->
 </head>
 <body>
+<div class="spinner-container" id="spinner">
+    <div class="spinner"></div>
+</div>
+<div style="padding: 10px; display: flex; width: 100%">
 <div style="display: flex; width: 100%; flex-direction: row">
     <div style="display: flex; flex-direction: column; width: 25%">
         <h1>Pages</h1>
@@ -90,9 +94,11 @@
         </div>
     </div>
 </div>
+</div>
 </body>
 <script type="module">
-    import {pressKey, clearDisplay, setInput, goToPage} from './calculator.js';
+    import {pressKey, clearDisplay, setInput, goToPage} from './simpleCalculator.js';
+
 
     window.pressKey = pressKey;
     window.clearDisplay = clearDisplay;

@@ -1,14 +1,57 @@
 import {calculateViaLanguage as SimpleCalculateViaLanguage} from "./build/simpleCalculator/SCDebug.js";
 import {calculateViaLanguage as CarlCalculateViaLanguage} from "./build/carl/CaDebug.js";
 
+let isComplex = false;
+
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");
 let tokensOutput = document.getElementById("tokensOutput");
 let printOutput = document.getElementById("printOutput");
 let evalOutput = document.getElementById("evalOutput");
 let astOutput = document.getElementById("astOutput");
+let codeEditor = document.getElementById("input");
+let spinner = document.getElementById("spinner");
 
-let isComplex = false;
+let startTime;
+
+let search = window.document.URL;
+let query = search.split('?')[1];
+
+console.log(query);
+if(query) {
+    let queryValues = query.split('&');
+    let keys = [];
+    let values = [];
+    for (let i = 0; i < queryValues.length; i++) {
+        let split = queryValues[i].split(':');
+        keys.push(split[0]);
+        values.push(split[1].replaceAll("%20", " "));
+    }
+
+    if (keys.includes("page")) {
+        goToPage(values[keys.indexOf("page")]);
+    }
+
+    if (keys.includes("input")) {
+        setInput(values[keys.indexOf("input")]);
+    }
+
+    if (keys.includes("code")) {
+        if (isComplex) {
+            codeEditor.value = values[keys.indexOf("code")];
+        } else {
+            display.value = values[keys.indexOf("code")];
+        }
+    }
+
+
+    if (keys.includes("calculate")) {
+        if (values[keys.indexOf("calculate")] === "true") {
+            calculate();
+        }
+    }
+}
+
 
 let prevInputs = document.getElementById("previousInputs");
 let prevInputsValues = [];
@@ -35,54 +78,96 @@ export function pressKey(key) {
     display.value += key.toString();
 }
 
-function calculate() {
+async function calculatesync() {
     let jsonValue;
     let input = display.value;
+
+    // Force a small delay to allow the spinner to render
+    await new Promise(resolve => setTimeout(resolve, 100));
+
     if (isComplex) {
-        input = document.getElementById("input").value;
+        input = codeEditor.value;
         try {
-            jsonValue = CarlCalculateViaLanguage(input);
+            jsonValue = await CarlCalculateViaLanguage(input);
         } catch (e) {
             alert(e.toString());
+            return;
         }
     } else {
         try {
-            jsonValue = SimpleCalculateViaLanguage(input);
+            jsonValue = await SimpleCalculateViaLanguage(input);
         } catch (e) {
             alert(e.toString());
+            return;
         }
     }
+
+    let finalTime = Date.now() - startTime;
+    console.log("Time to calculate: " + finalTime + "ms");
     console.log(jsonValue);
-    let value = JSON.parse(jsonValue);
+    if (jsonValue === undefined || jsonValue === null) {
+        alert("Calculation error: JSON value is undefined or null.");
+        return;
+    }
+
+    let value;
+    try {
+        value = JSON.parse(jsonValue);
+    } catch (e) {
+        alert("Error parsing JSON: " + e.toString());
+        return;
+    }
+
     if (!isComplex) {
         inputPreviousInput(input, value.value);
         prevInputs.innerHTML = getPreviousInputsHtml();
     }
+
     resetOutputs();
 
     console.log(value);
-    if (value.lexerErrors.length > 0) {
+    if (value.lexerErrors && value.lexerErrors.length > 0) {
         printLexerErrors(value.lexerErrors);
     } else {
         printParse(value.parse);
     }
-    if (value.parseErrors.length > 0) {
+
+    if (value.parseErrors && value.parseErrors.length > 0) {
         printAstErrors(value.parseErrors);
     } else {
         printAst(value.ast);
     }
-    if (value.varEnv.vars) {
-        printEval(value.varEnv.vars);
+
+    if (value.varEnv) {
+        printEval(value.varEnv);
     }
+
     if (value.prints) {
         printPrint(value.prints);
     }
-    printTokens(value.tokens);
-    return display.value = value.value;
+
+    if (value.tokens) {
+        printTokens(value.tokens);
+    }
+    return display.value = value.value || "Error: No value returned.";
+}
+
+async function calculate() {
+    startTime = Date.now();
+    spinner.style.display = "flex";
+
+    try {
+        await calculatesync();
+    } finally {
+        spinner.style.display = "none";
+    }
 }
 
 export function setInput(value) {
-    document.getElementById("numInput").value = value;
+    if(!isComplex) {
+        return document.getElementById("numInput").value = value;
+    }
+    document.getElementById("input").value = value;
 }
 
 function printLexerErrors(errors) {
@@ -136,7 +221,7 @@ function printEval(evaluation) {
 function printPrint(print) {
     printOutput.innerHTML += "<pre>" + "---PRINT---" + "</pre><br>";
 
-    for (let i = print.length; i > 0; i--) {
+    for (let i = Math.min(print.length, 100); i > 0; i--) {
         printOutput.innerHTML += "<pre>" + print[i - 1] + "</pre><br>";
     }
 }

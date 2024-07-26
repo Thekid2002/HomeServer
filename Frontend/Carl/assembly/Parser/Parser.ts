@@ -44,6 +44,9 @@ export class Parser {
 
         while (!this.isAtEnd()) {
             let statement = this.statement();
+            if(this.match([TokenType.SEMICOLON]) && !this.isAtEnd()){
+                this.advance();
+            }
             if (statement !== null) {
                 statements.push(statement);
             } else {
@@ -58,13 +61,20 @@ export class Parser {
     }
 
     private toCompound(statements: AbstractStatement[]): AbstractStatement {
+        if (statements.length === 0) {
+            throw new Error("toCompound called with an empty array");
+        }
+
         if (statements.length === 1) {
             return statements[0];
         }
 
-        return new CompoundStatement(statements[0], this.toCompound(statements.slice(1)), statements[0].lineNum);
+        const firstStatement = statements[0];
+        const remainingStatements = statements.slice(1);
 
+        return new CompoundStatement(firstStatement, this.toCompound(remainingStatements), firstStatement.lineNum);
     }
+
 
     private statement(): AbstractStatement | null {
         if (this.match([TokenType.PRINT])) {
@@ -105,6 +115,10 @@ export class Parser {
         if (type === null) {
             this.errors.push("Error in type");
             console.log("Error in type");
+            return null;
+        }
+        if(!this.match([TokenType.IDENTIFIER])) {
+            this.errors.push("Declaration: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
             return null;
         }
         let identifier = this.term() as Identifier;

@@ -4,6 +4,10 @@
       "outFile": "../public/build/carl/CaDebug.wasm",
       "textFile": "../public/build/carl/CaDebug.wat",
       "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false,
       "debug": true
     },
     "release": {
