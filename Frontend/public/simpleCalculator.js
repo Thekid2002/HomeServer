@@ -155,7 +155,7 @@ function calculate() {
         }
         spinner.style.display = "none";
         return display.value = value.value || "Error: No value returned.";
-    }, 100);  // Adjust the delay as needed
+    }, 0);  // Adjust the delay as needed
 }
 export function setInput(value) {
     if(!isComplex) {
