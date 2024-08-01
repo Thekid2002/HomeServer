@@ -14,9 +14,12 @@ if (exampleSelect) {
         let option = document.createElement("option");
         option.text = example.name;
         option.value = example.code;
-        option.onselect = function() {
-            document.getElementById("code").value = example.code;
-        }
         exampleSelect.add(option);
     });
+
+    exampleSelect.addEventListener("change", function() {
+        document.getElementById("code").value = exampleSelect.value;
+    });
+
+    document.getElementById("code").value = examples[0].code
 }
