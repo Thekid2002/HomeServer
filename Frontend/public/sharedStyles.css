@@ -12,7 +12,7 @@
 
 .calculator-area {
     display: flex;
-    height: 48vh;
+    height: 45vh;
     font-size: 2em;
     padding: 10px;
     width: 97.5%;
@@ -26,6 +26,16 @@
 }
 
 .calculator-body {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+}
+
+.complex-calculator-body {
     display: flex;
     flex-direction: column;
     padding-inline: 2%;
