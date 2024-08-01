@@ -25,10 +25,9 @@
     <div class="complex-calculator-body">
         <div id="complexCalculator" class="complex-calculator-body" style="display: flex">
             <textarea id="code" class="calculator-area" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <select>
-                    <option value="wat">WebAssembly Text</option>
-                    <option value="wasm">WebAssembly Binary</option>
+            <div class="compile-button-area">
+                <select id="examples">
+
                 </select>
                 <button onclick="compile()">Compile</button>
             </div>
@@ -53,6 +52,7 @@
 </div>
 </div>
 </body>
+<script src="examples.js"></script>
 <script src="libwabt.js"></script>
 <script type="module">
     import {goToPage} from './navigation.js';

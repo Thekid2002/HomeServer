@@ -24,8 +24,12 @@
 
     <div class="calculator-body">
         <div id="complexCalculator" class="complex-calculator-body" style="display: flex">
-            <textarea id="input" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
-            <button onclick="interpret()">Evaluate</button>
+            <textarea id="code" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
+            <div class="compile-button-area">
+                <select id="examples">
+                </select>
+                <button onclick="interpret()">Evaluate</button>
+            </div>
             <textarea id="output" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
         <div style="display: flex; width: 100%; flex-direction: row">

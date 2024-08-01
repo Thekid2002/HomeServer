@@ -1,6 +1,6 @@
 import {calculateViaLanguage} from "./build/carlCompiler/CaCoDebug.js";
 
-let codeInput = document.getElementById("input");
+let codeInput = document.getElementById("code");
 let resultOutput = document.getElementById("output");
 
 /**
