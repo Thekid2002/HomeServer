@@ -4,7 +4,7 @@
   "main": "Backend/index.js",
   "scripts": {
     "test": "",
-    "start": "npm --prefix Frontend/simplecalculator run start && npm --prefix Frontend/Carl run start && node Backend/index.js"
+    "start": "npm --prefix Frontend/simplecalculator run start && npm --prefix Frontend/CarlCompiler run start && node Backend/index.js"
   },
   "author": "",
   "license": "ISC",

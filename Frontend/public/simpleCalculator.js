@@ -1,7 +1,4 @@
-import {calculateViaLanguage as SimpleCalculateViaLanguage} from "./build/simpleCalculator/SCDebug.js";
-import {calculateViaLanguage as CarlCalculateViaLanguage} from "./build/carl/CaDebug.js";
-
-let isComplex = false;
+import {calculateViaLanguage} from "./build/simpleCalculator/SCDebug.js";
 
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");
@@ -9,7 +6,7 @@ let tokensOutput = document.getElementById("tokensOutput");
 let printOutput = document.getElementById("printOutput");
 let evalOutput = document.getElementById("evalOutput");
 let astOutput = document.getElementById("astOutput");
-let codeEditor = document.getElementById("input");
+let compilerOutput = document.getElementById("compiled");
 let spinner = document.getElementById("spinner");
 
 let startTime;
@@ -37,11 +34,7 @@ if(query) {
     }
 
     if (keys.includes("code")) {
-        if (isComplex) {
-            codeEditor.value = values[keys.indexOf("code")];
-        } else {
-            display.value = values[keys.indexOf("code")];
-        }
+        display.value = values[keys.indexOf("code")];
     }
 
 
@@ -85,23 +78,12 @@ function calculate() {
     setTimeout(() => {
         let jsonValue;
         let input = display.value;
-        if (isComplex) {
-            input = codeEditor.value;
-            try {
-                jsonValue = CarlCalculateViaLanguage(input);
-            } catch (e) {
-                alert(e.toString());
-                spinner.style.display = "none";
-                return;
-            }
-        } else {
-            try {
-                jsonValue = SimpleCalculateViaLanguage(input);
-            } catch (e) {
-                alert(e.toString());
-                spinner.style.display = "none";
-                return;
-            }
+        try {
+            jsonValue = calculateViaLanguage(input);
+        } catch (e) {
+            alert(e.toString());
+            spinner.style.display = "none";
+            return;
         }
         let finalTime = Date.now() - startTime;
         console.log("Time to calculate: " + finalTime + "ms");
@@ -122,10 +104,8 @@ function calculate() {
             return;
         }
 
-        if (!isComplex) {
-            inputPreviousInput(input, value.value);
-            prevInputs.innerHTML = getPreviousInputsHtml();
-        }
+        inputPreviousInput(input, value.value);
+        prevInputs.innerHTML = getPreviousInputsHtml();
 
         resetOutputs();
 
@@ -153,15 +133,17 @@ function calculate() {
         if (value.tokens) {
             printTokens(value.tokens);
         }
+
+        if(value.compilerOutput){
+            compilerOutput.innerHTML = value.compilerOutput
+        }
+
         spinner.style.display = "none";
         return display.value = value.value || "Error: No value returned.";
     }, 0);  // Adjust the delay as needed
 }
 export function setInput(value) {
-    if(!isComplex) {
-        return document.getElementById("numInput").value = value;
-    }
-    document.getElementById("input").value = value;
+    return document.getElementById("numInput").value = value;
 }
 
 function printLexerErrors(errors) {
@@ -252,19 +234,4 @@ function getPreviousInputsHtml() {
         html += `<button class="setInputButton" onclick="setInput('${prevInputsValues[i - 1]}')"><span>${prevInputsValues[i - 1]}</span> <span>=</span> <span>${prevInputsResults[i - 1]}</span></button>`;
     }
     return html;
-}
-
-export function goToPage(page) {
-    switch (page) {
-        case "simpleCalculator":
-            document.getElementById("simpleCalculator").style.display = "block";
-            document.getElementById("complexCalculator").style.display = "none";
-            isComplex = false;
-            break;
-        case "complexCalculator":
-            document.getElementById("simpleCalculator").style.display = "none";
-            document.getElementById("complexCalculator").style.display = "block";
-            isComplex = true;
-            break;
-    }
 }

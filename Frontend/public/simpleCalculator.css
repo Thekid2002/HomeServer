@@ -1,0 +1,137 @@
+.calculator-row {
+    display: flex;
+    grid-auto-flow: column;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-input {
+    display: flex;
+    height: 1.4em;
+    font-size: 2em;
+    padding: 10px;
+    width: 97.5%;
+}
+
+.calculator-area {
+    display: flex;
+    height: 80vh !important;
+    font-size: 2em;
+    padding: 10px;
+    width: 97.5%;
+    resize: none;
+}
+
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-column {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.headline {
+    font-family: Arial;
+    font-size: 30px
+}
+
+.calculator-grid-pc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-grid-pad {
+    display: none;
+}
+
+.calculator-grid {
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 9;
+    width: 100%;
+}
+
+.calculator-button {
+    font-size: 1.4em;
+}
+
+
+.headline {
+    text-align: center;
+}
+
+.setInputButton {
+    color: white;
+    width: 100%;
+    border: 0;
+    font-family: Arial;
+    font-size: 1.5em;
+    background-color: #c8e2ff !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.previousInputs > :last-child {
+    background-color: #77b1f5 !important;
+    color: white;
+    font-size: 2em;
+}
+
+
+.previousInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.different {
+    background-color: #f64ef3 !important;
+    color: white;
+}
+
+.accent {
+    background-color: #fc7c44 !important;
+    color: white;
+}
+
+.operator {
+    background-color: #026fec !important;
+    color: white;
+}
+
+.calculator-button {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.calculator-button:hover {
+    background-color: #0d8bf2;
+}

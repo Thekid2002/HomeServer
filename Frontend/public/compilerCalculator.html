@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compiler Calculator</title>
+    <base href="/HomeServer/Frontend/public/">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
+    <!--<link rel="stylesheet" href="compilerCalculator.css">
+    <link rel="stylesheet" href="sharedStyles.css">-->
+</head>
+<body>
+<div class="spinner-container" id="spinner">
+    <div class="spinner"></div>
+</div>
+<div class="page-padding">
+<div class="page-layout">
+    <div class="pages-navigator" style="">
+        <h1>Pages</h1>
+        <button onclick="goToPage('simpleCalculator')">Simple Calculator</button>
+        <button onclick="goToPage('interpreterCalculator')">Interpreter Calculator</button>
+        <button onclick="goToPage('compilerCalculator')">Compiler Calculator</button>
+    </div>
+
+    <div class="calculator-body">
+        <div id="complexCalculator" class="calculator-body" style="display: flex">
+            <textarea id="code" class="calculator-area" style="width: 100%; height: 100px"></textarea>
+            <textarea id="result" class="calculator-area" style="width: 100%; height: 100px"></textarea>
+            <button onclick="compile()">Compile</button>
+        </div>
+        <div style="display: flex; width: 100%; flex-direction: row">
+            <div id="parseErrors"></div>
+            <div id="astErrors"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; width: 100%">
+            <div style="display: flex; flex-direction: column; width: 100%;">
+                <div id="tokensOutput" style="width: 100%; resize: none; display: flex; flex-direction: column"></div>
+                <div id="parseOutput" style="width: 100%; resize: none; display: flex; flex-direction: column"></div>
+                <div id="astOutput" style="width: 100%; resize: none; display: flex; flex-direction: column"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; width: 100%;">
+                <div id="printOutput" style="width: 100%; resize: none; display: flex; flex-direction: column"></div>
+                <div id="evalOutput" style="width: 100%; resize: none; display: flex; flex-direction: column"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="libwabt.js"></script>
+<script type="module">
+    import {goToPage} from './navigation.js';
+    import {compile} from './compilerCalculator.js';
+    window.compile = compile;
+    window.goToPage = goToPage;
+</script>
+</html>
