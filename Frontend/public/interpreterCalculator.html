@@ -24,9 +24,9 @@
 
     <div class="calculator-body">
         <div id="complexCalculator" class="calculator-body" style="display: flex">
-            <textarea id="input" class="calculator-area"  spellcheck="false"></textarea>
-            <textarea id="output" class="calculator-area"  spellcheck="false"></textarea>
+            <textarea id="input" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
             <button onclick="interpret()">Evaluate</button>
+            <textarea id="output" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
         <div style="display: flex; width: 100%; flex-direction: row">
             <div id="parseErrors"></div>

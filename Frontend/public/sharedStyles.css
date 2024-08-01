@@ -12,12 +12,11 @@
 
 .calculator-area {
     display: flex;
-    height: 80vh !important;
+    height: 48vh;
     font-size: 2em;
     padding: 10px;
     width: 97.5%;
-    resize: none;
-
+    resize: vertical;
 }
 
 .page-padding {
