@@ -22,10 +22,16 @@
         <button onclick="goToPage('compilerCalculator')">Compiler Calculator</button>
     </div>
 
-    <div class="calculator-body">
+    <div class="complex-calculator-body">
         <div id="complexCalculator" class="complex-calculator-body" style="display: flex">
             <textarea id="code" class="calculator-area" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
-            <button onclick="compile()">Compile</button>
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <select>
+                    <option value="wat">WebAssembly Text</option>
+                    <option value="wasm">WebAssembly Binary</option>
+                </select>
+                <button onclick="compile()">Compile</button>
+            </div>
             <textarea id="result" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
         <div style="display: flex; width: 100%; flex-direction: row">
