@@ -7,10 +7,10 @@ import {Identifier} from "../Expressions/Terms/Identifier";
 export class While extends AbstractStatement {
     declaration: Declaration | null;
     condition: AbstractExpression;
-    body: Array<AbstractStatement>;
+    body: AbstractStatement | null;
     liveVariables: Array<string> = [];
 
-    constructor(declaration: Declaration | null, condition: AbstractExpression, body: Array<AbstractStatement>, lineNum: i32) {
+    constructor(declaration: Declaration | null, condition: AbstractExpression, body: AbstractStatement, lineNum: i32) {
         super(lineNum);
         this.condition = condition;
         this.body = body;

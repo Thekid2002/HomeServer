@@ -11,10 +11,18 @@ import {Print} from "./Nodes/Statements/Print";
 import { While } from "./Nodes/Statements/While";
 import { Assignment } from "./Nodes/Statements/Assignment";
 import { StatementType } from "./Nodes/Types/StatementType";
+import { IfStatement } from "./Nodes/Statements/IfStatement";
+import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
+import { ASTString } from "./Nodes/Expressions/Terms/ASTString";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
     tree: string[] = [];
+
+    visitCompoundStatement(statement: CompoundStatement): void {
+        statement.left.accept<void>(this);
+        statement.right.accept<void>(this);
+    }
 
     visitAssignment(statement: Assignment): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Assignment");
@@ -28,8 +36,8 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": While");
         this.number++;
         statement.condition.accept<void>(this);
-        for (let i = 0; i < statement.body.length; i++) {
-            statement.body[i].accept<void>(this);
+        if(statement.body !== null) {
+            statement.body!.accept<void>(this);
         }
         this.number--;
     }
@@ -44,12 +52,14 @@ export class ASTPrinter implements ASTVisitor<void> {
     visitProgram(statement: Program): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Program");
         this.number++;
-        for (let i = 0; i < statement.body.length; i++) {
-            statement.body[i].accept<void>(this);
+        if(statement.body !== null) {
+            statement.body!.accept<void>(this);
         }
+        this.number--;
     };
 
     visitBinaryExpression(expression: BinaryExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": BinaryExpression " + (expression.operator !== null ? expression.operator : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -58,7 +68,6 @@ export class ASTPrinter implements ASTVisitor<void> {
             expression.right.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": BinaryExpression " + (expression.operator !== null ? expression.operator : ""));
     }
 
     visitIdentifier(term: Identifier): void {
@@ -69,15 +78,19 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Num " + term.value.toString());
     }
 
+    visitString(param: ASTString): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": String " + param.value);
+    }
+
     visitTerm(term: Term): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Term " + term.value);
     }
 
     visitUnaryExpression(expression: UnaryExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": UnaryExpression " + (expression.operator !== null ? expression.operator : ""));
         this.number++;
         expression.primaryOrRight.accept<void>(this);
         this.number--;
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": UnaryExpression " + (expression.operator !== null ? expression.operator : ""));
     }
 
     private getSpace(num: i32): string {
@@ -106,5 +119,18 @@ export class ASTPrinter implements ASTVisitor<void> {
 
     visitStatementType(statement: StatementType): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": StatementType " + statement.type.toString());
+    }
+
+    visitIfStatement(statement: IfStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": IfStatement");
+        this.number++;
+        statement.condition.accept<void>(this);
+        if(statement.body !== null) {
+            statement.body!.accept<void>(this);
+        }
+        if(statement.else !== null) {
+            statement.else!.accept<void>(this);
+        }
+        this.number--;
     }
 }

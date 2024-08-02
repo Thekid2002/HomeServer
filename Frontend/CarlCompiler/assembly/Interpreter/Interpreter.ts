@@ -16,6 +16,10 @@ import {Term} from "../AST/Nodes/Expressions/Terms/Term";
 import {Declaration} from "../AST/Nodes/Statements/Declaration";
 import {ValueType} from "../AST/Nodes/Types/ValueType";
 import {ValType} from "../Env/Values/ValType";
+import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
+import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
+import { ASTString } from "../AST/Nodes/Expressions/Terms/ASTString";
+import {ValString} from "../Env/Values/ValString";
 
 
 export class Interpreter implements ASTVisitor<ValObject | null> {
@@ -24,6 +28,29 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     constructor() {
         this.varEnv = new VarEnvironment();
+    }
+
+    visitString(param: ASTString): ValObject | null {
+        return new ValString(param.value);
+    }
+
+    visitIfStatement(statement: IfStatement): ValObject | null {
+        let condition = statement.condition.accept<ValObject | null>(this);
+        if (condition === null) {
+            throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
+        }
+
+        if ((condition as ValBool).value) {
+            if (statement.body !== null) {
+                statement.body!.accept<ValObject | null>(this);
+            }
+        } else {
+            if (statement.else !== null) {
+                statement.else!.accept<ValObject | null>(this);
+            }
+        }
+
+        return null;
     }
 
     visitStatementType(statement: StatementType): ValObject | null {
@@ -55,8 +82,8 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
         }
 
         while ((expression as ValBool).value) {
-            for (let i = 0; i < statement.body.length; i++) {
-                statement.body[i].accept<ValObject | null>(this);
+            if (statement.body !== null) {
+                statement.body!.accept<ValObject | null>(this);
             }
             expression = statement.condition.accept<ValObject | null>(this);
             if (expression === null) {
@@ -78,8 +105,8 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     }
 
     visitProgram(statement: Program): ValObject | null {
-        for (let i = 0; i < statement.body.length; i++) {
-            statement.body[i].accept<ValObject | null>(this);
+        if (statement.body !== null) {
+            statement.body!.accept<ValObject | null>(this);
         }
         return null;
     }
@@ -240,5 +267,11 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     visitValueType(type: ValueType): ValObject | null {
         return new ValType(type);
+    }
+
+    visitCompoundStatement(statement: CompoundStatement): ValObject | null {
+        statement.left.accept<ValObject | null>(this);
+        statement.right.accept<ValObject | null>(this);
+        return null;
     }
 }

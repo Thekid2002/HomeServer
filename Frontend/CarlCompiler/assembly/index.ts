@@ -9,7 +9,7 @@ import {Compiler} from "./Compiler/Compiler";
 import {CombinedChecker} from "./Checkers/CombinedChecker";
 import {AbstractType} from "./AST/Nodes/Types/AbstractType";
 import {LivenessChecker} from "./Checkers/LivenessChecker";
-import {Program as ParseProgram} from "./Parser/Statements/Program";
+import {ParseProgram as ParseProgram} from "./Parser/Statements/ParseProgram";
 import {Interpreter} from "./Interpreter/Interpreter";
 import {VarEnv} from "./Env/VarEnv";
 import {ValObject} from "./Env/Values/ValObject";
@@ -64,9 +64,12 @@ function scanAndParseAndToAst(string: string): CompilerResult {
 
 function interpret(string: string): string {
     let result = scanAndParseAndToAst(string);
-    let ast = result.astTree!;
+    let ast = result.astTree;
     let interpreter = new Interpreter();
-    ast.accept<ValObject | null >(interpreter);
+    if(ast === null) {
+        return result.toJsonString();
+    }
+    ast.accept<ValObject | null>(interpreter);
     result.interpretOutput = interpreter.prints;
     return result.toJsonString();
 }
@@ -74,13 +77,13 @@ function interpret(string: string): string {
 function compile(string: string): string {
     let result = scanAndParseAndToAst(string);
     let ast = result.astTree!;
-    let livenessAnalysis = new LivenessChecker();
+    /**let livenessAnalysis = new LivenessChecker();
     ast.accept<void>(livenessAnalysis);
     if(livenessAnalysis.errors.length > 0) {
         for (let i = 0; i < livenessAnalysis.errors.length; i++) {
             console.error(livenessAnalysis.errors[i]);
         }
-    }
+    }*/
     let compiler = new Compiler();
     result.compilerOutput =  ast.accept<string>(compiler).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");
     return result.toJsonString();

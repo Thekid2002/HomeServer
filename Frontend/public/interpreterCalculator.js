@@ -14,12 +14,20 @@ export function interpret() {
         let now = Date.now();
         result = calculateViaLanguage(code, "interpreter");
         let later = Date.now();
+        console.log(result);
         let jsonRes = JSON.parse(result);
         console.log(jsonRes);
-        let output = "";
+        let output = ""
+        let lineNum = 0;
         output += "Time to run: " + (later - now) / 1000 + "s\n";
+        for (let i = 0; i < jsonRes.parseErrors.length; i++) {
+            output += lineNum++ + ": " + jsonRes.parseErrors[i];
+            if (i < jsonRes.parseErrors.length - 1) {
+                output += "\n";
+            }
+        }
         for (let i = 0; i < jsonRes.interpretOutput.length; i++) {
-            output += i + ": " + jsonRes.interpretOutput[i];
+            output += lineNum++ + ": " + jsonRes.interpretOutput[i];
             if (i < jsonRes.interpretOutput.length - 1) {
                 output += "\n";
             }

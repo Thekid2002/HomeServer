@@ -16,7 +16,11 @@ export enum TokenType {
 
     //Loops
     WHILE,        // while
-    FOR,
+    FOR,          // for
+
+    // Conditional
+    IF,           // if
+    ELSE,         // else
 
     // One or two character tokens.
     BANG,         // !
@@ -45,10 +49,8 @@ export enum TokenType {
     SQRT,         // sqrt
     AND,          // and
     CLASS,        // class
-    ELSE,         // else
     FALSE,        // false
     FUN,          // fun
-    IF,           // if
     NIL,          // nil
     OR,           // or
     PRINT,        // print
@@ -81,6 +83,10 @@ export const TokenTypes: string[] = [
     "WHILE",         // while
     "FOR",           // for
 
+    // Conditional
+    "IF",           // if
+    "ELSE",         // else
+
     // One or two character tokens.
     "BANG",         // !
     "BANG_EQUAL",   // !=
@@ -108,10 +114,8 @@ export const TokenTypes: string[] = [
     "SQRT",         // sqrt
     "AND",          // and
     "CLASS",        // class
-    "ELSE",         // else
     "FALSE",        // false
     "FUN",          // fun
-    "IF",           // if
     "NIL",          // nil
     "OR",           // or
     "PRINT",        // print

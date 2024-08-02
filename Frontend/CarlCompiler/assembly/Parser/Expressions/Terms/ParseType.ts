@@ -2,7 +2,7 @@ import {AbstractTerm} from "./AbstractTerm";
 import {ParseVisitor} from "../../ParseVisitor";
 import {Token} from "../../../Lexer/Token";
 
-export class Type extends AbstractTerm {
+export class ParseType extends AbstractTerm {
     public name: Token;
 
     constructor(name: Token, lineNum: i32) {

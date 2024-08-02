@@ -22,22 +22,22 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitIdentifier(term: Identifier): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Identifier " + term.name);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseIdentifier " + term.name);
     }
 
     visitNumber(term: Num): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Num " + term.value.toString());
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseNum " + term.value.toString());
     }
 
     visitTerm(term: Term): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Term " + term.value);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseTerm " + term.value);
     }
 
     visitUnaryExpression(expression: UnaryExpression): void {
         this.number++;
         expression.primaryOrRight.accept<void>(this);
         this.number--;
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": UnaryExpression " + (expression.operator !== null ? expression.operator : ""));
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseUnaryExpression " + (expression.operator !== null ? expression.operator : ""));
     }
 
     private getSpace(num: i32): string {

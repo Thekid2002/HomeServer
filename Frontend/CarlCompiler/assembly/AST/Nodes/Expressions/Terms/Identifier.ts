@@ -1,6 +1,6 @@
 import {AbstractTerm} from "./AbstractTerm";
 import {ASTVisitor} from "../../../ASTVisitor";
-import {Type} from "../../../../Parser/Expressions/Terms/Type";
+import {ParseType} from "../../../../Parser/Expressions/Terms/ParseType";
 
 export class Identifier extends AbstractTerm {
     name: string;

@@ -10,6 +10,9 @@ import {Print} from "./Nodes/Statements/Print";
 import {While} from "./Nodes/Statements/While";
 import {Assignment} from "./Nodes/Statements/Assignment";
 import {StatementType} from "./Nodes/Types/StatementType";
+import {IfStatement} from "./Nodes/Statements/IfStatement";
+import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
+import {ASTString} from "./Nodes/Expressions/Terms/ASTString";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -35,4 +38,10 @@ export interface ASTVisitor<T> {
     visitAssignment(statement: Assignment): T;
 
     visitStatementType(statement: StatementType): T;
+
+    visitIfStatement(statement: IfStatement): T;
+
+    visitCompoundStatement(statement: CompoundStatement): T;
+
+    visitString(param: ASTString): T;
 }

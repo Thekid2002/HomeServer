@@ -1,9 +1,8 @@
 import {ParseVisitor} from "../../ParseVisitor";
-import {Term} from "./Term";
 import {Token} from "../../../Lexer/Token";
 import {AbstractTerm} from "./AbstractTerm";
 
-export class Num extends AbstractTerm {
+export class ParseString extends AbstractTerm {
     value: Token;
 
     constructor(value: Token, lineNum: i32) {
@@ -12,10 +11,10 @@ export class Num extends AbstractTerm {
     }
 
     accept<T>(visitor: ParseVisitor<T>): T {
-        return visitor.visitNumber(this);
+        return visitor.visitString(this);
     }
 
     toJsonString(): string {
-        return `{"type": "Num", "value": ${this.value.toJsonString()}}`;
+        return `{"type": "String", "value": ${this.value.toJsonString()}}`;
     }
 }

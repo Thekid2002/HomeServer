@@ -1,7 +1,7 @@
 import {ParseVisitor} from "../../ParseVisitor";
 import {AbstractTerm} from "./AbstractTerm";
 
-export class Term extends AbstractTerm {
+export class ParseTerm extends AbstractTerm {
     value: string;
 
     constructor(value: string, lineNum: i32) {

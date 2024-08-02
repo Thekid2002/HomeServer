@@ -1,15 +1,15 @@
 import {ParseVisitor} from "../ParseVisitor";
-import {Expression} from "./Expression";
+import {ParseExpression} from "./ParseExpression";
 import {Token} from "../../Lexer/Token";
-import {AbstractExpression} from "./AbstractExpression";
-import {RelationalExpression} from "./RelationalExpression";
+import {ParseAbstractExpression} from "./ParseAbstractExpression";
+import {ParseRelationalExpression} from "./ParseRelationalExpression";
 
-export class EqualityExpression extends AbstractExpression {
-    primaryOrLeft: AbstractExpression;
+export class ParseEqualityExpression extends ParseAbstractExpression {
+    primaryOrLeft: ParseAbstractExpression;
     operator: Token | null;
-    right: AbstractExpression | null;
+    right: ParseAbstractExpression | null;
 
-    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null, lineNum: i32) {
+    constructor(primaryOrLeft: ParseAbstractExpression, operator: Token | null, right: ParseAbstractExpression | null, lineNum: i32) {
         super(lineNum);
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
@@ -21,7 +21,7 @@ export class EqualityExpression extends AbstractExpression {
     }
 
     toString(): string {
-        return "EqualityExpression";
+        return "ParseEqualityExpression";
     }
 
     toJsonString(): string {

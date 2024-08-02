@@ -1,9 +1,9 @@
 import {Token} from "../../../Lexer/Token";
 import {ParseVisitor} from "../../ParseVisitor";
-import {Term} from "./Term";
+import {ParseTerm} from "./ParseTerm";
 import {AbstractTerm} from "./AbstractTerm";
 
-export class Identifier extends AbstractTerm {
+export class ParseIdentifier extends AbstractTerm {
     name: Token;
 
     constructor(name: Token, lineNum: i32) {

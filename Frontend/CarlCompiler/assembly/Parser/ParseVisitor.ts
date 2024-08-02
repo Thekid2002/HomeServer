@@ -1,50 +1,59 @@
-import {AdditiveExpression} from "./Expressions/AdditiveExpression";
-import {Expression} from "./Expressions/Expression";
-import {RelationalExpression} from "./Expressions/RelationalExpression";
-import {EqualityExpression} from "./Expressions/EqualityExpression";
-import {MultiplicativeExpression} from "./Expressions/MultiplicativeExpression";
-import {UnaryExpression} from "./Expressions/UnaryExpression";
-import {Num} from "./Expressions/Terms/Num";
-import {Term} from "./Expressions/Terms/Term";
-import {Identifier} from "./Expressions/Terms/Identifier";
-import {PowExpression} from "./Expressions/PowExpression";
-import {Declaration} from "./Statements/Declaration";
-import {Type} from "./Expressions/Terms/Type";
-import {Program} from "./Statements/Program";
-import {Print} from "./Statements/Print";
-import {LoopStatement} from "./Statements/LoopStatement";
-import {Assignment} from "./Statements/Assignment";
+import {ParseAdditiveExpression} from "./Expressions/ParseAdditiveExpression";
+import {ParseExpression} from "./Expressions/ParseExpression";
+import {ParseRelationalExpression} from "./Expressions/ParseRelationalExpression";
+import {ParseEqualityExpression} from "./Expressions/ParseEqualityExpression";
+import {ParseMultiplicativeExpression} from "./Expressions/ParseMultiplicativeExpression";
+import {ParseUnaryExpression} from "./Expressions/ParseUnaryExpression";
+import {ParseNum} from "./Expressions/Terms/ParseNum";
+import {ParseTerm} from "./Expressions/Terms/ParseTerm";
+import {ParseIdentifier} from "./Expressions/Terms/ParseIdentifier";
+import {ParsePowExpression} from "./Expressions/ParsePowExpression";
+import {ParseDeclaration} from "./Statements/ParseDeclaration";
+import {ParseType} from "./Expressions/Terms/ParseType";
+import {ParseProgram} from "./Statements/ParseProgram";
+import {ParsePrint} from "./Statements/ParsePrint";
+import {ParseLoopStatement} from "./Statements/ParseLoopStatement";
+import {ParseAssignment} from "./Statements/ParseAssignment";
+import {ParseIfStatement} from "./Statements/ParseIfStatement";
+import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
+import {ParseString} from "./Expressions/Terms/ParseString";
 
 export interface ParseVisitor<T> {
-    visitExpression(expression: Expression): T;
+    visitExpression(expression: ParseExpression): T;
 
-    visitEqualityExpression(expression: EqualityExpression): T;
+    visitEqualityExpression(expression: ParseEqualityExpression): T;
 
-    visitRelationalExpression(expression: RelationalExpression): T;
+    visitRelationalExpression(expression: ParseRelationalExpression): T;
 
-    visitMultiplicativeExpression(expression: MultiplicativeExpression): T;
+    visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): T;
 
-    visitUnaryExpression(expression: UnaryExpression): T;
+    visitUnaryExpression(expression: ParseUnaryExpression): T;
 
-    visitPowExpression(expression: PowExpression): T;
+    visitPowExpression(expression: ParsePowExpression): T;
 
-    visitAdditiveExpression(expression: AdditiveExpression): T;
+    visitAdditiveExpression(expression: ParseAdditiveExpression): T;
 
-    visitTerm(term: Term): T;
+    visitTerm(term: ParseTerm): T;
 
-    visitNumber(term: Num): T;
+    visitNumber(term: ParseNum): T;
 
-    visitIdentifier(term: Identifier): T;
+    visitIdentifier(term: ParseIdentifier): T;
 
-    visitDeclaration(statement: Declaration): T;
+    visitDeclaration(statement: ParseDeclaration): T;
 
-    visitType(type: Type): T;
+    visitType(type: ParseType): T;
 
-    visitProgram(statement: Program): T;
+    visitProgram(statement: ParseProgram): T;
 
-    visitPrint(statement: Print): T;
+    visitPrint(statement: ParsePrint): T;
 
-    visitLoopStatement(statement: LoopStatement): T;
+    visitLoopStatement(statement: ParseLoopStatement): T;
 
-    visitAssignment(statement: Assignment): T;
+    visitAssignment(statement: ParseAssignment): T;
+
+    visitIfStatement(statement: ParseIfStatement): T;
+
+    visitCompoundStatement(statement: ParseCompoundStatement): T;
+
+    visitString(param: ParseString): T;
 }

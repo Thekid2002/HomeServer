@@ -21,6 +21,7 @@ export function compile() {
     try {
         // Calculate the WAT (WebAssembly Text format) using a custom language function
         compiledResult = calculateViaLanguage(code, "compiler");
+        console.log(compiledResult);
         let jsonRes = JSON.parse(compiledResult);
         console.log(jsonRes);
         compiledWat = jsonRes.compilerOutput;
@@ -31,7 +32,8 @@ export function compile() {
         WebAssembly.compile(output).then(module => {
             const importObject = {
                 console: {
-                    log: (value) =>{ prints.push(value) }// Define the imported 'log' function
+                    logI32: (value) =>{ prints.push(value == true ? "true" : "false") },// Define the imported 'log' function
+                    logF64: (value) =>{ prints.push(value) }// Define the imported 'log' function
                 }
             };
 
@@ -42,8 +44,15 @@ export function compile() {
             const later = Date.now();
             let output = "";
             output += "Time to run: " + (later - now) / 1000 + "s\n";
+            let lineNum = 0;
+            for (let i = 0; i < jsonRes.parseErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.parseErrors[i];
+                if (i < jsonRes.parseErrors.length - 1) {
+                    output += "\n";
+                }
+            }
             for (let i = 0; i < prints.length; i++) {
-                output += i + ": " + prints[i];
+                output += lineNum++ + ": " + prints[i];
                 if (i < prints.length - 1) {
                     output += "\n";
                 }

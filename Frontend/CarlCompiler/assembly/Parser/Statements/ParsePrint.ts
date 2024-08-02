@@ -1,11 +1,11 @@
-import {AbstractExpression} from "../Expressions/AbstractExpression";
-import {AbstractStatement} from "./AbstractStatement";
+import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
+import {ParseAbstractStatement} from "./ParseAbstractStatement";
 import {ParseVisitor} from "../ParseVisitor";
 
-export class Print extends AbstractStatement {
-    expression: AbstractExpression;
+export class ParsePrint extends ParseAbstractStatement {
+    expression: ParseAbstractExpression;
 
-    constructor(expression: AbstractExpression, lineNum: i32) {
+    constructor(expression: ParseAbstractExpression, lineNum: i32) {
         super(lineNum);
         this.expression = expression;
     }

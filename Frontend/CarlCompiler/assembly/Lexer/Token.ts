@@ -18,6 +18,6 @@ export class Token {
     }
 
     toJsonString(): string {
-        return "{ \"type\": \"" + TokenTypes[this.type] + "\", \"lexeme\": \"" + this.lexeme + "\", \"literal\": \"" + this.literal + "\", \"line\": " + this.line.toString() + "}";
+        return "{ \"type\": \"" + TokenTypes[this.type] + "\", \"lexeme\": \"" + this.lexeme.replaceAll("\"", "\\\"") + "\", \"literal\": \"" + this.literal + "\", \"line\": " + this.line.toString() + "}";
     }
 }

@@ -1,63 +1,83 @@
 import {ParseVisitor} from "../Parser/ParseVisitor";
-import {EqualityExpression as ParseEqualityExpression} from "../Parser/Expressions/EqualityExpression";
-import {Expression as ParseExpression} from "../Parser/Expressions/Expression";
+import {ParseEqualityExpression} from "../Parser/Expressions/ParseEqualityExpression";
+import {ParseExpression} from "../Parser/Expressions/ParseExpression";
 import {Identifier as ASTIdentifier} from "./Nodes/Expressions/Terms/Identifier";
-import {Identifier as ParseIdentifier} from "../Parser/Expressions/Terms/Identifier";
+import {ParseIdentifier} from "../Parser/Expressions/Terms/ParseIdentifier";
 import {
-    MultiplicativeExpression as ParseMultiplicativeExpression
-} from "../Parser/Expressions/MultiplicativeExpression";
-import {Num as ASTNum} from "./Nodes/Expressions/Terms/Num";
-import {Num as ParseNum} from "../Parser/Expressions/Terms/Num";
-import {BinaryExpression as ASTBinaryExpression} from "./Nodes/Expressions/BinaryExpression";
-import {AdditiveExpression} from "../Parser/Expressions/AdditiveExpression";
-import {UnaryExpression as ParseUnaryExpression} from "../Parser/Expressions/UnaryExpression";
-import {UnaryExpression as ASTUnaryExpression} from "./Nodes/Expressions/UnaryExpression";
-import {Term as ASTTerm} from "./Nodes/Expressions/Terms/Term";
-import {Term as ParseTerm} from "../Parser/Expressions/Terms/Term";
-import {RelationalExpression as ParseRelationalExpression} from "../Parser/Expressions/RelationalExpression";
+    ParseMultiplicativeExpression
+} from "../Parser/Expressions/ParseMultiplicativeExpression";
+import {Num} from "./Nodes/Expressions/Terms/Num";
+import {ParseNum} from "../Parser/Expressions/Terms/ParseNum";
+import {BinaryExpression} from "./Nodes/Expressions/BinaryExpression";
+import {ParseAdditiveExpression} from "../Parser/Expressions/ParseAdditiveExpression";
+import {ParseUnaryExpression} from "../Parser/Expressions/ParseUnaryExpression";
+import {UnaryExpression} from "./Nodes/Expressions/UnaryExpression";
+import {Term} from "./Nodes/Expressions/Terms/Term";
+import {ParseTerm} from "../Parser/Expressions/Terms/ParseTerm";
+import {ParseRelationalExpression} from "../Parser/Expressions/ParseRelationalExpression";
 import {AbstractExpression} from "./Nodes/Expressions/AbstractExpression";
-import {PowExpression} from "../Parser/Expressions/PowExpression";
+import {ParsePowExpression} from "../Parser/Expressions/ParsePowExpression";
 import {AbstractNode} from "./Nodes/AbstractNode";
-import {Type} from "../Parser/Expressions/Terms/Type";
-import {Declaration as ParseDeclaration} from "../Parser/Statements/Declaration";
-import {Declaration as ASTDeclaration} from "./Nodes/Statements/Declaration";
+import {ParseType} from "../Parser/Expressions/Terms/ParseType";
+import {ParseDeclaration} from "../Parser/Statements/ParseDeclaration";
+import {Declaration} from "./Nodes/Statements/Declaration";
 import {ValueType, ValueTypeEnum} from "./Nodes/Types/ValueType";
-import {Program as ParseProgram} from "../Parser/Statements/Program";
-import {Program as ASTProgram} from "./Nodes/Statements/Program";
+import {ParseProgram} from "../Parser/Statements/ParseProgram";
+import {Program} from "./Nodes/Statements/Program";
 import {AbstractStatement} from "./Nodes/Statements/AbstractStatement";
-import {Print as ParsePrint} from "../Parser/Statements/Print";
-import {Print as ASTPrint} from "./Nodes/Statements/Print";
-import {LoopStatement as ParseLoopStatement} from "../Parser/Statements/LoopStatement";
+import {ParsePrint} from "../Parser/Statements/ParsePrint";
+import {Print} from "./Nodes/Statements/Print";
+import {ParseLoopStatement} from "../Parser/Statements/ParseLoopStatement";
 import {While} from "./Nodes/Statements/While";
-import { Assignment as ParseAssignment } from "../Parser/Statements/Assignment";
-import {Assignment as ASTAssignment} from "./Nodes/Statements/Assignment";
+import { ParseAssignment } from "../Parser/Statements/ParseAssignment";
+import {Assignment} from "./Nodes/Statements/Assignment";
+import { ParseIfStatement } from "../Parser/Statements/ParseIfStatement";
+import {IfStatement} from "./Nodes/Statements/IfStatement";
+import {ParseCompoundStatement} from "../Parser/Statements/ParseCompoundStatement";
+import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
+import { ParseString } from "../Parser/Expressions/Terms/ParseString";
+import { ASTString as ASTString } from "./Nodes/Expressions/Terms/ASTString";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
+    visitString(param: ParseString): AbstractNode {
+        return new ASTString(param.value.literal, param.lineNum);
+    }
+
+    visitIfStatement(statement: ParseIfStatement): AbstractNode {
+        let condition = statement.condition.accept<AbstractNode>(this) as AbstractExpression;
+        let body: AbstractStatement | null = null;
+        if(statement.body !== null) {
+            body = statement.body!.accept<AbstractNode>(this) as AbstractStatement;
+        }
+        let $else: AbstractStatement | null = null;
+        if (statement.else !== null) {
+            $else = statement.else!.accept<AbstractNode>(this) as AbstractStatement;
+        }
+        return new IfStatement(condition, body, $else, statement.lineNum);
+    }
+
     visitAssignment(statement: ParseAssignment): AbstractNode {
         let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
         let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTAssignment(identifier, expression, statement.lineNum);
+        return new Assignment(identifier, expression, statement.lineNum);
     }
 
     visitLoopStatement(statement: ParseLoopStatement): AbstractNode {
-        let declaration: ASTDeclaration | null = null;
+        let declaration: Declaration | null = null;
         if(statement.declaration !== null) {
-            declaration = statement.declaration!.accept<AbstractNode>(this) as ASTDeclaration;
+            declaration = statement.declaration!.accept<AbstractNode>(this) as Declaration;
         }
         let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
-        let body: AbstractStatement[] = [];
-        for (let i = 0; i < statement.body.length; i++) {
-            body.push(statement.body[i].accept<AbstractNode>(this) as AbstractStatement);
-        }
+        let body = statement.body.accept<AbstractNode>(this) as AbstractStatement;
         return new While(declaration, expression, body, statement.lineNum);
     }
 
     visitProgram(statement: ParseProgram): AbstractNode {
-        let body: Array<AbstractStatement> = [];
-        for (let i = 0; i < statement.body.length; i++) {
-            body.push(statement.body[i].accept<AbstractNode>(this) as AbstractStatement);
+        let body: AbstractStatement | null = null;
+        if(statement.body !== null) {
+            body = statement.body!.accept<AbstractNode>(this) as AbstractStatement;
         }
-        return new ASTProgram(body, statement.lineNum);
+        return new Program(body, statement.lineNum);
     }
 
     visitDeclaration(statement: ParseDeclaration): AbstractNode {
@@ -67,10 +87,10 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         if (statement.expression !== null) {
             expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
         }
-        return new ASTDeclaration(identifier, type, expression, statement.lineNum);
+        return new Declaration(identifier, type, expression, statement.lineNum);
     }
 
-    visitType(type: Type): AbstractNode {
+    visitType(type: ParseType): AbstractNode {
         let typ: ValueTypeEnum = ValueTypeEnum.Error;
         if (type.name.literal === "num") {
             typ = ValueTypeEnum.NUM;
@@ -89,22 +109,22 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         return new ValueType(typ, type.lineNum);
     }
 
-    visitPowExpression(expression: PowExpression): AbstractNode {
+    visitPowExpression(expression: ParsePowExpression): AbstractNode {
         if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
-    visitAdditiveExpression(expression: AdditiveExpression): AbstractNode {
+    visitAdditiveExpression(expression: ParseAdditiveExpression): AbstractNode {
         if (expression.right === null) {
             return expression.primaryOrLeft.accept<AbstractNode>(this);
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
     visitEqualityExpression(expression: ParseEqualityExpression): AbstractNode {
@@ -113,7 +133,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
     visitExpression(expression: ParseExpression): AbstractNode {
@@ -122,7 +142,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
 
     }
 
@@ -136,11 +156,11 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
     visitNumber(term: ParseNum): AbstractNode {
-        return new ASTNum(term.value.literal, term.lineNum);
+        return new Num(term.value.literal, term.lineNum);
     }
 
     visitRelationalExpression(expression: ParseRelationalExpression): AbstractNode {
@@ -149,11 +169,11 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         let left: AbstractExpression = expression.primaryOrLeft.accept<AbstractNode>(this) as AbstractExpression;
         let right: AbstractExpression = expression.right!.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTBinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
+        return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
     visitTerm(term: ParseTerm): AbstractNode {
-        return new ASTTerm(term.value, term.lineNum);
+        return new Term(term.value, term.lineNum);
     }
 
     visitUnaryExpression(expression: ParseUnaryExpression): AbstractNode {
@@ -161,12 +181,18 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
             return expression.primaryOrRight.accept<AbstractNode>(this);
         }
         let primaryOrRight: AbstractExpression = expression.primaryOrRight.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTUnaryExpression(expression.operator!.literal, primaryOrRight, expression.lineNum);
+        return new UnaryExpression(expression.operator!.literal, primaryOrRight, expression.lineNum);
     }
 
     visitPrint(statement: ParsePrint): AbstractNode {
         let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
-        return new ASTPrint(expression, statement.lineNum);
+        return new Print(expression, statement.lineNum);
+    }
+
+    visitCompoundStatement(statement: ParseCompoundStatement): AbstractNode {
+        let left = statement.left.accept<AbstractNode>(this);
+        let right = statement.right.accept<AbstractNode>(this);
+        return new CompoundStatement(left as AbstractStatement, right as AbstractStatement, statement.lineNum);
     }
 
 }

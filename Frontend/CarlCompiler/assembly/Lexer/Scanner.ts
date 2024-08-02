@@ -8,9 +8,7 @@ export class Scanner {
     current: i32 = 0;
     start: i32 = 0;
     line: i32 = 1;
-
     errors: string[] = [];
-
 
     constructor(source: string) {
         this.source = source;

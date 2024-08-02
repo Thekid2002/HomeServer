@@ -1,9 +1,10 @@
 async function instantiate(module, imports = {}) {
   const adaptedImports = {
     env: Object.assign(Object.create(globalThis), imports.env || {}, {
-      "Date.now"() {
-        // ~lib/bindings/dom/Date.now() => f64
-        return Date.now();
+      "console.log"(text) {
+        // ~lib/bindings/dom/console.log(~lib/string/String) => void
+        text = __liftString(text >>> 0);
+        console.log(text);
       },
       abort(message, fileName, lineNumber, columnNumber) {
         // ~lib/builtins/abort(~lib/string/String | null?, ~lib/string/String | null?, u32?, u32?) => void
@@ -15,11 +16,6 @@ async function instantiate(module, imports = {}) {
           // @external.js
           throw Error(`${message} in ${fileName}:${lineNumber}:${columnNumber}`);
         })();
-      },
-      "console.log"(text) {
-        // ~lib/bindings/dom/console.log(~lib/string/String) => void
-        text = __liftString(text >>> 0);
-        console.log(text);
       },
     }),
   };

@@ -2,11 +2,11 @@ import {AbstractStatement} from "./AbstractStatement";
 import {ASTVisitor} from "../../ASTVisitor";
 
 export class Program extends AbstractStatement {
-    body: Array<AbstractStatement>;
+    body: AbstractStatement | null;
 
-    constructor(statement: Array<AbstractStatement>, lineNum: i32) {
+    constructor(body: AbstractStatement | null, lineNum: i32) {
         super(lineNum);
-        this.body = statement;
+        this.body = body;
     }
 
     accept<T>(visitor: ASTVisitor<T>): T {

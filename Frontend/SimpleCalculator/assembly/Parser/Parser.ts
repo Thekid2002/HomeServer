@@ -204,7 +204,7 @@ export class Parser {
         }
 
         if (!this.isAtEnd()) {
-            this.errors.push("Term: Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
+            this.errors.push("ParseTerm: Unexpected token: " + this.peek().literal! + " at line: " + this.peek().line.toString());
         } else {
             this.errors.push("Unexpected end of input");
         }

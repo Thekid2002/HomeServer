@@ -1,16 +1,16 @@
 import {Token} from "../../Lexer/Token";
 import {ParseVisitor} from "../ParseVisitor";
-import {Expression} from "./Expression";
-import {AbstractExpression} from "./AbstractExpression";
-import {UnaryExpression} from "./UnaryExpression";
-import {PowExpression} from "./PowExpression";
+import {ParseExpression} from "./ParseExpression";
+import {ParseAbstractExpression} from "./ParseAbstractExpression";
+import {ParseUnaryExpression} from "./ParseUnaryExpression";
+import {ParsePowExpression} from "./ParsePowExpression";
 
-export class MultiplicativeExpression extends AbstractExpression {
-    primaryOrLeft: AbstractExpression;
+export class ParseMultiplicativeExpression extends ParseAbstractExpression {
+    primaryOrLeft: ParseAbstractExpression;
     operator: Token | null;
-    right: AbstractExpression | null;
+    right: ParseAbstractExpression | null;
 
-    constructor(primaryOrLeft: AbstractExpression, operator: Token | null, right: AbstractExpression | null, lineNum: i32) {
+    constructor(primaryOrLeft: ParseAbstractExpression, operator: Token | null, right: ParseAbstractExpression | null, lineNum: i32) {
         super(lineNum);
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;

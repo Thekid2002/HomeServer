@@ -4,7 +4,7 @@ import { BinaryExpression } from "../AST/Nodes/Expressions/BinaryExpression";
 import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
 import { Num } from "../AST/Nodes/Expressions/Terms/Num";
 import { Term } from "../AST/Nodes/Expressions/Terms/Term";
-import { ValueType, ValueTypeEnum } from "../AST/Nodes/Types/ValueType";
+import {ValueType, ValueTypeEnum, ValueTypeNames} from "../AST/Nodes/Types/ValueType";
 import { Declaration } from "../AST/Nodes/Statements/Declaration";
 import { Program } from "../AST/Nodes/Statements/Program";
 import { Print } from "../AST/Nodes/Statements/Print";
@@ -12,6 +12,9 @@ import { While } from "../AST/Nodes/Statements/While";
 import { Assignment } from "../AST/Nodes/Statements/Assignment";
 import { StatementType } from "../AST/Nodes/Types/StatementType";
 import {VarEnv} from "../Env/VarEnv";
+import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
+import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
+import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 
 export class Compiler implements ASTVisitor<string> {
     varEnv: VarEnv;
@@ -23,10 +26,41 @@ export class Compiler implements ASTVisitor<string> {
 
     constructor() {
         this.varEnv = new VarEnv();
-        this.globalDeclarations = [
-        ];
-        this.functionDeclarations = [
-        ];
+        this.globalDeclarations = [];
+        this.functionDeclarations = [];
+    }
+
+    visitString(param: ASTString): string {
+        return `f64.const \"${param.value}\"`;
+    }
+
+    visitCompoundStatement(statement: CompoundStatement): string {
+        let left = statement.left.accept<string>(this);
+        let right = statement.right.accept<string>(this);
+        return `${left}\n${right}`;
+    }
+
+    visitIfStatement(statement: IfStatement): string {
+        let condition = statement.condition.accept<string>(this);
+        let body: string = "";
+        if(statement.body !== null) {
+            body = statement.body!.accept<string>(this);
+        }
+
+        let $else: string = "";
+        if (statement.else !== null) {
+            $else = statement.else!.accept<string>(this);
+        }
+        return '' +
+            `${condition}\n` +
+            `(if\n` +
+            `(then\n` +
+            `${body}\n` +
+            ')\n' +
+            `(else\n` +
+            `${$else}\n` +
+            ')\n' +
+            ')\n';
     }
 
     visitStatementType(statement: StatementType): string {
@@ -44,30 +78,41 @@ export class Compiler implements ASTVisitor<string> {
         let declaration = statement.declaration !== null ? statement.declaration!.accept<string>(this) : "";
         let condition = statement.condition.accept<string>(this);
         let body: string = "";
-        for (let i = 0; i < statement.body.length; i++) {
-            body += statement.body[i].accept<string>(this) + "\n";
+        if(statement.body !== null) {
+            body = statement.body!.accept<string>(this);
         }
-        return '' +
+        return `${condition}\n` +
+            '(if \n' +
+            '(then \n' +
             `${declaration}` + `\n` +
             '\n(loop $while' + `${start}` + '\n' +
             `${body}` + `\n` +
             `${condition}` + '\n' +
             '\n(br_if $while' + `${start}` + ')\n' +
+            ')\n' +
+            ')\n' +
             ')\n';
     }
 
     visitPrint(print: Print): string {
         let expr = print.expression.accept<string>(this);
-        return `${expr}\ncall $log`;
+        if(print.type!.type === ValueTypeEnum.NUM) {
+            return `${expr}\ncall $logF64`;
+        }
+        if(print.type!.type === ValueTypeEnum.BOOL) {
+            return `${expr}\ncall $logI32`;
+        }
+        throw new Error("Logging for type: " + ValueTypeNames[print.type!.type] + " not implemented");
     }
 
     visitProgram(statement: Program): string {
         let body: string = "";
-        for (let i = 0; i < statement.body.length; i++) {
-            body += statement.body[i].accept<string>(this) + "\n";
+        if(statement.body !== null) {
+            body = statement.body!.accept<string>(this);
         }
         return '(module\n' +
-            '(import "console" "log" (func $log (param f64)))\n' +
+            '(import "console" "logI32" (func $logI32 (param i32)))\n' +
+            '(import "console" "logF64" (func $logF64 (param f64)))\n' +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
             '(func (export "_start")\n' +

@@ -2,7 +2,7 @@ import {calculateViaLanguage} from "../../../public/build/carlCompiler/CaCoDebug
 
 export class TestDeclarations {
     static runTests() {
-        console.error("---Running Declaration tests---");
+        console.error("---Running ParseDeclaration tests---");
         this.testDeclaration();
         console.error("---All Tests passed---");
     }
