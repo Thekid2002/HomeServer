@@ -26,6 +26,32 @@ export function compile() {
         console.log(jsonRes);
         compiledWat = jsonRes.compilerOutput;
 
+        if(jsonRes.parseErrors.length > 0) {
+            let output = "";
+            let lineNum = 0;
+            for (let i = 0; i < jsonRes.parseErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.parseErrors[i];
+                if (i < jsonRes.parseErrors.length - 1) {
+                    output += "\n";
+                }
+            }
+            result.value = output;
+            return;
+        }
+
+        if(jsonRes.combinedCheckerErrors.length > 0) {
+            let output = "";
+            let lineNum = 0;
+            for (let i = 0; i < jsonRes.combinedCheckerErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.combinedCheckerErrors[i];
+                if (i < jsonRes.combinedCheckerErrors.length - 1) {
+                    output += "\n";
+                }
+            }
+            result.value = output;
+            return;
+        }
+
         let output = compileToWasm(compiledWat);
         let prints = [];
 

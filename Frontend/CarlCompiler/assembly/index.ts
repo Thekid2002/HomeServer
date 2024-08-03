@@ -76,6 +76,9 @@ function interpret(string: string): string {
 
 function compile(string: string): string {
     let result = scanAndParseAndToAst(string);
+    if(result.astTree === null) {
+        return result.toJsonString();
+    }
     let ast = result.astTree!;
     /**let livenessAnalysis = new LivenessChecker();
     ast.accept<void>(livenessAnalysis);

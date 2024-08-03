@@ -20,12 +20,30 @@ export function interpret() {
         let output = ""
         let lineNum = 0;
         output += "Time to run: " + (later - now) / 1000 + "s\n";
-        for (let i = 0; i < jsonRes.parseErrors.length; i++) {
-            output += lineNum++ + ": " + jsonRes.parseErrors[i];
-            if (i < jsonRes.parseErrors.length - 1) {
-                output += "\n";
+        if(jsonRes.parseErrors.length > 0) {
+            for (let i = 0; i < jsonRes.parseErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.parseErrors[i];
+                if (i < jsonRes.parseErrors.length - 1) {
+                    output += "\n";
+                }
             }
+            resultOutput.value = output;
+            return;
         }
+
+        if(jsonRes.combinedCheckerErrors.length > 0) {
+            let output = "";
+            let lineNum = 0;
+            for (let i = 0; i < jsonRes.combinedCheckerErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.combinedCheckerErrors[i];
+                if (i < jsonRes.combinedCheckerErrors.length - 1) {
+                    output += "\n";
+                }
+            }
+            resultOutput.value = output;
+            return;
+        }
+
         for (let i = 0; i < jsonRes.interpretOutput.length; i++) {
             output += lineNum++ + ": " + jsonRes.interpretOutput[i];
             if (i < jsonRes.interpretOutput.length - 1) {
