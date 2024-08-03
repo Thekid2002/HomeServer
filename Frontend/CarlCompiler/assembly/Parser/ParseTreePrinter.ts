@@ -63,6 +63,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     }
 
     visitPowExpression(expression: ParsePowExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParsePowExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -71,10 +72,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParsePowExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitAdditiveExpression(expression: ParseAdditiveExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseAdditiveExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -83,10 +84,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseAdditiveExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitEqualityExpression(expression: ParseEqualityExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseEqualityExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -95,10 +96,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseEqualityExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitExpression(expression: ParseExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -107,10 +108,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseMultiplicativeExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -119,7 +120,6 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseMultiplicativeExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitNumber(term: ParseNum): void {
@@ -131,6 +131,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     }
 
     visitRelationalExpression(expression: ParseRelationalExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseRelationalExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrLeft.accept<void>(this);
         this.number--;
@@ -139,7 +140,6 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             expression.right!.accept<void>(this);
             this.number--;
         }
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseRelationalExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitTerm(term: ParseTerm): void {
@@ -147,10 +147,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     }
 
     visitUnaryExpression(expression: ParseUnaryExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseUnaryExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
         expression.primaryOrRight.accept<void>(this);
         this.number--;
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseUnaryExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
     }
 
     visitIdentifier(term: ParseIdentifier): void {

@@ -13352,44 +13352,6 @@
                      memory.fill
                      global.get $~lib/memory/__stack_pointer
                      local.get $1
-                     i32.store
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $1
-                     i32.store offset=4
-                     local.get $1
-                     local.get $1
-                     i32.load
-                     i32.const 1
-                     i32.add
-                     i32.store
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $0
-                     i32.store offset=8
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $0
-                     i32.load offset=8
-                     local.tee $2
-                     i32.store
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $1
-                     i32.store offset=4
-                     local.get $2
-                     local.get $1
-                     call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $1
-                     i32.store
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $1
-                     i32.store offset=4
-                     local.get $1
-                     local.get $1
-                     i32.load
-                     i32.const 1
-                     i32.sub
-                     i32.store
-                     global.get $~lib/memory/__stack_pointer
-                     local.get $1
                      i32.store offset=8
                      global.get $~lib/memory/__stack_pointer
                      local.get $1
@@ -13415,26 +13377,26 @@
                      local.get $1
                      i32.load
                      call $~lib/number/I32#toString
-                     local.set $1
+                     local.set $4
                      global.get $~lib/memory/__stack_pointer
-                     local.get $1
+                     local.get $4
                      i32.store offset=28
                      local.get $3
-                     local.get $1
+                     local.get $4
                      call $~lib/string/String.__concat
-                     local.set $1
+                     local.set $3
                      global.get $~lib/memory/__stack_pointer
-                     local.get $1
+                     local.get $3
                      i32.store offset=16
                      global.get $~lib/memory/__stack_pointer
                      i32.const 17808
                      i32.store offset=20
-                     local.get $1
+                     local.get $3
                      i32.const 17808
                      call $~lib/string/String.__concat
-                     local.set $1
+                     local.set $3
                      global.get $~lib/memory/__stack_pointer
-                     local.get $1
+                     local.get $3
                      i32.store offset=8
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
@@ -13448,40 +13410,78 @@
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.load offset=4
-                      local.tee $0
+                      local.tee $4
                       i32.store offset=40
-                      local.get $0
+                      local.get $4
                       i32.eqz
                       if
                        i32.const 14192
                        i32.const 16112
-                       i32.const 153
+                       i32.const 150
                        i32.const 138
                        call $~lib/builtins/abort
                        unreachable
                       end
                       global.get $~lib/memory/__stack_pointer
-                      local.get $0
+                      local.get $4
                       i32.store offset=16
-                      local.get $0
+                      local.get $4
                       i32.load offset=8
                      else
                       i32.const 5200
                      end
-                     local.set $0
+                     local.set $4
                      global.get $~lib/memory/__stack_pointer
-                     local.get $0
+                     local.get $4
                      i32.store offset=12
-                     local.get $1
-                     local.get $0
+                     local.get $3
+                     local.get $4
                      call $~lib/string/String.__concat
-                     local.set $0
+                     local.set $3
                      global.get $~lib/memory/__stack_pointer
-                     local.get $0
+                     local.get $3
                      i32.store offset=4
                      local.get $2
-                     local.get $0
+                     local.get $3
                      call $~lib/array/Array<assembly/Lexer/Token/Token>#push
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $1
+                     i32.store
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $1
+                     i32.store offset=4
+                     local.get $1
+                     local.get $1
+                     i32.load
+                     i32.const 1
+                     i32.add
+                     i32.store
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $0
+                     i32.store offset=8
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $0
+                     i32.load offset=8
+                     local.tee $0
+                     i32.store
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $1
+                     i32.store offset=4
+                     local.get $0
+                     local.get $1
+                     call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $1
+                     i32.store
+                     global.get $~lib/memory/__stack_pointer
+                     local.get $1
+                     i32.store offset=4
+                     local.get $1
+                     local.get $1
+                     i32.load
+                     i32.const 1
+                     i32.sub
+                     i32.store
                      global.get $~lib/memory/__stack_pointer
                      i32.const 44
                      i32.add
@@ -37283,6 +37283,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -37302,6 +37303,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 17552
+  i32.store offset=20
+  local.get $3
+  i32.const 17552
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 90
+    i32.const 141
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -37364,25 +37459,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 95
+    i32.const 96
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -37398,100 +37493,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 17552
-  i32.store offset=24
-  local.get $0
-  i32.const 17552
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 98
-    i32.const 141
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
@@ -37500,6 +37501,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitRelationalExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -37519,6 +37521,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 17632
+  i32.store offset=20
+  local.get $3
+  i32.const 17632
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 134
+    i32.const 143
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -37581,25 +37677,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 139
+    i32.const 140
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -37615,100 +37711,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 17632
-  i32.store offset=24
-  local.get $0
-  i32.const 17632
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 142
-    i32.const 143
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
@@ -37717,6 +37719,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitMultiplicativeExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -37736,6 +37739,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 17712
+  i32.store offset=20
+  local.get $3
+  i32.const 17712
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 114
+    i32.const 147
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -37798,25 +37895,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 119
+    i32.const 120
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -37832,100 +37929,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 17712
-  i32.store offset=24
-  local.get $0
-  i32.const 17712
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 122
-    i32.const 147
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
@@ -37934,6 +37937,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -37953,6 +37957,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 18048
+  i32.store offset=20
+  local.get $3
+  i32.const 18048
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 102
+    i32.const 133
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -38015,25 +38113,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 107
+    i32.const 108
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -38049,100 +38147,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 18048
-  i32.store offset=24
-  local.get $0
-  i32.const 18048
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 110
-    i32.const 133
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
@@ -38151,6 +38155,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPowExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -38170,6 +38175,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 18112
+  i32.store offset=20
+  local.get $3
+  i32.const 18112
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 66
+    i32.const 136
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -38232,25 +38331,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 71
+    i32.const 72
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -38266,100 +38365,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 18112
-  i32.store offset=24
-  local.get $0
-  i32.const 18112
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 74
-    i32.const 136
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
@@ -38368,6 +38373,7 @@
  (func $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitAdditiveExpression (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.sub
@@ -38387,6 +38393,100 @@
   i32.const 0
   i32.const 48
   memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=36
+  local.get $0
+  i32.load
+  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  local.get $0
+  i32.load
+  call $~lib/number/I32#toString
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=28
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 18176
+  i32.store offset=20
+  local.get $3
+  i32.const 18176
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=16
+  local.get $1
+  i32.load offset=8
+  if (result i32)
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=20
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=40
+   local.get $4
+   i32.eqz
+   if
+    i32.const 14192
+    i32.const 16112
+    i32.const 78
+    i32.const 141
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=16
+   local.get $4
+   i32.load offset=8
+  else
+   i32.const 5200
+  end
+  local.set $4
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  local.get $3
+  local.get $4
+  call $~lib/string/String.__concat
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=4
+  local.get $2
+  local.get $3
+  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
@@ -38449,25 +38549,25 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=12
-   local.tee $2
-   i32.store offset=12
-   local.get $2
+   local.tee $1
+   i32.store offset=44
+   local.get $1
    i32.eqz
    if
     i32.const 14192
     i32.const 16112
-    i32.const 83
+    i32.const 84
     i32.const 13
     call $~lib/builtins/abort
     unreachable
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $2
+   local.get $1
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   local.get $2
+   local.get $1
    local.get $0
    call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<void>@override
    global.get $~lib/memory/__stack_pointer
@@ -38483,100 +38583,6 @@
    i32.sub
    i32.store
   end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.load offset=4
-  local.tee $3
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=40
-  local.get $0
-  i32.load
-  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#getSpace
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=36
-  local.get $0
-  i32.load
-  call $~lib/number/I32#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=32
-  local.get $2
-  local.get $0
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 18176
-  i32.store offset=24
-  local.get $0
-  i32.const 18176
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=20
-  local.get $1
-  i32.load offset=8
-  if (result i32)
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=24
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.load offset=8
-   local.tee $1
-   i32.store offset=44
-   local.get $1
-   i32.eqz
-   if
-    i32.const 14192
-    i32.const 16112
-    i32.const 86
-    i32.const 141
-    call $~lib/builtins/abort
-    unreachable
-   end
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=20
-   local.get $1
-   i32.load offset=8
-  else
-   i32.const 5200
-  end
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $0
-  local.get $1
-  call $~lib/string/String.__concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $3
-  local.get $0
-  call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
   i32.const 48
   i32.add
