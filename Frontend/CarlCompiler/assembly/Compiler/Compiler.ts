@@ -23,6 +23,7 @@ export class Compiler implements ASTVisitor<string> {
     functionDeclarations: string[] = [];
     varCount: i32 = 0;
     funcCount: i32 = 0;
+    stackPointer: i32 = 0;
 
     constructor() {
         this.varEnv = new VarEnv();
@@ -30,8 +31,13 @@ export class Compiler implements ASTVisitor<string> {
         this.functionDeclarations = [];
     }
 
-    visitString(param: ASTString): string {
-        return `f64.const \"${param.value}\"`;
+    visitString(term: ASTString): string {
+        let string = term.value;
+        let memoryLocation = this.stackPointer;
+        let length = string.length;
+        this.stackPointer += length;
+        this.globalDeclarations.push(`(data (i32.const ${memoryLocation}) "${string}")`);
+        return `i32.const ${memoryLocation}\ni32.const ${length}`;
     }
 
     visitCompoundStatement(statement: CompoundStatement): string {
@@ -102,6 +108,10 @@ export class Compiler implements ASTVisitor<string> {
         if(print.type!.type === ValueTypeEnum.BOOL) {
             return `${expr}\ncall $logI32`;
         }
+
+        if(print.type!.type === ValueTypeEnum.STRING) {
+            return `${expr}\ncall $logMemory\n`;
+        }
         throw new Error("Logging for type: " + ValueTypeNames[print.type!.type] + " not implemented");
     }
 
@@ -113,6 +123,8 @@ export class Compiler implements ASTVisitor<string> {
         return '(module\n' +
             '(import "console" "logI32" (func $logI32 (param i32)))\n' +
             '(import "console" "logF64" (func $logF64 (param f64)))\n' +
+            '(import "console" "logMemory" (func $logMemory (param i32 i32)))\n' +
+            '(import "js" "memory" (memory 1))\n' +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
             '(func (export "_start")\n' +

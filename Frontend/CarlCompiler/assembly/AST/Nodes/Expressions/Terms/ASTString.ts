@@ -3,6 +3,8 @@ import {ASTVisitor} from "../../../ASTVisitor";
 
 export class ASTString extends AbstractTerm {
     value: string;
+    memoryLocation: i32 = 0;
+    length: i32 = 17;
 
     constructor(value: string, lineNum: i32) {
         super(lineNum);

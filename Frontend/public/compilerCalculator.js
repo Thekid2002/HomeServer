@@ -29,11 +29,18 @@ export function compile() {
         let output = compileToWasm(compiledWat);
         let prints = [];
 
+        let memory = new WebAssembly.Memory({initial: 1});
         WebAssembly.compile(output).then(module => {
             const importObject = {
+                js: {
+                    memory
+                },
                 console: {
-                    logI32: (value) =>{ prints.push(value == true ? "true" : "false") },// Define the imported 'log' function
-                    logF64: (value) =>{ prints.push(value) }// Define the imported 'log' function
+                    logI32: (value) =>{ prints.push(value == true ? "true" : "false") },
+                    logF64: (value) =>{ prints.push(value) },
+                    logMemory: (offset, length) => {
+                        prints.push(logMemory(memory.buffer, offset, length));
+                    }
                 }
             };
 
@@ -63,6 +70,14 @@ export function compile() {
         alert(e.toString());
     }
 }
+
+function logMemory(memory, offset, length) {
+    let bytes = new Uint8Array(memory, offset, length);
+    let str = new TextDecoder("utf8").decode(bytes);
+
+    return str;
+}
+
 
 /**
  * Compile the WAT (WebAssembly Text) code into a binary WebAssembly module.
