@@ -5,7 +5,6 @@ import {ValueType} from "../Types/ValueType";
 
 export class Print extends AbstractStatement {
     expression: AbstractExpression;
-    type: ValueType | null = null;
 
     constructor(expression: AbstractExpression, lineNum: i32) {
         super(lineNum);

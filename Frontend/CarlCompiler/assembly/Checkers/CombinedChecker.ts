@@ -86,7 +86,23 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     }
 
     visitUnaryExpression(expression: UnaryExpression): ValueType {
-        return expression.primaryOrRight.accept<AbstractType | null>(this)! as ValueType;
+        let type = expression.primaryOrRight.accept<AbstractType | null>(this)! as ValueType;
+        if(expression.operator === "!") {
+            if(type.type !== ValueTypeEnum.BOOL) {
+                this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[type.type]);
+            }
+            expression.type = ValueTypeEnum.BOOL;
+            return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
+        }
+        if(expression.operator === "-") {
+            if(type.type !== ValueTypeEnum.NUM) {
+                this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.NUM] + " but got: " + ValueTypeNames[type.type]);
+            }
+            expression.type = ValueTypeEnum.NUM;
+            return new ValueType(ValueTypeEnum.NUM, expression.lineNum);
+        }
+        this.errors.push("Line: " + expression.lineNum.toString() + " Operator " + expression.operator + " not supported");
+        return type;
     }
 
     visitTerm(term: Term): ValueType {
@@ -94,19 +110,22 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     }
 
     visitNumber(term: Num): ValueType {
+        term.type = ValueTypeEnum.NUM;
         return new ValueType(ValueTypeEnum.NUM, term.lineNum);
     }
 
     visitString(param: ASTString): AbstractType | null {
+        param.type = ValueTypeEnum.STRING;
         return new ValueType(ValueTypeEnum.STRING, param.lineNum);
     }
 
     visitIdentifier(term: Identifier): ValueType {
-        let type = this.varEnv.lookUp(term.value);
+        let type = this.varEnv.lookUp(term.value) as ValueType | null;
         if (type === null) {
             this.errors.push("Variable " + term.value + " not declared in Line: " + term.lineNum.toString());
             return new ValueType(ValueTypeEnum.Error, term.lineNum);
         }
+        term.type = type.type;
         return type as ValueType;
     }
 
@@ -132,12 +151,19 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
         }
         return new StatementType(StatementTypeEnum.PROGRAM, statement.lineNum);
     }
+
     visitPrint(statement: Print): StatementType {
-        let type = statement.expression.accept<AbstractType | null>(this);
-        if (type === null) {
-            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.NUM] + " but got: " + ValueTypeNames[ValueTypeEnum.Error]);
+        if(statement.expression !== null) {
+            let type = statement.expression.accept<AbstractType | null>(this);
+            if(type === null) {
+                this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.NUM] + " or " + ValueTypeNames[ValueTypeEnum.STRING] + " but got: " + ValueTypeNames[ValueTypeEnum.Error]);
+            }
+
+            let valueType = type as ValueType;
+            if(valueType.type !== ValueTypeEnum.NUM && valueType.type !== ValueTypeEnum.STRING && valueType.type !== ValueTypeEnum.BOOL) {
+                this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.NUM] + " or " + ValueTypeNames[ValueTypeEnum.STRING] + " or " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[valueType.type]);
+            }
         }
-        statement.type = type as ValueType;
         return new StatementType(StatementTypeEnum.PRINT, statement.lineNum);
     }
     visitWhile(statement: While): StatementType {

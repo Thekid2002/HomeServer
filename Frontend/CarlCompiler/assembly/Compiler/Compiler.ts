@@ -25,8 +25,6 @@ export class Compiler implements ASTVisitor<string> {
     funcCount: i32 = 0;
     stackPointer: i32 = 0;
 
-    toString: boolean = false;
-
     constructor() {
         this.varEnv = new VarEnv();
         this.globalDeclarations = [];
@@ -104,17 +102,18 @@ export class Compiler implements ASTVisitor<string> {
 
     visitPrint(print: Print): string {
         let expr = print.expression.accept<string>(this);
-        if(print.type!.type === ValueTypeEnum.NUM) {
+        if(print.expression.type === ValueTypeEnum.NUM) {
             return `${expr}\ncall $logF64`;
         }
-        if(print.type!.type === ValueTypeEnum.BOOL) {
+        if(print.expression.type === ValueTypeEnum.BOOL) {
             return `${expr}\ncall $logI32`;
         }
 
-        if(print.type!.type === ValueTypeEnum.STRING) {
+        if(print.expression.type === ValueTypeEnum.STRING) {
             return `${expr}\ncall $logMemory\n`;
         }
-        throw new Error("Logging for type: " + ValueTypeNames[print.type!.type] + " not implemented");
+
+        throw new Error("Logging for type: " + ValueTypeNames[print.expression.type] + " not implemented");
     }
 
     visitProgram(statement: Program): string {
@@ -130,7 +129,7 @@ export class Compiler implements ASTVisitor<string> {
             '(import "js" "concat" (func $concat (param i32 i32 i32 i32 i32) (result i32 i32)))\n' +
             `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32 i32)))\n` +
             `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32 i32)))\n` +
-            `(global $stackPointer (mut i32) (i32.const ${this.stackPointer}))\n` +
+            `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
             '(func (export "_start")\n' +
@@ -153,46 +152,34 @@ export class Compiler implements ASTVisitor<string> {
     }
 
     visitBinaryExpression(expression: BinaryExpression): string {
-        if(expression.type === ValueTypeEnum.STRING) {
-            this.toString = true;
+        if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
             let left = expression.primaryOrLeft.accept<string>(this);
             let right = expression.right.accept<string>(this);
-            this.toString = false;
             return `${left}\n${right}\nglobal.get $stackPointer\ncall $concat`;
+        }
+
+        if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type !== ValueTypeEnum.STRING) {
+            let left = expression.primaryOrLeft.accept<string>(this);
+            let right = expression.right.accept<string>(this);
+            return `${left}\n${right}\nglobal.get $stackPointer\ncall $toStringF64\nglobal.get $stackPointer\ncall $concat`;
+        }
+
+        if(expression.primaryOrLeft.type !== ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
+            let left = expression.primaryOrLeft.accept<string>(this);
+            let right = expression.right.accept<string>(this);
+            return `${left}\nglobal.get $stackPointer\ncall $toStringF64\n${right}\nglobal.get $stackPointer\ncall $concat`;
         }
 
         let left = expression.primaryOrLeft.accept<string>(this);
         let right = expression.right.accept<string>(this);
-
         return `${left}\n${right}\n${this.getOperator(expression.operator)}`;
     }
 
     visitIdentifier(term: Identifier): string {
-        let type = (this.varEnv.lookUp(term.value) as ValueType).type;
-        if(type === ValueTypeEnum.BOOL) {
-            if(this.toString){
-                return `local.get $${term.value}\n`
-                    + `global.get $stackPointer\n`  +
-                        `call $toStringI32`;
-            }
-        }
-        if(type === ValueTypeEnum.NUM) {
-            if(this.toString){
-                return `local.get $${term.value}\n`+
-                        `global.get $stackPointer\n` +
-                        `call $toStringF64`;
-            }
-        }
         return `local.get $${term.value}`;
     }
 
     visitNumber(term: Num): string {
-        if(this.toString){
-            return `f64.const ${term.value}\n` +
-                    `global.get $stackPointer\n` +
-                    `call $toStringF64`;
-        }
-
         return `f64.const ${term.value}`;
     }
 

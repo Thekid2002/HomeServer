@@ -67,6 +67,7 @@ export function compile() {
                         bytes.set(bytes1, 0);
                         bytes.set(bytes2, length1);
                         new Uint8Array(memory.buffer, stackPointer, bytes.length).set(bytes);
+                        wasmInstance.exports.stackPointer.value += bytes.length;
                         return [stackPointer, bytes.length];
                     },
                     toStringI32: (value, stackPointer) => {
@@ -80,7 +81,7 @@ export function compile() {
                         for (let i = 0; i < str.length; i++) {
                             buffer[stackPointer + i] = str.charCodeAt(i);
                         }
-
+                        wasmInstance.exports.stackPointer.value += str.length;
                         return [stackPointer, str.length];
                     },
                     toStringF64: (value, stackPointer) => {
@@ -94,7 +95,7 @@ export function compile() {
                         for (let i = 0; i < str.length; i++) {
                             buffer[stackPointer + i] = str.charCodeAt(i);
                         }
-
+                        wasmInstance.exports.stackPointer.value += str.length;
                         return [stackPointer, str.length];
                     },
                 },
@@ -108,7 +109,7 @@ export function compile() {
             };
 
             const wasmInstance = new WebAssembly.Instance(module, importObject);
-            const {_start} = wasmInstance.exports;
+            const {_start, stackPointer} = wasmInstance.exports;
             const now = Date.now();
             _start();  // Call the exported _start function
             const later = Date.now();
