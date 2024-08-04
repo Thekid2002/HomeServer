@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let examples = [
         {"name": "Small for loop", "code": "for (num i = 0; i < 10; i=i+1) {\n    print(i)\n}"},
-        {"name": "Big for loop", "code": "num iterations = 5000000\nfor (num i = 0; i < 5000000; i=i+1) {\n   if(i < 100) {\n       print(i)\n   }\n}\nprint(\"Total iterations: \" + iterations)"},
+        {"name": "Big for loop", "code": "num iterations = 5000000\nfor (num i = 0; i < iterations; i=i+1) {\n   if(i < 100) {\n       print(i)\n   }\n}\nprint(\"Total iterations: \" + iterations)"},
         {"name": "Fibonacci", "code": "num a = 0\nnum b = 1\nnum c = 0\nfor (num i = 0; i < 10; i=i+1) {\n    print(a)\n    c = a\n    a = b\n    b = c + b\n}"},
         {"name": "Factorial", "code": "num n = 5\nnum result = 1\nfor (num i = 1; i <= n; i=i+1) {\n    result = result * i\n}\nprint(result)"},
         {"name": "Fibonacci recursive", "code": "num fib(num n) {\n    if (n <= 1) {\n        return n\n    }\n    return fib(n - 1) + fib(n - 2)\n}\n\nfor (num i = 0; i < 10; i=i+1) {\n    print(fib(i))\n}"},
