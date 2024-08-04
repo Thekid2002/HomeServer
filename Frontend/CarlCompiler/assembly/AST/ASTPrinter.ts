@@ -71,7 +71,7 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitIdentifier(term: Identifier): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Identifier " + term.name);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Identifier " + term.value);
     }
 
     visitNumber(term: Num): void {
@@ -102,7 +102,7 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitDeclaration(statement: Declaration): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Declaration " + statement.identifier.name);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Declaration " + statement.identifier.value);
         this.number++;
         statement.type.accept<void>(this);
         this.number--;

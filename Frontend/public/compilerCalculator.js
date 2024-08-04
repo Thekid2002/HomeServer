@@ -59,7 +59,44 @@ export function compile() {
         WebAssembly.compile(output).then(module => {
             const importObject = {
                 js: {
-                    memory
+                    memory,
+                    concat: (offset1, length1, offset2, length2, stackPointer) => {
+                        let bytes1 = new Uint8Array(memory.buffer, offset1, length1);
+                        let bytes2 = new Uint8Array(memory.buffer, offset2, length2);
+                        let bytes = new Uint8Array(length1 + length2);
+                        bytes.set(bytes1, 0);
+                        bytes.set(bytes2, length1);
+                        new Uint8Array(memory.buffer, stackPointer, bytes.length).set(bytes);
+                        return [stackPointer, bytes.length];
+                    },
+                    toStringI32: (value, stackPointer) => {
+                        // Access the memory buffer from the WebAssembly.Memory instance
+                        const buffer = new Uint8Array(memory.buffer);
+
+                        // Convert the integer to a string
+                        const str = value.toString();
+
+                        // Write the string to memory
+                        for (let i = 0; i < str.length; i++) {
+                            buffer[stackPointer + i] = str.charCodeAt(i);
+                        }
+
+                        return [stackPointer, str.length];
+                    },
+                    toStringF64: (value, stackPointer) => {
+                        // Access the memory buffer from the WebAssembly.Memory instance
+                        const buffer = new Uint8Array(memory.buffer);
+
+                        // Convert the integer to a string
+                        const str = value.toString();
+
+                        // Write the string to memory
+                        for (let i = 0; i < str.length; i++) {
+                            buffer[stackPointer + i] = str.charCodeAt(i);
+                        }
+
+                        return [stackPointer, str.length];
+                    },
                 },
                 console: {
                     logI32: (value) =>{ prints.push(value == true ? "true" : "false") },

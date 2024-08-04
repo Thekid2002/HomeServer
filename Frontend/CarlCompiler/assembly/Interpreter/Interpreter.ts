@@ -63,12 +63,12 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
             throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
         }
 
-        let prevVal = this.varEnv.lookUp(statement.identifier.name);
+        let prevVal = this.varEnv.lookUp(statement.identifier.value);
         if (prevVal === null) {
-            throw new Error("Line: " + statement.lineNum.toString() + " Variable " + statement.identifier.name + " not declared");
+            throw new Error("Line: " + statement.lineNum.toString() + " Variable " + statement.identifier.value + " not declared");
         }
 
-        this.varEnv.setVar(statement.identifier.name, value);
+        this.varEnv.setVar(statement.identifier.value, value);
         return null;
     }
 
@@ -234,9 +234,9 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     }
 
     visitIdentifier(term: Identifier): ValObject | null {
-        let val = this.varEnv.lookUp(term.name);
+        let val = this.varEnv.lookUp(term.value);
         if (val === null) {
-            throw new Error("Line: " + term.lineNum.toString() + " Variable " + term.name + " not declared");
+            throw new Error("Line: " + term.lineNum.toString() + " Variable " + term.value + " not declared");
         }
         return val;
     }
@@ -252,8 +252,8 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     visitDeclaration(statement: Declaration): ValObject | null {
         let type = statement.type;
         let identifier = statement.identifier;
-        if (this.varEnv.lookUp(identifier.name) != null) {
-            throw new Error("Line: " + statement.lineNum.toString() + " Variable " + identifier.name + " already declared");
+        if (this.varEnv.lookUp(identifier.value) != null) {
+            throw new Error("Line: " + statement.lineNum.toString() + " Variable " + identifier.value + " already declared");
         }
 
         let value: ValObject | null = null;
@@ -261,7 +261,7 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
             value = statement.expression!.accept<ValObject | null>(this);
         }
 
-        this.varEnv.addVar(identifier.name, value);
+        this.varEnv.addVar(identifier.value, value);
         return null;
     }
 

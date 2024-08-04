@@ -25,6 +25,8 @@ export class Compiler implements ASTVisitor<string> {
     funcCount: i32 = 0;
     stackPointer: i32 = 0;
 
+    toString: boolean = false;
+
     constructor() {
         this.varEnv = new VarEnv();
         this.globalDeclarations = [];
@@ -75,7 +77,7 @@ export class Compiler implements ASTVisitor<string> {
 
     visitAssignment(statement: Assignment): string {
         let expr = statement.expression.accept<string>(this);
-        return `${expr}\nlocal.set $${statement.identifier.name}`;
+        return `${expr}\nlocal.set $${statement.identifier.value}`;
     }
 
     visitWhile(statement: While): string {
@@ -125,6 +127,10 @@ export class Compiler implements ASTVisitor<string> {
             '(import "console" "logF64" (func $logF64 (param f64)))\n' +
             '(import "console" "logMemory" (func $logMemory (param i32 i32)))\n' +
             '(import "js" "memory" (memory 1))\n' +
+            '(import "js" "concat" (func $concat (param i32 i32 i32 i32 i32) (result i32 i32)))\n' +
+            `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32 i32)))\n` +
+            `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32 i32)))\n` +
+            `(global $stackPointer (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
             '(func (export "_start")\n' +
@@ -147,6 +153,14 @@ export class Compiler implements ASTVisitor<string> {
     }
 
     visitBinaryExpression(expression: BinaryExpression): string {
+        if(expression.type === ValueTypeEnum.STRING) {
+            this.toString = true;
+            let left = expression.primaryOrLeft.accept<string>(this);
+            let right = expression.right.accept<string>(this);
+            this.toString = false;
+            return `${left}\n${right}\nglobal.get $stackPointer\ncall $concat`;
+        }
+
         let left = expression.primaryOrLeft.accept<string>(this);
         let right = expression.right.accept<string>(this);
 
@@ -154,10 +168,31 @@ export class Compiler implements ASTVisitor<string> {
     }
 
     visitIdentifier(term: Identifier): string {
-        return `local.get $${term.name}`;
+        let type = (this.varEnv.lookUp(term.value) as ValueType).type;
+        if(type === ValueTypeEnum.BOOL) {
+            if(this.toString){
+                return `local.get $${term.value}\n`
+                    + `global.get $stackPointer\n`  +
+                        `call $toStringI32`;
+            }
+        }
+        if(type === ValueTypeEnum.NUM) {
+            if(this.toString){
+                return `local.get $${term.value}\n`+
+                        `global.get $stackPointer\n` +
+                        `call $toStringF64`;
+            }
+        }
+        return `local.get $${term.value}`;
     }
 
     visitNumber(term: Num): string {
+        if(this.toString){
+            return `f64.const ${term.value}\n` +
+                    `global.get $stackPointer\n` +
+                    `call $toStringF64`;
+        }
+
         return `f64.const ${term.value}`;
     }
 
@@ -166,15 +201,15 @@ export class Compiler implements ASTVisitor<string> {
     }
 
     visitDeclaration(statement: Declaration): string {
-        if (this.varEnv.lookUp(statement.identifier.name) !== null) {
-            throw new Error("Variable " + statement.identifier.name + " already declared");
+        if (this.varEnv.lookUp(statement.identifier.value) !== null) {
+            throw new Error("Variable " + statement.identifier.value + " already declared");
         }
-        this.varEnv.addVar(statement.identifier.name, statement.type);
+        this.varEnv.addVar(statement.identifier.value, statement.type);
         this.varCount++;
         let string = "";
         if (statement.expression !== null) {
             let expr = statement.expression!.accept<string>(this);
-            string += `\n${expr}\nlocal.set $${statement.identifier.name}`;
+            string += `\n${expr}\nlocal.set $${statement.identifier.value}`;
         }
         return string;
     }

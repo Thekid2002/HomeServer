@@ -2,13 +2,11 @@ import {AbstractTerm} from "./AbstractTerm";
 import {ASTVisitor} from "../../../ASTVisitor";
 
 export class ASTString extends AbstractTerm {
-    value: string;
     memoryLocation: i32 = 0;
-    length: i32 = 17;
+    length: i32 = 0;
 
     constructor(value: string, lineNum: i32) {
-        super(lineNum);
-        this.value = value;
+        super(lineNum, value);
     }
 
     accept<T>(visitor: ASTVisitor<T>): T {
