@@ -27,12 +27,13 @@ async function instantiate(module, imports = {}) {
   const { exports } = await WebAssembly.instantiate(module, adaptedImports);
   const memory = exports.memory || imports.env.memory;
   const adaptedExports = Object.setPrototypeOf({
-    calculateViaLanguage(string, type) {
-      // assembly/Index/calculateViaLanguage(~lib/string/String, ~lib/string/String) => ~lib/string/String
+    calculateViaLanguage(string, type, optimization) {
+      // assembly/Index/calculateViaLanguage(~lib/string/String, ~lib/string/String, bool) => ~lib/string/String
       string = __retain(__lowerString(string) || __notnull());
       type = __lowerString(type) || __notnull();
+      optimization = optimization ? 1 : 0;
       try {
-        return __liftString(exports.calculateViaLanguage(string, type) >>> 0);
+        return __liftString(exports.calculateViaLanguage(string, type, optimization) >>> 0);
       } finally {
         __release(string);
       }

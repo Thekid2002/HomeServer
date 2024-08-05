@@ -8,15 +8,16 @@ import {AbstractNode} from "./AST/Nodes/AbstractNode";
 import {Compiler} from "./Compiler/Compiler";
 import {CombinedChecker} from "./Checkers/CombinedChecker";
 import {AbstractType} from "./AST/Nodes/Types/AbstractType";
-import {LivenessChecker} from "./Checkers/LivenessChecker";
 import {ParseProgram as ParseProgram} from "./Parser/Statements/ParseProgram";
 import {Interpreter} from "./Interpreter/Interpreter";
 import {VarEnv} from "./Env/VarEnv";
 import {ValObject} from "./Env/Values/ValObject";
+import {Optimizer} from "./Compiler/Optimizer";
+import {Program} from "./AST/Nodes/Statements/Program";
 
-export function calculateViaLanguage(string: string, type: string): string {
+export function calculateViaLanguage(string: string, type: string, optimization: boolean): string {
     if (type === "compiler") {
-        return compile(string);
+        return compile(string, optimization);
     }
 
     if (type === "interpreter") {
@@ -65,7 +66,10 @@ function scanAndParseAndToAst(string: string): CompilerResult {
 function interpret(string: string): string {
     let result = scanAndParseAndToAst(string);
     let ast = result.astTree;
-    let interpreter = new Interpreter();
+    if(result.checkEnv === null){
+        return result.toJsonString();
+    }
+    let interpreter = new Interpreter(result.checkEnv!);
     if(ast === null) {
         return result.toJsonString();
     }
@@ -74,7 +78,7 @@ function interpret(string: string): string {
     return result.toJsonString();
 }
 
-function compile(string: string): string {
+function compile(string: string, optimization: boolean): string {
     let result = scanAndParseAndToAst(string);
     if(result.astTree === null) {
         return result.toJsonString();
@@ -87,8 +91,12 @@ function compile(string: string): string {
             console.error(livenessAnalysis.errors[i]);
         }
     }*/
-    let compiler = new Compiler();
-    result.compilerOutput =  ast.accept<string>(compiler).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");
+    if(optimization) {
+        let optimizer = new Optimizer(result.checkEnv!);
+        optimizer.optimize(ast as Program);
+    }
+    let compiler = new Compiler(result.checkEnv!);
+    result.compilerOutput =  compiler.compileProgram(ast as Program).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");
     return result.toJsonString();
 }
 

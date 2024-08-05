@@ -2,9 +2,17 @@ import { calculateViaLanguage } from "./build/carlCompiler/CaCoDebug.js";
 
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
+let optimizeCheckBox = document.getElementById("optimize");
 
 let wabtInstance = null;
 let features = {}; // Feature options for WabtModule
+let jsonRes;
+let currentWat = null;
+let optimization = false;
+
+optimizeCheckBox.addEventListener("change", function() {
+    optimization = this.checked;
+});
 
 // Initialize WabtModule and store the instance
 WabtModule().then(function(wabt) {
@@ -15,14 +23,16 @@ WabtModule().then(function(wabt) {
  * Compile the code input into WebAssembly and execute it.
  */
 export function compile() {
+    result.value = "";
+    const now = Date.now();
     let code = codeInput.value;
     let compiledResult;
     let compiledWat;
     try {
         // Calculate the WAT (WebAssembly Text format) using a custom language function
-        compiledResult = calculateViaLanguage(code, "compiler");
+        compiledResult = calculateViaLanguage(code, "compiler", optimization);
         console.log(compiledResult);
-        let jsonRes = JSON.parse(compiledResult);
+        jsonRes = JSON.parse(compiledResult);
         console.log(jsonRes);
         compiledWat = jsonRes.compilerOutput;
 
@@ -52,7 +62,25 @@ export function compile() {
             return;
         }
 
-        let output = compileToWasm(compiledWat);
+        const later = Date.now();
+        result.value = "Time to compile: " + (later - now) / 1000 + "s\n";
+        result.value += compiledWat;
+        currentWat = compiledWat;
+
+    } catch (e) {
+        alert(e.toString());
+    }
+}
+
+export function execute(){
+    try {
+        if(currentWat == null){
+            alert("Please compile the code first");
+            return;
+        }
+
+        result.value = "";
+        let output = compileToWasm(currentWat);
         let prints = [];
 
         let memory = new WebAssembly.Memory({initial: 1});
@@ -100,8 +128,12 @@ export function compile() {
                     },
                 },
                 console: {
-                    logI32: (value) =>{ prints.push(value == true ? "true" : "false") },
-                    logF64: (value) =>{ prints.push(value) },
+                    logI32: (value) => {
+                        prints.push(value == true ? "true" : "false")
+                    },
+                    logF64: (value) => {
+                        prints.push(value)
+                    },
                     logMemory: (offset, length) => {
                         prints.push(logMemory(memory.buffer, offset, length));
                     }
@@ -130,7 +162,7 @@ export function compile() {
             }
             result.value = output;
         });
-    } catch (e) {
+    }catch (e){
         alert(e.toString());
     }
 }

@@ -15,4 +15,15 @@ export class UnaryExpression extends AbstractExpression {
         return visitor.visitUnaryExpression(this);
     }
 
+    clone(): UnaryExpression {
+        return new UnaryExpression(
+            this.operator,
+            this.primaryOrRight.clone() as AbstractExpression,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "UnaryExpression(" + this.operator + ", " + this.primaryOrRight.toString() + ")";
+    }
 }

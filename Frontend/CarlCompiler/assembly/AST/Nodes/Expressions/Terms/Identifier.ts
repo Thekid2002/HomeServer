@@ -10,4 +10,15 @@ export class Identifier extends AbstractTerm {
     accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitIdentifier(this);
     }
+
+    clone(): Identifier {
+        return new Identifier(
+            this.value,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "Identifier(" + this.value + ")";
+    }
 }

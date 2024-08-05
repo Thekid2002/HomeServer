@@ -14,4 +14,16 @@ export class CompoundStatement extends AbstractStatement {
     accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitCompoundStatement(this);
     }
+
+    clone(): CompoundStatement {
+        return new CompoundStatement(
+            this.left.clone() as AbstractStatement,
+            this.right.clone() as AbstractStatement,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "CompoundStatement(" + this.left.toString() + ", " + this.right.toString() + ")";
+    }
 }

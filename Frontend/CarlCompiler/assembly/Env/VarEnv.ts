@@ -1,25 +1,35 @@
 import {AbstractType} from "../AST/Nodes/Types/AbstractType";
+import {ValObject} from "./Values/ValObject";
 
 export class VarEnv {
-    public vars: Map<string, AbstractType>;
+    public vars: Map<string, ValueType>;
 
     constructor() {
-        this.vars = new Map<string, AbstractType>();
+        this.vars = new Map<string, ValueType>();
     }
 
-    public addVar(name: string, value: AbstractType): void {
-        this.vars.set(name, value);
+    public addVar(name: string, type: AbstractType): void {
+        this.vars.set(name, new ValueType(type));
     }
 
-    public lookUp(name: string): AbstractType | null {
+    public lookUpType(name: string): AbstractType | null {
         if (this.vars.has(name)) {
-            return this.vars.get(name);
+            return this.vars.get(name).type;
         }
         return null;
     }
 
-    public setVar(name: string, value: AbstractType): void {
-        this.vars.set(name, value);
+    public lookUpValue(name: string): ValObject | null {
+        if (this.vars.has(name)) {
+            return this.vars.get(name).value;
+        }
+        return null;
+    }
+
+    public setVarVal(name: string, value: ValObject): void {
+        if (this.vars.has(name)) {
+            this.vars.get(name).value = value;
+        }
     }
 
     getDeclarations(): string {
@@ -40,5 +50,22 @@ export class VarEnv {
         }
         string += "}\n";
         return string;
+    }
+}
+
+class ValueType {
+    type: AbstractType;
+    value: ValObject | null = null;
+
+    constructor(type: AbstractType) {
+        this.type = type;
+    }
+
+    toString(): string {
+        return this.type.toString();
+    }
+
+    toJsonString(): string {
+        return this.type.toJsonString();
     }
 }

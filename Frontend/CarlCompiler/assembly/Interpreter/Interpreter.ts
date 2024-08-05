@@ -1,6 +1,5 @@
 import {ASTVisitor} from "../AST/ASTVisitor";
 import {ValObject} from "../Env/Values/ValObject";
-import {VarEnvironment} from "../Env/VarEnvironment";
 import {StatementType} from "../AST/Nodes/Types/StatementType";
 import {Assignment} from "../AST/Nodes/Statements/Assignment";
 import {While} from "../AST/Nodes/Statements/While";
@@ -20,14 +19,15 @@ import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import { ASTString } from "../AST/Nodes/Expressions/Terms/ASTString";
 import {ValString} from "../Env/Values/ValString";
+import {VarEnv} from "../Env/VarEnv";
 
 
 export class Interpreter implements ASTVisitor<ValObject | null> {
-    varEnv: VarEnvironment;
+    varEnv: VarEnv;
     prints: string[] = [];
 
-    constructor() {
-        this.varEnv = new VarEnvironment();
+    constructor(varEnv: VarEnv) {
+        this.varEnv = varEnv;
     }
 
     visitString(param: ASTString): ValObject | null {
@@ -63,12 +63,12 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
             throw new Error("Line: " + statement.lineNum.toString() + " Value is null");
         }
 
-        let prevVal = this.varEnv.lookUp(statement.identifier.value);
+        let prevVal = this.varEnv.lookUpValue(statement.identifier.value);
         if (prevVal === null) {
             throw new Error("Line: " + statement.lineNum.toString() + " Variable " + statement.identifier.value + " not declared");
         }
 
-        this.varEnv.setVar(statement.identifier.value, value);
+        this.varEnv.setVarVal(statement.identifier.value, value);
         return null;
     }
 
@@ -234,7 +234,7 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     }
 
     visitIdentifier(term: Identifier): ValObject | null {
-        let val = this.varEnv.lookUp(term.value);
+        let val = this.varEnv.lookUpValue(term.value);
         if (val === null) {
             throw new Error("Line: " + term.lineNum.toString() + " Variable " + term.value + " not declared");
         }
@@ -250,18 +250,17 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
     }
 
     visitDeclaration(statement: Declaration): ValObject | null {
-        let type = statement.type;
         let identifier = statement.identifier;
-        if (this.varEnv.lookUp(identifier.value) != null) {
+        if (this.varEnv.lookUpValue(identifier.value) != null) {
             throw new Error("Line: " + statement.lineNum.toString() + " Variable " + identifier.value + " already declared");
         }
 
         let value: ValObject | null = null;
         if (statement.expression !== null) {
-            value = statement.expression!.accept<ValObject | null>(this);
+            value = statement.expression!.accept<ValObject | null>(this) as ValObject;
+            this.varEnv.setVarVal(identifier.value, value);
         }
 
-        this.varEnv.addVar(identifier.value, value);
         return null;
     }
 

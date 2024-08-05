@@ -16,4 +16,15 @@ export class ASTString extends AbstractTerm {
     toJsonString(): string {
         return `{"type": "String", "value": "${this.value}"}`;
     }
+
+    clone(): ASTString {
+        return new ASTString(
+            this.value,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "ASTString(" + this.value + ")";
+    }
 }

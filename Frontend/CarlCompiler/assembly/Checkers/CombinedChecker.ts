@@ -120,7 +120,7 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     }
 
     visitIdentifier(term: Identifier): ValueType {
-        let type = this.varEnv.lookUp(term.value) as ValueType | null;
+        let type = this.varEnv.lookUpType(term.value) as ValueType | null;
         if (type === null) {
             this.errors.push("Variable " + term.value + " not declared in Line: " + term.lineNum.toString());
             return new ValueType(ValueTypeEnum.Error, term.lineNum);
@@ -139,10 +139,6 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
         }
         this.varEnv.addVar(param.identifier.value, param.type);
         return new StatementType(StatementTypeEnum.VAR_DECL, param.lineNum);
-    }
-
-    visitValueType(type: ValueType): ValueType {
-        throw new Error("Method not implemented.");
     }
 
     visitProgram(statement: Program): StatementType {
@@ -198,10 +194,6 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
         return new StatementType(StatementTypeEnum.ASSIGNMENT, statement.lineNum);
     }
 
-    visitStatementType(statement: StatementType): AbstractType | null {
-        throw new Error("Method not implemented.");
-    }
-
     visitIfStatement(statement: IfStatement): AbstractType | null {
         let condType = statement.condition.accept<AbstractType | null>(this)! as ValueType;
         if (condType.type !== ValueTypeEnum.BOOL) {
@@ -217,4 +209,13 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
         }
         return new StatementType(StatementTypeEnum.IF, statement.lineNum);
     }
+
+    visitValueType(type: ValueType): AbstractType | null {
+        throw new Error("Method not implemented.");
+    }
+
+    visitStatementType(statement: StatementType): AbstractType | null {
+        throw new Error("Method not implemented.");
+    }
+
 }

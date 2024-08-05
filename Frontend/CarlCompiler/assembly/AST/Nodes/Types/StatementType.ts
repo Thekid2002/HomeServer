@@ -1,8 +1,8 @@
 import { ASTVisitor } from "../../ASTVisitor";
 import {AbstractType} from "./AbstractType";
+import {AbstractNode} from "../AbstractNode";
 
 export class StatementType extends AbstractType {
-
     type: StatementTypeEnum;
 
     constructor(type: StatementTypeEnum, lineNum: i32) {
@@ -20,6 +20,10 @@ export class StatementType extends AbstractType {
 
     toString(): string {
         return StatementTypeNames[this.type];
+    }
+
+    clone(): AbstractNode {
+        return new StatementType(this.type, this.lineNum);
     }
 
 }

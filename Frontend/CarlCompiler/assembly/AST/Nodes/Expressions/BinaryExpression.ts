@@ -16,4 +16,17 @@ export class BinaryExpression extends AbstractExpression {
     accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitBinaryExpression(this);
     }
+
+    clone(): BinaryExpression {
+        return new BinaryExpression(
+            this.primaryOrLeft.clone() as AbstractExpression,
+            this.operator,
+            this.right.clone() as AbstractExpression,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "BinaryExpression(" + this.primaryOrLeft.toString() + ", " + this.operator + ", " + this.right.toString() + ")";
+    }
 }

@@ -1,4 +1,3 @@
-import { ASTVisitor } from "../AST/ASTVisitor";
 import { UnaryExpression } from "../AST/Nodes/Expressions/UnaryExpression";
 import { BinaryExpression } from "../AST/Nodes/Expressions/BinaryExpression";
 import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
@@ -10,28 +9,55 @@ import { Program } from "../AST/Nodes/Statements/Program";
 import { Print } from "../AST/Nodes/Statements/Print";
 import { While } from "../AST/Nodes/Statements/While";
 import { Assignment } from "../AST/Nodes/Statements/Assignment";
-import { StatementType } from "../AST/Nodes/Types/StatementType";
 import {VarEnv} from "../Env/VarEnv";
 import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
 import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
+import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
+import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
 
-export class Compiler implements ASTVisitor<string> {
+export class Compiler {
     varEnv: VarEnv;
     wasmCode: string[] = [];
     globalDeclarations: string[] = [];
     functionDeclarations: string[] = [];
-    varCount: i32 = 0;
     funcCount: i32 = 0;
     stackPointer: i32 = 0;
 
-    constructor() {
-        this.varEnv = new VarEnv();
+    constructor(varEnv: VarEnv) {
+        this.varEnv = varEnv;
         this.globalDeclarations = [];
         this.functionDeclarations = [];
     }
 
-    visitString(term: ASTString): string {
+    compileAbstractStatement(statement: AbstractStatement): string {
+        if (statement instanceof Declaration) {
+            return this.compileDeclaration(statement as Declaration);
+        }
+
+        if (statement instanceof Print) {
+            return this.compilePrint(statement as Print);
+        }
+
+        if (statement instanceof While) {
+            return this.compileWhile(statement as While);
+        }
+
+        if (statement instanceof IfStatement) {
+            return this.compileIfStatement(statement as IfStatement);
+        }
+
+        if (statement instanceof CompoundStatement) {
+            return this.compileCompoundStatement(statement as CompoundStatement);
+        }
+
+        if (statement instanceof Assignment) {
+            return this.compileAssignment(statement as Assignment);
+        }
+        throw new Error("Unknown statement type");
+    }
+
+    compileString(term: ASTString): string {
         let string = term.value;
         let memoryLocation = this.stackPointer;
         let length = string.length;
@@ -40,23 +66,24 @@ export class Compiler implements ASTVisitor<string> {
         return `i32.const ${memoryLocation}\ni32.const ${length}`;
     }
 
-    visitCompoundStatement(statement: CompoundStatement): string {
-        let left = statement.left.accept<string>(this);
-        let right = statement.right.accept<string>(this);
+    compileCompoundStatement(statement: CompoundStatement): string {
+        let left = this.compileAbstractStatement(statement.left);
+        let right = this.compileAbstractStatement(statement.right);
         return `${left}\n${right}`;
     }
 
-    visitIfStatement(statement: IfStatement): string {
-        let condition = statement.condition.accept<string>(this);
+    compileIfStatement(statement: IfStatement): string {
+        let condition = this.compileAbstractExpression(statement.condition);
         let body: string = "";
         if(statement.body !== null) {
-            body = statement.body!.accept<string>(this);
+            body = this.compileAbstractStatement(statement.body!);
         }
 
         let $else: string = "";
         if (statement.else !== null) {
-            $else = statement.else!.accept<string>(this);
+            $else = this.compileAbstractStatement(statement.else!);
         }
+
         return '' +
             `${condition}\n` +
             `(if\n` +
@@ -69,24 +96,22 @@ export class Compiler implements ASTVisitor<string> {
             ')\n';
     }
 
-    visitStatementType(statement: StatementType): string {
-        throw new Error("Method not implemented.");
-    }
-
-    visitAssignment(statement: Assignment): string {
-        let expr = statement.expression.accept<string>(this);
+    compileAssignment(statement: Assignment): string {
+        let expr = this.compileAbstractExpression(statement.expression);
         return `${expr}\nlocal.set $${statement.identifier.value}`;
     }
 
-    visitWhile(statement: While): string {
+    compileWhile(statement: While): string {
         let start: i32 = this.funcCount;
         this.funcCount++;
-        let declaration = statement.declaration !== null ? statement.declaration!.accept<string>(this) : "";
-        let condition = statement.condition.accept<string>(this);
-        let body: string = "";
-        if(statement.body !== null) {
-            body = statement.body!.accept<string>(this);
+        let declaration: string = "";
+        if(statement.declaration !== null) {
+            declaration = this.compileDeclaration(statement.declaration!);
         }
+        let condition = this.compileAbstractExpression(statement.condition);
+
+        let body: string = this.compileAbstractStatement(statement.body!);
+
         return `${condition}\n` +
             '(if \n' +
             '(then \n' +
@@ -100,8 +125,8 @@ export class Compiler implements ASTVisitor<string> {
             ')\n';
     }
 
-    visitPrint(print: Print): string {
-        let expr = print.expression.accept<string>(this);
+    compilePrint(print: Print): string {
+        let expr = this.compileAbstractExpression(print.expression);
         if(print.expression.type === ValueTypeEnum.NUM) {
             return `${expr}\ncall $logF64`;
         }
@@ -116,10 +141,10 @@ export class Compiler implements ASTVisitor<string> {
         throw new Error("Logging for type: " + ValueTypeNames[print.expression.type] + " not implemented");
     }
 
-    visitProgram(statement: Program): string {
+    compileProgram(statement: Program): string {
         let body: string = "";
         if(statement.body !== null) {
-            body = statement.body!.accept<string>(this);
+            body = this.compileAbstractStatement(statement.body!);
         }
         return '(module\n' +
             '(import "console" "logI32" (func $logI32 (param i32)))\n' +
@@ -138,9 +163,37 @@ export class Compiler implements ASTVisitor<string> {
             ')\n' +
             ')';
     }
+    
+    compileAbstractExpression(expression: AbstractExpression): string {
+        if (expression instanceof UnaryExpression) {
+            return this.compileUnaryExpression(expression as UnaryExpression);
+        }
+        
+        if (expression instanceof BinaryExpression) {
+            return this.compileBinaryExpression(expression as BinaryExpression);
+        }
 
-    visitUnaryExpression(expression: UnaryExpression): string {
-        let right = expression.primaryOrRight.accept<string>(this);
+        if (expression instanceof Identifier) {
+            return this.compileIdentifier(expression as Identifier);
+        }
+
+        if (expression instanceof Num) {
+            return this.compileNumber(expression as Num);
+        }
+
+        if (expression instanceof Term) {
+            return this.compileTerm(expression as Term);
+        }
+
+        if (expression instanceof ASTString) {
+            return this.compileString(expression as ASTString);
+        }
+
+        throw new Error("Unknown abstract expression type");
+    }
+
+    compileUnaryExpression(expression: UnaryExpression): string {
+        let right = this.compileAbstractExpression(expression.primaryOrRight);
         if (expression.operator === "-") {
             return `${right}\nf64.neg`;
         }
@@ -151,57 +204,52 @@ export class Compiler implements ASTVisitor<string> {
         throw new Error("Unknown operator: " + expression.operator);
     }
 
-    visitBinaryExpression(expression: BinaryExpression): string {
+    compileBinaryExpression(expression: BinaryExpression): string {
         if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
-            let left = expression.primaryOrLeft.accept<string>(this);
-            let right = expression.right.accept<string>(this);
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\nglobal.get $stackPointer\ncall $concat`;
         }
 
         if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type !== ValueTypeEnum.STRING) {
-            let left = expression.primaryOrLeft.accept<string>(this);
-            let right = expression.right.accept<string>(this);
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\nglobal.get $stackPointer\ncall $toStringF64\nglobal.get $stackPointer\ncall $concat`;
         }
 
         if(expression.primaryOrLeft.type !== ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
-            let left = expression.primaryOrLeft.accept<string>(this);
-            let right = expression.right.accept<string>(this);
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
             return `${left}\nglobal.get $stackPointer\ncall $toStringF64\n${right}\nglobal.get $stackPointer\ncall $concat`;
         }
 
-        let left = expression.primaryOrLeft.accept<string>(this);
-        let right = expression.right.accept<string>(this);
+        let left = this.compileAbstractExpression(expression.primaryOrLeft);
+        let right = this.compileAbstractExpression(expression.right);
         return `${left}\n${right}\n${this.getOperator(expression.operator)}`;
     }
 
-    visitIdentifier(term: Identifier): string {
+    compileIdentifier(term: Identifier): string {
         return `local.get $${term.value}`;
     }
 
-    visitNumber(term: Num): string {
+    compileNumber(term: Num): string {
         return `f64.const ${term.value}`;
     }
 
-    visitTerm(term: Term): string {
-        return term.accept<string>(this);
+    compileTerm(term: Term): string {
+        throw new Error("Term not implemented");
     }
 
-    visitDeclaration(statement: Declaration): string {
-        if (this.varEnv.lookUp(statement.identifier.value) !== null) {
-            throw new Error("Variable " + statement.identifier.value + " already declared");
-        }
-        this.varEnv.addVar(statement.identifier.value, statement.type);
-        this.varCount++;
+    compileDeclaration(statement: Declaration): string {
         let string = "";
         if (statement.expression !== null) {
-            let expr = statement.expression!.accept<string>(this);
+            let expr = this.compileAbstractExpression(statement.expression!);
             string += `\n${expr}\nlocal.set $${statement.identifier.value}`;
         }
         return string;
     }
 
-    visitValueType(type: ValueType): string {
+    compileValueType(type: ValueType): string {
         if (type.type === ValueTypeEnum.NUM) {
             return `f64`;
         }

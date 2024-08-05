@@ -1,5 +1,6 @@
 import {ASTVisitor} from "../../ASTVisitor";
 import {AbstractType} from "./AbstractType";
+import {AbstractNode} from "../AbstractNode";
 
 export class ValueType extends AbstractType {
     type: ValueTypeEnum;
@@ -30,6 +31,10 @@ export class ValueType extends AbstractType {
 
     toJsonString(): string {
         return `{ "type": "${this.type}" }`;
+    }
+
+    clone(): AbstractNode {
+        return new ValueType(this.type, this.lineNum);
     }
 }
 

@@ -12,4 +12,15 @@ export class Program extends AbstractStatement {
     accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitProgram(this);
     }
+
+    clone(): Program {
+        return new Program(
+            this.body !== null ? this.body!.clone() as AbstractStatement : null,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "Program(" + (this.body !== null ? this.body!.toString() : "null") + ")";
+    }
 }

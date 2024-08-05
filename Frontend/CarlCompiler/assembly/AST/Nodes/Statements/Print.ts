@@ -15,4 +15,15 @@ export class Print extends AbstractStatement {
     accept<T>(visitor: ASTVisitor<T>): T {
         return visitor.visitPrint(this);
     }
+
+    clone(): Print {
+        return new Print(
+            this.expression.clone() as AbstractExpression,
+            this.lineNum
+        );
+    }
+
+    toString(): string {
+        return "Print(" + this.expression.toString() + ")";
+    }
 }
