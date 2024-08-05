@@ -30,6 +30,9 @@
 
                 </select>
                 <button onclick="compile()">Compile</button>
+                <button onclick="execute()">Execute</button>
+                <input type="checkbox" id="optimize" name="optimize" value="optimize">
+                <label for="optimize">Optimize</label>
             </div>
             <textarea id="result" class="calculator-area"  spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
@@ -56,8 +59,9 @@
 <script src="libwabt.js"></script>
 <script type="module">
     import {goToPage} from './navigation.js';
-    import {compile} from './compilerCalculator.js';
+    import {compile, execute} from './compilerCalculator.js';
     window.compile = compile;
+    window.execute = execute;
     window.goToPage = goToPage;
 </script>
 </html>

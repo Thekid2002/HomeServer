@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Optimizer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Num.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Num.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Print.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Print.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnvironment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" afterDir="false" />
     </list>
@@ -76,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.CarlDebug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thomas/Desktop/HomeServer/Frontend/CarlInterpreter/assembly/Interpreter&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.CarlComStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlIntStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.TestTest.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.CarlDebug.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/thomas/Desktop/HomeServer/Frontend/CarlInterpreter/assembly/Interpreter",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.CarlComStart.executor": "Run",
+    "npm.CarlIntStart.executor": "Run",
+    "npm.CarlStart.executor": "Run",
+    "npm.TestTest.executor": "Run",
+    "npm.start.executor": "Debug",
+    "ts.external.directory.path": "/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Frontend/CarlInterpreter/assembly/Interpreter" />
@@ -170,7 +132,7 @@
       <workItem from="1722332140592" duration="15265000" />
       <workItem from="1722419582622" duration="18731000" />
       <workItem from="1722760869125" duration="5524000" />
-      <workItem from="1722780317404" duration="26430000" />
+      <workItem from="1722780317404" duration="26564000" />
     </task>
     <servers />
   </component>
