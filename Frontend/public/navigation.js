@@ -9,5 +9,8 @@ export function goToPage(page) {
         case "compilerCalculator":
             window.location.href = "compilerCalculator.html";
             break;
+        case "carlInstructions":
+            window.location.href = "carlInstructions.html";
+            break;
     }
 }

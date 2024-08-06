@@ -14,6 +14,7 @@ import {IfStatement} from "./Nodes/Statements/IfStatement";
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {ASTString} from "./Nodes/Expressions/Terms/ASTString";
 import {Scan} from "./Nodes/Statements/Scan";
+import {Bool} from "./Nodes/Expressions/Terms/Bool";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -47,4 +48,6 @@ export interface ASTVisitor<T> {
     visitString(term: ASTString): T;
 
     visitScan(statement: Scan): T;
+
+    visitBool(term: Bool): T;
 }

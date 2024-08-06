@@ -19,6 +19,7 @@ import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
 import {ParseString} from "./Expressions/Terms/ParseString";
 import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
+import {ParseBool} from "./Expressions/Terms/ParseBool";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: ParseExpression): T;
@@ -62,4 +63,6 @@ export interface ParseVisitor<T> {
     visitScan(statement: ParseScan): T;
 
     visitIncrement(statement: ParseIncrement): T;
+
+    visitBool(term: ParseBool): T;
 }

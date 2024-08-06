@@ -5,19 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Scan.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIncrement.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseScan.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Bool.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseBool.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/carlInstructions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.ts" afterDir="false" />
@@ -32,6 +31,8 @@
       <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/examples.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/sharedStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/sharedStyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +70,7 @@
     "JavaScript Debug.CarlDebug.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/thomas/Desktop/HomeServer/Frontend/CarlInterpreter/assembly/Interpreter",
+    "last_opened_file_path": "/Users/thomas/Desktop/HomeServer/Frontend/public",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,6 +88,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Frontend/public" />
       <recent name="$PROJECT_DIR$/Frontend/CarlInterpreter/assembly/Interpreter" />
       <recent name="$PROJECT_DIR$/Frontend" />
     </key>
@@ -158,7 +160,7 @@
       <workItem from="1722419582622" duration="18731000" />
       <workItem from="1722760869125" duration="5524000" />
       <workItem from="1722780317404" duration="26564000" />
-      <workItem from="1722932347737" duration="5466000" />
+      <workItem from="1722932347737" duration="12431000" />
     </task>
     <servers />
   </component>

@@ -24,6 +24,7 @@ import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
 import {ParseString} from "./Expressions/Terms/ParseString";
 import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
+import {ParseBool} from "./Expressions/Terms/ParseBool";
 
 export class Parser {
     tokens: Token[];
@@ -338,6 +339,10 @@ export class Parser {
 
         if (this.matchAdvance([TokenType.STRING_LITERAL])) {
             return new ParseString(this.previous(), this.previous().line);
+        }
+
+        if (this.matchAdvance([TokenType.TRUE, TokenType.FALSE])) {
+            return new ParseBool(this.previous(), this.previous().line);
         }
 
         if (!this.isAtEnd()) {

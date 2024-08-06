@@ -75,6 +75,7 @@ function interpret(string: string): string {
     }
     ast.accept<ValObject | null>(interpreter);
     result.interpretOutput = interpreter.prints;
+
     return result.toJsonString();
 }
 

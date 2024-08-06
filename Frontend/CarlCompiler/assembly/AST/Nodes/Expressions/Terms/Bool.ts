@@ -1,29 +1,23 @@
 import {AbstractTerm} from "./AbstractTerm";
 import {ASTVisitor} from "../../../ASTVisitor";
 
-export class ASTString extends AbstractTerm {
-    memoryLocation: i32 = 0;
-
+export class Bool extends AbstractTerm {
     constructor(value: string, lineNum: i32) {
         super(lineNum, value);
     }
 
     accept<T>(visitor: ASTVisitor<T>): T {
-        return visitor.visitString(this);
+        return visitor.visitBool(this);
     }
 
-    toJsonString(): string {
-        return `{"type": "String", "value": "${this.value}"}`;
-    }
-
-    clone(): ASTString {
-        return new ASTString(
+    clone(): Bool {
+        return new Bool(
             this.value,
             this.lineNum
         );
     }
 
     toString(): string {
-        return "ASTString(" + this.value + ")";
+        return "Bool(" + this.value + ")";
     }
 }

@@ -40,6 +40,8 @@ import { ASTString as ASTString } from "./Nodes/Expressions/Terms/ASTString";
 import { ParseScan } from "../Parser/Statements/ParseScan";
 import {Scan} from "./Nodes/Statements/Scan";
 import {ParseIncrement} from "../Parser/Statements/ParseIncrement";
+import { ParseBool } from "../Parser/Expressions/Terms/ParseBool";
+import {Bool} from "./Nodes/Expressions/Terms/Bool";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     visitScan(statement: ParseScan): AbstractNode {
@@ -170,6 +172,10 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
 
     visitNumber(term: ParseNum): AbstractNode {
         return new Num(term.value.literal, term.lineNum);
+    }
+
+    visitBool(term: ParseBool): AbstractNode {
+        return new Bool(term.value.literal, term.lineNum);
     }
 
     visitRelationalExpression(expression: ParseRelationalExpression): AbstractNode {

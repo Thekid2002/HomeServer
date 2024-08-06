@@ -18,6 +18,7 @@ import {IfStatement} from "../AST/Nodes/Statements/IfStatement";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 import { Scan } from "../AST/Nodes/Statements/Scan";
+import { Bool } from "../AST/Nodes/Expressions/Terms/Bool";
 
 export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     public varEnv: VarEnv = new VarEnv();
@@ -113,6 +114,11 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     visitNumber(term: Num): ValueType {
         term.type = ValueTypeEnum.NUM;
         return new ValueType(ValueTypeEnum.NUM, term.lineNum);
+    }
+
+    visitBool(term: Bool): AbstractType | null {
+        term.type = ValueTypeEnum.BOOL;
+        return new ValueType(ValueTypeEnum.BOOL, term.lineNum);
     }
 
     visitString(param: ASTString): AbstractType | null {

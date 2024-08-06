@@ -1,5 +1,6 @@
 import {AbstractType} from "../AST/Nodes/Types/AbstractType";
 import {ValObject} from "./Values/ValObject";
+import {ValueTypeEnum} from "../AST/Nodes/Types/ValueType";
 
 export class VarEnv {
     public vars: Map<string, ValueType>;
@@ -35,7 +36,12 @@ export class VarEnv {
     getDeclarations(): string {
         let string = "";
         for (let i = 0; i < this.vars.size; i++) {
-            string += `(local $${this.vars.keys()[i]} ${this.vars.values()[i].toString()})\n`;
+            let type = this.vars.values()[i];
+            if(type.toString() === "string") {
+                string += `(local $${this.vars.keys()[i]} i32)\n`;
+            }else {
+                string += `(local $${this.vars.keys()[i]} ${this.vars.values()[i].toString()})\n`;
+            }
         }
         return string;
     }

@@ -52,6 +52,15 @@
     width: 100%;
 }
 
+.instructions-body{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2%;
+    justify-content: left;
+    align-items: start;
+    width: 100%;
+}
+
 .spinner-container {
     gap: 20px;
     display: flex;

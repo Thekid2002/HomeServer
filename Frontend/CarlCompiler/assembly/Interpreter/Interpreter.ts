@@ -21,6 +21,7 @@ import { ASTString } from "../AST/Nodes/Expressions/Terms/ASTString";
 import {ValString} from "../Env/Values/ValString";
 import {VarEnv} from "../Env/VarEnv";
 import { Scan } from "../AST/Nodes/Statements/Scan";
+import { Bool } from "../AST/Nodes/Expressions/Terms/Bool";
 
 
 export class Interpreter implements ASTVisitor<ValObject | null> {
@@ -29,6 +30,10 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     constructor(varEnv: VarEnv) {
         this.varEnv = varEnv;
+    }
+
+    visitBool(term: Bool): ValObject | null {
+        return new ValBool(term.value === "true");
     }
 
     visitScan(statement: Scan): ValObject | null {

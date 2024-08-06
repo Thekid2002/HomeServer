@@ -20,6 +20,7 @@ import { ParseCompoundStatement } from "./Statements/ParseCompoundStatement";
 import { ParseString } from "./Expressions/Terms/ParseString";
 import { ParseScan } from "./Statements/ParseScan";
 import { ParseIncrement } from "./Statements/ParseIncrement";
+import { ParseBool } from "./Expressions/Terms/ParseBool";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
@@ -141,6 +142,10 @@ export class ParseTreePrinter implements ParseVisitor<void> {
 
     visitNumber(term: ParseNum): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Number " + term.value.literal);
+    }
+
+    visitBool(term: ParseBool): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Bool " + term.value.literal);
     }
 
     visitString(param: ParseString): void {

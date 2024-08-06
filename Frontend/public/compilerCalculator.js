@@ -34,7 +34,21 @@ export function compile() {
         console.log(compiledResult);
         jsonRes = JSON.parse(compiledResult);
         console.log(jsonRes);
+        jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
         compiledWat = jsonRes.compilerOutput;
+
+        if(jsonRes.lexerErrors.length > 0 ) {
+            let output = "";
+            let lineNum = 0;
+            for (let i = 0; i < jsonRes.lexerErrors.length; i++) {
+                output += lineNum++ + ": " + jsonRes.lexerErrors[i];
+                if (i < jsonRes.lexerErrors.length - 1) {
+                    output += "\n";
+                }
+            }
+            result.value = output;
+            return;
+        }
 
         if(jsonRes.parseErrors.length > 0) {
             let output = "";
@@ -88,15 +102,33 @@ export function execute(){
             const importObject = {
                 js: {
                     memory,
-                    concat: (offset1, length1, offset2, length2, stackPointer) => {
-                        let bytes1 = new Uint8Array(memory.buffer, offset1, length1);
-                        let bytes2 = new Uint8Array(memory.buffer, offset2, length2);
-                        let bytes = new Uint8Array(length1 + length2);
-                        bytes.set(bytes1, 0);
-                        bytes.set(bytes2, length1);
-                        new Uint8Array(memory.buffer, stackPointer, bytes.length).set(bytes);
-                        wasmInstance.exports.stackPointer.value += bytes.length;
-                        return [stackPointer, bytes.length];
+                    concat: (offset1, offset2, stackPointer) => {
+                        // Access the memory buffer from the WebAssembly.Memory instance
+                        const buffer = new Uint8Array(memory.buffer);
+
+                        // Read from memory until a null terminator is found
+                        let i = 0;
+                        let string1 = "";
+                        while (buffer[offset1 + i] !== 0) {
+                            string1 += String.fromCharCode(buffer[offset1 + i]);
+                            i++;
+                        }
+
+                        i = 0;
+                        let string2 = "";
+                        while (buffer[offset2 + i] !== 0) {
+                            string2 += String.fromCharCode(buffer[offset2 + i]);
+                            i++;
+                        }
+
+                        let str = string1 + string2;
+
+                        // Write the string to memory
+                        for (let i = 0; i < str.length; i++) {
+                            buffer[stackPointer + i] = str.charCodeAt(i);
+                        }
+                        wasmInstance.exports.stackPointer.value += str.length;
+                        return stackPointer;
                     },
                     toStringI32: (value, stackPointer) => {
                         // Access the memory buffer from the WebAssembly.Memory instance
@@ -126,12 +158,36 @@ export function execute(){
                         wasmInstance.exports.stackPointer.value += str.length;
                         return [stackPointer, str.length];
                     },
-                    scanF64: (offset, length) => {
-                        return parseFloat(prompt((logMemory(memory.buffer, offset, length))));
+                    scanF64: (offset) => {
+                        return parseFloat(prompt((logMemory(memory.buffer, offset))));
                     },
-                    scanI32: (offset, length) => {
-                        return parseInt(prompt((logMemory(memory.buffer, offset, length))));
+                    scanI32: (offset) => {
+                        let value = prompt((logMemory(memory.buffer, offset)));
+                        if(value == null){
+                            return 0;
+                        }
+                        if(value.toLowerCase() === "true"){
+                            return 1;
+                        }
+                        if(value.toLowerCase() === "false"){
+                            return 0;
+                        }
+                        return !!parseInt(value);
                     },
+                    scanString: (offset) => {
+                        let value = prompt((logMemory(memory.buffer, offset)));
+                        if(value == null){
+                            return 0;
+                        }
+
+                        const buffer = new Uint8Array(memory.buffer);
+                        for (let i = 0; i < value.length; i++) {
+                            buffer[offset + i] = value.charCodeAt(i);
+                        }
+                        buffer[offset + value.length] = '\0';
+                        wasmInstance.exports.stackPointer.value += value.length;
+                        return offset;
+                    }
                 },
                 console: {
                     logI32: (value) => {
@@ -140,8 +196,8 @@ export function execute(){
                     logF64: (value) => {
                         prints.push(value)
                     },
-                    logMemory: (offset, length) => {
-                        prints.push(logMemory(memory.buffer, offset, length));
+                    logMemory: (offset) => {
+                        prints.push(logMemory(memory.buffer, offset));
                     }
                 }
             };
@@ -173,9 +229,14 @@ export function execute(){
     }
 }
 
-function logMemory(memory, offset, length) {
-    let bytes = new Uint8Array(memory, offset, length);
-    let str = new TextDecoder("utf8").decode(bytes);
+function logMemory(memory, offset) {
+    const buffer = new Uint8Array(memory);
+    let i = 0;
+    let str = "";
+    while (buffer[offset + i] !== 0) {
+        str += String.fromCharCode(buffer[offset + i]);
+        i++;
+    }
 
     return str;
 }

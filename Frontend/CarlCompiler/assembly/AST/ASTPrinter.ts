@@ -15,6 +15,7 @@ import { IfStatement } from "./Nodes/Statements/IfStatement";
 import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
 import { ASTString } from "./Nodes/Expressions/Terms/ASTString";
 import { Scan } from "./Nodes/Statements/Scan";
+import { Bool } from "./Nodes/Expressions/Terms/Bool";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
@@ -77,6 +78,10 @@ export class ASTPrinter implements ASTVisitor<void> {
 
     visitNumber(term: Num): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Num " + term.value.toString());
+    }
+
+    visitBool(term: Bool): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Bool " + term.value);
     }
 
     visitString(param: ASTString): void {

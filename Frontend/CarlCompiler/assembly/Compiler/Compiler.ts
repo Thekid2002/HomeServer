@@ -16,6 +16,7 @@ import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
 import {Scan} from "../AST/Nodes/Statements/Scan";
+import {Bool} from "../AST/Nodes/Expressions/Terms/Bool";
 
 export class Compiler {
     varEnv: VarEnv;
@@ -63,12 +64,12 @@ export class Compiler {
     }
 
     compileString(term: ASTString): string {
-        let string = term.value;
+        let value = term.value + "nul!ll>";
         let memoryLocation = this.stackPointer;
-        let length = string.length;
-        this.stackPointer += length;
-        this.globalDeclarations.push(`(data (i32.const ${memoryLocation}) "${string}")`);
-        return `i32.const ${memoryLocation}\ni32.const ${length}`;
+        let length = term.value.length;
+        this.stackPointer += length+1;
+        this.globalDeclarations.push(`(data (i32.const ${memoryLocation}) "${value}")`);
+        return `i32.const ${memoryLocation}`;
     }
 
     compileCompoundStatement(statement: CompoundStatement): string {
@@ -149,6 +150,12 @@ export class Compiler {
     compileScan(scan: Scan): string {
         let message = this.compileAbstractExpression(scan.message);
         let type = this.compileValueType(scan.type);
+        if(type === "String") {
+            return `${message}\n` +
+                `call $scan${type}` + `\n` +
+                `local.set $${scan.identifier.value}`;
+        }
+
         return `${message}\n` +
                 `call $scan${type}` + `\n` +
                 `local.set $${scan.identifier.value}`;
@@ -162,13 +169,14 @@ export class Compiler {
         return '(module\n' +
             '(import "console" "logI32" (func $logI32 (param i32)))\n' +
             '(import "console" "logF64" (func $logF64 (param f64)))\n' +
-            '(import "console" "logMemory" (func $logMemory (param i32 i32)))\n' +
+            '(import "console" "logMemory" (func $logMemory (param i32)))\n' +
             '(import "js" "memory" (memory 1))\n' +
-            '(import "js" "concat" (func $concat (param i32 i32 i32 i32 i32) (result i32 i32)))\n' +
-            `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32 i32)))\n` +
-            `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32 i32)))\n` +
-            `(import "js" "scanI32" (func $scanI32 (param i32 i32) (result i32)))\n` +
-            `(import "js" "scanF64" (func $scanF64 (param i32 i32) (result f64)))\n` +
+            '(import "js" "concat" (func $concat (param i32 i32 i32) (result i32)))\n' +
+            `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32)))\n` +
+            `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32)))\n` +
+            `(import "js" "scanI32" (func $scanI32 (param i32) (result i32)))\n` +
+            `(import "js" "scanF64" (func $scanF64 (param i32) (result f64)))\n` +
+            `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +
             `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
@@ -190,6 +198,10 @@ export class Compiler {
 
         if (expression instanceof Identifier) {
             return this.compileIdentifier(expression as Identifier);
+        }
+
+        if(expression instanceof Bool) {
+            return this.compileBool(expression as Bool);
         }
 
         if (expression instanceof Num) {
@@ -271,6 +283,9 @@ export class Compiler {
         if (type.type === ValueTypeEnum.BOOL) {
             return `I32`;
         }
+        if (type.type === ValueTypeEnum.STRING) {
+            return `String`;
+        }
         throw new Error("Unknown type: " + type.type.toString());
     }
 
@@ -313,5 +328,12 @@ export class Compiler {
         }
 
         throw new Error("Unknown operator: " + operator);
+    }
+
+    compileBool(term: Bool): string {
+        if(term.value === "true") {
+            return "i32.const 1";
+        }
+        return "i32.const 0";
     }
 }
