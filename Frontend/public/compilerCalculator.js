@@ -126,6 +126,12 @@ export function execute(){
                         wasmInstance.exports.stackPointer.value += str.length;
                         return [stackPointer, str.length];
                     },
+                    scanF64: (offset, length) => {
+                        return parseFloat(prompt((logMemory(memory.buffer, offset, length))));
+                    },
+                    scanI32: (offset, length) => {
+                        return parseInt(prompt((logMemory(memory.buffer, offset, length))));
+                    },
                 },
                 console: {
                     logI32: (value) => {

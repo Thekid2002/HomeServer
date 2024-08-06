@@ -14,6 +14,7 @@ import { StatementType } from "./Nodes/Types/StatementType";
 import { IfStatement } from "./Nodes/Statements/IfStatement";
 import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
 import { ASTString } from "./Nodes/Expressions/Terms/ASTString";
+import { Scan } from "./Nodes/Statements/Scan";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
@@ -131,6 +132,14 @@ export class ASTPrinter implements ASTVisitor<void> {
         if(statement.else !== null) {
             statement.else!.accept<void>(this);
         }
+        this.number--;
+    }
+
+    visitScan(statement: Scan): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Scan");
+        this.number++;
+        statement.type.accept<void>(this);
+        statement.identifier.accept<void>(this);
         this.number--;
     }
 }

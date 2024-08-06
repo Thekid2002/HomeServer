@@ -83,7 +83,7 @@ export class Scanner {
             }
         }
 
-        this.addToken(TokenType.NUMBER, this.source.substring(this.start, this.current));
+        this.addToken(TokenType.NUMBER_LITERAL, this.source.substring(this.start, this.current));
     }
 
     identifier(): void {
@@ -136,9 +136,15 @@ export class Scanner {
             return this.addToken(TokenType.DOT, '.');
         }
         if (c == '-') {
+            if(this.match('-')) {
+                return this.addToken(TokenType.DECREMENT, '--');
+            }
             return this.addToken(TokenType.MINUS, '-');
         }
         if (c == '+') {
+            if(this.match('+')) {
+                return this.addToken(TokenType.INCREMENT, '++');
+            }
             return this.addToken(TokenType.PLUS, '+');
         }
         if (c == ';') {
@@ -161,7 +167,7 @@ export class Scanner {
             }
 
             this.current++;
-            this.addToken(TokenType.STRING, this.source.substring(this.start + 1, this.current - 1));
+            this.addToken(TokenType.STRING_LITERAL, this.source.substring(this.start + 1, this.current - 1));
             return;
         }
         if (c == '\n') {

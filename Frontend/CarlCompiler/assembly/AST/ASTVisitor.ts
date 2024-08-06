@@ -13,6 +13,7 @@ import {StatementType} from "./Nodes/Types/StatementType";
 import {IfStatement} from "./Nodes/Statements/IfStatement";
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {ASTString} from "./Nodes/Expressions/Terms/ASTString";
+import {Scan} from "./Nodes/Statements/Scan";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -25,7 +26,7 @@ export interface ASTVisitor<T> {
 
     visitIdentifier(term: Identifier): T;
 
-    visitDeclaration(param: Declaration): T;
+    visitDeclaration(statement: Declaration): T;
 
     visitValueType(type: ValueType): T;
 
@@ -43,5 +44,7 @@ export interface ASTVisitor<T> {
 
     visitCompoundStatement(statement: CompoundStatement): T;
 
-    visitString(param: ASTString): T;
+    visitString(term: ASTString): T;
+
+    visitScan(statement: Scan): T;
 }

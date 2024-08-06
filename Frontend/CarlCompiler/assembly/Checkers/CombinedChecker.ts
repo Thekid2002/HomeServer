@@ -17,6 +17,7 @@ import {VarEnv} from "../Env/VarEnv";
 import {IfStatement} from "../AST/Nodes/Statements/IfStatement";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
+import { Scan } from "../AST/Nodes/Statements/Scan";
 
 export class CombinedChecker implements ASTVisitor<AbstractType | null> {
     public varEnv: VarEnv = new VarEnv();
@@ -216,6 +217,18 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
 
     visitStatementType(statement: StatementType): AbstractType | null {
         throw new Error("Method not implemented.");
+    }
+
+    visitScan(statement: Scan): AbstractType | null {
+        let type = this.varEnv.lookUpType(statement.identifier.value) as ValueType | null;
+        if (type === null) {
+            this.errors.push("Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
+            return new ValueType(ValueTypeEnum.Error, statement.lineNum);
+        }
+        if(type.type !== statement.type.type) {
+            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[type.type] + " but got: " + ValueTypeNames[statement.type.type]);
+        }
+        return null;
     }
 
 }

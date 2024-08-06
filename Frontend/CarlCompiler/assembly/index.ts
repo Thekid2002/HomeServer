@@ -84,13 +84,9 @@ function compile(string: string, optimization: boolean): string {
         return result.toJsonString();
     }
     let ast = result.astTree!;
-    /**let livenessAnalysis = new LivenessChecker();
-    ast.accept<void>(livenessAnalysis);
-    if(livenessAnalysis.errors.length > 0) {
-        for (let i = 0; i < livenessAnalysis.errors.length; i++) {
-            console.error(livenessAnalysis.errors[i]);
-        }
-    }*/
+    if(result.checkEnv === null){
+        return result.toJsonString();
+    }
     if(optimization) {
         let optimizer = new Optimizer(result.checkEnv!);
         optimizer.optimize(ast as Program);

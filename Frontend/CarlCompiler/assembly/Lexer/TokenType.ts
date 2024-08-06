@@ -31,15 +31,28 @@ export enum TokenType {
     GREATER_EQUAL,// >=
     LESS,         // <
     LESS_EQUAL,   // <=
+    INCREMENT,    // ++
+    DECREMENT,    // --
 
-    // Literals.
+    // Literals
     IDENTIFIER,   // identifier
-    STRING,       // string
-    NUMBER,       // number
+    STRING_LITERAL, // string literal
+    NUMBER_LITERAL,  // number literal
 
-    // Keywords.
+    // Scan and print
+    SCAN,         // scan
+    PRINT,        // print
+
+    // Types
     NUM,          // num
     BOOL,         // bool
+    STRING,       // string
+
+    // Boolean
+    TRUE,         // true
+    FALSE,        // false
+
+    // Keywords.
     SIN,          // sin
     COS,          // cos
     TAN,          // tan
@@ -49,15 +62,12 @@ export enum TokenType {
     SQRT,         // sqrt
     AND,          // and
     CLASS,        // class
-    FALSE,        // false
     FUN,          // fun
     NIL,          // nil
     OR,           // or
-    PRINT,        // print
     RETURN,       // return
     SUPER,        // super
     THIS,         // this
-    TRUE,         // true
     VAR,          // var
 
     EOF          // end of file
@@ -96,15 +106,28 @@ export const TokenTypes: string[] = [
     "GREATER_EQUAL",// >=
     "LESS",         // <
     "LESS_EQUAL",   // <=
+    "INCREMENT",    // ++
+    "DECREMENT",    // --
 
-    // Literals.
+    // Literals
     "IDENTIFIER",   // identifier
-    "STRING",       // string
-    "NUMBER",       // number
+    "STRING_LITERAL", // string literal
+    "NUMBER_LITERAL",  // number literal
 
-    // Keywords.
+    // Scan and print
+    "SCAN",         // scan
+    "PRINT",        // print
+
+    // Types
     "NUM",          // num
     "BOOL",         // bool
+    "STRING",       // string
+
+    // Boolean
+    "TRUE",         // true
+    "FALSE",        // false
+
+    // Keywords.
     "SIN",          // sin
     "COS",          // cos
     "TAN",          // tan
@@ -114,15 +137,12 @@ export const TokenTypes: string[] = [
     "SQRT",         // sqrt
     "AND",          // and
     "CLASS",        // class
-    "FALSE",        // false
     "FUN",          // fun
     "NIL",          // nil
     "OR",           // or
-    "PRINT",        // print
     "RETURN",       // return
     "SUPER",        // super
     "THIS",         // this
-    "TRUE",         // true
     "VAR",          // var
 
     "EOF"          // end of file

@@ -18,10 +18,20 @@ import { ParseAssignment } from "./Statements/ParseAssignment";
 import {ParseIfStatement} from "./Statements/ParseIfStatement";
 import { ParseCompoundStatement } from "./Statements/ParseCompoundStatement";
 import { ParseString } from "./Expressions/Terms/ParseString";
+import { ParseScan } from "./Statements/ParseScan";
+import { ParseIncrement } from "./Statements/ParseIncrement";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
     tree: string[] = [];
+
+    visitScan(statement: ParseScan): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseScan");
+        this.number++;
+        statement.type.accept<void>(this);
+        statement.identifier.accept<void>(this);
+        this.number--;
+    }
 
     visitCompoundStatement(statement: ParseCompoundStatement): void {
         statement.left.accept<void>(this);
@@ -33,6 +43,13 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number++;
         statement.identifier.accept<void>(this);
         statement.expression.accept<void>(this);
+        this.number--;
+    }
+
+    visitIncrement(statement: ParseIncrement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseIncrement");
+        this.number++;
+        statement.identifier.accept<void>(this);
         this.number--;
     }
 

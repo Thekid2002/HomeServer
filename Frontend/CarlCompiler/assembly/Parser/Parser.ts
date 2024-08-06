@@ -22,6 +22,8 @@ import {ParseAssignment} from "./Statements/ParseAssignment";
 import {ParseIfStatement} from "./Statements/ParseIfStatement";
 import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
 import {ParseString} from "./Expressions/Terms/ParseString";
+import {ParseScan} from "./Statements/ParseScan";
+import {ParseIncrement} from "./Statements/ParseIncrement";
 
 export class Parser {
     tokens: Token[];
@@ -65,29 +67,42 @@ export class Parser {
     }
 
     private statement(): ParseAbstractStatement | null {
+        let statement: ParseAbstractStatement | null = null;
         if (this.match([TokenType.IF])) {
-            return this.ifStatement();
+            statement = this.ifStatement();
         }
 
-        if (this.match([TokenType.PRINT])) {
-            return this.print();
+        else if (this.match([TokenType.PRINT])) {
+            statement = this.print();
         }
 
-        if (this.match([TokenType.NUM, TokenType.BOOL, TokenType.STRING])) {
-            return this.declaration();
+        else if(this.match([TokenType.SCAN])){
+            statement = this.scan();
         }
 
-        if (this.match([TokenType.IDENTIFIER])) {
-            return this.assignment();
+        else if (this.match([TokenType.NUM, TokenType.BOOL, TokenType.STRING])) {
+            statement = this.declaration();
         }
 
-        if (this.match([TokenType.WHILE, TokenType.FOR])) {
-            return this.loop();
+        else if (this.match([TokenType.IDENTIFIER])) {
+            if(this.peekpeek().type === TokenType.EQUAL) {
+                statement = this.assignment();
+            }else {
+                statement = this.increment();
+            }
         }
 
-        this.errors.push("Statement: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-        return null;
+        else if (this.match([TokenType.WHILE, TokenType.FOR])) {
+            statement = this.loop();
+        }
 
+        else {
+            this.errors.push("Statement: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+            return null;
+        }
+
+        this.matchAdvance([TokenType.SEMICOLON]);
+        return statement;
     }
 
 
@@ -181,6 +196,10 @@ export class Parser {
 
     private peek(): Token {
         return this.tokens[this.current];
+    }
+
+    private peekpeek(): Token {
+        return this.tokens[this.current+1];
     }
 
     private advance(): Token {
@@ -309,7 +328,7 @@ export class Parser {
     }
 
     private term(): AbstractTerm {
-        if (this.matchAdvance([TokenType.NUMBER])) {
+        if (this.matchAdvance([TokenType.NUMBER_LITERAL])) {
             return new ParseNum(this.previous(), this.previous().line);
         }
 
@@ -317,7 +336,7 @@ export class Parser {
             return new ParseIdentifier(this.previous(), this.previous().line);
         }
 
-        if (this.matchAdvance([TokenType.STRING])) {
+        if (this.matchAdvance([TokenType.STRING_LITERAL])) {
             return new ParseString(this.previous(), this.previous().line);
         }
 
@@ -387,7 +406,7 @@ export class Parser {
             this.errors.push("Expected ';' at line: " + this.peek().line.toString());
             return null;
         }
-        let assignment = this.assignment();
+        let assignment = this.statement();
         if (!this.matchAdvance([TokenType.RIGHT_PAREN])) {
             this.errors.push("Expected ')' at line: " + this.peek().line.toString());
             return null;
@@ -428,12 +447,26 @@ export class Parser {
                 let expression = this.expression();
                 return new ParseAssignment(identifier, expression, identifier.lineNum);
             }
-            this.errors.push("Expected '=' at line: " + this.peek().line.toString());
+            this.errors.push("Assignment expected '=' at line: " + this.peek().line.toString());
         }
         this.errors.push("ParseAssignment: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
 
         return null;
+    }
 
+    private increment(): ParseIncrement | null {
+        if (this.match([TokenType.IDENTIFIER])) {
+            let identifier = this.term() as ParseIdentifier;
+
+            if (this.match([TokenType.INCREMENT, TokenType.DECREMENT])) {
+                let operator = this.advance();
+                return new ParseIncrement(identifier, operator.literal, identifier.lineNum);
+            }
+            this.errors.push("Increment expected '++' or '--' at line: " + this.peek().line.toString());
+        }
+        this.errors.push("ParseAssignment: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+
+        return null;
     }
 
     private ifStatement(): ParseIfStatement | null {
@@ -486,6 +519,31 @@ export class Parser {
         return new ParseCompoundStatement(statements[0], this.toCompoundStatement(statements.slice(1)), statements[0].lineNum);
     }
 
+    private scan(): ParseScan | null {
+        this.advance();
+        this.matchAdvance([TokenType.LEFT_PAREN]);
+        let string: ParseString = this.term() as ParseString;
+        if(!this.matchAdvance([TokenType.COMMA])){
+            this.errors.push("Expected ',' at line: " + this.peek().line.toString());
+            return null;
+        }
+        let type: ParseType | null = this.type();
+        if (type === null) {
+            this.errors.push("No type given in scan statement");
+            return null;
+        }
+        if(!this.matchAdvance([TokenType.COMMA])){
+            this.errors.push("Expected ',' at line: " + this.peek().line.toString());
+            return null;
+        }
+        if (!this.match([TokenType.IDENTIFIER])) {
+            this.errors.push("ParseDeclaration: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
+            return null;
+        }
+        let identifier: ParseIdentifier = this.term() as ParseIdentifier;
+        this.matchAdvance([TokenType.RIGHT_PAREN]);
+        return new ParseScan(string, type, identifier, identifier.lineNum);
+    }
 }
 
 

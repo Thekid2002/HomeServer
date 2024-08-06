@@ -15,6 +15,7 @@ import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
+import {Scan} from "../AST/Nodes/Statements/Scan";
 
 export class Compiler {
     varEnv: VarEnv;
@@ -37,6 +38,10 @@ export class Compiler {
 
         if (statement instanceof Print) {
             return this.compilePrint(statement as Print);
+        }
+
+        if (statement instanceof Scan) {
+            return this.compileScan(statement as Scan);
         }
 
         if (statement instanceof While) {
@@ -141,6 +146,14 @@ export class Compiler {
         throw new Error("Logging for type: " + ValueTypeNames[print.expression.type] + " not implemented");
     }
 
+    compileScan(scan: Scan): string {
+        let message = this.compileAbstractExpression(scan.message);
+        let type = this.compileValueType(scan.type);
+        return `${message}\n` +
+                `call $scan${type}` + `\n` +
+                `local.set $${scan.identifier.value}`;
+    }
+
     compileProgram(statement: Program): string {
         let body: string = "";
         if(statement.body !== null) {
@@ -154,6 +167,8 @@ export class Compiler {
             '(import "js" "concat" (func $concat (param i32 i32 i32 i32 i32) (result i32 i32)))\n' +
             `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32 i32)))\n` +
             `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32 i32)))\n` +
+            `(import "js" "scanI32" (func $scanI32 (param i32 i32) (result i32)))\n` +
+            `(import "js" "scanF64" (func $scanF64 (param i32 i32) (result f64)))\n` +
             `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
@@ -251,10 +266,10 @@ export class Compiler {
 
     compileValueType(type: ValueType): string {
         if (type.type === ValueTypeEnum.NUM) {
-            return `f64`;
+            return `F64`;
         }
         if (type.type === ValueTypeEnum.BOOL) {
-            return `i32`;
+            return `I32`;
         }
         throw new Error("Unknown type: " + type.type.toString());
     }

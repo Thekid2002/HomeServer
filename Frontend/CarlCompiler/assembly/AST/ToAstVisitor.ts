@@ -37,8 +37,17 @@ import {ParseCompoundStatement} from "../Parser/Statements/ParseCompoundStatemen
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import { ParseString } from "../Parser/Expressions/Terms/ParseString";
 import { ASTString as ASTString } from "./Nodes/Expressions/Terms/ASTString";
+import { ParseScan } from "../Parser/Statements/ParseScan";
+import {Scan} from "./Nodes/Statements/Scan";
+import {ParseIncrement} from "../Parser/Statements/ParseIncrement";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
+    visitScan(statement: ParseScan): AbstractNode {
+        let message = statement.message.accept<AbstractNode>(this) as ASTString
+        let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
+        let type = statement.type.accept<AbstractNode>(this) as ValueType;
+        return new Scan(message, type, identifier, statement.lineNum);
+    }
     visitString(param: ParseString): AbstractNode {
         return new ASTString(param.value.literal, param.lineNum);
     }
@@ -193,6 +202,19 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         let left = statement.left.accept<AbstractNode>(this);
         let right = statement.right.accept<AbstractNode>(this);
         return new CompoundStatement(left as AbstractStatement, right as AbstractStatement, statement.lineNum);
+    }
+
+    visitIncrement(statement: ParseIncrement): AbstractNode {
+        let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
+        let operator: string | null = null;
+        if(statement.operator === "++") {
+            operator = "+";
+        }
+        if(statement.operator === "--") {
+            operator = "-";
+        }
+
+        return new Assignment(identifier, new BinaryExpression(identifier, operator!, new Num("1", statement.lineNum), statement.lineNum), statement.lineNum);
     }
 
 }

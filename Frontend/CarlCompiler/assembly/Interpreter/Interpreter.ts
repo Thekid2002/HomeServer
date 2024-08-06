@@ -20,6 +20,7 @@ import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import { ASTString } from "../AST/Nodes/Expressions/Terms/ASTString";
 import {ValString} from "../Env/Values/ValString";
 import {VarEnv} from "../Env/VarEnv";
+import { Scan } from "../AST/Nodes/Statements/Scan";
 
 
 export class Interpreter implements ASTVisitor<ValObject | null> {
@@ -28,6 +29,11 @@ export class Interpreter implements ASTVisitor<ValObject | null> {
 
     constructor(varEnv: VarEnv) {
         this.varEnv = varEnv;
+    }
+
+    visitScan(statement: Scan): ValObject | null {
+        console.log("Scan not implemented in interpreter");
+        return null;
     }
 
     visitString(param: ASTString): ValObject | null {
