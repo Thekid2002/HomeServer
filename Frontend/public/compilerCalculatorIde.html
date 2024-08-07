@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compiler Calculator</title>
+    <base href="/HomeServer/Frontend/public/">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculatorIde.css">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
+    <!--<link rel="stylesheet" href="compilerCalculator.css">
+    <link rel="stylesheet" href="compilerCalculatorIde.css">
+    <link rel="stylesheet" href="sharedStyles.css">-->
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <!-- CodeMirror Darcula Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/darcula.min.css">
+</head>
+<body>
+<div class="page">
+    <div class="toolbar">
+        <div class="options-buttons">
+            <button onclick="goToPage('simpleCalculator')">Simple Calculator</button>
+            <button onclick="goToPage('interpreterCalculator')">Interpreter Calculator</button>
+            <button onclick="goToPage('compilerCalculator')">Compiler Calculator</button>
+            <button onclick="goToPage('compilerCalculatorIde')">IDE</button>
+            <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
+        </div>
+        <div class="example-choice">
+            <select id="examples">
+
+            </select>
+            <div>
+                <input type="checkbox" id="optimize" name="optimize" value="optimize">
+                <label for="optimize">Optimize</label>
+            </div>
+        </div>
+        <div class="compile-buttons">
+            <button onclick="compile()">Compile</button>
+            <button onclick="execute()">Execute</button>
+        </div>
+    </div>
+    <div class="page-layout">
+        <div id="code-editor-window" class="code-editor-window">
+            <div id="pull-code-editor" class="pull-code-editor">
+                <p>Code Editor</p>
+            </div>
+            <textarea id="code" class="code-editor" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
+        </div>
+        <div id="terminal-window" class="terminal-window">
+            <div id="pull-terminal" class="pull-terminal">
+                <p>Terminal</p>
+            </div>
+            <textarea id="terminal" class="terminal" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
+        </div>
+    </div>
+</div>
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<!-- CodeMirror Modes (for syntax highlighting) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+<!-- Optionally include other modes if you need -->
+<script src="libwabt.js"></script>
+<script type="module">
+    import {goToPage} from './navigation.js';
+    import {compile, execute} from './compilerCalculator.js';
+    window.compile = compile;
+    window.execute = execute;
+    window.goToPage = goToPage;
+
+    // Initialize CodeMirror on the textarea
+    const codeTextarea = document.getElementById('code');
+    const codeEditor = CodeMirror.fromTextArea(codeTextarea, {
+        lineNumbers: true,
+        mode: 'javascript', // Set mode according to the language you're editing
+        theme: 'default', // Set the theme to Darcula
+    });
+
+    const terminal = CodeMirror.fromTextArea(document.getElementById('terminal'), {
+        lineNumbers: true,
+        mode: 'javascript',
+        theme: 'default',
+        readOnly: true,
+    });
+
+    // You might want to attach the editor instance to the window for further use
+    window.codeEditor = codeEditor;
+    window.terminal = terminal;
+
+    const terminalWindow = document.getElementById("terminal-window")
+    let terminalResizer =  document.getElementById('pull-terminal');
+
+    const codeEditorWindow = document.getElementById("code-editor-window")
+    let codeEditorResizer =  document.getElementById('pull-code-editor');
+
+    let originalSize = 0;
+    let originalCoordinate = 0;
+
+    terminalResizer.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        originalSize = parseFloat(getComputedStyle(terminalWindow, null).getPropertyValue('height').replace('px', ''));
+        originalCoordinate = e.pageY;
+        window.addEventListener('mousemove', resizeHeight);
+        window.addEventListener('mouseup', stopResize);
+    });
+
+    codeEditorResizer.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        originalSize = parseFloat(getComputedStyle(codeEditorWindow, null).getPropertyValue('width').replace('px', ''));
+        originalCoordinate = e.pageX;
+        window.addEventListener('mousemove', resizeWidth);
+        window.addEventListener('mouseup', stopResize);
+    });
+
+    function resizeHeight(e) {
+        const newSize = originalSize - (e.pageY - originalCoordinate);
+        terminalWindow.style.height = `${newSize}px`;
+        codeEditorWindow.style.height = `${window.innerHeight-40-newSize}px`;
+    }
+
+    function resizeWidth(e) {
+        const newSize = originalSize - (e.pageX - originalCoordinate);
+        codeEditorWindow.style.width = `${newSize}px`;
+    }
+
+
+    function stopResize() {
+        window.removeEventListener('mousemove', resizeHeight);
+        window.removeEventListener('mousemove', resizeWidth);
+        window.removeEventListener('mouseup', stopResize);
+    }
+
+    // Call the function to make the terminal resizable by height
+
+    // Call the function to make the terminal resizable by width
+</script>
+<script src="examples.js"></script>
+</body>
+</html>

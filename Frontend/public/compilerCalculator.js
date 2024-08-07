@@ -23,7 +23,11 @@ WabtModule().then(function(wabt) {
  * Compile the code input into WebAssembly and execute it.
  */
 export function compile() {
-    result.value = "";
+    if(window.terminal != null){
+        window.terminal.setValue("");
+    }else {
+        result.value = "";
+    }
     const now = Date.now();
     let code = codeInput.value;
     let compiledResult;
@@ -48,7 +52,11 @@ export function compile() {
                     output += "\n";
                 }
             }
-            result.value = output;
+            if(window.terminal != null){
+                window.terminal.setValue(output);
+            }else {
+                result.value = output;
+            }
             return;
         }
 
@@ -61,7 +69,11 @@ export function compile() {
                     output += "\n";
                 }
             }
-            result.value = output;
+            if(window.terminal != null){
+                window.terminal.setValue(output);
+            }else {
+                result.value = output;
+            }
             return;
         }
 
@@ -74,13 +86,21 @@ export function compile() {
                     output += "\n";
                 }
             }
-            result.value = output;
+            if(window.terminal != null) {
+                window.terminal.setValue(output);
+            }else {
+                result.value = output;
+            }
             return;
         }
 
         const later = Date.now();
-        result.value = "Time to compile: " + (later - now) / 1000 + "s\n";
-        result.value += compiledWat;
+        if(window.terminal != null){
+            window.terminal.setValue("Time to compile: " + (later - now) / 1000 + "s\n" + compiledWat);
+        }else {
+            result.value = "Time to compile: " + (later - now) / 1000 + "s\n";
+            result.value += compiledWat;
+        }
         currentWat = compiledWat;
 
     } catch (e) {
@@ -100,7 +120,11 @@ export function execute(){
             return;
         }
 
-        result.value = "";
+        if(window.terminal != null){
+            window.terminal.setValue("");
+        }else {
+            result.value = "";
+        }
         let output = compileToWasm(currentWat);
         let prints = [];
 
@@ -233,7 +257,12 @@ export function execute(){
                     output += "\n";
                 }
             }
-            result.value = output;
+
+            if(window.terminal != null){
+                window.terminal.setValue(output);
+            }else {
+                result.value = output;
+            }
         });
     }catch (e){
         alert(e.toString());

@@ -19,9 +19,8 @@
     resize: vertical;
 }
 
-.page-padding {
-    padding: 10px;
-    display: flex;
+.page {
+    position: fixed;
     width: 100%
 }
 

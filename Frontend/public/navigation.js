@@ -12,5 +12,8 @@ export function goToPage(page) {
         case "carlInstructions":
             window.location.href = "carlInstructions.html";
             break;
+        case "compilerCalculatorIde":
+            window.location.href = "compilerCalculatorIde.html";
+            break;
     }
 }

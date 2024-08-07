@@ -1,0 +1,120 @@
+body {
+  height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  overflow: hidden;
+}
+
+.code-editor-window {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  top: 40px;
+  right: 0;
+  border: 0;
+  outline: 0;
+  flex-direction: column;
+  min-width: 40px;
+}
+
+.pull-code-editor {
+    height: 40px;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  padding-left: 35px;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.pull-terminal {
+  height: 40px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 35px;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.code-editor{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    outline: 0;
+  display: flex;
+}
+
+.terminal-window {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  height: 20vh;
+  min-height: 40px;
+  left: 0;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.terminal {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+}
+
+.toolbar{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 0;
+  outline: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options-buttons{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  gap: 10px;
+}
+
+.example-choice{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.compile-buttons{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  gap: 10px;
+}
+
+.CodeMirror {
+  height: 100% !important;
+  width: 100% !important;
+  font-size: 20px;
+}
