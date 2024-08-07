@@ -51,7 +51,7 @@ export class CombinedChecker implements ASTVisitor<AbstractType | null> {
             return new ValueType(ValueTypeEnum.Error, expression.lineNum);
         }
 
-        if(expression.operator === "-" || expression.operator === "*" || expression.operator === "/") {
+        if(expression.operator === "-" || expression.operator === "*" || expression.operator === "/" || expression.operator === "%") {
             if(left.type !== ValueTypeEnum.NUM || right.type !== ValueTypeEnum.NUM) {
                 this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.NUM] + " but got: " + ValueTypeNames[left.type]);
             }

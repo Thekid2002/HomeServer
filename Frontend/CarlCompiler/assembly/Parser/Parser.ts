@@ -527,7 +527,7 @@ export class Parser {
     private scan(): ParseScan | null {
         this.advance();
         this.matchAdvance([TokenType.LEFT_PAREN]);
-        let string: ParseString = this.term() as ParseString;
+        let string = this.term();
         if(!this.matchAdvance([TokenType.COMMA])){
             this.errors.push("Expected ',' at line: " + this.peek().line.toString());
             return null;

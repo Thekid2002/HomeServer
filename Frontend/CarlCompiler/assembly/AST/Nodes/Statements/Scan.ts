@@ -4,13 +4,14 @@ import {AbstractNode} from "../AbstractNode";
 import {Identifier} from "../Expressions/Terms/Identifier";
 import {ValueType} from "../Types/ValueType";
 import {ASTString} from "../Expressions/Terms/ASTString";
+import {AbstractExpression} from "../Expressions/AbstractExpression";
 
 export class Scan extends AbstractStatement {
-    message: ASTString;
+    message: AbstractExpression;
     identifier: Identifier;
     type: ValueType;
 
-    constructor(message: ASTString, type: ValueType, identifier: Identifier, lineNum: i32) {
+    constructor(message: AbstractExpression, type: ValueType, identifier: Identifier, lineNum: i32) {
         super(lineNum);
         this.message = message;
         this.type = type;

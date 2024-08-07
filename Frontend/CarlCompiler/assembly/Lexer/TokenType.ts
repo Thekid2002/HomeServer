@@ -70,6 +70,9 @@ export enum TokenType {
     THIS,         // this
     VAR,          // var
 
+    //Comment
+    COMMENT,      // comment
+
     EOF          // end of file
 }
 
@@ -144,6 +147,9 @@ export const TokenTypes: string[] = [
     "SUPER",        // super
     "THIS",         // this
     "VAR",          // var
+
+    //Comment
+    "COMMENT",      // comment
 
     "EOF"          // end of file
 ];

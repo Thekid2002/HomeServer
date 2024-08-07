@@ -34,7 +34,9 @@ export function compile() {
         console.log(compiledResult);
         jsonRes = JSON.parse(compiledResult);
         console.log(jsonRes);
-        jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
+        if(jsonRes.compilerOutput != null) {
+            jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
+        }
         compiledWat = jsonRes.compilerOutput;
 
         if(jsonRes.lexerErrors.length > 0 ) {
@@ -93,6 +95,11 @@ export function execute(){
             return;
         }
 
+        if(currentWat === ""){
+            alert("No wat code to execute");
+            return;
+        }
+
         result.value = "";
         let output = compileToWasm(currentWat);
         let prints = [];
@@ -102,9 +109,10 @@ export function execute(){
             const importObject = {
                 js: {
                     memory,
-                    concat: (offset1, offset2, stackPointer) => {
+                    concat: (offset1, offset2) => {
                         // Access the memory buffer from the WebAssembly.Memory instance
                         const buffer = new Uint8Array(memory.buffer);
+                        let stackPointer = wasmInstance.exports.stackPointer.value;
 
                         // Read from memory until a null terminator is found
                         let i = 0;
@@ -121,7 +129,7 @@ export function execute(){
                             i++;
                         }
 
-                        let str = string1 + string2;
+                        let str = string1 + string2 + '\0';
 
                         // Write the string to memory
                         for (let i = 0; i < str.length; i++) {
@@ -130,33 +138,35 @@ export function execute(){
                         wasmInstance.exports.stackPointer.value += str.length;
                         return stackPointer;
                     },
-                    toStringI32: (value, stackPointer) => {
+                    toStringI32: (value) => {
                         // Access the memory buffer from the WebAssembly.Memory instance
                         const buffer = new Uint8Array(memory.buffer);
+                        let stackPointer = wasmInstance.exports.stackPointer.value;
 
                         // Convert the integer to a string
-                        const str = value.toString();
+                        const str = value.toString() + '\0';
 
                         // Write the string to memory
                         for (let i = 0; i < str.length; i++) {
                             buffer[stackPointer + i] = str.charCodeAt(i);
                         }
                         wasmInstance.exports.stackPointer.value += str.length;
-                        return [stackPointer, str.length];
+                        return stackPointer;
                     },
-                    toStringF64: (value, stackPointer) => {
+                    toStringF64: (value) => {
                         // Access the memory buffer from the WebAssembly.Memory instance
                         const buffer = new Uint8Array(memory.buffer);
+                        let stackPointer = wasmInstance.exports.stackPointer.value;
 
                         // Convert the integer to a string
-                        const str = value.toString();
+                        const str = value.toString() + '\0';
 
                         // Write the string to memory
                         for (let i = 0; i < str.length; i++) {
                             buffer[stackPointer + i] = str.charCodeAt(i);
                         }
                         wasmInstance.exports.stackPointer.value += str.length;
-                        return [stackPointer, str.length];
+                        return stackPointer;
                     },
                     scanF64: (offset) => {
                         return parseFloat(prompt((logMemory(memory.buffer, offset))));
@@ -175,18 +185,19 @@ export function execute(){
                         return !!parseInt(value);
                     },
                     scanString: (offset) => {
-                        let value = prompt((logMemory(memory.buffer, offset)));
+                        let value = prompt((logMemory(memory.buffer, offset))) + '\0';
                         if(value == null){
                             return 0;
                         }
 
+                        let stackPointer = wasmInstance.exports.stackPointer.value;
+
                         const buffer = new Uint8Array(memory.buffer);
                         for (let i = 0; i < value.length; i++) {
-                            buffer[offset + i] = value.charCodeAt(i);
+                            buffer[stackPointer + i] = value.charCodeAt(i);
                         }
-                        buffer[offset + value.length] = '\0';
                         wasmInstance.exports.stackPointer.value += value.length;
-                        return offset;
+                        return stackPointer;
                     }
                 },
                 console: {

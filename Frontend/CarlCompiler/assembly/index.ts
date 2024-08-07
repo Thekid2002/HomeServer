@@ -39,9 +39,10 @@ function scanAndParseAndToAst(string: string): CompilerResult {
     let parser = new Parser(tokens);
     let syntaxTree = parser.parse();
     let parseTreePrinter = new ParseTreePrinter();
-    if (syntaxTree !== null) {
-        syntaxTree.accept<void>(parseTreePrinter);
+    if (syntaxTree === null) {
+        return new CompilerResult(parseTreePrinter.tree, syntaxTree, null, null, tokens, scanner.errors, parser.errors, null, null, null, null);
     }
+    syntaxTree.accept<void>(parseTreePrinter);
     if (parser.errors.length > 0) {
         for (let i = 0; i < parser.errors.length; i++) {
             console.error(parser.errors[i]);
@@ -49,7 +50,7 @@ function scanAndParseAndToAst(string: string): CompilerResult {
         return new CompilerResult(parseTreePrinter.tree, syntaxTree, null, null, tokens, scanner.errors, parser.errors, null);
     }
     let toAstVisitor = new ToAstVisitor();
-    let ast = syntaxTree!.accept<AbstractNode>(toAstVisitor);
+    let ast = syntaxTree.accept<AbstractNode>(toAstVisitor);
     let astPrinter = new ASTPrinter();
     ast.accept<void>(astPrinter);
     let combinedChecker = new CombinedChecker();
@@ -107,7 +108,7 @@ class CompilerResult {
     astTree: AbstractNode | null;
     tokens: Token[] | null;
     checkEnv: VarEnv | null;
-    compilerOutput: string | null;
+    compilerOutput: string;
     interpretOutput: string[] | null;
 
     constructor(parsePrint: string[] | null, parseTree: ParseProgram | null, astPrint: string[] | null, astTree: AbstractNode | null, tokens: Token[], lexerErrors: string[] | null, parseErrors: string[] | null,
@@ -120,7 +121,7 @@ class CompilerResult {
         this.lexerErrors = lexerErrors;
         this.parseErrors = parseErrors;
         this.combinedCheckerErrors = combinedCheckerErrors !== null ? combinedCheckerErrors : [];
-        this.compilerOutput = compilerOutput;
+        this.compilerOutput = compilerOutput !== null ? compilerOutput : "";
         this.interpretOutput = interpretOutput;
         this.checkEnv = checkEnv;
     }
@@ -195,11 +196,7 @@ class CompilerResult {
         }
         string += ",\n";
         string += "\"compilerOutput\": ";
-        if(this.compilerOutput !== null) {
-            string += "\"" + this.compilerOutput! + "\"";
-        }else{
-            string += "null";
-        }
+        string += "\"" + this.compilerOutput + "\"";
         string += ",\n";
         string += "\"interpretOutput\": ";
         string += "[";

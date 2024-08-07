@@ -45,7 +45,7 @@ import {Bool} from "./Nodes/Expressions/Terms/Bool";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     visitScan(statement: ParseScan): AbstractNode {
-        let message = statement.message.accept<AbstractNode>(this) as ASTString
+        let message = statement.message.accept<AbstractNode>(this) as AbstractExpression;
         let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
         let type = statement.type.accept<AbstractNode>(this) as ValueType;
         return new Scan(message, type, identifier, statement.lineNum);

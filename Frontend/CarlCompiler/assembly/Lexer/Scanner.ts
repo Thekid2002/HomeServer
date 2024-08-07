@@ -213,6 +213,17 @@ export class Scanner {
                 while (this.source.charAt(this.current) != '\n' && !this.isAtEnd()) {
                     this.current++;
                 }
+                return;
+            }
+            if(this.match('*')) {
+                while (this.source.charAt(this.current) != '*' && this.source.charAt(this.current + 1) != '/' && !this.isAtEnd()) {
+                    if (this.source.charAt(this.current) == '\n') {
+                        this.line++;
+                    }
+                    this.current++;
+                }
+                this.current += 2;
+                return;
             }
             return this.addToken(TokenType.SLASH, '/');
         }

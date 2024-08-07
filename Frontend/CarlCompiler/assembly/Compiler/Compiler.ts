@@ -30,6 +30,27 @@ export class Compiler {
         this.varEnv = varEnv;
         this.globalDeclarations = [];
         this.functionDeclarations = [];
+        this.functionDeclarations.push('(func $mod (param $x f64) (param $y f64) (result f64)\n' +
+            '(local $quotient f64)\n' +
+            '(local $product f64)\n' +
+            ';; Calculate the quotient\n' +
+            'local.get $x\n' +
+            'local.get $y\n' +
+            'f64.div\n' +
+            'f64.floor\n' +
+            'local.set $quotient\n' +
+            '\n' +
+            ';; Calculate the product of the quotient and the divisor\n' +
+            'local.get $quotient\n' +
+            'local.get $y\n' +
+            'f64.mul\n' +
+            'local.set $product\n' +
+            '\n' +
+            ';; Subtract the product from the original number to get the remainder\n' +
+            'local.get $x\n' +
+            'local.get $product\n' +
+            'f64.sub\n' +
+            ')');
     }
 
     compileAbstractStatement(statement: AbstractStatement): string {
@@ -171,9 +192,9 @@ export class Compiler {
             '(import "console" "logF64" (func $logF64 (param f64)))\n' +
             '(import "console" "logMemory" (func $logMemory (param i32)))\n' +
             '(import "js" "memory" (memory 1))\n' +
-            '(import "js" "concat" (func $concat (param i32 i32 i32) (result i32)))\n' +
-            `(import "js" "toStringI32" (func $toStringI32 (param i32 i32) (result i32)))\n` +
-            `(import "js" "toStringF64" (func $toStringF64 (param f64 i32) (result i32)))\n` +
+            '(import "js" "concat" (func $concat (param i32 i32) (result i32)))\n' +
+            `(import "js" "toStringI32" (func $toStringI32 (param i32) (result i32)))\n` +
+            `(import "js" "toStringF64" (func $toStringF64 (param f64) (result i32)))\n` +
             `(import "js" "scanI32" (func $scanI32 (param i32) (result i32)))\n` +
             `(import "js" "scanF64" (func $scanF64 (param i32) (result f64)))\n` +
             `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +
@@ -235,19 +256,19 @@ export class Compiler {
         if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\n${right}\nglobal.get $stackPointer\ncall $concat`;
+            return `${left}\n${right}\ncall $concat`;
         }
 
         if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type !== ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\n${right}\nglobal.get $stackPointer\ncall $toStringF64\nglobal.get $stackPointer\ncall $concat`;
+            return `${left}\n${right}\ncall $toStringF64\ncall $concat`;
         }
 
         if(expression.primaryOrLeft.type !== ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\nglobal.get $stackPointer\ncall $toStringF64\n${right}\nglobal.get $stackPointer\ncall $concat`;
+            return `${left}\ncall $toStringF64\n${right}\ncall $concat`;
         }
 
         let left = this.compileAbstractExpression(expression.primaryOrLeft);
@@ -301,6 +322,9 @@ export class Compiler {
         }
         if (operator === "/") {
             return "f64.div";
+        }
+        if(operator === "%") {
+            return "call $mod";
         }
         if (operator === "==") {
             return "f64.eq";
