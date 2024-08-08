@@ -96,10 +96,9 @@ export function compile() {
 
         const later = Date.now();
         if(window.terminal != null){
-            window.terminal.setValue("Time to compile: " + (later - now) / 1000 + "s\n" + compiledWat);
+            window.terminal.setValue("Time to compile: " + (later - now) / 1000 + "s\n");
         }else {
             result.value = "Time to compile: " + (later - now) / 1000 + "s\n";
-            result.value += compiledWat;
         }
         currentWat = compiledWat;
 
@@ -244,15 +243,14 @@ export function execute(){
             const later = Date.now();
             let output = "";
             output += "Time to run: " + (later - now) / 1000 + "s\n";
-            let lineNum = 0;
             for (let i = 0; i < jsonRes.parseErrors.length; i++) {
-                output += lineNum++ + ": " + jsonRes.parseErrors[i];
+                output += jsonRes.parseErrors[i];
                 if (i < jsonRes.parseErrors.length - 1) {
                     output += "\n";
                 }
             }
             for (let i = 0; i < prints.length; i++) {
-                output += lineNum++ + ": " + prints[i];
+                output += prints[i];
                 if (i < prints.length - 1) {
                     output += "\n";
                 }
