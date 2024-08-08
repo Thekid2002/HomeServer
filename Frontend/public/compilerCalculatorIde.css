@@ -18,6 +18,7 @@ body {
   outline: 0;
   flex-direction: column;
   min-width: 40px;
+  max-width: 100%;
 }
 
 .pull-code-editor {
