@@ -81,57 +81,64 @@
         theme: 'default',
         readOnly: true,
     });
-
-    // You might want to attach the editor instance to the window for further use
+/// Attach the editor instance to the window for further use
     window.codeEditor = codeEditor;
     window.terminal = terminal;
 
-    const terminalWindow = document.getElementById("terminal-window")
-    let terminalResizer =  document.getElementById('pull-terminal');
+    const terminalWindow = document.getElementById("terminal-window");
+    let terminalResizer = document.getElementById('pull-terminal');
 
-    const codeEditorWindow = document.getElementById("code-editor-window")
-    let codeEditorResizer =  document.getElementById('pull-code-editor');
+    const codeEditorWindow = document.getElementById("code-editor-window");
+    let codeEditorResizer = document.getElementById('pull-code-editor');
 
     let originalSize = 0;
     let originalCoordinate = 0;
 
-    terminalResizer.addEventListener('mousedown', function(e) {
+    terminalResizer.addEventListener('mousedown', startResizeHeight);
+    terminalResizer.addEventListener('touchstart', startResizeHeight);
+
+    codeEditorResizer.addEventListener('mousedown', startResizeWidth);
+    codeEditorResizer.addEventListener('touchstart', startResizeWidth);
+
+    function startResizeHeight(e) {
         e.preventDefault();
         originalSize = parseFloat(getComputedStyle(terminalWindow, null).getPropertyValue('height').replace('px', ''));
-        originalCoordinate = e.pageY;
+        originalCoordinate = e.pageY || e.touches[0].pageY;
         window.addEventListener('mousemove', resizeHeight);
+        window.addEventListener('touchmove', resizeHeight);
         window.addEventListener('mouseup', stopResize);
-    });
+        window.addEventListener('touchend', stopResize);
+    }
 
-    codeEditorResizer.addEventListener('mousedown', function(e) {
+    function startResizeWidth(e) {
         e.preventDefault();
         originalSize = parseFloat(getComputedStyle(codeEditorWindow, null).getPropertyValue('width').replace('px', ''));
-        originalCoordinate = e.pageX;
+        originalCoordinate = e.pageX || e.touches[0].pageX;
         window.addEventListener('mousemove', resizeWidth);
+        window.addEventListener('touchmove', resizeWidth);
         window.addEventListener('mouseup', stopResize);
-    });
+        window.addEventListener('touchend', stopResize);
+    }
 
     function resizeHeight(e) {
-        const newSize = originalSize - (e.pageY - originalCoordinate);
+        const newSize = originalSize - ((e.pageY || e.touches[0].pageY) - originalCoordinate);
         terminalWindow.style.height = `${newSize}px`;
-        codeEditorWindow.style.height = `${window.innerHeight-40-newSize}px`;
+        codeEditorWindow.style.height = `${window.innerHeight - 40 - newSize}px`;
     }
 
     function resizeWidth(e) {
-        const newSize = originalSize - (e.pageX - originalCoordinate);
+        const newSize = originalSize - ((e.pageX || e.touches[0].pageX) - originalCoordinate);
         codeEditorWindow.style.width = `${newSize}px`;
     }
 
-
     function stopResize() {
         window.removeEventListener('mousemove', resizeHeight);
+        window.removeEventListener('touchmove', resizeHeight);
         window.removeEventListener('mousemove', resizeWidth);
+        window.removeEventListener('touchmove', resizeWidth);
         window.removeEventListener('mouseup', stopResize);
+        window.removeEventListener('touchend', stopResize);
     }
-
-    // Call the function to make the terminal resizable by height
-
-    // Call the function to make the terminal resizable by width
 </script>
 <script src="examples.js"></script>
 </body>
