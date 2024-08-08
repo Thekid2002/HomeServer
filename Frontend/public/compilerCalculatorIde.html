@@ -6,7 +6,7 @@
     <base href="/HomeServer/Frontend/public/">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculatorIde.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">-->
     <!--<link rel="stylesheet" href="compilerCalculator.css">
     <link rel="stylesheet" href="compilerCalculatorIde.css">
     <link rel="stylesheet" href="sharedStyles.css">-->
@@ -35,19 +35,19 @@
             </div>
         </div>
         <div class="compile-buttons">
-            <button onclick="compile()">Compile</button>
-            <button onclick="execute()">Execute</button>
+            <button onclick="compileAndExecute()">Play</button>
+            <button onclick="debug()">Debug</button>
         </div>
     </div>
     <div class="page-layout">
         <div id="code-editor-window" class="code-editor-window">
-            <div id="pull-code-editor" class="pull-code-editor">
+            <div id="pull-code-editor" class="puller">
                 <p>Code Editor</p>
             </div>
             <textarea id="code" class="code-editor" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
         <div id="terminal-window" class="terminal-window">
-            <div id="pull-terminal" class="pull-terminal">
+            <div id="pull-terminal" class="puller">
                 <p>Terminal</p>
             </div>
             <textarea id="terminal" class="terminal" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
@@ -62,10 +62,11 @@
 <script src="libwabt.js"></script>
 <script type="module">
     import {goToPage} from './navigation.js';
-    import {compile, execute} from './compilerCalculator.js';
+    import {compile, execute, compileAndExecute} from './compilerCalculator.js';
     window.compile = compile;
     window.execute = execute;
     window.goToPage = goToPage;
+    window.compileAndExecute = compileAndExecute;
 
     // Initialize CodeMirror on the textarea
     const codeTextarea = document.getElementById('code');
@@ -84,6 +85,12 @@
 /// Attach the editor instance to the window for further use
     window.codeEditor = codeEditor;
     window.terminal = terminal;
+
+    terminal.on('change', () => {
+        setTimeout(() => {
+            terminal.scrollTo(null, terminal.getScrollInfo().height);
+        }, 10);
+    });
 
     const terminalWindow = document.getElementById("terminal-window");
     let terminalResizer = document.getElementById('pull-terminal');

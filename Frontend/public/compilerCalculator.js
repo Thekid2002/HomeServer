@@ -19,20 +19,28 @@ WabtModule().then(function(wabt) {
     wabtInstance = wabt;
 });
 
+export function compileAndExecute() {
+    let success = compile();
+    if(success) {
+        execute();
+    }
+}
+
 /**
  * Compile the code input into WebAssembly and execute it.
  */
 export function compile() {
-    if(window.terminal != null){
-        window.terminal.setValue("");
-    }else {
-        result.value = "";
-    }
     const now = Date.now();
     let code = codeInput.value;
+    if(window.codeEditor != null){
+        code = window.codeEditor.getValue();
+    }
     let compiledResult;
     let compiledWat;
     try {
+        if(window.terminal.getValue() !== ""){
+            window.terminal.setValue("");
+        }
         // Calculate the WAT (WebAssembly Text format) using a custom language function
         compiledResult = calculateViaLanguage(code, "compiler", optimization);
         console.log(compiledResult);
@@ -45,62 +53,61 @@ export function compile() {
 
         if(jsonRes.lexerErrors.length > 0 ) {
             let output = "";
-            let lineNum = 0;
             for (let i = 0; i < jsonRes.lexerErrors.length; i++) {
-                output += lineNum++ + ": " + jsonRes.lexerErrors[i];
+                output += jsonRes.lexerErrors[i];
                 if (i < jsonRes.lexerErrors.length - 1) {
                     output += "\n";
                 }
             }
             if(window.terminal != null){
-                window.terminal.setValue(output);
+                window.terminal.setValue(window.terminal.getValue() + output);
             }else {
                 result.value = output;
             }
-            return;
+            return false;
         }
 
         if(jsonRes.parseErrors.length > 0) {
             let output = "";
-            let lineNum = 0;
             for (let i = 0; i < jsonRes.parseErrors.length; i++) {
-                output += lineNum++ + ": " + jsonRes.parseErrors[i];
+                output += jsonRes.parseErrors[i];
                 if (i < jsonRes.parseErrors.length - 1) {
                     output += "\n";
                 }
             }
             if(window.terminal != null){
-                window.terminal.setValue(output);
+                //Add the output to the terminal and dont overwrite the previous output
+                window.terminal.setValue(window.terminal.getValue() + output);
             }else {
-                result.value = output;
+                result.value += output;
             }
-            return;
+            return false;
         }
 
         if(jsonRes.combinedCheckerErrors.length > 0) {
             let output = "";
-            let lineNum = 0;
             for (let i = 0; i < jsonRes.combinedCheckerErrors.length; i++) {
-                output += lineNum++ + ": " + jsonRes.combinedCheckerErrors[i];
+                output += jsonRes.combinedCheckerErrors[i];
                 if (i < jsonRes.combinedCheckerErrors.length - 1) {
                     output += "\n";
                 }
             }
             if(window.terminal != null) {
-                window.terminal.setValue(output);
+                window.terminal.setValue(window.terminal.getValue() + output);
             }else {
-                result.value = output;
+                result.value += output;
             }
-            return;
+            return false;
         }
 
         const later = Date.now();
         if(window.terminal != null){
-            window.terminal.setValue("Time to compile: " + (later - now) / 1000 + "s\n");
+            window.terminal.setValue(window.terminal.getValue() + "Time to compile: " + (later - now) / 1000 + "s\n");
         }else {
-            result.value = "Time to compile: " + (later - now) / 1000 + "s\n";
+            result.value += "Time to compile: " + (later - now) / 1000 + "s\n";
         }
         currentWat = compiledWat;
+        return true;
 
     } catch (e) {
         alert(e.toString());
@@ -119,11 +126,6 @@ export function execute(){
             return;
         }
 
-        if(window.terminal != null){
-            window.terminal.setValue("");
-        }else {
-            result.value = "";
-        }
         let output = compileToWasm(currentWat);
         let prints = [];
 
@@ -257,9 +259,9 @@ export function execute(){
             }
 
             if(window.terminal != null){
-                window.terminal.setValue(output);
+                window.terminal.setValue(window.terminal.getValue() + output);
             }else {
-                result.value = output;
+                result.value += output;
             }
         });
     }catch (e){

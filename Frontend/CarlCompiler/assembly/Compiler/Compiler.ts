@@ -139,10 +139,10 @@ export class Compiler {
 
         let body: string = this.compileAbstractStatement(statement.body!);
 
-        return `${condition}\n` +
+        return `${declaration}` + `\n` +
+            `${condition}\n` +
             '(if \n' +
             '(then \n' +
-            `${declaration}` + `\n` +
             '\n(loop $while' + `${start}` + '\n' +
             `${body}` + `\n` +
             `${condition}` + '\n' +
