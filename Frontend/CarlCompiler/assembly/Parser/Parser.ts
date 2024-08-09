@@ -68,7 +68,6 @@ export class Parser {
         return new ParseProgram(body, statements[0].lineNum);
     }
 
-
     private complexStatement(): ParseAbstractStatement | null {
         let statement: ParseAbstractStatement | null = null;
         let exportStatement = false;
@@ -83,7 +82,7 @@ export class Parser {
                 if (this.peekpeekpeek().type === TokenType.LEFT_PAREN) {
                     statement = this.function(exportStatement);
                 } else {
-                    statement = this.declaration(exportStatement);
+                    statement = this.declaration(exportStatement, true);
                 }
             }
         } else {
@@ -119,7 +118,7 @@ export class Parser {
                 if (this.peekpeekpeek().type === TokenType.LEFT_PAREN) {
                     statement = this.function(false);
                 } else {
-                    statement = this.declaration(false);
+                    statement = this.declaration(false, false);
                 }
             }
         }
@@ -162,7 +161,7 @@ export class Parser {
     }
 
 
-    private declaration($export: boolean): ParseDeclaration | null {
+    private declaration($export: boolean, global: boolean): ParseDeclaration | null {
         let type = this.type();
         if (type === null) {
             this.errors.push("Error in type");
@@ -178,7 +177,7 @@ export class Parser {
         if (this.matchAdvance([TokenType.EQUAL])) {
             expression = this.expression();
         }
-        return new ParseDeclaration(identifier, type, expression, $export, identifier.lineNum);
+        return new ParseDeclaration(identifier, type, expression, $export, global, identifier.lineNum);
     }
 
     private expression(): ParseExpression {
@@ -445,12 +444,21 @@ export class Parser {
     }
 
     private for(): ParseLoopStatement | null {
-        let declaration = this.declaration(false);
+        let initiator: ParseAbstractStatement | null = null;
+        if(this.match([TokenType.NUM, TokenType.BOOL, TokenType.STRING])) {
+            initiator = this.declaration(false, false);
+        }
+        else if (this.match([TokenType.IDENTIFIER])) {
+            initiator = this.assignment();
+        }else{
+            this.errors.push("Expected declaration or assignment at line: " + this.peek().line.toString());
+            return null;
+        }
         if (!this.matchAdvance([TokenType.SEMICOLON])) {
             this.errors.push("Expected ';' at line: " + this.peek().line.toString());
             return null;
         }
-        let expression = this.expression();
+        let condition = this.expression();
         if (!this.matchAdvance([TokenType.SEMICOLON])) {
             this.errors.push("Expected ';' at line: " + this.peek().line.toString());
             return null;
@@ -460,7 +468,7 @@ export class Parser {
             this.errors.push("3_Expected ')' at line: " + this.peek().line.toString());
             return null;
         }
-        if (declaration == null || assignment == null) {
+        if (initiator == null || assignment == null) {
             this.errors.push("Error in for loop");
             return null;
         }
@@ -482,7 +490,7 @@ export class Parser {
                 this.errors.push("Expected '}' at line: " + this.peek().line.toString());
                 return null;
             }
-            return new ParseLoopStatement(declaration, expression, statement, expression.lineNum);
+            return new ParseLoopStatement(initiator, condition, statement, condition.lineNum);
         }
         this.errors.push("Expected '{' at line: " + this.peek().line.toString());
         return null;

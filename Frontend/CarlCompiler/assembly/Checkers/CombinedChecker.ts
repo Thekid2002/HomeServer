@@ -32,6 +32,7 @@ export class CombinedChecker {
         if(statement.body !== null) {
             this.checkStatement(statement.body!, varEnv, funcEnv);
         }
+        statement.varEnv = varEnv;
         return new StatementType(StatementTypeEnum.PROGRAM, statement.lineNum);
     }
 
@@ -246,7 +247,7 @@ export class CombinedChecker {
     checkIdentifier(term: Identifier, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
         let type = varEnv.lookUpType(term.value) as ValueType | null;
         if (type === null) {
-            this.errors.push("Variable " + term.value + " not declared in Line: " + term.lineNum.toString());
+            this.errors.push("0_Variable " + term.value + " not declared in Line: " + term.lineNum.toString());
             return new ValueType(ValueTypeEnum.Error, term.lineNum);
         }
         term.type = type.type;
@@ -261,7 +262,11 @@ export class CombinedChecker {
         if(exprType !== null && exprType.type !== statement.type.type) {
             this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[statement.type.type] + " but got: " + ValueTypeNames[exprType.type]);
         }
-        varEnv.addVar(statement.identifier.value, statement.type);
+        if(statement.global){
+            varEnv.addGlobalVar(statement.identifier.value, statement.type);
+        }else {
+            varEnv.addVar(statement.identifier.value, statement.type);
+        }
         return new StatementType(StatementTypeEnum.VAR_DECL, statement.lineNum);
     }
 
@@ -281,12 +286,12 @@ export class CombinedChecker {
     }
 
     checkWhile(statement: While, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
-        let declType: StatementType | null = null;
-        if(statement.declaration !== null) {
-            declType = this.checkStatement(statement.declaration!, varEnv, funcEnv);
+        let initType: StatementType | null = null;
+        if(statement.initiator !== null) {
+            initType = this.checkStatement(statement.initiator!, varEnv, funcEnv);
         }
-        if(declType !== null && declType.type !== StatementTypeEnum.VAR_DECL) {
-            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + StatementTypeNames[StatementTypeEnum.VAR_DECL] + " but got: " + StatementTypeNames[declType.type]);
+        if(initType !== null && initType.type !== StatementTypeEnum.VAR_DECL && initType.type !== StatementTypeEnum.ASSIGNMENT) {
+            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + StatementTypeNames[StatementTypeEnum.VAR_DECL] + " or " + StatementTypeNames[StatementTypeEnum.ASSIGNMENT] + " but got: " + StatementTypeNames[initType.type]);
         }
         let condType = this.checkExpression(statement.condition, varEnv, funcEnv);
         if(condType === null) {
@@ -307,7 +312,7 @@ export class CombinedChecker {
         let exprType = this.checkExpression(statement.expression, varEnv, funcEnv) as ValueType;
         let identifierType = varEnv.lookUpType(statement.identifier.value) as ValueType | null;
         if(identifierType === null) {
-            this.errors.push("Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
+            this.errors.push("1_Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
             return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
         }
         if (exprType.type !== identifierType.type) {
@@ -335,7 +340,7 @@ export class CombinedChecker {
     checkScan(statement: Scan, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
         let type = varEnv.lookUpType(statement.identifier.value) as ValueType | null;
         if (type === null) {
-            this.errors.push("Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
+            this.errors.push("2_Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
             return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
         }
         if(type.type !== statement.type.type) {

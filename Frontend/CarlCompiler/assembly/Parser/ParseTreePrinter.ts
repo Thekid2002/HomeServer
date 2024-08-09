@@ -76,7 +76,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     visitLoopStatement(statement: ParseLoopStatement): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": While");
         this.number++;
-        statement.expression.accept<void>(this);
+        statement.condition.accept<void>(this);
         if(statement.body !== null) {
             statement.body.accept<void>(this);
         }
@@ -214,7 +214,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
     }
 
     visitDeclaration(statement: ParseDeclaration): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseDeclaration " + statement.identifier.name.literal);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseDeclaration " + statement.identifier.name.literal + " global: " + statement.global.toString() + " export: " + statement.export.toString());
         this.number++;
         statement.type.accept<void>(this);
         this.number--;

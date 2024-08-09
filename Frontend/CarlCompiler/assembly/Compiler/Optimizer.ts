@@ -120,8 +120,8 @@ export class Optimizer {
 
     private optimizeWhile(statement: While): AbstractStatement | null {
         let statements: AbstractStatement[] = [];
-        if (statement.declaration !== null) {
-            let declaration = this.optimizeStatement(statement.declaration!);
+        if (statement.initiator !== null) {
+            let declaration = this.optimizeStatement(statement.initiator!);
             statements.push(declaration!);
         }
         let expression = this.optimizeExpression(statement.condition);

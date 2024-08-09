@@ -63,8 +63,8 @@ export class LivenessChecker implements ASTVisitor<void>{
             statement.body[i].accept<void>(this);
         }
         statement.condition.accept<void>(this);
-        if(statement.declaration !== null) {
-            statement.declaration!.accept<void>(this);
+        if(statement.initiator !== null) {
+            statement.initiator!.accept<void>(this);
         }
         statement.liveVariables = this.livenessAnalysis.currentLiveVars;
     }

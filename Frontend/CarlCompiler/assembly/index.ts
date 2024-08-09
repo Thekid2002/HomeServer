@@ -7,11 +7,9 @@ import {Token} from "./Lexer/Token";
 import {AbstractNode} from "./AST/Nodes/AbstractNode";
 import {Compiler} from "./Compiler/Compiler";
 import {CombinedChecker} from "./Checkers/CombinedChecker";
-import {AbstractType} from "./AST/Nodes/Types/AbstractType";
 import {ParseProgram as ParseProgram} from "./Parser/Statements/ParseProgram";
 import {Interpreter} from "./Interpreter/Interpreter";
 import {VarEnv} from "./Env/VarEnv";
-import {ValObject} from "./Env/Values/ValObject";
 import {Optimizer} from "./Compiler/Optimizer";
 import {Program} from "./AST/Nodes/Statements/Program";
 import {FuncEnv} from "./Env/FuncEnv";
@@ -29,6 +27,7 @@ export function calculateViaLanguage(string: string, type: string, optimization:
 }
 
 function scanAndParseAndToAst(string: string): CompilerResult {
+    VarEnv.resetGlobalVars();
     let scanner = new Scanner(string);
     let tokens = scanner.scanTokens();
     if(scanner.errors.length > 0) {
@@ -62,7 +61,7 @@ function scanAndParseAndToAst(string: string): CompilerResult {
         for (let i = 0; i < combinedChecker.errors.length; i++) {
             console.error(combinedChecker.errors[i]);
         }
-        return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, null, null, combinedChecker.errors);
+        return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, varEnv, funcEnv, combinedChecker.errors);
     }
     return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, varEnv, funcEnv);
 }

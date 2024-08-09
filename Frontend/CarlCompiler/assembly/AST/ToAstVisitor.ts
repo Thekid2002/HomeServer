@@ -55,7 +55,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     visitReturn(statement: ParseReturn): AbstractNode {
         let expression: AbstractExpression | null = null;
         if (statement.expression !== null) {
-            expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
+            expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
         }
         return new Return(expression!, statement.lineNum);
     }
@@ -120,13 +120,13 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
     }
 
     visitLoopStatement(statement: ParseLoopStatement): AbstractNode {
-        let declaration: Declaration | null = null;
-        if(statement.declaration !== null) {
-            declaration = statement.declaration!.accept<AbstractNode>(this) as Declaration;
+        let initiator: AbstractStatement | null = null;
+        if(statement.initiator !== null) {
+            initiator = statement.initiator!.accept<AbstractNode>(this) as AbstractStatement;
         }
-        let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
+        let expression = statement.condition.accept<AbstractNode>(this) as AbstractExpression;
         let body = statement.body.accept<AbstractNode>(this) as AbstractStatement;
-        return new While(declaration, expression, body, statement.lineNum);
+        return new While(initiator, expression, body, statement.lineNum);
     }
 
     visitProgram(statement: ParseProgram): AbstractNode {
@@ -145,7 +145,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
             expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
         }
         let $export = statement.export;
-        return new Declaration(identifier, type, expression, $export, statement.lineNum);
+        return new Declaration(identifier, type, expression, $export, statement.global, statement.lineNum);
     }
 
     visitType(type: ParseType): AbstractNode {

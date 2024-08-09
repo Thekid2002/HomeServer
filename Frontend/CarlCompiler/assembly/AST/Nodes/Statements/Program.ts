@@ -5,6 +5,7 @@ import {FuncEnv} from "../../../Env/FuncEnv";
 
 export class Program extends AbstractStatement {
     body: AbstractStatement | null;
+    varEnv: VarEnv | null = null;
 
     constructor(body: AbstractStatement | null, lineNum: i32) {
         super(lineNum);

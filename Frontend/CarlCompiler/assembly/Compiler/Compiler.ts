@@ -22,6 +22,8 @@ import {StatementType, StatementTypeEnum} from "../AST/Nodes/Types/StatementType
 import {FunctionCallStatement} from "../AST/Nodes/Statements/FunctionCallStatement";
 import {FunctionCallExpression} from "../AST/Nodes/Expressions/FunctionCallExpression";
 import {Return} from "../AST/Nodes/Statements/Return";
+import {VarEnv} from "../Env/VarEnv";
+import {ValNum} from "../Env/Values/ValNum";
 
 export class Compiler {
     wasmCode: string[] = [];
@@ -141,21 +143,26 @@ export class Compiler {
 
     compileAssignment(statement: Assignment): string {
         let expr = this.compileAbstractExpression(statement.expression);
+        if(VarEnv.globalVars.has(statement.identifier.value)) {
+            return `${expr}\nglobal.set $${statement.identifier.value}`;
+        }
         return `${expr}\nlocal.set $${statement.identifier.value}`;
+
+
     }
 
     compileWhile(statement: While): string {
         let start: i32 = this.funcCount;
         this.funcCount++;
-        let declaration: string = "";
-        if(statement.declaration !== null) {
-            declaration = this.compileDeclaration(statement.declaration!);
+        let initiator: string = "";
+        if(statement.initiator !== null) {
+            initiator = this.compileAbstractStatement(statement.initiator!);
         }
         let condition = this.compileAbstractExpression(statement.condition);
 
         let body: string = this.compileAbstractStatement(statement.body!);
 
-        return`${declaration}` + `\n` +
+        return`${initiator}` + `\n` +
             `${condition}\n` +
             '(if \n' +
             '(then \n' +
@@ -199,9 +206,8 @@ export class Compiler {
     }
 
     compileProgram(statement: Program): string {
-        let body: string = "";
         if(statement.body !== null) {
-            body = this.compileAbstractStatement(statement.body!);
+            this.compileAbstractStatement(statement.body!);
         }
         return '(module\n' +
             '(import "console" "logI32" (func $logi32 (param i32)))\n' +
@@ -293,6 +299,9 @@ export class Compiler {
     }
 
     compileIdentifier(term: Identifier): string {
+        if(VarEnv.globalVars.has(term.value)) {
+            return `global.get $${term.value}`;
+        }
         return `local.get $${term.value}`;
     }
 
@@ -308,7 +317,12 @@ export class Compiler {
         let string = "";
         if (statement.expression !== null) {
             let expr = this.compileAbstractExpression(statement.expression!);
-            string += `\n${expr}\nlocal.set $${statement.identifier.value}`;
+            if(statement.global) {
+                string += `\n${expr}\nglobal.set $${statement.identifier.value}`;
+                this.globalDeclarations.push(`(global $${statement.identifier.value} (export "${statement.identifier.value}") (mut f64) (${expr}))`);
+            }else {
+                string += `\n${expr}\nlocal.set $${statement.identifier.value}`;
+            }
         }
         return string;
     }

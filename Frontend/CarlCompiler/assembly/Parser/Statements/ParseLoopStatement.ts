@@ -3,15 +3,15 @@ import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
 import {ParseVisitor} from "../ParseVisitor";
 
 export class ParseLoopStatement extends ParseAbstractStatement {
-    declaration: ParseAbstractStatement | null;
-    expression: ParseAbstractExpression;
+    initiator: ParseAbstractStatement | null;
+    condition: ParseAbstractExpression;
     body: ParseAbstractStatement;
 
-    constructor(declaration: ParseAbstractStatement | null, expression: ParseAbstractExpression, body: ParseAbstractStatement, lineNum: i32) {
+    constructor(initiator: ParseAbstractStatement | null, condition: ParseAbstractExpression, body: ParseAbstractStatement, lineNum: i32) {
         super(lineNum);
-        this.expression = expression;
+        this.condition = condition;
         this.body = body;
-        this.declaration = declaration
+        this.initiator = initiator
     }
 
     accept<T>(visitor: ParseVisitor<T>): T {
@@ -19,6 +19,6 @@ export class ParseLoopStatement extends ParseAbstractStatement {
     }
 
     toJsonString(): string {
-        return `{"type": "LoopStatement", "expression": ${this.expression.toJsonString()}, "body": ${this.body.toJsonString()}}`;
+        return `{"type": "LoopStatement", "expression": ${this.condition.toJsonString()}, "body": ${this.body.toJsonString()}}`;
     }
 }

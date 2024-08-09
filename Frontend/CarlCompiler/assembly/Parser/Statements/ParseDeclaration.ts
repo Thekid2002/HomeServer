@@ -9,13 +9,15 @@ export class ParseDeclaration extends ParseAbstractStatement {
     type: ParseType;
     expression: ParseAbstractExpression | null;
     export: boolean;
+    global: boolean;
 
-    constructor(identifier: ParseIdentifier, type: ParseType, expression: ParseAbstractExpression | null, $export: boolean, lineNum: i32) {
+    constructor(identifier: ParseIdentifier, type: ParseType, expression: ParseAbstractExpression | null, $export: boolean, global: boolean, lineNum: i32) {
         super(lineNum);
         this.identifier = identifier;
         this.type = type;
         this.expression = expression;
         this.export = $export;
+        this.global = global;
     }
 
     accept<T>(visitor: ParseVisitor<T>): T {

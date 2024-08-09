@@ -82,8 +82,8 @@ export class Interpreter{
     }
 
     evaluateWhile(statement: While): ValObject | null {
-        if(statement.declaration !== null) {
-            statement.declaration!;
+        if(statement.initiator !== null) {
+            statement.initiator!;
         }
         let expression = this.evaluateExpression(statement.condition);
         if (expression === null) {

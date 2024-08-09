@@ -145,7 +145,7 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitDeclaration(statement: Declaration): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Declaration " + statement.identifier.value);
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Declaration " + statement.identifier.value + " global: " + statement.global.toString() + " export: " + statement.export.toString());
         this.number++;
         statement.type.accept<void>(this);
         this.number--;
