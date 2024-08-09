@@ -16,6 +16,10 @@ import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
 import { ASTString } from "./Nodes/Expressions/Terms/ASTString";
 import { Scan } from "./Nodes/Statements/Scan";
 import { Bool } from "./Nodes/Expressions/Terms/Bool";
+import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
+import { FunctionCallExpression } from "./Nodes/Expressions/FunctionCallExpression";
+import { FunctionCallStatement } from "./Nodes/Statements/FunctionCallStatement";
+import { Return } from "./Nodes/Statements/Return";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
@@ -40,6 +44,39 @@ export class ASTPrinter implements ASTVisitor<void> {
         statement.condition.accept<void>(this);
         if(statement.body !== null) {
             statement.body!.accept<void>(this);
+        }
+        this.number--;
+    }
+
+    visitFunctionDeclaration(statement: FunctionDeclaration): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionDeclaration");
+        this.number++;
+        statement.returnType.accept<void>(this);
+        statement.name.accept<void>(this);
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            statement.parameters.get(key).accept<void>(this);
+        }
+        if(statement.body !== null) {
+            statement.body.accept<void>(this);
+        }
+        this.number--;
+    }
+
+    visitFunctionCallExpression(expression: FunctionCallExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionCallExpression " + expression.functionName);
+        this.number++;
+        for (let i = 0; i < expression.actualParameters.length; i++) {
+            expression.actualParameters[i].accept<void>(this);
+        }
+        this.number--;
+    }
+
+    visitFunctionCallStatement(statement: FunctionCallStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionCallStatement " + statement.functionName);
+        this.number++;
+        for (let i = 0; i < statement.actualParameters.length; i++) {
+            statement.actualParameters[i].accept<void>(this);
         }
         this.number--;
     }
@@ -145,6 +182,13 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.number++;
         statement.type.accept<void>(this);
         statement.identifier.accept<void>(this);
+        this.number--;
+    }
+
+    visitReturn(statement: Return): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Return");
+        this.number++;
+        statement.expression.accept<void>(this);
         this.number--;
     }
 }

@@ -3,9 +3,7 @@ import {ParseEqualityExpression} from "../Parser/Expressions/ParseEqualityExpres
 import {ParseExpression} from "../Parser/Expressions/ParseExpression";
 import {Identifier as ASTIdentifier} from "./Nodes/Expressions/Terms/Identifier";
 import {ParseIdentifier} from "../Parser/Expressions/Terms/ParseIdentifier";
-import {
-    ParseMultiplicativeExpression
-} from "../Parser/Expressions/ParseMultiplicativeExpression";
+import {ParseMultiplicativeExpression} from "../Parser/Expressions/ParseMultiplicativeExpression";
 import {Num} from "./Nodes/Expressions/Terms/Num";
 import {ParseNum} from "../Parser/Expressions/Terms/ParseNum";
 import {BinaryExpression} from "./Nodes/Expressions/BinaryExpression";
@@ -29,21 +27,69 @@ import {ParsePrint} from "../Parser/Statements/ParsePrint";
 import {Print} from "./Nodes/Statements/Print";
 import {ParseLoopStatement} from "../Parser/Statements/ParseLoopStatement";
 import {While} from "./Nodes/Statements/While";
-import { ParseAssignment } from "../Parser/Statements/ParseAssignment";
+import {ParseAssignment} from "../Parser/Statements/ParseAssignment";
 import {Assignment} from "./Nodes/Statements/Assignment";
-import { ParseIfStatement } from "../Parser/Statements/ParseIfStatement";
+import {ParseIfStatement} from "../Parser/Statements/ParseIfStatement";
 import {IfStatement} from "./Nodes/Statements/IfStatement";
 import {ParseCompoundStatement} from "../Parser/Statements/ParseCompoundStatement";
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
-import { ParseString } from "../Parser/Expressions/Terms/ParseString";
-import { ASTString as ASTString } from "./Nodes/Expressions/Terms/ASTString";
-import { ParseScan } from "../Parser/Statements/ParseScan";
+import {ParseString} from "../Parser/Expressions/Terms/ParseString";
+import {ASTString as ASTString} from "./Nodes/Expressions/Terms/ASTString";
+import {ParseScan} from "../Parser/Statements/ParseScan";
 import {Scan} from "./Nodes/Statements/Scan";
 import {ParseIncrement} from "../Parser/Statements/ParseIncrement";
-import { ParseBool } from "../Parser/Expressions/Terms/ParseBool";
+import {ParseBool} from "../Parser/Expressions/Terms/ParseBool";
 import {Bool} from "./Nodes/Expressions/Terms/Bool";
+import {ParseFunction} from "../Parser/Statements/ParseFunction";
+import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
+import {AbstractType} from "./Nodes/Types/AbstractType";
+import {StatementType, StatementTypeEnum} from "./Nodes/Types/StatementType";
+import { ParseFunctionCallStatement } from "../Parser/Statements/ParseFunctionCallStatement";
+import {FunctionCallExpression} from "./Nodes/Expressions/FunctionCallExpression";
+import {FunctionCallStatement} from "./Nodes/Statements/FunctionCallStatement";
+import {ParseFunctionCallExpression} from "../Parser/Expressions/Terms/ParseFunctionCallExpression";
+import { ParseReturn } from "../Parser/Statements/ParseReturn";
+import { Return } from "./Nodes/Statements/Return";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
+    visitReturn(statement: ParseReturn): AbstractNode {
+        let expression: AbstractExpression | null = null;
+        if (statement.expression !== null) {
+            expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
+        }
+        return new Return(expression!, statement.lineNum);
+    }
+
+    visitFunctionCallExpression(expression: ParseFunctionCallExpression): FunctionCallExpression {
+        let functionName = expression.functionName.literal;
+        let actualParameters = new Array<AbstractExpression>();
+        for (let i = 0; i < expression.actualParameters.length; i++) {
+            actualParameters.push(expression.actualParameters[i].accept<AbstractNode>(this) as AbstractExpression);
+        }
+        return new FunctionCallExpression(functionName, actualParameters, expression.lineNum);
+    }
+
+    visitFunctionCallStatement(statement: ParseFunctionCallStatement): AbstractNode {
+        let functionName = statement.functionName.literal;
+        let actualParameters = new Array<AbstractExpression>();
+        for (let i = 0; i < statement.actualParameters.length; i++) {
+            actualParameters.push(statement.actualParameters[i].accept<AbstractNode>(this) as AbstractExpression);
+        }
+        return new FunctionCallStatement(functionName, actualParameters, statement.lineNum);
+    }
+
+    visitFunction(statement: ParseFunction): AbstractNode {
+        let returnType = statement.returnType.accept<AbstractNode>(this) as AbstractType;
+        let name = statement.name.accept<AbstractNode>(this) as ASTIdentifier;
+        let parameters = new Map<string, AbstractType>();
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            parameters.set((key.accept<AbstractNode>(this) as ASTIdentifier).value, statement.parameters.get(key).accept<AbstractNode>(this) as AbstractType);
+        }
+        let body = statement.body.accept<AbstractNode>(this) as AbstractStatement;
+        return new FunctionDeclaration(returnType, name, parameters, body, statement.export, statement.lineNum);
+    }
+
     visitScan(statement: ParseScan): AbstractNode {
         let message = statement.message.accept<AbstractNode>(this) as AbstractExpression;
         let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
@@ -98,7 +144,8 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         if (statement.expression !== null) {
             expression = statement.expression!.accept<AbstractNode>(this) as AbstractExpression;
         }
-        return new Declaration(identifier, type, expression, statement.lineNum);
+        let $export = statement.export;
+        return new Declaration(identifier, type, expression, $export, statement.lineNum);
     }
 
     visitType(type: ParseType): AbstractNode {
@@ -111,6 +158,9 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         if (type.name.literal === "string") {
             typ = ValueTypeEnum.STRING;
+        }
+        if(type.name.literal === "void") {
+            return new StatementType(StatementTypeEnum.VOID, type.lineNum);
         }
 
         if (typ === ValueTypeEnum.Error) {

@@ -9,7 +9,6 @@ import { Program } from "../AST/Nodes/Statements/Program";
 import { Print } from "../AST/Nodes/Statements/Print";
 import { While } from "../AST/Nodes/Statements/While";
 import { Assignment } from "../AST/Nodes/Statements/Assignment";
-import {VarEnv} from "../Env/VarEnv";
 import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
 import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
@@ -17,17 +16,21 @@ import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
 import {Scan} from "../AST/Nodes/Statements/Scan";
 import {Bool} from "../AST/Nodes/Expressions/Terms/Bool";
+import {FunctionDeclaration} from "../AST/Nodes/Statements/FunctionDeclaration";
+import {AbstractType} from "../AST/Nodes/Types/AbstractType";
+import {StatementType, StatementTypeEnum} from "../AST/Nodes/Types/StatementType";
+import {FunctionCallStatement} from "../AST/Nodes/Statements/FunctionCallStatement";
+import {FunctionCallExpression} from "../AST/Nodes/Expressions/FunctionCallExpression";
+import {Return} from "../AST/Nodes/Statements/Return";
 
 export class Compiler {
-    varEnv: VarEnv;
     wasmCode: string[] = [];
     globalDeclarations: string[] = [];
     functionDeclarations: string[] = [];
     funcCount: i32 = 0;
     stackPointer: i32 = 0;
 
-    constructor(varEnv: VarEnv) {
-        this.varEnv = varEnv;
+    constructor() {
         this.globalDeclarations = [];
         this.functionDeclarations = [];
         this.functionDeclarations.push('(func $mod (param $x f64) (param $y f64) (result f64)\n' +
@@ -81,6 +84,19 @@ export class Compiler {
         if (statement instanceof Assignment) {
             return this.compileAssignment(statement as Assignment);
         }
+
+        if (statement instanceof FunctionDeclaration) {
+            return this.compileFunctionDeclaration(statement as FunctionDeclaration);
+        }
+
+        if(statement instanceof FunctionCallStatement){
+            return this.compileFunctionCallStatement(statement as FunctionCallStatement);
+        }
+
+        if(statement instanceof Return){
+            return this.compileReturnStatement(statement as Return);
+        }
+
         throw new Error("Unknown statement type");
     }
 
@@ -139,7 +155,7 @@ export class Compiler {
 
         let body: string = this.compileAbstractStatement(statement.body!);
 
-        return `${declaration}` + `\n` +
+        return`${declaration}` + `\n` +
             `${condition}\n` +
             '(if \n' +
             '(then \n' +
@@ -155,10 +171,10 @@ export class Compiler {
     compilePrint(print: Print): string {
         let expr = this.compileAbstractExpression(print.expression);
         if(print.expression.type === ValueTypeEnum.NUM) {
-            return `${expr}\ncall $logF64`;
+            return `${expr}\ncall $logf64`;
         }
         if(print.expression.type === ValueTypeEnum.BOOL) {
-            return `${expr}\ncall $logI32`;
+            return `${expr}\ncall $logi32`;
         }
 
         if(print.expression.type === ValueTypeEnum.STRING) {
@@ -188,23 +204,19 @@ export class Compiler {
             body = this.compileAbstractStatement(statement.body!);
         }
         return '(module\n' +
-            '(import "console" "logI32" (func $logI32 (param i32)))\n' +
-            '(import "console" "logF64" (func $logF64 (param f64)))\n' +
+            '(import "console" "logI32" (func $logi32 (param i32)))\n' +
+            '(import "console" "logF64" (func $logf64 (param f64)))\n' +
             '(import "console" "logMemory" (func $logMemory (param i32)))\n' +
             '(import "js" "memory" (memory 1))\n' +
             '(import "js" "concat" (func $concat (param i32 i32) (result i32)))\n' +
-            `(import "js" "toStringI32" (func $toStringI32 (param i32) (result i32)))\n` +
-            `(import "js" "toStringF64" (func $toStringF64 (param f64) (result i32)))\n` +
-            `(import "js" "scanI32" (func $scanI32 (param i32) (result i32)))\n` +
-            `(import "js" "scanF64" (func $scanF64 (param i32) (result f64)))\n` +
+            `(import "js" "toStringI32" (func $toStringi32 (param i32) (result i32)))\n` +
+            `(import "js" "toStringF64" (func $toStringf64 (param f64) (result i32)))\n` +
+            `(import "js" "scanI32" (func $scani32 (param i32) (result i32)))\n` +
+            `(import "js" "scanF64" (func $scanf64 (param i32) (result f64)))\n` +
             `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +
             `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
-            '(func (export "_start")\n' +
-            `${this.varEnv.getDeclarations()}` +
-            body + '\n' +
-            ')\n' +
             ')';
     }
     
@@ -237,6 +249,10 @@ export class Compiler {
             return this.compileString(expression as ASTString);
         }
 
+        if(expression instanceof FunctionCallExpression) {
+            return this.compileFunctionCallExpression(expression as FunctionCallExpression);
+        }
+
         throw new Error("Unknown abstract expression type");
     }
 
@@ -262,13 +278,13 @@ export class Compiler {
         if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type !== ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\n${right}\ncall $toStringF64\ncall $concat`;
+            return `${left}\n${right}\ncall $toStringf64\ncall $concat`;
         }
 
         if(expression.primaryOrLeft.type !== ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\ncall $toStringF64\n${right}\ncall $concat`;
+            return `${left}\ncall $toStringf64\n${right}\ncall $concat`;
         }
 
         let left = this.compileAbstractExpression(expression.primaryOrLeft);
@@ -297,12 +313,35 @@ export class Compiler {
         return string;
     }
 
+    compileFunctionDeclaration(statement: FunctionDeclaration): string{
+        let body: string = "";
+        if(statement.varEnv !== null) {
+            body += statement.varEnv!.getDeclarations(statement.parameters.keys());
+        }
+        if(statement.body !== null) {
+            body += this.compileAbstractStatement(statement.body!);
+        }
+        let params = "";
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            let type = statement.parameters.get(key);
+            params += `(param $${key} ${this.compileAbstractType(type!)})\n`;
+        }
+        let functionIdentifier =  statement.export ? "(export \"" + statement.name.value + "\")" : `$${statement.name.value}`;
+        let returnType = this.compileAbstractType(statement.returnType);
+        let $function = `(func ${functionIdentifier} ${params} (result ${returnType})\n` +
+            `${body}\n` +
+            `)`;
+        this.functionDeclarations.push($function);
+        return "";
+    }
+
     compileValueType(type: ValueType): string {
         if (type.type === ValueTypeEnum.NUM) {
-            return `F64`;
+            return `f64`;
         }
         if (type.type === ValueTypeEnum.BOOL) {
-            return `I32`;
+            return `i32`;
         }
         if (type.type === ValueTypeEnum.STRING) {
             return `String`;
@@ -359,5 +398,43 @@ export class Compiler {
             return "i32.const 1";
         }
         return "i32.const 0";
+    }
+
+    private compileAbstractType(abstractType: AbstractType): string {
+        if (abstractType instanceof ValueType) {
+            return this.compileValueType(abstractType as ValueType);
+        }
+
+        if(abstractType instanceof StatementType){
+            let statementType = abstractType as StatementType;
+            if(statementType.type === StatementTypeEnum.VOID) {
+                return "";
+            }
+        }
+
+        throw new Error("Unknown abstract type");
+    }
+
+    private compileFunctionCallStatement(statement: FunctionCallStatement): string {
+        let actualParameters = "";
+        for (let i = 0; i < statement.actualParameters.length; i++) {
+            let expr = this.compileAbstractExpression(statement.actualParameters[i]);
+            actualParameters += `${expr}\n`;
+        }
+        return `${actualParameters}\ncall $${statement.functionName}`;
+    }
+
+    private compileFunctionCallExpression(expression: FunctionCallExpression): string {
+        let actualParameters = "";
+        for (let i = 0; i < expression.actualParameters.length; i++) {
+            let expr = this.compileAbstractExpression(expression.actualParameters[i]);
+            actualParameters += `${expr}\n`;
+        }
+        return `${actualParameters}\ncall $${expression.functionName}`;
+    }
+
+    private compileReturnStatement(statement: Return): string {
+        let expr = this.compileAbstractExpression(statement.expression);
+        return `${expr}\nreturn`;
     }
 }

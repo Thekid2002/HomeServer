@@ -20,6 +20,10 @@ import {ParseString} from "./Expressions/Terms/ParseString";
 import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
 import {ParseBool} from "./Expressions/Terms/ParseBool";
+import {ParseFunction} from "./Statements/ParseFunction";
+import {ParseFunctionCallStatement} from "./Statements/ParseFunctionCallStatement";
+import {ParseFunctionCallExpression} from "./Expressions/Terms/ParseFunctionCallExpression";
+import {ParseReturn} from "./Statements/ParseReturn";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: ParseExpression): T;
@@ -65,4 +69,12 @@ export interface ParseVisitor<T> {
     visitIncrement(statement: ParseIncrement): T;
 
     visitBool(term: ParseBool): T;
+
+    visitFunction(statement: ParseFunction): T;
+
+    visitFunctionCallExpression(expression: ParseFunctionCallExpression): T;
+
+    visitFunctionCallStatement(statement: ParseFunctionCallStatement): T;
+
+    visitReturn(statement: ParseReturn): T;
 }

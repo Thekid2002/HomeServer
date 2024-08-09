@@ -35,3 +35,5 @@ ReservedWords.set("atan", TokenType.ATAN);
 ReservedWords.set("sqrt", TokenType.SQRT);
 ReservedWords.set("scan", TokenType.SCAN);
 ReservedWords.set("print", TokenType.PRINT);
+ReservedWords.set("void", TokenType.VOID);
+ReservedWords.set("export", TokenType.EXPORT);

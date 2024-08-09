@@ -14,6 +14,7 @@ import {VarEnv} from "./Env/VarEnv";
 import {ValObject} from "./Env/Values/ValObject";
 import {Optimizer} from "./Compiler/Optimizer";
 import {Program} from "./AST/Nodes/Statements/Program";
+import {FuncEnv} from "./Env/FuncEnv";
 
 export function calculateViaLanguage(string: string, type: string, optimization: boolean): string {
     if (type === "compiler") {
@@ -34,7 +35,7 @@ function scanAndParseAndToAst(string: string): CompilerResult {
         for (let i = 0; i < scanner.errors.length; i++) {
             console.error(scanner.errors[i]);
         }
-        return new CompilerResult(null, null, null, null, [], scanner.errors, [], null);
+        return new CompilerResult(null, null, null, null, [], scanner.errors, [], null, null);
     }
     let parser = new Parser(tokens);
     let syntaxTree = parser.parse();
@@ -47,34 +48,36 @@ function scanAndParseAndToAst(string: string): CompilerResult {
         for (let i = 0; i < parser.errors.length; i++) {
             console.error(parser.errors[i]);
         }
-        return new CompilerResult(parseTreePrinter.tree, syntaxTree, null, null, tokens, scanner.errors, parser.errors, null);
+        return new CompilerResult(parseTreePrinter.tree, syntaxTree, null, null, tokens, scanner.errors, parser.errors, null, null);
     }
     let toAstVisitor = new ToAstVisitor();
     let ast = syntaxTree.accept<AbstractNode>(toAstVisitor);
     let astPrinter = new ASTPrinter();
     ast.accept<void>(astPrinter);
     let combinedChecker = new CombinedChecker();
-    ast.accept<AbstractType | null>(combinedChecker);
+    let varEnv = new VarEnv(null);
+    let funcEnv = new FuncEnv(null);
+    combinedChecker.checkProgram(ast as Program, varEnv, funcEnv);
     if (combinedChecker.errors.length > 0) {
         for (let i = 0; i < combinedChecker.errors.length; i++) {
             console.error(combinedChecker.errors[i]);
         }
-        return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, null, combinedChecker.errors);
+        return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, null, null, combinedChecker.errors);
     }
-    return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, combinedChecker.varEnv);
+    return new CompilerResult(parseTreePrinter.tree, syntaxTree, astPrinter.tree, ast, tokens, scanner.errors, parser.errors, varEnv, funcEnv);
 }
 
 function interpret(string: string): string {
     let result = scanAndParseAndToAst(string);
     let ast = result.astTree;
-    if(result.checkEnv === null){
+    if(result.varEnv === null){
         return result.toJsonString();
     }
-    let interpreter = new Interpreter(result.checkEnv!);
+    let interpreter = new Interpreter(result.varEnv!);
     if(ast === null) {
         return result.toJsonString();
     }
-    ast.accept<ValObject | null>(interpreter);
+    interpreter.evaluateProgram(ast as Program);
     result.interpretOutput = interpreter.prints;
 
     return result.toJsonString();
@@ -86,15 +89,15 @@ function compile(string: string, optimization: boolean): string {
         return result.toJsonString();
     }
     let ast = result.astTree!;
-    if(result.checkEnv === null){
+    if(result.varEnv === null || result.funcEnv === null) {
         return result.toJsonString();
     }
     if(optimization) {
-        let optimizer = new Optimizer(result.checkEnv!);
+        let optimizer = new Optimizer(result.varEnv!);
         optimizer.optimize(ast as Program);
     }
-    let compiler = new Compiler(result.checkEnv!);
-    result.compilerOutput =  compiler.compileProgram(ast as Program).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");
+    let compiler = new Compiler();
+    result.compilerOutput = compiler.compileProgram(ast as Program).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");
     return result.toJsonString();
 }
 
@@ -107,12 +110,13 @@ class CompilerResult {
     astPrint: string[] | null;
     astTree: AbstractNode | null;
     tokens: Token[] | null;
-    checkEnv: VarEnv | null;
+    varEnv: VarEnv | null;
+    funcEnv: FuncEnv | null;
     compilerOutput: string;
     interpretOutput: string[] | null;
 
     constructor(parsePrint: string[] | null, parseTree: ParseProgram | null, astPrint: string[] | null, astTree: AbstractNode | null, tokens: Token[], lexerErrors: string[] | null, parseErrors: string[] | null,
-                checkEnv: VarEnv | null, combinedCheckerErrors: string[] | null = null, compilerOutput: string | null = null, interpretOutput: string[] | null = null) {
+                varEnv: VarEnv | null, funcEnv: FuncEnv | null, combinedCheckerErrors: string[] | null = null, compilerOutput: string | null = null, interpretOutput: string[] | null = null) {
         this.parsePrint = parsePrint;
         this.astPrint = astPrint;
         this.parseTree = parseTree;
@@ -123,7 +127,8 @@ class CompilerResult {
         this.combinedCheckerErrors = combinedCheckerErrors !== null ? combinedCheckerErrors : [];
         this.compilerOutput = compilerOutput !== null ? compilerOutput : "";
         this.interpretOutput = interpretOutput;
-        this.checkEnv = checkEnv;
+        this.varEnv = varEnv;
+        this.funcEnv = funcEnv;
     }
 
     toJsonString(): string {
@@ -188,9 +193,16 @@ class CompilerResult {
             }
         }
         string += "],\n";
-        string += "\"checkEnv\": ";
-        if(this.checkEnv !== null) {
-         string += (this.checkEnv!.toJsonString());
+        string += "\"varEnv\": ";
+        if(this.varEnv !== null) {
+            string += (this.varEnv!.toJsonString());
+        }else{
+            string += "null";
+        }
+        string += ",\n";
+        string += "\"funcEnv\": ";
+        if(this.funcEnv !== null) {
+            string += (this.funcEnv!.toJsonString());
         }else{
             string += "null";
         }

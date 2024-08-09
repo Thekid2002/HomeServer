@@ -21,6 +21,10 @@ import { ParseString } from "./Expressions/Terms/ParseString";
 import { ParseScan } from "./Statements/ParseScan";
 import { ParseIncrement } from "./Statements/ParseIncrement";
 import { ParseBool } from "./Expressions/Terms/ParseBool";
+import { ParseFunction } from "./Statements/ParseFunction";
+import { ParseFunctionCallStatement } from "./Statements/ParseFunctionCallStatement";
+import {ParseFunctionCallExpression} from "./Expressions/Terms/ParseFunctionCallExpression";
+import { ParseReturn } from "./Statements/ParseReturn";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
@@ -51,6 +55,21 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseIncrement");
         this.number++;
         statement.identifier.accept<void>(this);
+        this.number--;
+    }
+
+    visitFunction(statement: ParseFunction): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionObject");
+        this.number++;
+        statement.returnType.accept<void>(this);
+        statement.name.accept<void>(this);
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            statement.parameters.get(key).accept<void>(this);
+        }
+        if(statement.body !== null) {
+            statement.body.accept<void>(this);
+        }
         this.number--;
     }
 
@@ -152,6 +171,13 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ASTString " + param.value.literal);
     }
 
+    visitReturn(statement: ParseReturn): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseReturn");
+        this.number++;
+        statement.expression.accept<void>(this);
+        this.number--;
+    }
+
     visitRelationalExpression(expression: ParseRelationalExpression): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseRelationalExpression " + (expression.operator !== null ? expression.operator!.literal : ""));
         this.number++;
@@ -219,6 +245,24 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             statement.else!.accept<void>(this);
         }
         this.number--;
+        this.number--;
+    }
+
+    visitFunctionCallExpression(statement: ParseFunctionCallExpression): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionCall " + statement.functionName.literal);
+        this.number++;
+        for (let i = 0; i < statement.actualParameters.length; i++) {
+            statement.actualParameters[i].accept<void>(this);
+        }
+        this.number--;
+    }
+
+    visitFunctionCallStatement(statement: ParseFunctionCallStatement): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionCall " + statement.functionName.literal);
+        this.number++;
+        for (let i = 0; i < statement.actualParameters.length; i++) {
+            statement.actualParameters[i].accept<void>(this);
+        }
         this.number--;
     }
 

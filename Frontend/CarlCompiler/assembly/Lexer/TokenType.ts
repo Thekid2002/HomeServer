@@ -4,6 +4,8 @@ export enum TokenType {
     RIGHT_PAREN,   // )
     LEFT_BRACE,    // {
     RIGHT_BRACE,   // }
+    LEFT_BRACKET,  // [
+    RIGHT_BRACKET, // ]
     COMMA,         // ,
     DOT,           // .
     MINUS,         // -
@@ -47,6 +49,7 @@ export enum TokenType {
     NUM,          // num
     BOOL,         // bool
     STRING,       // string
+    VOID,         // void
 
     // Boolean
     TRUE,         // true
@@ -69,6 +72,7 @@ export enum TokenType {
     SUPER,        // super
     THIS,         // this
     VAR,          // var
+    EXPORT,       // export
 
     //Comment
     COMMENT,      // comment
@@ -82,6 +86,8 @@ export const TokenTypes: string[] = [
     "RIGHT_PAREN",   // )
     "LEFT_BRACE",    // {
     "RIGHT_BRACE",   // }
+    "LEFT_BRACKET",  // [
+    "RIGHT_BRACKET", // ]
     "COMMA",         // ,
     "DOT",           // .
     "MINUS",         // -
@@ -125,6 +131,7 @@ export const TokenTypes: string[] = [
     "NUM",          // num
     "BOOL",         // bool
     "STRING",       // string
+    "VOID",         // void
 
     // Boolean
     "TRUE",         // true
@@ -147,6 +154,7 @@ export const TokenTypes: string[] = [
     "SUPER",        // super
     "THIS",         // this
     "VAR",          // var
+    "EXPORT",       // export
 
     //Comment
     "COMMENT",      // comment

@@ -1,5 +1,7 @@
 import {AbstractStatement} from "./AbstractStatement";
 import {ASTVisitor} from "../../ASTVisitor";
+import {VarEnv} from "../../../Env/VarEnv";
+import {FuncEnv} from "../../../Env/FuncEnv";
 
 export class Program extends AbstractStatement {
     body: AbstractStatement | null;

@@ -8,12 +8,14 @@ export class ParseDeclaration extends ParseAbstractStatement {
     identifier: ParseIdentifier;
     type: ParseType;
     expression: ParseAbstractExpression | null;
+    export: boolean;
 
-    constructor(identifier: ParseIdentifier, type: ParseType, expression: ParseAbstractExpression | null, lineNum: i32) {
+    constructor(identifier: ParseIdentifier, type: ParseType, expression: ParseAbstractExpression | null, $export: boolean, lineNum: i32) {
         super(lineNum);
         this.identifier = identifier;
         this.type = type;
         this.expression = expression;
+        this.export = $export;
     }
 
     accept<T>(visitor: ParseVisitor<T>): T {
@@ -23,6 +25,7 @@ export class ParseDeclaration extends ParseAbstractStatement {
     toJsonString(): string {
         return `{"type": "Declaration", "identifier": ${this.identifier.toJsonString()},` +
             `"type": ${this.type.toJsonString()},` +
+            `"export": ${this.export},` +
             `"expression": ${this.expression ? this.expression!.toJsonString() : "\"\""}}`;
     }
 }

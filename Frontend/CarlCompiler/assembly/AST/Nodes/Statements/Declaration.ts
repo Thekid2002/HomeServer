@@ -8,12 +8,14 @@ export class Declaration extends AbstractStatement {
     identifier: Identifier;
     type: ValueType;
     expression: AbstractExpression | null;
+    export: boolean;
 
-    constructor(identifier: Identifier, type: ValueType, expression: AbstractExpression | null, lineNum: i32) {
+    constructor(identifier: Identifier, type: ValueType, expression: AbstractExpression | null, $export: boolean, lineNum: i32) {
         super(lineNum);
         this.identifier = identifier;
         this.type = type;
         this.expression = expression;
+        this.export = $export;
     }
 
     accept<T>(visitor: ASTVisitor<T>): T {
@@ -21,7 +23,7 @@ export class Declaration extends AbstractStatement {
     }
 
     clone(): AbstractStatement {
-        return new Declaration(this.identifier.clone() as Identifier, this.type, this.expression == null ? null : this.expression!.clone() as AbstractExpression, this.lineNum);
+        return new Declaration(this.identifier.clone() as Identifier, this.type, this.expression == null ? null : this.expression!.clone() as AbstractExpression, this.export, this.lineNum);
     }
 
     toString(): string {

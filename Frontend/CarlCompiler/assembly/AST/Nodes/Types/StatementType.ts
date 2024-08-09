@@ -29,20 +29,22 @@ export class StatementType extends AbstractType {
 }
 
 export enum StatementTypeEnum {
-    Error,
-    Ok,
+    ERROR,
     PROGRAM,
     ASSIGNMENT,
+    SCAN,
     PRINT,
     IF,
     WHILE,
-    FUNCTION,
+    FUNCTION_CALL,
     RETURN,
     BLOCK,
     VAR_DECL,
     EXPRESSION,
     BREAK,
     CONTINUE,
+    FUNCTION_DECLARATION,
+    VOID
 }
 
 export const StatementTypeNames: Array<string> = [

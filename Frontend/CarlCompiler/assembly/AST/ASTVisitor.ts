@@ -15,6 +15,10 @@ import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {ASTString} from "./Nodes/Expressions/Terms/ASTString";
 import {Scan} from "./Nodes/Statements/Scan";
 import {Bool} from "./Nodes/Expressions/Terms/Bool";
+import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
+import {FunctionCallExpression} from "./Nodes/Expressions/FunctionCallExpression";
+import {FunctionCallStatement} from "./Nodes/Statements/FunctionCallStatement";
+import {Return} from "./Nodes/Statements/Return";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -50,4 +54,12 @@ export interface ASTVisitor<T> {
     visitScan(statement: Scan): T;
 
     visitBool(term: Bool): T;
+
+    visitFunctionDeclaration(statement: FunctionDeclaration): T;
+
+    visitFunctionCallExpression(expression: FunctionCallExpression): T;
+
+    visitFunctionCallStatement(statement: FunctionCallStatement): T;
+
+    visitReturn(statement: Return): T;
 }
