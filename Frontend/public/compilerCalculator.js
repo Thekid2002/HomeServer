@@ -1,5 +1,3 @@
-import { calculateViaLanguage } from "./build/carlCompiler/CaCoDebug.js";
-
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
 let optimizeCheckBox = document.getElementById("optimize");
@@ -19,8 +17,8 @@ WabtModule().then(function(wabt) {
     wabtInstance = wabt;
 });
 
-export function compileAndExecute() {
-    let success = compile();
+export async function compileAndExecute() {
+    let success = await compile();
     if(success) {
         execute();
     }
@@ -29,7 +27,7 @@ export function compileAndExecute() {
 /**
  * Compile the code input into WebAssembly and execute it.
  */
-export function compile() {
+export async function compile() {
     const now = Date.now();
     let code = codeInput.value;
     if(window.codeEditor != null){
@@ -41,11 +39,21 @@ export function compile() {
         if(window.terminal.getValue() !== ""){
             window.terminal.setValue("");
         }
+        // Fetch the CaCoDebug.js script
+        try {
+            // Dynamically import the script as a module
+            let module = await import('./build/carlCompiler/CaCoRelease.js');
+
+            // Now you can use the exported functions and variables from the script
+            // Example: Use calculateViaLanguage function (assuming 'CaCoDebug.wasm' is available in the same directory)
+            compiledResult = await module.calculateViaLanguage(code, "compiler", optimization);
+            module = null;
+        } catch (error) {
+            console.error("Error fetching or executing the script:", error);
+        }
+
         // Calculate the WAT (WebAssembly Text format) using a custom language function
-        compiledResult = calculateViaLanguage(code, "compiler", optimization);
-        console.log(compiledResult);
         jsonRes = JSON.parse(compiledResult);
-        console.log(jsonRes);
         if(jsonRes.compilerOutput != null) {
             jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
         }
@@ -63,6 +71,7 @@ export function compile() {
                 window.terminal.setValue(window.terminal.getValue() + output);
             }else {
                 result.value = output;
+                console.log(jsonRes);
             }
             return false;
         }
@@ -80,6 +89,7 @@ export function compile() {
                 window.terminal.setValue(window.terminal.getValue() + output);
             }else {
                 result.value += output;
+                console.log(jsonRes);
             }
             return false;
         }
@@ -96,6 +106,7 @@ export function compile() {
                 window.terminal.setValue(window.terminal.getValue() + output);
             }else {
                 result.value += output;
+                console.log(jsonRes);
             }
             return false;
         }

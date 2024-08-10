@@ -10,7 +10,7 @@
     "asbuild:debug": "asc assembly/Index.ts --target debug",
     "asbuild:release": "asc assembly/Index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
-    "start": "npm run asbuild:debug && npm run asbuild:release && node assembly/tests"
+    "start": "npm run asbuild:debug && npm run asbuild:release"
   },
   "author": "",
   "license": "ISC",

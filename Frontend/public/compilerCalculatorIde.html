@@ -6,7 +6,7 @@
     <base href="/HomeServer/Frontend/public/">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculatorIde.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">-->
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
     <!--<link rel="stylesheet" href="compilerCalculator.css">
     <link rel="stylesheet" href="compilerCalculatorIde.css">
     <link rel="stylesheet" href="sharedStyles.css">-->
@@ -130,7 +130,7 @@
     function resizeHeight(e) {
         const newSize = originalSize - ((e.pageY || e.touches[0].pageY) - originalCoordinate);
         terminalWindow.style.height = `${newSize}px`;
-        codeEditorWindow.style.height = `${window.innerHeight - 40 - newSize}px`;
+        codeEditorWindow.style.height = `${window.innerHeight - 50 - newSize}px`;
     }
 
     function resizeWidth(e) {
