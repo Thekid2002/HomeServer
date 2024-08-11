@@ -176,8 +176,8 @@ export async function execute() {
         }
 
         let functionBody = window.localStorage.getItem("CarlRuntime").replace(
-            'getImportObjectFromImportObjectFile()', window.localStorage.getItem("CarlRuntimeImport"))
-            .replaceAll("console.log(", "addPrint(").replaceAll("console.error(", "addPrint(");
+            'getImportObjectFromImportObjectFile()', window.localStorage.getItem("CarlRuntimeImport"));
+        functionBody = functionBody.replaceAll("console.log(", "addPrint(").replaceAll("console.error(", "addPrint(");
         let functionArguments = "output, addPrint, wasmInstance, logMemory";
         let newFunction;
         try {

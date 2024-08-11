@@ -31,7 +31,7 @@ body {
     align-items: end;
   padding-left: 35px;
   padding-right: 35px;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #f7f7f7;
   cursor: pointer;
   max-width: 100%;
@@ -75,7 +75,7 @@ body {
   left: 0;
   border: 0;
   outline: 0;
-  font-size: 20px;
+  font-size: 15px;
   flex-direction: column;
   max-height: 90vh;
 }
@@ -123,5 +123,5 @@ body {
 .CodeMirror {
   height: 100% !important;
   width: 100% !important;
-  font-size: 20px;
+  font-size: 15px;
 }
