@@ -29,10 +29,6 @@
             <select id="examples">
 
             </select>
-            <div>
-                <input type="checkbox" id="optimize" name="optimize" value="optimize">
-                <label for="optimize">Optimize</label>
-            </div>
         </div>
         <div class="compile-buttons">
             <button onclick="compileAndExecute()">Play</button>
@@ -42,7 +38,15 @@
     <div class="page-layout">
         <div id="code-editor-window" class="code-editor-window">
             <div id="pull-code-editor" class="puller">
-                <p>Code Editor</p>
+                <button class="active" id="CarlEditor" onclick="selectFile('CarlEditor', codeEditor)">
+                    Carl Editor
+                </button>
+                <button id="CarlRuntime" onclick="selectFile('CarlRuntime', codeEditor )">
+                    Carl Runtime Editor
+                </button>
+                <button id="CarlRuntimeImport" onclick="selectFile('CarlRuntimeImport', codeEditor )">
+                    Carl Runtime Import
+                </button>
             </div>
             <textarea id="code" class="code-editor" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
@@ -63,10 +67,14 @@
 <script type="module">
     import {goToPage} from './navigation.js';
     import {compile, execute, compileAndExecute} from './compilerCalculator.js';
+    import {selectFile} from "./fileSelector.js";
+
+    window.selectedFile = "CarlEditor";
     window.compile = compile;
     window.execute = execute;
     window.goToPage = goToPage;
     window.compileAndExecute = compileAndExecute;
+    window.selectFile = selectFile;
 
     // Initialize CodeMirror on the textarea
     const codeTextarea = document.getElementById('code');
@@ -90,6 +98,12 @@
         setTimeout(() => {
             terminal.scrollTo(null, terminal.getScrollInfo().height);
         }, 10);
+    });
+
+    codeEditor.on('change', () => {
+        setTimeout(() => {
+            window.localStorage.setItem(selectedFile, codeEditor.getValue());
+        }, 100);
     });
 
     const terminalWindow = document.getElementById("terminal-window");
@@ -146,6 +160,118 @@
         window.removeEventListener('mouseup', stopResize);
         window.removeEventListener('touchend', stopResize);
     }
+    let code = window.localStorage.getItem("CarlEditor");
+    let runtimeJs = `// Create a new WebAssembly.Memory object
+let memory = new WebAssembly.Memory({ initial: 1 });
+
+// Compile the WebAssembly module
+await WebAssembly.compile(output).then(async module => {
+    const importObject = getImportObjectFromImportObjectFile();
+    const wasmInstance = new WebAssembly.Instance(module, importObject);
+    const {_start, stackPointer} = wasmInstance.exports;
+    _start();
+});`;
+    let importObj = `{
+    js: {
+        memory,
+        concat: (offset1, offset2) => {
+            const buffer = new Uint8Array(memory.buffer);
+            let stackPointer = wasmInstance.exports.stackPointer.value;
+
+            let i = 0;
+            let string1 = "";
+            while (buffer[offset1 + i] !== 0) {
+                string1 += String.fromCharCode(buffer[offset1 + i]);
+                i++;
+            }
+
+            i = 0;
+            let string2 = "";
+            while (buffer[offset2 + i] !== 0) {
+                string2 += String.fromCharCode(buffer[offset2 + i]);
+                i++;
+            }
+
+            let str = string1 + string2 + '\\0';
+
+            for (let i = 0; i < str.length; i++) {
+                buffer[stackPointer + i] = str.charCodeAt(i);
+            }
+            wasmInstance.exports.stackPointer.value += str.length;
+            return stackPointer;
+        },
+        toStringI32: (value) => {
+            const buffer = new Uint8Array(memory.buffer);
+            let stackPointer = wasmInstance.exports.stackPointer.value;
+            const str = value.toString() + '\\0';
+
+            for (let i = 0; i < str.length; i++) {
+                buffer[stackPointer + i] = str.charCodeAt(i);
+            }
+            wasmInstance.exports.stackPointer.value += str.length;
+            return stackPointer;
+        },
+        toStringF64: (value) => {
+            const buffer = new Uint8Array(memory.buffer);
+            let stackPointer = wasmInstance.exports.stackPointer.value;
+            const str = value.toString() + '\\0';
+
+            for (let i = 0; i < str.length; i++) {
+                buffer[stackPointer + i] = str.charCodeAt(i);
+            }
+            wasmInstance.exports.stackPointer.value += str.length;
+            return stackPointer;
+        },
+        scanF64: (offset) => {
+            return parseFloat(prompt(logMemory(memory.buffer, offset)));
+        },
+        scanI32: (offset) => {
+            let value = prompt(logMemory(memory.buffer, offset));
+            if (value == null) {
+                return 0;
+            }
+            if (value.toLowerCase() === "true") {
+                return 1;
+            }
+            if (value.toLowerCase() === "false") {
+                return 0;
+            }
+            return parseInt(value, 10) || 0;
+        },
+        scanString: (offset) => {
+            let value = prompt(logMemory(memory.buffer, offset)) + '\\0';
+            if (value == null) {
+                return 0;
+            }
+            const buffer = new Uint8Array(memory.buffer);
+            let stackPointer = wasmInstance.exports.stackPointer.value;
+
+            for (let i = 0; i < value.length; i++) {
+                buffer[stackPointer + i] = value.charCodeAt(i);
+            }
+
+            wasmInstance.exports.stackPointer.value += value.length;
+            return stackPointer;
+        }
+    },
+    console: {
+        logI32: (value) => {
+            console.log(value == true ? "true" : "false")
+        },
+        logF64: (value) => {
+            console.log(value)
+        },
+        logMemory: (offset) => {
+            console.log(logMemory(memory.buffer, offset));
+        }
+    }
+}`;
+    window.localStorage.setItem("CarlRuntime", runtimeJs);
+    window.localStorage.setItem("CarlRuntimeImport", importObj);
+    codeEditor.setValue(code);
+    document.getElementById("CarlEditor").classList.add("active");
+    document.getElementById("CarlRuntime").classList.remove("active");
+    document.getElementById("CarlRuntimeImport").classList.remove("active");
 </script>
 <script src="examples.js"></script>
 </body>

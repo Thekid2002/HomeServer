@@ -341,7 +341,7 @@ export class Compiler {
             let type = statement.parameters.get(key);
             params += `(param $${key} ${this.compileAbstractType(type!)})\n`;
         }
-        let functionIdentifier =  statement.export ? "(export \"" + statement.name.value + "\")" : `$${statement.name.value}`;
+        let functionIdentifier =  statement.export ? `$${statement.name.value} (export "${statement.name.value}")` : `$${statement.name.value}`;
         let returnType = this.compileAbstractType(statement.returnType);
         let $function = `(func ${functionIdentifier} ${params} (result ${returnType})\n` +
             `${body}\n` +

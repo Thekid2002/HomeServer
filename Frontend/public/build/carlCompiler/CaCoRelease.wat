@@ -1086,10 +1086,9 @@
  (data $528 (i32.const 25708) ",\00\00\00\03\00\00\00\00\00\00\00_\00\00\00\14\00\00\00Pd\00\00\00\00\00\00\d0\1f\00\00\00\00\00\00\d0b")
  (data $529 (i32.const 25756) "<")
  (data $529.1 (i32.const 25768) "\02\00\00\00*\00\00\00U\00n\00k\00n\00o\00w\00n\00 \00a\00b\00s\00t\00r\00a\00c\00t\00 \00t\00y\00p\00e")
- (data $530 (i32.const 25820) ",")
- (data $530.1 (i32.const 25832) "\02\00\00\00\12\00\00\00(\00e\00x\00p\00o\00r\00t\00 \00\"")
- (data $531 (i32.const 25868) "\1c")
- (data $531.1 (i32.const 25880) "\02\00\00\00\02\00\00\00$")
+ (data $530 (i32.const 25820) "\1c")
+ (data $530.1 (i32.const 25832) "\02\00\00\00\02\00\00\00$")
+ (data $531 (i32.const 25852) ",\00\00\00\03\00\00\00\00\00\00\00_\00\00\00\14\00\00\00\f0d\00\00\00\00\00\00\00_\00\00\00\00\00\00@]")
  (data $532 (i32.const 25900) "\1c")
  (data $532.1 (i32.const 25912) "\02\00\00\00\0c\00\00\00(\00f\00u\00n\00c\00 ")
  (data $533 (i32.const 25932) ",")
@@ -7595,7 +7594,7 @@
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=4
-                        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitProgram@override$1797
+                        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitProgram@override$1799
                          local.get $1
                          i32.const 8
                          i32.sub
@@ -7606,7 +7605,7 @@
                           local.get $1
                           local.get $0
                           call $assembly/AST/ASTPrinter/ASTPrinter#visitProgram
-                          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitProgram@override$1797
+                          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitProgram@override$1799
                          end
                          unreachable
                         end
@@ -7631,7 +7630,7 @@
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.store offset=4
-                      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$1798
+                      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$1800
                        local.get $1
                        i32.const 8
                        i32.sub
@@ -7642,7 +7641,7 @@
                         local.get $1
                         local.get $0
                         call $assembly/AST/ASTPrinter/ASTPrinter#visitNumber
-                        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$1798
+                        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$1800
                        end
                        unreachable
                       end
@@ -7662,7 +7661,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      i32.store offset=4
-                     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$1799
+                     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$1801
                       local.get $1
                       i32.const 8
                       i32.sub
@@ -7673,7 +7672,7 @@
                        local.get $1
                        local.get $0
                        call $assembly/AST/ASTPrinter/ASTPrinter#visitBinaryExpression
-                       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$1799
+                       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$1801
                       end
                       unreachable
                      end
@@ -7693,7 +7692,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1800
+                    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1802
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -7704,7 +7703,7 @@
                       local.get $1
                       local.get $0
                       call $assembly/AST/ASTPrinter/ASTPrinter#visitUnaryExpression
-                      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1800
+                      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitUnaryExpression@override$1802
                      end
                      unreachable
                     end
@@ -7724,7 +7723,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$1801
+                   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$1803
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -7811,7 +7810,7 @@
                      i32.const 40
                      i32.add
                      global.set $~lib/memory/__stack_pointer
-                     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$1801
+                     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$1803
                     end
                     unreachable
                    end
@@ -7831,7 +7830,7 @@
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=4
-                  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$1802
+                  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$1804
                    local.get $1
                    i32.const 8
                    i32.sub
@@ -7842,7 +7841,7 @@
                     local.get $1
                     local.get $0
                     call $assembly/AST/ASTPrinter/ASTPrinter#visitDeclaration
-                    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$1802
+                    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$1804
                    end
                    unreachable
                   end
@@ -7867,7 +7866,7 @@
                 global.get $~lib/memory/__stack_pointer
                 local.get $0
                 i32.store offset=4
-                block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$1803
+                block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$1805
                  local.get $1
                  i32.const 8
                  i32.sub
@@ -7879,7 +7878,7 @@
                   local.get $0
                   i32.const 31488
                   call $byn$mgfn-shared$assembly/AST/ASTPrinter/ASTPrinter#visitPrint
-                  br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$1803
+                  br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$1805
                  end
                  unreachable
                 end
@@ -7899,7 +7898,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $0
                i32.store offset=4
-               block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitWhile@override$1804
+               block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitWhile@override$1806
                 local.get $1
                 i32.const 8
                 i32.sub
@@ -7910,7 +7909,7 @@
                  local.get $1
                  local.get $0
                  call $assembly/AST/ASTPrinter/ASTPrinter#visitWhile
-                 br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitWhile@override$1804
+                 br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitWhile@override$1806
                 end
                 unreachable
                end
@@ -7930,7 +7929,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitAssignment@override$1805
+              block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitAssignment@override$1807
                local.get $1
                i32.const 8
                i32.sub
@@ -7941,7 +7940,7 @@
                 local.get $1
                 local.get $0
                 call $assembly/AST/ASTPrinter/ASTPrinter#visitAssignment
-                br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitAssignment@override$1805
+                br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitAssignment@override$1807
                end
                unreachable
               end
@@ -7961,7 +7960,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$1806
+             block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$1808
               local.get $1
               i32.const 8
               i32.sub
@@ -7972,7 +7971,7 @@
                local.get $1
                local.get $0
                call $assembly/AST/ASTPrinter/ASTPrinter#visitIfStatement
-               br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$1806
+               br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$1808
               end
               unreachable
              end
@@ -8063,7 +8062,7 @@
            global.get $~lib/memory/__stack_pointer
            local.get $0
            i32.store offset=4
-           block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$1807
+           block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$1809
             local.get $1
             i32.const 8
             i32.sub
@@ -8150,7 +8149,7 @@
              i32.const 40
              i32.add
              global.set $~lib/memory/__stack_pointer
-             br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$1807
+             br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$1809
             end
             unreachable
            end
@@ -8170,7 +8169,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
-          block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitScan@override$1808
+          block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitScan@override$1810
            local.get $1
            i32.const 8
            i32.sub
@@ -8181,7 +8180,7 @@
             local.get $1
             local.get $0
             call $assembly/AST/ASTPrinter/ASTPrinter#visitScan
-            br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitScan@override$1808
+            br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitScan@override$1810
            end
            unreachable
           end
@@ -8201,7 +8200,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$1809
+         block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$1811
           local.get $1
           i32.const 8
           i32.sub
@@ -8288,7 +8287,7 @@
            i32.const 40
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$1809
+           br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$1811
           end
           unreachable
          end
@@ -8308,7 +8307,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$1810
+        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$1812
          local.get $1
          i32.const 8
          i32.sub
@@ -8319,7 +8318,7 @@
           local.get $1
           local.get $0
           call $assembly/AST/ASTPrinter/ASTPrinter#visitFunctionDeclaration
-          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$1810
+          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$1812
          end
          unreachable
         end
@@ -8339,7 +8338,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$1811
+       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$1813
         local.get $1
         i32.const 8
         i32.sub
@@ -8351,7 +8350,7 @@
          local.get $0
          i32.const 31872
          call $byn$mgfn-shared$assembly/AST/ASTPrinter/ASTPrinter#visitValueType
-         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$1811
+         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$1813
         end
         unreachable
        end
@@ -8371,7 +8370,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$1812
+      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$1814
        local.get $1
        i32.const 8
        i32.sub
@@ -8382,7 +8381,7 @@
         local.get $1
         local.get $0
         call $assembly/AST/ASTPrinter/ASTPrinter#visitFunctionCallExpression
-        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$1812
+        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$1814
        end
        unreachable
       end
@@ -8402,7 +8401,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$1813
+     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$1815
       local.get $1
       i32.const 8
       i32.sub
@@ -8413,7 +8412,7 @@
        local.get $1
        local.get $0
        call $assembly/AST/ASTPrinter/ASTPrinter#visitFunctionCallStatement
-       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$1813
+       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$1815
       end
       unreachable
      end
@@ -8433,7 +8432,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $0
     i32.store offset=4
-    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$1814
+    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$1816
      local.get $1
      i32.const 8
      i32.sub
@@ -8445,7 +8444,7 @@
       local.get $0
       i32.const 32096
       call $byn$mgfn-shared$assembly/AST/ASTPrinter/ASTPrinter#visitPrint
-      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$1814
+      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$1816
      end
      unreachable
     end
@@ -9217,7 +9216,7 @@
                             global.get $~lib/memory/__stack_pointer
                             local.get $0
                             i32.store offset=4
-                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$1838
+                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$1840
                              local.get $1
                              i32.const 8
                              i32.sub
@@ -9232,7 +9231,7 @@
                               i32.const 127
                               i32.const 32144
                               call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$1838
+                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$1840
                              end
                              unreachable
                             end
@@ -9252,7 +9251,7 @@
                            global.get $~lib/memory/__stack_pointer
                            local.get $0
                            i32.store offset=4
-                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$1839
+                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$1841
                             local.get $1
                             i32.const 8
                             i32.sub
@@ -9267,7 +9266,7 @@
                              i32.const 182
                              i32.const 32224
                              call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$1839
+                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$1841
                             end
                             unreachable
                            end
@@ -9287,7 +9286,7 @@
                           global.get $~lib/memory/__stack_pointer
                           local.get $0
                           i32.store offset=4
-                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$1840
+                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$1842
                            local.get $1
                            i32.const 8
                            i32.sub
@@ -9302,7 +9301,7 @@
                             i32.const 151
                             i32.const 32304
                             call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$1840
+                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$1842
                            end
                            unreachable
                           end
@@ -9322,7 +9321,7 @@
                          global.get $~lib/memory/__stack_pointer
                          local.get $0
                          i32.store offset=4
-                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$1841
+                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$1843
                           local.get $1
                           i32.const 8
                           i32.sub
@@ -9333,7 +9332,7 @@
                            local.get $1
                            local.get $0
                            call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitUnaryExpression
-                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$1841
+                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$1843
                           end
                           unreachable
                          end
@@ -9353,7 +9352,7 @@
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=4
-                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$1842
+                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$1844
                          local.get $1
                          i32.const 8
                          i32.sub
@@ -9440,7 +9439,7 @@
                           i32.const 40
                           i32.add
                           global.set $~lib/memory/__stack_pointer
-                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$1842
+                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$1844
                          end
                          unreachable
                         end
@@ -9460,7 +9459,7 @@
                        global.get $~lib/memory/__stack_pointer
                        local.get $0
                        i32.store offset=4
-                       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$1843
+                       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$1845
                         local.get $1
                         i32.const 8
                         i32.sub
@@ -9472,7 +9471,7 @@
                          local.get $0
                          i32.const 32528
                          call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitNumber
-                         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$1843
+                         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$1845
                         end
                         unreachable
                        end
@@ -9497,7 +9496,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      i32.store offset=4
-                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$1844
+                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$1846
                       local.get $1
                       i32.const 8
                       i32.sub
@@ -9512,7 +9511,7 @@
                        i32.const 139
                        i32.const 32640
                        call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$1844
+                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$1846
                       end
                       unreachable
                      end
@@ -9532,7 +9531,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$1845
+                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$1847
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -9547,7 +9546,7 @@
                       i32.const 103
                       i32.const 32704
                       call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$1845
+                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$1847
                      end
                      unreachable
                     end
@@ -9567,7 +9566,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$1846
+                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$1848
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -9582,7 +9581,7 @@
                      i32.const 115
                      i32.const 32768
                      call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$1846
+                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$1848
                     end
                     unreachable
                    end
@@ -9602,7 +9601,7 @@
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=4
-                  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$1847
+                  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$1849
                    local.get $1
                    i32.const 8
                    i32.sub
@@ -9613,7 +9612,7 @@
                     local.get $1
                     local.get $0
                     call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitDeclaration
-                    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$1847
+                    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$1849
                    end
                    unreachable
                   end
@@ -9638,7 +9637,7 @@
                 global.get $~lib/memory/__stack_pointer
                 local.get $0
                 i32.store offset=4
-                block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$1848
+                block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$1850
                  local.get $1
                  i32.const 8
                  i32.sub
@@ -9650,7 +9649,7 @@
                   local.get $0
                   i32.const 32960
                   call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPrint
-                  br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$1848
+                  br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$1850
                  end
                  unreachable
                 end
@@ -9670,7 +9669,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $0
                i32.store offset=4
-               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitLoopStatement@override$1849
+               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitLoopStatement@override$1851
                 local.get $1
                 i32.const 8
                 i32.sub
@@ -9681,7 +9680,7 @@
                  local.get $1
                  local.get $0
                  call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitLoopStatement
-                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitLoopStatement@override$1849
+                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitLoopStatement@override$1851
                 end
                 unreachable
                end
@@ -9701,7 +9700,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAssignment@override$1850
+              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAssignment@override$1852
                local.get $1
                i32.const 8
                i32.sub
@@ -9712,7 +9711,7 @@
                 local.get $1
                 local.get $0
                 call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitAssignment
-                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAssignment@override$1850
+                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAssignment@override$1852
                end
                unreachable
               end
@@ -9732,7 +9731,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$1851
+             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$1853
               local.get $1
               i32.const 8
               i32.sub
@@ -9743,7 +9742,7 @@
                local.get $1
                local.get $0
                call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitIfStatement
-               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$1851
+               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$1853
               end
               unreachable
              end
@@ -9834,7 +9833,7 @@
            global.get $~lib/memory/__stack_pointer
            local.get $0
            i32.store offset=4
-           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$1852
+           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$1854
             local.get $1
             i32.const 8
             i32.sub
@@ -9846,7 +9845,7 @@
              local.get $0
              i32.const 33168
              call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitNumber
-             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$1852
+             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$1854
             end
             unreachable
            end
@@ -9866,7 +9865,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
-          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitScan@override$1853
+          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitScan@override$1855
            local.get $1
            i32.const 8
            i32.sub
@@ -9877,7 +9876,7 @@
             local.get $1
             local.get $0
             call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitScan
-            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitScan@override$1853
+            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitScan@override$1855
            end
            unreachable
           end
@@ -9897,7 +9896,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$1854
+         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$1856
           local.get $1
           i32.const 8
           i32.sub
@@ -9908,7 +9907,7 @@
            local.get $1
            local.get $0
            call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitIncrement
-           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$1854
+           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$1856
           end
           unreachable
          end
@@ -9928,7 +9927,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$1855
+        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$1857
          local.get $1
          i32.const 8
          i32.sub
@@ -9940,7 +9939,7 @@
           local.get $0
           i32.const 31760
           call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitNumber
-          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$1855
+          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$1857
          end
          unreachable
         end
@@ -9960,7 +9959,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$1856
+       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$1858
         local.get $1
         i32.const 8
         i32.sub
@@ -9971,7 +9970,7 @@
          local.get $1
          local.get $0
          call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitFunction
-         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$1856
+         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$1858
         end
         unreachable
        end
@@ -10001,7 +10000,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $0
     i32.store offset=4
-    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$1857
+    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$1859
      local.get $1
      i32.const 8
      i32.sub
@@ -10013,7 +10012,7 @@
       local.get $0
       i32.const 33456
       call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPrint
-      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$1857
+      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$1859
      end
      unreachable
     end
@@ -10084,7 +10083,7 @@
                             global.get $~lib/memory/__stack_pointer
                             local.get $0
                             i32.store offset=4
-                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$1858
+                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$1860
                              local.get $1
                              i32.const 8
                              i32.sub
@@ -10099,7 +10098,7 @@
                               i32.const 195
                               call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                               local.set $0
-                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$1858
+                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$1860
                              end
                              unreachable
                             end
@@ -10119,7 +10118,7 @@
                            global.get $~lib/memory/__stack_pointer
                            local.get $0
                            i32.store offset=4
-                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$1859
+                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$1861
                             local.get $1
                             i32.const 8
                             i32.sub
@@ -10134,7 +10133,7 @@
                              i32.const 235
                              call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                              local.set $0
-                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$1859
+                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$1861
                             end
                             unreachable
                            end
@@ -10154,7 +10153,7 @@
                           global.get $~lib/memory/__stack_pointer
                           local.get $0
                           i32.store offset=4
-                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$1860
+                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$1862
                            local.get $1
                            i32.const 8
                            i32.sub
@@ -10169,7 +10168,7 @@
                             i32.const 218
                             call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                             local.set $0
-                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$1860
+                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$1862
                            end
                            unreachable
                           end
@@ -10189,7 +10188,7 @@
                          global.get $~lib/memory/__stack_pointer
                          local.get $0
                          i32.store offset=4
-                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$1861
+                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$1863
                           local.get $1
                           i32.const 8
                           i32.sub
@@ -10201,7 +10200,7 @@
                            local.get $0
                            call $assembly/AST/ToAstVisitor/ToAstVisitor#visitUnaryExpression
                            local.set $0
-                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$1861
+                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$1863
                           end
                           unreachable
                          end
@@ -10221,7 +10220,7 @@
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=4
-                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$1862
+                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$1864
                          local.get $1
                          i32.const 8
                          i32.sub
@@ -10257,7 +10256,7 @@
                           i32.const 8
                           i32.add
                           global.set $~lib/memory/__stack_pointer
-                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$1862
+                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$1864
                          end
                          unreachable
                         end
@@ -10277,7 +10276,7 @@
                        global.get $~lib/memory/__stack_pointer
                        local.get $0
                        i32.store offset=4
-                       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$1863
+                       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$1865
                         local.get $1
                         i32.const 8
                         i32.sub
@@ -10321,7 +10320,7 @@
                          i32.const 12
                          i32.add
                          global.set $~lib/memory/__stack_pointer
-                         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$1863
+                         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$1865
                         end
                         unreachable
                        end
@@ -10346,7 +10345,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      i32.store offset=4
-                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$1864
+                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$1866
                       local.get $1
                       i32.const 8
                       i32.sub
@@ -10361,7 +10360,7 @@
                        i32.const 204
                        call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                        local.set $0
-                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$1864
+                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$1866
                       end
                       unreachable
                      end
@@ -10381,7 +10380,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$1865
+                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$1867
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -10396,7 +10395,7 @@
                       i32.const 177
                       call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                       local.set $0
-                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$1865
+                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$1867
                      end
                      unreachable
                     end
@@ -10416,7 +10415,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$1866
+                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$1868
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -10431,7 +10430,7 @@
                      i32.const 186
                      call $byn$mgfn-shared$assembly/AST/ToAstVisitor/ToAstVisitor#visitEqualityExpression
                      local.set $0
-                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$1866
+                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$1868
                     end
                     unreachable
                    end
@@ -10451,7 +10450,7 @@
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=4
-                  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$1867
+                  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$1869
                    local.get $1
                    i32.const 8
                    i32.sub
@@ -10463,7 +10462,7 @@
                     local.get $0
                     call $assembly/AST/ToAstVisitor/ToAstVisitor#visitDeclaration
                     local.set $0
-                    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$1867
+                    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$1869
                    end
                    unreachable
                   end
@@ -10573,7 +10572,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $0
                i32.store offset=4
-               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitLoopStatement@override$1868
+               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitLoopStatement@override$1870
                 local.get $1
                 i32.const 8
                 i32.sub
@@ -10585,7 +10584,7 @@
                  local.get $0
                  call $assembly/AST/ToAstVisitor/ToAstVisitor#visitLoopStatement
                  local.set $0
-                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitLoopStatement@override$1868
+                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitLoopStatement@override$1870
                 end
                 unreachable
                end
@@ -10605,7 +10604,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$1869
+              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$1871
                local.get $1
                i32.const 8
                i32.sub
@@ -10617,7 +10616,7 @@
                 local.get $0
                 call $assembly/AST/ToAstVisitor/ToAstVisitor#visitAssignment
                 local.set $0
-                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$1869
+                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$1871
                end
                unreachable
               end
@@ -10637,7 +10636,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$1870
+             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$1872
               local.get $1
               i32.const 8
               i32.sub
@@ -10649,7 +10648,7 @@
                local.get $0
                call $assembly/AST/ToAstVisitor/ToAstVisitor#visitIfStatement
                local.set $0
-               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$1870
+               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$1872
               end
               unreachable
              end
@@ -10669,7 +10668,7 @@
             global.get $~lib/memory/__stack_pointer
             local.get $0
             i32.store offset=4
-            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$1871
+            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$1873
              local.get $1
              i32.const 8
              i32.sub
@@ -10681,7 +10680,7 @@
               local.get $0
               call $assembly/AST/ToAstVisitor/ToAstVisitor#visitCompoundStatement
               local.set $0
-              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$1871
+              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$1873
              end
              unreachable
             end
@@ -10701,7 +10700,7 @@
            global.get $~lib/memory/__stack_pointer
            local.get $0
            i32.store offset=4
-           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$1872
+           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$1874
             local.get $1
             i32.const 8
             i32.sub
@@ -10745,7 +10744,7 @@
              i32.const 12
              i32.add
              global.set $~lib/memory/__stack_pointer
-             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$1872
+             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$1874
             end
             unreachable
            end
@@ -10765,7 +10764,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
-          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitScan@override$1873
+          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitScan@override$1875
            local.get $1
            i32.const 8
            i32.sub
@@ -10777,7 +10776,7 @@
             local.get $0
             call $assembly/AST/ToAstVisitor/ToAstVisitor#visitScan
             local.set $0
-            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitScan@override$1873
+            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitScan@override$1875
            end
            unreachable
           end
@@ -10797,7 +10796,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIncrement@override$1874
+         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIncrement@override$1876
           local.get $1
           i32.const 8
           i32.sub
@@ -10809,7 +10808,7 @@
            local.get $0
            call $assembly/AST/ToAstVisitor/ToAstVisitor#visitIncrement
            local.set $0
-           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIncrement@override$1874
+           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIncrement@override$1876
           end
           unreachable
          end
@@ -10829,7 +10828,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$1875
+        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$1877
          local.get $1
          i32.const 8
          i32.sub
@@ -10873,7 +10872,7 @@
           i32.const 12
           i32.add
           global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$1875
+          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$1877
          end
          unreachable
         end
@@ -10893,7 +10892,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$1876
+       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$1878
         local.get $1
         i32.const 8
         i32.sub
@@ -10905,7 +10904,7 @@
          local.get $0
          call $assembly/AST/ToAstVisitor/ToAstVisitor#visitFunction
          local.set $0
-         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$1876
+         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$1878
         end
         unreachable
        end
@@ -10925,7 +10924,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$1877
+      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$1879
        local.get $1
        i32.const 8
        i32.sub
@@ -10937,7 +10936,7 @@
         local.get $0
         call $assembly/AST/ToAstVisitor/ToAstVisitor#visitFunctionCallStatement
         local.set $0
-        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$1877
+        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$1879
        end
        unreachable
       end
@@ -10957,7 +10956,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$1878
+     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$1880
       local.get $1
       i32.const 8
       i32.sub
@@ -10969,7 +10968,7 @@
        local.get $0
        call $assembly/AST/ToAstVisitor/ToAstVisitor#visitFunctionCallExpression
        local.set $0
-       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$1878
+       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$1880
       end
       unreachable
      end
@@ -10989,7 +10988,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $0
     i32.store offset=4
-    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$1879
+    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$1881
      local.get $1
      i32.const 8
      i32.sub
@@ -11078,7 +11077,7 @@
       i32.const 24
       i32.add
       global.set $~lib/memory/__stack_pointer
-      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$1879
+      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$1881
      end
      unreachable
     end
@@ -26367,7 +26366,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=4
-   block $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$1900
+   block $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$1902
     local.get $0
     local.get $1
     call $"~lib/map/Map<~lib/string/String,i32>#has"
@@ -26393,7 +26392,7 @@
      i32.const 12
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$1900
+     br $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$1902
     end
     global.get $~lib/memory/__stack_pointer
     i32.const 12
@@ -42159,7 +42158,7 @@
     i32.const 0
    end
    if
-    block $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$1907 (result i32)
+    block $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$1909 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
@@ -42211,7 +42210,7 @@
       i32.add
       global.set $~lib/memory/__stack_pointer
       i32.const 23520
-      br $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$1907
+      br $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$1909
      end
      global.get $~lib/memory/__stack_pointer
      i32.const 12
@@ -44014,7 +44013,7 @@
   i32.load
   local.tee $0
   i32.store
-  block $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1927
+  block $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1929
    block $default
     block $case1
      local.get $0
@@ -44087,7 +44086,7 @@
       i32.const 30864
      end
      local.set $0
-     br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1927
+     br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1929
     end
     global.get $~lib/memory/__stack_pointer
     i32.const 8
@@ -44112,7 +44111,7 @@
     i32.const 8
     i32.add
     global.set $~lib/memory/__stack_pointer
-    br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1927
+    br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$1929
    end
    unreachable
   end
@@ -44584,13 +44583,13 @@
   (local $6 i32)
   (local $7 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 76
+  i32.const 84
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 76
+  i32.const 84
   memory.fill
   i32.const 5872
   local.set $2
@@ -44830,37 +44829,62 @@
   i32.load8_u offset=20
   if (result i32)
    global.get $~lib/memory/__stack_pointer
-   i32.const 25840
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.store offset=28
+   i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=8
    local.tee $4
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   local.get $4
-   i32.load offset=8
-   local.tee $4
-   i32.store offset=16
-   i32.const 25840
-   local.get $4
-   call $~lib/string/String.__concat
-   local.set $4
-   global.get $~lib/memory/__stack_pointer
-   local.get $4
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 23872
-   i32.store offset=8
    local.get $4
-   i32.const 23872
-   call $~lib/string/String.__concat
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=52
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=8
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $5
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.load offset=8
+   local.tee $5
+   i32.store offset=56
+   global.get $~lib/memory/__stack_pointer
+   i32.const 25872
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=8
+   i32.const 25872
+   i32.const 1
+   local.get $4
+   call $~lib/staticarray/StaticArray<~lib/string/String>#__uset
+   global.get $~lib/memory/__stack_pointer
+   i32.const 25872
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=8
+   i32.const 25872
+   i32.const 3
+   local.get $5
+   call $~lib/staticarray/StaticArray<~lib/string/String>#__uset
+   global.get $~lib/memory/__stack_pointer
+   i32.const 25872
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   i32.const 5872
+   i32.store offset=8
+   i32.const 25872
+   call $~lib/staticarray/StaticArray<~lib/string/String>#join
   else
    global.get $~lib/memory/__stack_pointer
-   i32.const 25888
+   i32.const 25840
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
    local.get $1
@@ -44875,12 +44899,12 @@
    i32.load offset=8
    local.tee $4
    i32.store offset=8
-   i32.const 25888
+   i32.const 25840
    local.get $4
    call $~lib/string/String#concat
   end
   local.tee $4
-  i32.store offset=52
+  i32.store offset=60
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
@@ -44897,18 +44921,18 @@
   local.get $1
   call $assembly/Compiler/Compiler/Compiler#compileAbstractType
   local.tee $1
-  i32.store offset=56
+  i32.store offset=64
   global.get $~lib/memory/__stack_pointer
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $4
-  i32.store offset=60
+  i32.store offset=68
   global.get $~lib/memory/__stack_pointer
   local.get $3
-  i32.store offset=64
+  i32.store offset=72
   global.get $~lib/memory/__stack_pointer
   local.get $1
-  i32.store offset=68
+  i32.store offset=76
   global.get $~lib/memory/__stack_pointer
   i32.const 26000
   i32.store offset=20
@@ -44979,7 +45003,7 @@
   i32.const 8240
   call $~lib/string/String.__concat
   local.tee $1
-  i32.store offset=72
+  i32.store offset=80
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=12
@@ -44995,7 +45019,7 @@
   local.get $1
   call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
-  i32.const 76
+  i32.const 84
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
@@ -49960,7 +49984,7 @@
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
-  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$1238
+  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$1240
    local.get $1
    i32.const 8
    i32.sub
@@ -50047,7 +50071,7 @@
     i32.const 40
     i32.add
     global.set $~lib/memory/__stack_pointer
-    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$1238
+    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$1240
    end
    unreachable
   end
@@ -50071,7 +50095,7 @@
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
-  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$1239
+  block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$1241
    local.get $1
    i32.const 8
    i32.sub
@@ -50083,7 +50107,7 @@
     local.get $0
     i32.const 31440
     call $byn$mgfn-shared$assembly/AST/ASTPrinter/ASTPrinter#visitValueType
-    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$1239
+    br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$1241
    end
    unreachable
   end
@@ -51975,7 +51999,7 @@
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
-  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$1299
+  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$1301
    local.get $1
    i32.const 8
    i32.sub
@@ -51986,7 +52010,7 @@
     local.get $1
     local.get $0
     call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitFunctionCallStatement
-    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$1299
+    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$1301
    end
    unreachable
   end
@@ -52079,7 +52103,7 @@
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
-  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$1300
+  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$1302
    local.get $1
    i32.const 8
    i32.sub
@@ -52090,7 +52114,7 @@
     local.get $0
     call $assembly/AST/ToAstVisitor/ToAstVisitor#visitType
     local.set $0
-    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$1300
+    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$1302
    end
    unreachable
   end
@@ -59645,7 +59669,7 @@
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
-  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$1297
+  block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$1299
    local.get $1
    i32.const 8
    i32.sub
@@ -59657,7 +59681,7 @@
     local.get $0
     local.get $2
     call $byn$mgfn-shared$assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitNumber
-    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$1297
+    br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$1299
    end
    unreachable
   end

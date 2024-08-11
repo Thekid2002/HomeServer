@@ -63,21 +63,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         exampleSelect.addEventListener("change", function () {
-            if (codeArea != null) {
-                codeArea.value = exampleSelect.value;
-            }
             if (window.codeEditor != null) {
-                window.codeEditor.setValue(exampleSelect.value);
+                if(window.selectedFile === "CarlEditor") {
+                    window.codeEditor.setValue(exampleSelect.value);
+                }
+                window.localStorage.setItem("CarlEditor", exampleSelect.value);
+            }else {
+                codeArea.value = exampleSelect.value;
             }
         });
 
-        // Set initial value
-        if (codeArea != null) {
-            codeArea.value = examples[0].code;
-        }
-
         if (window.codeEditor != null) {
-            window.codeEditor.setValue(examples[0].code);
+            if(window.selectedFile === "CarlEditor") {
+                window.codeEditor.setValue(examples[0].code);
+            }
+            window.localStorage.setItem("CarlEditor", examples[0].code);
+        }else {
+            codeArea.value = examples[0].code;
         }
 
 

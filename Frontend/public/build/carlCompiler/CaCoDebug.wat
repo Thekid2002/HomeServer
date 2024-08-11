@@ -1215,10 +1215,9 @@
  (data $532 (i32.const 33324) ",\00\00\00\03\00\00\00\00\00\00\00_\00\00\00\14\00\00\00\10\82\00\00\00\00\00\00\d0\1f\00\00\00\00\00\00\90\80")
  (data $533 (i32.const 33372) "<")
  (data $533.1 (i32.const 33384) "\02\00\00\00*\00\00\00U\00n\00k\00n\00o\00w\00n\00 \00a\00b\00s\00t\00r\00a\00c\00t\00 \00t\00y\00p\00e")
- (data $534 (i32.const 33436) ",")
- (data $534.1 (i32.const 33448) "\02\00\00\00\12\00\00\00(\00e\00x\00p\00o\00r\00t\00 \00\"")
- (data $535 (i32.const 33484) "\1c")
- (data $535.1 (i32.const 33496) "\02\00\00\00\02\00\00\00$")
+ (data $534 (i32.const 33436) "\1c")
+ (data $534.1 (i32.const 33448) "\02\00\00\00\02\00\00\00$")
+ (data $535 (i32.const 33468) ",\00\00\00\03\00\00\00\00\00\00\00_\00\00\00\14\00\00\00\b0\82\00\00\00\00\00\00\c0|\00\00\00\00\00\00\00{")
  (data $536 (i32.const 33516) "\1c")
  (data $536.1 (i32.const 33528) "\02\00\00\00\0c\00\00\00(\00f\00u\00n\00c\00 ")
  (data $537 (i32.const 33548) ",")
@@ -8438,7 +8437,7 @@
                        global.get $~lib/memory/__stack_pointer
                        local.get $0
                        i32.store offset=4
-                       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$2777
+                       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$2779
                         local.get $1
                         i32.const 8
                         i32.sub
@@ -8531,7 +8530,7 @@
                          i32.const 40
                          i32.add
                          global.set $~lib/memory/__stack_pointer
-                         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$2777
+                         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitNumber@override$2779
                         end
                         unreachable
                        end
@@ -8554,7 +8553,7 @@
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.store offset=4
-                      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$2779
+                      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$2781
                        local.get $1
                        i32.const 8
                        i32.sub
@@ -8743,7 +8742,7 @@
                         i32.const 40
                         i32.add
                         global.set $~lib/memory/__stack_pointer
-                        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$2779
+                        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBinaryExpression@override$2781
                        end
                        unreachable
                       end
@@ -8933,7 +8932,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$2782
+                    block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$2784
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -9023,7 +9022,7 @@
                       i32.const 40
                       i32.add
                       global.set $~lib/memory/__stack_pointer
-                      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$2782
+                      br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitTerm@override$2784
                      end
                      unreachable
                     end
@@ -9046,7 +9045,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$2784
+                   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$2786
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -9057,7 +9056,7 @@
                      local.get $1
                      local.get $0
                      call $assembly/AST/ASTPrinter/ASTPrinter#visitDeclaration
-                     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$2784
+                     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitDeclaration@override$2786
                     end
                     unreachable
                    end
@@ -9085,7 +9084,7 @@
                  global.get $~lib/memory/__stack_pointer
                  local.get $0
                  i32.store offset=4
-                 block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$2786
+                 block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$2788
                   local.get $1
                   i32.const 8
                   i32.sub
@@ -9198,7 +9197,7 @@
                    i32.const 32
                    i32.add
                    global.set $~lib/memory/__stack_pointer
-                   br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$2786
+                   br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitPrint@override$2788
                   end
                   unreachable
                  end
@@ -9541,7 +9540,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$2790
+              block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$2792
                local.get $1
                i32.const 8
                i32.sub
@@ -9722,7 +9721,7 @@
                 i32.const 40
                 i32.add
                 global.set $~lib/memory/__stack_pointer
-                br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$2790
+                br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIfStatement@override$2792
                end
                unreachable
               end
@@ -9745,7 +9744,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitCompoundStatement@override$2792
+             block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitCompoundStatement@override$2794
               local.get $1
               i32.const 8
               i32.sub
@@ -9799,7 +9798,7 @@
                i32.const 12
                i32.add
                global.set $~lib/memory/__stack_pointer
-               br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitCompoundStatement@override$2792
+               br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitCompoundStatement@override$2794
               end
               unreachable
              end
@@ -9822,7 +9821,7 @@
             global.get $~lib/memory/__stack_pointer
             local.get $0
             i32.store offset=4
-            block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$2794
+            block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$2796
              local.get $1
              i32.const 8
              i32.sub
@@ -9912,7 +9911,7 @@
               i32.const 40
               i32.add
               global.set $~lib/memory/__stack_pointer
-              br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$2794
+              br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitString@override$2796
              end
              unreachable
             end
@@ -10085,7 +10084,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
-          block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$2797
+          block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$2799
            local.get $1
            i32.const 8
            i32.sub
@@ -10175,7 +10174,7 @@
             i32.const 40
             i32.add
             global.set $~lib/memory/__stack_pointer
-            br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$2797
+            br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitBool@override$2799
            end
            unreachable
           end
@@ -10198,7 +10197,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$2799
+         block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$2801
           local.get $1
           i32.const 8
           i32.sub
@@ -10209,7 +10208,7 @@
            local.get $1
            local.get $0
            call $assembly/AST/ASTPrinter/ASTPrinter#visitFunctionDeclaration
-           br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$2799
+           br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionDeclaration@override$2801
           end
           unreachable
          end
@@ -10232,7 +10231,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$2801
+        block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$2803
          local.get $1
          i32.const 8
          i32.sub
@@ -10324,7 +10323,7 @@
           i32.const 40
           i32.add
           global.set $~lib/memory/__stack_pointer
-          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$2801
+          br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitStatementType@override$2803
          end
          unreachable
         end
@@ -10347,7 +10346,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$2803
+       block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$2805
         local.get $1
         i32.const 8
         i32.sub
@@ -10503,7 +10502,7 @@
          i32.const 40
          i32.add
          global.set $~lib/memory/__stack_pointer
-         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$2803
+         br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallExpression@override$2805
         end
         unreachable
        end
@@ -10526,7 +10525,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$2805
+      block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$2807
        local.get $1
        i32.const 8
        i32.sub
@@ -10682,7 +10681,7 @@
         i32.const 40
         i32.add
         global.set $~lib/memory/__stack_pointer
-        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$2805
+        br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitFunctionCallStatement@override$2807
        end
        unreachable
       end
@@ -10705,7 +10704,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$2807
+     block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$2809
       local.get $1
       i32.const 8
       i32.sub
@@ -10818,7 +10817,7 @@
        i32.const 32
        i32.add
        global.set $~lib/memory/__stack_pointer
-       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$2807
+       br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitReturn@override$2809
       end
       unreachable
      end
@@ -11028,7 +11027,7 @@
                                local.get $0
                                i32.load offset=4
                                if
-                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2815 (result i32)
+                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2817 (result i32)
                                  global.get $~lib/memory/__stack_pointer
                                  local.set $1
                                  global.get $~lib/memory/__stack_pointer
@@ -11068,7 +11067,7 @@
                                    br_table $is_instance $is_instance $tablify|00 $is_instance $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|00
                                   end
                                   i32.const 0
-                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2815
+                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2817
                                  end
                                  i32.const 1
                                 end
@@ -11140,7 +11139,7 @@
                             i32.const 0
                             i32.const 28
                             memory.fill
-                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2822 (result i32)
+                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2824 (result i32)
                              global.get $~lib/memory/__stack_pointer
                              local.get $0
                              i32.store offset=16
@@ -11165,7 +11164,7 @@
                                br_table $is_instance0 $is_instance0 $is_instance0 $tablify|01 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|01
                               end
                               i32.const 0
-                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2822
+                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2824
                              end
                              i32.const 1
                             end
@@ -11189,7 +11188,7 @@
                             i32.load offset=12
                             local.tee $2
                             i32.store offset=4
-                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2825 (result i32)
+                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2827 (result i32)
                              global.get $~lib/memory/__stack_pointer
                              local.get $0
                              i32.store offset=16
@@ -11214,7 +11213,7 @@
                                br_table $is_instance1 $is_instance1 $is_instance1 $tablify|02 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|02
                               end
                               i32.const 0
-                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2825
+                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2827
                              end
                              i32.const 1
                             end
@@ -11262,7 +11261,7 @@
                            i32.load offset=8
                            local.tee $1
                            i32.store
-                           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2830 (result i32)
+                           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2832 (result i32)
                             global.get $~lib/memory/__stack_pointer
                             local.get $0
                             i32.store offset=12
@@ -11287,7 +11286,7 @@
                               br_table $is_instance2 $is_instance2 $is_instance2 $tablify|03 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $tablify|03
                              end
                              i32.const 0
-                             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2830
+                             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2832
                             end
                             i32.const 1
                            end
@@ -11383,7 +11382,7 @@
                          local.get $0
                          i32.load offset=12
                          if
-                          block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2840 (result i32)
+                          block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2842 (result i32)
                            global.get $~lib/memory/__stack_pointer
                            local.set $1
                            global.get $~lib/memory/__stack_pointer
@@ -11423,7 +11422,7 @@
                              br_table $is_instance3 $is_instance3 $is_instance3 $tablify|04 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $tablify|04
                             end
                             i32.const 0
-                            br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2840
+                            br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2842
                            end
                            i32.const 1
                           end
@@ -11484,7 +11483,7 @@
                        global.get $~lib/memory/__stack_pointer
                        i64.const 0
                        i64.store offset=8
-                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2846 (result i32)
+                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2848 (result i32)
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=8
@@ -11509,7 +11508,7 @@
                           br_table $is_instance4 $is_instance4 $is_instance4 $tablify|05 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $tablify|05
                          end
                          i32.const 0
-                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2846
+                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2848
                         end
                         i32.const 1
                        end
@@ -11556,7 +11555,7 @@
                       local.get $0
                       i32.load offset=4
                       if
-                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2851 (result i32)
+                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2853 (result i32)
                         global.get $~lib/memory/__stack_pointer
                         local.set $2
                         global.get $~lib/memory/__stack_pointer
@@ -11592,7 +11591,7 @@
                         i32.load
                         i32.const 66
                         i32.ne
-                        br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2851
+                        br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2853
                         drop
                         i32.const 1
                        end
@@ -11613,7 +11612,7 @@
                       local.get $0
                       local.tee $2
                       i32.store
-                      block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2853 (result i32)
+                      block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2855 (result i32)
                        global.get $~lib/memory/__stack_pointer
                        local.get $1
                        i32.store offset=16
@@ -11638,7 +11637,7 @@
                          br_table $is_instance6 $is_instance6 $is_instance6 $tablify|06 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $tablify|06
                         end
                         i32.const 0
-                        br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2853
+                        br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2855
                        end
                        i32.const 1
                       end
@@ -11660,7 +11659,7 @@
                       local.get $1
                       i32.load offset=12
                       if
-                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2856 (result i32)
+                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2858 (result i32)
                         global.get $~lib/memory/__stack_pointer
                         local.set $0
                         global.get $~lib/memory/__stack_pointer
@@ -11700,7 +11699,7 @@
                           br_table $is_instance7 $is_instance7 $tablify|07 $is_instance7 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $tablify|07 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $tablify|07
                          end
                          i32.const 0
-                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2856
+                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2858
                         end
                         i32.const 1
                        end
@@ -11760,7 +11759,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $1
                      i32.store
-                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2861 (result i32)
+                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2863 (result i32)
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.store offset=12
@@ -11785,7 +11784,7 @@
                         br_table $is_instance8 $is_instance8 $is_instance8 $tablify|08 $is_instance8 $is_instance8 $is_instance8 $is_instance8 $is_instance8 $is_instance8 $is_instance8 $tablify|08
                        end
                        i32.const 0
-                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2861
+                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2863
                       end
                       i32.const 1
                      end
@@ -11826,7 +11825,7 @@
                     memory.fill
                     global.get $~lib/memory/__stack_pointer
                     local.set $3
-                    block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2865 (result i32)
+                    block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2867 (result i32)
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      local.tee $1
@@ -11852,7 +11851,7 @@
                        br_table $is_instance9 $is_instance9 $is_instance9 $tablify|09 $is_instance9 $is_instance9 $is_instance9 $is_instance9 $is_instance9 $is_instance9 $is_instance9 $tablify|09
                       end
                       i32.const 0
-                      br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2865
+                      br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2867
                      end
                      i32.const 1
                     end
@@ -11874,7 +11873,7 @@
                     local.get $1
                     i32.load offset=8
                     if
-                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2868 (result i32)
+                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2870 (result i32)
                       global.get $~lib/memory/__stack_pointer
                       local.set $0
                       global.get $~lib/memory/__stack_pointer
@@ -11914,7 +11913,7 @@
                         br_table $is_instance10 $is_instance10 $tablify|010 $is_instance10 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $tablify|010 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $is_instance10 $tablify|010
                        end
                        i32.const 0
-                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2868
+                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2870
                       end
                       i32.const 1
                      end
@@ -11941,7 +11940,7 @@
                     local.get $1
                     i32.load offset=12
                     if
-                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2871 (result i32)
+                     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2873 (result i32)
                       global.get $~lib/memory/__stack_pointer
                       local.set $0
                       global.get $~lib/memory/__stack_pointer
@@ -11981,7 +11980,7 @@
                         br_table $is_instance11 $is_instance11 $tablify|011 $is_instance11 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $tablify|011 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $is_instance11 $tablify|011
                        end
                        i32.const 0
-                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2871
+                       br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2873
                       end
                       i32.const 1
                      end
@@ -12027,7 +12026,7 @@
                    i32.const 0
                    i32.const 24
                    memory.fill
-                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2875 (result i32)
+                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2877 (result i32)
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=12
@@ -12052,7 +12051,7 @@
                       br_table $is_instance12 $is_instance12 $tablify|012 $is_instance12 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $tablify|012 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $is_instance12 $tablify|012
                      end
                      i32.const 0
-                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2875
+                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2877
                     end
                     i32.const 1
                    end
@@ -12068,7 +12067,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $1
                    i32.store
-                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2877 (result i32)
+                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2879 (result i32)
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=12
@@ -12093,7 +12092,7 @@
                       br_table $is_instance13 $is_instance13 $tablify|013 $is_instance13 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $tablify|013 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $is_instance13 $tablify|013
                      end
                      i32.const 0
-                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2877
+                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2879
                     end
                     i32.const 1
                    end
@@ -12165,7 +12164,7 @@
                  i32.const 0
                  i32.const 28
                  memory.fill
-                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2884 (result i32)
+                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2886 (result i32)
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=16
@@ -12186,7 +12185,7 @@
                   i32.load
                   i32.const 76
                   i32.ne
-                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2884
+                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2886
                   drop
                   i32.const 1
                  end
@@ -12202,7 +12201,7 @@
                  global.get $~lib/memory/__stack_pointer
                  local.get $1
                  i32.store
-                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2886 (result i32)
+                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2888 (result i32)
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=16
@@ -12223,7 +12222,7 @@
                   i32.load
                   i32.const 70
                   i32.ne
-                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2886
+                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2888
                   drop
                   i32.const 1
                  end
@@ -12370,7 +12369,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $3
                i32.store
-               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2899 (result i32)
+               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2901 (result i32)
                 global.get $~lib/memory/__stack_pointer
                 local.set $4
                 global.get $~lib/memory/__stack_pointer
@@ -12404,7 +12403,7 @@
                   br_table $is_instance16 $is_instance16 $is_instance16 $tablify|014 $is_instance16 $is_instance16 $is_instance16 $is_instance16 $is_instance16 $is_instance16 $is_instance16 $tablify|014
                  end
                  i32.const 0
-                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2899
+                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2901
                 end
                 i32.const 1
                end
@@ -12488,7 +12487,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $3
               i32.store
-              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2905 (result i32)
+              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2907 (result i32)
                global.get $~lib/memory/__stack_pointer
                local.set $4
                global.get $~lib/memory/__stack_pointer
@@ -12522,7 +12521,7 @@
                  br_table $is_instance17 $is_instance17 $is_instance17 $tablify|015 $is_instance17 $is_instance17 $is_instance17 $is_instance17 $is_instance17 $is_instance17 $is_instance17 $tablify|015
                 end
                 i32.const 0
-                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2905
+                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2907
                end
                i32.const 1
               end
@@ -12579,7 +12578,7 @@
            global.get $~lib/memory/__stack_pointer
            i64.const 0
            i64.store offset=8
-           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2909 (result i32)
+           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2911 (result i32)
             global.get $~lib/memory/__stack_pointer
             local.get $0
             i32.store offset=8
@@ -12604,7 +12603,7 @@
               br_table $is_instance18 $is_instance18 $is_instance18 $tablify|016 $is_instance18 $is_instance18 $is_instance18 $is_instance18 $is_instance18 $is_instance18 $is_instance18 $tablify|016
              end
              i32.const 0
-             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2909
+             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2911
             end
             i32.const 1
            end
@@ -12740,7 +12739,7 @@
                              global.get $~lib/memory/__stack_pointer
                              local.get $0
                              i32.store offset=4
-                             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$2923
+                             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$2925
                               local.get $1
                               i32.const 8
                               i32.sub
@@ -12751,7 +12750,7 @@
                                local.get $1
                                local.get $0
                                call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitEqualityExpression
-                               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$2923
+                               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitEqualityExpression@override$2925
                               end
                               unreachable
                              end
@@ -12774,7 +12773,7 @@
                             global.get $~lib/memory/__stack_pointer
                             local.get $0
                             i32.store offset=4
-                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$2925
+                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$2927
                              local.get $1
                              i32.const 8
                              i32.sub
@@ -12785,7 +12784,7 @@
                               local.get $1
                               local.get $0
                               call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitRelationalExpression
-                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$2925
+                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitRelationalExpression@override$2927
                              end
                              unreachable
                             end
@@ -12808,7 +12807,7 @@
                            global.get $~lib/memory/__stack_pointer
                            local.get $0
                            i32.store offset=4
-                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$2927
+                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$2929
                             local.get $1
                             i32.const 8
                             i32.sub
@@ -12819,7 +12818,7 @@
                              local.get $1
                              local.get $0
                              call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitMultiplicativeExpression
-                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$2927
+                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitMultiplicativeExpression@override$2929
                             end
                             unreachable
                            end
@@ -12842,7 +12841,7 @@
                           global.get $~lib/memory/__stack_pointer
                           local.get $0
                           i32.store offset=4
-                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$2929
+                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$2931
                            local.get $1
                            i32.const 8
                            i32.sub
@@ -12998,7 +12997,7 @@
                             i32.const 44
                             i32.add
                             global.set $~lib/memory/__stack_pointer
-                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$2929
+                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitUnaryExpression@override$2931
                            end
                            unreachable
                           end
@@ -13021,7 +13020,7 @@
                          global.get $~lib/memory/__stack_pointer
                          local.get $0
                          i32.store offset=4
-                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$2931
+                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$2933
                           local.get $1
                           i32.const 8
                           i32.sub
@@ -13111,7 +13110,7 @@
                            i32.const 40
                            i32.add
                            global.set $~lib/memory/__stack_pointer
-                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$2931
+                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitTerm@override$2933
                           end
                           unreachable
                          end
@@ -13134,7 +13133,7 @@
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=4
-                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$2933
+                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$2935
                          local.get $1
                          i32.const 8
                          i32.sub
@@ -13229,7 +13228,7 @@
                           i32.const 40
                           i32.add
                           global.set $~lib/memory/__stack_pointer
-                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$2933
+                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitNumber@override$2935
                          end
                          unreachable
                         end
@@ -13257,7 +13256,7 @@
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.store offset=4
-                      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$2935
+                      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$2937
                        local.get $1
                        i32.const 8
                        i32.sub
@@ -13268,7 +13267,7 @@
                         local.get $1
                         local.get $0
                         call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitExpression
-                        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$2935
+                        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitExpression@override$2937
                        end
                        unreachable
                       end
@@ -13291,7 +13290,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      i32.store offset=4
-                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$2937
+                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$2939
                       local.get $1
                       i32.const 8
                       i32.sub
@@ -13302,7 +13301,7 @@
                        local.get $1
                        local.get $0
                        call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitPowExpression
-                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$2937
+                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPowExpression@override$2939
                       end
                       unreachable
                      end
@@ -13325,7 +13324,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$2939
+                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$2941
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -13336,7 +13335,7 @@
                       local.get $1
                       local.get $0
                       call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitAdditiveExpression
-                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$2939
+                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitAdditiveExpression@override$2941
                      end
                      unreachable
                     end
@@ -13359,7 +13358,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$2941
+                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$2943
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -13370,7 +13369,7 @@
                      local.get $1
                      local.get $0
                      call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitDeclaration
-                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$2941
+                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitDeclaration@override$2943
                     end
                     unreachable
                    end
@@ -13398,7 +13397,7 @@
                  global.get $~lib/memory/__stack_pointer
                  local.get $0
                  i32.store offset=4
-                 block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$2943
+                 block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$2945
                   local.get $1
                   i32.const 8
                   i32.sub
@@ -13511,7 +13510,7 @@
                    i32.const 32
                    i32.add
                    global.set $~lib/memory/__stack_pointer
-                   br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$2943
+                   br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitPrint@override$2945
                   end
                   unreachable
                  end
@@ -13841,7 +13840,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$2947
+              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$2949
                local.get $1
                i32.const 8
                i32.sub
@@ -13852,7 +13851,7 @@
                 local.get $1
                 local.get $0
                 call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitIfStatement
-                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$2947
+                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIfStatement@override$2949
                end
                unreachable
               end
@@ -13875,7 +13874,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitCompoundStatement@override$2949
+             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitCompoundStatement@override$2951
               local.get $1
               i32.const 8
               i32.sub
@@ -13929,7 +13928,7 @@
                i32.const 12
                i32.add
                global.set $~lib/memory/__stack_pointer
-               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitCompoundStatement@override$2949
+               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitCompoundStatement@override$2951
               end
               unreachable
              end
@@ -13952,7 +13951,7 @@
             global.get $~lib/memory/__stack_pointer
             local.get $0
             i32.store offset=4
-            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$2951
+            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$2953
              local.get $1
              i32.const 8
              i32.sub
@@ -14047,7 +14046,7 @@
               i32.const 40
               i32.add
               global.set $~lib/memory/__stack_pointer
-              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$2951
+              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitString@override$2953
              end
              unreachable
             end
@@ -14220,7 +14219,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $0
           i32.store offset=4
-          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$2954
+          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$2956
            local.get $1
            i32.const 8
            i32.sub
@@ -14333,7 +14332,7 @@
             i32.const 32
             i32.add
             global.set $~lib/memory/__stack_pointer
-            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$2954
+            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIncrement@override$2956
            end
            unreachable
           end
@@ -14356,7 +14355,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$2956
+         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$2958
           local.get $1
           i32.const 8
           i32.sub
@@ -14451,7 +14450,7 @@
            i32.const 40
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$2956
+           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitBool@override$2958
           end
           unreachable
          end
@@ -14474,7 +14473,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$2958
+        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$2960
          local.get $1
          i32.const 8
          i32.sub
@@ -14485,7 +14484,7 @@
           local.get $1
           local.get $0
           call $assembly/Parser/ParseTreePrinter/ParseTreePrinter#visitFunction
-          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$2958
+          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunction@override$2960
          end
          unreachable
         end
@@ -14518,7 +14517,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$2960
+     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$2962
       local.get $1
       i32.const 8
       i32.sub
@@ -14631,7 +14630,7 @@
        i32.const 32
        i32.add
        global.set $~lib/memory/__stack_pointer
-       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$2960
+       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitReturn@override$2962
       end
       unreachable
      end
@@ -14717,7 +14716,7 @@
                              global.get $~lib/memory/__stack_pointer
                              local.get $0
                              i32.store offset=4
-                             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$2962
+                             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$2964
                               local.get $1
                               i32.const 8
                               i32.sub
@@ -14763,7 +14762,7 @@
                                 end
                                 global.get $~lib/memory/__stack_pointer
                                 local.set $2
-                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2610 (result i32)
+                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2612 (result i32)
                                  global.get $~lib/memory/__stack_pointer
                                  local.get $0
                                  i32.store offset=8
@@ -14792,7 +14791,7 @@
                                    br_table $is_instance $is_instance $is_instance $tablify|0 $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
                                   end
                                   i32.const 0
-                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2610
+                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2612
                                  end
                                  i32.const 1
                                 end
@@ -14810,7 +14809,7 @@
                                 i32.store offset=16
                                 global.get $~lib/memory/__stack_pointer
                                 local.set $2
-                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2612 (result i32)
+                                block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2614 (result i32)
                                  global.get $~lib/memory/__stack_pointer
                                  local.set $4
                                  global.get $~lib/memory/__stack_pointer
@@ -14854,7 +14853,7 @@
                                    br_table $is_instance0 $is_instance0 $is_instance0 $tablify|00 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
                                   end
                                   i32.const 0
-                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2612
+                                  br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2614
                                  end
                                  i32.const 1
                                 end
@@ -14917,7 +14916,7 @@
                                i32.const 44
                                i32.add
                                global.set $~lib/memory/__stack_pointer
-                               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$2962
+                               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitEqualityExpression@override$2964
                               end
                               unreachable
                              end
@@ -14940,7 +14939,7 @@
                             global.get $~lib/memory/__stack_pointer
                             local.get $0
                             i32.store offset=4
-                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$2964
+                            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$2966
                              local.get $1
                              i32.const 8
                              i32.sub
@@ -14986,7 +14985,7 @@
                                end
                                global.get $~lib/memory/__stack_pointer
                                local.set $2
-                               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2620 (result i32)
+                               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2622 (result i32)
                                 global.get $~lib/memory/__stack_pointer
                                 local.get $0
                                 i32.store offset=8
@@ -15015,7 +15014,7 @@
                                   br_table $is_instance1 $is_instance1 $is_instance1 $tablify|02 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|02
                                  end
                                  i32.const 0
-                                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2620
+                                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2622
                                 end
                                 i32.const 1
                                end
@@ -15033,7 +15032,7 @@
                                i32.store offset=16
                                global.get $~lib/memory/__stack_pointer
                                local.set $2
-                               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2622 (result i32)
+                               block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2624 (result i32)
                                 global.get $~lib/memory/__stack_pointer
                                 local.set $4
                                 global.get $~lib/memory/__stack_pointer
@@ -15077,7 +15076,7 @@
                                   br_table $is_instance03 $is_instance03 $is_instance03 $tablify|004 $is_instance03 $is_instance03 $is_instance03 $is_instance03 $is_instance03 $is_instance03 $is_instance03 $tablify|004
                                  end
                                  i32.const 0
-                                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2622
+                                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2624
                                 end
                                 i32.const 1
                                end
@@ -15140,7 +15139,7 @@
                               i32.const 44
                               i32.add
                               global.set $~lib/memory/__stack_pointer
-                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$2964
+                              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitRelationalExpression@override$2966
                              end
                              unreachable
                             end
@@ -15163,7 +15162,7 @@
                            global.get $~lib/memory/__stack_pointer
                            local.get $0
                            i32.store offset=4
-                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$2966
+                           block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$2968
                             local.get $1
                             i32.const 8
                             i32.sub
@@ -15209,7 +15208,7 @@
                               end
                               global.get $~lib/memory/__stack_pointer
                               local.set $2
-                              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2630 (result i32)
+                              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2632 (result i32)
                                global.get $~lib/memory/__stack_pointer
                                local.get $0
                                i32.store offset=8
@@ -15238,7 +15237,7 @@
                                  br_table $is_instance2 $is_instance2 $is_instance2 $tablify|03 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $is_instance2 $tablify|03
                                 end
                                 i32.const 0
-                                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2630
+                                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2632
                                end
                                i32.const 1
                               end
@@ -15256,7 +15255,7 @@
                               i32.store offset=16
                               global.get $~lib/memory/__stack_pointer
                               local.set $2
-                              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2632 (result i32)
+                              block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2634 (result i32)
                                global.get $~lib/memory/__stack_pointer
                                local.set $4
                                global.get $~lib/memory/__stack_pointer
@@ -15300,7 +15299,7 @@
                                  br_table $is_instance04 $is_instance04 $is_instance04 $tablify|005 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $is_instance04 $tablify|005
                                 end
                                 i32.const 0
-                                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2632
+                                br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2634
                                end
                                i32.const 1
                               end
@@ -15363,7 +15362,7 @@
                              i32.const 44
                              i32.add
                              global.set $~lib/memory/__stack_pointer
-                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$2966
+                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitMultiplicativeExpression@override$2968
                             end
                             unreachable
                            end
@@ -15386,7 +15385,7 @@
                           global.get $~lib/memory/__stack_pointer
                           local.get $0
                           i32.store offset=4
-                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2968
+                          block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2970
                            local.get $1
                            i32.const 8
                            i32.sub
@@ -15428,11 +15427,11 @@
                              local.get $1
                              call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<assembly/AST/Nodes/AbstractNode/AbstractNode>@override
                              local.set $0
-                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2968
+                             br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2970
                             end
                             global.get $~lib/memory/__stack_pointer
                             local.set $2
-                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3370 (result i32)
+                            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3372 (result i32)
                              global.get $~lib/memory/__stack_pointer
                              local.get $0
                              i32.store offset=8
@@ -15461,7 +15460,7 @@
                                br_table $is_instance15 $is_instance15 $is_instance15 $tablify|002 $is_instance15 $is_instance15 $is_instance15 $is_instance15 $is_instance15 $is_instance15 $is_instance15 $tablify|002
                               end
                               i32.const 0
-                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3370
+                              br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3372
                              end
                              i32.const 1
                             end
@@ -15515,7 +15514,7 @@
                             i32.load
                             call $assembly/AST/Nodes/Expressions/UnaryExpression/UnaryExpression#constructor
                             local.set $0
-                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2968
+                            br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitUnaryExpression@override$2970
                            end
                            unreachable
                           end
@@ -15544,7 +15543,7 @@
                          global.get $~lib/memory/__stack_pointer
                          local.get $0
                          i32.store offset=4
-                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$2970
+                         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$2972
                           local.get $1
                           i32.const 8
                           i32.sub
@@ -15583,7 +15582,7 @@
                            i32.const 8
                            i32.add
                            global.set $~lib/memory/__stack_pointer
-                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$2970
+                           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitTerm@override$2972
                           end
                           unreachable
                          end
@@ -15606,7 +15605,7 @@
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=4
-                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$2972
+                        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$2974
                          local.get $1
                          i32.const 8
                          i32.sub
@@ -15653,7 +15652,7 @@
                           i32.const 12
                           i32.add
                           global.set $~lib/memory/__stack_pointer
-                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$2972
+                          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitNumber@override$2974
                          end
                          unreachable
                         end
@@ -15681,7 +15680,7 @@
                       global.get $~lib/memory/__stack_pointer
                       local.get $0
                       i32.store offset=4
-                      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$2974
+                      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$2976
                        local.get $1
                        i32.const 8
                        i32.sub
@@ -15727,7 +15726,7 @@
                          end
                          global.get $~lib/memory/__stack_pointer
                          local.set $2
-                         block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2640 (result i32)
+                         block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2642 (result i32)
                           global.get $~lib/memory/__stack_pointer
                           local.get $0
                           i32.store offset=8
@@ -15756,7 +15755,7 @@
                             br_table $is_instance3 $is_instance3 $is_instance3 $tablify|04 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $tablify|04
                            end
                            i32.const 0
-                           br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2640
+                           br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2642
                           end
                           i32.const 1
                          end
@@ -15774,7 +15773,7 @@
                          i32.store offset=16
                          global.get $~lib/memory/__stack_pointer
                          local.set $2
-                         block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2642 (result i32)
+                         block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2644 (result i32)
                           global.get $~lib/memory/__stack_pointer
                           local.set $4
                           global.get $~lib/memory/__stack_pointer
@@ -15818,7 +15817,7 @@
                             br_table $is_instance05 $is_instance05 $is_instance05 $tablify|006 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $is_instance05 $tablify|006
                            end
                            i32.const 0
-                           br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2642
+                           br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2644
                           end
                           i32.const 1
                          end
@@ -15881,7 +15880,7 @@
                         i32.const 44
                         i32.add
                         global.set $~lib/memory/__stack_pointer
-                        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$2974
+                        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitExpression@override$2976
                        end
                        unreachable
                       end
@@ -15904,7 +15903,7 @@
                      global.get $~lib/memory/__stack_pointer
                      local.get $0
                      i32.store offset=4
-                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$2976
+                     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$2978
                       local.get $1
                       i32.const 8
                       i32.sub
@@ -15950,7 +15949,7 @@
                         end
                         global.get $~lib/memory/__stack_pointer
                         local.set $2
-                        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2650 (result i32)
+                        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2652 (result i32)
                          global.get $~lib/memory/__stack_pointer
                          local.get $0
                          i32.store offset=8
@@ -15979,7 +15978,7 @@
                            br_table $is_instance4 $is_instance4 $is_instance4 $tablify|05 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $is_instance4 $tablify|05
                           end
                           i32.const 0
-                          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2650
+                          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2652
                          end
                          i32.const 1
                         end
@@ -15997,7 +15996,7 @@
                         i32.store offset=16
                         global.get $~lib/memory/__stack_pointer
                         local.set $2
-                        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2652 (result i32)
+                        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2654 (result i32)
                          global.get $~lib/memory/__stack_pointer
                          local.set $4
                          global.get $~lib/memory/__stack_pointer
@@ -16041,7 +16040,7 @@
                            br_table $is_instance06 $is_instance06 $is_instance06 $tablify|007 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $is_instance06 $tablify|007
                           end
                           i32.const 0
-                          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2652
+                          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2654
                          end
                          i32.const 1
                         end
@@ -16104,7 +16103,7 @@
                        i32.const 44
                        i32.add
                        global.set $~lib/memory/__stack_pointer
-                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$2976
+                       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPowExpression@override$2978
                       end
                       unreachable
                      end
@@ -16127,7 +16126,7 @@
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=4
-                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$2978
+                    block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$2980
                      local.get $1
                      i32.const 8
                      i32.sub
@@ -16173,7 +16172,7 @@
                        end
                        global.get $~lib/memory/__stack_pointer
                        local.set $2
-                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2660 (result i32)
+                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2662 (result i32)
                         global.get $~lib/memory/__stack_pointer
                         local.get $0
                         i32.store offset=8
@@ -16202,7 +16201,7 @@
                           br_table $is_instance5 $is_instance5 $is_instance5 $tablify|06 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $is_instance5 $tablify|06
                          end
                          i32.const 0
-                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2660
+                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2662
                         end
                         i32.const 1
                        end
@@ -16220,7 +16219,7 @@
                        i32.store offset=16
                        global.get $~lib/memory/__stack_pointer
                        local.set $2
-                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2662 (result i32)
+                       block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2664 (result i32)
                         global.get $~lib/memory/__stack_pointer
                         local.set $4
                         global.get $~lib/memory/__stack_pointer
@@ -16264,7 +16263,7 @@
                           br_table $is_instance07 $is_instance07 $is_instance07 $tablify|008 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $is_instance07 $tablify|008
                          end
                          i32.const 0
-                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2662
+                         br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2664
                         end
                         i32.const 1
                        end
@@ -16327,7 +16326,7 @@
                       i32.const 44
                       i32.add
                       global.set $~lib/memory/__stack_pointer
-                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$2978
+                      br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAdditiveExpression@override$2980
                      end
                      unreachable
                     end
@@ -16350,7 +16349,7 @@
                    global.get $~lib/memory/__stack_pointer
                    local.get $0
                    i32.store offset=4
-                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$2980
+                   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$2982
                     local.get $1
                     i32.const 8
                     i32.sub
@@ -16362,7 +16361,7 @@
                      local.get $0
                      call $assembly/AST/ToAstVisitor/ToAstVisitor#visitDeclaration
                      local.set $1
-                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$2980
+                     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitDeclaration@override$2982
                     end
                     unreachable
                    end
@@ -16390,7 +16389,7 @@
                  global.get $~lib/memory/__stack_pointer
                  local.get $0
                  i32.store offset=4
-                 block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPrint@override$2982
+                 block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPrint@override$2984
                   local.get $1
                   i32.const 8
                   i32.sub
@@ -16412,7 +16411,7 @@
                    memory.fill
                    global.get $~lib/memory/__stack_pointer
                    local.set $2
-                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3383 (result i32)
+                   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3385 (result i32)
                     global.get $~lib/memory/__stack_pointer
                     local.get $0
                     i32.store offset=8
@@ -16441,7 +16440,7 @@
                       br_table $is_instance036 $is_instance036 $is_instance036 $tablify|01 $is_instance036 $is_instance036 $is_instance036 $is_instance036 $is_instance036 $is_instance036 $is_instance036 $tablify|01
                      end
                      i32.const 0
-                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3383
+                     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3385
                     end
                     i32.const 1
                    end
@@ -16472,7 +16471,7 @@
                    i32.const 20
                    i32.add
                    global.set $~lib/memory/__stack_pointer
-                   br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPrint@override$2982
+                   br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitPrint@override$2984
                   end
                   unreachable
                  end
@@ -16518,7 +16517,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $0
                i32.store offset=4
-               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$2985
+               block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$2987
                 local.get $1
                 i32.const 8
                 i32.sub
@@ -16540,7 +16539,7 @@
                  memory.fill
                  global.get $~lib/memory/__stack_pointer
                  local.set $2
-                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3387 (result i32)
+                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3389 (result i32)
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=8
@@ -16565,7 +16564,7 @@
                   i32.load
                   i32.const 67
                   i32.ne
-                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3387
+                  br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3389
                   drop
                   i32.const 1
                  end
@@ -16583,7 +16582,7 @@
                  i32.store offset=16
                  global.get $~lib/memory/__stack_pointer
                  local.set $2
-                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3389 (result i32)
+                 block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3391 (result i32)
                   global.get $~lib/memory/__stack_pointer
                   local.get $0
                   i32.store offset=8
@@ -16612,7 +16611,7 @@
                     br_table $is_instance26 $is_instance26 $is_instance26 $tablify|027 $is_instance26 $is_instance26 $is_instance26 $is_instance26 $is_instance26 $is_instance26 $is_instance26 $tablify|027
                    end
                    i32.const 0
-                   br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3389
+                   br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3391
                   end
                   i32.const 1
                  end
@@ -16647,7 +16646,7 @@
                  i32.const 28
                  i32.add
                  global.set $~lib/memory/__stack_pointer
-                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$2985
+                 br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitAssignment@override$2987
                 end
                 unreachable
                end
@@ -16670,7 +16669,7 @@
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=4
-              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$2987
+              block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$2989
                local.get $1
                i32.const 8
                i32.sub
@@ -16682,7 +16681,7 @@
                 local.get $0
                 call $assembly/AST/ToAstVisitor/ToAstVisitor#visitIfStatement
                 local.set $1
-                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$2987
+                br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIfStatement@override$2989
                end
                unreachable
               end
@@ -16705,7 +16704,7 @@
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=4
-             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$2989
+             block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$2991
               local.get $1
               i32.const 8
               i32.sub
@@ -16759,7 +16758,7 @@
                call $assembly/Parser/ParseTreeNode/ParseTreeNode#accept<assembly/AST/Nodes/AbstractNode/AbstractNode>@override
                local.tee $1
                i32.store offset=16
-               block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3394 (result i32)
+               block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3396 (result i32)
                 global.get $~lib/memory/__stack_pointer
                 local.get $2
                 i32.store offset=20
@@ -16774,7 +16773,7 @@
                   br_table $is_instance37 $is_instance37 $tablify|037 $is_instance37 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $tablify|037 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $is_instance37 $tablify|037
                  end
                  i32.const 0
-                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3394
+                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3396
                 end
                 i32.const 1
                end
@@ -16790,7 +16789,7 @@
                global.get $~lib/memory/__stack_pointer
                local.get $2
                i32.store
-               block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3395 (result i32)
+               block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3397 (result i32)
                 global.get $~lib/memory/__stack_pointer
                 local.get $1
                 i32.store offset=24
@@ -16805,7 +16804,7 @@
                   br_table $is_instance48 $is_instance48 $tablify|048 $is_instance48 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $tablify|048 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $is_instance48 $tablify|048
                  end
                  i32.const 0
-                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3395
+                 br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3397
                 end
                 i32.const 1
                end
@@ -16834,7 +16833,7 @@
                i32.const 28
                i32.add
                global.set $~lib/memory/__stack_pointer
-               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$2989
+               br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitCompoundStatement@override$2991
               end
               unreachable
              end
@@ -16857,7 +16856,7 @@
             global.get $~lib/memory/__stack_pointer
             local.get $0
             i32.store offset=4
-            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$2991
+            block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$2993
              local.get $1
              i32.const 8
              i32.sub
@@ -16904,7 +16903,7 @@
               i32.const 12
               i32.add
               global.set $~lib/memory/__stack_pointer
-              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$2991
+              br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitString@override$2993
              end
              unreachable
             end
@@ -16949,7 +16948,7 @@
              memory.fill
              global.get $~lib/memory/__stack_pointer
              local.set $2
-             block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3124 (result i32)
+             block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3126 (result i32)
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=8
@@ -16978,7 +16977,7 @@
                 br_table $is_instance6 $is_instance6 $is_instance6 $tablify|07 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $is_instance6 $tablify|07
                end
                i32.const 0
-               br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3124
+               br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3126
               end
               i32.const 1
              end
@@ -16996,7 +16995,7 @@
              i32.store offset=16
              global.get $~lib/memory/__stack_pointer
              local.set $2
-             block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3126 (result i32)
+             block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3128 (result i32)
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=8
@@ -17021,7 +17020,7 @@
               i32.load
               i32.const 67
               i32.ne
-              br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3126
+              br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3128
               drop
               i32.const 1
              end
@@ -17039,7 +17038,7 @@
              i32.store offset=24
              global.get $~lib/memory/__stack_pointer
              local.set $2
-             block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$3128 (result i32)
+             block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$3130 (result i32)
               global.get $~lib/memory/__stack_pointer
               local.get $0
               i32.store offset=8
@@ -17064,7 +17063,7 @@
               i32.load
               i32.const 70
               i32.ne
-              br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$3128
+              br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$3130
               drop
               i32.const 1
              end
@@ -17148,7 +17147,7 @@
             memory.fill
             global.get $~lib/memory/__stack_pointer
             local.set $2
-            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3132 (result i32)
+            block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3134 (result i32)
              global.get $~lib/memory/__stack_pointer
              local.get $0
              i32.store offset=8
@@ -17173,7 +17172,7 @@
              i32.load
              i32.const 67
              i32.ne
-             br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3132
+             br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$3134
              drop
              i32.const 1
             end
@@ -17318,7 +17317,7 @@
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=4
-         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$2995
+         block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$2997
           local.get $1
           i32.const 8
           i32.sub
@@ -17365,7 +17364,7 @@
            i32.const 12
            i32.add
            global.set $~lib/memory/__stack_pointer
-           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$2995
+           br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitBool@override$2997
           end
           unreachable
          end
@@ -17388,7 +17387,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $0
         i32.store offset=4
-        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$2997
+        block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$2999
          local.get $1
          i32.const 8
          i32.sub
@@ -17400,7 +17399,7 @@
           local.get $0
           call $assembly/AST/ToAstVisitor/ToAstVisitor#visitFunction
           local.set $1
-          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$2997
+          br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunction@override$2999
          end
          unreachable
         end
@@ -17423,7 +17422,7 @@
        global.get $~lib/memory/__stack_pointer
        local.get $0
        i32.store offset=4
-       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$2999
+       block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$3001
         local.get $1
         i32.const 8
         i32.sub
@@ -17477,7 +17476,7 @@
            global.get $~lib/memory/__stack_pointer
            local.get $4
            i32.store
-           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3410 (result i32)
+           block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3412 (result i32)
             global.get $~lib/memory/__stack_pointer
             local.set $5
             global.get $~lib/memory/__stack_pointer
@@ -17515,7 +17514,7 @@
               br_table $is_instance59 $is_instance59 $is_instance59 $tablify|059 $is_instance59 $is_instance59 $is_instance59 $is_instance59 $is_instance59 $is_instance59 $is_instance59 $tablify|059
              end
              i32.const 0
-             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3410
+             br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3412
             end
             i32.const 1
            end
@@ -17560,7 +17559,7 @@
          i32.const 36
          i32.add
          global.set $~lib/memory/__stack_pointer
-         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$2999
+         br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallStatement@override$3001
         end
         unreachable
        end
@@ -17583,7 +17582,7 @@
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
-      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$3001
+      block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$3003
        local.get $1
        i32.const 8
        i32.sub
@@ -17637,7 +17636,7 @@
           global.get $~lib/memory/__stack_pointer
           local.get $4
           i32.store
-          block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3417 (result i32)
+          block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3419 (result i32)
            global.get $~lib/memory/__stack_pointer
            local.set $5
            global.get $~lib/memory/__stack_pointer
@@ -17675,7 +17674,7 @@
              br_table $is_instance68 $is_instance68 $is_instance68 $tablify|0610 $is_instance68 $is_instance68 $is_instance68 $is_instance68 $is_instance68 $is_instance68 $is_instance68 $tablify|0610
             end
             i32.const 0
-            br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3417
+            br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3419
            end
            i32.const 1
           end
@@ -17720,7 +17719,7 @@
         i32.const 36
         i32.add
         global.set $~lib/memory/__stack_pointer
-        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$3001
+        br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitFunctionCallExpression@override$3003
        end
        unreachable
       end
@@ -17743,7 +17742,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$3003
+     block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$3005
       local.get $1
       i32.const 8
       i32.sub
@@ -17771,7 +17770,7 @@
        if
         global.get $~lib/memory/__stack_pointer
         local.set $3
-        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3422 (result i32)
+        block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3424 (result i32)
          global.get $~lib/memory/__stack_pointer
          local.get $0
          i32.store offset=8
@@ -17800,7 +17799,7 @@
            br_table $is_instance7 $is_instance7 $is_instance7 $tablify|079 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $is_instance7 $tablify|079
           end
           i32.const 0
-          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3422
+          br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3424
          end
          i32.const 1
         end
@@ -17845,7 +17844,7 @@
        i32.const 24
        i32.add
        global.set $~lib/memory/__stack_pointer
-       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$3003
+       br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitReturn@override$3005
       end
       unreachable
      end
@@ -17906,7 +17905,7 @@
    if
     global.get $~lib/memory/__stack_pointer
     local.set $3
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3116 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3118 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.set $2
      global.get $~lib/memory/__stack_pointer
@@ -17950,7 +17949,7 @@
        br_table $is_instance $is_instance $tablify|0 $is_instance $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
       end
       i32.const 0
-      br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3116
+      br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3118
      end
      i32.const 1
     end
@@ -17969,7 +17968,7 @@
    end
    global.get $~lib/memory/__stack_pointer
    local.set $3
-   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3118 (result i32)
+   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3120 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store offset=8
@@ -17998,7 +17997,7 @@
       br_table $is_instance0 $is_instance0 $is_instance0 $tablify|00 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
      end
      i32.const 0
-     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3118
+     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$3120
     end
     i32.const 1
    end
@@ -18016,7 +18015,7 @@
    i32.store offset=28
    global.get $~lib/memory/__stack_pointer
    local.set $5
-   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3120 (result i32)
+   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3122 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store offset=8
@@ -18045,7 +18044,7 @@
       br_table $is_instance1 $is_instance1 $tablify|01 $is_instance1 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|01
      end
      i32.const 0
-     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3120
+     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$3122
     end
     i32.const 1
    end
@@ -33896,7 +33895,7 @@
      if
       global.get $~lib/memory/__stack_pointer
       local.set $3
-      block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2773 (result i32)
+      block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2775 (result i32)
        global.get $~lib/memory/__stack_pointer
        local.set $4
        global.get $~lib/memory/__stack_pointer
@@ -33940,7 +33939,7 @@
          br_table $is_instance $is_instance $tablify|0 $is_instance $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
         end
         i32.const 0
-        br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2773
+        br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2775
        end
        i32.const 1
       end
@@ -36224,7 +36223,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store offset=4
-    block $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$3208
+    block $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$3210
      local.get $0
      local.get $1
      call $"~lib/map/Map<~lib/string/String,i32>#has"
@@ -36250,7 +36249,7 @@
       i32.const 12
       i32.add
       global.set $~lib/memory/__stack_pointer
-      br $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$3208
+      br $__inlined_func$assembly/Env/VarEnv/VarEnv#lookUpGlobalType$3210
      end
      global.get $~lib/memory/__stack_pointer
      i32.const 12
@@ -54675,7 +54674,7 @@
      i32.const 0
     end
     if
-     block $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$3246 (result i32)
+     block $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$3248 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=4
@@ -54740,7 +54739,7 @@
        i32.add
        global.set $~lib/memory/__stack_pointer
        i32.const 31136
-       br $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$3246
+       br $__inlined_func$assembly/Compiler/Compiler/Compiler#compileBool$3248
       end
       global.get $~lib/memory/__stack_pointer
       i32.const 12
@@ -56690,7 +56689,7 @@
    i32.load
    local.tee $0
    i32.store
-   block $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3436
+   block $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3438
     block $default
      block $case1
       local.get $0
@@ -56766,7 +56765,7 @@
        i32.const 42592
       end
       local.set $0
-      br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3436
+      br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3438
      end
      global.get $~lib/memory/__stack_pointer
      i32.const 8
@@ -56794,7 +56793,7 @@
      i32.const 8
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3436
+     br $__inlined_func$assembly/AST/Nodes/Types/AbstractType/AbstractType#toString@override$3438
     end
     unreachable
    end
@@ -56917,7 +56916,7 @@
         global.get $~lib/memory/__stack_pointer
         local.get $1
         i32.store
-        block $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3248
+        block $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3250
          local.get $1
          i32.load offset=12
          local.tee $7
@@ -56933,7 +56932,7 @@
           global.set $~lib/memory/__stack_pointer
           i32.const -1
           local.set $2
-          br $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3248
+          br $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3250
          end
          global.get $~lib/memory/__stack_pointer
          local.get $1
@@ -56966,7 +56965,7 @@
             i32.const 8
             i32.add
             global.set $~lib/memory/__stack_pointer
-            br $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3248
+            br $__inlined_func$~lib/array/Array<~lib/string/String>#indexOf$3250
            end
            local.get $2
            i32.const 1
@@ -57367,7 +57366,7 @@
   (local $6 i32)
   (local $7 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 76
+  i32.const 84
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
@@ -57383,7 +57382,7 @@
   end
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 76
+  i32.const 84
   memory.fill
   i32.const 5872
   local.set $2
@@ -57629,37 +57628,68 @@
   i32.load8_u offset=20
   if (result i32)
    global.get $~lib/memory/__stack_pointer
-   i32.const 33456
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
    local.get $1
-   i32.store offset=28
+   i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.load offset=8
    local.tee $4
-   i32.store offset=20
-   global.get $~lib/memory/__stack_pointer
-   local.get $4
-   i32.load offset=8
-   local.tee $4
-   i32.store offset=16
-   i32.const 33456
-   local.get $4
-   call $~lib/string/String.__concat
-   local.set $4
-   global.get $~lib/memory/__stack_pointer
-   local.get $4
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   i32.const 31488
-   i32.store offset=8
    local.get $4
-   i32.const 31488
-   call $~lib/string/String.__concat
+   i32.load offset=8
+   local.tee $4
+   i32.store offset=52
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store offset=8
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.load offset=8
+   local.tee $5
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.load offset=8
+   local.tee $5
+   i32.store offset=56
+   global.get $~lib/memory/__stack_pointer
+   i32.const 33488
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $4
+   i32.store offset=8
+   i32.const 33492
+   local.get $4
+   i32.store
+   i32.const 33488
+   local.get $4
+   i32.const 1
+   call $~lib/rt/itcms/__link
+   global.get $~lib/memory/__stack_pointer
+   i32.const 33488
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   local.get $5
+   i32.store offset=8
+   i32.const 33500
+   local.get $5
+   i32.store
+   i32.const 33488
+   local.get $5
+   i32.const 1
+   call $~lib/rt/itcms/__link
+   global.get $~lib/memory/__stack_pointer
+   i32.const 33488
+   i32.store offset=4
+   global.get $~lib/memory/__stack_pointer
+   i32.const 5872
+   i32.store offset=8
+   i32.const 33488
+   call $~lib/staticarray/StaticArray<~lib/string/String>#join
   else
    global.get $~lib/memory/__stack_pointer
-   i32.const 33504
+   i32.const 33456
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
    local.get $1
@@ -57674,12 +57704,12 @@
    i32.load offset=8
    local.tee $4
    i32.store offset=8
-   i32.const 33504
+   i32.const 33456
    local.get $4
    call $~lib/string/String#concat
   end
   local.tee $4
-  i32.store offset=52
+  i32.store offset=60
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=4
@@ -57696,18 +57726,18 @@
   local.get $1
   call $assembly/Compiler/Compiler/Compiler#compileAbstractType
   local.tee $1
-  i32.store offset=56
+  i32.store offset=64
   global.get $~lib/memory/__stack_pointer
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $4
-  i32.store offset=60
+  i32.store offset=68
   global.get $~lib/memory/__stack_pointer
   local.get $3
-  i32.store offset=64
+  i32.store offset=72
   global.get $~lib/memory/__stack_pointer
   local.get $1
-  i32.store offset=68
+  i32.store offset=76
   global.get $~lib/memory/__stack_pointer
   i32.const 33616
   i32.store offset=20
@@ -57787,7 +57817,7 @@
   i32.const 8240
   call $~lib/string/String.__concat
   local.tee $1
-  i32.store offset=72
+  i32.store offset=80
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store offset=12
@@ -57803,7 +57833,7 @@
   local.get $1
   call $~lib/array/Array<assembly/Lexer/Token/Token>#push
   global.get $~lib/memory/__stack_pointer
-  i32.const 76
+  i32.const 84
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
@@ -57844,7 +57874,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$1916 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$1918 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=12
@@ -57855,7 +57885,7 @@
       i32.load
       i32.const 66
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$1916
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$1918
       drop
       i32.const 1
      end
@@ -57895,7 +57925,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$1918 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$1920 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=20
@@ -57906,7 +57936,7 @@
       i32.load
       i32.const 80
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$1918
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$1920
       drop
       i32.const 1
      end
@@ -58092,7 +58122,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$1920 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$1922 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=28
@@ -58103,7 +58133,7 @@
       i32.load
       i32.const 85
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$1920
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$1922
       drop
       i32.const 1
      end
@@ -58143,7 +58173,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$1922 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$1924 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=36
@@ -58154,7 +58184,7 @@
       i32.load
       i32.const 81
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$1922
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$1924
       drop
       i32.const 1
      end
@@ -58194,7 +58224,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$1924 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$1926 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=44
@@ -58205,7 +58235,7 @@
       i32.load
       i32.const 82
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$1924
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$1926
       drop
       i32.const 1
      end
@@ -58245,7 +58275,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$1926 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$1928 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=52
@@ -58256,7 +58286,7 @@
       i32.load
       i32.const 83
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$1926
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$1928
       drop
       i32.const 1
      end
@@ -58383,7 +58413,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$1928 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$1930 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=60
@@ -58394,7 +58424,7 @@
       i32.load
       i32.const 79
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$1928
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$1930
       drop
       i32.const 1
      end
@@ -58589,7 +58619,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionDeclaration/FunctionDeclaration$1930 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionDeclaration/FunctionDeclaration$1932 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=68
@@ -58600,7 +58630,7 @@
       i32.load
       i32.const 84
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionDeclaration/FunctionDeclaration$1930
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionDeclaration/FunctionDeclaration$1932
       drop
       i32.const 1
      end
@@ -58641,7 +58671,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionCallStatement/FunctionCallStatement$1932 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionCallStatement/FunctionCallStatement$1934 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=76
@@ -58652,7 +58682,7 @@
       i32.load
       i32.const 86
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionCallStatement/FunctionCallStatement$1932
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/FunctionCallStatement/FunctionCallStatement$1934
       drop
       i32.const 1
      end
@@ -58826,7 +58856,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Return/Return$1934 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Return/Return$1936 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=84
@@ -58837,7 +58867,7 @@
       i32.load
       i32.const 87
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Return/Return$1934
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Return/Return$1936
       drop
       i32.const 1
      end
@@ -59417,7 +59447,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $1
      i32.store
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1950 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1952 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=28
@@ -59428,7 +59458,7 @@
       i32.load
       i32.const 63
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1950
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1952
       drop
       i32.const 1
      end
@@ -59540,7 +59570,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store offset=60
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1951 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1953 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=68
@@ -59551,7 +59581,7 @@
      i32.load
      i32.const 63
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1951
+     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$1953
      drop
      i32.const 1
     end
@@ -59752,7 +59782,7 @@
    i32.const 8432
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1962 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1964 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=28
@@ -59763,7 +59793,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1962
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1964
      drop
      i32.const 1
     end
@@ -59782,7 +59812,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1964 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1966 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=32
@@ -59793,7 +59823,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1964
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1966
      drop
      i32.const 1
     end
@@ -59832,7 +59862,7 @@
    i32.const 8368
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1967 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1969 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=36
@@ -59843,7 +59873,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1967
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1969
      drop
      i32.const 1
     end
@@ -59862,7 +59892,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1969 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1971 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=40
@@ -59873,7 +59903,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1969
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1971
      drop
      i32.const 1
     end
@@ -59945,7 +59975,7 @@
      i32.const 0
     end
     if
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1974 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1976 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=52
@@ -59956,7 +59986,7 @@
       i32.load
       i32.const 90
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1974
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1976
       drop
       i32.const 1
      end
@@ -59975,7 +60005,7 @@
      local.get $3
      f64.load
      local.set $2
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1976 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1978 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=56
@@ -59986,7 +60016,7 @@
       i32.load
       i32.const 90
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1976
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1978
       drop
       i32.const 1
      end
@@ -60043,7 +60073,7 @@
      i32.const 0
     end
     if
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1980 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1982 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=68
@@ -60054,7 +60084,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1980
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1982
       drop
       i32.const 1
      end
@@ -60075,7 +60105,7 @@
      i32.const 0
      i32.ne
      local.set $1
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1982 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1984 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=72
@@ -60086,7 +60116,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1982
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1984
       drop
       i32.const 1
      end
@@ -60161,7 +60191,7 @@
      i32.const 0
     end
     if
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1987 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1989 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=84
@@ -60172,7 +60202,7 @@
       i32.load
       i32.const 90
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1987
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1989
       drop
       i32.const 1
      end
@@ -60191,7 +60221,7 @@
      local.get $3
      f64.load
      local.set $2
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1989 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1991 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=88
@@ -60202,7 +60232,7 @@
       i32.load
       i32.const 90
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1989
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$1991
       drop
       i32.const 1
      end
@@ -60259,7 +60289,7 @@
      i32.const 0
     end
     if
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1993 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1995 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=100
@@ -60270,7 +60300,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1993
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1995
       drop
       i32.const 1
      end
@@ -60291,7 +60321,7 @@
      i32.const 0
      i32.ne
      local.set $1
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1995 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1997 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=104
@@ -60302,7 +60332,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1995
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1997
       drop
       i32.const 1
      end
@@ -60344,7 +60374,7 @@
    i32.const 10480
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1998 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2000 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=108
@@ -60355,7 +60385,7 @@
      i32.load
      i32.const 89
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$1998
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2000
      drop
      i32.const 1
     end
@@ -60374,7 +60404,7 @@
     local.get $3
     i32.load8_u
     if (result i32)
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2000 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2002 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=112
@@ -60385,7 +60415,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2000
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2002
       drop
       i32.const 1
      end
@@ -60425,7 +60455,7 @@
    i32.const 10544
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2003 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2005 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=116
@@ -60436,7 +60466,7 @@
      i32.load
      i32.const 89
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2003
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2005
      drop
      i32.const 1
     end
@@ -60457,7 +60487,7 @@
     if (result i32)
      i32.const 1
     else
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2005 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2007 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=120
@@ -60468,7 +60498,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2005
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2007
       drop
       i32.const 1
      end
@@ -60506,7 +60536,7 @@
    i32.const 8528
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2008 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2010 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=124
@@ -60517,7 +60547,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2008
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2010
      drop
      i32.const 1
     end
@@ -60536,7 +60566,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2010 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2012 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=128
@@ -60547,7 +60577,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2010
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2012
      drop
      i32.const 1
     end
@@ -60586,7 +60616,7 @@
    i32.const 10832
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2013 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2015 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=132
@@ -60597,7 +60627,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2013
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2015
      drop
      i32.const 1
     end
@@ -60616,7 +60646,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2015 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2017 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=136
@@ -60627,7 +60657,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2015
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2017
      drop
      i32.const 1
     end
@@ -60666,7 +60696,7 @@
    i32.const 10864
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2018 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2020 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=140
@@ -60677,7 +60707,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2018
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2020
      drop
      i32.const 1
     end
@@ -60696,7 +60726,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2020 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2022 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=144
@@ -60707,7 +60737,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2020
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2022
      drop
      i32.const 1
     end
@@ -60746,7 +60776,7 @@
    i32.const 10704
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2023 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2025 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=148
@@ -60757,7 +60787,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2023
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2025
      drop
      i32.const 1
     end
@@ -60776,7 +60806,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2025 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2027 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=152
@@ -60787,7 +60817,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2025
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2027
      drop
      i32.const 1
     end
@@ -60826,7 +60856,7 @@
    i32.const 10736
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2028 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2030 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=156
@@ -60837,7 +60867,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2028
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2030
      drop
      i32.const 1
     end
@@ -60856,7 +60886,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2030 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2032 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=160
@@ -60867,7 +60897,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2030
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2032
      drop
      i32.const 1
     end
@@ -60906,7 +60936,7 @@
    i32.const 10768
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2033 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2035 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=164
@@ -60917,7 +60947,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2033
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2035
      drop
      i32.const 1
     end
@@ -60936,7 +60966,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2035 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2037 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=168
@@ -60947,7 +60977,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2035
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2037
      drop
      i32.const 1
     end
@@ -60986,7 +61016,7 @@
    i32.const 10800
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2038 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2040 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=172
@@ -60997,7 +61027,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2038
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2040
      drop
      i32.const 1
     end
@@ -61016,7 +61046,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2040 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2042 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=176
@@ -61027,7 +61057,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2040
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2042
      drop
      i32.const 1
     end
@@ -61066,7 +61096,7 @@
    i32.const 8176
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2043 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2045 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $3
      i32.store offset=180
@@ -61077,7 +61107,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2043
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2045
      drop
      i32.const 1
     end
@@ -61096,7 +61126,7 @@
     local.get $3
     f64.load
     local.set $2
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2045 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2047 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=184
@@ -61107,7 +61137,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2045
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2047
      drop
      i32.const 1
     end
@@ -61211,7 +61241,7 @@
    i32.const 10576
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2051 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2053 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=16
@@ -61237,7 +61267,7 @@
      i32.load
      i32.const 89
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2051
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2053
      drop
      i32.const 1
     end
@@ -61275,7 +61305,7 @@
    i32.const 8368
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2054 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2056 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=24
@@ -61301,7 +61331,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2054
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2056
      drop
      i32.const 1
     end
@@ -61339,7 +61369,7 @@
    i32.const 4768
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2057 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2059 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=32
@@ -61365,7 +61395,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2057
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2059
      drop
      i32.const 1
     end
@@ -61403,7 +61433,7 @@
    i32.const 4800
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2060 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2062 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=40
@@ -61429,7 +61459,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2060
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2062
      drop
      i32.const 1
     end
@@ -61467,7 +61497,7 @@
    i32.const 4832
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2063 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2065 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=48
@@ -61493,7 +61523,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2063
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2065
      drop
      i32.const 1
     end
@@ -61531,7 +61561,7 @@
    i32.const 4960
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2066 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2068 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=56
@@ -61557,7 +61587,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2066
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2068
      drop
      i32.const 1
     end
@@ -61595,7 +61625,7 @@
    i32.const 35968
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2069 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2071 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=64
@@ -61621,7 +61651,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2069
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2071
      drop
      i32.const 1
     end
@@ -61659,7 +61689,7 @@
    i32.const 4864
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2072 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2074 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=72
@@ -61685,7 +61715,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2072
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2074
      drop
      i32.const 1
     end
@@ -61723,7 +61753,7 @@
    i32.const 4896
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2075 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2077 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=80
@@ -61749,7 +61779,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2075
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2077
      drop
      i32.const 1
     end
@@ -61787,7 +61817,7 @@
    i32.const 4928
    call $~lib/string/String.__eq
    if
-    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2078 (result i32)
+    block $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2080 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=88
@@ -61813,7 +61843,7 @@
      i32.load
      i32.const 90
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2078
+     br_if $__inlined_func$~instanceof|assembly/Env/Values/ValNum/ValNum$2080
      drop
      i32.const 1
     end
@@ -61896,7 +61926,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/BinaryExpression/BinaryExpression$2090 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/BinaryExpression/BinaryExpression$2092 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=12
@@ -61907,7 +61937,7 @@
       i32.load
       i32.const 71
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/BinaryExpression/BinaryExpression$2090
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/BinaryExpression/BinaryExpression$2092
       drop
       i32.const 1
      end
@@ -61947,7 +61977,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/UnaryExpression/UnaryExpression$2092 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/UnaryExpression/UnaryExpression$2094 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=20
@@ -61958,7 +61988,7 @@
       i32.load
       i32.const 72
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/UnaryExpression/UnaryExpression$2092
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/UnaryExpression/UnaryExpression$2094
       drop
       i32.const 1
      end
@@ -61998,7 +62028,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2094 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2096 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=28
@@ -62009,7 +62039,7 @@
       i32.load
       i32.const 67
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2094
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2096
       drop
       i32.const 1
      end
@@ -62143,7 +62173,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Num/Num$2096 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Num/Num$2098 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=36
@@ -62154,7 +62184,7 @@
       i32.load
       i32.const 74
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Num/Num$2096
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Num/Num$2098
       drop
       i32.const 1
      end
@@ -62193,7 +62223,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Bool/Bool$2098 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Bool/Bool$2100 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=44
@@ -62204,7 +62234,7 @@
       i32.load
       i32.const 75
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Bool/Bool$2098
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Bool/Bool$2100
       drop
       i32.const 1
      end
@@ -62274,7 +62304,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2100 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2102 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=52
@@ -62285,7 +62315,7 @@
       i32.load
       i32.const 76
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2100
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/ASTString/ASTString$2102
       drop
       i32.const 1
      end
@@ -62425,7 +62455,7 @@
    unreachable
   end
   loop $while-continue|0
-   block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2132 (result i32)
+   block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2134 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.get $2
     i32.store offset=28
@@ -62436,7 +62466,7 @@
     i32.load
     i32.const 89
     i32.ne
-    br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2132
+    br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2134
     drop
     i32.const 1
    end
@@ -62576,7 +62606,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$2153 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$2155 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=12
@@ -62587,7 +62617,7 @@
       i32.load
       i32.const 79
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$2153
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Assignment/Assignment$2155
       drop
       i32.const 1
      end
@@ -62811,7 +62841,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2155 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2157 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=20
@@ -62822,7 +62852,7 @@
       i32.load
       i32.const 66
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2155
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Declaration/Declaration$2157
       drop
       i32.const 1
      end
@@ -63034,7 +63064,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$2157 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$2159 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=28
@@ -63045,7 +63075,7 @@
       i32.load
       i32.const 80
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$2157
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Print/Print$2159
       drop
       i32.const 1
      end
@@ -63136,7 +63166,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $2
      i32.store offset=8
-     block $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3438
+     block $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3440
       block $default
        block $case2
         block $case1
@@ -63167,7 +63197,7 @@
          f64.load
          call $~lib/number/F64#toString
          local.set $0
-         br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3438
+         br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3440
         end
         global.get $~lib/memory/__stack_pointer
         i32.const 4
@@ -63189,7 +63219,7 @@
         i32.load8_u
         select
         local.set $0
-        br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3438
+        br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3440
        end
        global.get $~lib/memory/__stack_pointer
        i32.const 4
@@ -63208,7 +63238,7 @@
        local.get $2
        i32.load
        local.set $0
-       br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3438
+       br $__inlined_func$assembly/Env/Values/ValObject/ValObject#toJsonString@override$3440
       end
       unreachable
      end
@@ -63246,7 +63276,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2159 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2161 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=36
@@ -63257,7 +63287,7 @@
       i32.load
       i32.const 63
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2159
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2161
       drop
       i32.const 1
      end
@@ -63296,7 +63326,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$2161 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$2163 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=44
@@ -63307,7 +63337,7 @@
       i32.load
       i32.const 81
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$2161
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/While/While$2163
       drop
       i32.const 1
      end
@@ -63346,7 +63376,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$2163 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$2165 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=52
@@ -63357,7 +63387,7 @@
       i32.load
       i32.const 82
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$2163
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/IfStatement/IfStatement$2165
       drop
       i32.const 1
      end
@@ -63437,7 +63467,7 @@
       call $~lib/builtins/abort
       unreachable
      end
-     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2141 (result i32)
+     block $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2143 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $0
       i32.store offset=24
@@ -63448,7 +63478,7 @@
       i32.load
       i32.const 89
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2141
+      br_if $__inlined_func$~instanceof|assembly/Env/Values/ValBool/ValBool$2143
       drop
       i32.const 1
      end
@@ -63543,7 +63573,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$2165 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$2167 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=60
@@ -63554,7 +63584,7 @@
       i32.load
       i32.const 85
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$2165
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Scan/Scan$2167
       drop
       i32.const 1
      end
@@ -63610,7 +63640,7 @@
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=4
-     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$2167 (result i32)
+     block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$2169 (result i32)
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=68
@@ -63621,7 +63651,7 @@
       i32.load
       i32.const 83
       i32.ne
-      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$2167
+      br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/CompoundStatement/CompoundStatement$2169
       drop
       i32.const 1
      end
@@ -63906,7 +63936,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $4
     i32.store
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2175 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2177 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $5
      i32.store offset=24
@@ -63917,7 +63947,7 @@
      i32.load
      i32.const 63
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2175
+     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/Program/Program$2177
      drop
      i32.const 1
     end
@@ -64143,7 +64173,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$3439
+   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$3441
     local.get $1
     i32.const 8
     i32.sub
@@ -64233,7 +64263,7 @@
      i32.const 40
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$3439
+     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitIdentifier@override$3441
     end
     unreachable
    end
@@ -64271,7 +64301,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$3440
+   block $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$3442
     local.get $1
     i32.const 8
     i32.sub
@@ -64363,7 +64393,7 @@
      i32.const 40
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$3440
+     br $__inlined_func$assembly/AST/ASTVisitor/ASTVisitor<void>#visitValueType@override$3442
     end
     unreachable
    end
@@ -65685,7 +65715,7 @@
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.set $3
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2265 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2267 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
@@ -65717,7 +65747,7 @@
     i32.eq
     br_if $is_instance
     i32.const 0
-    br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2265
+    br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2267
    end
    i32.const 1
   end
@@ -65798,7 +65828,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $5
     i32.store offset=4
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2270 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2272 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.set $6
      global.get $~lib/memory/__stack_pointer
@@ -65842,7 +65872,7 @@
       i32.eq
       br_if $is_instance0
       i32.const 0
-      br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2270
+      br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2272
      end
      i32.const 1
     end
@@ -65871,7 +65901,7 @@
   end
   global.get $~lib/memory/__stack_pointer
   local.set $1
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2272 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2274 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
@@ -65896,7 +65926,7 @@
      br_table $is_instance1 $is_instance1 $tablify|0 $is_instance1 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|0
     end
     i32.const 0
-    br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2272
+    br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2274
    end
    i32.const 1
   end
@@ -66317,7 +66347,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$3441
+   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$3443
     local.get $1
     i32.const 8
     i32.sub
@@ -66412,7 +66442,7 @@
      i32.const 40
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$3441
+     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitIdentifier@override$3443
     end
     unreachable
    end
@@ -66450,7 +66480,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitType@override$3442
+   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitType@override$3444
     local.get $1
     i32.const 8
     i32.sub
@@ -66545,7 +66575,7 @@
      i32.const 40
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitType@override$3442
+     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitType@override$3444
     end
     unreachable
    end
@@ -66585,7 +66615,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$2300
+   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$2302
     local.get $1
     i32.const 8
     i32.sub
@@ -66746,7 +66776,7 @@
      i32.const 40
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$2300
+     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<void>#visitFunctionCallStatement@override$2302
     end
     unreachable
    end
@@ -66782,7 +66812,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIdentifier@override$3443
+   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIdentifier@override$3445
     local.get $1
     i32.const 8
     i32.sub
@@ -66829,7 +66859,7 @@
      i32.const 12
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIdentifier@override$3443
+     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitIdentifier@override$3445
     end
     unreachable
    end
@@ -66867,7 +66897,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store offset=4
-   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$2303
+   block $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$2305
     local.get $1
     i32.const 8
     i32.sub
@@ -67053,7 +67083,7 @@
      i32.const 32
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$2303
+     br $__inlined_func$assembly/Parser/ParseVisitor/ParseVisitor<assembly/AST/Nodes/AbstractNode/AbstractNode>#visitType@override$2305
     end
     unreachable
    end
@@ -70045,7 +70075,7 @@
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.set $3
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2668 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2670 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70070,7 +70100,7 @@
    i32.load
    i32.const 67
    i32.ne
-   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2668
+   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2670
    drop
    i32.const 1
   end
@@ -70088,7 +70118,7 @@
   i32.store offset=16
   global.get $~lib/memory/__stack_pointer
   local.set $3
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2670 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2672 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70113,7 +70143,7 @@
    i32.load
    i32.const 70
    i32.ne
-   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2670
+   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Types/ValueType/ValueType$2672
    drop
    i32.const 1
   end
@@ -70137,7 +70167,7 @@
   if
    global.get $~lib/memory/__stack_pointer
    local.set $3
-   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2673 (result i32)
+   block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2675 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.set $6
     global.get $~lib/memory/__stack_pointer
@@ -70181,7 +70211,7 @@
       br_table $is_instance1 $is_instance1 $is_instance1 $tablify|0 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|0
      end
      i32.const 0
-     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2673
+     br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2675
     end
     i32.const 1
    end
@@ -70264,7 +70294,7 @@
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.set $4
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2693 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2695 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70293,7 +70323,7 @@
      br_table $is_instance $is_instance $is_instance $tablify|0 $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $is_instance $tablify|0
     end
     i32.const 0
-    br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2693
+    br $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/AbstractExpression/AbstractExpression$2695
    end
    i32.const 1
   end
@@ -70317,7 +70347,7 @@
   if
    global.get $~lib/memory/__stack_pointer
    local.set $4
-   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2696 (result i32)
+   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2698 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.set $2
     global.get $~lib/memory/__stack_pointer
@@ -70361,7 +70391,7 @@
       br_table $is_instance0 $is_instance0 $tablify|00 $is_instance0 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $tablify|00 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $is_instance0 $tablify|00
      end
      i32.const 0
-     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2696
+     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2698
     end
     i32.const 1
    end
@@ -70386,7 +70416,7 @@
   if
    global.get $~lib/memory/__stack_pointer
    local.set $4
-   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2699 (result i32)
+   block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2701 (result i32)
     global.get $~lib/memory/__stack_pointer
     local.set $3
     global.get $~lib/memory/__stack_pointer
@@ -70430,7 +70460,7 @@
       br_table $is_instance1 $is_instance1 $tablify|01 $is_instance1 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $tablify|01 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $is_instance1 $tablify|01
      end
      i32.const 0
-     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2699
+     br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2701
     end
     i32.const 1
    end
@@ -70502,7 +70532,7 @@
   memory.fill
   global.get $~lib/memory/__stack_pointer
   local.set $4
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2703 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2705 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70538,7 +70568,7 @@
     i32.eq
     br_if $is_instance
     i32.const 0
-    br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2703
+    br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2705
    end
    i32.const 1
   end
@@ -70556,7 +70586,7 @@
   i32.store offset=16
   global.get $~lib/memory/__stack_pointer
   local.set $5
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2705 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2707 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70581,7 +70611,7 @@
    i32.load
    i32.const 67
    i32.ne
-   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2705
+   br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2707
    drop
    i32.const 1
   end
@@ -70646,7 +70676,7 @@
     global.get $~lib/memory/__stack_pointer
     local.get $5
     i32.store
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2708 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2710 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.get $7
      i32.store offset=40
@@ -70666,7 +70696,7 @@
      i32.load
      i32.const 67
      i32.ne
-     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2708
+     br_if $__inlined_func$~instanceof|assembly/AST/Nodes/Expressions/Terms/Identifier/Identifier$2710
      drop
      i32.const 1
     end
@@ -70687,7 +70717,7 @@
     i32.load offset=8
     local.tee $8
     i32.store offset=4
-    block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2711 (result i32)
+    block $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2713 (result i32)
      global.get $~lib/memory/__stack_pointer
      local.set $9
      global.get $~lib/memory/__stack_pointer
@@ -70735,7 +70765,7 @@
       i32.eq
       br_if $is_instance2
       i32.const 0
-      br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2711
+      br $__inlined_func$~instanceof|assembly/AST/Nodes/Types/AbstractType/AbstractType$2713
      end
      i32.const 1
     end
@@ -70764,7 +70794,7 @@
   end
   global.get $~lib/memory/__stack_pointer
   local.set $2
-  block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2713 (result i32)
+  block $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2715 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store offset=8
@@ -70793,7 +70823,7 @@
      br_table $is_instance3 $is_instance3 $tablify|0 $is_instance3 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $tablify|0 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $is_instance3 $tablify|0
     end
     i32.const 0
-    br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2713
+    br $__inlined_func$~instanceof|assembly/AST/Nodes/Statements/AbstractStatement/AbstractStatement$2715
    end
    i32.const 1
   end
@@ -71021,7 +71051,7 @@
    global.get $~lib/memory/__stack_pointer
    i32.const 5760
    i32.store offset=4
-   block $__inlined_func$assembly/Index/calculateViaLanguage$3258
+   block $__inlined_func$assembly/Index/calculateViaLanguage$3260
     local.get $1
     i32.const 5760
     call $~lib/string/String.__eq
@@ -71037,7 +71067,7 @@
      i32.const 8
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Index/calculateViaLanguage$3258
+     br $__inlined_func$assembly/Index/calculateViaLanguage$3260
     end
     global.get $~lib/memory/__stack_pointer
     local.get $1
@@ -71059,7 +71089,7 @@
      i32.const 8
      i32.add
      global.set $~lib/memory/__stack_pointer
-     br $__inlined_func$assembly/Index/calculateViaLanguage$3258
+     br $__inlined_func$assembly/Index/calculateViaLanguage$3260
     end
     global.get $~lib/memory/__stack_pointer
     i32.const 8

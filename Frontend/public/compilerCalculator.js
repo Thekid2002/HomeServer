@@ -1,21 +1,24 @@
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
-let optimizeCheckBox = document.getElementById("optimize");
 
 let wabtInstance = null;
 let features = {}; // Feature options for WabtModule
 let jsonRes;
-let currentWat = null;
 let optimization = false;
-
-optimizeCheckBox.addEventListener("change", function() {
-    optimization = this.checked;
-});
+let prints = [];
 
 // Initialize WabtModule and store the instance
 WabtModule().then(function(wabt) {
     wabtInstance = wabt;
 });
+
+function addPrint(text) {
+    prints.push(text);
+}
+
+function clearPrints() {
+    prints = [];
+}
 
 export async function compileAndExecute() {
     let success = await compile();
@@ -24,6 +27,8 @@ export async function compileAndExecute() {
     }
 }
 
+
+
 /**
  * Compile the code input into WebAssembly and execute it.
  */
@@ -31,7 +36,7 @@ export async function compile() {
     const now = Date.now();
     let code = codeInput.value;
     if(window.codeEditor != null){
-        code = window.codeEditor.getValue();
+        code = window.localStorage.getItem("CarlEditor");
     }
     let compiledResult;
     let compiledWat;
@@ -114,10 +119,12 @@ export async function compile() {
         const later = Date.now();
         if(window.terminal != null){
             window.terminal.setValue(window.terminal.getValue() + "Time to compile: " + (later - now) / 1000 + "s\n");
+            console.log(jsonRes);
         }else {
             result.value += "Time to compile: " + (later - now) / 1000 + "s\n";
+            console.log(jsonRes);
         }
-        currentWat = compiledWat;
+        window.localStorage.setItem("wat", compiledWat);
         return true;
 
     } catch (e) {
@@ -125,158 +132,73 @@ export async function compile() {
     }
 }
 
-export function execute(){
+async function handlePrintsAndOutput(startTime) {
+    const endTime = Date.now();
+    let output = "";
+    output += "Time to run: " + (endTime - startTime) / 1000 + "s\n";
+    for (let i = 0; i < jsonRes.parseErrors.length; i++) {
+        output += jsonRes.parseErrors[i];
+        if (i < jsonRes.parseErrors.length - 1) {
+            output += "\n";
+        }
+    }
+    for (let i = 0; i < prints.length; i++) {
+        output += prints[i];
+        if (i < prints.length - 1) {
+            output += "\n";
+        }
+    }
+
+    if (window.terminal != null) {
+        window.terminal.setValue(window.terminal.getValue() + output);
+    } else {
+        result.value += output;
+    }
+}
+
+export async function execute() {
     try {
-        if(currentWat == null){
+        let currentWat = window.localStorage.getItem("wat");
+        if (currentWat == null) {
             alert("Please compile the code first");
             return;
         }
 
-        if(currentWat === ""){
+        if (currentWat === "") {
             alert("No wat code to execute");
             return;
         }
+        let $output;
+        try {
+            $output = compileToWasm(currentWat);
+        } catch (e) {
+            alert("Failed to compile the code");
+        }
 
-        let output = compileToWasm(currentWat);
-        let prints = [];
+        let functionBody = window.localStorage.getItem("CarlRuntime").replace(
+            'getImportObjectFromImportObjectFile()', window.localStorage.getItem("CarlRuntimeImport"))
+            .replaceAll("console.log(", "addPrint(").replaceAll("console.error(", "addPrint(");
+        let functionArguments = "output, addPrint, wasmInstance, logMemory";
+        let newFunction;
+        try {
+            newFunction = new Function(functionArguments, `return (async function() { ${functionBody} })()`);
+        } catch (e) {
+            alert("Failed to create the function: " + e.toString());
+        }
 
-        let memory = new WebAssembly.Memory({initial: 1});
-        WebAssembly.compile(output).then(module => {
-            const importObject = {
-                js: {
-                    memory,
-                    concat: (offset1, offset2) => {
-                        // Access the memory buffer from the WebAssembly.Memory instance
-                        const buffer = new Uint8Array(memory.buffer);
-                        let stackPointer = wasmInstance.exports.stackPointer.value;
+        const now = Date.now();
+        clearPrints();
+        try {
+            console.log(newFunction);
+            await newFunction($output, addPrint, jsonRes.wasmInstance, logMemory);
+        } catch (e) {
+            alert("Function error: " + e.toString());
+        }
 
-                        // Read from memory until a null terminator is found
-                        let i = 0;
-                        let string1 = "";
-                        while (buffer[offset1 + i] !== 0) {
-                            string1 += String.fromCharCode(buffer[offset1 + i]);
-                            i++;
-                        }
+        await handlePrintsAndOutput(now);
 
-                        i = 0;
-                        let string2 = "";
-                        while (buffer[offset2 + i] !== 0) {
-                            string2 += String.fromCharCode(buffer[offset2 + i]);
-                            i++;
-                        }
-
-                        let str = string1 + string2 + '\0';
-
-                        // Write the string to memory
-                        for (let i = 0; i < str.length; i++) {
-                            buffer[stackPointer + i] = str.charCodeAt(i);
-                        }
-                        wasmInstance.exports.stackPointer.value += str.length;
-                        return stackPointer;
-                    },
-                    toStringI32: (value) => {
-                        // Access the memory buffer from the WebAssembly.Memory instance
-                        const buffer = new Uint8Array(memory.buffer);
-                        let stackPointer = wasmInstance.exports.stackPointer.value;
-
-                        // Convert the integer to a string
-                        const str = value.toString() + '\0';
-
-                        // Write the string to memory
-                        for (let i = 0; i < str.length; i++) {
-                            buffer[stackPointer + i] = str.charCodeAt(i);
-                        }
-                        wasmInstance.exports.stackPointer.value += str.length;
-                        return stackPointer;
-                    },
-                    toStringF64: (value) => {
-                        // Access the memory buffer from the WebAssembly.Memory instance
-                        const buffer = new Uint8Array(memory.buffer);
-                        let stackPointer = wasmInstance.exports.stackPointer.value;
-
-                        // Convert the integer to a string
-                        const str = value.toString() + '\0';
-
-                        // Write the string to memory
-                        for (let i = 0; i < str.length; i++) {
-                            buffer[stackPointer + i] = str.charCodeAt(i);
-                        }
-                        wasmInstance.exports.stackPointer.value += str.length;
-                        return stackPointer;
-                    },
-                    scanF64: (offset) => {
-                        return parseFloat(prompt((logMemory(memory.buffer, offset))));
-                    },
-                    scanI32: (offset) => {
-                        let value = prompt((logMemory(memory.buffer, offset)));
-                        if(value == null){
-                            return 0;
-                        }
-                        if(value.toLowerCase() === "true"){
-                            return 1;
-                        }
-                        if(value.toLowerCase() === "false"){
-                            return 0;
-                        }
-                        return !!parseInt(value);
-                    },
-                    scanString: (offset) => {
-                        let value = prompt((logMemory(memory.buffer, offset))) + '\0';
-                        if(value == null){
-                            return 0;
-                        }
-
-                        let stackPointer = wasmInstance.exports.stackPointer.value;
-
-                        const buffer = new Uint8Array(memory.buffer);
-                        for (let i = 0; i < value.length; i++) {
-                            buffer[stackPointer + i] = value.charCodeAt(i);
-                        }
-                        wasmInstance.exports.stackPointer.value += value.length;
-                        return stackPointer;
-                    }
-                },
-                console: {
-                    logI32: (value) => {
-                        prints.push(value == true ? "true" : "false")
-                    },
-                    logF64: (value) => {
-                        prints.push(value)
-                    },
-                    logMemory: (offset) => {
-                        prints.push(logMemory(memory.buffer, offset));
-                    }
-                }
-            };
-
-            const wasmInstance = new WebAssembly.Instance(module, importObject);
-            const {_start, stackPointer} = wasmInstance.exports;
-            const now = Date.now();
-            _start();  // Call the exported _start function
-            const later = Date.now();
-            let output = "";
-            output += "Time to run: " + (later - now) / 1000 + "s\n";
-            for (let i = 0; i < jsonRes.parseErrors.length; i++) {
-                output += jsonRes.parseErrors[i];
-                if (i < jsonRes.parseErrors.length - 1) {
-                    output += "\n";
-                }
-            }
-            for (let i = 0; i < prints.length; i++) {
-                output += prints[i];
-                if (i < prints.length - 1) {
-                    output += "\n";
-                }
-            }
-
-            if(window.terminal != null){
-                window.terminal.setValue(window.terminal.getValue() + output);
-            }else {
-                result.value += output;
-            }
-        });
-    }catch (e){
-        alert(e.toString());
+    } catch (e) {
+        alert("Execution error: " + e.toString());
     }
 }
 
