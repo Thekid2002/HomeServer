@@ -39,14 +39,16 @@ export enum TokenType {
     // Literals
     IDENTIFIER,   // identifier
     STRING_LITERAL, // string literal
-    NUMBER_LITERAL,  // number literal
+    INT_LITERAL,  // int literal
+    DOUBLE_LITERAL,  // double literal
 
     // Scan and print
     SCAN,         // scan
     PRINT,        // print
 
     // Types
-    NUM,          // num
+    INT,          // int
+    DOUBLE,       // double
     BOOL,         // bool
     STRING,       // string
     VOID,         // void
@@ -73,11 +75,13 @@ export enum TokenType {
     THIS,         // this
     VAR,          // var
     EXPORT,       // export
+    IMPORT,       // import
+    FROM,         // from
 
     //Comment
     COMMENT,      // comment
 
-    EOF          // end of file
+    EOF,          // end of file
 }
 
 export const TokenTypes: string[] = [
@@ -121,14 +125,16 @@ export const TokenTypes: string[] = [
     // Literals
     "IDENTIFIER",   // identifier
     "STRING_LITERAL", // string literal
-    "NUMBER_LITERAL",  // number literal
+    "INT_LITERAL",  // int literal
+    "DOUBLE_LITERAL",  // double literal
 
     // Scan and print
     "SCAN",         // scan
     "PRINT",        // print
 
     // Types
-    "NUM",          // num
+    "INT",          // int
+    "DOUBLE",       // double
     "BOOL",         // bool
     "STRING",       // string
     "VOID",         // void
@@ -155,6 +161,8 @@ export const TokenTypes: string[] = [
     "THIS",         // this
     "VAR",          // var
     "EXPORT",       // export
+    "IMPORT",       // import
+    "FROM",         // from
 
     //Comment
     "COMMENT",      // comment

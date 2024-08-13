@@ -1,7 +1,7 @@
 import {ASTVisitor} from "./ASTVisitor";
 import {BinaryExpression} from "./Nodes/Expressions/BinaryExpression";
 import {Identifier} from "./Nodes/Expressions/Terms/Identifier";
-import {Num} from "./Nodes/Expressions/Terms/Num";
+import {Int} from "./Nodes/Expressions/Terms/Int";
 import {Term} from "./Nodes/Expressions/Terms/Term";
 import {UnaryExpression} from "./Nodes/Expressions/UnaryExpression";
 import {ValueType} from "./Nodes/Types/ValueType";
@@ -20,6 +20,8 @@ import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
 import { FunctionCallExpression } from "./Nodes/Expressions/FunctionCallExpression";
 import { FunctionCallStatement } from "./Nodes/Statements/FunctionCallStatement";
 import { Return } from "./Nodes/Statements/Return";
+import { ImportFunction } from "./Nodes/Statements/ImportFunction";
+import { Double } from "./Nodes/Expressions/Terms/Double";
 
 export class ASTPrinter implements ASTVisitor<void> {
     number: i32 = 0;
@@ -58,7 +60,7 @@ export class ASTPrinter implements ASTVisitor<void> {
             statement.parameters.get(key).accept<void>(this);
         }
         if(statement.body !== null) {
-            statement.body.accept<void>(this);
+            statement.body!.accept<void>(this);
         }
         this.number--;
     }
@@ -113,8 +115,12 @@ export class ASTPrinter implements ASTVisitor<void> {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Identifier " + term.value);
     }
 
-    visitNumber(term: Num): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Num " + term.value.toString());
+    visitInt(term: Int): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Int " + term.value);
+    }
+
+    visitDouble(term: Double): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Double " + term.value);
     }
 
     visitBool(term: Bool): void {
@@ -154,6 +160,18 @@ export class ASTPrinter implements ASTVisitor<void> {
             statement.expression!.accept<void>(this);
             this.number--;
         }
+    }
+
+    visitImport(statement: ImportFunction): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Import " + statement.parentPath + "." + statement.childPath);
+        this.number++;
+        statement.returnType.accept<void>(this);
+        statement.name.accept<void>(this);
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            statement.parameters.get(key).accept<void>(this);
+        }
+        this.number--;
     }
 
     visitValueType(type: ValueType): void {

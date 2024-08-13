@@ -81,9 +81,10 @@ export class Scanner {
             while (this.isDigit(this.peak())) {
                 this.advance();
             }
+            return this.addToken(TokenType.DOUBLE_LITERAL, this.source.substring(this.start, this.current));
         }
 
-        this.addToken(TokenType.NUMBER_LITERAL, this.source.substring(this.start, this.current));
+        return this.addToken(TokenType.INT_LITERAL, this.source.substring(this.start, this.current));
     }
 
     identifier(): void {

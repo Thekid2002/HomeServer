@@ -1,7 +1,7 @@
 import {BinaryExpression} from "./Nodes/Expressions/BinaryExpression";
 import {UnaryExpression} from "./Nodes/Expressions/UnaryExpression";
 import {Term} from "./Nodes/Expressions/Terms/Term";
-import {Num} from "./Nodes/Expressions/Terms/Num";
+import {Int} from "./Nodes/Expressions/Terms/Int";
 import {Identifier} from "./Nodes/Expressions/Terms/Identifier";
 import {ValueType} from "./Nodes/Types/ValueType";
 import {Declaration} from "./Nodes/Statements/Declaration";
@@ -19,6 +19,8 @@ import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
 import {FunctionCallExpression} from "./Nodes/Expressions/FunctionCallExpression";
 import {FunctionCallStatement} from "./Nodes/Statements/FunctionCallStatement";
 import {Return} from "./Nodes/Statements/Return";
+import {ImportFunction} from "./Nodes/Statements/ImportFunction";
+import {Double} from "./Nodes/Expressions/Terms/Double";
 
 export interface ASTVisitor<T> {
     visitBinaryExpression(expression: BinaryExpression): T;
@@ -27,7 +29,9 @@ export interface ASTVisitor<T> {
 
     visitTerm(term: Term): T;
 
-    visitNumber(term: Num): T;
+    visitInt(term: Int): T;
+
+    visitDouble(term: Double): T;
 
     visitIdentifier(term: Identifier): T;
 
@@ -62,4 +66,6 @@ export interface ASTVisitor<T> {
     visitFunctionCallStatement(statement: FunctionCallStatement): T;
 
     visitReturn(statement: Return): T;
+
+    visitImport(param: ImportFunction): T;
 }

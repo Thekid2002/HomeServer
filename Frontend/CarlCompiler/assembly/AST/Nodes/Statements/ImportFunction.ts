@@ -1,0 +1,47 @@
+import {AbstractStatement} from "./AbstractStatement";
+import {FunctionDeclaration} from "./FunctionDeclaration";
+import {ASTVisitor} from "../../ASTVisitor";
+import {AbstractNode} from "../AbstractNode";
+import {AbstractType} from "../Types/AbstractType";
+import {Identifier} from "../Expressions/Terms/Identifier";
+import {VarEnv} from "../../../Env/VarEnv";
+
+export class ImportFunction extends AbstractStatement {
+    public parentPath: string;
+    public childPath: string;
+
+    public returnType: AbstractType;
+    public name: Identifier;
+    public parameters: Map<string, AbstractType>
+    public varEnv: VarEnv | null = null;
+
+    constructor(parentPath: string, childPath: string, functionDeclarationWithoutBody: FunctionDeclaration, lineNum: i32) {
+        super(lineNum);
+        this.parentPath = parentPath;
+        this.childPath = childPath;
+        this.returnType = functionDeclarationWithoutBody.returnType;
+        this.name = functionDeclarationWithoutBody.name;
+        this.parameters = functionDeclarationWithoutBody.parameters;
+    }
+
+    accept<T>(visitor: ASTVisitor<T>): T {
+        return visitor.visitImport(this);
+    }
+
+    clone(): AbstractNode {
+        let returnTypeClone = this.returnType.clone() as AbstractType;
+        let nameClone = this.name.clone() as Identifier;
+        let parametersClone = new Map<string, AbstractType>();
+        for (let j = 0; j < this.parameters.keys().length; j++) {
+            let key = this.parameters.keys()[j];
+            parametersClone.set(key, this.parameters.get(key).clone() as AbstractType);
+        }
+        let parentPath = this.parentPath;
+        let childPath = this.childPath;
+        return new ImportFunction(parentPath, childPath, new FunctionDeclaration(returnTypeClone, nameClone, parametersClone, null, false, this.lineNum), this.lineNum);
+    }
+
+    toString(): string {
+        return "ImportFunction";
+    }
+}

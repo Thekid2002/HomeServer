@@ -1,23 +1,23 @@
 import {AbstractTerm} from "./AbstractTerm";
 import {ASTVisitor} from "../../../ASTVisitor";
 
-export class Num extends AbstractTerm {
+export class Int extends AbstractTerm {
     constructor(value: string, lineNum: i32) {
         super(lineNum, value);
     }
 
     accept<T>(visitor: ASTVisitor<T>): T {
-        return visitor.visitNumber(this);
+        return visitor.visitInt(this);
     }
 
-    clone(): Num {
-        return new Num(
+    clone(): Int {
+        return new Int(
             this.value,
             this.lineNum
         );
     }
 
     toString(): string {
-        return "Num(" + this.value + ")";
+        return "Int(" + this.value + ")";
     }
 }

@@ -4,7 +4,7 @@ import {ParseAdditiveExpression} from "./Expressions/ParseAdditiveExpression";
 import {ParseEqualityExpression} from "./Expressions/ParseEqualityExpression";
 import {ParseExpression} from "./Expressions/ParseExpression";
 import {ParseMultiplicativeExpression} from "./Expressions/ParseMultiplicativeExpression";
-import {ParseNum} from "./Expressions/Terms/ParseNum";
+import {ParseInt} from "./Expressions/Terms/ParseInt";
 import {ParseRelationalExpression} from "./Expressions/ParseRelationalExpression";
 import {ParseTerm} from "./Expressions/Terms/ParseTerm";
 import {ParseIdentifier} from "./Expressions/Terms/ParseIdentifier";
@@ -21,10 +21,12 @@ import { ParseString } from "./Expressions/Terms/ParseString";
 import { ParseScan } from "./Statements/ParseScan";
 import { ParseIncrement } from "./Statements/ParseIncrement";
 import { ParseBool } from "./Expressions/Terms/ParseBool";
-import { ParseFunction } from "./Statements/ParseFunction";
+import { ParseFunctionDeclaration } from "./Statements/ParseFunctionDeclaration";
 import { ParseFunctionCallStatement } from "./Statements/ParseFunctionCallStatement";
 import {ParseFunctionCallExpression} from "./Expressions/Terms/ParseFunctionCallExpression";
 import { ParseReturn } from "./Statements/ParseReturn";
+import { ParseImport } from "./Statements/ParseImport";
+import { ParseDouble } from "./Expressions/Terms/ParseDouble";
 
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
@@ -58,7 +60,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         this.number--;
     }
 
-    visitFunction(statement: ParseFunction): void {
+    visitFunction(statement: ParseFunctionDeclaration): void {
         this.tree.push(this.getSpace(this.number) + this.number.toString() + ": FunctionObject");
         this.number++;
         statement.returnType.accept<void>(this);
@@ -68,7 +70,7 @@ export class ParseTreePrinter implements ParseVisitor<void> {
             statement.parameters.get(key).accept<void>(this);
         }
         if(statement.body !== null) {
-            statement.body.accept<void>(this);
+            statement.body!.accept<void>(this);
         }
         this.number--;
     }
@@ -159,8 +161,12 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         }
     }
 
-    visitNumber(term: ParseNum): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Number " + term.value.literal);
+    visitInt(term: ParseInt): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Int " + term.value.literal);
+    }
+
+    visitDouble(term: ParseDouble): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Double " + term.value.literal);
     }
 
     visitBool(term: ParseBool): void {
@@ -225,8 +231,17 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         }
     }
 
-    visitType(param: ParseType): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseType " + param.name.literal);
+    visitImport(statement: ParseImport): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseImport");
+        this.number++;
+        statement.parentPath.accept<void>(this);
+        statement.childPath.accept<void>(this);
+        statement.functionDeclarationWithoutBody.accept<void>(this);
+        this.number--;
+    }
+
+    visitType(type: ParseType): void {
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseType " + type.name.literal);
     }
 
     visitIfStatement(statement: ParseIfStatement): void {

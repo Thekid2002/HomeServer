@@ -1,8 +1,12 @@
-import {TokenType} from "./TokenType";
+import {TokenType, TokenTypes} from "./TokenType";
 
 export const ReservedWords: Map<string, TokenType> = new Map<string, TokenType>();
 
+for (let i: i32 = 0; i < TokenTypes.length; i++) {
+    ReservedWords.set(TokenTypes[i].toLowerCase(), i);
+}
 
+/**
 ReservedWords.set("identifier", TokenType.IDENTIFIER);
 ReservedWords.set("number_literal", TokenType.NUMBER_LITERAL);
 ReservedWords.set("string_literal", TokenType.STRING_LITERAL);
@@ -37,3 +41,5 @@ ReservedWords.set("scan", TokenType.SCAN);
 ReservedWords.set("print", TokenType.PRINT);
 ReservedWords.set("void", TokenType.VOID);
 ReservedWords.set("export", TokenType.EXPORT);
+ReservedWords.set("import", TokenType.IMPORT);
+**/

@@ -10,13 +10,12 @@ import {CombinedChecker} from "./Checkers/CombinedChecker";
 import {ParseProgram as ParseProgram} from "./Parser/Statements/ParseProgram";
 import {Interpreter} from "./Interpreter/Interpreter";
 import {VarEnv} from "./Env/VarEnv";
-import {Optimizer} from "./Compiler/Optimizer";
 import {Program} from "./AST/Nodes/Statements/Program";
 import {FuncEnv} from "./Env/FuncEnv";
 
-export function calculateViaLanguage(string: string, type: string, optimization: boolean): string {
+export function calculateViaLanguage(string: string, type: string): string {
     if (type === "compiler") {
-        return compile(string, optimization);
+        return compile(string);
     }
 
     if (type === "interpreter") {
@@ -82,7 +81,7 @@ function interpret(string: string): string {
     return result.toJsonString();
 }
 
-function compile(string: string, optimization: boolean): string {
+function compile(string: string): string {
     let result = scanAndParseAndToAst(string);
     if(result.astTree === null) {
         return result.toJsonString();
@@ -90,10 +89,6 @@ function compile(string: string, optimization: boolean): string {
     let ast = result.astTree!;
     if(result.varEnv === null || result.funcEnv === null) {
         return result.toJsonString();
-    }
-    if(optimization) {
-        let optimizer = new Optimizer(result.varEnv!);
-        optimizer.optimize(ast as Program);
     }
     let compiler = new Compiler();
     result.compilerOutput = compiler.compileProgram(ast as Program).replaceAll("\"", "\\\"").replaceAll("\n", "\\n");

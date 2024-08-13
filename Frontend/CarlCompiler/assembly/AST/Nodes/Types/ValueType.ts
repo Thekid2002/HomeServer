@@ -18,8 +18,10 @@ export class ValueType extends AbstractType {
         switch (this.type) {
             case ValueTypeEnum.Error:
                 return "Error";
-            case ValueTypeEnum.NUM:
+            case ValueTypeEnum.DOUBLE:
                 return "f64";
+            case ValueTypeEnum.INT:
+                return "i32";
             case ValueTypeEnum.BOOL:
                 return "i32";
             case ValueTypeEnum.STRING:
@@ -40,14 +42,16 @@ export class ValueType extends AbstractType {
 
 export enum ValueTypeEnum {
     Error,
-    NUM,
+    INT,
+    DOUBLE,
     BOOL,
     STRING,
 }
 
 export const ValueTypeNames: Array<string> = [
     "Error",
-    "NUM",
+    "INT",
+    "DOUBLE",
     "BOOL",
     "STRING",
 ];

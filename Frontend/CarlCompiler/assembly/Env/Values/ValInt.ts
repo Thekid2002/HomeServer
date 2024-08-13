@@ -1,9 +1,9 @@
 import {ValObject} from "./ValObject";
 
-export class ValNum extends ValObject {
-    public value: number;
+export class ValInt extends ValObject {
+    public value: i32;
 
-    constructor(value: number) {
+    constructor(value: i32) {
         super();
         this.value = value;
     }

@@ -1,10 +1,10 @@
-import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
+/**import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
 import {ValObject} from "../Env/Values/ValObject";
 import {ValBool} from "../Env/Values/ValBool";
-import {ValNum} from "../Env/Values/ValNum";
+import {ValNum} from "../Env/Values/ValInt";
 import {BinaryExpression} from "../AST/Nodes/Expressions/BinaryExpression";
 import {Identifier} from "../AST/Nodes/Expressions/Terms/Identifier";
-import {Num} from "../AST/Nodes/Expressions/Terms/Num";
+import {Int} from "../AST/Nodes/Expressions/Terms/Int";
 import {While} from "../AST/Nodes/Statements/While";
 import {Declaration} from "../AST/Nodes/Statements/Declaration";
 import {Assignment} from "../AST/Nodes/Statements/Assignment";
@@ -163,8 +163,8 @@ export class Optimizer {
         if (expression instanceof Identifier) {
             return this.optimizeIdentifier(expression as Identifier);
         }
-        if (expression instanceof Num) {
-            return this.optimizeNumber(expression as Num);
+        if (expression instanceof Int) {
+            return this.optimizeNumber(expression as Int);
         }
         if (expression instanceof ASTString) {
             return this.optimizeString(expression as ASTString);
@@ -274,7 +274,7 @@ export class Optimizer {
         return val;
     }
 
-    private optimizeNumber(term: Num): ValObject | null {
+    private optimizeNumber(term: Int): ValObject | null {
         return new ValNum(parseFloat(term.value));
     }
 
@@ -340,6 +340,7 @@ export class Optimizer {
         for (let i = 1; i < assignments.length; i++) {
             value += ((this.optimizeExpression(assignments[i].expression)) as ValNum).value - (this.optimizeExpression(identifier) as ValNum).value;
         }
-        return new Assignment(identifier, new Num(value.toString(), identifier.lineNum), identifier.lineNum);
+        return new Assignment(identifier, new Int(value.toString(), identifier.lineNum), identifier.lineNum);
     }
 }
+**/

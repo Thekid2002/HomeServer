@@ -4,7 +4,7 @@ import {ParseRelationalExpression} from "./Expressions/ParseRelationalExpression
 import {ParseEqualityExpression} from "./Expressions/ParseEqualityExpression";
 import {ParseMultiplicativeExpression} from "./Expressions/ParseMultiplicativeExpression";
 import {ParseUnaryExpression} from "./Expressions/ParseUnaryExpression";
-import {ParseNum} from "./Expressions/Terms/ParseNum";
+import {ParseInt} from "./Expressions/Terms/ParseInt";
 import {ParseTerm} from "./Expressions/Terms/ParseTerm";
 import {ParseIdentifier} from "./Expressions/Terms/ParseIdentifier";
 import {ParsePowExpression} from "./Expressions/ParsePowExpression";
@@ -20,10 +20,12 @@ import {ParseString} from "./Expressions/Terms/ParseString";
 import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
 import {ParseBool} from "./Expressions/Terms/ParseBool";
-import {ParseFunction} from "./Statements/ParseFunction";
+import {ParseFunctionDeclaration} from "./Statements/ParseFunctionDeclaration";
 import {ParseFunctionCallStatement} from "./Statements/ParseFunctionCallStatement";
 import {ParseFunctionCallExpression} from "./Expressions/Terms/ParseFunctionCallExpression";
 import {ParseReturn} from "./Statements/ParseReturn";
+import {ParseImport} from "./Statements/ParseImport";
+import {ParseDouble} from "./Expressions/Terms/ParseDouble";
 
 export interface ParseVisitor<T> {
     visitExpression(expression: ParseExpression): T;
@@ -42,7 +44,9 @@ export interface ParseVisitor<T> {
 
     visitTerm(term: ParseTerm): T;
 
-    visitNumber(term: ParseNum): T;
+    visitInt(term: ParseInt): T;
+
+    visitDouble(term: ParseDouble): T;
 
     visitIdentifier(term: ParseIdentifier): T;
 
@@ -70,11 +74,13 @@ export interface ParseVisitor<T> {
 
     visitBool(term: ParseBool): T;
 
-    visitFunction(statement: ParseFunction): T;
+    visitFunction(statement: ParseFunctionDeclaration): T;
 
     visitFunctionCallExpression(expression: ParseFunctionCallExpression): T;
 
     visitFunctionCallStatement(statement: ParseFunctionCallStatement): T;
 
     visitReturn(statement: ParseReturn): T;
+
+    visitImport(statement: ParseImport): T;
 }

@@ -1,4 +1,4 @@
-import {TokenType, TokenTypes} from "./TokenType";
+import {TokenTypes} from "./TokenType";
 
 export class Token {
     type: i32;

@@ -44,7 +44,8 @@ export enum StatementTypeEnum {
     BREAK,
     CONTINUE,
     FUNCTION_DECLARATION,
-    VOID
+    VOID,
+    IMPORT
 }
 
 export const StatementTypeNames: Array<string> = [
@@ -62,5 +63,8 @@ export const StatementTypeNames: Array<string> = [
     "EXPRESSION",
     "BREAK",
     "CONTINUE",
+    "FUNCTION_DECLARATION",
+    "VOID",
+    "IMPORT"
 ];
 

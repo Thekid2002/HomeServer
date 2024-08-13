@@ -3,14 +3,14 @@ import {ParseAbstractStatement} from "./ParseAbstractStatement";
 import {ParseIdentifier} from "../Expressions/Terms/ParseIdentifier";
 import {ParseType} from "../Expressions/Terms/ParseType";
 
-export class ParseFunction extends ParseAbstractStatement {
+export class ParseFunctionDeclaration extends ParseAbstractStatement {
     public returnType: ParseType;
     public name: ParseIdentifier;
     public parameters: Map<ParseIdentifier, ParseType>
-    public body: ParseAbstractStatement;
+    public body: ParseAbstractStatement | null;
     public export: boolean;
 
-    constructor(returnType: ParseType, name: ParseIdentifier, parameters: Map<ParseIdentifier, ParseType>, body: ParseAbstractStatement, $export: boolean, lineNum: i32) {
+    constructor(returnType: ParseType, name: ParseIdentifier, parameters: Map<ParseIdentifier, ParseType>, body: ParseAbstractStatement | null, $export: boolean, lineNum: i32) {
         super(lineNum);
         this.returnType = returnType;
         this.name = name;
@@ -34,7 +34,7 @@ export class ParseFunction extends ParseAbstractStatement {
             i++;
         }
         string += "], \"body\": [";
-        string += this.body.toJsonString();
+        string += this.body != null ? this.body!.toJsonString() : "";
         string += "]" +
             "\"export\": " + this.export + "}";
         return string;

@@ -4,8 +4,8 @@ import {ParseExpression} from "../Parser/Expressions/ParseExpression";
 import {Identifier as ASTIdentifier} from "./Nodes/Expressions/Terms/Identifier";
 import {ParseIdentifier} from "../Parser/Expressions/Terms/ParseIdentifier";
 import {ParseMultiplicativeExpression} from "../Parser/Expressions/ParseMultiplicativeExpression";
-import {Num} from "./Nodes/Expressions/Terms/Num";
-import {ParseNum} from "../Parser/Expressions/Terms/ParseNum";
+import {Int} from "./Nodes/Expressions/Terms/Int";
+import {ParseInt} from "../Parser/Expressions/Terms/ParseInt";
 import {BinaryExpression} from "./Nodes/Expressions/BinaryExpression";
 import {ParseAdditiveExpression} from "../Parser/Expressions/ParseAdditiveExpression";
 import {ParseUnaryExpression} from "../Parser/Expressions/ParseUnaryExpression";
@@ -40,7 +40,7 @@ import {Scan} from "./Nodes/Statements/Scan";
 import {ParseIncrement} from "../Parser/Statements/ParseIncrement";
 import {ParseBool} from "../Parser/Expressions/Terms/ParseBool";
 import {Bool} from "./Nodes/Expressions/Terms/Bool";
-import {ParseFunction} from "../Parser/Statements/ParseFunction";
+import {ParseFunctionDeclaration} from "../Parser/Statements/ParseFunctionDeclaration";
 import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
 import {AbstractType} from "./Nodes/Types/AbstractType";
 import {StatementType, StatementTypeEnum} from "./Nodes/Types/StatementType";
@@ -50,8 +50,27 @@ import {FunctionCallStatement} from "./Nodes/Statements/FunctionCallStatement";
 import {ParseFunctionCallExpression} from "../Parser/Expressions/Terms/ParseFunctionCallExpression";
 import { ParseReturn } from "../Parser/Statements/ParseReturn";
 import { Return } from "./Nodes/Statements/Return";
+import { ParseImport } from "../Parser/Statements/ParseImport";
+import {ImportFunction} from "./Nodes/Statements/ImportFunction";
+import { ParseDouble } from "../Parser/Expressions/Terms/ParseDouble";
+import {Double} from "./Nodes/Expressions/Terms/Double";
 
 export class ToAstVisitor implements ParseVisitor<AbstractNode> {
+    visitInt(term: ParseInt): AbstractNode {
+        return new Int(term.value.literal, term.lineNum);
+    }
+
+    visitDouble(term: ParseDouble): AbstractNode {
+        return new Double(term.value.literal, term.lineNum);
+    }
+
+    visitImport(statement: ParseImport): AbstractNode {
+        let parentPath = statement.parentPath.accept<AbstractNode>(this) as ASTString;
+        let childPath = statement.childPath.accept<AbstractNode>(this) as ASTString;
+        let functionDeclarationWithoutBody = statement.functionDeclarationWithoutBody.accept<AbstractNode>(this) as FunctionDeclaration;
+        return new ImportFunction(parentPath.value, childPath.value, functionDeclarationWithoutBody, statement.lineNum);
+    }
+
     visitReturn(statement: ParseReturn): AbstractNode {
         let expression: AbstractExpression | null = null;
         if (statement.expression !== null) {
@@ -78,7 +97,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         return new FunctionCallStatement(functionName, actualParameters, statement.lineNum);
     }
 
-    visitFunction(statement: ParseFunction): AbstractNode {
+    visitFunction(statement: ParseFunctionDeclaration): AbstractNode {
         let returnType = statement.returnType.accept<AbstractNode>(this) as AbstractType;
         let name = statement.name.accept<AbstractNode>(this) as ASTIdentifier;
         let parameters = new Map<string, AbstractType>();
@@ -86,7 +105,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
             let key = statement.parameters.keys()[i];
             parameters.set((key.accept<AbstractNode>(this) as ASTIdentifier).value, statement.parameters.get(key).accept<AbstractNode>(this) as AbstractType);
         }
-        let body = statement.body.accept<AbstractNode>(this) as AbstractStatement;
+        let body = statement.body != null ? statement.body!.accept<AbstractNode>(this) as AbstractStatement : null;
         return new FunctionDeclaration(returnType, name, parameters, body, statement.export, statement.lineNum);
     }
 
@@ -150,15 +169,14 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
 
     visitType(type: ParseType): AbstractNode {
         let typ: ValueTypeEnum = ValueTypeEnum.Error;
-        if (type.name.literal === "num") {
-            typ = ValueTypeEnum.NUM;
+        if (type.name.literal === "int"  || type.name.literal === "bool" || type.name.literal === "string") {
+            typ = ValueTypeEnum.INT;
         }
-        if (type.name.literal === "bool") {
-            typ = ValueTypeEnum.BOOL;
+
+        if (type.name.literal === "double") {
+            typ = ValueTypeEnum.DOUBLE;
         }
-        if (type.name.literal === "string") {
-            typ = ValueTypeEnum.STRING;
-        }
+
         if(type.name.literal === "void") {
             return new StatementType(StatementTypeEnum.VOID, type.lineNum);
         }
@@ -220,8 +238,8 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         return new BinaryExpression(left, expression.operator!.literal, right, expression.lineNum);
     }
 
-    visitNumber(term: ParseNum): AbstractNode {
-        return new Num(term.value.literal, term.lineNum);
+    visitNumber(term: ParseInt): AbstractNode {
+        return new Int(term.value.literal, term.lineNum);
     }
 
     visitBool(term: ParseBool): AbstractNode {
@@ -270,7 +288,7 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
             operator = "-";
         }
 
-        return new Assignment(identifier, new BinaryExpression(identifier, operator!, new Num("1", statement.lineNum), statement.lineNum), statement.lineNum);
+        return new Assignment(identifier, new BinaryExpression(identifier, operator!, new Int("1", statement.lineNum), statement.lineNum), statement.lineNum);
     }
 
 }

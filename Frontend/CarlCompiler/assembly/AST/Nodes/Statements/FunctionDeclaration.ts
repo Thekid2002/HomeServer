@@ -9,11 +9,11 @@ export class FunctionDeclaration extends AbstractStatement {
     public returnType: AbstractType;
     public name: Identifier;
     public parameters: Map<string, AbstractType>
-    public body: AbstractStatement;
+    public body: AbstractStatement | null;
     public export: boolean;
     public varEnv: VarEnv | null = null;
 
-    constructor(returnType: AbstractType, name: Identifier, parameters: Map<string, AbstractType>, body: AbstractStatement, $export: boolean, lineNum: i32) {
+    constructor(returnType: AbstractType, name: Identifier, parameters: Map<string, AbstractType>, body: AbstractStatement | null, $export: boolean, lineNum: i32) {
         super(lineNum);
         this.returnType = returnType;
         this.name = name;
@@ -34,7 +34,7 @@ export class FunctionDeclaration extends AbstractStatement {
             let key = this.parameters.keys()[j];
             parametersClone.set(key, this.parameters.get(key).clone() as AbstractType);
         }
-        let bodyClone = this.body.clone() as AbstractStatement;
+        let bodyClone = this.body != null ? this.body!.clone() as AbstractStatement: null;
         let $export = this.export;
         return new FunctionDeclaration(returnTypeClone, nameClone, parametersClone, bodyClone, $export, this.lineNum);
     }

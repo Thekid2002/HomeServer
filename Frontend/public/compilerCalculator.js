@@ -1,3 +1,5 @@
+import {calculateViaLanguage} from "./build/carlCompiler/CaCoDebug.js";
+
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
 
@@ -44,18 +46,7 @@ export async function compile() {
         if(window.terminal.getValue() !== ""){
             window.terminal.setValue("");
         }
-        // Fetch the CaCoDebug.js script
-        try {
-            // Dynamically import the script as a module
-            let module = await import('./build/carlCompiler/CaCoRelease.js');
-
-            // Now you can use the exported functions and variables from the script
-            // Example: Use calculateViaLanguage function (assuming 'CaCoDebug.wasm' is available in the same directory)
-            compiledResult = await module.calculateViaLanguage(code, "compiler", optimization);
-            module = null;
-        } catch (error) {
-            console.error("Error fetching or executing the script:", error);
-        }
+        compiledResult = await calculateViaLanguage(code, "compiler");
 
         // Calculate the WAT (WebAssembly Text format) using a custom language function
         jsonRes = JSON.parse(compiledResult);

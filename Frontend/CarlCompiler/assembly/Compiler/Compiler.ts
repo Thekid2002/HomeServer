@@ -1,7 +1,7 @@
 import { UnaryExpression } from "../AST/Nodes/Expressions/UnaryExpression";
 import { BinaryExpression } from "../AST/Nodes/Expressions/BinaryExpression";
 import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
-import { Num } from "../AST/Nodes/Expressions/Terms/Num";
+import { Int } from "../AST/Nodes/Expressions/Terms/Int";
 import { Term } from "../AST/Nodes/Expressions/Terms/Term";
 import {ValueType, ValueTypeEnum, ValueTypeNames} from "../AST/Nodes/Types/ValueType";
 import { Declaration } from "../AST/Nodes/Statements/Declaration";
@@ -23,12 +23,14 @@ import {FunctionCallStatement} from "../AST/Nodes/Statements/FunctionCallStateme
 import {FunctionCallExpression} from "../AST/Nodes/Expressions/FunctionCallExpression";
 import {Return} from "../AST/Nodes/Statements/Return";
 import {VarEnv} from "../Env/VarEnv";
-import {ValNum} from "../Env/Values/ValNum";
+import {ImportFunction} from "../AST/Nodes/Statements/ImportFunction";
+import {Double} from "../AST/Nodes/Expressions/Terms/Double";
 
 export class Compiler {
     wasmCode: string[] = [];
     globalDeclarations: string[] = [];
     functionDeclarations: string[] = [];
+    imports: string[] = [];
     funcCount: i32 = 0;
     stackPointer: i32 = 0;
 
@@ -85,6 +87,10 @@ export class Compiler {
 
         if (statement instanceof Assignment) {
             return this.compileAssignment(statement as Assignment);
+        }
+
+        if (statement instanceof ImportFunction) {
+            return this.compileImport(statement as ImportFunction);
         }
 
         if (statement instanceof FunctionDeclaration) {
@@ -147,8 +153,6 @@ export class Compiler {
             return `${expr}\nglobal.set $${statement.identifier.value}`;
         }
         return `${expr}\nlocal.set $${statement.identifier.value}`;
-
-
     }
 
     compileWhile(statement: While): string {
@@ -177,10 +181,11 @@ export class Compiler {
 
     compilePrint(print: Print): string {
         let expr = this.compileAbstractExpression(print.expression);
-        if(print.expression.type === ValueTypeEnum.NUM) {
+        if(print.expression.type === ValueTypeEnum.DOUBLE) {
             return `${expr}\ncall $logf64`;
         }
-        if(print.expression.type === ValueTypeEnum.BOOL) {
+
+        if(print.expression.type === ValueTypeEnum.BOOL || print.expression.type === ValueTypeEnum.INT) {
             return `${expr}\ncall $logi32`;
         }
 
@@ -205,21 +210,36 @@ export class Compiler {
                 `local.set $${scan.identifier.value}`;
     }
 
+    compileImport(statement: ImportFunction): string {
+        let parameters = "(param ";
+        for (let i = 0; i < statement.parameters.keys().length; i++) {
+            let key = statement.parameters.keys()[i];
+            let type = this.compileAbstractType(statement.parameters.get(key)!);
+            parameters += `${type}`;
+        }
+        parameters += ")";
+        let returnType = '(result ' + this.compileAbstractType(statement.returnType) + ')';
+        let $import = `(import "${statement.parentPath}" "${statement.childPath}" (func $${statement.name.value} ${parameters} ${returnType}))`;
+        this.imports.push($import);
+        return "";
+    }
+
     compileProgram(statement: Program): string {
         if(statement.body !== null) {
             this.compileAbstractStatement(statement.body!);
         }
         return '(module\n' +
-            '(import "console" "logI32" (func $logi32 (param i32)))\n' +
+            this.imports.join("\n") + '\n' +
+            /**'(import "console" "logI32" (func $logi32 (param i32)))\n' +
             '(import "console" "logF64" (func $logf64 (param f64)))\n' +
-            '(import "console" "logMemory" (func $logMemory (param i32)))\n' +
-            '(import "js" "memory" (memory 1))\n' +
+            '(import "console" "logMemory" (func $logMemory (param i32)))\n'
             '(import "js" "concat" (func $concat (param i32 i32) (result i32)))\n' +
             `(import "js" "toStringI32" (func $toStringi32 (param i32) (result i32)))\n` +
             `(import "js" "toStringF64" (func $toStringf64 (param f64) (result i32)))\n` +
             `(import "js" "scanI32" (func $scani32 (param i32) (result i32)))\n` +
             `(import "js" "scanF64" (func $scanf64 (param i32) (result f64)))\n` +
-            `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +
+            `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +**/
+            '(import "js" "memory" (memory 1))\n' +
             `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
             this.functionDeclarations.join("\n") + '\n' +
@@ -243,8 +263,12 @@ export class Compiler {
             return this.compileBool(expression as Bool);
         }
 
-        if (expression instanceof Num) {
-            return this.compileNumber(expression as Num);
+        if (expression instanceof Int) {
+            return this.compileInt(expression as Int);
+        }
+
+        if (expression instanceof Double) {
+            return this.compileDouble(expression as Double);
         }
 
         if (expression instanceof Term) {
@@ -294,8 +318,11 @@ export class Compiler {
         }
 
         let left = this.compileAbstractExpression(expression.primaryOrLeft);
+        if(expression.type === ValueTypeEnum.DOUBLE) {
+            left += "\n" + "f64.convert_s/i32";
+        }
         let right = this.compileAbstractExpression(expression.right);
-        return `${left}\n${right}\n${this.getOperator(expression.operator)}`;
+        return `${left}\n${right}\n${this.getOperator(expression.operator, expression.type)}`;
     }
 
     compileIdentifier(term: Identifier): string {
@@ -305,7 +332,11 @@ export class Compiler {
         return `local.get $${term.value}`;
     }
 
-    compileNumber(term: Num): string {
+    compileInt(term: Int): string {
+        return `i32.const ${term.value}`;
+    }
+
+    compileDouble(term: Double): string {
         return `f64.const ${term.value}`;
     }
 
@@ -343,7 +374,8 @@ export class Compiler {
         }
         let functionIdentifier =  statement.export ? `$${statement.name.value} (export "${statement.name.value}")` : `$${statement.name.value}`;
         let returnType = this.compileAbstractType(statement.returnType);
-        let $function = `(func ${functionIdentifier} ${params} (result ${returnType})\n` +
+        let $functionNameAndParameters = `(func ${functionIdentifier} ${params} (result ${returnType})`;
+        let $function = `${$functionNameAndParameters}\n` +
             `${body}\n` +
             `)`;
         this.functionDeclarations.push($function);
@@ -351,8 +383,11 @@ export class Compiler {
     }
 
     compileValueType(type: ValueType): string {
-        if (type.type === ValueTypeEnum.NUM) {
+        if (type.type === ValueTypeEnum.DOUBLE) {
             return `f64`;
+        }
+        if (type.type === ValueTypeEnum.INT) {
+            return `i32`;
         }
         if (type.type === ValueTypeEnum.BOOL) {
             return `i32`;
@@ -363,39 +398,83 @@ export class Compiler {
         throw new Error("Unknown type: " + type.type.toString());
     }
 
-    getOperator(operator: string): string {
+    getOperator(operator: string, type: ValueTypeEnum): string {
         if (operator === "+") {
-            return "f64.add";
+            if(type === ValueTypeEnum.DOUBLE) {
+                return "f64.add";
+            }else if (type === ValueTypeEnum.INT) {
+                return "i32.add";
+            }
         }
         if (operator === "-") {
-            return "f64.sub";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.sub";
+            } else if (type === ValueTypeEnum.INT) {
+                return "i32.sub";
+            }
         }
         if (operator === "*") {
-            return "f64.mul";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.mul";
+            } else if (type === ValueTypeEnum.INT) {
+                return "i32.mul";
+            }
         }
         if (operator === "/") {
-            return "f64.div";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.div";
+            } else if (type === ValueTypeEnum.INT) {
+                return "i32.div_s";
+            }
         }
         if(operator === "%") {
-            return "call $mod";
+            if(type === ValueTypeEnum.DOUBLE) {
+                return "call $mod";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.rem_s";
+            }
         }
-        if (operator === "==") {
-            return "f64.eq";
+        if ( operator === "==") {
+            if(type === ValueTypeEnum.DOUBLE) {
+                return "f64.eq";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.eq";
+            }
         }
         if (operator === "!=") {
-            return "f64.ne";
+            if(type === ValueTypeEnum.DOUBLE) {
+                return "f64.ne";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.ne";
+            }
         }
         if (operator === ">") {
-            return "f64.gt";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.gt";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.gt_s";
+            }
         }
         if (operator === "<") {
-            return "f64.lt";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.lt";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.lt_s";
+            }
         }
         if (operator === ">=") {
-            return "f64.ge";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.ge";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.ge_s";
+            }
         }
         if (operator === "<=") {
-            return "f64.le";
+            if (type === ValueTypeEnum.DOUBLE) {
+                return "f64.le";
+            } else if(type === ValueTypeEnum.INT) {
+                return "i32.le_s";
+            }
         }
         if (operator === "&&") {
             return "i32.and";
@@ -404,7 +483,7 @@ export class Compiler {
             return "i32.or";
         }
 
-        throw new Error("Unknown operator: " + operator);
+        throw new Error("Unknown operator: " + operator + " for type: " + ValueTypeNames[type]);
     }
 
     compileBool(term: Bool): string {

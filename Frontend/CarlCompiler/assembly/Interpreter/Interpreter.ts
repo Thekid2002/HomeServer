@@ -6,10 +6,9 @@ import {ValBool} from "../Env/Values/ValBool";
 import {Print} from "../AST/Nodes/Statements/Print";
 import {Program} from "../AST/Nodes/Statements/Program";
 import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
-import {ValNum} from "../Env/Values/ValNum";
 import {BinaryExpression} from "../AST/Nodes/Expressions/BinaryExpression";
 import {Identifier} from "../AST/Nodes/Expressions/Terms/Identifier";
-import {Num} from "../AST/Nodes/Expressions/Terms/Num";
+import {Int} from "../AST/Nodes/Expressions/Terms/Int";
 import {Declaration} from "../AST/Nodes/Statements/Declaration";
 import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
@@ -20,6 +19,7 @@ import { Scan } from "../AST/Nodes/Statements/Scan";
 import { Bool } from "../AST/Nodes/Expressions/Terms/Bool";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
+import {ValDouble} from "../Env/Values/ValDouble";
 
 
 export class Interpreter{
@@ -120,39 +120,39 @@ export class Interpreter{
         }
 
         if (expression.operator == "-") {
-            return new ValNum(-(right as ValNum).value);
+            return new ValDouble(-(right as ValDouble).value);
         }
 
         if (expression.operator == "sin") {
-            return new ValNum(Math.sin((right as ValNum).value));
+            return new ValDouble(Math.sin((right as ValDouble).value));
         }
 
         if (expression.operator == "cos") {
-            return new ValNum(Math.cos((right as ValNum).value));
+            return new ValDouble(Math.cos((right as ValDouble).value));
         }
 
         if (expression.operator == "tan") {
-            return new ValNum(Math.tan((right as ValNum).value));
+            return new ValDouble(Math.tan((right as ValDouble).value));
         }
 
         if (expression.operator == "sqrt") {
-            return new ValNum(Math.sqrt((right as ValNum).value));
+            return new ValDouble(Math.sqrt((right as ValDouble).value));
         }
 
         if (expression.operator == "log") {
-            return new ValNum(Math.log((right as ValNum).value));
+            return new ValDouble(Math.log((right as ValDouble).value));
         }
 
         if (expression.operator == "asin") {
-            return new ValNum(Math.asin((right as ValNum).value));
+            return new ValDouble(Math.asin((right as ValDouble).value));
         }
 
         if (expression.operator == "acos") {
-            return new ValNum(Math.acos((right as ValNum).value));
+            return new ValDouble(Math.acos((right as ValDouble).value));
         }
 
         if (expression.operator == "atan") {
-            return new ValNum(Math.atan((right as ValNum).value));
+            return new ValDouble(Math.atan((right as ValDouble).value));
         }
 
         throw new Error("Unknown operator: " + expression.operator);
@@ -166,16 +166,16 @@ export class Interpreter{
         }
 
         if (expression.operator == "+") {
-            return new ValNum((left as ValNum).value + (right as ValNum).value);
+            return new ValDouble((left as ValDouble).value + (right as ValDouble).value);
         }
 
         if (expression.operator == "-") {
-            return new ValNum((left as ValNum).value - (right as ValNum).value);
+            return new ValDouble((left as ValDouble).value - (right as ValDouble).value);
         }
 
         if (expression.operator == "==") {
-            if (left instanceof ValNum && right instanceof ValNum) {
-                return new ValBool((left as ValNum).value == (right as ValNum).value);
+            if (left instanceof ValDouble && right instanceof ValDouble) {
+                return new ValBool((left as ValDouble).value == (right as ValDouble).value);
             }
 
             if (left instanceof ValBool && right instanceof ValBool) {
@@ -184,8 +184,8 @@ export class Interpreter{
         }
 
         if (expression.operator == "!=") {
-            if (left instanceof ValNum && right instanceof ValNum) {
-                return new ValBool((left as ValNum).value != (right as ValNum).value);
+            if (left instanceof ValDouble && right instanceof ValDouble) {
+                return new ValBool((left as ValDouble).value != (right as ValDouble).value);
             }
             if (left instanceof ValBool && right instanceof ValBool) {
                 return new ValBool((left as ValBool).value != (right as ValBool).value);
@@ -201,35 +201,35 @@ export class Interpreter{
         }
 
         if (expression.operator == "*") {
-            return new ValNum((left as ValNum).value * (right as ValNum).value);
+            return new ValDouble((left as ValDouble).value * (right as ValDouble).value);
         }
 
         if (expression.operator == "/") {
-            return new ValNum((left as ValNum).value / (right as ValNum).value);
+            return new ValDouble((left as ValDouble).value / (right as ValDouble).value);
         }
 
         if (expression.operator == "%") {
-            return new ValNum((left as ValNum).value % (right as ValNum).value);
+            return new ValDouble((left as ValDouble).value % (right as ValDouble).value);
         }
 
         if (expression.operator == "<") {
-            return new ValBool((left as ValNum).value < (right as ValNum).value);
+            return new ValBool((left as ValDouble).value < (right as ValDouble).value);
         }
 
         if (expression.operator == "<=") {
-            return new ValBool((left as ValNum).value <= (right as ValNum).value);
+            return new ValBool((left as ValDouble).value <= (right as ValDouble).value);
         }
 
         if (expression.operator == ">") {
-            return new ValBool((left as ValNum).value > (right as ValNum).value);
+            return new ValBool((left as ValDouble).value > (right as ValDouble).value);
         }
 
         if (expression.operator == ">=") {
-            return new ValBool((left as ValNum).value >= (right as ValNum).value);
+            return new ValBool((left as ValDouble).value >= (right as ValDouble).value);
         }
 
         if (expression.operator == "^") {
-            return new ValNum(Math.pow((left as ValNum).value, (right as ValNum).value));
+            return new ValDouble(Math.pow((left as ValDouble).value, (right as ValDouble).value));
         }
 
         throw new Error("Unknown operator: " + expression.operator);
@@ -243,8 +243,8 @@ export class Interpreter{
         return val;
     }
 
-    evaluateNumber(term: Num): ValObject | null {
-        return new ValNum(parseFloat(term.value));
+    evaluateNumber(term: Int): ValObject | null {
+        return new ValDouble(parseFloat(term.value));
     }
 
     evaluateExpression(expression: AbstractExpression): ValObject | null {
@@ -260,8 +260,8 @@ export class Interpreter{
             return this.evaluateIdentifier(expression as Identifier);
         }
 
-        if(expression instanceof Num) {
-            return this.evaluateNumber(expression as Num);
+        if(expression instanceof Int) {
+            return this.evaluateNumber(expression as Int);
         }
 
         if(expression instanceof Bool) {
