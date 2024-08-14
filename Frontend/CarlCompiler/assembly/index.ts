@@ -83,6 +83,15 @@ function interpret(string: string): string {
 
 function compile(string: string): string {
     let result = scanAndParseAndToAst(string);
+    if(result.lexerErrors !== null && result.lexerErrors!.length > 0) {
+        return result.toJsonString();
+    }
+    if(result.parseErrors !== null && result.parseErrors!.length > 0) {
+        return result.toJsonString();
+    }
+    if(result.combinedCheckerErrors !== null && result.combinedCheckerErrors!.length > 0) {
+        return result.toJsonString();
+    }
     if(result.astTree === null) {
         return result.toJsonString();
     }

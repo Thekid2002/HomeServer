@@ -254,43 +254,56 @@ export class Compiler {
     }
 
     compileBinaryExpression(expression: BinaryExpression): string {
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.STRING) {
+        let rightValueType: ValueType | null = expression.right.type;
+        let leftValueType: ValueType | null = expression.primaryOrLeft.type;
+
+        if(rightValueType === null) {
+            throw new Error("Right value type is null: " + expression.right.toString() + " on line: " + expression.lineNum.toString());
+        }
+        if(leftValueType === null) {
+            throw new Error("Left value type is null: " + expression.primaryOrLeft.toString() + " on line: " + expression.lineNum.toString());
+        }
+
+        let rightType: ValueTypeEnum = rightValueType.type;
+        let leftType: ValueTypeEnum = leftValueType.type;
+
+        if(leftType === ValueTypeEnum.STRING && rightType === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.DOUBLE) {
+        if(leftType === ValueTypeEnum.STRING && rightType === ValueTypeEnum.DOUBLE) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\ncall $toStringDouble\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.INT) {
+        if(leftType === ValueTypeEnum.STRING && rightType === ValueTypeEnum.INT) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\ncall $toStringInt\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.DOUBLE && expression.right.type!.type === ValueTypeEnum.STRING) {
+        if(leftType === ValueTypeEnum.DOUBLE && rightType === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\ncall $toStringDouble\n${right}\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.INT && expression.right.type!.type === ValueTypeEnum.STRING) {
+        if(leftType === ValueTypeEnum.INT && rightType === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\ncall $toStringInt\n${right}\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.INT && expression.right.type!.type === ValueTypeEnum.DOUBLE) {
+        if(leftType === ValueTypeEnum.INT && rightType === ValueTypeEnum.DOUBLE) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\nf64.convert_i32_s\n${right}\n${this.getOperator(expression.operator, expression.type!.type)}`;
         }
 
-        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.DOUBLE && expression.right.type!.type === ValueTypeEnum.INT) {
+        if(leftType === ValueTypeEnum.DOUBLE && rightType === ValueTypeEnum.INT) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\nf64.convert_i32_s\n${this.getOperator(expression.operator, expression.type!.type)}`;
@@ -322,7 +335,7 @@ export class Compiler {
             let expr = this.compileAbstractExpression(statement.expression!);
             if(statement.global) {
                 string += `\n${expr}\nglobal.set $${statement.identifier.value}`;
-                this.globalDeclarations.push(`(global $${statement.identifier.value} (export "${statement.identifier.value}") (mut f64) (${expr}))`);
+                this.globalDeclarations.push(`(global $${statement.identifier.value} (export "${statement.identifier.value}") (mut ${this.compileValueType(statement.type)}) (${expr}))`);
             }else {
                 string += `\n${expr}\nlocal.set $${statement.identifier.value}`;
             }

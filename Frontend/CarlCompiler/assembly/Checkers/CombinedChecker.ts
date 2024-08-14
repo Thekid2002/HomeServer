@@ -392,9 +392,15 @@ export class CombinedChecker {
                 return new ValueType(ValueTypeEnum.Error, expression.lineNum);
             }
         }
-        expression.type = func.returnType as ValueType;
+
         expression.expectedParameters = func.parameters.values();
-        return func.returnType as ValueType;
+
+        if(func.returnType instanceof ValueType) {
+            expression.type = func.returnType as ValueType;
+            return func.returnType as ValueType;
+        }
+        this.errors.push("Function " + expression.functionName + " has no return type in Line: " + expression.lineNum.toString());
+        return new ValueType(ValueTypeEnum.Error, expression.lineNum);
     }
 
     private checkImport(statement1: ImportFunction, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
