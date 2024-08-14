@@ -23,8 +23,6 @@ import {ValueType, ValueTypeEnum} from "./Nodes/Types/ValueType";
 import {ParseProgram} from "../Parser/Statements/ParseProgram";
 import {Program} from "./Nodes/Statements/Program";
 import {AbstractStatement} from "./Nodes/Statements/AbstractStatement";
-import {ParsePrint} from "../Parser/Statements/ParsePrint";
-import {Print} from "./Nodes/Statements/Print";
 import {ParseLoopStatement} from "../Parser/Statements/ParseLoopStatement";
 import {While} from "./Nodes/Statements/While";
 import {ParseAssignment} from "../Parser/Statements/ParseAssignment";
@@ -35,8 +33,6 @@ import {ParseCompoundStatement} from "../Parser/Statements/ParseCompoundStatemen
 import {CompoundStatement} from "./Nodes/Statements/CompoundStatement";
 import {ParseString} from "../Parser/Expressions/Terms/ParseString";
 import {ASTString as ASTString} from "./Nodes/Expressions/Terms/ASTString";
-import {ParseScan} from "../Parser/Statements/ParseScan";
-import {Scan} from "./Nodes/Statements/Scan";
 import {ParseIncrement} from "../Parser/Statements/ParseIncrement";
 import {ParseBool} from "../Parser/Expressions/Terms/ParseBool";
 import {Bool} from "./Nodes/Expressions/Terms/Bool";
@@ -109,12 +105,6 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         return new FunctionDeclaration(returnType, name, parameters, body, statement.export, statement.lineNum);
     }
 
-    visitScan(statement: ParseScan): AbstractNode {
-        let message = statement.message.accept<AbstractNode>(this) as AbstractExpression;
-        let identifier = statement.identifier.accept<AbstractNode>(this) as ASTIdentifier;
-        let type = statement.type.accept<AbstractNode>(this) as ValueType;
-        return new Scan(message, type, identifier, statement.lineNum);
-    }
     visitString(param: ParseString): AbstractNode {
         return new ASTString(param.value.literal, param.lineNum);
     }
@@ -169,8 +159,16 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
 
     visitType(type: ParseType): AbstractNode {
         let typ: ValueTypeEnum = ValueTypeEnum.Error;
-        if (type.name.literal === "int"  || type.name.literal === "bool" || type.name.literal === "string") {
+        if (type.name.literal === "int") {
             typ = ValueTypeEnum.INT;
+        }
+
+        if (type.name.literal === "string") {
+            typ = ValueTypeEnum.STRING;
+        }
+
+        if (type.name.literal === "bool") {
+            typ = ValueTypeEnum.BOOL;
         }
 
         if (type.name.literal === "double") {
@@ -265,11 +263,6 @@ export class ToAstVisitor implements ParseVisitor<AbstractNode> {
         }
         let primaryOrRight: AbstractExpression = expression.primaryOrRight.accept<AbstractNode>(this) as AbstractExpression;
         return new UnaryExpression(expression.operator!.literal, primaryOrRight, expression.lineNum);
-    }
-
-    visitPrint(statement: ParsePrint): AbstractNode {
-        let expression = statement.expression.accept<AbstractNode>(this) as AbstractExpression;
-        return new Print(expression, statement.lineNum);
     }
 
     visitCompoundStatement(statement: ParseCompoundStatement): AbstractNode {

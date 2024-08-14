@@ -6,8 +6,6 @@ let result = document.getElementById("result");
 let wabtInstance = null;
 let features = {}; // Feature options for WabtModule
 let jsonRes;
-let optimization = false;
-let prints = [];
 
 // Initialize WabtModule and store the instance
 WabtModule().then(function(wabt) {
@@ -15,11 +13,11 @@ WabtModule().then(function(wabt) {
 });
 
 function addPrint(text) {
-    prints.push(text);
-}
-
-function clearPrints() {
-    prints = [];
+    if(window.terminal != null){
+        window.terminal.setValue(window.terminal.getValue() + text + "\n");
+    }else {
+        result.value += text + "\n";
+    }
 }
 
 export async function compileAndExecute() {
@@ -28,8 +26,6 @@ export async function compileAndExecute() {
         execute();
     }
 }
-
-
 
 /**
  * Compile the code input into WebAssembly and execute it.
@@ -50,8 +46,10 @@ export async function compile() {
 
         // Calculate the WAT (WebAssembly Text format) using a custom language function
         jsonRes = JSON.parse(compiledResult);
-        if(jsonRes.compilerOutput != null) {
+        if(jsonRes.compilerOutput !== "") {
             jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
+        }else {
+            console.log(jsonRes);
         }
         compiledWat = jsonRes.compilerOutput;
 
@@ -126,16 +124,10 @@ export async function compile() {
 async function handlePrintsAndOutput(startTime) {
     const endTime = Date.now();
     let output = "";
-    output += "Time to run: " + (endTime - startTime) / 1000 + "s\n";
+    output += "Time to run: " + (endTime - startTime) / 1000 + "s";
     for (let i = 0; i < jsonRes.parseErrors.length; i++) {
         output += jsonRes.parseErrors[i];
         if (i < jsonRes.parseErrors.length - 1) {
-            output += "\n";
-        }
-    }
-    for (let i = 0; i < prints.length; i++) {
-        output += prints[i];
-        if (i < prints.length - 1) {
             output += "\n";
         }
     }
@@ -178,7 +170,6 @@ export async function execute() {
         }
 
         const now = Date.now();
-        clearPrints();
         try {
             console.log(newFunction);
             await newFunction($output, addPrint, jsonRes.wasmInstance, logMemory);

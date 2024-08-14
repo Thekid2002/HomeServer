@@ -4,17 +4,15 @@ import {Identifier} from "./Nodes/Expressions/Terms/Identifier";
 import {Int} from "./Nodes/Expressions/Terms/Int";
 import {Term} from "./Nodes/Expressions/Terms/Term";
 import {UnaryExpression} from "./Nodes/Expressions/UnaryExpression";
-import {ValueType} from "./Nodes/Types/ValueType";
+import {ValueType, ValueTypeNames} from "./Nodes/Types/ValueType";
 import {Declaration} from "./Nodes/Statements/Declaration";
 import {Program} from "./Nodes/Statements/Program";
-import {Print} from "./Nodes/Statements/Print";
 import { While } from "./Nodes/Statements/While";
 import { Assignment } from "./Nodes/Statements/Assignment";
-import { StatementType } from "./Nodes/Types/StatementType";
+import {StatementType, StatementTypeNames} from "./Nodes/Types/StatementType";
 import { IfStatement } from "./Nodes/Statements/IfStatement";
 import { CompoundStatement } from "./Nodes/Statements/CompoundStatement";
 import { ASTString } from "./Nodes/Expressions/Terms/ASTString";
-import { Scan } from "./Nodes/Statements/Scan";
 import { Bool } from "./Nodes/Expressions/Terms/Bool";
 import {FunctionDeclaration} from "./Nodes/Statements/FunctionDeclaration";
 import { FunctionCallExpression } from "./Nodes/Expressions/FunctionCallExpression";
@@ -80,13 +78,6 @@ export class ASTPrinter implements ASTVisitor<void> {
         for (let i = 0; i < statement.actualParameters.length; i++) {
             statement.actualParameters[i].accept<void>(this);
         }
-        this.number--;
-    }
-
-    visitPrint(param: Print): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Print");
-        this.number++;
-        param.expression.accept<void>(this);
         this.number--;
     }
 
@@ -175,11 +166,11 @@ export class ASTPrinter implements ASTVisitor<void> {
     }
 
     visitValueType(type: ValueType): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ValueType " + type.type.toString());
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ValueType " + ValueTypeNames[type.type]);
     }
 
     visitStatementType(statement: StatementType): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": StatementType " + statement.type.toString());
+        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": StatementType " + StatementTypeNames[statement.type]);
     }
 
     visitIfStatement(statement: IfStatement): void {
@@ -192,14 +183,6 @@ export class ASTPrinter implements ASTVisitor<void> {
         if(statement.else !== null) {
             statement.else!.accept<void>(this);
         }
-        this.number--;
-    }
-
-    visitScan(statement: Scan): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": Scan");
-        this.number++;
-        statement.type.accept<void>(this);
-        statement.identifier.accept<void>(this);
         this.number--;
     }
 

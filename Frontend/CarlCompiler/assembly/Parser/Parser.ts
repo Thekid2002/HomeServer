@@ -16,13 +16,11 @@ import {ParseProgram} from "./Statements/ParseProgram";
 import {ParseDeclaration} from "./Statements/ParseDeclaration";
 import {ParseType} from "./Expressions/Terms/ParseType";
 import {ParseAbstractStatement} from "./Statements/ParseAbstractStatement";
-import {ParsePrint} from "./Statements/ParsePrint";
 import {ParseLoopStatement} from "./Statements/ParseLoopStatement";
 import {ParseAssignment} from "./Statements/ParseAssignment";
 import {ParseIfStatement} from "./Statements/ParseIfStatement";
 import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
 import {ParseString} from "./Expressions/Terms/ParseString";
-import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
 import {ParseBool} from "./Expressions/Terms/ParseBool";
 import {ParseFunctionDeclaration} from "./Statements/ParseFunctionDeclaration";
@@ -126,15 +124,6 @@ export class Parser {
         else if(this.matchAdvance([TokenType.RETURN])){
             statement = this.return();
         }
-
-        else if (this.match([TokenType.PRINT])) {
-            statement = this.print();
-        }
-
-        else if(this.match([TokenType.SCAN])){
-            statement = this.scan();
-        }
-
         else if (this.match([TokenType.INT, TokenType.DOUBLE, TokenType.BOOL, TokenType.STRING, TokenType.VOID])) {
             if(this.peekpeek().type === TokenType.IDENTIFIER) {
                 if (this.peekpeekpeek().type === TokenType.LEFT_PAREN) {
@@ -168,20 +157,6 @@ export class Parser {
         this.matchAdvance([TokenType.SEMICOLON]);
         return statement;
     }
-
-
-    private print(): ParsePrint | null {
-        if (this.matchAdvance([TokenType.PRINT])) {
-            this.matchAdvance([TokenType.LEFT_PAREN]);
-            let expression = this.expression();
-            this.matchAdvance([TokenType.RIGHT_PAREN]);
-            return new ParsePrint(expression, expression.lineNum);
-        }
-
-        this.errors.push("Expected 'print' at line: " + this.peek().line.toString());
-        return null
-    }
-
 
     private declaration($export: boolean, global: boolean): ParseDeclaration | null {
         let type = this.type();
@@ -605,32 +580,6 @@ export class Parser {
         }
 
         return new ParseCompoundStatement(statements[0], this.toCompoundStatement(statements.slice(1)), statements[0].lineNum);
-    }
-
-    private scan(): ParseScan | null {
-        this.advance();
-        this.matchAdvance([TokenType.LEFT_PAREN]);
-        let string = this.term();
-        if(!this.matchAdvance([TokenType.COMMA])){
-            this.errors.push("Expected ',' at line: " + this.peek().line.toString());
-            return null;
-        }
-        let type: ParseType | null = this.type();
-        if (type === null) {
-            this.errors.push("No type given in scan statement");
-            return null;
-        }
-        if(!this.matchAdvance([TokenType.COMMA])){
-            this.errors.push("Expected ',' at line: " + this.peek().line.toString());
-            return null;
-        }
-        if (!this.match([TokenType.IDENTIFIER])) {
-            this.errors.push("ParseDeclaration: Unexpected token: " + this.peek().literal + " at line: " + this.peek().line.toString());
-            return null;
-        }
-        let identifier: ParseIdentifier = this.term() as ParseIdentifier;
-        this.matchAdvance([TokenType.RIGHT_PAREN]);
-        return new ParseScan(string, type, identifier, identifier.lineNum);
     }
 
     private functionDeclarationWithBody(exportStatement: boolean): ParseFunctionDeclaration | null {

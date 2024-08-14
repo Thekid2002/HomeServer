@@ -11,13 +11,11 @@ import {ParsePowExpression} from "./Expressions/ParsePowExpression";
 import {ParseDeclaration} from "./Statements/ParseDeclaration";
 import {ParseType} from "./Expressions/Terms/ParseType";
 import {ParseProgram} from "./Statements/ParseProgram";
-import {ParsePrint} from "./Statements/ParsePrint";
 import {ParseLoopStatement} from "./Statements/ParseLoopStatement";
 import {ParseAssignment} from "./Statements/ParseAssignment";
 import {ParseIfStatement} from "./Statements/ParseIfStatement";
 import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
 import {ParseString} from "./Expressions/Terms/ParseString";
-import {ParseScan} from "./Statements/ParseScan";
 import {ParseIncrement} from "./Statements/ParseIncrement";
 import {ParseBool} from "./Expressions/Terms/ParseBool";
 import {ParseFunctionDeclaration} from "./Statements/ParseFunctionDeclaration";
@@ -56,8 +54,6 @@ export interface ParseVisitor<T> {
 
     visitProgram(statement: ParseProgram): T;
 
-    visitPrint(statement: ParsePrint): T;
-
     visitLoopStatement(statement: ParseLoopStatement): T;
 
     visitAssignment(statement: ParseAssignment): T;
@@ -67,8 +63,6 @@ export interface ParseVisitor<T> {
     visitCompoundStatement(statement: ParseCompoundStatement): T;
 
     visitString(term: ParseString): T;
-
-    visitScan(statement: ParseScan): T;
 
     visitIncrement(statement: ParseIncrement): T;
 

@@ -2,11 +2,9 @@ import { UnaryExpression } from "../AST/Nodes/Expressions/UnaryExpression";
 import { BinaryExpression } from "../AST/Nodes/Expressions/BinaryExpression";
 import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
 import { Int } from "../AST/Nodes/Expressions/Terms/Int";
-import { Term } from "../AST/Nodes/Expressions/Terms/Term";
 import {ValueType, ValueTypeEnum, ValueTypeNames} from "../AST/Nodes/Types/ValueType";
 import { Declaration } from "../AST/Nodes/Statements/Declaration";
 import { Program } from "../AST/Nodes/Statements/Program";
-import { Print } from "../AST/Nodes/Statements/Print";
 import { While } from "../AST/Nodes/Statements/While";
 import { Assignment } from "../AST/Nodes/Statements/Assignment";
 import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
@@ -14,7 +12,6 @@ import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
-import {Scan} from "../AST/Nodes/Statements/Scan";
 import {Bool} from "../AST/Nodes/Expressions/Terms/Bool";
 import {FunctionDeclaration} from "../AST/Nodes/Statements/FunctionDeclaration";
 import {AbstractType} from "../AST/Nodes/Types/AbstractType";
@@ -25,6 +22,7 @@ import {Return} from "../AST/Nodes/Statements/Return";
 import {VarEnv} from "../Env/VarEnv";
 import {ImportFunction} from "../AST/Nodes/Statements/ImportFunction";
 import {Double} from "../AST/Nodes/Expressions/Terms/Double";
+import {FunctionCallInterface} from "../AST/Nodes/FunctionCallInterface";
 
 export class Compiler {
     wasmCode: string[] = [];
@@ -65,14 +63,6 @@ export class Compiler {
             return this.compileDeclaration(statement as Declaration);
         }
 
-        if (statement instanceof Print) {
-            return this.compilePrint(statement as Print);
-        }
-
-        if (statement instanceof Scan) {
-            return this.compileScan(statement as Scan);
-        }
-
         if (statement instanceof While) {
             return this.compileWhile(statement as While);
         }
@@ -98,7 +88,7 @@ export class Compiler {
         }
 
         if(statement instanceof FunctionCallStatement){
-            return this.compileFunctionCallStatement(statement as FunctionCallStatement);
+            return this.compileFunctionCall(statement as FunctionCallStatement);
         }
 
         if(statement instanceof Return){
@@ -179,43 +169,12 @@ export class Compiler {
             ')\n';
     }
 
-    compilePrint(print: Print): string {
-        let expr = this.compileAbstractExpression(print.expression);
-        if(print.expression.type === ValueTypeEnum.DOUBLE) {
-            return `${expr}\ncall $logf64`;
-        }
-
-        if(print.expression.type === ValueTypeEnum.BOOL || print.expression.type === ValueTypeEnum.INT) {
-            return `${expr}\ncall $logi32`;
-        }
-
-        if(print.expression.type === ValueTypeEnum.STRING) {
-            return `${expr}\ncall $logMemory\n`;
-        }
-
-        throw new Error("Logging for type: " + ValueTypeNames[print.expression.type] + " not implemented");
-    }
-
-    compileScan(scan: Scan): string {
-        let message = this.compileAbstractExpression(scan.message);
-        let type = this.compileValueType(scan.type);
-        if(type === "String") {
-            return `${message}\n` +
-                `call $scan${type}` + `\n` +
-                `local.set $${scan.identifier.value}`;
-        }
-
-        return `${message}\n` +
-                `call $scan${type}` + `\n` +
-                `local.set $${scan.identifier.value}`;
-    }
-
     compileImport(statement: ImportFunction): string {
         let parameters = "(param ";
         for (let i = 0; i < statement.parameters.keys().length; i++) {
             let key = statement.parameters.keys()[i];
-            let type = this.compileAbstractType(statement.parameters.get(key)!);
-            parameters += `${type}`;
+            let type = this.compileAbstractType(statement.parameters.get(key));
+            parameters += `${type} `;
         }
         parameters += ")";
         let returnType = '(result ' + this.compileAbstractType(statement.returnType) + ')';
@@ -230,15 +189,6 @@ export class Compiler {
         }
         return '(module\n' +
             this.imports.join("\n") + '\n' +
-            /**'(import "console" "logI32" (func $logi32 (param i32)))\n' +
-            '(import "console" "logF64" (func $logf64 (param f64)))\n' +
-            '(import "console" "logMemory" (func $logMemory (param i32)))\n'
-            '(import "js" "concat" (func $concat (param i32 i32) (result i32)))\n' +
-            `(import "js" "toStringI32" (func $toStringi32 (param i32) (result i32)))\n` +
-            `(import "js" "toStringF64" (func $toStringf64 (param f64) (result i32)))\n` +
-            `(import "js" "scanI32" (func $scani32 (param i32) (result i32)))\n` +
-            `(import "js" "scanF64" (func $scanf64 (param i32) (result f64)))\n` +
-            `(import "js" "scanString" (func $scanString (param i32) (result i32)))\n` +**/
             '(import "js" "memory" (memory 1))\n' +
             `(global $stackPointer (export "stackPointer") (mut i32) (i32.const ${this.stackPointer}))\n` +
             this.globalDeclarations.join("\n") + '\n' +
@@ -271,16 +221,12 @@ export class Compiler {
             return this.compileDouble(expression as Double);
         }
 
-        if (expression instanceof Term) {
-            return this.compileTerm(expression as Term);
-        }
-
         if (expression instanceof ASTString) {
             return this.compileString(expression as ASTString);
         }
 
         if(expression instanceof FunctionCallExpression) {
-            return this.compileFunctionCallExpression(expression as FunctionCallExpression);
+            return this.compileFunctionCall(expression as FunctionCallExpression);
         }
 
         throw new Error("Unknown abstract expression type");
@@ -289,40 +235,58 @@ export class Compiler {
     compileUnaryExpression(expression: UnaryExpression): string {
         let right = this.compileAbstractExpression(expression.primaryOrRight);
         if (expression.operator === "-") {
-            return `${right}\nf64.neg`;
+            right = `${right}\nf64.neg`;
         }
 
         if (expression.operator === "!") {
-            return `${right}\ni32.eqz`;
+            right = `${right}\ni32.eqz`;
         }
-        throw new Error("Unknown operator: " + expression.operator);
+
+        if(expression.type!.type === ValueTypeEnum.STRING && expression.primaryOrRight.type!.type === ValueTypeEnum.DOUBLE) {
+            right = `${right}\ncall $toStringDouble`;
+        }
+
+        if(expression.type!.type === ValueTypeEnum.STRING && expression.primaryOrRight.type!.type === ValueTypeEnum.INT) {
+            right = `${right}\ncall $toStringInt`;
+        }
+
+        return `${right}\n`;
     }
 
     compileBinaryExpression(expression: BinaryExpression): string {
-        if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.STRING) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
             return `${left}\n${right}\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type === ValueTypeEnum.STRING && expression.right.type !== ValueTypeEnum.STRING) {
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.DOUBLE) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\n${right}\ncall $toStringf64\ncall $concat`;
+            return `${left}\n${right}\ncall $toStringDouble\ncall $concat`;
         }
 
-        if(expression.primaryOrLeft.type !== ValueTypeEnum.STRING && expression.right.type === ValueTypeEnum.STRING) {
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.STRING && expression.right.type!.type === ValueTypeEnum.INT) {
             let left = this.compileAbstractExpression(expression.primaryOrLeft);
             let right = this.compileAbstractExpression(expression.right);
-            return `${left}\ncall $toStringf64\n${right}\ncall $concat`;
+            return `${left}\n${right}\ncall $toStringInt\ncall $concat`;
+        }
+
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.DOUBLE && expression.right.type!.type === ValueTypeEnum.STRING) {
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
+            return `${left}\ncall $toStringDouble\n${right}\ncall $concat`;
+        }
+
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.INT && expression.right.type!.type === ValueTypeEnum.STRING) {
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
+            return `${left}\ncall $toStringInt\n${right}\ncall $concat`;
         }
 
         let left = this.compileAbstractExpression(expression.primaryOrLeft);
-        if(expression.type === ValueTypeEnum.DOUBLE) {
-            left += "\n" + "f64.convert_s/i32";
-        }
         let right = this.compileAbstractExpression(expression.right);
-        return `${left}\n${right}\n${this.getOperator(expression.operator, expression.type)}`;
+        return `${left}\n${right}\n${this.getOperator(expression.operator, expression.type!.type)}`;
     }
 
     compileIdentifier(term: Identifier): string {
@@ -338,10 +302,6 @@ export class Compiler {
 
     compileDouble(term: Double): string {
         return `f64.const ${term.value}`;
-    }
-
-    compileTerm(term: Term): string {
-        throw new Error("Term not implemented");
     }
 
     compileDeclaration(statement: Declaration): string {
@@ -370,7 +330,7 @@ export class Compiler {
         for (let i = 0; i < statement.parameters.keys().length; i++) {
             let key = statement.parameters.keys()[i];
             let type = statement.parameters.get(key);
-            params += `(param $${key} ${this.compileAbstractType(type!)})\n`;
+            params += `(param $${key} ${this.compileAbstractType(type)})\n`;
         }
         let functionIdentifier =  statement.export ? `$${statement.name.value} (export "${statement.name.value}")` : `$${statement.name.value}`;
         let returnType = this.compileAbstractType(statement.returnType);
@@ -393,7 +353,7 @@ export class Compiler {
             return `i32`;
         }
         if (type.type === ValueTypeEnum.STRING) {
-            return `String`;
+            return `i32`;
         }
         throw new Error("Unknown type: " + type.type.toString());
     }
@@ -476,6 +436,17 @@ export class Compiler {
                 return "i32.le_s";
             }
         }
+        if (operator === "==") {
+            if(type === ValueTypeEnum.BOOL) {
+                return "i32.eq";
+            }else if(type === ValueTypeEnum.INT) {
+                return "i32.eq";
+            }else if(type === ValueTypeEnum.DOUBLE) {
+                return "f64.eq";
+            }else if(type === ValueTypeEnum.STRING) {
+                return "i32.eq";
+            }
+        }
         if (operator === "&&") {
             return "i32.and";
         }
@@ -508,23 +479,42 @@ export class Compiler {
         throw new Error("Unknown abstract type");
     }
 
-    private compileFunctionCallStatement(statement: FunctionCallStatement): string {
+    private compileFunctionCall(functionCall: FunctionCallInterface): string {
         let actualParameters = "";
-        for (let i = 0; i < statement.actualParameters.length; i++) {
-            let expr = this.compileAbstractExpression(statement.actualParameters[i]);
+        for (let i = 0; i < functionCall.actualParameters.length; i++) {
+            let expr = this.compileAbstractExpression(functionCall.actualParameters[i]);
             actualParameters += `${expr}\n`;
+
+            let expectedType = functionCall.expectedParameters !== null ? functionCall.expectedParameters![i] as ValueType : null;
+
+            if (expectedType == null) {
+                return `${actualParameters}\ncall $${functionCall.functionName}`;
+            }
+
+            // Handle conversion from DOUBLE (f64) to INT (i32)
+            if (functionCall.actualParameters[i].type!.type === ValueTypeEnum.DOUBLE && expectedType.type === ValueTypeEnum.INT) {
+                actualParameters += `f64.convert_i32_s\n`;
+            }
+            // Handle conversion from INT (i32) to DOUBLE (f64)
+            if (functionCall.actualParameters[i].type!.type === ValueTypeEnum.INT && expectedType.type === ValueTypeEnum.DOUBLE) {
+                actualParameters += `i32.trunc_f64_s\n`;
+            }
+            // Handle conversion from INT (i32) to STRING
+            if (functionCall.actualParameters[i].type!.type === ValueTypeEnum.INT && expectedType.type === ValueTypeEnum.STRING) {
+                actualParameters += `call $toStringInt\n`;
+            }
+            // Handle conversion from DOUBLE (f64) to STRING
+            if (functionCall.actualParameters[i].type!.type === ValueTypeEnum.DOUBLE && expectedType.type === ValueTypeEnum.STRING) {
+                actualParameters += `call $toStringDouble\n`;
+            }
+            // Handle conversion from BOOL (i32) to STRING
+            if(functionCall.actualParameters[i].type!.type === ValueTypeEnum.BOOL && expectedType.type === ValueTypeEnum.STRING) {
+                actualParameters += `call $toStringBool\n`;
+            }
         }
-        return `${actualParameters}\ncall $${statement.functionName}`;
+        return `${actualParameters}\ncall $${functionCall.functionName}`;
     }
 
-    private compileFunctionCallExpression(expression: FunctionCallExpression): string {
-        let actualParameters = "";
-        for (let i = 0; i < expression.actualParameters.length; i++) {
-            let expr = this.compileAbstractExpression(expression.actualParameters[i]);
-            actualParameters += `${expr}\n`;
-        }
-        return `${actualParameters}\ncall $${expression.functionName}`;
-    }
 
     private compileReturnStatement(statement: Return): string {
         let expr = this.compileAbstractExpression(statement.expression);

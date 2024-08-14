@@ -12,13 +12,11 @@ import {ParsePowExpression} from "./Expressions/ParsePowExpression";
 import {ParseType} from "./Expressions/Terms/ParseType";
 import {ParseDeclaration} from "./Statements/ParseDeclaration";
 import {ParseProgram} from "./Statements/ParseProgram";
-import {ParsePrint} from "./Statements/ParsePrint";
 import { ParseLoopStatement } from "./Statements/ParseLoopStatement";
 import { ParseAssignment } from "./Statements/ParseAssignment";
 import {ParseIfStatement} from "./Statements/ParseIfStatement";
 import { ParseCompoundStatement } from "./Statements/ParseCompoundStatement";
 import { ParseString } from "./Expressions/Terms/ParseString";
-import { ParseScan } from "./Statements/ParseScan";
 import { ParseIncrement } from "./Statements/ParseIncrement";
 import { ParseBool } from "./Expressions/Terms/ParseBool";
 import { ParseFunctionDeclaration } from "./Statements/ParseFunctionDeclaration";
@@ -31,14 +29,6 @@ import { ParseDouble } from "./Expressions/Terms/ParseDouble";
 export class ParseTreePrinter implements ParseVisitor<void> {
     number: i32 = 0;
     tree: string[] = [];
-
-    visitScan(statement: ParseScan): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParseScan");
-        this.number++;
-        statement.type.accept<void>(this);
-        statement.identifier.accept<void>(this);
-        this.number--;
-    }
 
     visitCompoundStatement(statement: ParseCompoundStatement): void {
         statement.left.accept<void>(this);
@@ -82,13 +72,6 @@ export class ParseTreePrinter implements ParseVisitor<void> {
         if(statement.body !== null) {
             statement.body.accept<void>(this);
         }
-        this.number--;
-    }
-
-    visitPrint(param: ParsePrint): void {
-        this.tree.push(this.getSpace(this.number) + this.number.toString() + ": ParsePrint");
-        this.number++;
-        param.expression.accept<void>(this);
         this.number--;
     }
 

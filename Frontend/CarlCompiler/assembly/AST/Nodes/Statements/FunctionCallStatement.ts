@@ -2,10 +2,13 @@ import {AbstractStatement} from "./AbstractStatement";
 import {ASTVisitor} from "../../ASTVisitor";
 import { AbstractNode } from "../AbstractNode";
 import {AbstractExpression} from "../Expressions/AbstractExpression";
+import {AbstractType} from "../Types/AbstractType";
+import {FunctionCallInterface} from "../FunctionCallInterface";
 
-export class FunctionCallStatement extends AbstractStatement {
-    functionName: string;
+export class FunctionCallStatement extends AbstractStatement implements FunctionCallInterface {
     actualParameters: Array<AbstractExpression>;
+    expectedParameters: Array<AbstractType> | null = null;
+    functionName: string;
 
     constructor(functionName: string, actualParameters: Array<AbstractExpression>, lineNum: i32) {
         super(lineNum);
@@ -37,4 +40,5 @@ export class FunctionCallStatement extends AbstractStatement {
         string += ")";
         return string;
     }
+
 }

@@ -1,11 +1,9 @@
 import {BinaryExpression} from "../AST/Nodes/Expressions/BinaryExpression";
 import {Identifier} from "../AST/Nodes/Expressions/Terms/Identifier";
 import {Int} from "../AST/Nodes/Expressions/Terms/Int";
-import {Term} from "../AST/Nodes/Expressions/Terms/Term";
 import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
 import {Assignment} from "../AST/Nodes/Statements/Assignment";
 import {Declaration} from "../AST/Nodes/Statements/Declaration";
-import {Print} from "../AST/Nodes/Statements/Print";
 import {Program} from "../AST/Nodes/Statements/Program";
 import {While} from "../AST/Nodes/Statements/While";
 import {ValueType, ValueTypeEnum, ValueTypeNames} from "../AST/Nodes/Types/ValueType";
@@ -16,7 +14,6 @@ import {VarEnv} from "../Env/VarEnv";
 import {IfStatement} from "../AST/Nodes/Statements/IfStatement";
 import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
-import {Scan} from "../AST/Nodes/Statements/Scan";
 import {Bool} from "../AST/Nodes/Expressions/Terms/Bool";
 import {FunctionDeclaration} from "../AST/Nodes/Statements/FunctionDeclaration";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
@@ -30,15 +27,15 @@ import {Double} from "../AST/Nodes/Expressions/Terms/Double";
 export class CombinedChecker {
     public errors: string[] = [];
 
-    checkProgram(statement: Program, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
+    checkProgram(statement: Program, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null = null): StatementType {
         if(statement.body !== null) {
-            this.checkStatement(statement.body!, varEnv, funcEnv);
+            this.checkStatement(statement.body!, varEnv, funcEnv, currentReturnType);
         }
         statement.varEnv = varEnv;
         return new StatementType(StatementTypeEnum.PROGRAM, statement.lineNum);
     }
 
-    checkStatement(statement: AbstractStatement, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
+    checkStatement(statement: AbstractStatement, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null): StatementType {
         if(statement instanceof Declaration) {
             return this.checkDeclaration(statement as Declaration, varEnv, funcEnv);
         }
@@ -47,12 +44,8 @@ export class CombinedChecker {
             return this.checkAssignment(statement as Assignment, varEnv, funcEnv);
         }
 
-        if(statement instanceof Print) {
-            return this.checkPrint(statement as Print, varEnv, funcEnv);
-        }
-
         if(statement instanceof While) {
-            return this.checkWhile(statement as While, varEnv, funcEnv);
+            return this.checkWhile(statement as While, varEnv, funcEnv, currentReturnType);
         }
 
         if(statement instanceof ImportFunction){
@@ -60,19 +53,15 @@ export class CombinedChecker {
         }
 
         if(statement instanceof IfStatement) {
-            return this.checkIfStatement(statement as IfStatement, varEnv, funcEnv);
+            return this.checkIfStatement(statement as IfStatement, varEnv, funcEnv, currentReturnType);
         }
 
         if(statement instanceof CompoundStatement) {
-            return this.checkCompoundStatement(statement as CompoundStatement, varEnv, funcEnv);
+            return this.checkCompoundStatement(statement as CompoundStatement, varEnv, funcEnv, currentReturnType);
         }
 
         if(statement instanceof FunctionDeclaration) {
             return this.checkFunctionDeclaration(statement as FunctionDeclaration, varEnv, funcEnv);
-        }
-
-        if(statement instanceof Scan) {
-            return this.checkScan(statement as Scan, varEnv, funcEnv);
         }
 
         if(statement instanceof FunctionCallStatement){
@@ -80,16 +69,16 @@ export class CombinedChecker {
         }
 
         if(statement instanceof Return){
-            return new StatementType(StatementTypeEnum.RETURN, statement.lineNum);
+            return this.checkReturnStatement(statement as Return, varEnv, funcEnv, currentReturnType);
         }
 
         this.errors.push("Line: " + statement.lineNum.toString() + " Statement not supported");
         return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
     }
 
-    checkCompoundStatement(statement: CompoundStatement, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
-        let left = this.checkStatement(statement.left, varEnv, funcEnv);
-        let right =this.checkStatement(statement.right, varEnv, funcEnv);
+    checkCompoundStatement(statement: CompoundStatement, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null): StatementType {
+        let left = this.checkStatement(statement.left, varEnv, funcEnv, currentReturnType);
+        let right =this.checkStatement(statement.right, varEnv, funcEnv, currentReturnType);
         return left;
     }
 
@@ -100,10 +89,6 @@ export class CombinedChecker {
 
         if(expression instanceof UnaryExpression) {
             return this.checkUnaryExpression(expression as UnaryExpression, varEnv, funcEnv);
-        }
-
-        if(expression instanceof Term) {
-            return this.checkTerm(expression as Term, varEnv, funcEnv);
         }
 
         if(expression instanceof Double) {
@@ -143,17 +128,17 @@ export class CombinedChecker {
         if(expression.operator === "+") {
             if((left.type === ValueTypeEnum.STRING && (right.type === ValueTypeEnum.STRING || right.type === ValueTypeEnum.DOUBLE || right.type === ValueTypeEnum.BOOL || right.type === ValueTypeEnum.INT))
                 || right.type === ValueTypeEnum.STRING && (left.type === ValueTypeEnum.STRING || left.type === ValueTypeEnum.DOUBLE || left.type === ValueTypeEnum.BOOL || left.type === ValueTypeEnum.INT)) {
-                expression.type = ValueTypeEnum.STRING;
+                expression.type = new ValueType(ValueTypeEnum.STRING, expression.lineNum);
                 return new ValueType(ValueTypeEnum.STRING, expression.lineNum);
             }
-            if(left.type === ValueTypeEnum.DOUBLE && right.type === ValueTypeEnum.DOUBLE ||
-                right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.INT ||
-                right.type === ValueTypeEnum.INT && left.type === ValueTypeEnum.DOUBLE) {
-                expression.type = ValueTypeEnum.DOUBLE;
+            if((left.type === ValueTypeEnum.DOUBLE && right.type === ValueTypeEnum.DOUBLE) ||
+                (right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.INT) ||
+                (right.type === ValueTypeEnum.INT && left.type === ValueTypeEnum.DOUBLE)) {
+                expression.type = new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
                 return new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
             }
             if(left.type === ValueTypeEnum.INT && right.type === ValueTypeEnum.INT) {
-                expression.type = ValueTypeEnum.INT;
+                expression.type = new ValueType(ValueTypeEnum.INT, expression.lineNum);
                 return new ValueType(ValueTypeEnum.INT, expression.lineNum);
             }
 
@@ -165,11 +150,11 @@ export class CombinedChecker {
             if(left.type === ValueTypeEnum.DOUBLE && right.type === ValueTypeEnum.DOUBLE ||
                 right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.INT ||
                 right.type === ValueTypeEnum.INT && left.type === ValueTypeEnum.DOUBLE) {
-                expression.type = ValueTypeEnum.DOUBLE;
+                expression.type = new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
                 return new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
             }
             if(left.type === ValueTypeEnum.INT && right.type === ValueTypeEnum.INT) {
-                expression.type = ValueTypeEnum.INT;
+                expression.type = new ValueType(ValueTypeEnum.INT, expression.lineNum);
                 return new ValueType(ValueTypeEnum.INT, expression.lineNum);
             }
             this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.DOUBLE] + " but got: " + ValueTypeNames[left.type]);
@@ -179,14 +164,14 @@ export class CombinedChecker {
         if(expression.operator === "==" || expression.operator === "!=") {
             if(right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.INT ||
                 right.type === ValueTypeEnum.INT && left.type === ValueTypeEnum.DOUBLE) {
-                expression.type = ValueTypeEnum.DOUBLE;
+                expression.type = new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
                 return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
             }
             else if(left.type !== right.type) {
                 this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[left.type] + " but got: " + ValueTypeNames[right.type]);
                 return new ValueType(ValueTypeEnum.Error, expression.lineNum);
             }
-            expression.type = ValueTypeEnum.BOOL;
+            expression.type = new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
             return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
         }
 
@@ -194,12 +179,12 @@ export class CombinedChecker {
             if(right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.DOUBLE ||
                 right.type === ValueTypeEnum.DOUBLE && left.type === ValueTypeEnum.INT ||
                 right.type === ValueTypeEnum.INT && left.type === ValueTypeEnum.DOUBLE) {
-                expression.type = ValueTypeEnum.DOUBLE;
+                expression.type = new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
                 return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
             }
 
             if(left.type === ValueTypeEnum.INT && right.type === ValueTypeEnum.INT) {
-                expression.type = ValueTypeEnum.INT;
+                expression.type = new ValueType(ValueTypeEnum.INT, expression.lineNum);
                 return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
             }
 
@@ -211,18 +196,23 @@ export class CombinedChecker {
             if(left.type !== ValueTypeEnum.BOOL || right.type !== ValueTypeEnum.BOOL) {
                 this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[left.type]);
             }
-            expression.type = ValueTypeEnum.BOOL;
+            expression.type = new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
             return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
         }
 
         this.errors.push("Line: " + expression.lineNum.toString() + " Operator " + expression.operator + " not supported");
-        return left;
+        return new ValueType(ValueTypeEnum.Error, expression.lineNum);
     }
 
     checkFunctionDeclaration(statement: FunctionDeclaration, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
         let type = funcEnv.lookUp(statement.name.value);
         if (type !== null) {
             this.errors.push("FunctionObject " + statement.name.value + " already declared in Line: " + statement.lineNum.toString());
+        }
+        funcEnv.addFunc(statement.name.value, statement.returnType, statement.parameters, varEnv);
+        let returnType: ValueType | null = null;
+        if(statement.returnType instanceof ValueType) {
+            returnType = statement.returnType as ValueType;
         }
         varEnv = varEnv.enterScope();
         for (let i = 0; i < statement.parameters.keys().length; i++) {
@@ -231,9 +221,8 @@ export class CombinedChecker {
 
             varEnv.addVar(key, type);
         }
-        this.checkStatement(statement.body!, varEnv, funcEnv);
+        this.checkStatement(statement.body!, varEnv, funcEnv, returnType);
         statement.varEnv = varEnv;
-        funcEnv.addFunc(statement.name.value, statement.returnType, statement.parameters, varEnv);
         return new StatementType(StatementTypeEnum.FUNCTION_DECLARATION, statement.lineNum);
     }
 
@@ -248,45 +237,41 @@ export class CombinedChecker {
         if(expression.operator === "!") {
             if(type.type !== ValueTypeEnum.BOOL) {
                 this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[type.type]);
-                return type;
+                return new ValueType(ValueTypeEnum.Error, expression.lineNum);
             }
-            expression.type = type.type;
+            expression.type = type;
             return new ValueType(ValueTypeEnum.BOOL, expression.lineNum);
         }
         if(expression.operator === "-") {
             if(type.type !== ValueTypeEnum.DOUBLE && type.type !== ValueTypeEnum.INT) {
                 this.errors.push("Line: " + expression.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.DOUBLE] + " but got: " + ValueTypeNames[type.type]);
-                return type;
+                return new ValueType(ValueTypeEnum.Error, expression.lineNum);
             }
-            expression.type = type.type;
+            expression.type = type;
             return new ValueType(ValueTypeEnum.DOUBLE, expression.lineNum);
         }
         this.errors.push("Line: " + expression.lineNum.toString() + " Operator " + expression.operator + " not supported");
-        return type;
-    }
-
-    checkTerm(term: Term, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
-        throw new Error("Method not implemented.");
+        return new ValueType(ValueTypeEnum.Error, expression.lineNum);
     }
 
     checkDouble(term: Double, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
-        term.type = ValueTypeEnum.DOUBLE;
+        term.type = new ValueType(ValueTypeEnum.DOUBLE, term.lineNum);
         return new ValueType(ValueTypeEnum.DOUBLE, term.lineNum);
     }
 
-    private checkInt(term: Int, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
-        term.type = ValueTypeEnum.INT;
+    checkInt(term: Int, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
+        term.type = new ValueType(ValueTypeEnum.INT, term.lineNum);
         return new ValueType(ValueTypeEnum.INT, term.lineNum);
     }
 
     checkBool(term: Bool, varEnv: VarEnv, funcEnv: FuncEnv): AbstractType | null {
-        term.type = ValueTypeEnum.BOOL;
+        term.type = new ValueType(ValueTypeEnum.BOOL, term.lineNum);
         return new ValueType(ValueTypeEnum.BOOL, term.lineNum);
     }
 
     checkString(param: ASTString, varEnv: VarEnv, funcEnv: FuncEnv): AbstractType | null {
-        param.type = ValueTypeEnum.INT;
-        return new ValueType(ValueTypeEnum.INT, param.lineNum);
+        param.type = new ValueType(ValueTypeEnum.STRING, param.lineNum);
+        return new ValueType(ValueTypeEnum.STRING, param.lineNum);
     }
 
     checkIdentifier(term: Identifier, varEnv: VarEnv, funcEnv: FuncEnv): ValueType {
@@ -295,7 +280,7 @@ export class CombinedChecker {
             this.errors.push("0_Variable " + term.value + " not declared in Line: " + term.lineNum.toString());
             return new ValueType(ValueTypeEnum.Error, term.lineNum);
         }
-        term.type = type.type;
+        term.type = type;
         return type as ValueType;
     }
 
@@ -315,25 +300,10 @@ export class CombinedChecker {
         return new StatementType(StatementTypeEnum.VAR_DECL, statement.lineNum);
     }
 
-    checkPrint(statement: Print, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
-        if(statement.expression !== null) {
-            let type = this.checkExpression(statement.expression, varEnv, funcEnv);
-            if(type === null) {
-                this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.DOUBLE] + " or " + ValueTypeNames[ValueTypeEnum.STRING] + " but got: " + ValueTypeNames[ValueTypeEnum.Error]);
-            }
-
-            let valueType = type as ValueType;
-            if(valueType.type !== ValueTypeEnum.DOUBLE && valueType.type !== ValueTypeEnum.STRING && valueType.type !== ValueTypeEnum.BOOL && valueType.type !== ValueTypeEnum.INT) {
-                this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.DOUBLE] + " or " + ValueTypeNames[ValueTypeEnum.STRING] + " or " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[valueType.type]);
-            }
-        }
-        return new StatementType(StatementTypeEnum.PRINT, statement.lineNum);
-    }
-
-    checkWhile(statement: While, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
+    checkWhile(statement: While, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null): StatementType {
         let initType: StatementType | null = null;
         if(statement.initiator !== null) {
-            initType = this.checkStatement(statement.initiator!, varEnv, funcEnv);
+            initType = this.checkStatement(statement.initiator!, varEnv, funcEnv, currentReturnType);
         }
         if(initType !== null && initType.type !== StatementTypeEnum.VAR_DECL && initType.type !== StatementTypeEnum.ASSIGNMENT) {
             this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + StatementTypeNames[StatementTypeEnum.VAR_DECL] + " or " + StatementTypeNames[StatementTypeEnum.ASSIGNMENT] + " but got: " + StatementTypeNames[initType.type]);
@@ -344,7 +314,7 @@ export class CombinedChecker {
         }
         let condTypeValue = condType as ValueType;
         if(statement.body !== null) {
-            this.checkStatement(statement.body!, varEnv, funcEnv);
+            this.checkStatement(statement.body!, varEnv, funcEnv, currentReturnType);
         }
         if (condTypeValue.type !== ValueTypeEnum.BOOL) {
             this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[condTypeValue.type]);
@@ -368,30 +338,18 @@ export class CombinedChecker {
         return new StatementType(StatementTypeEnum.ASSIGNMENT, statement.lineNum);
     }
 
-    checkIfStatement(statement: IfStatement, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
+    checkIfStatement(statement: IfStatement, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null): StatementType {
         let condType = this.checkExpression(statement.condition, varEnv, funcEnv) as ValueType;
         if (condType.type !== ValueTypeEnum.BOOL) {
             this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[ValueTypeEnum.BOOL] + " but got: " + ValueTypeNames[condType.type]);
         }
         if (statement.body !== null) {
-            this.checkStatement(statement.body!, varEnv, funcEnv);
+            this.checkStatement(statement.body!, varEnv, funcEnv, currentReturnType);
         }
         if (statement.else !== null) {
-            this.checkStatement(statement.else!, varEnv, funcEnv);
+            this.checkStatement(statement.else!, varEnv, funcEnv, currentReturnType);
         }
         return new StatementType(StatementTypeEnum.IF, statement.lineNum);
-    }
-
-    checkScan(statement: Scan, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
-        let type = varEnv.lookUpType(statement.identifier.value) as ValueType | null;
-        if (type === null) {
-            this.errors.push("2_Variable " + statement.identifier.value + " not declared in Line: " + statement.lineNum.toString());
-            return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
-        }
-        if(type.type !== statement.type.type) {
-            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[type.type] + " but got: " + ValueTypeNames[statement.type.type]);
-        }
-        return new StatementType(StatementTypeEnum.SCAN, statement.lineNum);
     }
 
     private checkFunctionCallStatement(statement: FunctionCallStatement, varEnv: VarEnv, funcEnv: FuncEnv): StatementType {
@@ -407,11 +365,12 @@ export class CombinedChecker {
         for (let i = 0; i < statement.actualParameters.length; i++) {
             let paramType = this.checkExpression(statement.actualParameters[i], varEnv, funcEnv) as ValueType;
             let expectedType = func.parameters.get(func.parameters.keys()[i]) as ValueType;
-            if (paramType.type !== expectedType.type) {
+            if (!this.checkIfTypesAreConvertible(paramType.type, expectedType.type)) {
                 this.errors.push("Function " + statement.functionName + " expected parameter " + i.toString() + " to be of type " + ValueTypeNames[expectedType.type] + " but got " + ValueTypeNames[paramType.type] + " in Line: " + statement.lineNum.toString());
                 return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
             }
         }
+        statement.expectedParameters = func.parameters.values();
         return new StatementType(StatementTypeEnum.FUNCTION_CALL, statement.lineNum);
     }
 
@@ -433,6 +392,8 @@ export class CombinedChecker {
                 return new ValueType(ValueTypeEnum.Error, expression.lineNum);
             }
         }
+        expression.type = func.returnType as ValueType;
+        expression.expectedParameters = func.parameters.values();
         return func.returnType as ValueType;
     }
 
@@ -450,5 +411,47 @@ export class CombinedChecker {
         }
         funcEnv.addFunc(statement1.name.value, statement1.returnType, statement1.parameters, varEnv);
         return new StatementType(StatementTypeEnum.IMPORT, statement1.lineNum);
+    }
+
+    private checkIfTypesAreConvertible(type1: ValueTypeEnum, type2: ValueTypeEnum): boolean {
+        if (type1 === type2) {
+            return true;
+        }
+
+        if(type1 === ValueTypeEnum.DOUBLE && type2 === ValueTypeEnum.INT ||
+            type1 === ValueTypeEnum.INT && type2 === ValueTypeEnum.DOUBLE) {
+            return true;
+        }
+
+        if(type1 === ValueTypeEnum.DOUBLE && type2 === ValueTypeEnum.STRING ||
+            type1 === ValueTypeEnum.STRING && type2 === ValueTypeEnum.DOUBLE) {
+            return true;
+        }
+
+        if (type1 === ValueTypeEnum.STRING && type2 === ValueTypeEnum.INT ||
+            type1 === ValueTypeEnum.INT && type2 === ValueTypeEnum.STRING) {
+            return true;
+        }
+
+        if (type1 === ValueTypeEnum.STRING && type2 === ValueTypeEnum.BOOL ||
+            type1 === ValueTypeEnum.BOOL && type2 === ValueTypeEnum.STRING) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private checkReturnStatement(statement: Return, varEnv: VarEnv, funcEnv: FuncEnv, currentReturnType: ValueType | null): StatementType {
+        let returnType = this.checkExpression(statement.expression, varEnv, funcEnv) as ValueType;
+        if(currentReturnType === null) {
+            return new StatementType(StatementTypeEnum.RETURN, statement.lineNum);
+        }
+
+        if (returnType.type != currentReturnType.type) {
+            this.errors.push("Line: " + statement.lineNum.toString() + " Expected type: " + ValueTypeNames[currentReturnType.type] + " but got: " + ValueTypeNames[returnType.type]);
+            return new StatementType(StatementTypeEnum.ERROR, statement.lineNum);
+        }
+
+        return new StatementType(StatementTypeEnum.RETURN, statement.lineNum);
     }
 }

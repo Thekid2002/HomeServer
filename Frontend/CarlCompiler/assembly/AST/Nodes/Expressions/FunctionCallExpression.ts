@@ -1,9 +1,12 @@
 import {AbstractExpression} from "./AbstractExpression";
 import {ASTVisitor} from "../../ASTVisitor";
+import {FunctionCallInterface} from "../FunctionCallInterface";
+import {AbstractType} from "../Types/AbstractType";
 
-export class FunctionCallExpression extends AbstractExpression {
-    functionName: string;
+export class FunctionCallExpression extends AbstractExpression implements FunctionCallInterface {
     actualParameters: Array<AbstractExpression>;
+    expectedParameters: Array<AbstractType> | null = null;
+    functionName: string;
 
     constructor(functionName: string, actualParameters: Array<AbstractExpression>, lineNum: i32) {
         super(lineNum);

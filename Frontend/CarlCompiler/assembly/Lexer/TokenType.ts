@@ -42,10 +42,6 @@ export enum TokenType {
     INT_LITERAL,  // int literal
     DOUBLE_LITERAL,  // double literal
 
-    // Scan and print
-    SCAN,         // scan
-    PRINT,        // print
-
     // Types
     INT,          // int
     DOUBLE,       // double
@@ -127,10 +123,6 @@ export const TokenTypes: string[] = [
     "STRING_LITERAL", // string literal
     "INT_LITERAL",  // int literal
     "DOUBLE_LITERAL",  // double literal
-
-    // Scan and print
-    "SCAN",         // scan
-    "PRINT",        // print
 
     // Types
     "INT",          // int

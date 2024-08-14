@@ -3,7 +3,6 @@ import {StatementType} from "../AST/Nodes/Types/StatementType";
 import {Assignment} from "../AST/Nodes/Statements/Assignment";
 import {While} from "../AST/Nodes/Statements/While";
 import {ValBool} from "../Env/Values/ValBool";
-import {Print} from "../AST/Nodes/Statements/Print";
 import {Program} from "../AST/Nodes/Statements/Program";
 import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
 import {BinaryExpression} from "../AST/Nodes/Expressions/BinaryExpression";
@@ -15,7 +14,6 @@ import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import { ASTString } from "../AST/Nodes/Expressions/Terms/ASTString";
 import {ValString} from "../Env/Values/ValString";
 import {VarEnv} from "../Env/VarEnv";
-import { Scan } from "../AST/Nodes/Statements/Scan";
 import { Bool } from "../AST/Nodes/Expressions/Terms/Bool";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
@@ -32,11 +30,6 @@ export class Interpreter{
 
     evaluateBool(term: Bool): ValObject | null {
         return new ValBool(term.value === "true");
-    }
-
-    evaluateScan(statement: Scan): ValObject | null {
-        console.log("Scan not implemented in interpreter");
-        return null;
     }
 
     evaluateString(param: ASTString): ValObject | null {
@@ -60,10 +53,6 @@ export class Interpreter{
         }
 
         return null;
-    }
-
-    evaluateStatementType(statement: StatementType): ValObject | null {
-        throw new Error("Method not implemented.");
     }
 
     evaluateAssignment(statement: Assignment): ValObject | null {
@@ -100,16 +89,6 @@ export class Interpreter{
             }
         }
 
-        return null;
-    }
-
-    evaluatePrint(print: Print): ValObject | null {
-        let value = this.evaluateExpression(print.expression);
-        if (value === null) {
-            throw new Error("Line: " + print.lineNum.toString() + " Value is null");
-        }
-
-        this.prints.push(value.toJsonString());
         return null;
     }
 
@@ -291,10 +270,6 @@ export class Interpreter{
             return this.evaluateDeclaration(statement as Declaration);
         }
 
-        if(statement instanceof Print) {
-            return this.evaluatePrint(statement as Print);
-        }
-
         if(statement instanceof Program) {
             return this.evaluateProgram(statement as Program);
         }
@@ -305,10 +280,6 @@ export class Interpreter{
 
         if(statement instanceof IfStatement) {
             return this.evaluateIfStatement(statement as IfStatement);
-        }
-
-        if(statement instanceof Scan) {
-            return this.evaluateScan(statement as Scan);
         }
 
         if(statement instanceof CompoundStatement) {
