@@ -108,8 +108,10 @@ export async function compile() {
         const later = Date.now();
         if(window.terminal != null){
             window.terminal.setValue(window.terminal.getValue() + "Time to compile: " + (later - now) / 1000 + "s\n");
+            console.log(jsonRes);
         }else {
             result.value += "Time to compile: " + (later - now) / 1000 + "s\n";
+            console.log(jsonRes);
         }
         window.localStorage.setItem("wat", compiledWat);
         return true;

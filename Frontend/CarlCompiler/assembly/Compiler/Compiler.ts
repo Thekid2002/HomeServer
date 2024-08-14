@@ -284,6 +284,18 @@ export class Compiler {
             return `${left}\ncall $toStringInt\n${right}\ncall $concat`;
         }
 
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.INT && expression.right.type!.type === ValueTypeEnum.DOUBLE) {
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
+            return `${left}\nf64.convert_i32_s\n${right}\n${this.getOperator(expression.operator, expression.type!.type)}`;
+        }
+
+        if(expression.primaryOrLeft.type!.type === ValueTypeEnum.DOUBLE && expression.right.type!.type === ValueTypeEnum.INT) {
+            let left = this.compileAbstractExpression(expression.primaryOrLeft);
+            let right = this.compileAbstractExpression(expression.right);
+            return `${left}\n${right}\nf64.convert_i32_s\n${this.getOperator(expression.operator, expression.type!.type)}`;
+        }
+
         let left = this.compileAbstractExpression(expression.primaryOrLeft);
         let right = this.compileAbstractExpression(expression.right);
         return `${left}\n${right}\n${this.getOperator(expression.operator, expression.type!.type)}`;
