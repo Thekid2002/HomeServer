@@ -1,14 +1,14 @@
-import { UnaryExpression } from "../AST/Nodes/Expressions/UnaryExpression";
-import { BinaryExpression } from "../AST/Nodes/Expressions/BinaryExpression";
-import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
-import { Int } from "../AST/Nodes/Expressions/Terms/Int";
+import {UnaryExpression} from "../AST/Nodes/Expressions/UnaryExpression";
+import {BinaryExpression} from "../AST/Nodes/Expressions/BinaryExpression";
+import {Identifier} from "../AST/Nodes/Expressions/Terms/Identifier";
+import {Int} from "../AST/Nodes/Expressions/Terms/Int";
 import {ValueType, ValueTypeEnum, ValueTypeNames} from "../AST/Nodes/Types/ValueType";
-import { Declaration } from "../AST/Nodes/Statements/Declaration";
-import { Program } from "../AST/Nodes/Statements/Program";
-import { While } from "../AST/Nodes/Statements/While";
-import { Assignment } from "../AST/Nodes/Statements/Assignment";
-import { IfStatement } from "../AST/Nodes/Statements/IfStatement";
-import { CompoundStatement } from "../AST/Nodes/Statements/CompoundStatement";
+import {Declaration} from "../AST/Nodes/Statements/Declaration";
+import {Program} from "../AST/Nodes/Statements/Program";
+import {While} from "../AST/Nodes/Statements/While";
+import {Assignment} from "../AST/Nodes/Statements/Assignment";
+import {IfStatement} from "../AST/Nodes/Statements/IfStatement";
+import {CompoundStatement} from "../AST/Nodes/Statements/CompoundStatement";
 import {ASTString} from "../AST/Nodes/Expressions/Terms/ASTString";
 import {AbstractExpression} from "../AST/Nodes/Expressions/AbstractExpression";
 import {AbstractStatement} from "../AST/Nodes/Statements/AbstractStatement";
@@ -504,7 +504,7 @@ export class Compiler {
         throw new Error("Unknown abstract type");
     }
 
-    private compileFunctionCall(functionCall: FunctionCallInterface): string {
+    compileFunctionCall(functionCall: FunctionCallInterface): string {
         let actualParameters = "";
         for (let i = 0; i < functionCall.actualParameters.length; i++) {
             let expr = this.compileAbstractExpression(functionCall.actualParameters[i]);

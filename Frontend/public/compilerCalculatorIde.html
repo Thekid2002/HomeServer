@@ -20,9 +20,6 @@
     <div class="toolbar">
         <div class="options-buttons">
             <button onclick="goToPage('simpleCalculator')">Simple Calculator</button>
-            <button onclick="goToPage('interpreterCalculator')">Interpreter Calculator</button>
-            <button onclick="goToPage('compilerCalculator')">Compiler Calculator</button>
-            <button onclick="goToPage('compilerCalculatorIde')">IDE</button>
             <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
         </div>
         <div class="example-choice">
@@ -37,7 +34,10 @@
     </div>
     <div class="page-layout">
         <div id="code-editor-window" class="code-editor-window">
-            <div id="pull-code-editor" class="puller">
+            <div class="header-of-editor-window">
+                <div id="pull-code-editor" class="puller">
+                    +
+                </div>
                 <button class="active" id="CarlEditor" onclick="selectFile('CarlEditor', codeEditor)">
                     Carl Editor
                 </button>
@@ -51,8 +51,10 @@
             <textarea id="code" class="code-editor" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>
         <div id="terminal-window" class="terminal-window">
-            <div id="pull-terminal" class="puller">
-                <p>Terminal</p>
+            <div class="header-of-editor-window">
+                <div id="pull-terminal" class="puller">
+                    +
+                </div>
             </div>
             <textarea id="terminal" class="terminal" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea>
         </div>

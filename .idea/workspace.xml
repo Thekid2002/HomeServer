@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wasm.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wat" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.wat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/examples.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" afterDir="false" />
     </list>
@@ -48,29 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.CarlDebug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thomas/Desktop/HomeServer/Frontend/CarlCompiler/assembly/Env/Values&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.CarlComStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlIntStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.TestTest.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.CarlDebug.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/thomas/Desktop/HomeServer/Frontend/CarlCompiler/assembly/Env/Values",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.CarlComStart.executor": "Run",
+    "npm.CarlIntStart.executor": "Run",
+    "npm.CarlStart.executor": "Run",
+    "npm.TestTest.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values" />
@@ -156,7 +152,8 @@
       <workItem from="1723493122879" duration="12698000" />
       <workItem from="1723612819267" duration="18210000" />
       <workItem from="1723641327456" duration="854000" />
-      <workItem from="1723652033694" duration="1409000" />
+      <workItem from="1723652033694" duration="2056000" />
+      <workItem from="1723701830169" duration="1045000" />
     </task>
     <servers />
   </component>
