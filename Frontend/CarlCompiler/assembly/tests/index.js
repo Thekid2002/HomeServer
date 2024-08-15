@@ -6,8 +6,8 @@ export class Tests {
     static runTests() {
         console.error("---Running all tests---");
 
-        console.log("Testing: num i = 1+1");
-        let ret = calculateViaLanguage("num i = 1+1", "compiler");
+        console.log("Testing: int i = 1+1");
+        let ret = calculateViaLanguage("int i = 1+1", "compiler");
         console.log(ret);
         console.log(" ");
         let string = "num i = 1\n" +

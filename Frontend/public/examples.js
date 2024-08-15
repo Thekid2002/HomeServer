@@ -152,7 +152,6 @@ export void _start() {
 import "js" "toStringDouble" int toStringDouble(double value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
-import "js" "toStringDouble" string toStringDouble(double value);
 import "js" "concat" string concat(string str1, string str2);
 import "js" "scanBool" bool scanBool(string text);
 import "js" "scanString" string scanString(string text);
