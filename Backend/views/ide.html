@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Compiler Calculator</title>
-    <base href="/HomeServer/Frontend/public/">
+    <!--<base href="/HomeServer/Frontend/public/">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculatorIde.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
-    <!--<link rel="stylesheet" href="compilerCalculator.css">
-    <link rel="stylesheet" href="compilerCalculatorIde.css">
-    <link rel="stylesheet" href="sharedStyles.css">-->
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/ide.css">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">-->
+    <link rel="stylesheet" href="../../Frontend/public/compilerCalculator.css">
+    <link rel="stylesheet" href="ide.css">
+    <link rel="stylesheet" href="sharedStyles.css">
     <!-- CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <!-- CodeMirror Darcula Theme -->
@@ -24,7 +24,7 @@
         </div>
         <div class="example-choice">
             <select id="examples">
-
+                <option value="">None</option>
             </select>
         </div>
         <div class="compile-buttons">
@@ -65,12 +65,12 @@
 <!-- CodeMirror Modes (for syntax highlighting) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
 <!-- Optionally include other modes if you need -->
-<script src="libwabt.js"></script>
-<script src="examples.js"></script>
+<script src="../../Frontend/public/libwabt.js"></script>
+<script src="../../Frontend/public/examples.js"></script>
 <script type="module">
-    import {goToPage} from './navigation.js';
-    import {compile, execute, compileAndExecute} from './compilerCalculator.js';
-    import {selectFile} from "./fileSelector.js";
+    import {goToPage} from '../../Frontend/public/navigation.js';
+    import {compile, execute, compileAndExecute} from '../../Frontend/public/code/ide.js';
+    import {selectFile} from "../../Frontend/public/fileSelector.js";
 
     window.selectedFile = "CarlEditor";
     window.compile = compile;
@@ -299,6 +299,8 @@ await WebAssembly.compile(output).then(async module => {
     document.getElementById("CarlEditor").classList.add("active");
     document.getElementById("CarlRuntime").classList.remove("active");
     document.getElementById("CarlRuntimeImport").classList.remove("active");
+    originalCoordinate = 250;
+    resizeHeight({pageY: 1});
 </script>
 </body>
 </html>

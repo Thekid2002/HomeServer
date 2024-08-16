@@ -1,0 +1,74 @@
+ <div class="instructions-body">
+    <h1>Programming Fundamentals Guide</h1>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#variable-declaration">Variable Declaration</a></li>
+        <li><a href="#print-scan">Print and Scan</a></li>
+        <li><a href="#basic-for-loop">Basic For Loop</a></li>
+        <li><a href="#basic-while-loop">Basic While Loop</a></li>
+        <li><a href="#conditional-statements">Conditional Statements</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+    </ul>
+
+    <h3 id="variable-declaration">Variable Declaration</h3>
+    <p><strong>Description:</strong> Declaring and initializing variables of different types.</p>
+    <textarea readonly>num x = 10;           // Integer variable
+string name = "John"; // String variable
+bool isActive = true; // Boolean variable</textarea>
+
+    <h3 id="print-scan">Print and Scan</h3>
+    <p><strong>Description:</strong> Printing and scanning input from the user.</p>
+    <textarea readonly>string name; num x; bool b;
+
+scan("Enter your name: ", string, name);
+print(name);
+scan("Enter a number: ", num, x);
+print(x);
+scan("Enter a bool: ", bool, b);
+print(b);</textarea>
+
+    <h3 id="basic-for-loop">Basic For Loop</h3>
+    <p><strong>Description:</strong> A <code>for</code> loop that iterates a specified number of times, printing each iteration.</p>
+    <textarea readonly>for (num i = 0; i < 5; i++) {
+print("Iteration: " + i);
+}</textarea>
+
+    <h3 id="basic-while-loop">Basic while Loop</h3>
+    <p><strong>Description:</strong> A <code>for</code> loop that iterates a specified number of times, printing each iteration.</p>
+    <textarea readonly>num i = 0;
+
+while (i<5) {
+print("Iteration: " + i);
+i++
+}</textarea>
+
+    <h3 id="conditional-statements">Conditional Statements</h3>
+    <p><strong>Description:</strong> Using <code>if</code>, <code>else if</code>, and <code>else</code> to execute code based on conditions.</p>
+    <textarea readonly>num temperature = 30;
+if (temperature > 30) {
+print("It's hot!");
+} else if (temperature > 20) {
+print("It's warm.");
+} else {
+print("It's cold.");
+}</textarea>
+
+    <h3 id="functions">Functions</h3>
+    <p><strong>Description:</strong> Defining and calling a function that takes parameters and returns a result.</p>
+    <textarea readonly>num add(num a, num b) {
+return a + b;
+}
+
+num result = add(5, 3);
+print("Sum: " + result);</textarea>
+
+    <h3 id="arrays">Arrays</h3>
+    <p><strong>Description:</strong> Declaring an array and accessing its elements.</p>
+    <textarea readonly>num[] numbers = [1, 2, 3, 4, 5];
+
+for (num i = 0; i < 5; i++) {
+print("Element at index " + i + ": " + numbers[i]);
+}</textarea>
+</div>

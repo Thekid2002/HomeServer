@@ -1,4 +1,4 @@
-import {calculateViaLanguage} from "./build/carlCompiler/CaCoDebug.js";
+import {calculateViaLanguage} from "../build/carlCompiler/CaCoDebug.js";
 
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");

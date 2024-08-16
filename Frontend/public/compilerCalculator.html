@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Compiler Calculator</title>
-    <base href="/HomeServer/Frontend/public/">
+    <!--base href="/HomeServer/Frontend/public/">
     <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
-    <!--<link rel="stylesheet" href="compilerCalculator.css">
-    <link rel="stylesheet" href="sharedStyles.css">-->
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">-->
+    <link rel="stylesheet" href="compilerCalculator.css">
+    <link rel="stylesheet" href="sharedStyles.css">
 </head>
 <body>
 <div class="page-padding">
@@ -60,7 +60,7 @@
 <script src="libwabt.js"></script>
 <script type="module">
     import {goToPage} from './navigation.js';
-    import {compile, execute} from './compilerCalculator.js';
+    import {compile, execute} from './code/ide.js';
     window.compile = compile;
     window.execute = execute;
     window.goToPage = goToPage;
