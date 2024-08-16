@@ -6,6 +6,7 @@ import {displayAudio, displayImage, displayPdf, displayVideo} from "./fileSystem
 import {File} from "./class/File.js";
 import ffmpeg from "fluent-ffmpeg";
 import mime from "mime";
+const authenticationController = require("controllers/authenticationController.js");
 
 const app = express()
 const port = 3000
@@ -17,6 +18,8 @@ const storage = multer.diskStorage({
         cb(null, file.originalname)
     }
 })
+
+app.use(authenticationController.path, authenticationController.router);
 const upload = multer({storage: storage})
 
 app.use(express.static('Frontend/public'))
@@ -27,6 +30,7 @@ app.post('/upload', upload.single('myFile'), (req, res) => {
     console.log(req.file);
     res.send('File uploaded successfully');
 });
+
 
 app.get('/', (req, res) => {
     res.redirect('/index.html')
