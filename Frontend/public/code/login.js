@@ -12,15 +12,17 @@ loginForm.addEventListener('submit', function (event) {
             password: formData.get('password')
         })
     }).then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        if (data.token) {
-            document.cookie = `token=${data.token}` + "; " + data.expirationDateTime + ";domain=;path=/";;
-            setTimeout(() => {
-                window.location.href = '/compilerCalculator';
-            }, 150);
+        if (response.status === 200) {
+            response.json().then(function (data) {
+                document.cookie = `token=${data.token}` + "; " + data.expirationDateTime + ";domain=;path=/";
+                setTimeout(function () {
+                    window.location.href = '/user/profile';
+                }, 300);
+            });
         } else {
-            alert('Invalid credentials');
+            response.text().then(function (text) {
+                alert(text);
+            });
         }
     });
 });

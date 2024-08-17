@@ -15,12 +15,19 @@
     width: 97.5%;
 }
 
-
-.calculator {
+.simple-calculator-page{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.simple-calculator-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
     justify-content: center;
     align-items: center;
 }

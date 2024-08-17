@@ -1,8 +1,11 @@
 import fs from "fs";
 import {roleEnum} from "./role.js";
+import {mapUserToUserDto} from "../services/mapper.js";
 
 export class User {
-    name;
+    id;
+    firstname;
+    surname;
     salt;
     phone;
     email;
@@ -10,11 +13,12 @@ export class User {
     role;
     token;
     signupDateTime;
-    lastLoginDateTime;
     expirationDateTime;
 
-    constructor(name, phone, email, password) {
-        this.name = name;
+    constructor(firstname, surname, phone, email, password) {
+        this.id = User.getNextId(email);
+        this.firstname = firstname;
+        this.surname = surname;
         this.phone = phone;
         this.email = email;
         this.role = roleEnum.USER;
@@ -23,19 +27,23 @@ export class User {
         this.password = User.hashPassword(password, this.salt);
     }
 
-    static getAllUsers() {
+    static getAllUsers(asDto = true) {
         this.createFileIfDoesNotExist();
-        return JSON.parse(fs.readFileSync("users.json", "utf8"));
+        let users = JSON.parse(fs.readFileSync('users.json'));
+        if(asDto){
+            return users.map(user => mapUserToUserDto(user));
+        }
+        return users;
     }
 
-    static getUser(email) {
+    static getUser(email, asDto = true) {
         this.createFileIfDoesNotExist();
-        return this.getAllUsers().find(user => user.email === email);
+        return this.getAllUsers(asDto).find(user => user.email === email);
     }
 
     static addUser(user) {
         this.createFileIfDoesNotExist();
-        let users = this.getAllUsers();
+        let users = this.getAllUsers(false);
         users.push(user);
         User.saveAllUsers(users);
     }
@@ -45,21 +53,27 @@ export class User {
         return this.getAllUsers().some(user => user.email === email);
     }
 
-    static validateToken(token) {
+    static validateToken(token, throwIfInvalid = true) {
         this.createFileIfDoesNotExist();
-        let user = this.getAllUsers().find(user => user.token === token);
+        let user = this.getAllUsers(false).find(user => user.token === token);
         if (!user) {
-            throw new Error('Invalid token');
+            if(throwIfInvalid) {
+                throw new Error('Invalid token');
+            }
+            return null;
         }
         if(user.expirationDateTime < Date.now()){
-            throw new Error('Token expired');
+            if (throwIfInvalid) {
+                throw new Error('Token expired');
+            }
+            return null;
         }
-        return true;
+        return user;
     }
 
-    static validateLogin(email, password) {
+    static validateLogin(email, password, asDto = true) {
         this.createFileIfDoesNotExist();
-        let user = this.getUser(email);
+        let user = this.getUser(email, false);
         if (!user) {
             throw new Error(`User ${email} does not exist`);
         }
@@ -73,6 +87,9 @@ export class User {
         user.lastLoginDateTime = Date.now();
         user.expirationDateTime = Date.now() + 86400000;
         User.saveUser(user);
+        if(asDto) {
+            return mapUserToUserDto(user);
+        }
         return user;
     }
 
@@ -86,6 +103,15 @@ export class User {
         let index = users.findIndex(u => u.email === user.email);
         users[index] = user;
         User.saveAllUsers(users);
+    }
+
+    static getNextId(email) {
+        let users = this.getAllUsers();
+        let user = users.find(user => user.email === email);
+        if(!user){
+            return 1;
+        }
+        return user.id+1;
     }
 
     static createFileIfDoesNotExist() {
@@ -108,7 +134,29 @@ export class User {
         return hash.toString().substring(0, 364);
     }
 
+    static logout(req) {
+        if(!req?.token) {
+            throw new Error('Token is missing');
+        }
+        let user = User.getAllUsers(false).find(user => user.token === req.token);
+        if(!user) {
+            throw new Error('Invalid token');
+        }
+        console.log("Logging out user: " + user.email);
+        user.token = null;
+        user.expirationDateTime = null;
+        User.saveUser(user);
+    }
+
     toString() {
-        return `Name: ${this.name}, Phone: ${this.phone}, Email: ${this.email}`;
+        return `Name: ${this.firstname}, Phone: ${this.phone}, Email: ${this.email}`;
+    }
+
+    static getActiveUser(req, asDto = true) {
+        let user = User.validateToken(req.token, false);
+        if(asDto) {
+            return mapUserToUserDto(user);
+        }
+        return user;
     }
 }

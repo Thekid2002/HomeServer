@@ -1,10 +1,12 @@
 import {User} from "../models/user.js";
+import {mapUserToUserDto} from "./mapper.js";
 
-export function signupUser(name, phone, email, password) {
+export function signupUser(firstname, surname, phone, email, password) {
     if (User.userExists(email)) {
         throw new Error('User already exists');
     }
-    User.addUser(new User(name, phone, email, password));
-    console.log('User created successfully ' + User.getUser(email).toString());
-    return 'User created successfully';
+    let user = new User(firstname, surname, phone, email, password);
+    User.addUser(user);
+    console.log('User created successfully ' + user.toString());
+    return mapUserToUserDto(user);
 }

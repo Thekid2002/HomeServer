@@ -1,15 +1,28 @@
 import express from "express";
-import {renderPage} from "../services/pageLayout.js";
+import {renderPageFromHtmlFile} from "../services/pageLayout.js";
+import {checkIsLoggedIn} from "../services/authorizationService.js";
 
 export const CarlCompilersRouter = express.Router();
 export const CarlCompilersRoute = 'carlCompilers';
 
 CarlCompilersRouter.get("/simple", (req, res) => {
-    res.send(renderPage("Backend/views/", "simple"));
+    try {
+        checkIsLoggedIn(req);
+        res.send(renderPageFromHtmlFile("Backend/views/", "simple", req));
+    } catch (e) {
+        console.error(e);
+        res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+    }
 });
 
 CarlCompilersRouter.get("/ide", (req, res) => {
-    res.send(renderPage("Backend/views/", "ide"));
+    try {
+        checkIsLoggedIn(req);
+        res.send(renderPageFromHtmlFile("Backend/views/", "ide", req));
+    } catch (e) {
+        console.error(e);
+        res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+    }
 });
 
 

@@ -52,6 +52,7 @@ export class Role {
 }
 
 export const roleEnum = {
+    GUEST: 0,
     SUPER_ADMIN:  1,
     ADMIN: 11,
     USER: 21,

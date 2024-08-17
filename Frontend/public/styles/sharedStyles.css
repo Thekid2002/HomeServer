@@ -7,34 +7,10 @@
     resize: vertical;
 }
 
-.page {
-    position: fixed;
-    width: 100%
-}
-
 .compile-button-area {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.calculator-body {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 2%;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.complex-calculator-body {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 2%;
-    gap: 10px;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }

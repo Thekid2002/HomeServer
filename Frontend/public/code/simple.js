@@ -1,4 +1,4 @@
-import {calculateViaLanguage} from "./build/simpleCalculator/SCDebug.js";
+import {calculateViaLanguage} from "../build/simpleCalculator/SCRelease.js";
 
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");

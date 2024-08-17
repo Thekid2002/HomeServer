@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/404Controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/authorizationController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/dto/authDto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/role.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/checkService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/404.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/signup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/404.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/carlInstructions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/controllers/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/dto/userDto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/services/mapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/views/401.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/views/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/views/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/code/401.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/code/500.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/code/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/401.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/500.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/404Controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/404Controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/fileSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/fileSystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/carlInstructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/carlInstructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/authorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/checkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/checkService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/ide.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/ide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/simple.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/simple.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/ide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/ide.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/ide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/examples.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/fileSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/sharedStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/simple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/simple.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/libwabt.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/libwabt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/ide.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/ide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/simple.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/simple.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -88,7 +93,7 @@
     &quot;JavaScript Debug.CarlDebug.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/thomas/Desktop/HomeServer/Backend/views&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -101,6 +106,7 @@
     &quot;npm.CarlStart.executor&quot;: &quot;Run&quot;,
     &quot;npm.TestTest.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -115,10 +121,10 @@
       <recent name="$PROJECT_DIR$/Frontend/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Backend/views" />
       <recent name="$PROJECT_DIR$/Frontend/public/code" />
-      <recent name="$PROJECT_DIR$/Frontend/public/styles" />
       <recent name="$PROJECT_DIR$/Frontend/public" />
+      <recent name="$PROJECT_DIR$/Backend/views" />
+      <recent name="$PROJECT_DIR$/Frontend/public/styles" />
       <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms" />
     </key>
   </component>
@@ -199,6 +205,8 @@
       <workItem from="1723818592136" duration="3495000" />
       <workItem from="1723822093580" duration="16167000" />
       <workItem from="1723844491527" duration="16000" />
+      <workItem from="1723908431501" duration="8537000" />
+      <workItem from="1723922336571" duration="8615000" />
     </task>
     <servers />
   </component>

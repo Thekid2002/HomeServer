@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Compiler Calculator</title>
-    <!--<base href="/HomeServer/Frontend/public/">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/compilerCalculator.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/ide.css">
-    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">-->
-    <link rel="stylesheet" href="../../Frontend/public/compilerCalculator.css">
-    <link rel="stylesheet" href="ide.css">
-    <link rel="stylesheet" href="sharedStyles.css">
-    <!-- CodeMirror CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
-    <!-- CodeMirror Darcula Theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/darcula.min.css">
-</head>
-<body>
 <div class="page">
-    <div class="toolbar">
-        <div class="options-buttons">
-            <button onclick="goToPage('simpleCalculator')">Simple Calculator</button>
-            <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
-        </div>
-        <div class="example-choice">
-            <select id="examples">
-                <option value="">None</option>
-            </select>
-        </div>
-        <div class="compile-buttons">
-            <button onclick="compileAndExecute()">Play</button>
-            <button onclick="debug()">Debug</button>
-        </div>
+    <div class="example-choice">
+        <select id="examples">
+            <option value="">None</option>
+        </select>
+    </div>
+    <div class="compile-buttons">
+        <button onclick="compileAndExecute()">Play</button>
+        <button onclick="debug()">Debug</button>
     </div>
     <div class="page-layout">
         <div id="code-editor-window" class="code-editor-window">
@@ -65,17 +41,15 @@
 <!-- CodeMirror Modes (for syntax highlighting) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
 <!-- Optionally include other modes if you need -->
-<script src="../../Frontend/public/libwabt.js"></script>
-<script src="../../Frontend/public/examples.js"></script>
+<script src="../code/libwabt.js"></script>
+<script src="../code/examples.js"></script>
 <script type="module">
-    import {goToPage} from '../../Frontend/public/navigation.js';
-    import {compile, execute, compileAndExecute} from '../../Frontend/public/code/ide.js';
-    import {selectFile} from "../../Frontend/public/fileSelector.js";
+    import {compile, execute, compileAndExecute} from '../code/ide.js';
+    import {selectFile} from "../code/fileSelector.js";
 
     window.selectedFile = "CarlEditor";
     window.compile = compile;
     window.execute = execute;
-    window.goToPage = goToPage;
     window.compileAndExecute = compileAndExecute;
     window.selectFile = selectFile;
 
@@ -302,5 +276,3 @@ await WebAssembly.compile(output).then(async module => {
     originalCoordinate = 250;
     resizeHeight({pageY: 1});
 </script>
-</body>
-</html>
