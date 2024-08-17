@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Fundamentals Guide</title>
+    <base href="/HomeServer/Frontend/public/">
+    <link rel="stylesheet" href="/HomeServer/Frontend/public/sharedStyles.css">
+    <!--<link rel="stylesheet" href="sharedStyles.css">-->
+    <style>
+        h1, h2, h3 {
+            color: #333;
+        }
+        h2, h3 {
+            margin-bottom: 0;
+        }
+        pre, textarea {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            width: 100%;
+            resize: none;
+            font-size: 1.5em;
+            height: 185px;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-padding">
+    <div class="page-layout">
+        <div class="pages-navigator">
+            <h1>Pages</h1>
+            <button onclick="goToPage('simpleCalculator')">Simple Calculator</button>
+            <button onclick="goToPage('interpreterCalculator')">Interpreter Calculator</button>
+            <button onclick="goToPage('compilerCalculator')">Compiler Calculator</button>
+            <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
+        </div>
+        <div class="instructions-body">
+            <h1>Programming Fundamentals Guide</h1>
+
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#variable-declaration">Variable Declaration</a></li>
+                <li><a href="#print-scan">Print and Scan</a></li>
+                <li><a href="#basic-for-loop">Basic For Loop</a></li>
+                <li><a href="#basic-while-loop">Basic While Loop</a></li>
+                <li><a href="#conditional-statements">Conditional Statements</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+            </ul>
+
+            <h3 id="variable-declaration">Variable Declaration</h3>
+            <p><strong>Description:</strong> Declaring and initializing variables of different types.</p>
+            <textarea readonly>num x = 10;           // Integer variable
+string name = "John"; // String variable
+bool isActive = true; // Boolean variable</textarea>
+
+            <h3 id="print-scan">Print and Scan</h3>
+            <p><strong>Description:</strong> Printing and scanning input from the user.</p>
+            <textarea readonly>string name; num x; bool b;
+
+scan("Enter your name: ", string, name);
+print(name);
+scan("Enter a number: ", num, x);
+print(x);
+scan("Enter a bool: ", bool, b);
+print(b);</textarea>
+
+            <h3 id="basic-for-loop">Basic For Loop</h3>
+            <p><strong>Description:</strong> A <code>for</code> loop that iterates a specified number of times, printing each iteration.</p>
+            <textarea readonly>for (num i = 0; i < 5; i++) {
+    print("Iteration: " + i);
+}</textarea>
+
+            <h3 id="basic-while-loop">Basic while Loop</h3>
+            <p><strong>Description:</strong> A <code>for</code> loop that iterates a specified number of times, printing each iteration.</p>
+            <textarea readonly>num i = 0;
+
+while (i<5) {
+    print("Iteration: " + i);
+    i++
+}</textarea>
+
+            <h3 id="conditional-statements">Conditional Statements</h3>
+            <p><strong>Description:</strong> Using <code>if</code>, <code>else if</code>, and <code>else</code> to execute code based on conditions.</p>
+            <textarea readonly>num temperature = 30;
+if (temperature > 30) {
+    print("It's hot!");
+} else if (temperature > 20) {
+    print("It's warm.");
+} else {
+    print("It's cold.");
+}</textarea>
+
+            <h3 id="functions">Functions</h3>
+            <p><strong>Description:</strong> Defining and calling a function that takes parameters and returns a result.</p>
+            <textarea readonly>num add(num a, num b) {
+    return a + b;
+}
+
+num result = add(5, 3);
+print("Sum: " + result);</textarea>
+
+            <h3 id="arrays">Arrays</h3>
+            <p><strong>Description:</strong> Declaring an array and accessing its elements.</p>
+            <textarea readonly>num[] numbers = [1, 2, 3, 4, 5];
+
+for (num i = 0; i < 5; i++) {
+    print("Element at index " + i + ": " + numbers[i]);
+}</textarea>
+        </div>
+    </div>
+</div>
+</body>
+<script type="module">
+    import {goToPage} from './navigation.js';
+    window.goToPage = goToPage;
+</script>
+</html>

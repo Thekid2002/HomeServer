@@ -6,17 +6,7 @@ import {displayAudio, displayImage, displayPdf, displayVideo} from "./fileSystem
 import {File} from "./class/File.js";
 import ffmpeg from "fluent-ffmpeg";
 import mime from "mime";
-import {AuthenticationRoute, AuthenticationRouter} from "./controllers/authenticationController.js";
-import {AuthorizationRoute, AuthorizationRouter} from "./controllers/authorizationController.js";
-import {authorizeToken} from "./services/authorizationService.js";
-import {CarlInstructionsRoute, CarlInstructionsRouter} from "./controllers/carlInstructionsController.js";
-import {renderPage} from "./services/pageLayout.js";
-import {NotFoundRoute} from "./controllers/404Controller.js";
-import {CarlCompilersRoute, CarlCompilersRouter} from "./controllers/carlCompilersController.js";
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename).replace("/Backend", "");
+const authenticationController = require("controllers/authenticationController.js");
 
 const app = express()
 const port = 3000
@@ -28,60 +18,11 @@ const storage = multer.diskStorage({
         cb(null, file.originalname)
     }
 })
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-    console.log(req.method, req.url);
-    next();
-});
 
-
-app.get('/', (req, res) => {
-    res.redirect(`/${CarlInstructionsRoute}`)
-});
-app.use(`/${CarlInstructionsRoute}`, CarlInstructionsRouter);
-app.use(`/${AuthenticationRoute}`, AuthenticationRouter);
-
-app.get(`/404`, (req, res) => {
-    res.send(renderPage("Backend/views/", "404"));
-});
-
-app.use('*', (req, res, next) => {
-    let fileName = __dirname + path.join('/Frontend/public', req.baseUrl);
-    try{
-        fs.accessSync(fileName, fs.constants.F_OK);
-        res.sendFile(fileName);
-    }catch (e) {
-        console.error("File not found: " + fileName);
-        next();
-    }
-}
-);
-app.use((req, res, next) => {
-    try {
-        authorizeToken(req, res);
-        next();
-    } catch (e) {
-        //res.status(500).redirect(`/${AuthenticationRoute}/login`);
-        res.send("You are not authorized to view this page. Please log in.");
-    }
-});
-app.use(`/${AuthorizationRoute}`, AuthorizationRouter);
-app.use(`/${CarlCompilersRoute}`, CarlCompilersRouter);
-
+app.use(authenticationController.path, authenticationController.router);
 const upload = multer({storage: storage})
 
-export const SecureFilePath = 'Frontend/public';
-
-app.use((req, res, next) => {
-    const filePath = path.join(SecureFilePath, req.path);
-    try {
-        fs.accessSync(filePath, fs.constants.F_OK)
-        next();
-    }catch (e) {
-        res.redirect(`/404`);
-    }
-});
+app.use(express.static('Frontend/public'))
 
 app.post('/upload', upload.single('myFile'), (req, res) => {
     // req.file is the `myFile` file
@@ -89,6 +30,12 @@ app.post('/upload', upload.single('myFile'), (req, res) => {
     console.log(req.file);
     res.send('File uploaded successfully');
 });
+
+
+app.get('/', (req, res) => {
+    res.redirect('/index.html')
+})
+
 
 app.get('/files', async (req, res) => {
     const directoryPath = path.resolve('Frontend/public/documents');
@@ -167,10 +114,6 @@ app.get('/files/:name', (req, res) => {
             res.status(err.status).end();
         }
     });
-});
-
-app.get(`/404`, (req, res) => {
-    res.send(renderPage("Backend/views/", NotFoundRoute));
 });
 
 app.listen(port, () => {

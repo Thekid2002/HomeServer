@@ -5,47 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/404Controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/authorizationController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/dto/authDto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/role.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/checkService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/views/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/404.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/signup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/404.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/carlInstructions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/styles/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/fileSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/fileSystem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/carlInstructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/carlInstructions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/compilerCalculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/ide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/ide.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/compilerCalculatorIde.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/ide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/sharedStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/simple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/simpleCalculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/simple.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -58,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -82,48 +44,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.CarlDebug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/thomas/Desktop/HomeServer/Backend/views&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.CarlComStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlIntStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.CarlStart.executor&quot;: &quot;Run&quot;,
-    &quot;npm.TestTest.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.CarlDebug.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/thomas/Desktop/HomeServer/Frontend/CarlCompiler/assembly/Env/Values",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.CarlComStart.executor": "Run",
+    "npm.CarlIntStart.executor": "Run",
+    "npm.CarlStart.executor": "Run",
+    "npm.TestTest.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Backend/views" />
-      <recent name="$PROJECT_DIR$/Backend/controllers" />
       <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values" />
       <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms" />
       <recent name="$PROJECT_DIR$/Frontend/public" />
+      <recent name="$PROJECT_DIR$/Frontend/CarlInterpreter/assembly/Interpreter" />
+      <recent name="$PROJECT_DIR$/Frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Backend/views" />
-      <recent name="$PROJECT_DIR$/Frontend/public/code" />
-      <recent name="$PROJECT_DIR$/Frontend/public/styles" />
-      <recent name="$PROJECT_DIR$/Frontend/public" />
       <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms" />
+      <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env" />
+      <recent name="$PROJECT_DIR$/Frontend/CarlCompiler/assembly" />
+      <recent name="$PROJECT_DIR$/Frontend/public" />
+      <recent name="$PROJECT_DIR$/Frontend/public/build/Wat2Wasm" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration name="CarlDebug" type="JavascriptDebugType" uri="http://localhost:63342/HomeServer/Backend/views/simple.html" useBuiltInWebServerPort="true">
+    <configuration name="CarlDebug" type="JavascriptDebugType" uri="http://localhost:63342/HomeServer/Frontend/public/simpleCalculator.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="CarlComStart" type="js.build_tools.npm">
@@ -162,13 +124,6 @@
       <item itemvalue="npm.start" />
     </list>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.342" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -196,9 +151,6 @@
       <workItem from="1723745566698" duration="1060000" />
       <workItem from="1723796882873" duration="238000" />
       <workItem from="1723797534644" duration="1067000" />
-      <workItem from="1723818592136" duration="3495000" />
-      <workItem from="1723822093580" duration="16167000" />
-      <workItem from="1723844491527" duration="16000" />
     </task>
     <servers />
   </component>
