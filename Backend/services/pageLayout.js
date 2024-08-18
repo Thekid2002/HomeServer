@@ -15,14 +15,11 @@ export function renderPageFromHtmlFile(htmlPath, pathName, req){
 function getHeader(req){
     header = `  
     <div class="header">
-        <div>` +
-            `<button onclick="goToPage('home')">Home</button>
-            <button onclick="goToPage('about')">About</button>
-            <button onclick="goToPage('contact')">Contact</button>`;
+        <div>`;
     if(checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN], false)) {
         header += `<button onclick="goToPage('user/allUsers')">All users</button>`;
     }
-    console.log(req?.role);
+
     if(checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER], false)) {
         header += `<button onclick="goToPage('user/settings')">Settings</button>`;
         header += `<button onclick="goToPage('user/profile')">Profile</button>`;

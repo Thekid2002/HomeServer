@@ -7,7 +7,7 @@ export const CarlCompilersRoute = 'carlCompilers';
 
 CarlCompilersRouter.get("/simple", (req, res) => {
     try {
-        checkIsLoggedIn(req);
+        checkIsLoggedIn(req.token, req.role);
         res.send(renderPageFromHtmlFile("Backend/views/", "simple", req));
     } catch (e) {
         console.error(e);
@@ -17,7 +17,7 @@ CarlCompilersRouter.get("/simple", (req, res) => {
 
 CarlCompilersRouter.get("/ide", (req, res) => {
     try {
-        checkIsLoggedIn(req);
+        checkIsLoggedIn(req.role, req.token);
         res.send(renderPageFromHtmlFile("Backend/views/", "ide", req));
     } catch (e) {
         console.error(e);

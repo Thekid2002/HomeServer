@@ -2,16 +2,11 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
-import {displayAudio, displayImage, displayPdf, displayVideo} from "./fileSystem.js";
-import {File} from "./class/File.js";
-import ffmpeg from "fluent-ffmpeg";
-import mime from "mime";
 import {AuthenticationRoute, AuthenticationRouter} from "./controllers/authenticationController.js";
 import {AuthorizationRoute, AuthorizationRouter} from "./controllers/authorizationController.js";
-import {checkIsLoggedIn, setTokenVariable} from "./services/authorizationService.js";
+import {setTokenVariable} from "./services/authorizationService.js";
 import {CarlInstructionsRoute, CarlInstructionsRouter} from "./controllers/carlInstructionsController.js";
 import {renderPageFromHtmlFile} from "./services/pageLayout.js";
-import {NotFoundRoute} from "./controllers/404Controller.js";
 import {CarlCompilersRoute, CarlCompilersRouter} from "./controllers/carlCompilersController.js";
 import { fileURLToPath } from 'url';
 import {UserController, UserRoute} from "./controllers/userController.js";
@@ -21,14 +16,6 @@ const __dirname = path.dirname(__filename).replace("/Backend", "");
 
 const app = express()
 const port = 3000
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'Frontend/public/documents')
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname)
-    }
-})
 
 app.use('*', (req, res, next) => {
     setTokenVariable(req);
@@ -40,8 +27,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+
 app.get('/', (req, res) => {
     res.redirect(`/${CarlInstructionsRoute}`)
+});
+
+app.get("/200", (req, res) => {
+    res.send(renderPageFromHtmlFile("Backend/views/", "200", req));
+});
+
+app.get("/401", (req, res) => {
+    res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+});
+
+app.get("/404", (req, res) => {
+    res.send(renderPageFromHtmlFile("Backend/views/", "404", req));
+});
+
+app.get("/500", (req, res) => {
+    res.send(renderPageFromHtmlFile("Backend/views/", "500", req));
 });
 
 app.use(`/${CarlInstructionsRoute}`, CarlInstructionsRouter);
@@ -50,16 +54,55 @@ app.use(`/${AuthorizationRoute}`, AuthorizationRouter);
 app.use(`/${CarlCompilersRoute}`, CarlCompilersRouter);
 app.use(`/${UserRoute}`, UserController);
 
-
 app.use('*', (req, res, next) => {
     let fileName = __dirname + path.join('/Frontend/public', req.baseUrl);
     try{
         fs.accessSync(fileName, fs.constants.F_OK);
         res.sendFile(fileName);
     }catch (e) {
-        res.send(renderPageFromHtmlFile("Backend/views/", "404", req));
+        if (checkMimeType(req.baseUrl) === 'txt/html' || checkMimeType(req.baseUrl) === '') {
+            return res.send(renderPageFromHtmlFile("Backend/views/", "404", req));
+        }
+        res.status(404).send('File not found');
     }
 });
+
+function checkMimeType(baseUrl) {
+    let mimeType = '';
+    if(baseUrl.toLowerCase().includes('.html')){
+        mimeType = 'text/html';
+    }
+
+    if (baseUrl.toLowerCase().includes('.mov') || baseUrl.includes('.mp4')) {
+        mimeType = 'video/mp4';
+    }
+
+    if (baseUrl.toLowerCase().includes('.mp3')) {
+        mimeType = 'audio/mp3';
+    }
+
+    if (baseUrl.toLowerCase().includes('.pdf')) {
+        mimeType = 'application/pdf';
+    }
+
+    if(baseUrl.toLowerCase().includes('.txt')){
+        mimeType = 'text/plain';
+    }
+
+    if(baseUrl.toLowerCase().includes('.css')){
+        mimeType = 'text/css';
+    }
+
+    if(baseUrl.toLowerCase().includes('.js')){
+        mimeType = 'text/javascript';
+    }
+
+    if (baseUrl.toLowerCase().includes('.jpg') || baseUrl.toLowerCase().includes('.jpeg') || baseUrl.toLowerCase().includes('.png') || baseUrl.toLowerCase().includes('.heic')) {
+        mimeType = 'image/jpeg';
+    }
+
+    return mimeType;
+}
 
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}!`)

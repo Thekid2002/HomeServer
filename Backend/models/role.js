@@ -58,8 +58,9 @@ export const roleEnum = {
     USER: 21,
 }
 
-export const defaultRoles = [
-    new Role(roleEnum.SUPER_ADMIN, ['create', 'read', 'update', 'delete', 'admin', 'super-admin']),
-    new Role(roleEnum.ADMIN, ['create', 'read', 'update', 'delete', 'admin']),
-    new Role(roleEnum.USER, ['read'])
-];
+export const roleEnumNames = {
+    0: "GUEST",
+    1: "SUPER ADMIN",
+    11: "ADMIN",
+    21: "USER",
+}

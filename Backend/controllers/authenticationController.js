@@ -1,6 +1,6 @@
 import express from 'express';
 import {User} from "../models/user.js";
-import {signupUser} from "../services/authenticationService.js";
+import {loginUser, logoutUser, signupUser} from "../services/authenticationService.js";
 import {checkEmail, checkPhone, checkString} from "../services/checkService.js";
 import {authDto} from "../dto/authDto.js";
 import {renderPageFromHtmlFile} from "../services/pageLayout.js";
@@ -43,8 +43,9 @@ AuthenticationRouter.post("/login",  async (req, res) => {
     const password = req.body.password;
     console.log("Logging in user: " + email + " with password: " + password);
     try{
-        let user = User.validateLogin(email, password, false);
-        res.send(JSON.stringify(new authDto(user.token, user.expirationDateTime)));
+        let auth = loginUser(email, password);
+        console.log(auth);
+        res.send(JSON.stringify(auth));
     }catch (e){
         console.error(e);
         res.status(500).send(e.message);
@@ -54,7 +55,7 @@ AuthenticationRouter.post("/login",  async (req, res) => {
 AuthenticationRouter.post("/logout", (req, res) => {
     try {
         checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER]);
-        User.logout(req);
+        logoutUser(req.token);
         res.send("Logging out");
     } catch (e) {
         console.error(e);
