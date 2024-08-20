@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
         body: JSON.stringify(object)
     }).then(response => {
         if(response.status === 200){
-            window.location.href = '/200';
+            window.location=document.referrer;
         } else {
             response.text().then(text => {
                 alert(text);

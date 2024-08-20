@@ -1,3 +1,4 @@
 /Frontend/public/documents/
 node_modules
 /Backend/data/users.json
+/Backend/data/

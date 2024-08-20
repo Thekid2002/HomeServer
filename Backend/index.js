@@ -1,5 +1,4 @@
 import express from 'express';
-import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import {AuthenticationRoute, AuthenticationRouter} from "./controllers/authenticationController.js";
@@ -10,6 +9,8 @@ import {renderPageFromHtmlFile} from "./services/pageLayout.js";
 import {CarlCompilersRoute, CarlCompilersRouter} from "./controllers/carlCompilersController.js";
 import { fileURLToPath } from 'url';
 import {UserController, UserRoute} from "./controllers/userController.js";
+import {RepositoriesRoute, RepositoriesRouter} from "./controllers/repositoriesController.js";
+import {SaveFileRoute, SaveFileRouter} from "./controllers/saveFileController.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename).replace("/Backend", "");
@@ -49,21 +50,30 @@ app.get("/500", (req, res) => {
 });
 
 app.use(`/${CarlInstructionsRoute}`, CarlInstructionsRouter);
+app.use(`/${RepositoriesRoute}`, RepositoriesRouter);
 app.use(`/${AuthenticationRoute}`, AuthenticationRouter);
 app.use(`/${AuthorizationRoute}`, AuthorizationRouter);
 app.use(`/${CarlCompilersRoute}`, CarlCompilersRouter);
 app.use(`/${UserRoute}`, UserController);
+app.use(`/${SaveFileRoute}`, SaveFileRouter);
 
 app.use('*', (req, res, next) => {
+    if(req.method !== 'GET'){
+        console.error("Endpoint: " + req.baseUrl + " not found");
+        return res.status(404).send("Endpoint: " + req.baseUrl + " not found");
+    }
+
     let fileName = __dirname + path.join('/Frontend/public', req.baseUrl);
-    try{
-        fs.accessSync(fileName, fs.constants.F_OK);
-        res.sendFile(fileName);
-    }catch (e) {
-        if (checkMimeType(req.baseUrl) === 'txt/html' || checkMimeType(req.baseUrl) === '') {
+    let mimeType = checkMimeType(fileName);
+    try {
+        if (mimeType === 'text/html' || mimeType === '') {
             return res.send(renderPageFromHtmlFile("Backend/views/", "404", req));
         }
-        res.status(404).send('File not found');
+        fs.accessSync(fileName, fs.constants.F_OK);
+        return res.sendFile(fileName);
+    } catch (e) {
+        console.error(e);
+        res.status(404).send('SaveFile not found');
     }
 });
 
@@ -73,31 +83,42 @@ function checkMimeType(baseUrl) {
         mimeType = 'text/html';
     }
 
-    if (baseUrl.toLowerCase().includes('.mov') || baseUrl.includes('.mp4')) {
+    else if (baseUrl.toLowerCase().includes('.mov') || baseUrl.includes('.mp4')) {
         mimeType = 'video/mp4';
     }
 
-    if (baseUrl.toLowerCase().includes('.mp3')) {
+    else if (baseUrl.toLowerCase().includes('.mp3')) {
         mimeType = 'audio/mp3';
     }
 
-    if (baseUrl.toLowerCase().includes('.pdf')) {
+    else if (baseUrl.toLowerCase().includes('.pdf')) {
         mimeType = 'application/pdf';
     }
 
-    if(baseUrl.toLowerCase().includes('.txt')){
+    else if(baseUrl.toLowerCase().includes('.txt')){
         mimeType = 'text/plain';
     }
 
-    if(baseUrl.toLowerCase().includes('.css')){
+    else if(baseUrl.toLowerCase().includes('.css')){
         mimeType = 'text/css';
     }
 
-    if(baseUrl.toLowerCase().includes('.js')){
+    else if(baseUrl.toLowerCase().includes('.js')){
         mimeType = 'text/javascript';
     }
 
-    if (baseUrl.toLowerCase().includes('.jpg') || baseUrl.toLowerCase().includes('.jpeg') || baseUrl.toLowerCase().includes('.png') || baseUrl.toLowerCase().includes('.heic')) {
+    else if(baseUrl.toLowerCase().includes('.wasm')){
+        mimeType = 'application/wasm';
+    }
+
+    else if(baseUrl.toLowerCase().includes('.json')){
+        mimeType = 'application/json';
+    }
+
+    else if(baseUrl.toLowerCase().includes('.wat')){
+        mimeType = 'text/plain';
+    }
+    else if (baseUrl.toLowerCase().includes('.jpg') || baseUrl.toLowerCase().includes('.jpeg') || baseUrl.toLowerCase().includes('.png') || baseUrl.toLowerCase().includes('.heic')) {
         mimeType = 'image/jpeg';
     }
 
@@ -115,7 +136,7 @@ app.post('/upload', upload.single('myFile'), (req, res) => {
     // req.file is the `myFile` file
     // req.body will hold the text fields, if there were any
     console.log(req.file);
-    res.send('File uploaded successfully');
+    res.send('SaveFile uploaded successfully');
 });
 
 app.get('/files', async (req, res) => {
@@ -136,7 +157,7 @@ app.get('/files', async (req, res) => {
                 duration = await getVideoDuration(filePath);
             }
 
-            return new File(file, mimeType, stats.size, duration);
+            return new SaveFile(file, mimeType, stats.size, duration);
         }));
 
         res.json(fileDetails);
@@ -164,7 +185,7 @@ app.delete('/files/:name', (req, res) => {
             console.log('Error', err);
             res.status(500).send('Unable to delete file: ' + err);
         } else {
-            res.send('File deleted successfully');
+            res.send('SaveFile deleted successfully');
         }
     });
 });

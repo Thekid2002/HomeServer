@@ -1,8 +1,9 @@
 import {User} from "../models/user.js";
 import {mapUserToUserDto} from "./mapper.js";
-import {getUserByEmail} from "./userService.js";
 import {generateToken, hashPassword} from "./authorizationService.js";
 import {authDto} from "../dto/authDto.js";
+import {createUser, getAllUsers, updateUser} from "../repositories/userRepository.js";
+import {log} from "./logger.js";
 
 /**
  * Signup a user with the given data
@@ -14,12 +15,11 @@ import {authDto} from "../dto/authDto.js";
  * @returns {UserDto}
  */
 export function signupUser(firstname, surname, phone, email, password) {
-    if (getUserByEmail(email, false)) {
+    let existingUser = getAllUsers().find(user => user.email === email);
+    if (existingUser) {
         throw new Error('User already exists');
     }
-    let user = new User(firstname, surname, phone, email, password);
-    User.addUser(user);
-    console.log('User created successfully ' + user.toString());
+    let user = createUser(firstname, surname, phone, email, password);
     return mapUserToUserDto(user);
 }
 
@@ -30,7 +30,7 @@ export function signupUser(firstname, surname, phone, email, password) {
  * @returns {authDto}
  */
 export function loginUser(email, password) {
-    let user = getUserByEmail(email);
+    let user = getAllUsers().find(user => user.email === email);
     if (!user) {
         throw new Error('User not found');
     }
@@ -39,7 +39,7 @@ export function loginUser(email, password) {
     }
     user.token = generateToken();
     user.expirationDateTime = Date.now() + 3600000;
-    User.saveUser(user);
+    updateUser(user);
     return new authDto(user.token, user.expirationDateTime);
 }
 
@@ -48,12 +48,12 @@ export function loginUser(email, password) {
  * @param token the token of the user
  */
 export function logoutUser(token) {
-    let user = User.getAllUsers().find(user => user.token === token);
+    let user = getAllUsers().find(user => user.token === token);
     if(!user) {
         throw new Error('Invalid token');
     }
     console.log("Logging out user: " + user.email);
     user.token = null;
     user.expirationDateTime = null;
-    User.saveUser(user);
+    updateUser(user);
 }

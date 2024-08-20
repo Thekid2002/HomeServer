@@ -1,6 +1,6 @@
 import {User} from "../models/user.js";
 import crypto from "crypto";
-import {getAllUsers} from "./userService.js";
+import {getAllUsers} from "../repositories/userRepository.js";
 
 /**
  * Set the token and role of a request
@@ -26,7 +26,7 @@ export function setTokenVariable(req) {
     if(!user){
         return;
     }
-    req.role = user.role;
+    req.role =  parseInt(user.role);
 }
 
 /**
@@ -49,7 +49,7 @@ export function checkIsAuthorizedWithRoles(req, authorizedRoles, throwIfNotAutho
         }
         return false;
     }
-    if(!authorizedRoles.includes(req.role)){
+    if(!authorizedRoles.includes(parseInt(req.role))){
         if(throwIfNotAuthorized){
             throw new Error('Not authorized');
         }
@@ -96,6 +96,12 @@ export function generateToken() {
  * @returns {User | null}
  */
 export function validateToken(token, throwIfInvalid = true) {
+    if(!token){
+        if(throwIfInvalid){
+            throw new Error('Token is missing');
+        }
+        return null;
+    }
     let user = getAllUsers().find(user => user.token === token);
     if (!user) {
         if(throwIfInvalid) {

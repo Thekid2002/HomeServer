@@ -1,11 +1,8 @@
 import express from 'express';
-import {User} from "../models/user.js";
 import {loginUser, logoutUser, signupUser} from "../services/authenticationService.js";
 import {checkEmail, checkPhone, checkString} from "../services/checkService.js";
-import {authDto} from "../dto/authDto.js";
 import {renderPageFromHtmlFile} from "../services/pageLayout.js";
-import {checkIsAuthorizedWithRoles} from "../services/authorizationService.js";
-import {roleEnum} from "../models/role.js";
+import {checkIsLoggedIn} from "../services/authorizationService.js";
 
 export const AuthenticationRouter = express.Router();
 export const AuthenticationRoute = 'authentication';
@@ -41,7 +38,7 @@ AuthenticationRouter.post("/signup", (req, res) => {
 AuthenticationRouter.post("/login",  async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log("Logging in user: " + email + " with password: " + password);
+    console.log("Logging in user: " + email);
     try{
         let auth = loginUser(email, password);
         console.log(auth);
@@ -54,7 +51,7 @@ AuthenticationRouter.post("/login",  async (req, res) => {
 
 AuthenticationRouter.post("/logout", (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER]);
+        checkIsLoggedIn(req.token, req.role, true);
         logoutUser(req.token);
         res.send("Logging out");
     } catch (e) {

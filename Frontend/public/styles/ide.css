@@ -31,6 +31,12 @@ body {
   gap: 5px;
 }
 
+.file-selector-window {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
 .puller {
     height: 40px;
     width: 40px;
@@ -113,12 +119,6 @@ body {
   gap: 10px;
 }
 
-.example-choice{
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
 .compile-buttons{
   display: flex;
   align-items: center;
@@ -130,4 +130,11 @@ body {
   height: 100% !important;
   width: 100% !important;
   font-size: 15px;
+}
+
+#file-selector-window > * {
+  height: 70px;
+  text-align: left;
+  justify-content: start;
+    align-items: center;
 }
