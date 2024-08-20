@@ -13,7 +13,7 @@ import {RepositoriesRoute, RepositoriesRouter} from "./controllers/repositoriesC
 import {SaveFileRoute, SaveFileRouter} from "./controllers/saveFileController.js";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename).replace("/Backend", "");
+const __dirname = path.dirname(__filename).replace("/Backend", "").replace("\\Backend", "");
 
 const app = express()
 const port = 3000
