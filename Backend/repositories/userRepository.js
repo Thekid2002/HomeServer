@@ -9,10 +9,10 @@ let users = [];
 
 export function createUser(firstname, surname, phone, email, password) {
     const id = getNextId();
-    const defaultRepository = getDefaultRepository(id);
-    let user = new User(id, firstname, surname, phone, email, password, defaultRepository);
+    let user = new User(id, firstname, surname, phone, email, password);
     getAllUsers();
     users.push(user);
+    createDefaultRepository(id);
     saveAllUsers()
     return user;
 }
@@ -20,7 +20,6 @@ export function createUser(firstname, surname, phone, email, password) {
 export function addRepositoryToUser(user, repository){
     user.repositoryIds.push(repository.id);
     user.repositories.push(repository);
-    saveAllUsers();
 }
 
 export function getAllUsers() {
@@ -78,7 +77,11 @@ function createFileIfDoesNotExist() {
 }
 
 
-function getDefaultRepository(userId){
-    return createRepository("Default", "Default repository", userId);
+/**
+ * Create a default repository for user
+ * @param userId the user
+ */
+function createDefaultRepository(userId){
+    createRepository("Default", "Default repository", userId);
 }
 

@@ -17,7 +17,7 @@ export class User {
     repositories;
 
 
-    constructor(id, firstname, surname, phone, email, password, defaultRepository) {
+    constructor(id, firstname, surname, phone, email, password) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
@@ -27,8 +27,8 @@ export class User {
         this.signupDateTime = Date.now();
         this.salt = generateSalt();
         this.password = hashPassword(password, this.salt);
-        this.repositoryIds = [defaultRepository.id];
-        this.repositories = [defaultRepository];
+        this.repositoryIds = [];
+        this.repositories = [];
     }
 
     toString() {
