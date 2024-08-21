@@ -1,90 +1,83 @@
-import {SaveFile} from "../models/saveFile.js";
-import fs from "fs";
-import {getAllRepositories} from "./repositoryRepository.js";
 
-let savePath = 'Backend/data/saveFiles.json';
+import { log } from "../services/logger.js";
+import {Repository, SaveFile} from "../services/database.js";
 
-let saveFiles = [];
+// Create a save file
+export async function createSaveFile(name, path, content, repositoryId, transaction) {
+    const saveFile = await SaveFile.create({
+        name,
+        path,
+        content,
+        repositoryId
+    }, { transaction });
 
-export function getAllSaveFiles() {
-    if(saveFiles.length !== 0){
-        return saveFiles;
-    }
-    createFileIfDoesNotExist();
-    saveFiles = JSON.parse(fs.readFileSync(savePath, 'utf8'));
-    if(saveFiles.length === 0){
-        return [];
-    }
-    for (let saveFile of saveFiles){
-        saveFile.repository = getAllRepositories().find(repository => repository.id === saveFile.repositoryId);
-    }
-    return saveFiles;
-}
-
-
-function getNextId() {
-    let saveFiles = getAllSaveFiles();
-    if(saveFiles.length === 0){
-        return 1;
-    }
-    return saveFiles[saveFiles.length-1].id+1;
-}
-
-function saveAllSaveFiles() {
-    let saveSaveFiles = [];
-    for(let saveFile of saveFiles){
-        let saveSaveFile = { ...saveFile };
-        saveSaveFile.repository = null;
-        saveSaveFiles.push(saveSaveFile);
-    }
-    fs.writeFileSync(savePath, JSON.stringify(saveSaveFiles));
-    saveFiles = [];
-}
-
-export function updateSaveFile(saveFile) {
-    let index = getAllSaveFiles().findIndex(s => s.id === saveFile.id);
-    if(index === -1){
-        throw new Error("Save file not found");
-    }
-    saveFiles[index] = saveFile;
-    saveAllSaveFiles();
-}
-
-export function deleteSaveFile(id) {
-    let index = getAllSaveFiles().findIndex(s => s.id === id);
-    if(index === -1){
-        throw new Error("Save file not found");
-    }
-    saveFiles.splice(index, 1);
-    saveAllSaveFiles();
-}
-
-/**
- * Create a save file
- * @param name the name of the save file
- * @param path the path of the save file
- * @param content the content of the save file
- * @param repositoryId the id of the repository the save file belongs to
- * @returns {SaveFile}
- */
-export function createSaveFile(name, path, content, repositoryId) {
-    const id = getNextId();
-    let saveFile = new SaveFile(id, name, path, repositoryId, content);
-    getAllSaveFiles();
-    saveFiles.push(saveFile);
-    saveAllSaveFiles();
     return saveFile;
 }
 
-/**
- * Create the save file if it does not exist
- */
-function createFileIfDoesNotExist() {
-    const dir = savePath.substring(0, savePath.lastIndexOf('/'));
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+// Get all save files
+export async function getAllSaveFiles() {
+    try {
+        log("Getting all save files");
+
+        // Fetch save files with associated repositories
+        const saveFiles = await SaveFile.findAll({
+            include: [{
+                model: Repository,
+                as: 'repository'
+            }]
+        });
+
+        return saveFiles;
+    } catch (error) {
+        console.error('Error fetching save files:', error);
+        throw error;
     }
-    if (!fs.existsSync(savePath)) {
-        fs.writeFileSync(savePath, '[]');
+}
+
+export async function getAllSaveFilesByRepositoryId(repositoryId) {
+    log("Getting all save files by repository id: " + repositoryId);
+
+    // Fetch save files with associated repositories
+    const saveFiles = await SaveFile.findAll({
+        where: {
+            repositoryId
+        },
+        include: [{
+            model: Repository,
+            as: 'repository'
+        }]
+    });
+
+    return saveFiles;
+}
+
+// Update a save file
+export async function updateSaveFile(saveFile) {
+    const oldSaveFile = await SaveFile.findByPk(saveFile.id);
+    if (!oldSaveFile) {
+        throw new Error("Save file not found with id: " + saveFile.id);
+    }
+
+    await oldSaveFile.update({
+        name: saveFile.name,
+        path: saveFile.path,
+        content: saveFile.content,
+    });
+
+    return oldSaveFile;
+}
+
+// Delete a save file
+export async function deleteSaveFile(id) {
+    try {
+        const saveFile = await SaveFile.findByPk(id);
+        if (!saveFile) {
+            throw new Error("Save file not found with id: " + id);
+        }
+
+        await saveFile.destroy();
+    } catch (error) {
+        console.error('Error deleting save file:', error);
+        throw error;
     }
 }

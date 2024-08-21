@@ -1,14 +1,14 @@
 import {UserDto} from "../dto/userDto.js";
 import {RepositoryDto} from "../dto/repositoryDto.js";
 import {SaveFileDto} from "../dto/saveFileDto.js";
-import {getAllRepositories} from "../repositories/repositoryRepository.js";
+import {findRepositoryById} from "../repositories/repositoryRepository.js";
 
 /**
  * Map a user to a user DTO
  * @param user
- * @returns {UserDto | null}
+ * @returns {Promise<UserDto>} the user DTO
  */
-export function mapUserToUserDto(user) {
+export async function mapUserToUserDto(user) {
     if (!user) {
         return new UserDto(null, "", "", "", "", 0, "");
     }
@@ -18,54 +18,73 @@ export function mapUserToUserDto(user) {
 /**
  * Map a list of users to a list of user DTOs
  * @param users the list of users
- * @returns {UserDto[]} the list of user DTOs
+ * @returns {Promise<UserDto[]>} the list of user DTOs
  */
-export function mapUserListToUserDtoList(users) {
-    return users.map(user => mapUserToUserDto(user));
+export async function mapUserListToUserDtoList(users) {
+    if (users.length === 0) {
+        return [];
+    }
+    for (let i = 0; i < users.length; i++) {
+        users[i] = await mapUserToUserDto(users[i].dataValues);
+    }
+    return users;
 }
 
 /**
  * Map a save file to a save file DTO
  * @param saveFile the save file
- * @returns {SaveFileDto} the save file DTO
+ * @returns {Promise<SaveFileDto>} the save file DTO
  */
-function mapSaveFileToSaveFileDto(saveFile) {
-    saveFile.repository = getAllRepositories().find(repository => repository.id === saveFile.repositoryId);
-    return new SaveFileDto(saveFile.id, saveFile.name, saveFile.path, saveFile.content, saveFile.repository);
+async function mapSaveFileToSaveFileDto(saveFile) {
+    saveFile.repository = await findRepositoryById(saveFile.repositoryId)
+    let repoValues = saveFile.repository.dataValues;
+    return new SaveFileDto(saveFile.id, saveFile.name, saveFile.path, saveFile.content, saveFile.repository, repoValues.entryPointFile === saveFile.id, repoValues.runtimeFile === saveFile.id, repoValues.runtimeImportFile === saveFile.id);
 }
 
 /**
  * Map a list of save files to a list of save file DTOs
  * @param saveFiles the list of save files
- * @returns {SaveFileDto[]} the list of save file DTOs
+ * @returns {Promise<SaveFileDto[]>} the list of save file DTOs
  */
-export function mapSaveFilesToSaveFileDtoList(saveFiles) {
+export async function mapSaveFilesToSaveFileDtoList(saveFiles) {
+    if(!saveFiles) {
+        return [];
+    }
     if (saveFiles.length === 0) {
         return [];
     }
-    return saveFiles.map(saveFile => mapSaveFileToSaveFileDto(saveFile));
+    for (let i = 0; i < saveFiles.length; i++) {
+        saveFiles[i] = await mapSaveFileToSaveFileDto(saveFiles[i].dataValues);
+    }
+    return saveFiles;
 }
 
 /**
  * Map a repository to a repository DTO
  * @param repository the repository
- * @returns {RepositoryDto} the repository DTO
+ * @returns {Promise<RepositoryDto>} the repository DTO
  */
-export function mapRepositoryToRepositoryDto(repository) {
+export async function mapRepositoryToRepositoryDto(repository) {
     if(!repository) {
-        return new RepositoryDto(null, "", "", "", []);
+        return new RepositoryDto(null, "", "", "", [], "", "", "");
     }
-    let saveFiles = mapSaveFilesToSaveFileDtoList(repository.saveFiles);
-    return new RepositoryDto(repository.id, repository.name, repository.description, repository.user, saveFiles);
+    let saveFiles = await mapSaveFilesToSaveFileDtoList(repository.saveFiles);
+    return new RepositoryDto(repository.id, repository.name, repository.description, repository.user, saveFiles, repository.entryPointFile, repository.runtimeFile, repository.runtimeImportFile);
 }
 
 /**
  * Map a list of repositories to a list of repository DTOs
  * @param repositories the list of repositories
- * @returns {RepositoryDto[]} the list of repository DTOs
+ * @returns {Promise<RepositoryDto[]>} the list of repository DTOs
  */
-export function mapRepositoryListToRepositoryDtoList(repositories) {
-    return repositories.map(repository => mapRepositoryToRepositoryDto(repository));
+export async function mapRepositoryListToRepositoryDtoList(repositories) {
+    if(repositories.length === 0) {
+        return [];
+    }
+    for (let i = 0; i < repositories.length; i++) {
+        repositories[i] = await mapRepositoryToRepositoryDto(repositories[i].dataValues);
+    }
+    return repositories;
 }
 
 /**
@@ -74,6 +93,10 @@ export function mapRepositoryListToRepositoryDtoList(repositories) {
  * @returns {string}
  */
 export function mapDateTimeToIsoString(dateTime) {
+    console.log(dateTime);
+    if(!dateTime){
+        return "";
+    }
     let datePieces = new Date(dateTime).toISOString().split('T')
     let date = datePieces[0];
     let time = datePieces[1].split('.')[0];

@@ -34,7 +34,7 @@ export async function compile() {
     const now = Date.now();
     let code = codeInput.value;
     if(window.codeEditor != null){
-        code = window.localStorage.getItem(window.selectedFile);
+        code = getEntryFile();
     }
     let compiledResult;
     let compiledWat;
@@ -158,8 +158,8 @@ export async function execute() {
             alert("Failed to compile the code");
         }
 
-        let functionBody = window.localStorage.getItem("CarlRuntime").replace(
-            'getImportObjectFromImportObjectFile()', window.localStorage.getItem("CarlRuntimeImport"));
+        let functionBody = getRuntimeFile().replace(
+            'getImportObjectFromImportObjectFile()', getRuntimeImportFile());
         functionBody = functionBody.replaceAll("console.log(", "addPrint(").replaceAll("console.error(", "addPrint(");
         let functionArguments = "output, addPrint, wasmInstance, logMemory";
         let newFunction;
@@ -231,4 +231,53 @@ function compileToWasm(value) {
     }
 
     return binaryBuffer; // Return the binary buffer
+}
+
+
+function getEntryFile(){
+    let entryKey = window.localStorage.getItem("entry");
+    if(entryKey == null){
+        alert("No entry file found");
+        return;
+    }
+
+    let entryFile = window.localStorage.getItem(entryKey);
+    if(entryFile == null) {
+        alert("No entry file found");
+        return;
+    }
+
+    return entryFile;
+}
+
+function getRuntimeFile(){
+    let runtimeKey = window.localStorage.getItem("runtime");
+    if(runtimeKey == null){
+        alert("No runtime file found");
+        return;
+    }
+
+    let runtimeFile = window.localStorage.getItem(runtimeKey);
+    if(runtimeFile == null) {
+        alert("No runtime file found");
+        return;
+    }
+
+    return runtimeFile;
+}
+
+function getRuntimeImportFile(){
+    let runtimeImportKey = window.localStorage.getItem("runtimeImport");
+    if(runtimeImportKey == null){
+        alert("No runtime import file found");
+        return;
+    }
+
+    let runtimeImportFile = window.localStorage.getItem(runtimeImportKey);
+    if(runtimeImportFile == null) {
+        alert("No runtime import file found");
+        return;
+    }
+
+    return runtimeImportFile;
 }

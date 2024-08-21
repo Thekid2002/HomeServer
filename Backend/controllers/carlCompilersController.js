@@ -5,23 +5,23 @@ import {checkIsLoggedIn} from "../services/authorizationService.js";
 export const CarlCompilersRouter = express.Router();
 export const CarlCompilersRoute = 'carlCompilers';
 
-CarlCompilersRouter.get("/simple", (req, res) => {
+CarlCompilersRouter.get("/simple",  async (req, res) => {
     try {
-        checkIsLoggedIn(req.token, req.role);
-        res.send(renderPageFromHtmlFile("Backend/views/", "simple", req));
+        await checkIsLoggedIn(req.token, req.role);
+        res.send(await renderPageFromHtmlFile("Backend/views/", "simple", req));
     } catch (e) {
         console.error(e);
-        res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+        res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
     }
 });
 
-CarlCompilersRouter.get("/ide", (req, res) => {
+CarlCompilersRouter.get("/ide", async (req, res) => {
     try {
-        checkIsLoggedIn(req.role, req.token);
-        res.send(renderPageFromHtmlFile("Backend/views/", "ide", req));
+        await checkIsLoggedIn(req.role, req.token);
+        res.send(await renderPageFromHtmlFile("Backend/views/", "ide", req));
     } catch (e) {
         console.error(e);
-        res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+        res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
     }
 });
 

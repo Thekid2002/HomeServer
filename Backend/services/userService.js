@@ -1,13 +1,12 @@
-import {User} from "../models/user.js";
 import {validateToken} from "./authorizationService.js";
 
 /**
  * Get the active user from the request
  * @param token the token of the current user
  * @param throwIfNoActiveUser should an error be thrown if no active user is found
- * @returns {User|null}
+ * @returns {Promise<User | null>} the active user
  */
-export function getActiveUser(token, throwIfNoActiveUser = true) {
+export async function getActiveUser(token, throwIfNoActiveUser = true) {
     let user = validateToken(token, false);
     if (!user) {
         if (throwIfNoActiveUser) {

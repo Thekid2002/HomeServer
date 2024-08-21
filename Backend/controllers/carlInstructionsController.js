@@ -4,11 +4,11 @@ import {checkIsAuthorizedWithRoles, checkIsLoggedIn} from "../services/authoriza
 export const CarlInstructionsRouter = express.Router();
 export const CarlInstructionsRoute = 'carlInstructions';
 
-CarlInstructionsRouter.get("*", (req, res) => {
+CarlInstructionsRouter.get("*",  async (req, res) => {
     try{
-        res.send(renderPageFromHtmlFile("Backend/views/", "carlInstructions", req));
+        res.send(await renderPageFromHtmlFile("Backend/views/", "carlInstructions", req));
     } catch (e){
         console.error(e);
-        res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+        res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
     }
 });

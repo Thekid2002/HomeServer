@@ -9,49 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/errors/notAuthorizedError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/errors/notFoundError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/dataColumnType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/dataLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/models/saveFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/repositories/userRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/repositoryService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/saveFileService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/AllUsers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/createEditRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/repositories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/public/code/setupCodeEditors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/services/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/class/File.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/dataColumnType.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataColumnType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/saveFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/saveFile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/userRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/authorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/mapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/userService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/views/ide.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/code/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/code/ide.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/ide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/interpreterCalculator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/ide.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/ide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +93,7 @@
     "npm.start.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -225,5 +212,23 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Backend/repositories/repositoryRepository.js</url>
+          <line>53</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Backend/controllers/userController.js</url>
+          <line>105</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

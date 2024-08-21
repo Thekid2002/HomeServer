@@ -7,29 +7,29 @@ import {mapDateTimeToIsoString} from "./mapper.js";
 
 let header = null;
 
-export function renderPageFromHtmlFile(htmlPath, pathName, req){
+export async function renderPageFromHtmlFile(htmlPath, pathName, req){
     if(!fs.existsSync(htmlPath + pathName + ".html")){
         console.error("No file found for: " + pathName);
-        return renderPageFromHtmlFile(htmlPath, "404", req);
+        return await renderPageFromHtmlFile(htmlPath, "404", req);
     }
     let html = fs.readFileSync(htmlPath + pathName + ".html", 'utf8');
-    return renderPageWithBasicLayout(pathName, pathName, html, req);
+    return await renderPageWithBasicLayout(pathName, pathName, html, req);
 }
 
 /**
  * Get the header for the page
  * @param req the request
- * @returns {string}
+ * @returns {Promise<string>}
  */
-function getHeader(req){
+async function getHeader(req){
     header = `  
     <div class="header">
         <div>`;
-    if(checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN], false)) {
+    if(await checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN], false)) {
         header += `<button onclick="goToPage('user/allUsers')">All users</button>`;
     }
 
-    if(checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER], false)) {
+    if(await checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER], false)) {
         header += `<button onclick="goToPage('user/settings')">Settings</button>`;
         header += `<button onclick="goToPage('user/profile')">Profile</button>`;
     }
@@ -41,10 +41,10 @@ function getHeader(req){
             <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
         </div>
         <div>`;
-    if(checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN], false)) {
+    if(await checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN], false)) {
         header += `<button onclick="goToPage('repositories/all')">All Repositories</button>`;
     }
-    if(checkIsLoggedIn(req.token, req.role, false)){
+    if(await checkIsLoggedIn(req.token, req.role, false)){
         header += `<button onclick="goToPage('repositories/my')">Repositories</button>`;
         header += `<button onclick="logout()">Logout</button>`;
     }else {
@@ -65,9 +65,9 @@ function getHeader(req){
  * @param req
  * @param stylesheets
  * @param scripts
- * @returns {string}
+ * @returns {Promise<string>}
  */
-function renderPageWithBasicLayout(pageName, title, body, req, stylesheets = [], scripts = []){
+async function renderPageWithBasicLayout(pageName, title, body, req, stylesheets = [], scripts = []){
     stylesheets.push('/styles/header.css');
     stylesheets.push(`/styles/${pageName}.css`);
     scripts.push('/code/header.js');
@@ -87,7 +87,7 @@ function renderPageWithBasicLayout(pageName, title, body, req, stylesheets = [],
 
     layout +=`</head>` +
         `<body>` +
-        `${getHeader(req)}` +
+        `${await getHeader(req)}` +
         `${body}` +
         `</body>`;
     for (let script of scripts){
@@ -106,9 +106,9 @@ function renderPageWithBasicLayout(pageName, title, body, req, stylesheets = [],
  * @param req
  * @param isEditable
  * @param isDeletable
- * @returns {string}
+ * @returns {Promise<string>}
  */
-function renderTablePage(title, tableData, tableLayout, req, isEditable = false, isDeletable = false){
+ async function renderTablePage(title, tableData, tableLayout, req, isEditable = false, isDeletable = false){
     if(!(tableLayout instanceof DataLayout)){
         throw new Error("tableLayout must be an instance of DataLayout");
     }
@@ -140,15 +140,23 @@ function renderTablePage(title, tableData, tableLayout, req, isEditable = false,
                 }
                 body += `<td>${arrayString}</td>`;
             }
-            if(column.type === DataColumnEnum.select){
-                let iterableEnum = Object.entries(column.enumForSelect).map(([value, key]) => ({key, value}));
+            if(column.type === DataColumnEnum.selectEnum){
+                let iterableEnum = Object.entries(column.listForSelectEnum).map(([value, key]) => ({key, value}));
                 const match = iterableEnum.find(item => parseInt(item.key) === parseInt(row[column.key]));
                 if (match) {
                     body += `<td>${match.value}</td>`;
                 } else {
                     body += `<td>${row[column.key]}</td>`;
                 }
+            }
 
+            if(column.type === DataColumnEnum.selectFromKeyValueArray){
+                const match = column.listForSelectKeyValueArray.find(item => parseInt(item.key) === parseInt(row[column.key]));
+                if (match) {
+                    body += `<td>${match.value}</td>`;
+                } else {
+                    body += `<td>${row[column.key]}</td>`;
+                }
             }
 
             if(column.type === DataColumnEnum.value){
@@ -193,11 +201,11 @@ function renderTablePage(title, tableData, tableLayout, req, isEditable = false,
  * @param req the request
  * @param isEditable whether the table is editable
  * @param isDeletable whether the table is deletable
- * @returns {string}
+ * @returns {Promise<string>}
  */
-export function renderTablePageWithBasicLayout(pageName, title, tableData, tableLayout, req, isEditable = false, isDeletable = false){
-    let body = renderTablePage(title, tableData, tableLayout, req, isEditable, isDeletable);
-    return renderPageWithBasicLayout(pageName, title, body, req, ['/styles/table.css']);
+export async function renderTablePageWithBasicLayout(pageName, title, tableData, tableLayout, req, isEditable = false, isDeletable = false){
+    let body = await renderTablePage(title, tableData, tableLayout, req, isEditable, isDeletable);
+    return await renderPageWithBasicLayout(pageName, title, body, req, ['/styles/table.css']);
 }
 
 /**
@@ -207,9 +215,9 @@ export function renderTablePageWithBasicLayout(pageName, title, tableData, table
  * @param object the object to create or edit
  * @param dataLayout the layout of the form
  * @param req the request
- * @returns {string}
+ * @returns {Promise<string>}
  */
-export function renderPageObjectCreateEditPage(pageName, title, object, dataLayout, req){
+export async function renderPageObjectCreateEditPage(pageName, title, object, dataLayout, req){
     if(!(dataLayout instanceof DataLayout)){
         throw new Error("dataLayout must be an instance of DataLayout");
     }
@@ -218,25 +226,42 @@ export function renderPageObjectCreateEditPage(pageName, title, object, dataLayo
         '<form id="form">';
     for (let i = 0; i < dataLayout.columns.length; i++) {
         const column = dataLayout.columns[i];
-        if(column.rolesAllowed !== null && !checkIsAuthorizedWithRoles(req, column.rolesAllowed, false)){
+        if(column.rolesAllowed !== null && !await checkIsAuthorizedWithRoles(req, column.rolesAllowed, false)){
             continue;
         }
         body += `<div>`;
 
         if(column.type === DataColumnEnum.array){
-            let table = renderTablePage(column.title, !object ? null : object[column.key], column.arrayTableLayout, req, true, true);
+            let table = await renderTablePage(column.title, !object ? null : object[column.key], column.arrayTableLayout, req, true, true);
             body += table;
         }
 
-        if(column.type === DataColumnEnum.select){
+        if(column.type === DataColumnEnum.selectEnum){
             body += `<label for="${column.key}">${column.title}</label><br>`;
             body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
-            let iterableEnum = Object.entries(column.enumForSelect).map(([value, key]) => ({key, value}));
+            let iterableEnum = Object.entries(column.listForSelectEnum).map(([value, key]) => ({key, value}));
+            console.log(iterableEnum);
             for (let j = 0; j < iterableEnum.length; j++) {
                 if(parseInt(!object ? null : object[column.key]) === parseInt(iterableEnum[j].key)){
                     body += `<option value="${iterableEnum[j].key}" selected>${iterableEnum[j].value}</option>`;
                 }else {
                     body += `<option value="${iterableEnum[j].key}">${iterableEnum[j].value}</option>`;
+                }
+            }
+            body += `</select><br>`;
+        }
+
+        if(column.type === DataColumnEnum.selectFromKeyValueArray){
+            body += `<label for="${column.key}">${column.title}</label><br>`;
+            body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
+            if(!column.required){
+                body += `<option value="null">null</option>`;
+            }
+            for (let j = 0; j < column.listForSelectKeyValueArray.length; j++) {
+                if(parseInt(!object ? null : object[column.key]) === parseInt(column.listForSelectKeyValueArray[j].key)){
+                    body += `<option value="${column.listForSelectKeyValueArray[j].key}" selected>${column.listForSelectKeyValueArray[j].value}</option>`;
+                }else {
+                    body += `<option value="${column.listForSelectKeyValueArray[j].key}">${column.listForSelectKeyValueArray[j].value}</option>`;
                 }
             }
             body += `</select><br>`;
@@ -272,11 +297,18 @@ export function renderPageObjectCreateEditPage(pageName, title, object, dataLayo
     body += '<button type="submit">Submit</button>';
     body += '</form>';
     body += '</div>';
-    return renderPageWithBasicLayout(pageName, title, body, req, ['/styles/form.css'], ['/code/form.js']);
+    return await renderPageWithBasicLayout(pageName, title, body, req, ['/styles/form.css'], ['/code/form.js']);
 }
 
-
-export function renderIdePageWithBasicLayout(pageName, title, Repository, req){
+/**
+ * Renders a page with an IDE layout
+ * @param pageName
+ * @param title
+ * @param Repository
+ * @param req
+ * @returns {Promise<string>}
+ */
+export async function renderIdePageWithBasicLayout(pageName, title, Repository, req){
     let body = `<div class="page">
         <div class="page-layout">
             <div id="file-selector-window" class="file-selector-window">
@@ -310,7 +342,7 @@ export function renderIdePageWithBasicLayout(pageName, title, Repository, req){
         import { compileAndExecute } from '/code/carlCompilationHelper.js';
         window.compileAndExecute = compileAndExecute;
     </script>`;
-    return renderPageWithBasicLayout(pageName, title, body, req, ['/styles/ide.css'], [
+    return await renderPageWithBasicLayout(pageName, title, body, req, ['/styles/ide.css'], [
         '/code/ide.js',
         `https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js`,
     `https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js`,

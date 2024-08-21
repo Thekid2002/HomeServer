@@ -6,33 +6,38 @@ import {NotFoundError} from "../errors/notFoundError.js";
 import {getSaveFileLayout} from "../services/tableLayoutService.js";
 import {getActiveUser} from "../services/userService.js";
 import {NotAuthorizedError} from "../errors/notAuthorizedError.js";
-import {getAllRepositories} from "../repositories/repositoryRepository.js";
-import {createSaveFile, deleteSaveFile, getAllSaveFiles, updateSaveFile} from "../repositories/saveFileRepository.js";
+import {findRepositoryById, getAllRepositories} from "../repositories/repositoryRepository.js";
+import {
+    createSaveFile,
+    deleteSaveFile,
+    getAllSaveFiles,
+    getAllSaveFilesByRepositoryId,
+    updateSaveFile
+} from "../repositories/saveFileRepository.js";
 import {mapSaveFilesToSaveFileDtoList} from "../services/mapper.js";
 
 export const SaveFileRouter = express.Router();
 export const SaveFileRoute = 'saveFile';
 
-SaveFileRouter.get("/get", (req, res) => {
+SaveFileRouter.get("/get",  async (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
+        await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const repositoryId = parseInt(req.query.repositoryId);
-        const repository = getAllRepositories().find(repo => repo.id === repositoryId);
-        if (repository && repository.userId !== getActiveUser(req.token).id && req.role !== roleEnum.SUPER_ADMIN) {
+        const repository = (await findRepositoryById(repositoryId)).dataValues;
+        const activeUser = (await getActiveUser(req.token)).dataValues;
+        if (repository && repository.userId !== activeUser.id && req.role !== roleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
-
-        let saveFiles = getAllSaveFiles().filter(file => file.repositoryId === repositoryId)
-        res.send(mapSaveFilesToSaveFileDtoList(saveFiles));
+        res.send(await mapSaveFilesToSaveFileDtoList(repository.saveFiles));
     } catch (e) {
         console.error(e);
         res.status(500).send(e);
     }
 });
 
-SaveFileRouter.get("/edit", (req, res) => {
+SaveFileRouter.get("/edit", async (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
+        await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const id = parseInt(req.query.id);
         const title = id ? "Edit Save File" : "Create Save File";
         const repositoryId = parseInt(req.query.repositoryId);
@@ -44,19 +49,19 @@ SaveFileRouter.get("/edit", (req, res) => {
             throw new NotAuthorizedError("Unauthorized");
         }
 
-        res.send(renderPageObjectCreateEditPage("CreateEditSaveFile", title, file, layout, req));
+        res.send(await renderPageObjectCreateEditPage("CreateEditSaveFile", title, file, layout, req));
     } catch (e) {
         console.error(e);
         if(e instanceof NotFoundError){
-            return res.send(renderPageFromHtmlFile("Backend/views/", "500", req));
+            return res.send(await renderPageFromHtmlFile("Backend/views/", "500", req));
         }
-        return res.send(renderPageFromHtmlFile("Backend/views/", "401", req));
+        return res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
     }
 });
 
-SaveFileRouter.post("/edit", (req, res) => {
+SaveFileRouter.post("/edit", async (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
+        await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const id = parseInt(req.query.id);
         const name = req.body.name;
         const path = req.body.path;
@@ -73,9 +78,9 @@ SaveFileRouter.post("/edit", (req, res) => {
             saveFile.name = name;
             saveFile.path = path;
             saveFile.content = content;
-            updateSaveFile(saveFile);
+            await updateSaveFile(saveFile);
         }else {
-            createSaveFile(name, path, content, repository.id);
+            await createSaveFile(name, path, content, repository.id);
         }
 
         res.send("Save File updated");
@@ -85,9 +90,9 @@ SaveFileRouter.post("/edit", (req, res) => {
     }
 });
 
-SaveFileRouter.delete("/delete", (req, res) => {
+SaveFileRouter.delete("/delete", async (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
+        await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const id = parseInt(req.query.id);
         const repositoryId = parseInt(req.query.repositoryId);
         const repository = getAllRepositories().find(repo => repo.id === repositoryId);
@@ -96,7 +101,7 @@ SaveFileRouter.delete("/delete", (req, res) => {
             throw new NotAuthorizedError("Unauthorized");
         }
 
-        deleteSaveFile(id);
+        await deleteSaveFile(id);
         res.send("Save File deleted");
     } catch (e) {
         console.error(e);

@@ -7,6 +7,9 @@ export class RepositoryDto {
     userId;
     saveFiles;
     link;
+    entryPointFile;
+    runtimeFile;
+    runtimeImportFile;
 
     /**
      * Create a repository DTO
@@ -15,8 +18,11 @@ export class RepositoryDto {
      * @param description the description of the repository
      * @param user the user who owns the repository
      * @param saveFiles the save files in the repository
+     * @param entryPointFile the entry point file
+     * @param runtimeFile the runtime file
+     * @param runtimeImportFile the runtime import file
      */
-    constructor(id, name, description, user, saveFiles) {
+    constructor(id, name, description, user, saveFiles, entryPointFile, runtimeFile, runtimeImportFile) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,5 +33,8 @@ export class RepositoryDto {
         }
         this.saveFiles = saveFiles;
         this.link = "/repositories/open?id=" + id;
+        this.entryPointFile = entryPointFile;
+        this.runtimeFile = runtimeFile;
+        this.runtimeImportFile = runtimeImportFile;
     }
 }

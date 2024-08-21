@@ -7,15 +7,15 @@ import {checkIsLoggedIn} from "../services/authorizationService.js";
 export const AuthenticationRouter = express.Router();
 export const AuthenticationRoute = 'authentication';
 
-AuthenticationRouter.get("/signup", (req, res) => {
-    res.send(renderPageFromHtmlFile('Backend/views/', "signup", req));
+AuthenticationRouter.get("/signup",  async (req, res) => {
+    res.send(await renderPageFromHtmlFile('Backend/views/', "signup", req));
 });
 
-AuthenticationRouter.get("/login", (req, res) => {
-    res.send(renderPageFromHtmlFile('Backend/views/', "login", req));
+AuthenticationRouter.get("/login",  async (req, res) => {
+    res.send(await renderPageFromHtmlFile('Backend/views/', "login", req));
 });
 
-AuthenticationRouter.post("/signup", (req, res) => {
+AuthenticationRouter.post("/signup",  async (req, res) => {
     const firstname = req.body.firstname;
     const surname = req.body.surname;
     const phone = req.body.phone;
@@ -27,7 +27,7 @@ AuthenticationRouter.post("/signup", (req, res) => {
         checkPhone(phone);
         checkEmail(email);
         checkString(password, 8);
-        res.send(JSON.stringify(signupUser(firstname, surname, phone, email, password)));
+        res.send(JSON.stringify(await signupUser(firstname, surname, phone, email, password)));
     }catch (e){
         console.error(e);
         res.status(500).send(e.message);
@@ -40,7 +40,7 @@ AuthenticationRouter.post("/login",  async (req, res) => {
     const password = req.body.password;
     console.log("Logging in user: " + email);
     try{
-        let auth = loginUser(email, password);
+        let auth = await loginUser(email, password);
         console.log(auth);
         res.send(JSON.stringify(auth));
     }catch (e){
@@ -49,10 +49,10 @@ AuthenticationRouter.post("/login",  async (req, res) => {
     }
 });
 
-AuthenticationRouter.post("/logout", (req, res) => {
+AuthenticationRouter.post("/logout", async (req, res) => {
     try {
-        checkIsLoggedIn(req.token, req.role, true);
-        logoutUser(req.token);
+        await checkIsLoggedIn(req.token, req.role, true);
+        await logoutUser(req.token);
         res.send("Logging out");
     } catch (e) {
         console.error(e);

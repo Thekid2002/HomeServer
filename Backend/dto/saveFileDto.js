@@ -5,9 +5,11 @@ export class SaveFileDto {
     content;
     repositoryId;
     repositoryName;
+    isEntryPointFile;
+    isRuntimeFile;
+    isRuntimeImportFile
 
-
-    constructor(id, name, path, content, repository) {
+    constructor(id, name, path, content, repository, isEntryPointFile = false, isRuntimeFile = false, isRuntimeImportFile= false) {
         this.id = id;
         this.name = name;
         this.path = path;
@@ -16,5 +18,8 @@ export class SaveFileDto {
             this.repositoryId = repository.id;
             this.repositoryName = repository.name;
         }
+        this.isEntryPointFile = isEntryPointFile;
+        this.isRuntimeFile = isRuntimeFile;
+        this.isRuntimeImportFile = isRuntimeImportFile;
     }
 }

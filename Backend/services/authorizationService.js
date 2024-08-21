@@ -1,12 +1,11 @@
-import {User} from "../models/user.js";
 import crypto from "crypto";
-import {getAllUsers} from "../repositories/userRepository.js";
+import {findUserByToken} from "../repositories/userRepository.js";
 
 /**
  * Set the token and role of a request
  * @param req the request
  */
-export function setTokenVariable(req) {
+export async function setTokenVariable(req) {
     req.role = null;
     req.token = null;
     if(!req.headers.cookie){
@@ -22,11 +21,12 @@ export function setTokenVariable(req) {
         return;
     }
     req.token = token;
-    let user = validateToken(req.token, false);
+    let user = await findUserByToken(token);
     if(!user){
+        console.log("User not found with token: " + token);
         return;
     }
-    req.role =  parseInt(user.role);
+    req.role = parseInt(user.role);
 }
 
 /**
@@ -34,9 +34,9 @@ export function setTokenVariable(req) {
  * @param req the request
  * @param authorizedRoles the roles that are authorized
  * @param throwIfNotAuthorized should an error be thrown if the user is not authorized
- * @returns {boolean} is the user authorized
+ * @returns {Promise<boolean>} is the user authorized
  */
-export function checkIsAuthorizedWithRoles(req, authorizedRoles, throwIfNotAuthorized = true) {
+export async function checkIsAuthorizedWithRoles(req, authorizedRoles, throwIfNotAuthorized = true) {
     if(!req.role){
         if (throwIfNotAuthorized) {
             throw new Error('Role is missing');
@@ -49,7 +49,8 @@ export function checkIsAuthorizedWithRoles(req, authorizedRoles, throwIfNotAutho
         }
         return false;
     }
-    if(!authorizedRoles.includes(parseInt(req.role))){
+    if(!authorizedRoles.includes(req.role)){
+        console.error("Role not authorized: " + req.role + " not in " + authorizedRoles.toString());
         if(throwIfNotAuthorized){
             throw new Error('Not authorized');
         }
@@ -63,9 +64,9 @@ export function checkIsAuthorizedWithRoles(req, authorizedRoles, throwIfNotAutho
  * @param token the token of the user
  * @param role the role of the user
  * @param throwIfNotLoggedIn
- * @returns {boolean}
+ * @returns {Promise<boolean>}
  */
-export function checkIsLoggedIn(token, role, throwIfNotLoggedIn = true) {
+export async function checkIsLoggedIn(token, role, throwIfNotLoggedIn = true) {
     if(!token){
         if(throwIfNotLoggedIn) {
             throw new Error('Token is missing');
@@ -95,14 +96,14 @@ export function generateToken() {
  * @param throwIfInvalid
  * @returns {User | null}
  */
-export function validateToken(token, throwIfInvalid = true) {
+export async function validateToken(token, throwIfInvalid = true) {
     if(!token){
         if(throwIfInvalid){
             throw new Error('Token is missing');
         }
         return null;
     }
-    let user = getAllUsers().find(user => user.token === token);
+    let user = await findUserByToken(token);
     if (!user) {
         if(throwIfInvalid) {
             throw new Error('Invalid token');

@@ -13,3 +13,10 @@ _start();  // Call the exported _start function
 const later = Date.now()
 console.log("Time spent " + (later-now)/1000)
 ```
+
+
+docker run -d \
+--name my_postgres_db \
+-e POSTGRES_PASSWORD=mysecretpassword \
+-p 3306:5432 \
+postgres

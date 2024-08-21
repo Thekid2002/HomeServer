@@ -1,9 +1,8 @@
-import {User} from "../models/user.js";
 import {mapUserToUserDto} from "./mapper.js";
 import {generateToken, hashPassword} from "./authorizationService.js";
 import {authDto} from "../dto/authDto.js";
-import {createUser, getAllUsers, updateUser} from "../repositories/userRepository.js";
-import {log} from "./logger.js";
+import {createUser, findUserByEmail, findUserByToken, updateUser} from "../repositories/userRepository.js";
+import {sequelize} from "./database.js";
 
 /**
  * Signup a user with the given data
@@ -14,23 +13,31 @@ import {log} from "./logger.js";
  * @param password the password of the user
  * @returns {UserDto}
  */
-export function signupUser(firstname, surname, phone, email, password) {
-    let existingUser = getAllUsers().find(user => user.email === email);
-    if (existingUser) {
-        throw new Error('User already exists');
+export async function signupUser(firstname, surname, phone, email, password) {
+    const transaction = await sequelize.transaction();
+
+    try {
+        let existingUser = await findUserByEmail(email);
+        if (existingUser) {
+            throw new Error('User already exists');
+        }
+        let user = await createUser(firstname, surname, phone, email, password, transaction);
+        await transaction.commit();
+        return await mapUserToUserDto(user);
+    }catch (e) {
+        console.error('Error signing up user:', e);
+        await transaction.rollback();
     }
-    let user = createUser(firstname, surname, phone, email, password);
-    return mapUserToUserDto(user);
 }
 
 /**
  * Login a user
  * @param email the email of the user
  * @param password the password of the user
- * @returns {authDto}
+ * @returns {Promise<authDto>}
  */
-export function loginUser(email, password) {
-    let user = getAllUsers().find(user => user.email === email);
+export async function loginUser(email, password) {
+    let user = await findUserByEmail(email);
     if (!user) {
         throw new Error('User not found');
     }
@@ -39,7 +46,7 @@ export function loginUser(email, password) {
     }
     user.token = generateToken();
     user.expirationDateTime = Date.now() + 3600000;
-    updateUser(user);
+    await updateUser(user);
     return new authDto(user.token, user.expirationDateTime);
 }
 
@@ -47,13 +54,13 @@ export function loginUser(email, password) {
  * Logout a user
  * @param token the token of the user
  */
-export function logoutUser(token) {
-    let user = getAllUsers().find(user => user.token === token);
+export async function logoutUser(token) {
+    let user = await findUserByToken(token);
     if(!user) {
         throw new Error('Invalid token');
     }
     console.log("Logging out user: " + user.email);
     user.token = null;
     user.expirationDateTime = null;
-    updateUser(user);
+    await updateUser(user);
 }

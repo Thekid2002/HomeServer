@@ -18,14 +18,13 @@ const __dirname = path.dirname(__filename).replace("/Backend", "").replace("\\Ba
 const app = express()
 const port = 3000
 
-app.use('*', (req, res, next) => {
-    setTokenVariable(req);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('*', async (req, res, next) => {
+    await setTokenVariable(req);
     console.log(req.method + " " + req.baseUrl);
     next();
 });
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 
 
@@ -57,17 +56,17 @@ app.use(`/${CarlCompilersRoute}`, CarlCompilersRouter);
 app.use(`/${UserRoute}`, UserController);
 app.use(`/${SaveFileRoute}`, SaveFileRouter);
 
-app.use('*', (req, res, next) => {
+app.use('*', async (req, res, next) => {
     if(req.method !== 'GET'){
         console.error("Endpoint: " + req.baseUrl + " not found");
         return res.status(404).send("Endpoint: " + req.baseUrl + " not found");
     }
 
     let fileName = __dirname + path.join('/Frontend/public', req.baseUrl);
-    let mimeType = checkMimeType(fileName);
+    let mimeType = await checkMimeType(fileName);
     try {
         if (mimeType === 'text/html' || mimeType === '') {
-            return res.send(renderPageFromHtmlFile("Backend/views/", "404", req));
+            return res.send(await renderPageFromHtmlFile("Backend/views/", "404", req));
         }
         fs.accessSync(fileName, fs.constants.F_OK);
         return res.sendFile(fileName);
@@ -77,7 +76,7 @@ app.use('*', (req, res, next) => {
     }
 });
 
-function checkMimeType(baseUrl) {
+async function checkMimeType(baseUrl) {
     let mimeType = '';
     if(baseUrl.toLowerCase().includes('.html')){
         mimeType = 'text/html';
