@@ -9,9 +9,8 @@ import {NotAuthorizedError} from "../errors/notAuthorizedError.js";
 import {findRepositoryById, getAllRepositories} from "../repositories/repositoryRepository.js";
 import {
     createSaveFile,
-    deleteSaveFile,
+    deleteSaveFile, findSaveFileById,
     getAllSaveFiles,
-    getAllSaveFilesByRepositoryId,
     updateSaveFile
 } from "../repositories/saveFileRepository.js";
 import {mapSaveFilesToSaveFileDtoList} from "../services/mapper.js";
@@ -41,11 +40,21 @@ SaveFileRouter.get("/edit", async (req, res) => {
         const id = parseInt(req.query.id);
         const title = id ? "Edit Save File" : "Create Save File";
         const repositoryId = parseInt(req.query.repositoryId);
-        const repository = getAllRepositories().find(repo => repo.id === repositoryId);
-        let file = getAllSaveFiles().find(file => file.id === id);
-        let layout = getSaveFileLayout();
+        const repository = (await findRepositoryById(repositoryId)).dataValues;
+        let file;
+        if(id) {
+            file = (await findSaveFileById(id)).dataValues;
+        }
+        const activeUser = (await getActiveUser(req.token)).dataValues;
+        let allRepositories;
+        if(activeUser.role === roleEnum.SUPER_ADMIN){
+            allRepositories = await getAllRepositories();
+        }else {
+            allRepositories = await getAllRepositories(activeUser.id);
+        }
+        let layout = await getSaveFileLayout(!id, allRepositories.map(repo => ({key: repo.id, value: repo.name})));
 
-        if (!repository && repository.userId !== getActiveUser(req.token).id && req.role !== roleEnum.SUPER_ADMIN) {
+        if (!repository && repository.userId !== activeUser.id && req.role !== roleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
 
@@ -67,14 +76,15 @@ SaveFileRouter.post("/edit", async (req, res) => {
         const path = req.body.path;
         const content = req.body.content;
         const repositoryId = parseInt(req.query.repositoryId);
-        const repository = getAllRepositories().find(repo => repo.id === repositoryId);
+        const repository = (await findRepositoryById(repositoryId)).dataValues;
+        const activeUser = (await getActiveUser(req.token)).dataValues;
 
-        if (repository && repository.userId !== getActiveUser(req.token).id && req.role !== roleEnum.SUPER_ADMIN) {
+        if (repository && repository.userId !== activeUser.id && req.role !== roleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
 
         if(id) {
-            let saveFile = getAllSaveFiles().find(file => file.id === id);
+            let saveFile = (await findSaveFileById(id)).dataValues;
             saveFile.name = name;
             saveFile.path = path;
             saveFile.content = content;
@@ -95,9 +105,10 @@ SaveFileRouter.delete("/delete", async (req, res) => {
         await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const id = parseInt(req.query.id);
         const repositoryId = parseInt(req.query.repositoryId);
-        const repository = getAllRepositories().find(repo => repo.id === repositoryId);
+        const repository = (await findRepositoryById(repositoryId)).dataValues;
+        const activeUser = (await getActiveUser(req.token)).dataValues;
 
-        if (repository && repository.userId !== getActiveUser(req.token).id && req.role !== roleEnum.SUPER_ADMIN) {
+        if (repository && repository.userId !== activeUser.id && req.role !== roleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
 

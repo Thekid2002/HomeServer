@@ -16,22 +16,25 @@ export async function createSaveFile(name, path, content, repositoryId, transact
 
 // Get all save files
 export async function getAllSaveFiles() {
-    try {
-        log("Getting all save files");
+    log("Getting all save files");
 
-        // Fetch save files with associated repositories
-        const saveFiles = await SaveFile.findAll({
-            include: [{
-                model: Repository,
-                as: 'repository'
-            }]
-        });
+    // Fetch save files with associated repositories
+    const saveFiles = await SaveFile.findAll({
+        include: [{
+            model: Repository,
+            as: 'repository'
+        }]
+    });
 
-        return saveFiles;
-    } catch (error) {
-        console.error('Error fetching save files:', error);
-        throw error;
-    }
+    return saveFiles;
+}
+
+export async function findSaveFileById(id) {
+    log("Finding save file by id: " + id);
+
+    const saveFile = await SaveFile.findByPk(id);
+
+    return saveFile;
 }
 
 export async function getAllSaveFilesByRepositoryId(repositoryId) {

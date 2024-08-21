@@ -30,14 +30,12 @@ async function getHeader(req){
     }
 
     if(await checkIsAuthorizedWithRoles(req, [roleEnum.SUPER_ADMIN, roleEnum.ADMIN, roleEnum.USER], false)) {
-        header += `<button onclick="goToPage('user/settings')">Settings</button>`;
         header += `<button onclick="goToPage('user/profile')">Profile</button>`;
     }
     header += `</div>
 
         <div>
             <button onclick="goToPage('carlCompilers/simple')">Simple Calculator</button>
-            <button onclick="goToPage('carlCompilers/ide')">IDE</button>
             <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
         </div>
         <div>`;

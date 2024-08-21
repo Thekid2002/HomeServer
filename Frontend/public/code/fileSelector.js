@@ -1,5 +1,6 @@
 let saveFiles;
 async function getSaveFilesForRepository() {
+    window.localStorage.clear();
     await fetch("/saveFile/get?repositoryId=" + window.location.href.split("=")[1])
         .then(response => {
             if(response.status === 200) {

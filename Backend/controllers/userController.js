@@ -5,7 +5,7 @@ import {roleEnum} from "../models/role.js";
 import {getActiveUser} from "../services/userService.js";
 import {mapUserListToUserDtoList, mapUserToUserDto} from "../services/mapper.js";
 import {getUserLayout} from "../services/tableLayoutService.js";
-import {createUser, findUserById, getAllUsers, updateUser} from "../repositories/userRepository.js";
+import {createUser, deleteUser, findUserById, getAllUsers, updateUser} from "../repositories/userRepository.js";
 import {UserDto} from "../dto/userDto.js";
 import {sequelize} from "../services/database.js";
 
@@ -55,7 +55,7 @@ UserController.get("/allUsers", async (req, res) => {
         await checkIsAuthorizedWithRoles(req,[roleEnum.SUPER_ADMIN])
         let allUsers = await mapUserListToUserDtoList(await getAllUsers())
         let layout = getUserLayout(req.role);
-        res.send(await renderTablePageWithBasicLayout("AllUsers", "AllUsers", allUsers, layout, req, true));
+        res.send(await renderTablePageWithBasicLayout("AllUsers", "AllUsers", allUsers, layout, req, true, true));
     }catch (e) {
         console.error(e);
         res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
@@ -109,6 +109,18 @@ UserController.post("/edit", async (req, res) => {
         }
     } catch (e){
         await transaction.rollback();
+        console.error(e);
+        res.status(500).send(e.message);
+    }
+});
+
+UserController.delete("/delete", async (req, res) => {
+    try{
+        await checkIsAuthorizedWithRoles(req,[roleEnum.SUPER_ADMIN])
+        const id = parseInt(req.query.id);
+        await deleteUser(id);
+        res.send("User deleted");
+    } catch (e){
         console.error(e);
         res.status(500).send(e);
     }

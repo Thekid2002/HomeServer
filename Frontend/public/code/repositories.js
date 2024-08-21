@@ -11,8 +11,8 @@ function deleteObject(id){
         method: 'DELETE'
     }).then(response => {
         if(response.status === 200){
-            window.location.href = '/200';
-        } else {
+            location.reload();
+        }else {
             response.text().then(text => {
                 alert(text);
             });

@@ -2,15 +2,21 @@ import {DataColumnEnum, DataColumnType} from "../models/dataColumnType.js";
 import {DataLayout} from "../models/dataLayout.js";
 import {Role, roleEnum} from "../models/role.js";
 
-export const getSaveFileLayout = function () {
-    return new DataLayout(
-        [
-            new DataColumnType("id", "ID", false, true, DataColumnEnum.value, null, [roleEnum.SUPER_ADMIN]),
-            new DataColumnType("name", "Name", true, false),
-            new DataColumnType("path", "Path", true, false),
-            new DataColumnType("content", "Content", false, false, DataColumnEnum.textArea, null, [roleEnum.SUPER_ADMIN]),
-        ]
-    );
+export const getSaveFileLayout = function (creating = false, repositoryIds = []) {
+    let saveFileLayout = new DataLayout([]);
+    if(!creating) {
+        saveFileLayout.columns.push(new DataColumnType("id", "ID", false, true, DataColumnEnum.value, null, [roleEnum.SUPER_ADMIN]));
+    }
+
+    saveFileLayout.columns.push(new DataColumnType("name", "Name", true, false));
+    saveFileLayout.columns.push(new DataColumnType("path", "Path", true, false));
+    saveFileLayout.columns.push(new DataColumnType("content", "Content", true, false, DataColumnEnum.textArea, null, [roleEnum.SUPER_ADMIN]));
+    if(creating) {
+        saveFileLayout.columns.push(new DataColumnType("repositoryId", "Repository ID", true, false, DataColumnEnum.selectFromKeyValueArray, repositoryIds));
+    }else {
+        saveFileLayout.columns.push(new DataColumnType("repositoryId", "Repository ID", false, true, DataColumnEnum.value));
+    }
+    return saveFileLayout;
 }
 
 export const getUserLayout = function (role, creating = false) {

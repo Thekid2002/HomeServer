@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import https from 'https';
 import {AuthenticationRoute, AuthenticationRouter} from "./controllers/authenticationController.js";
 import {AuthorizationRoute, AuthorizationRouter} from "./controllers/authorizationController.js";
 import {setTokenVariable} from "./services/authorizationService.js";
@@ -16,7 +17,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename).replace("/Backend", "").replace("\\Backend", "");
 
 const app = express()
-const port = 3000
+const hostname = "192.168.87.182";
+const port = 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -124,8 +126,8 @@ async function checkMimeType(baseUrl) {
     return mimeType;
 }
 
-app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}!`)
+app.listen(port, hostname, () => {
+    console.log(`Example app listening on port http://${hostname}:${port}!`)
 })
 
 

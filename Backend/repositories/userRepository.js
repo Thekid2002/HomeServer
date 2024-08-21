@@ -5,7 +5,7 @@ import {generateSalt, hashPassword} from "../services/authorizationService.js";
 import {Repository, SaveFile, User} from "../services/database.js";
 
 // Create a new user
-export async function createUser(firstname, surname, phone, email, password, transaction) {
+export async function createUser(firstname, surname, phone, email, password, role = roleEnum.USER, transaction) {
     const salt = generateSalt();
     password = hashPassword(password, salt);
     // Create the user in the database
@@ -16,7 +16,7 @@ export async function createUser(firstname, surname, phone, email, password, tra
         email,
         password,
         salt,
-        role: roleEnum.USER,
+        role,
         signupDateTime: Date.now(),
     }, { transaction });
 
@@ -28,81 +28,66 @@ export async function createUser(firstname, surname, phone, email, password, tra
 
 // Fetch all users from the database
 export async function getAllUsers() {
-    try {
-        log("Getting all users");
+    log("Getting all users");
 
-        // Fetch users and include associated repositories
-        const users = await User.findAll({
-            include: [
-                {
-                    model: Repository,
-                    as: 'repositories',
-                    include: [
-                        {
-                            model: SaveFile,
-                            as: 'saveFiles'
-                        }
-                    ]
-                }
-            ]
-        });
+    // Fetch users and include associated repositories
+    const users = await User.findAll({
+        include: [
+            {
+                model: Repository,
+                as: 'repositories',
+                include: [
+                    {
+                        model: SaveFile,
+                        as: 'saveFiles'
+                    }
+                ]
+            }
+        ]
+    });
 
-        return users;
-    } catch (error) {
-        console.error('Error fetching users:', error);
-        throw error;
-    }
+    return users;
 }
 
 // Find a user by email
 export async function findUserByEmail(email) {
-    try {
-        const user = await User.findOne({
-            where: { email },
-            include: [
-                {
-                    model: Repository,
-                    as: 'repositories',
-                    include: [
-                        {
-                            model: SaveFile,
-                            as: 'saveFiles'
-                        }
-                    ]
-                }
-            ]
-        });
+    const user = await User.findOne({
+        where: { email },
+        include: [
+            {
+                model: Repository,
+                as: 'repositories',
+                include: [
+                    {
+                        model: SaveFile,
+                        as: 'saveFiles'
+                    }
+                ]
+            }
+        ]
+    });
 
-        return user;
-    } catch (error) {
-        console.error('Error fetching user:', error);
-        throw error;
-    }
+    return user;
 }
 
 // Find a user by id
 export async function findUserById(userId) {
-    try {
-        const user = await User.findByPk(userId, {
-            include: [
-                {
-                    model: Repository,
-                    as: 'repositories',
-                    include: [
-                        {
-                            model: SaveFile,
-                            as: 'saveFiles'
-                        }
-                    ]
-                }
-            ]
-        });
+    const user = await User.findByPk(userId, {
+        include: [
+            {
+                model: Repository,
+                as: 'repositories',
+                include: [
+                    {
+                        model: SaveFile,
+                        as: 'saveFiles'
+                    }
+                ]
+            }
+        ]
+    });
 
-        return user;
-    } catch (error) {
-        console.error('Error fetching user:', error);
-        throw error;
-    }
+    return user;
 }
 
 /**
@@ -111,28 +96,23 @@ export async function findUserById(userId) {
  * @returns {Promise<User | null>}
  */
 export async function findUserByToken(token) {
-    try {
-        const user = await User.findOne({
-            where: { token },
-            include: [
-                {
-                    model: Repository,
-                    as: 'repositories',
-                    include: [
-                        {
-                            model: SaveFile,
-                            as: 'saveFiles'
-                        }
-                    ]
-                }
-            ]
-        });
+    const user = await User.findOne({
+        where: { token },
+        include: [
+            {
+                model: Repository,
+                as: 'repositories',
+                include: [
+                    {
+                        model: SaveFile,
+                        as: 'saveFiles'
+                    }
+                ]
+            }
+        ]
+    });
 
-        return user;
-    }catch (e){
-        console.error('Error fetching user:', error);
-        return null;
-    }
+    return user;
 }
 
 // Update user details
@@ -156,6 +136,16 @@ export async function updateUser(user) {
 
     console.log(`User with id:"${user.id}" updated successfully`);
     return user;
+}
+
+// Delete a user
+export async function deleteUser(id) {
+    const user = await User.findByPk(id);
+    if (!user) {
+        throw new Error("User not found with id: " + id);
+    }
+
+    await user.destroy();
 }
 
 // Create a default repository for the user

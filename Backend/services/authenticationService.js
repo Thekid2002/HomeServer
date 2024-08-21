@@ -3,6 +3,7 @@ import {generateToken, hashPassword} from "./authorizationService.js";
 import {authDto} from "../dto/authDto.js";
 import {createUser, findUserByEmail, findUserByToken, updateUser} from "../repositories/userRepository.js";
 import {sequelize} from "./database.js";
+import {roleEnum} from "../models/role.js";
 
 /**
  * Signup a user with the given data
@@ -15,18 +16,18 @@ import {sequelize} from "./database.js";
  */
 export async function signupUser(firstname, surname, phone, email, password) {
     const transaction = await sequelize.transaction();
-
     try {
         let existingUser = await findUserByEmail(email);
         if (existingUser) {
             throw new Error('User already exists');
         }
-        let user = await createUser(firstname, surname, phone, email, password, transaction);
+        let user = await createUser(firstname, surname, phone, email, password, roleEnum.USER, transaction);
         await transaction.commit();
         return await mapUserToUserDto(user);
     }catch (e) {
         console.error('Error signing up user:', e);
         await transaction.rollback();
+        throw e;
     }
 }
 

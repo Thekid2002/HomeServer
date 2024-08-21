@@ -12,7 +12,17 @@ export async function createRepository(name, description, userId, transaction) {
         userId,
     }, {transaction});
 
-    await createDefaultSaveFiles(repository.id, transaction);
+    const saveFiles = await createDefaultSaveFiles(repository.id, transaction);
+    const saveFileIds = saveFiles.map(saveFile => {
+        let saveFileValues = saveFile.dataValues;
+        return saveFileValues.id;
+    });
+
+    await repository.update({
+        entryPointFile: saveFileIds[0],
+        runtimeFile: saveFileIds[1],
+        runtimeImportFile: saveFileIds[2]
+    });
 
     return repository;
 }
@@ -66,50 +76,33 @@ export async function updateRepository(repository) {
 
 // Delete a repository
 export async function deleteRepository(repositoryId) {
-    try {
-        // Find the repository and delete related save files
-        const repository = await Repository.findByPk(repositoryId);
-        if (!repository) {
-            throw new Error("Repository not found with id: " + repositoryId);
-        }
-
-        // Delete related save files
-        await SaveFile.destroy({
-            where: { repositoryId }
-        });
-
-        // Delete the repository
-        await repository.destroy();
-    } catch (error) {
-        console.error('Error deleting repository:', error);
-        throw error;
+    const repository = await Repository.findByPk(repositoryId);
+    if (!repository) {
+        throw new Error("Repository not found with id: " + repositoryId);
     }
+
+    await repository.destroy();
 }
 
 // Get all repositories
 export async function getAllRepositories() {
-    try {
-        log("Getting all repositories");
+    log("Getting all repositories");
 
-        // Fetch repositories with associated users and save files
-        const repositories = await Repository.findAll({
-            include: [
-                {
-                    model: User,
-                    as: 'user'
-                },
-                {
-                    model: SaveFile,
-                    as: 'saveFiles'
-                }
-            ]
-        });
+    // Fetch repositories with associated users and save files
+    const repositories = await Repository.findAll({
+        include: [
+            {
+                model: User,
+                as: 'user'
+            },
+            {
+                model: SaveFile,
+                as: 'saveFiles'
+            }
+        ]
+    });
 
-        return repositories;
-    } catch (error) {
-        console.error('Error fetching repositories:', error);
-        throw error;
-    }
+    return repositories;
 }
 
 export async function getAllRepositoriesByUserId(userId) {

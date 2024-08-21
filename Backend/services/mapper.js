@@ -2,6 +2,7 @@ import {UserDto} from "../dto/userDto.js";
 import {RepositoryDto} from "../dto/repositoryDto.js";
 import {SaveFileDto} from "../dto/saveFileDto.js";
 import {findRepositoryById} from "../repositories/repositoryRepository.js";
+import {findUserById} from "../repositories/userRepository.js";
 
 /**
  * Map a user to a user DTO
@@ -67,6 +68,9 @@ export async function mapSaveFilesToSaveFileDtoList(saveFiles) {
 export async function mapRepositoryToRepositoryDto(repository) {
     if(!repository) {
         return new RepositoryDto(null, "", "", "", [], "", "", "");
+    }
+    if(!repository.user){
+        repository.user = (await findUserById(repository.userId)).dataValues;
     }
     let saveFiles = await mapSaveFilesToSaveFileDtoList(repository.saveFiles);
     return new RepositoryDto(repository.id, repository.name, repository.description, repository.user, saveFiles, repository.entryPointFile, repository.runtimeFile, repository.runtimeImportFile);

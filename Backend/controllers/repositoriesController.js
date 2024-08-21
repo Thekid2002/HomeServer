@@ -42,7 +42,6 @@ RepositoriesRouter.get("/my", async (req, res) => {
     try {
         await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         let user = await findUserByToken(req.token);
-        console.log(user.repositories);
         let repos = await mapRepositoryListToRepositoryDtoList(user.repositories);
         let layout = getRepositoryLayout();
         res.send(await renderTablePageWithBasicLayout("Repositories", "Repositories", repos, layout, req, true, true));
@@ -198,12 +197,14 @@ RepositoriesRouter.post("/save",  async (req, res) => {
     }
 });
 
-RepositoriesRouter.delete("/delete", (req, res) => {
+RepositoriesRouter.delete("/delete",  async (req, res) => {
     try {
-        checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
+        await checkIsAuthorizedWithRoles(req, [roleEnum.USER, roleEnum.ADMIN, roleEnum.SUPER_ADMIN], true);
         const id = parseInt(req.query.id);
-        let repository = getAllRepositories().find(repo => repo.id === id);
-        if (repository && repository.userId !== getActiveUser(req.token).id && req.role !== roleEnum.SUPER_ADMIN) {
+        const repository = (await findRepositoryById(id)).dataValues;
+        const activeUser = (await getActiveUser(req.token)).dataValues;
+
+        if (repository && repository.userId !== activeUser.id && req.role !== roleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
 
@@ -211,7 +212,7 @@ RepositoriesRouter.delete("/delete", (req, res) => {
             throw new NotFoundError("Repository not found with id: " + id);
         }
 
-        deleteRepository(id);
+        await deleteRepository(id);
         res.send("Repository deleted");
     } catch (e) {
         console.log(e);

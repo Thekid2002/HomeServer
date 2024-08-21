@@ -143,5 +143,5 @@ Repository.hasMany(SaveFile, { as: 'saveFiles', foreignKey: 'repositoryId' });
 SaveFile.belongsTo(Repository, { as: 'repository', foreignKey: 'repositoryId' });
 
 // Define association between User and Repository
-User.hasMany(Repository, { foreignKey: 'userId', as: 'repositories' });
-Repository.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+User.hasMany(Repository, { foreignKey: 'userId', as: 'repositories', onDelete: 'CASCADE'});
+Repository.belongsTo(User, { foreignKey: 'userId', as: 'user', onDelete: 'CASCADE'});
