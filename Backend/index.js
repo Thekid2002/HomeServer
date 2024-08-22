@@ -12,13 +12,14 @@ import { fileURLToPath } from 'url';
 import {UserController, UserRoute} from "./controllers/userController.js";
 import {RepositoriesRoute, RepositoriesRouter} from "./controllers/repositoriesController.js";
 import {SaveFileRoute, SaveFileRouter} from "./controllers/saveFileController.js";
+import * as http from "node:http";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename).replace("/Backend", "").replace("\\Backend", "");
 
 const app = express()
 const hostname = "192.168.87.182";
-const port = 3001;
+const port = 80;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -126,9 +127,22 @@ async function checkMimeType(baseUrl) {
     return mimeType;
 }
 
-app.listen(port, hostname, () => {
-    console.log(`Example app listening on port http://${hostname}:${port}!`)
-})
+
+// Load SSL certificate and key
+let options = {
+    key: fs.readFileSync('/path/to/your/private-key.pem'),
+    cert: fs.readFileSync('/path/to/your/certificate.pem')
+};
+
+// Create an HTTPS server
+https.createServer(options, app).listen(443, hostname, () => {
+    console.log(`HTTPS Server running at https://${hostname}:443/`);
+});
+
+// Create an HTTP server
+http.createServer(app).listen(4200, hostname, () => {
+    console.log(`HTTP Server running at http://${hostname}:4200/`);
+});
 
 
 /**const upload = multer({storage: storage})
