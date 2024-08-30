@@ -5,7 +5,7 @@
   "scripts": {
     "test": "",
     "compile&start": "npm --prefix Frontend/CarlCompiler run start && node dist/index.js",
-    "start": "npm run build && sudo node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "build": "tsc"
   },
   "author": "",

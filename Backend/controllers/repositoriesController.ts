@@ -220,11 +220,11 @@ RepositoriesRouter.post("/edit", async (req, res) => {
         const description = checkString(req.body.description, false, 0);
         const saveFileIds = (await repository!.getSaveFiles()).map(save => save.id);
         const bodyEntryPointFileId = parseInt(req.body.entryPointFile);
-        const entryPointFileId = checkListItem(bodyEntryPointFileId, saveFileIds, false);
+        const entryPointFileId = checkListItem(bodyEntryPointFileId, saveFileIds, true);
         const bodyRuntimeFileId = parseInt(req.body.runtimeFile);
-        const runtimeFileId = checkListItem(bodyRuntimeFileId, saveFileIds, false);
+        const runtimeFileId = checkListItem(bodyRuntimeFileId, saveFileIds, true);
         const bodyRuntimeImportFileId = parseInt(req.body.runtimeImportFile);
-        const runtimeImportFileId = checkListItem(bodyRuntimeImportFileId, saveFileIds, false);
+        const runtimeImportFileId = checkListItem(bodyRuntimeImportFileId, saveFileIds, true);
 
         if (!repository) {
             await createRepository(name, description, activeUser.id, transaction);

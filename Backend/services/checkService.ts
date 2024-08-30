@@ -35,7 +35,11 @@ export function checkEnum(value: number, $enum: any, allowNull = false): number 
     return value;
 }
 
-export function checkListItem(value: number, list: number[], allowNull = false): number {
+export function checkListItem(value: number, list: number[], allowNull = false): number | null {
+    if(allowNull && (value === null || isNaN(value))) {
+        return null;
+    }
+
     if (!allowNull && value === null) {
         throw new Error("Value is missing");
     }

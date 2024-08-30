@@ -179,6 +179,7 @@ async function renderTablePage(
                 if (match) {
                     body += `<td>${match.value}</td>`;
                 } else {
+                    console.log(row[column.key])
                     body += `<td>${row[column.key]}</td>`;
                 }
             }

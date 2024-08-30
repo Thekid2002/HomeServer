@@ -133,7 +133,7 @@ export const getRepositoryLayout = function (
     } else {
         repoLayout.columns.push(
             new DataColumnType(
-                "entryPointFile",
+                "entryPointFileId",
                 "Entry Point File",
                 false,
                 false,
@@ -143,7 +143,7 @@ export const getRepositoryLayout = function (
         );
         repoLayout.columns.push(
             new DataColumnType(
-                "runtimeFile",
+                "runtimeFileId",
                 "Runtime File",
                 false,
                 false,
@@ -153,7 +153,7 @@ export const getRepositoryLayout = function (
         );
         repoLayout.columns.push(
             new DataColumnType(
-                "runtimeImportFile",
+                "runtimeImportFileId",
                 "Runtime Import File",
                 false,
                 false,
