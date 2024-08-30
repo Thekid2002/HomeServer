@@ -63,7 +63,7 @@ export async function loginUser(email: string, password: string, transaction: Tr
         throw new Error("Invalid password");
     }
     user.token = generateToken();
-    user.expirationDateTime = Date.now() + 3600000;
+    user.expirationDateTime = Date.now() + 86400000;
     await updateUser(user, transaction);
     return new authDto(user.token, user.expirationDateTime);
 }

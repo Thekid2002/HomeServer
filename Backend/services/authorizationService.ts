@@ -27,7 +27,7 @@ export async function getUserFromRequest(
         }
         return null;
     }
-    const token = tokenCookie.split("=")[1];
+    const token = tokenCookie.split("=")[1].split(";")[0];
     if (!token) {
         if (throwIfNull) {
             throw new Error("Token is missing");

@@ -18,7 +18,6 @@ loginForm.addEventListener("submit", async function (event) {
         if (response.status === 200) {
             const data = await response.json();
 
-            // Set the cookie
             document.cookie = `token=${data.token}; expires=${new Date(data.expirationDateTime).toUTCString()}; domain=; path=/`;
 
             // Ensure the cookie is set by checking it
