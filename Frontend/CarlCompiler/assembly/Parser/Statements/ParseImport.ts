@@ -1,14 +1,19 @@
-import {ParseString} from "../Expressions/Terms/ParseString";
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseVisitor} from "../ParseVisitor";
-import {ParseFunctionDeclaration} from "./ParseFunctionDeclaration";
+import { ParseString } from "../Expressions/Terms/ParseString";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseVisitor } from "../ParseVisitor";
+import { ParseFunctionDeclaration } from "./ParseFunctionDeclaration";
 
 export class ParseImport extends ParseAbstractStatement {
     public parentPath: ParseString;
     public childPath: ParseString;
     public functionDeclarationWithoutBody: ParseFunctionDeclaration;
 
-    constructor(parentPath: ParseString, childPath: ParseString, functionDeclarationWithoutBody: ParseFunctionDeclaration, lineNum: i32) {
+    constructor(
+        parentPath: ParseString,
+        childPath: ParseString,
+        functionDeclarationWithoutBody: ParseFunctionDeclaration,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.parentPath = parentPath;
         this.childPath = childPath;

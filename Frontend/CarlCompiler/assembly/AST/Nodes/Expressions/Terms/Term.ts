@@ -1,5 +1,5 @@
-import {AbstractTerm} from "./AbstractTerm";
-import {ASTVisitor} from "../../../ASTVisitor";
+import { AbstractTerm } from "./AbstractTerm";
+import { ASTVisitor } from "../../../ASTVisitor";
 
 export class Term extends AbstractTerm {
     constructor(value: string, lineNum: i32) {
@@ -11,10 +11,7 @@ export class Term extends AbstractTerm {
     }
 
     clone(): Term {
-        return new Term(
-            this.value,
-            this.lineNum
-        );
+        return new Term(this.value, this.lineNum);
     }
 
     toString(): string {

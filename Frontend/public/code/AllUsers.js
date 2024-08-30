@@ -3,17 +3,17 @@ function editObject(id) {
 }
 
 function createObject() {
-    window.location.href = `/user/edit`;
+    window.location.href = "/user/edit";
 }
 
 function deleteObject(id) {
     fetch(`/user/delete?id=${id}`, {
-        method: 'DELETE'
-    }).then(response => {
-        if(response.status === 200){
+        method: "DELETE"
+    }).then((response) => {
+        if (response.status === 200) {
             location.reload();
-        }else {
-            response.text().then(text => {
+        } else {
+            response.text().then((text) => {
                 alert(text);
             });
         }

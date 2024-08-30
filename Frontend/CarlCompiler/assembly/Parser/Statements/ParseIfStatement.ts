@@ -1,13 +1,18 @@
 import { ParseVisitor } from "../ParseVisitor";
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseAbstractExpression } from "../Expressions/ParseAbstractExpression";
 
 export class ParseIfStatement extends ParseAbstractStatement {
     condition: ParseAbstractExpression;
     body: ParseAbstractStatement | null;
     else: ParseAbstractStatement | null;
 
-    constructor(condition: ParseAbstractExpression, body: ParseAbstractStatement | null, $else: ParseAbstractStatement | null, lineNum: i32) {
+    constructor(
+        condition: ParseAbstractExpression,
+        body: ParseAbstractStatement | null,
+        $else: ParseAbstractStatement | null,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.condition = condition;
         this.body = body;
@@ -21,5 +26,4 @@ export class ParseIfStatement extends ParseAbstractStatement {
     toJsonString(): string {
         return `{"type": "IfStatement", "condition": ${this.condition.toJsonString()}, "body": ${this.body === null ? "null" : this.body!.toJsonString()}, "else": ${this.else === null ? "null" : this.else!.toJsonString()}, "lineNum": ${this.lineNum}}`;
     }
-
 }

@@ -1,15 +1,15 @@
-import {ASTVisitor} from "../ASTVisitor";
+import { ASTVisitor } from "../ASTVisitor";
 
 export abstract class AbstractNode {
     lineNum: i32;
 
-    abstract accept<T>(visitor: ASTVisitor<T>): T;
+  abstract accept<T>(visitor: ASTVisitor<T>): T;
 
-    abstract clone(): AbstractNode;
+  abstract clone(): AbstractNode;
 
-    abstract toString(): string;
+  abstract toString(): string;
 
-    constructor(lineNum: i32) {
-        this.lineNum = lineNum;
-    }
+  constructor(lineNum: i32) {
+      this.lineNum = lineNum;
+  }
 }

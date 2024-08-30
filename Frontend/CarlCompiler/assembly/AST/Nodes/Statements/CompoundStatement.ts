@@ -1,5 +1,5 @@
-import {AbstractStatement} from "./AbstractStatement";
-import {ASTVisitor} from "../../ASTVisitor";
+import { AbstractStatement } from "./AbstractStatement";
+import { ASTVisitor } from "../../ASTVisitor";
 
 export class CompoundStatement extends AbstractStatement {
     left: AbstractStatement;
@@ -17,13 +17,19 @@ export class CompoundStatement extends AbstractStatement {
 
     clone(): CompoundStatement {
         return new CompoundStatement(
-            this.left.clone() as AbstractStatement,
-            this.right.clone() as AbstractStatement,
-            this.lineNum
+      this.left.clone() as AbstractStatement,
+      this.right.clone() as AbstractStatement,
+      this.lineNum
         );
     }
 
     toString(): string {
-        return "CompoundStatement(" + this.left.toString() + ", " + this.right.toString() + ")";
+        return (
+            "CompoundStatement(" +
+      this.left.toString() +
+      ", " +
+      this.right.toString() +
+      ")"
+        );
     }
 }

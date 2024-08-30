@@ -1,4 +1,3 @@
-import {AbstractNode} from "../AbstractNode";
+import { AbstractNode } from "../AbstractNode";
 
-export abstract class AbstractStatement extends AbstractNode {
-}
+export abstract class AbstractStatement extends AbstractNode {}

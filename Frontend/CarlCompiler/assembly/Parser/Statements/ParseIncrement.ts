@@ -1,6 +1,6 @@
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseIdentifier} from "../Expressions/Terms/ParseIdentifier";
-import {ParseVisitor} from "../ParseVisitor";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseIdentifier } from "../Expressions/Terms/ParseIdentifier";
+import { ParseVisitor } from "../ParseVisitor";
 
 export class ParseIncrement extends ParseAbstractStatement {
     identifier: ParseIdentifier;
@@ -17,6 +17,14 @@ export class ParseIncrement extends ParseAbstractStatement {
     }
 
     toJsonString(): string {
-        return "{\n\"type\": \"Increment\",\n\"identifier\": " + this.identifier.toJsonString() + ",\n\"operator\": \"" + this.operator + "\",\n\"line\": " + this.lineNum + "\n}";
+        return (
+            "{\n\"type\": \"Increment\",\n\"identifier\": " +
+      this.identifier.toJsonString() +
+      ",\n\"operator\": \"" +
+      this.operator +
+      "\",\n\"line\": " +
+      this.lineNum +
+      "\n}"
+        );
     }
 }

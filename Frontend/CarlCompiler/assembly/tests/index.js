@@ -1,6 +1,5 @@
-import {TestDeclarations} from "./testDeclarations.js";
-import {calculateViaLanguage} from "../../../public/build/carlCompiler/CaCoDebug.js";
-
+import { TestDeclarations } from "./testDeclarations.js";
+import { calculateViaLanguage } from "../../../public/build/carlCompiler/CaCoDebug.js";
 
 export class Tests {
     static runTests() {
@@ -10,20 +9,20 @@ export class Tests {
         let ret = calculateViaLanguage("int i = 1+1", "compiler");
         console.log(ret);
         console.log(" ");
-        let string = "num i = 1\n" +
-            "for (num x = 0; x < 10; x = x + 1) {\n" +
-            "    i = i + 1" +
-            "   print(i)\n" +
-            "}";
+        let string =
+      "num i = 1\n" +
+      "for (num x = 0; x < 10; x = x + 1) {\n" +
+      "    i = i + 1" +
+      "   print(i)\n" +
+      "}";
         console.log("Testing: " + string);
         ret = calculateViaLanguage(string, "compiler");
         console.log(ret);
         console.log(" ");
-        TestDeclarations.runTests()
+        TestDeclarations.runTests();
         console.log(" ");
         console.error("---All Tests passed---");
     }
 }
 
 Tests.runTests();
-

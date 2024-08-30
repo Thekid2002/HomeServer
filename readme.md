@@ -1,22 +1,22 @@
 Code for console.log in WebAssembly
+
 ```javascript
 const importObject = {
-console: {
-log: (value) => console.log(value)  // Define the imported 'log' function
-}
+  console: {
+    log: (value) => console.log(value), // Define the imported 'log' function
+  },
 };
 
 const wasmInstance = new WebAssembly.Instance(wasmModule, importObject);
 const { _start } = wasmInstance.exports;
-const now = Date.now()
-_start();  // Call the exported _start function
-const later = Date.now()
-console.log("Time spent " + (later-now)/1000)
+const now = Date.now();
+_start(); // Call the exported _start function
+const later = Date.now();
+console.log("Time spent " + (later - now) / 1000);
 ```
 
-
-docker run -d 
---name my_postgres_db 
--e POSTGRES_PASSWORD=mysecretpassword 
--p 3306:5432 
+docker run -d
+--name my_postgres_db
+-e POSTGRES_PASSWORD=mysecretpassword
+-p 3306:5432
 postgres

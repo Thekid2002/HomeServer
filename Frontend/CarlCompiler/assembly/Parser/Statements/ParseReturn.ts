@@ -1,6 +1,6 @@
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseVisitor} from "../ParseVisitor";
-import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseVisitor } from "../ParseVisitor";
+import { ParseAbstractExpression } from "../Expressions/ParseAbstractExpression";
 
 export class ParseReturn extends ParseAbstractStatement {
     expression: ParseAbstractExpression;

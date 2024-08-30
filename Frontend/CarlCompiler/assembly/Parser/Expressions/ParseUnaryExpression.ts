@@ -1,12 +1,16 @@
-import {Token} from "../../Lexer/Token";
-import {ParseVisitor} from "../ParseVisitor";
-import {ParseAbstractExpression} from "./ParseAbstractExpression";
+import { Token } from "../../Lexer/Token";
+import { ParseVisitor } from "../ParseVisitor";
+import { ParseAbstractExpression } from "./ParseAbstractExpression";
 
 export class ParseUnaryExpression extends ParseAbstractExpression {
     operator: Token | null;
     primaryOrRight: ParseAbstractExpression;
 
-    constructor(operator: Token | null, primaryOrRight: ParseAbstractExpression, lineNum: i32) {
+    constructor(
+        operator: Token | null,
+        primaryOrRight: ParseAbstractExpression,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.operator = operator;
         this.primaryOrRight = primaryOrRight;

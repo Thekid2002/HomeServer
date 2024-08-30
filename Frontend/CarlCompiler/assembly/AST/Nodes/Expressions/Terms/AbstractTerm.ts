@@ -1,4 +1,4 @@
-import {AbstractExpression} from "../AbstractExpression";
+import { AbstractExpression } from "../AbstractExpression";
 
 export abstract class AbstractTerm extends AbstractExpression {
     value: string;

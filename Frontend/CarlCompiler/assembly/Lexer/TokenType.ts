@@ -1,163 +1,163 @@
 export enum TokenType {
-    // Single-character tokens.
-    LEFT_PAREN,    // (
-    RIGHT_PAREN,   // )
-    LEFT_BRACE,    // {
-    RIGHT_BRACE,   // }
-    LEFT_BRACKET,  // [
-    RIGHT_BRACKET, // ]
-    COMMA,         // ,
-    DOT,           // .
-    MINUS,         // -
-    PLUS,          // +
-    SEMICOLON,     // ;
-    SLASH,         // /
-    STAR,         // *
-    POW,          // ^
-    MOD,          // %
+  // Single-character tokens.
+  LEFT_PAREN, // (
+  RIGHT_PAREN, // )
+  LEFT_BRACE, // {
+  RIGHT_BRACE, // }
+  LEFT_BRACKET, // [
+  RIGHT_BRACKET, // ]
+  COMMA, // ,
+  DOT, // .
+  MINUS, // -
+  PLUS, // +
+  SEMICOLON, // ;
+  SLASH, // /
+  STAR, // *
+  POW, // ^
+  MOD, // %
 
-    //Loops
-    WHILE,        // while
-    FOR,          // for
+  //Loops
+  WHILE, // while
+  FOR, // for
 
-    // Conditional
-    IF,           // if
-    ELSE,         // else
+  // Conditional
+  IF, // if
+  ELSE, // else
 
-    // One or two character tokens.
-    BANG,         // !
-    BANG_EQUAL,   // !=
-    EQUAL,        // =
-    EQUAL_EQUAL,  // ==
-    GREATER,      // >
-    GREATER_EQUAL,// >=
-    LESS,         // <
-    LESS_EQUAL,   // <=
-    INCREMENT,    // ++
-    DECREMENT,    // --
+  // One or two character tokens.
+  BANG, // !
+  BANG_EQUAL, // !=
+  EQUAL, // =
+  EQUAL_EQUAL, // ==
+  GREATER, // >
+  GREATER_EQUAL, // >=
+  LESS, // <
+  LESS_EQUAL, // <=
+  INCREMENT, // ++
+  DECREMENT, // --
 
-    // Literals
-    IDENTIFIER,   // identifier
-    STRING_LITERAL, // string literal
-    INT_LITERAL,  // int literal
-    DOUBLE_LITERAL,  // double literal
+  // Literals
+  IDENTIFIER, // identifier
+  STRING_LITERAL, // string literal
+  INT_LITERAL, // int literal
+  DOUBLE_LITERAL, // double literal
 
-    // Types
-    INT,          // int
-    DOUBLE,       // double
-    BOOL,         // bool
-    STRING,       // string
-    VOID,         // void
+  // Types
+  INT, // int
+  DOUBLE, // double
+  BOOL, // bool
+  STRING, // string
+  VOID, // void
 
-    // Boolean
-    TRUE,         // true
-    FALSE,        // false
+  // Boolean
+  TRUE, // true
+  FALSE, // false
 
-    // Keywords.
-    SIN,          // sin
-    COS,          // cos
-    TAN,          // tan
-    ASIN,         // asin
-    ACOS,         // acos
-    ATAN,         // atan
-    SQRT,         // sqrt
-    AND,          // and
-    CLASS,        // class
-    FUN,          // fun
-    NIL,          // nil
-    OR,           // or
-    RETURN,       // return
-    SUPER,        // super
-    THIS,         // this
-    VAR,          // var
-    EXPORT,       // export
-    IMPORT,       // import
-    FROM,         // from
+  // Keywords.
+  SIN, // sin
+  COS, // cos
+  TAN, // tan
+  ASIN, // asin
+  ACOS, // acos
+  ATAN, // atan
+  SQRT, // sqrt
+  AND, // and
+  CLASS, // class
+  FUN, // fun
+  NIL, // nil
+  OR, // or
+  RETURN, // return
+  SUPER, // super
+  THIS, // this
+  VAR, // var
+  EXPORT, // export
+  IMPORT, // import
+  FROM, // from
 
-    //Comment
-    COMMENT,      // comment
+  //Comment
+  COMMENT, // comment
 
-    EOF,          // end of file
+  EOF, // end of file
 }
 
 export const TokenTypes: string[] = [
     // Single-character tokens.
-    "LEFT_PAREN",    // (
-    "RIGHT_PAREN",   // )
-    "LEFT_BRACE",    // {
-    "RIGHT_BRACE",   // }
-    "LEFT_BRACKET",  // [
+    "LEFT_PAREN", // (
+    "RIGHT_PAREN", // )
+    "LEFT_BRACE", // {
+    "RIGHT_BRACE", // }
+    "LEFT_BRACKET", // [
     "RIGHT_BRACKET", // ]
-    "COMMA",         // ,
-    "DOT",           // .
-    "MINUS",         // -
-    "PLUS",          // +
-    "SEMICOLON",     // ;
-    "SLASH",         // /
-    "STAR",          // *
-    "POW",           // ^
-    "MOD",           // %
+    "COMMA", // ,
+    "DOT", // .
+    "MINUS", // -
+    "PLUS", // +
+    "SEMICOLON", // ;
+    "SLASH", // /
+    "STAR", // *
+    "POW", // ^
+    "MOD", // %
 
     //Loops
-    "WHILE",         // while
-    "FOR",           // for
+    "WHILE", // while
+    "FOR", // for
 
     // Conditional
-    "IF",           // if
-    "ELSE",         // else
+    "IF", // if
+    "ELSE", // else
 
     // One or two character tokens.
-    "BANG",         // !
-    "BANG_EQUAL",   // !=
-    "EQUAL",        // =
-    "EQUAL_EQUAL",  // ==
-    "GREATER",      // >
-    "GREATER_EQUAL",// >=
-    "LESS",         // <
-    "LESS_EQUAL",   // <=
-    "INCREMENT",    // ++
-    "DECREMENT",    // --
+    "BANG", // !
+    "BANG_EQUAL", // !=
+    "EQUAL", // =
+    "EQUAL_EQUAL", // ==
+    "GREATER", // >
+    "GREATER_EQUAL", // >=
+    "LESS", // <
+    "LESS_EQUAL", // <=
+    "INCREMENT", // ++
+    "DECREMENT", // --
 
     // Literals
-    "IDENTIFIER",   // identifier
+    "IDENTIFIER", // identifier
     "STRING_LITERAL", // string literal
-    "INT_LITERAL",  // int literal
-    "DOUBLE_LITERAL",  // double literal
+    "INT_LITERAL", // int literal
+    "DOUBLE_LITERAL", // double literal
 
     // Types
-    "INT",          // int
-    "DOUBLE",       // double
-    "BOOL",         // bool
-    "STRING",       // string
-    "VOID",         // void
+    "INT", // int
+    "DOUBLE", // double
+    "BOOL", // bool
+    "STRING", // string
+    "VOID", // void
 
     // Boolean
-    "TRUE",         // true
-    "FALSE",        // false
+    "TRUE", // true
+    "FALSE", // false
 
     // Keywords.
-    "SIN",          // sin
-    "COS",          // cos
-    "TAN",          // tan
-    "ASIN",         // asin
-    "ACOS",         // acos
-    "ATAN",         // atan
-    "SQRT",         // sqrt
-    "AND",          // and
-    "CLASS",        // class
-    "FUN",          // fun
-    "NIL",          // nil
-    "OR",           // or
-    "RETURN",       // return
-    "SUPER",        // super
-    "THIS",         // this
-    "VAR",          // var
-    "EXPORT",       // export
-    "IMPORT",       // import
-    "FROM",         // from
+    "SIN", // sin
+    "COS", // cos
+    "TAN", // tan
+    "ASIN", // asin
+    "ACOS", // acos
+    "ATAN", // atan
+    "SQRT", // sqrt
+    "AND", // and
+    "CLASS", // class
+    "FUN", // fun
+    "NIL", // nil
+    "OR", // or
+    "RETURN", // return
+    "SUPER", // super
+    "THIS", // this
+    "VAR", // var
+    "EXPORT", // export
+    "IMPORT", // import
+    "FROM", // from
 
     //Comment
-    "COMMENT",      // comment
+    "COMMENT", // comment
 
-    "EOF"          // end of file
+    "EOF" // end of file
 ];

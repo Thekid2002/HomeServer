@@ -1,6 +1,6 @@
 import { ASTVisitor } from "../../ASTVisitor";
-import {AbstractType} from "./AbstractType";
-import {AbstractNode} from "../AbstractNode";
+import { AbstractType } from "./AbstractType";
+import { AbstractNode } from "../AbstractNode";
 
 export class StatementType extends AbstractType {
     type: StatementTypeEnum;
@@ -25,27 +25,26 @@ export class StatementType extends AbstractType {
     clone(): AbstractNode {
         return new StatementType(this.type, this.lineNum);
     }
-
 }
 
 export enum StatementTypeEnum {
-    ERROR,
-    PROGRAM,
-    ASSIGNMENT,
-    SCAN,
-    PRINT,
-    IF,
-    WHILE,
-    FUNCTION_CALL,
-    RETURN,
-    BLOCK,
-    VAR_DECL,
-    EXPRESSION,
-    BREAK,
-    CONTINUE,
-    FUNCTION_DECLARATION,
-    VOID,
-    IMPORT
+  ERROR,
+  PROGRAM,
+  ASSIGNMENT,
+  SCAN,
+  PRINT,
+  IF,
+  WHILE,
+  FUNCTION_CALL,
+  RETURN,
+  BLOCK,
+  VAR_DECL,
+  EXPRESSION,
+  BREAK,
+  CONTINUE,
+  FUNCTION_DECLARATION,
+  VOID,
+  IMPORT,
 }
 
 export const StatementTypeNames: Array<string> = [
@@ -67,4 +66,3 @@ export const StatementTypeNames: Array<string> = [
     "VOID",
     "IMPORT"
 ];
-

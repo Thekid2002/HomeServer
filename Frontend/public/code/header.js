@@ -3,15 +3,15 @@ function goToPage(page) {
 }
 
 function logout() {
-    fetch('/authentication/logout', {
-        method: 'POST',
+    fetch("/authentication/logout", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({})
-    }).then(res => {
+    }).then((res) => {
         if (res.status === 200) {
-            goToPage('carlInstructions');
+            goToPage("carlInstructions");
         }
     });
 }

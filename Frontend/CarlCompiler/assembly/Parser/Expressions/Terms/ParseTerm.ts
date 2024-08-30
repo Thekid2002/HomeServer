@@ -1,5 +1,5 @@
-import {ParseVisitor} from "../../ParseVisitor";
-import {AbstractTerm} from "./AbstractTerm";
+import { ParseVisitor } from "../../ParseVisitor";
+import { AbstractTerm } from "./AbstractTerm";
 
 export class ParseTerm extends AbstractTerm {
     value: string;

@@ -1,6 +1,6 @@
-import {AbstractType} from "../AST/Nodes/Types/AbstractType";
-import {FunctionObject} from "./Functions/FunctionObject";
-import {VarEnv} from "./VarEnv";
+import { AbstractType } from "../AST/Nodes/Types/AbstractType";
+import { FunctionObject } from "./Functions/FunctionObject";
+import { VarEnv } from "./VarEnv";
 
 export class FuncEnv {
     public funcs: Map<string, FunctionObject>;
@@ -19,8 +19,13 @@ export class FuncEnv {
         return this.parent == null ? this : this.parent;
     }
 
-    public addFunc(name: string, returnType: AbstractType, parameters: Map<string, AbstractType>, varEnv: VarEnv): void {
-        let func = new FunctionObject(name, returnType, parameters, varEnv);
+    public addFunc(
+        name: string,
+        returnType: AbstractType,
+        parameters: Map<string, AbstractType>,
+        varEnv: VarEnv
+    ): void {
+        const func = new FunctionObject(name, returnType, parameters, varEnv);
         this.funcs.set(name, func);
     }
 
@@ -34,7 +39,13 @@ export class FuncEnv {
     public toJsonString(): string {
         let string = "{\n";
         for (let i = 0; i < this.funcs.size; i++) {
-            string += "\"" + this.funcs.keys()[i].toString() + "\": " + (this.funcs.get(this.funcs.keys()[i]) !== null ? this.funcs.get(this.funcs.keys()[i]).toJsonString() : "null");
+            string +=
+        "\"" +
+        this.funcs.keys()[i].toString() +
+        "\": " +
+        (this.funcs.get(this.funcs.keys()[i]) !== null
+            ? this.funcs.get(this.funcs.keys()[i]).toJsonString()
+            : "null");
             if (i < this.funcs.size - 1) {
                 string += ", ";
             }

@@ -1,80 +1,80 @@
-import {ParseAdditiveExpression} from "./Expressions/ParseAdditiveExpression";
-import {ParseExpression} from "./Expressions/ParseExpression";
-import {ParseRelationalExpression} from "./Expressions/ParseRelationalExpression";
-import {ParseEqualityExpression} from "./Expressions/ParseEqualityExpression";
-import {ParseMultiplicativeExpression} from "./Expressions/ParseMultiplicativeExpression";
-import {ParseUnaryExpression} from "./Expressions/ParseUnaryExpression";
-import {ParseInt} from "./Expressions/Terms/ParseInt";
-import {ParseTerm} from "./Expressions/Terms/ParseTerm";
-import {ParseIdentifier} from "./Expressions/Terms/ParseIdentifier";
-import {ParsePowExpression} from "./Expressions/ParsePowExpression";
-import {ParseDeclaration} from "./Statements/ParseDeclaration";
-import {ParseType} from "./Expressions/Terms/ParseType";
-import {ParseProgram} from "./Statements/ParseProgram";
-import {ParseLoopStatement} from "./Statements/ParseLoopStatement";
-import {ParseAssignment} from "./Statements/ParseAssignment";
-import {ParseIfStatement} from "./Statements/ParseIfStatement";
-import {ParseCompoundStatement} from "./Statements/ParseCompoundStatement";
-import {ParseString} from "./Expressions/Terms/ParseString";
-import {ParseIncrement} from "./Statements/ParseIncrement";
-import {ParseBool} from "./Expressions/Terms/ParseBool";
-import {ParseFunctionDeclaration} from "./Statements/ParseFunctionDeclaration";
-import {ParseFunctionCallStatement} from "./Statements/ParseFunctionCallStatement";
-import {ParseFunctionCallExpression} from "./Expressions/Terms/ParseFunctionCallExpression";
-import {ParseReturn} from "./Statements/ParseReturn";
-import {ParseImport} from "./Statements/ParseImport";
-import {ParseDouble} from "./Expressions/Terms/ParseDouble";
+import { ParseAdditiveExpression } from "./Expressions/ParseAdditiveExpression";
+import { ParseExpression } from "./Expressions/ParseExpression";
+import { ParseRelationalExpression } from "./Expressions/ParseRelationalExpression";
+import { ParseEqualityExpression } from "./Expressions/ParseEqualityExpression";
+import { ParseMultiplicativeExpression } from "./Expressions/ParseMultiplicativeExpression";
+import { ParseUnaryExpression } from "./Expressions/ParseUnaryExpression";
+import { ParseInt } from "./Expressions/Terms/ParseInt";
+import { ParseTerm } from "./Expressions/Terms/ParseTerm";
+import { ParseIdentifier } from "./Expressions/Terms/ParseIdentifier";
+import { ParsePowExpression } from "./Expressions/ParsePowExpression";
+import { ParseDeclaration } from "./Statements/ParseDeclaration";
+import { ParseType } from "./Expressions/Terms/ParseType";
+import { ParseProgram } from "./Statements/ParseProgram";
+import { ParseLoopStatement } from "./Statements/ParseLoopStatement";
+import { ParseAssignment } from "./Statements/ParseAssignment";
+import { ParseIfStatement } from "./Statements/ParseIfStatement";
+import { ParseCompoundStatement } from "./Statements/ParseCompoundStatement";
+import { ParseString } from "./Expressions/Terms/ParseString";
+import { ParseIncrement } from "./Statements/ParseIncrement";
+import { ParseBool } from "./Expressions/Terms/ParseBool";
+import { ParseFunctionDeclaration } from "./Statements/ParseFunctionDeclaration";
+import { ParseFunctionCallStatement } from "./Statements/ParseFunctionCallStatement";
+import { ParseFunctionCallExpression } from "./Expressions/Terms/ParseFunctionCallExpression";
+import { ParseReturn } from "./Statements/ParseReturn";
+import { ParseImport } from "./Statements/ParseImport";
+import { ParseDouble } from "./Expressions/Terms/ParseDouble";
 
 export interface ParseVisitor<T> {
-    visitExpression(expression: ParseExpression): T;
+  visitExpression(expression: ParseExpression): T;
 
-    visitEqualityExpression(expression: ParseEqualityExpression): T;
+  visitEqualityExpression(expression: ParseEqualityExpression): T;
 
-    visitRelationalExpression(expression: ParseRelationalExpression): T;
+  visitRelationalExpression(expression: ParseRelationalExpression): T;
 
-    visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): T;
+  visitMultiplicativeExpression(expression: ParseMultiplicativeExpression): T;
 
-    visitUnaryExpression(expression: ParseUnaryExpression): T;
+  visitUnaryExpression(expression: ParseUnaryExpression): T;
 
-    visitPowExpression(expression: ParsePowExpression): T;
+  visitPowExpression(expression: ParsePowExpression): T;
 
-    visitAdditiveExpression(expression: ParseAdditiveExpression): T;
+  visitAdditiveExpression(expression: ParseAdditiveExpression): T;
 
-    visitTerm(term: ParseTerm): T;
+  visitTerm(term: ParseTerm): T;
 
-    visitInt(term: ParseInt): T;
+  visitInt(term: ParseInt): T;
 
-    visitDouble(term: ParseDouble): T;
+  visitDouble(term: ParseDouble): T;
 
-    visitIdentifier(term: ParseIdentifier): T;
+  visitIdentifier(term: ParseIdentifier): T;
 
-    visitDeclaration(statement: ParseDeclaration): T;
+  visitDeclaration(statement: ParseDeclaration): T;
 
-    visitType(type: ParseType): T;
+  visitType(type: ParseType): T;
 
-    visitProgram(statement: ParseProgram): T;
+  visitProgram(statement: ParseProgram): T;
 
-    visitLoopStatement(statement: ParseLoopStatement): T;
+  visitLoopStatement(statement: ParseLoopStatement): T;
 
-    visitAssignment(statement: ParseAssignment): T;
+  visitAssignment(statement: ParseAssignment): T;
 
-    visitIfStatement(statement: ParseIfStatement): T;
+  visitIfStatement(statement: ParseIfStatement): T;
 
-    visitCompoundStatement(statement: ParseCompoundStatement): T;
+  visitCompoundStatement(statement: ParseCompoundStatement): T;
 
-    visitString(term: ParseString): T;
+  visitString(term: ParseString): T;
 
-    visitIncrement(statement: ParseIncrement): T;
+  visitIncrement(statement: ParseIncrement): T;
 
-    visitBool(term: ParseBool): T;
+  visitBool(term: ParseBool): T;
 
-    visitFunction(statement: ParseFunctionDeclaration): T;
+  visitFunction(statement: ParseFunctionDeclaration): T;
 
-    visitFunctionCallExpression(expression: ParseFunctionCallExpression): T;
+  visitFunctionCallExpression(expression: ParseFunctionCallExpression): T;
 
-    visitFunctionCallStatement(statement: ParseFunctionCallStatement): T;
+  visitFunctionCallStatement(statement: ParseFunctionCallStatement): T;
 
-    visitReturn(statement: ParseReturn): T;
+  visitReturn(statement: ParseReturn): T;
 
-    visitImport(statement: ParseImport): T;
+  visitImport(statement: ParseImport): T;
 }

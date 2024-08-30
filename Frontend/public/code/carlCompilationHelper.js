@@ -1,4 +1,4 @@
-import {calculateViaLanguage} from "/build/carlCompiler/CaCoRelease.js";
+import { calculateViaLanguage } from "/build/carlCompiler/CaCoRelease.js";
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
 
@@ -7,14 +7,14 @@ let features = {}; // Feature options for WabtModule
 let jsonRes;
 
 // Initialize WabtModule and store the instance
-WabtModule().then(function(wabt) {
+WabtModule().then(function (wabt) {
     wabtInstance = wabt;
 });
 
 function addPrint(text) {
-    if(window.terminal != null){
+    if (window.terminal != null) {
         window.terminal.setValue(window.terminal.getValue() + text + "\n");
-    }else {
+    } else {
         result.value += text + "\n";
     }
 }
@@ -22,7 +22,7 @@ function addPrint(text) {
 export async function compileAndExecute() {
     console.log("Compiling and executing code...");
     let success = await compile();
-    if(success) {
+    if (success) {
         execute();
     }
 }
@@ -33,27 +33,30 @@ export async function compileAndExecute() {
 export async function compile() {
     const now = Date.now();
     let code = codeInput.value;
-    if(window.codeEditor != null){
+    if (window.codeEditor != null) {
         code = getEntryFile();
     }
     let compiledResult;
     let compiledWat;
     try {
-        if(window.terminal.getValue() !== ""){
+        if (window.terminal.getValue() !== "") {
             window.terminal.setValue("");
         }
         compiledResult = await calculateViaLanguage(code, "compiler");
         console.log(compiledResult);
         // Calculate the WAT (WebAssembly Text format) using a custom language function
         jsonRes = JSON.parse(compiledResult);
-        if(jsonRes.compilerOutput !== "") {
-            jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll("nul!ll>", "\0");
-        }else {
+        if (jsonRes.compilerOutput !== "") {
+            jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll(
+                "nul!ll>",
+                "\0"
+            );
+        } else {
             console.log(jsonRes);
         }
         compiledWat = jsonRes.compilerOutput;
 
-        if(jsonRes.lexerErrors.length > 0 ) {
+        if (jsonRes.lexerErrors.length > 0) {
             let output = "";
             for (let i = 0; i < jsonRes.lexerErrors.length; i++) {
                 output += jsonRes.lexerErrors[i];
@@ -61,16 +64,16 @@ export async function compile() {
                     output += "\n";
                 }
             }
-            if(window.terminal != null){
+            if (window.terminal != null) {
                 window.terminal.setValue(window.terminal.getValue() + output);
-            }else {
+            } else {
                 result.value = output;
                 console.log(jsonRes);
             }
             return false;
         }
 
-        if(jsonRes.parseErrors.length > 0) {
+        if (jsonRes.parseErrors.length > 0) {
             let output = "";
             for (let i = 0; i < jsonRes.parseErrors.length; i++) {
                 output += jsonRes.parseErrors[i];
@@ -78,17 +81,17 @@ export async function compile() {
                     output += "\n";
                 }
             }
-            if(window.terminal != null){
+            if (window.terminal != null) {
                 //Add the output to the terminal and dont overwrite the previous output
                 window.terminal.setValue(window.terminal.getValue() + output);
-            }else {
+            } else {
                 result.value += output;
                 console.log(jsonRes);
             }
             return false;
         }
 
-        if(jsonRes.combinedCheckerErrors.length > 0) {
+        if (jsonRes.combinedCheckerErrors.length > 0) {
             let output = "";
             for (let i = 0; i < jsonRes.combinedCheckerErrors.length; i++) {
                 output += jsonRes.combinedCheckerErrors[i];
@@ -96,9 +99,9 @@ export async function compile() {
                     output += "\n";
                 }
             }
-            if(window.terminal != null) {
+            if (window.terminal != null) {
                 window.terminal.setValue(window.terminal.getValue() + output);
-            }else {
+            } else {
                 result.value += output;
                 console.log(jsonRes);
             }
@@ -106,16 +109,20 @@ export async function compile() {
         }
 
         const later = Date.now();
-        if(window.terminal != null){
-            window.terminal.setValue(window.terminal.getValue() + "Time to compile: " + (later - now) / 1000 + "s\n");
+        if (window.terminal != null) {
+            window.terminal.setValue(
+                window.terminal.getValue() +
+          "Time to compile: " +
+          (later - now) / 1000 +
+          "s\n"
+            );
             console.log(jsonRes);
-        }else {
+        } else {
             result.value += "Time to compile: " + (later - now) / 1000 + "s\n";
             console.log(jsonRes);
         }
         window.localStorage.setItem("wat", compiledWat);
         return true;
-
     } catch (e) {
         alert(e.toString());
     }
@@ -159,12 +166,19 @@ export async function execute() {
         }
 
         let functionBody = getRuntimeFile().replace(
-            'getImportObjectFromImportObjectFile()', getRuntimeImportFile());
-        functionBody = functionBody.replaceAll("console.log(", "addPrint(").replaceAll("console.error(", "addPrint(");
+            "getImportObjectFromImportObjectFile()",
+            getRuntimeImportFile()
+        );
+        functionBody = functionBody
+            .replaceAll("console.log(", "addPrint(")
+            .replaceAll("console.error(", "addPrint(");
         let functionArguments = "output, addPrint, wasmInstance, logMemory";
         let newFunction;
         try {
-            newFunction = new Function(functionArguments, `return (async function() { ${functionBody} })()`);
+            newFunction = new Function(
+                functionArguments,
+                `return (async function() { ${functionBody} })()`
+            );
         } catch (e) {
             alert("Failed to create the function: " + e.toString());
         }
@@ -178,7 +192,6 @@ export async function execute() {
         }
 
         await handlePrintsAndOutput(now);
-
     } catch (e) {
         alert("Execution error: " + e.toString());
     }
@@ -196,7 +209,6 @@ function logMemory(memory, offset) {
     return str;
 }
 
-
 /**
  * Compile the WAT (WebAssembly Text) code into a binary WebAssembly module.
  *
@@ -213,8 +225,8 @@ function compileToWasm(value) {
     let module = null;
 
     try {
-        // Parse the WAT source code to a module
-        module = wabtInstance.parseWat('test.wast', value, features);
+    // Parse the WAT source code to a module
+        module = wabtInstance.parseWat("test.wast", value, features);
         // Resolve names and validate the module
         module.resolveNames();
         module.validate(features);
@@ -233,16 +245,15 @@ function compileToWasm(value) {
     return binaryBuffer; // Return the binary buffer
 }
 
-
-function getEntryFile(){
+function getEntryFile() {
     let entryKey = window.localStorage.getItem("entry");
-    if(entryKey == null){
+    if (entryKey == null) {
         alert("No entry file found");
         return;
     }
 
     let entryFile = window.localStorage.getItem(entryKey);
-    if(entryFile == null) {
+    if (entryFile == null) {
         alert("No entry file found");
         return;
     }
@@ -250,15 +261,15 @@ function getEntryFile(){
     return entryFile;
 }
 
-function getRuntimeFile(){
+function getRuntimeFile() {
     let runtimeKey = window.localStorage.getItem("runtime");
-    if(runtimeKey == null){
+    if (runtimeKey == null) {
         alert("No runtime file found");
         return;
     }
 
     let runtimeFile = window.localStorage.getItem(runtimeKey);
-    if(runtimeFile == null) {
+    if (runtimeFile == null) {
         alert("No runtime file found");
         return;
     }
@@ -266,15 +277,15 @@ function getRuntimeFile(){
     return runtimeFile;
 }
 
-function getRuntimeImportFile(){
+function getRuntimeImportFile() {
     let runtimeImportKey = window.localStorage.getItem("runtimeImport");
-    if(runtimeImportKey == null){
+    if (runtimeImportKey == null) {
         alert("No runtime import file found");
         return;
     }
 
     let runtimeImportFile = window.localStorage.getItem(runtimeImportKey);
-    if(runtimeImportFile == null) {
+    if (runtimeImportFile == null) {
         alert("No runtime import file found");
         return;
     }

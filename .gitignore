@@ -3,3 +3,4 @@ node_modules
 /Backend/data/users.json
 /Backend/data/
 /node_modules/
+/dist/

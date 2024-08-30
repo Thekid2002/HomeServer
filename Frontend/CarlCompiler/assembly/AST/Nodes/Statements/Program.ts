@@ -1,7 +1,7 @@
-import {AbstractStatement} from "./AbstractStatement";
-import {ASTVisitor} from "../../ASTVisitor";
-import {VarEnv} from "../../../Env/VarEnv";
-import {FuncEnv} from "../../../Env/FuncEnv";
+import { AbstractStatement } from "./AbstractStatement";
+import { ASTVisitor } from "../../ASTVisitor";
+import { VarEnv } from "../../../Env/VarEnv";
+import { FuncEnv } from "../../../Env/FuncEnv";
 
 export class Program extends AbstractStatement {
     body: AbstractStatement | null;
@@ -18,12 +18,14 @@ export class Program extends AbstractStatement {
 
     clone(): Program {
         return new Program(
-            this.body !== null ? this.body!.clone() as AbstractStatement : null,
+            this.body !== null ? (this.body!.clone() as AbstractStatement) : null,
             this.lineNum
         );
     }
 
     toString(): string {
-        return "Program(" + (this.body !== null ? this.body!.toString() : "null") + ")";
+        return (
+            "Program(" + (this.body !== null ? this.body!.toString() : "null") + ")"
+        );
     }
 }

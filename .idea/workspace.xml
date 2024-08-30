@@ -9,33 +9,185 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/services/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/models/repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/services/repositoryService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/services/saveFileService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/dataColumnType.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataColumnType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/saveFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/saveFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/authorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/mapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/authorizationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authorizationController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/saveFileController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/userController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/authDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/authDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/repositoryDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/saveFileDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dto/userDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/userDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/errors/notAuthorizedError.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/errors/notAuthorizedError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/errors/notFoundError.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/errors/notFoundError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/fileSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/fileSystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/dataColumnType.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataColumnType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/dataLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataLayout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/repository.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/roleEnum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/saveFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/saveFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/userRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authenticationService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/authorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authorizationService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/checkService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/checkService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/logger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/mapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/repositoryService.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/saveFileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataColumnEnum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/userService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/200.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/200.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/401.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/401.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/carlInstructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/carlInstructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/views/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/views/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/AbstractExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/AbstractExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/FunctionCallExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/FunctionCallExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/AbstractTerm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/AbstractTerm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Bool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Bool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Double.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Double.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Int.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Int.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/FunctionCallInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/FunctionCallInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionCallStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionCallStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionDeclaration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionDeclaration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/ImportFunction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/ImportFunction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Return.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Return.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/LivenessAnalysis.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/LivenessAnalysis.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Optimizer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Optimizer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/FuncEnv.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/FuncEnv.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Functions/FunctionObject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Functions/FunctionObject.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValBool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValBool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValDouble.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValDouble.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValInt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValInt.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValObject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValObject.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValString.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValString.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Token.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Token.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAbstractExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAbstractExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAdditiveExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAdditiveExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseEqualityExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseEqualityExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseMultiplicativeExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseMultiplicativeExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParsePowExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParsePowExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseRelationalExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseRelationalExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseUnaryExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseUnaryExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/AbstractTerm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/AbstractTerm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseBool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseBool.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseDouble.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseDouble.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseFunctionCallExpression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseFunctionCallExpression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseIdentifier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseIdentifier.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseInt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseInt.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseString.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseString.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseTerm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseTerm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreeNode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreeNode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAbstractStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAbstractStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAssignment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAssignment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseCompoundStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseCompoundStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseDeclaration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseDeclaration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionCallStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionCallStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionDeclaration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionDeclaration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIfStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIfStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseImport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseImport.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIncrement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIncrement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseLoopStatement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseLoopStatement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseProgram.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseProgram.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseReturn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseReturn.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/testDeclarations.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tests/testDeclarations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Test/assembly/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Test/assembly/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Test/assembly/tests/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Test/assembly/tests/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Test/assembly/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Test/assembly/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoDebug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/carlCompiler/CaCoRelease.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCDebug.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCDebug.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCDebug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCRelease.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCRelease.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCRelease.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/simpleCalculator/SCRelease.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/test/TESTDebug.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/test/TESTDebug.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/test/TESTDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/test/TESTDebug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/test/TESTRelease.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/test/TESTRelease.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/build/test/TESTRelease.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/build/test/TESTRelease.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/AllUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/AllUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/createEditRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/createEditRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/examples.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/libwabt.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/libwabt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/repositories.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/repositories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/setupCodeEditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/setupCodeEditors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/simple.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/simple.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/displayFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/displayFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/editVideo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/editVideo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/200.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/200.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/401.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/401.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/404.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/404.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/500.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/500.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/carlInstructions.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/carlInstructions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/ide.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/ide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/sharedStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/simple.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/simple.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/styles/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/styles/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/timeline.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
@@ -50,8 +202,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -82,18 +234,21 @@
     "last_opened_file_path": "C:/Users/coolf/Documents/GitHub/HomeServer",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.CarlComStart.executor": "Run",
     "npm.CarlIntStart.executor": "Run",
     "npm.CarlStart.executor": "Run",
     "npm.TestTest.executor": "Run",
+    "npm.start sudo.executor": "Run",
     "npm.start.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/thomas/Desktop/HomeServer/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,7 +268,7 @@
       <recent name="$PROJECT_DIR$/Frontend/public/styles" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.start sudo">
     <configuration name="CarlDebug" type="JavascriptDebugType" uri="http://localhost:63342/HomeServer/Backend/views/simple.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -138,9 +293,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start sudo" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
+      <arguments value="sudo" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -150,7 +306,7 @@
       <item itemvalue="npm.CarlComStart" />
       <item itemvalue="npm.CarlIntStart" />
       <item itemvalue="npm.TestTest" />
-      <item itemvalue="npm.start" />
+      <item itemvalue="npm.start sudo" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -196,11 +352,99 @@
       <workItem from="1724051781355" duration="1663000" />
       <workItem from="1724053461462" duration="43786000" />
       <workItem from="1724165007230" duration="795000" />
+      <workItem from="1724947723838" duration="25623000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/FuncEnv.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Token.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/LivenessAnalysis.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Optimizer.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionCallStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseCompoundStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAssignment.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIfStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionDeclaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseDeclaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseReturn.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIncrement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAbstractStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseImport.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseProgram.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseLoopStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseMultiplicativeExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAbstractExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseUnaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseEqualityExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAdditiveExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseRelationalExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParsePowExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/AbstractTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseInt.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseIdentifier.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseDouble.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseFunctionCallExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseBool.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/FunctionCallInterface.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreeNode.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValDouble.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValBool.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValInt.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValObject.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/AbstractExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/FunctionCallExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Double.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/AbstractTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Int.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Bool.js" />
+        <option value="$PROJECT_DIR$/Frontend/Test/assembly/index.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Functions/FunctionObject.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionCallStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/ImportFunction.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Return.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionDeclaration.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -217,16 +461,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Backend/repositories/repositoryRepository.js</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/Backend/repositories/saveFileRepository.ts</url>
+          <line>70</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Backend/controllers/userController.js</url>
-          <line>105</line>
+          <url>file://$PROJECT_DIR$/Backend/controllers/userController.ts</url>
+          <line>118</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
