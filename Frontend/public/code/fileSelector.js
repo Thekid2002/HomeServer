@@ -35,8 +35,8 @@ async function setSaveFilesFromData(data) {
             id: data[i].id, path: data[i].path});
     }
     let repoId = window.location.href.split("=")[1];
-    document.cookie = `repoId=${repoId}; expires=${new Date(Date.now() + 86400000).toUTCString()}; domain=; path=/`;
-    document.cookie = `repo=${JSON.stringify(saveFilesIdsAndPaths)}; expires=${new Date(Date.now() + 86400000).toUTCString()}; domain=; path=/`;
+    document.cookie = `repoId=${repoId}; expires=${new Date(Date.now() + 86400000).toUTCString()}; domain=; path=/;`;
+    document.cookie = `repo=${JSON.stringify(saveFilesIdsAndPaths)}; expires=${new Date(Date.now() + 86400000).toUTCString()}; domain=; path=/;`;
     await printSaveFiles();
 }
 
@@ -123,6 +123,8 @@ async function init() {
             if(editExistingRepo) {
                 await printSaveFiles()
             }else {
+                document.cookie = `repoId=; expires=${new Date(Date.now()-1000).toUTCString()}; domain=; path=/`;
+                document.cookie = `repo=; expires=${new Date(Date.now()-1000).toUTCString()}; domain=; path=/`;
                 window.location.href = `/carlCompilers/ide`;
             }
         }

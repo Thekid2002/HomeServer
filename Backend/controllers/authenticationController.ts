@@ -44,7 +44,7 @@ AuthenticationRouter.post("/login", async (req, res) => {
     try {
         const email = checkEmail(req.body.email, false);
         console.log("Logging in user: " + email);
-        const password = checkString(req.body.password, false, 8, 256);
+        const password = checkString(req.body.password, false, 0, 256);
         const auth = await loginUser(email, password, transaction);
         await transaction.commit();
         res.send(JSON.stringify(auth));
@@ -60,9 +60,11 @@ AuthenticationRouter.post("/logout", async (req, res) => {
     try {
         const user = await getUserFromRequest(req, true) as User;
         await logoutUser(user, transaction);
+        await transaction.commit();
         res.send("Logging out");
     } catch (e: any) {
         console.error(e);
+        await transaction.rollback();
         res.status(500).send(e.message);
     }
 });

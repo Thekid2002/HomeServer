@@ -12,7 +12,7 @@ import { createUser, deleteUser, findUserById, getAllUsers, updateUser } from ".
 import { sequelize } from "../services/database";
 import { Transaction } from "sequelize";
 import { User } from "../models/user";
-import { checkEnum, checkString } from "../services/checkService";
+import {checkEmail, checkEnum, checkPhone, checkString} from "../services/checkService";
 
 
 export const UserController = express.Router();
@@ -54,11 +54,13 @@ UserController.post("/profile", async (req, res) => {
         const surname = checkString(req.body.surname, false, 2, 256);
         const phone = checkString(req.body.phone, false, 2, 256);
         const role = checkEnum(parseInt(req.body.role), RoleEnum);
+        const email = checkString(req.body.email, false, 2, 256);
 
         const user: User = await getUserFromRequest(req, true) as User;
         user.firstname = firstname;
         user.surname = surname;
         user.phone = phone;
+        user.email = email;
         if (user.role === RoleEnum.SUPER_ADMIN) {
             user.role = role;
         }
@@ -147,23 +149,24 @@ UserController.post("/edit", async (req, res) => {
             throw new Error("No id provided");
         }
         const id = parseInt(queryId as string);
-        const firstname = req.body.firstname;
-        const surname = req.body.surname;
-        const phone = req.body.phone;
-        const email = req.body.email;
+        const firstname = checkString(req.body.firstname, false, 2, 256);
+        const surname = checkString(req.body.surname, false, 2, 256);
+        const phone = checkPhone(req.body.phone, false);
+        const email = checkEmail(req.body.email, false);
         const password = req.body.password;
-        const role = parseInt(req.body.role);
+        const role = checkEnum(parseInt(req.body.role), RoleEnum, false);
         let user;
         if (id) {
             user = await findUserById(id, false, false, true);
-      user!.firstname = firstname;
-      user!.surname = surname;
-      user!.phone = phone;
-      user!.email = email;
-      user!.role = role;
+              user!.firstname = firstname;
+              user!.surname = surname;
+              user!.phone = phone;
+              user!.email = email;
+              user!.role = role;
         }
         if (id) {
             await updateUser(user!, transaction);
+            await transaction.commit();
             res.send("User updated");
         } else {
             await createUser(
@@ -178,6 +181,7 @@ UserController.post("/edit", async (req, res) => {
             await transaction.commit();
             res.send("User created");
         }
+
     } catch (e: any) {
         await transaction.rollback();
         console.error(e);

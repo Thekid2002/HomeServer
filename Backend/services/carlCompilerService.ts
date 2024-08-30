@@ -29,6 +29,7 @@ export async function getRepositoryPickerPage(user: User, req: Request): Promise
         body += `</div><div class="picker-item-bottom">`
         body += `<p>${(await repositories[i].getUser()).email}</p>`
         body += `</div></div>`
+        console.log(repositories[i].id + " " + repoId)
     }
     body += `</div>`;
     return body
