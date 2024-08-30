@@ -55,9 +55,7 @@ export async function findRepositoryById(
 }
 
 // Update a repository
-export async function updateRepository(
-    repository: Repository
-): Promise<Repository> {
+export async function updateRepository(repository: Repository, transaction: Transaction): Promise<Repository> {
     const existingRepository = await Repository.findByPk(repository.id);
     if (!existingRepository) {
         throw new Error("Repository not found with id: " + repository.id);
@@ -70,7 +68,7 @@ export async function updateRepository(
         entryPointFileId: repository.entryPointFileId,
         runtimeFileId: repository.runtimeFileId,
         runtimeImportFileId: repository.runtimeImportFileId
-    });
+    }, { transaction });
 
     console.log(`Repository with id:"${repository.id}" updated successfully.`);
     return existingRepository;

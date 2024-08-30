@@ -22,6 +22,7 @@ import {
 } from "../repositories/repositoryRepository";
 import { NotFoundError } from "../errors/notFoundError";
 import {
+    getAllSaveFiles,
     getAllSaveFilesByRepositoryId,
     updateSaveFile
 } from "../repositories/saveFileRepository";
@@ -41,7 +42,9 @@ RepositoriesRouter.get("/all", async (req, res) => {
         await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ], true);
         const repositories = await getAllRepositories();
         const repos = await mapRepositoryListToRepositoryDtoList(repositories);
-        const layout = getRepositoryLayout();
+        const saveFileMap = (await getAllSaveFiles()).map(saveFile => ({ key: saveFile.id, value: saveFile.path }));
+        const userMap = (await getAllUsers()).map(user => ({ key: user.id, value: user.email }));
+        const layout = getRepositoryLayout(false, saveFileMap, userMap);
         res.send(
             await renderTablePageWithBasicLayout(
                 "Repositories",
@@ -68,7 +71,9 @@ RepositoriesRouter.get("/my", async (req, res) => {
         );
         const activeUser: User = await getUserFromRequest(req, true) as User;
         const repos = await mapRepositoryListToRepositoryDtoList(await activeUser.getRepositories());
-        const layout = getRepositoryLayout();
+        const saveFileMap = (await getAllSaveFiles()).map(saveFile => ({ key: saveFile.id, value: saveFile.path }));
+        const userMap = (await getAllUsers()).map(user => ({ key: user.id, value: user.email }));
+        const layout = getRepositoryLayout(false, saveFileMap, userMap);
         res.send(
             await renderTablePageWithBasicLayout(
                 "Repositories",
@@ -219,11 +224,11 @@ RepositoriesRouter.post("/edit", async (req, res) => {
         const name = checkString(req.body.name, false, 2, 256);
         const description = checkString(req.body.description, false, 0);
         const saveFileIds = (await repository!.getSaveFiles()).map(save => save.id);
-        const bodyEntryPointFileId = parseInt(req.body.entryPointFile);
+        const bodyEntryPointFileId = parseInt(req.body.entryPointFileId);
         const entryPointFileId = checkListItem(bodyEntryPointFileId, saveFileIds, true);
-        const bodyRuntimeFileId = parseInt(req.body.runtimeFile);
+        const bodyRuntimeFileId = parseInt(req.body.runtimeFileId);
         const runtimeFileId = checkListItem(bodyRuntimeFileId, saveFileIds, true);
-        const bodyRuntimeImportFileId = parseInt(req.body.runtimeImportFile);
+        const bodyRuntimeImportFileId = parseInt(req.body.runtimeImportFileId);
         const runtimeImportFileId = checkListItem(bodyRuntimeImportFileId, saveFileIds, true);
 
         if (!repository) {
@@ -234,11 +239,13 @@ RepositoriesRouter.post("/edit", async (req, res) => {
             repository.entryPointFileId = entryPointFileId;
             repository.runtimeFileId = runtimeFileId;
             repository.runtimeImportFileId = runtimeImportFileId;
-            await updateRepository(repository);
+            await updateRepository(repository, transaction);
         }
 
+        await transaction.commit();
         res.send("Repository updated");
     } catch (e: any) {
+        await transaction.rollback();
         console.log(e);
         if (e.name === "NotFoundError") {
             return res.status(500).send("Repository not found");
@@ -251,6 +258,7 @@ RepositoriesRouter.post("/edit", async (req, res) => {
 });
 
 RepositoriesRouter.post("/save", async (req, res) => {
+    const transaction = await sequelize.transaction();
     try {
         await checkIsAuthorizedWithRoles(
             req,
@@ -265,11 +273,7 @@ RepositoriesRouter.post("/save", async (req, res) => {
         const repository = await findRepositoryById(id, true) as Repository;
         const activeUser = await getUserFromRequest(req, true) as User;
 
-        if (
-            repository &&
-      repository.userId !== activeUser.id &&
-        activeUser.role !== RoleEnum.SUPER_ADMIN
-        ) {
+        if (repository && repository.userId !== activeUser.id && activeUser.role !== RoleEnum.SUPER_ADMIN) {
             throw new NotAuthorizedError("Unauthorized");
         }
 
@@ -278,13 +282,19 @@ RepositoriesRouter.post("/save", async (req, res) => {
         }
 
         const oldSaveFiles: SaveFile[] = await getAllSaveFilesByRepositoryId(id);
-        for (let i = 0; i < oldSaveFiles.length; i++) {
-            const oldFile = oldSaveFiles[i];
-            updateSaveFile(oldFile);
+        const newSaveFiles: {id: number, content: string}[] = req.body as {id: number, content: string}[];
+        for (const newFile of newSaveFiles) {
+            const oldFile: SaveFile | undefined = oldSaveFiles.find(old => old.id === newFile.id);
+            if (oldFile) {
+                oldFile.content = newFile.content;
+                await updateSaveFile(oldFile, transaction);
+            }
         }
 
+        await transaction.commit();
         res.send("Repository saved");
     } catch (e: any) {
+        await transaction.rollback();
         console.log(e);
         if (e.name === "NotFoundError") {
             return res.status(500).send("Repository not found");

@@ -13,6 +13,7 @@ import { sequelize } from "./database";
 import { User } from "../models/user";
 import { RoleEnum } from "../models/roleEnum";
 import { UserDto } from "../dto/userDto";
+import {Transaction} from "sequelize";
 
 /**
  * Signup a user with the given data
@@ -21,44 +22,39 @@ import { UserDto } from "../dto/userDto";
  * @param phone the phone number of the user
  * @param email the email of the user
  * @param password the password of the user
+ * @param transaction the transaction to use
  */
 export async function signupUser(
     firstname: string,
     surname: string,
     phone: string,
     email: string,
-    password: string
+    password: string,
+    transaction: Transaction
 ): Promise<UserDto> {
-    const transaction = await sequelize.transaction();
-    try {
-        const existingUser = await findUserByEmail(email);
-        if (existingUser) {
-            throw new Error("User already exists");
-        }
-        const user = await createUser(
-            firstname,
-            surname,
-            phone,
-            email,
-            password,
-            RoleEnum.USER,
-            transaction
-        );
-        await transaction.commit();
-        return await mapUserToUserDto(user);
-    } catch (e) {
-        console.error("Error signing up user:", e);
-        await transaction.rollback();
-        throw e;
+    const existingUser = await findUserByEmail(email);
+    if (existingUser) {
+        throw new Error("User already exists");
     }
+    const user = await createUser(
+        firstname,
+        surname,
+        phone,
+        email,
+        password,
+        RoleEnum.USER,
+        transaction
+    );
+    return await mapUserToUserDto(user);
 }
 
 /**
  * Login a user
  * @param email the email of the user
  * @param password the password of the user
+ * @param transaction the transaction to use
  */
-export async function loginUser(email: string, password: string): Promise<authDto> {
+export async function loginUser(email: string, password: string, transaction: Transaction): Promise<authDto> {
     const user = await findUserByEmail(email);
     if (!user) {
         throw new Error("User not found");
@@ -68,17 +64,18 @@ export async function loginUser(email: string, password: string): Promise<authDt
     }
     user.token = generateToken();
     user.expirationDateTime = Date.now() + 3600000;
-    await updateUser(user);
+    await updateUser(user, transaction);
     return new authDto(user.token, user.expirationDateTime);
 }
 
 /**
  * Logout a user
  * @param user the user to logout
+ * @param transaction the transaction to use
  */
-export async function logoutUser(user: User): Promise<void> {
+export async function logoutUser(user: User, transaction: Transaction): Promise<void> {
     console.log("Logging out user: " + user.email);
     user.token = null;
     user.expirationDateTime = null;
-    await updateUser(user);
+    await updateUser(user, transaction);
 }

@@ -174,13 +174,14 @@ async function renderTablePage(
 
             if (column.type === DataColumnEnum.selectFromKeyValueArray || column.type === DataColumnEnum.selectEnum) {
                 const match = column.listForSelect!.find(
-                    (item) => item.key === parseInt(row[column.key])
+                    (item) => item.key === row[column.key]
                 );
+                console.log(column.listForSelect);
+                console.log("hej " + column.listForSelect + " " + column.key + " " + row[column.key]);
                 if (match) {
                     body += `<td>${match.value}</td>`;
                 } else {
-                    console.log(row[column.key])
-                    body += `<td>${row[column.key]}</td>`;
+                    body += `<td>${column.listForSelect![row[column.key]]}</td>`;
                 }
             }
 

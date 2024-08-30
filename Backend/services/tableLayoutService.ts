@@ -100,8 +100,8 @@ export const getUserLayout = function (creating = false) {
 
 export const getRepositoryLayout = function (
     creating = false,
-    saveFiles: {key: number, value: string}[] = [],
-    userList: {key: number, value: string}[] = []
+    saveFiles: {key: number, value: string}[],
+    userList: {key: number, value: string}[]
 ) {
     const repoLayout = new DataLayout([]);
 
@@ -163,21 +163,12 @@ export const getRepositoryLayout = function (
         );
         repoLayout.columns.push(
             new DataColumnType(
-                "userEmail",
-                "Email User",
-                true,
-                true,
-                DataColumnEnum.value
-            )
-        );
-        repoLayout.columns.push(
-            new DataColumnType(
                 "userId",
                 "User",
                 false,
                 true,
-                DataColumnEnum.value,
-                null,
+                DataColumnEnum.selectFromKeyValueArray,
+                userList,
                 [ RoleEnum.SUPER_ADMIN ]
             )
         );

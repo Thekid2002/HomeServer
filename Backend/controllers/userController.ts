@@ -42,6 +42,7 @@ UserController.get("/profile", async (req, res) => {
 });
 
 UserController.post("/profile", async (req, res) => {
+    const transaction: Transaction = await sequelize.transaction();
     try {
         await checkIsAuthorizedWithRoles(req, [
             RoleEnum.SUPER_ADMIN,
@@ -52,7 +53,7 @@ UserController.post("/profile", async (req, res) => {
         const firstname = checkString(req.body.firstname, false, 2, 256);
         const surname = checkString(req.body.surname, false, 2, 256);
         const phone = checkString(req.body.phone, false, 2, 256);
-        const role = checkEnum(req.body.role, RoleEnum);
+        const role = checkEnum(parseInt(req.body.role), RoleEnum);
 
         const user: User = await getUserFromRequest(req, true) as User;
         user.firstname = firstname;
@@ -61,11 +62,13 @@ UserController.post("/profile", async (req, res) => {
         if (user.role === RoleEnum.SUPER_ADMIN) {
             user.role = role;
         }
-        await updateUser(user);
+        await updateUser(user, transaction);
+        await transaction.commit();
         res.send("User updated");
-    } catch (e) {
+    } catch (e: any) {
+        await transaction.rollback();
         console.error(e);
-        res.status(500).send(e);
+        res.status(500).send(e.message);
     }
 });
 
@@ -160,7 +163,7 @@ UserController.post("/edit", async (req, res) => {
       user!.role = role;
         }
         if (id) {
-            await updateUser(user!);
+            await updateUser(user!, transaction);
             res.send("User updated");
         } else {
             await createUser(

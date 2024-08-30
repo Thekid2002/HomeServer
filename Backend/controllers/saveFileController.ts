@@ -138,13 +138,15 @@ SaveFileRouter.post("/edit", async (req, res) => {
             saveFile.name = name;
             saveFile.path = path;
             saveFile.content = content;
-            await updateSaveFile(saveFile);
+            await updateSaveFile(saveFile, transaction);
         } else {
             await createSaveFile(name, path, content, repository.id, transaction);
         }
 
+        await transaction.commit();
         res.send("Save File updated");
     } catch (e) {
+        await transaction.rollback();
         console.error(e);
         res.status(500).send(e);
     }

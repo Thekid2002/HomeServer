@@ -89,7 +89,7 @@ export async function getAllSaveFilesByRepositoryId(repositoryId: number, includ
 }
 
 // Update a save file
-export async function updateSaveFile(saveFile: SaveFile): Promise<SaveFile> {
+export async function updateSaveFile(saveFile: SaveFile, transaction: Transaction): Promise<SaveFile> {
     const oldSaveFile = await SaveFile.findByPk(saveFile.id);
     if (!oldSaveFile) {
         throw new Error("Save file not found with id: " + saveFile.id);
@@ -99,7 +99,7 @@ export async function updateSaveFile(saveFile: SaveFile): Promise<SaveFile> {
         name: saveFile.name,
         path: saveFile.path,
         content: saveFile.content
-    });
+    }, { transaction });
 
     return oldSaveFile;
 }

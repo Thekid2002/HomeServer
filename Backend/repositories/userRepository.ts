@@ -196,7 +196,7 @@ export async function findUserByToken(
 }
 
 // Update user details
-export async function updateUser(user: User): Promise<User> {
+export async function updateUser(user: User, transaction: Transaction): Promise<User> {
     const currentUser = await User.findByPk(user.id);
     if (!currentUser) {
         throw new Error("User not found");
@@ -212,7 +212,7 @@ export async function updateUser(user: User): Promise<User> {
         role: user.role,
         token: user.token,
         expirationDateTime: user.expirationDateTime
-    });
+    }, { transaction });
 
     console.log(`User with id:"${user.id}" updated successfully`);
     return user;

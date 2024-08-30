@@ -26,17 +26,17 @@ export function checkEnum(value: number, $enum: any, allowNull = false): number 
 
     const enumValues = Object.keys($enum).map((key) => (
     $enum[key] as number
-    ));
+    )).splice(Object.keys($enum).length / 2, Object.keys($enum).length - 1);
 
     if (!enumValues.includes(value)) {
-        throw new Error(`Invalid value: ${value}`);
+        throw new Error(`Enum ${enumValues} does not contain value: ${value}`);
     }
 
     return value;
 }
 
 export function checkListItem(value: number, list: number[], allowNull = false): number | null {
-    if(allowNull && (value === null || isNaN(value))) {
+    if (allowNull && (value === null || isNaN(value))) {
         return null;
     }
 

@@ -18,7 +18,6 @@ import {
     CarlCompilersRoute,
     CarlCompilersRouter
 } from "./controllers/carlCompilersController";
-import { fileURLToPath } from "url";
 import { UserController, UserRoute } from "./controllers/userController";
 import {
     RepositoriesRoute,
@@ -36,8 +35,8 @@ __dirname = path
     .replace("\\Backend", "");
 
 const app = express();
-const hostname = "192.168.87.182";
-const port = 80;
+const hostname = "localhost";
+const port = 4200;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -145,7 +144,7 @@ https.createServer(options, app).listen(443, hostname, () => {
 });*/
 
 // Create an HTTP server
-http.createServer(app).listen(80, hostname, () => {
+http.createServer(app).listen(port, hostname, () => {
     console.log(`HTTP Server running at http://${hostname}:${port}/`);
 });
 
