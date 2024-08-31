@@ -69,8 +69,8 @@
     "npm.start sudo.executor": "Run",
     "npm.start.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/thomas/Desktop/HomeServer/node_modules/typescript/lib",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "ts.external.directory.path": "C:\\Users\\coolf\\Documents\\GitHub\\HomeServer\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -175,6 +175,7 @@
       <workItem from="1724053461462" duration="43786000" />
       <workItem from="1724165007230" duration="795000" />
       <workItem from="1724947723838" duration="26540000" />
+      <workItem from="1725066045064" duration="1868000" />
     </task>
     <servers />
   </component>
@@ -285,13 +286,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Backend/repositories/saveFileRepository.ts</url>
           <line>70</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Backend/controllers/userController.ts</url>
-          <line>118</line>
-          <properties lambdaOrdinal="-1" />
+          <line>116</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

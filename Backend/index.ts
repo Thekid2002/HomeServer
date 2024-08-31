@@ -34,9 +34,9 @@ __dirname = path
     .replace("/Backend", "").replace("/dist", "").replace("\\dist", "")
     .replace("\\Backend", "");
 
-export const app = express();
-const hostname = "localhost";
-const port = 4200;
+const app = express();
+const hostname = "192.168.87.174";
+const port = 80;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
