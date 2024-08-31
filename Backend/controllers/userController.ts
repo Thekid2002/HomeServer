@@ -61,7 +61,7 @@ UserController.post("/profile", async (req, res) => {
         user.surname = surname;
         user.phone = phone;
         user.email = email;
-        
+
         await updateUser(user, transaction);
         await transaction.commit();
         res.send("User updated");

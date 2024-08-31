@@ -202,17 +202,32 @@ export async function updateUser(user: User, transaction: Transaction | null): P
         throw new Error("User not found");
     }
 
-    await updateUser.update({
-        firstname: user.firstname,
-        surname: user.surname,
-        phone: user.phone,
-        email: user.email,
-        password: user.password,
-        salt: user.salt,
-        role: user.role,
-        token: user.token,
-        expirationDateTime: user.expirationDateTime
-    }, { transaction });
+    if(transaction) {
+        await updateUser.update({
+            firstname: user.firstname,
+            surname: user.surname,
+            phone: user.phone,
+            email: user.email,
+            password: user.password,
+            salt: user.salt,
+            role: user.role,
+            token: user.token,
+            expirationDateTime: user.expirationDateTime
+        },  { transaction });
+    }else {
+        await updateUser.update({
+            firstname: user.firstname,
+            surname: user.surname,
+            phone: user.phone,
+            email: user.email,
+            password: user.password,
+            salt: user.salt,
+            role: user.role,
+            token: user.token,
+            expirationDateTime: user.expirationDateTime
+        });
+    }
+
 
     console.log(`User with id:"${user.id}" updated successfully`);
     return user;
