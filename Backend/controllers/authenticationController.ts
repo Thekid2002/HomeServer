@@ -40,17 +40,14 @@ AuthenticationRouter.post("/signup", async (req, res) => {
 });
 
 AuthenticationRouter.post("/login", async (req, res) => {
-    const transaction = await sequelize.transaction();
     try {
         const email = checkEmail(req.body.email, false);
         console.log("Logging in user: " + email);
         const password = checkString(req.body.password, false, 0, 256);
-        const auth = await loginUser(email, password, transaction);
-        await transaction.commit();
+        const auth = await loginUser(email, password, null);
         res.send(JSON.stringify(auth));
     } catch (e: any) {
         console.error(e);
-        await transaction.rollback();
         res.status(500).send(e.message);
     }
 });

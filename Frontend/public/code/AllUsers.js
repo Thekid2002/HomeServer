@@ -3,7 +3,7 @@ function editObject(id) {
 }
 
 function createObject() {
-    window.location.href = "/user/edit";
+    window.location.href = "/user/create";
 }
 
 function deleteObject(id) {

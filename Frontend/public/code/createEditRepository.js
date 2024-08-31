@@ -1,6 +1,6 @@
 function createObject() {
     let repositoryId = window.location.href.split("?")[1].split("=")[1];
-    window.location.href = `/saveFile/edit?repositoryId=${repositoryId}`;
+    window.location.href = `/saveFile/create?repositoryId=${repositoryId}`;
 }
 
 function editObject(id) {

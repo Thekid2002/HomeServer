@@ -54,7 +54,7 @@ export async function signupUser(
  * @param password the password of the user
  * @param transaction the transaction to use
  */
-export async function loginUser(email: string, password: string, transaction: Transaction): Promise<authDto> {
+export async function loginUser(email: string, password: string, transaction: Transaction | null): Promise<authDto> {
     const user = await findUserByEmail(email);
     if (!user) {
         throw new Error("User not found");

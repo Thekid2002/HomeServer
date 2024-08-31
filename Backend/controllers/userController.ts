@@ -32,7 +32,8 @@ UserController.get("/profile", async (req, res) => {
                 "Profile",
                 await mapUserToUserDto(await getUserFromRequest(req, true) as User),
                 layout,
-                req
+                req,
+                false
             )
         );
     } catch (e) {
@@ -53,7 +54,6 @@ UserController.post("/profile", async (req, res) => {
         const firstname = checkString(req.body.firstname, false, 2, 256);
         const surname = checkString(req.body.surname, false, 2, 256);
         const phone = checkString(req.body.phone, false, 2, 256);
-        const role = checkEnum(parseInt(req.body.role), RoleEnum);
         const email = checkString(req.body.email, false, 2, 256);
 
         const user: User = await getUserFromRequest(req, true) as User;
@@ -61,9 +61,7 @@ UserController.post("/profile", async (req, res) => {
         user.surname = surname;
         user.phone = phone;
         user.email = email;
-        if (user.role === RoleEnum.SUPER_ADMIN) {
-            user.role = role;
-        }
+        
         await updateUser(user, transaction);
         await transaction.commit();
         res.send("User updated");
@@ -118,20 +116,42 @@ UserController.get("/edit", async (req, res) => {
             throw new Error("No id provided");
         }
         const id = parseInt(req.query.id as string);
-        const title = id ? "Edit User" : "Create User";
-        let user: User | null = null;
-        if (id) {
-            user = await findUserById(id, true, true, true);
-            console.log(await user!.getRepositories());
+        if(!id) {
+            throw new Error("No valid id provided");
         }
-        const layout = getUserLayout(!id);
+        const user: User | null = await findUserById(id, true, true, true);
+        if(!user) {
+            throw new Error("User not found with id: " + id);
+        }
+        const layout = getUserLayout(false);
         res.send(
             await renderPageObjectCreateEditPage(
                 "createEditUser",
-                title,
-                user ? await mapUserToUserDto(user): null,
+                "Edit User",
+                await mapUserToUserDto(user!),
                 layout,
-                req
+                req,
+                false
+            )
+        );
+    } catch (e) {
+        console.error(e);
+        res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
+    }
+});
+
+UserController.get("/create", async (req, res) => {
+    try {
+        await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ]);
+        const layout = getUserLayout(true);
+        res.send(
+            await renderPageObjectCreateEditPage(
+                "createEditUser",
+                "Create User",
+                null,
+                layout,
+                req,
+                true
             )
         );
     } catch (e) {
@@ -143,45 +163,62 @@ UserController.get("/edit", async (req, res) => {
 UserController.post("/edit", async (req, res) => {
     const transaction: Transaction = await sequelize.transaction();
     try {
-        await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ]);
+        await checkIsAuthorizedWithRoles(req, [RoleEnum.SUPER_ADMIN]);
+
         const queryId = req.query.id;
-        if (!queryId || queryId !instanceof String) {
+        if (!queryId || typeof queryId !== "string") {
             throw new Error("No id provided");
         }
-        const id = parseInt(queryId as string);
+
+        const id = parseInt(queryId);
         const firstname = checkString(req.body.firstname, false, 2, 256);
         const surname = checkString(req.body.surname, false, 2, 256);
         const phone = checkPhone(req.body.phone, false);
         const email = checkEmail(req.body.email, false);
-        const password = req.body.password;
         const role = checkEnum(parseInt(req.body.role), RoleEnum, false);
-        let user;
-        if (id) {
-            user = await findUserById(id, false, false, true);
-              user!.firstname = firstname;
-              user!.surname = surname;
-              user!.phone = phone;
-              user!.email = email;
-              user!.role = role;
-        }
-        if (id) {
-            await updateUser(user!, transaction);
-            await transaction.commit();
-            res.send("User updated");
-        } else {
-            await createUser(
-                firstname,
-                surname,
-                phone,
-                email,
-                password,
-                role,
-                transaction
-            );
-            await transaction.commit();
-            res.send("User created");
+
+        let user = await findUserById(id, false, false, true);
+        if (!user) {
+            throw new Error("User not found with id: " + id);
         }
 
+        user.firstname = firstname;
+        user.surname = surname;
+        user.phone = phone;
+        user.email = email;
+        user.role = role;
+
+        await updateUser(user, transaction);
+        await transaction.commit();
+        res.send("User updated");
+    } catch (e: any) {
+        await transaction.rollback();
+        console.error(e);
+        res.status(500).send(e.message);
+    }
+});
+
+UserController.post("/create", async (req, res) => {
+    const transaction: Transaction = await sequelize.transaction();
+    try {
+        await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ]);
+        const firstname = checkString(req.body.firstname, false, 2, 256);
+        const surname = checkString(req.body.surname, false, 2, 256);
+        const phone = checkPhone(req.body.phone, false);
+        const email = checkEmail(req.body.email, false);
+        const password = checkString(req.body.password, false, 8, 256);
+        let role = checkEnum(parseInt(req.body.role), RoleEnum, false);
+        await createUser(
+            firstname,
+            surname,
+            phone,
+            email,
+            password,
+            role,
+            transaction
+        );
+        await transaction.commit();
+        res.send("User created");
     } catch (e: any) {
         await transaction.rollback();
         console.error(e);

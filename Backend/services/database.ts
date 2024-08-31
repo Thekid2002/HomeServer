@@ -119,6 +119,10 @@ Repository.init(
         runtimeImportFileId: {
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+        icon: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {

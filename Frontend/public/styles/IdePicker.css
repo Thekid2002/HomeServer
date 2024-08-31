@@ -32,13 +32,13 @@
 
 .picker-item-header {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
 }
 
 .picker-item-header * {
-    font-size: 3rem !important;
+    font-size: 2rem !important;
 }
 
 .picker-item-center {
@@ -55,6 +55,11 @@
     margin: 0;
     padding: 0;
 }
+
+.picker-item-center span {
+    font-size: 3.5rem !important;
+}
+
 
 .picker-item-bottom {
     display: flex;

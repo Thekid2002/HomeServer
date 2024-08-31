@@ -87,7 +87,8 @@ SaveFileRouter.get("/edit", async (req, res) => {
                 title,
                 file,
                 layout,
-                req
+                req,
+                false
             )
         );
     } catch (e) {

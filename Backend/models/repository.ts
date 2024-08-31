@@ -19,6 +19,7 @@ export class Repository extends Model<
     declare entryPointFileId: number | null;
     declare runtimeFileId: number | null;
     declare runtimeImportFileId: number | null;
+    declare icon: string | null;
 
     declare getUser: HasOneGetAssociationMixin<User>;
     declare getSaveFiles: HasManyGetAssociationsMixin<SaveFile>;

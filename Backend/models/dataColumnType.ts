@@ -41,7 +41,8 @@ export class DataColumnType {
         this.type = type;
         if (
             (type === DataColumnEnum.selectEnum ||
-        type === DataColumnEnum.selectFromKeyValueArray) &&
+        type === DataColumnEnum.selectFromKeyValueArray ||
+            type === DataColumnEnum.icon) &&
       listForSelect === null
         ) {
             throw new Error("enumForSelect must be set for select columns");
@@ -66,5 +67,6 @@ export const DataColumnEnum = {
     link: 4,
     array: 5,
     dateTime: 6,
-    boolean: 7
+    boolean: 7,
+    icon: 8
 };

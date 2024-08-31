@@ -80,6 +80,6 @@ export function checkEmail(email: string, allowNull = false): string {
 }
 
 
-function hasIllegalCharacters(str: string, pattern = /[^a-zA-Z0-9\s.,!?+@-]/): boolean {
+function hasIllegalCharacters(str: string, pattern = /[^a-zA-Z0-9\s._,!?+@-]/): boolean {
     return pattern.test(str);
 }

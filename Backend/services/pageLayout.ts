@@ -193,6 +193,14 @@ async function renderTablePage(
                 body += `<td>${row[column.key]}</td>`;
             }
 
+            if(column.type === DataColumnEnum.icon) {
+                if(row[column.key]) {
+                    body += `<td><span class="material-symbols-outlined">${row[column.key]}</span></td>`;
+                }else {
+                    body += `<td></td>`;
+                }
+            }
+
             if (column.type === DataColumnEnum.dateTime) {
                 body += `<td>${mapDateTimeToIsoString(new Date(row[column.key]))}</td>`;
             }
@@ -262,14 +270,15 @@ export async function renderTablePageWithBasicLayout(
  * @param object the object to create or edit
  * @param dataLayout the layout of the form
  * @param req the request
- * @returns {Promise<string>}
+ * @param isCreate whether the object is being created
  */
 export async function renderPageObjectCreateEditPage(
     pageName: string,
     title: string,
     object: any,
     dataLayout: DataLayout,
-    req: Request
+    req: Request,
+    isCreate: boolean
 ): Promise<string> {
     if (!(dataLayout instanceof DataLayout)) {
         throw new Error("dataLayout must be an instance of DataLayout");
@@ -299,7 +308,6 @@ export async function renderPageObjectCreateEditPage(
         }
 
         if (column.type === DataColumnEnum.selectFromKeyValueArray || column.type === DataColumnEnum.selectEnum) {
-            console.log(column.listForSelect);
             body += `<label for="${column.key}">${column.title}</label><br>`;
             body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
             if (!column.required) {
@@ -317,7 +325,28 @@ export async function renderPageObjectCreateEditPage(
 
         if (column.type === DataColumnEnum.value) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key}" value="${!object ? "null" : object[column.key]}"  ${column.readonly ? "readonly" : ""}><br>`;
+            if(isCreate) {
+                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key}" ${column.readonly ? "readonly" : ""}><br>`;
+            }
+            else {
+                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key}" value="${!object ? "null" : object[column.key]}"  ${column.readonly ? "readonly" : ""}><br>`;
+            }
+        }
+
+        if (column.type === DataColumnEnum.icon) {
+            body += `<label for="${column.key}">${column.title}</label><br>`;
+            body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
+            if (!column.required) {
+                body += "<option value=\"null\">null</option>";
+            }
+            for (let j = 0; j < column.listForSelect!.length; j++) {
+                if (parseInt(!object ? null : object[column.key]) === column.listForSelect![j].key) {
+                    body += `<option value="${column.listForSelect![j].key}" selected>${column.listForSelect![j].value}</option>`;
+                } else {
+                    body += `<option value="${column.listForSelect![j].key}">${column.listForSelect![j].value}</option>`;
+                }
+            }
+            body += "</select><br>";;
         }
 
         if (column.type === DataColumnEnum.dateTime) {

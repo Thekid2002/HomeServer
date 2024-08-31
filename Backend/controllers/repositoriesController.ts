@@ -103,17 +103,18 @@ RepositoriesRouter.get("/edit", async (req, res) => {
             throw new Error("No id provided");
         }
         const id = parseInt(queryId as string);
-        const title = id ? "Edit Repository" : "Create Repository";
-        let repoDto = new RepositoryDto(null, "", "", null, [], null, null, null);
-
-        if (id) {
-            const repository = await findRepositoryById(id, true) as Repository;
-            const activeUser = await getUserFromRequest(req, true) as User;
-            if (repository.userId !== activeUser.id && activeUser.role !== RoleEnum.SUPER_ADMIN) {
-                throw new NotAuthorizedError("Unauthorized");
-            }
-            repoDto = await mapRepositoryToRepositoryDto(repository, await repository.getUser(), await repository.getSaveFiles());
+        if (!id) {
+            throw new Error("No valid id provided");
         }
+
+        const repository = await findRepositoryById(id, true) as Repository;
+        const activeUser = await getUserFromRequest(req, true) as User;
+
+        if (repository.userId !== activeUser.id && activeUser.role !== RoleEnum.SUPER_ADMIN) {
+            throw new NotAuthorizedError("Unauthorized");
+        }
+
+        const repoDto = await mapRepositoryToRepositoryDto(repository, await repository.getUser(), await repository.getSaveFiles());
 
         const values: {key: number, value: string}[] = repoDto.saveFiles ? repoDto.saveFiles.map((file) => ({
             key: file.id,
@@ -132,10 +133,54 @@ RepositoriesRouter.get("/edit", async (req, res) => {
         res.send(
             await renderPageObjectCreateEditPage(
                 "createEditRepository",
-                title,
+                "Edit Repository",
                 repoDto,
                 layout,
-                req
+                req,
+                false
+            )
+        );
+    } catch (e: any) {
+        console.log(e);
+        if (e.name === "NotFoundError") {
+            return res.send(
+                await renderPageFromHtmlFile("Backend/views/", "500", req)
+            );
+        }
+        if (e.name === "UnauthorizedError") {
+            return res.send(
+                await renderPageFromHtmlFile("Backend/views/", "401", req)
+            );
+        }
+        return res.send(await renderPageFromHtmlFile("Backend/views/", "401", req));
+    }
+});
+
+RepositoriesRouter.get("/create", async (req, res) => {
+    try {
+        await checkIsAuthorizedWithRoles(
+            req,
+            [ RoleEnum.USER, RoleEnum.ADMIN, RoleEnum.SUPER_ADMIN ],
+            true
+        );
+
+        let userIdList: {key: number, value: string}[] = [];
+        if (await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ], false)) {
+            userIdList = (await getAllUsers()).map((user) => ({
+                key: user.id,
+                value: user.email
+            }));
+        }
+
+        const layout = getRepositoryLayout(true, [], userIdList);
+        res.send(
+            await renderPageObjectCreateEditPage(
+                "createEditRepository",
+                "Create Repository",
+                null,
+                layout,
+                req,
+                true
             )
         );
     } catch (e: any) {
@@ -210,7 +255,6 @@ RepositoriesRouter.post("/edit", async (req, res) => {
             [ RoleEnum.USER, RoleEnum.ADMIN, RoleEnum.SUPER_ADMIN ],
             true
         );
-        const activeUser = await getUserFromRequest(req, true) as User;
         const queryId = req.query.id;
         if (!queryId || queryId !instanceof String) {
             throw new Error("No id provided");
@@ -219,31 +263,58 @@ RepositoriesRouter.post("/edit", async (req, res) => {
         if (!id) {
             throw new Error("No id provided");
         }
-        const repository: Repository = await findRepositoryById(id, false) as Repository;
+        const activeUser = await getUserFromRequest(req, true) as User;
+        const repository: Repository = await findRepositoryById(id, true) as Repository;
 
-        const name = checkString(req.body.name, false, 2, 256);
-        const description = checkString(req.body.description, false, 0);
-        const saveFileIds = (await repository!.getSaveFiles()).map(save => save.id);
-        const bodyEntryPointFileId = parseInt(req.body.entryPointFileId);
-        const entryPointFileId = checkListItem(bodyEntryPointFileId, saveFileIds, true);
-        const bodyRuntimeFileId = parseInt(req.body.runtimeFileId);
-        const runtimeFileId = checkListItem(bodyRuntimeFileId, saveFileIds, true);
-        const bodyRuntimeImportFileId = parseInt(req.body.runtimeImportFileId);
-        const runtimeImportFileId = checkListItem(bodyRuntimeImportFileId, saveFileIds, true);
-
-        if (!repository) {
-            await createRepository(name, description, activeUser.id, transaction);
-        } else {
-            repository.name = name;
-            repository.description = description;
-            repository.entryPointFileId = entryPointFileId;
-            repository.runtimeFileId = runtimeFileId;
-            repository.runtimeImportFileId = runtimeImportFileId;
-            await updateRepository(repository, transaction);
+        if (repository.userId !== activeUser.id && activeUser.role !== RoleEnum.SUPER_ADMIN) {
+            throw new NotAuthorizedError("Unauthorized");
         }
+
+        const { name, description, entryPointFileId, runtimeFileId, runtimeImportFileId, icon } = req.body;
+        const saveFileIds = (await repository.getSaveFiles()).map(save => save.id);
+
+        repository.name = checkString(name, false, 2, 256);
+        repository.description = checkString(description, false, 0);
+        repository.entryPointFileId = checkListItem(parseInt(entryPointFileId), saveFileIds, true);
+        repository.runtimeFileId = checkListItem(parseInt(runtimeFileId), saveFileIds, true);
+        repository.runtimeImportFileId = checkListItem(parseInt(runtimeImportFileId), saveFileIds, true);
+        repository.icon = checkString(icon, true, 0);
+
+        await updateRepository(repository, transaction);
 
         await transaction.commit();
         res.send("Repository updated");
+    } catch (e: any) {
+        await transaction.rollback();
+        console.log(e);
+        if (e.name === "NotFoundError") {
+            return res.status(500).send("Repository not found");
+        }
+        if (e.name === "UnauthorizedError") {
+            return res.status(401).send("Unauthorized");
+        }
+        return res.status(500).send("Internal server error");
+    }
+});
+
+RepositoriesRouter.post("/create", async (req, res) => {
+    const transaction = await sequelize.transaction();
+    try {
+        await checkIsAuthorizedWithRoles(
+            req,
+            [ RoleEnum.USER, RoleEnum.ADMIN, RoleEnum.SUPER_ADMIN ],
+            true
+        );
+        const activeUser = await getUserFromRequest(req, true) as User;
+
+        const name = checkString(req.body.name, false, 2, 256);
+        const description = checkString(req.body.description, false, 0);
+        const icon = checkString(req.body.icon, true, 0);
+
+        await createRepository(name, description, activeUser.id, icon, transaction);
+
+        await transaction.commit();
+        res.send("Repository created");
     } catch (e: any) {
         await transaction.rollback();
         console.log(e);

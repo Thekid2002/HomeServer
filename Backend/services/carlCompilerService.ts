@@ -23,7 +23,8 @@ export async function getRepositoryPickerPage(user: User, req: Request): Promise
         body += `<div class="picker-item-header">` +
             `<span class="material-symbols-outlined">` +
             (repositories[i].id === repoId ? `edit` : 'save') +
-            `</span></div><div class="picker-item-center">`
+            `</span></div><div class="picker-item-center">`;
+        body += repositories[i].icon ? `<span class="material-symbols-outlined">${repositories[i].icon}</span>` : "";
         body += `<p style="font-size: 27px">${repositories[i].name}</p>`
         body += `<p>${repositories[i].description}</p>`
         body += `</div><div class="picker-item-bottom">`

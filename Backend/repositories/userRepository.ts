@@ -196,13 +196,13 @@ export async function findUserByToken(
 }
 
 // Update user details
-export async function updateUser(user: User, transaction: Transaction): Promise<User> {
-    const currentUser = await User.findByPk(user.id);
-    if (!currentUser) {
+export async function updateUser(user: User, transaction: Transaction | null): Promise<User> {
+    const updateUser = await User.findByPk(user.id);
+    if (!updateUser) {
         throw new Error("User not found");
     }
 
-    await currentUser.update({
+    await updateUser.update({
         firstname: user.firstname,
         surname: user.surname,
         phone: user.phone,
@@ -234,6 +234,7 @@ async function createDefaultRepository(userId: number, transaction: Transaction)
         "Default",
         "Default repository",
         userId,
+        null,
         transaction
     );
 }

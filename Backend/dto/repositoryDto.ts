@@ -10,6 +10,7 @@ export class RepositoryDto {
     userId: number | null = null;
     saveFiles: SaveFileDto[] | null = null;
     link: string;
+    icon: string | null = null;
     entryPointFileId: number | null;
     runtimeFileId: number | null;
     runtimeImportFileId: number | null;
@@ -21,6 +22,7 @@ export class RepositoryDto {
    * @param description the description of the repository
    * @param user the user who owns the repository
    * @param saveFiles the save files in the repository
+     * @param icon the icon of the repository
    * @param entryPointFileId the entry point file
    * @param runtimeFileId the runtime file
    * @param runtimeImportFileId the runtime import file
@@ -31,6 +33,7 @@ export class RepositoryDto {
         description: string,
         user: User | null,
         saveFiles: SaveFileDto[] | null,
+        icon: string | null,
         entryPointFileId: number | null,
         runtimeFileId: number | null,
         runtimeImportFileId: number | null
@@ -45,6 +48,7 @@ export class RepositoryDto {
         }
         this.saveFiles = saveFiles;
         this.link = "/repositories/open?id=" + id;
+        this.icon = icon;
         this.entryPointFileId = entryPointFileId;
         this.runtimeFileId = runtimeFileId;
         this.runtimeImportFileId = runtimeImportFileId;

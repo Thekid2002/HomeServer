@@ -119,12 +119,10 @@ async function init() {
         if(repoId === currentRepoId) {
             await printSaveFiles()
         }else {
-            let editExistingRepo = confirm("You are about to overwrite the current repository. Do you want to continue?");
-            if(editExistingRepo) {
-                await printSaveFiles()
+            let overwriteRepo = confirm("You are about to overwrite the current repository. Do you want to continue?");
+            if(overwriteRepo) {
+                await getSaveFilesForRepository();
             }else {
-                document.cookie = `repoId=; expires=${new Date(Date.now()-1000).toUTCString()}; domain=; path=/`;
-                document.cookie = `repo=; expires=${new Date(Date.now()-1000).toUTCString()}; domain=; path=/`;
                 window.location.href = `/carlCompilers/ide`;
             }
         }

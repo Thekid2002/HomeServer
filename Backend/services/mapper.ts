@@ -94,6 +94,7 @@ export async function mapRepositoryToRepositoryDto(repository: Repository, user:
         repository.description,
         user,
         await mapSaveFilesToSaveFileDtoList(saveFiles, repository),
+        repository.icon,
         repository.entryPointFileId,
         repository.runtimeFileId,
         repository.runtimeImportFileId

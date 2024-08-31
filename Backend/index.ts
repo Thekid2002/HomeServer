@@ -34,7 +34,7 @@ __dirname = path
     .replace("/Backend", "").replace("/dist", "").replace("\\dist", "")
     .replace("\\Backend", "");
 
-const app = express();
+export const app = express();
 const hostname = "localhost";
 const port = 4200;
 

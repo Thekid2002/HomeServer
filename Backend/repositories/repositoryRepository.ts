@@ -6,13 +6,14 @@ import { SaveFile } from "../models/saveFile";
 import { Transaction } from "sequelize";
 
 // Create a repository with a name and a description
-export async function createRepository(name: string, description: string, userId: number, transaction: Transaction): Promise<Repository> {
+export async function createRepository(name: string, description: string, userId: number, icon: string | null, transaction: Transaction): Promise<Repository> {
     // Create the repository in the database
     const repository = await Repository.create(
         {
-            name,
-            description,
-            userId
+            name: name,
+            icon: icon,
+            description: description,
+            userId: userId,
         },
         { transaction }
     );
@@ -65,9 +66,10 @@ export async function updateRepository(repository: Repository, transaction: Tran
     await existingRepository.update({
         name: repository.name,
         description: repository.description,
+        icon: repository.icon,
         entryPointFileId: repository.entryPointFileId,
         runtimeFileId: repository.runtimeFileId,
-        runtimeImportFileId: repository.runtimeImportFileId
+        runtimeImportFileId: repository.runtimeImportFileId,
     }, { transaction });
 
     console.log(`Repository with id:"${repository.id}" updated successfully.`);
