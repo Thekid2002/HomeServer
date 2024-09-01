@@ -1,15 +1,30 @@
 import { calculateViaLanguage } from "/build/carlCompiler/CaCoRelease.js";
 let codeInput = document.getElementById("code");
 let result = document.getElementById("result");
+let parseErrors = [];
 
-let wabtInstance = null;
-let features = {}; // Feature options for WabtModule
-let jsonRes;
+let worker;
 
-// Initialize WabtModule and store the instance
-WabtModule().then(function (wabt) {
-    wabtInstance = wabt;
-});
+function createWorker() {
+    worker = new Worker("/code/worker.js");
+    worker.onmessage = function (e) {
+        console.log(e.data.type);
+        let data = e.data;
+        if (data.type.includes("addPrint")) {
+            addPrint(data.text);
+        }
+        if (data.type.includes("handlePrintsAndOutput")) {
+            handlePrintsAndOutput(data.endTime, parseErrors);
+            destroyWorker();
+        }
+    };
+}
+
+function destroyWorker() {
+    worker.terminate();
+    worker = null;
+    console.log("Worker terminated");
+}
 
 function addPrint(text) {
     if (window.terminal != null) {
@@ -21,9 +36,10 @@ function addPrint(text) {
 
 export async function compileAndExecute() {
     console.log("Compiling and executing code...");
+    createWorker();
     let success = await compile();
     if (success) {
-        execute();
+        worker.postMessage({type: "execute", wat: window.localStorage.getItem("wat"), runtimeFile: getRuntimeFile(), runtimeImportFile: getRuntimeImportFile()});
     }
 }
 
@@ -45,7 +61,7 @@ export async function compile() {
         compiledResult = await calculateViaLanguage(code, "compiler");
         console.log(compiledResult);
         // Calculate the WAT (WebAssembly Text format) using a custom language function
-        jsonRes = JSON.parse(compiledResult);
+        const jsonRes = JSON.parse(compiledResult);
         if (jsonRes.compilerOutput !== "") {
             jsonRes.compilerOutput = jsonRes.compilerOutput.replaceAll(
                 "nul!ll>",
@@ -128,13 +144,13 @@ export async function compile() {
     }
 }
 
-async function handlePrintsAndOutput(startTime) {
+function handlePrintsAndOutput(startTime, parseErrors) {
     const endTime = Date.now();
     let output = "";
     output += "Time to run: " + (endTime - startTime) / 1000 + "s";
-    for (let i = 0; i < jsonRes.parseErrors.length; i++) {
-        output += jsonRes.parseErrors[i];
-        if (i < jsonRes.parseErrors.length - 1) {
+    for (let i = 0; i < parseErrors.length; i++) {
+        output += parseErrors[i];
+        if (i < parseErrors.length - 1) {
             output += "\n";
         }
     }
@@ -144,105 +160,6 @@ async function handlePrintsAndOutput(startTime) {
     } else {
         result.value += output;
     }
-}
-
-export async function execute() {
-    try {
-        let currentWat = window.localStorage.getItem("wat");
-        if (currentWat == null) {
-            alert("Please compile the code first");
-            return;
-        }
-
-        if (currentWat === "") {
-            alert("No wat code to execute");
-            return;
-        }
-        let $output;
-        try {
-            $output = compileToWasm(currentWat);
-        } catch (e) {
-            alert("Failed to compile the code");
-        }
-
-        let functionBody = getRuntimeFile().replace(
-            "getImportObjectFromImportObjectFile()",
-            getRuntimeImportFile()
-        );
-        functionBody = functionBody
-            .replaceAll("console.log(", "addPrint(")
-            .replaceAll("console.error(", "addPrint(");
-        let functionArguments = "output, addPrint, wasmInstance, logMemory";
-        let newFunction;
-        try {
-            newFunction = new Function(
-                functionArguments,
-                `return (async function() { ${functionBody} })()`
-            );
-        } catch (e) {
-            alert("Failed to create the function: " + e.toString());
-        }
-
-        const now = Date.now();
-        try {
-            console.log(newFunction);
-            await newFunction($output, addPrint, jsonRes.wasmInstance, logMemory);
-        } catch (e) {
-            alert("Function error: " + e.toString());
-        }
-
-        await handlePrintsAndOutput(now);
-    } catch (e) {
-        alert("Execution error: " + e.toString());
-    }
-}
-
-function logMemory(memory, offset) {
-    const buffer = new Uint8Array(memory);
-    let i = 0;
-    let str = "";
-    while (buffer[offset + i] !== 0) {
-        str += String.fromCharCode(buffer[offset + i]);
-        i++;
-    }
-
-    return str;
-}
-
-/**
- * Compile the WAT (WebAssembly Text) code into a binary WebAssembly module.
- *
- * @param {string} value - The WAT code to compile.
- * @returns {Uint8Array|null} - The compiled WebAssembly binary buffer.
- */
-function compileToWasm(value) {
-    if (!wabtInstance) {
-        console.error("WabtModule not initialized");
-        return null;
-    }
-
-    let binaryBuffer = null;
-    let module = null;
-
-    try {
-    // Parse the WAT source code to a module
-        module = wabtInstance.parseWat("test.wast", value, features);
-        // Resolve names and validate the module
-        module.resolveNames();
-        module.validate(features);
-
-        // Generate binary output
-        let binaryOutput = module.toBinary({ log: true, write_debug_names: true });
-        binaryBuffer = binaryOutput.buffer; // Uint8Array containing the binary data
-
-        console.log("Wasm compilation successful.");
-    } catch (e) {
-        console.error("Wasm compilation failed:", e.toString());
-    } finally {
-        if (module) module.destroy();
-    }
-
-    return binaryBuffer; // Return the binary buffer
 }
 
 function getEntryFile() {
