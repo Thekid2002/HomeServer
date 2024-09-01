@@ -18,19 +18,21 @@ export async function getRepositoryPickerPage(user: User, req: Request): Promise
         repositories = await getAllRepositoriesByUserId(user.id);
     }
     let body = `<div class="picker-column">`
-    for (let i = 0; i < repositories.length%5; i++) {
-        body += `<div onclick="window.location.href = '/repositories/open?id=${repositories[i].id}'" class="picker-grid-item ${repositories[i].id === repoId ? "active" : ""}">`
+    for (let i = 1; i < repositories.length + 1; i++) {
+        body += `<div onclick="window.location.href = '/repositories/open?id=${repositories[i-1].id}'" class="picker-grid-item ${repositories[i-1].id === repoId ? "active" : ""}">`
         body += `<div class="picker-item-header">` +
             `<span class="material-symbols-outlined">` +
-            (repositories[i].id === repoId ? `edit` : 'save') +
+            (repositories[i-1].id === repoId ? `edit` : 'save') +
             `</span></div><div class="picker-item-center">`;
-        body += repositories[i].icon ? `<span class="material-symbols-outlined">${repositories[i].icon}</span>` : "";
-        body += `<p style="font-size: 27px">${repositories[i].name}</p>`
-        body += `<p>${repositories[i].description}</p>`
+        body += repositories[i-1].icon ? `<span class="material-symbols-outlined">${repositories[i-1].icon}</span>` : "";
+        body += `<p style="font-size: 27px">${repositories[i-1].name}</p>`
+        body += `<p>${repositories[i-1].description}</p>`
         body += `</div><div class="picker-item-bottom">`
-        body += `<p>${(await repositories[i].getUser()).email}</p>`
+        body += `<p>${(await repositories[i-1].getUser()).email}</p>`
         body += `</div></div>`
-        console.log(repositories[i].id + " " + repoId)
+        if(i%4 === 0) {
+            body += `</div><div class="picker-column">`
+        }
     }
     body += `</div>`;
     return body
