@@ -1,4 +1,4 @@
-import {TokenTypes} from "./TokenType";
+import { TokenTypes } from "./TokenType";
 
 export class Token {
     type: i32;
@@ -14,10 +14,27 @@ export class Token {
     }
 
     toString(): string {
-        return " " + TokenTypes[this.type] + " " + this.lexeme + " " + (this.literal != null ? this.literal.toString() : "");
+        return (
+            " " +
+      TokenTypes[this.type] +
+      " " +
+      this.lexeme +
+      " " +
+      (this.literal != null ? this.literal.toString() : "")
+        );
     }
 
     toJsonString(): string {
-        return "{ \"type\": \"" + TokenTypes[this.type] + "\", \"lexeme\": \"" + this.lexeme.replaceAll("\"", "\\\"") + "\", \"literal\": \"" + this.literal + "\", \"line\": " + this.line.toString() + "}";
+        return (
+            "{ \"type\": \"" +
+      TokenTypes[this.type] +
+      "\", \"lexeme\": \"" +
+      this.lexeme.replaceAll("\"", "\\\"") +
+      "\", \"literal\": \"" +
+      this.literal +
+      "\", \"line\": " +
+      this.line.toString() +
+      "}"
+        );
     }
 }

@@ -1,4 +1,4 @@
-import {calculateViaLanguage} from "../../../public/build/carlCompiler/CaCoDebug.js";
+import { calculateViaLanguage } from "../../../public/build/carlCompiler/CaCoDebug.js";
 
 export class TestDeclarations {
     static runTests() {
@@ -8,8 +8,7 @@ export class TestDeclarations {
     }
 
     static testDeclaration() {
-        let a = "num i = 100 * 10;" +
-            "print i";
+        let a = "num i = 100 * 10;" + "print i";
         console.log(`   Tested declaration with string ${a}`);
         let value = calculateViaLanguage(a, "compiler");
 

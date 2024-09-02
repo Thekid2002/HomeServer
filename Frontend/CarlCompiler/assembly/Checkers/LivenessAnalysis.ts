@@ -1,4 +1,4 @@
-import {Identifier} from "../AST/Nodes/Expressions/Terms/Identifier";
+import { Identifier } from "../AST/Nodes/Expressions/Terms/Identifier";
 
 export class LivenessAnalysis {
     currentLiveVars: Array<string>;
@@ -8,7 +8,7 @@ export class LivenessAnalysis {
     }
 
     pushLiveVar(identifier: Identifier): void {
-        if(this.currentLiveVars.includes(identifier.value)) {
+        if (this.currentLiveVars.includes(identifier.value)) {
             return;
         }
         console.log("Pushing live var: " + identifier.value);
@@ -16,8 +16,8 @@ export class LivenessAnalysis {
     }
 
     popLiveVar(identifier: Identifier): void {
-        let index = this.currentLiveVars.indexOf(identifier.value);
-        if(index === -1) {
+        const index = this.currentLiveVars.indexOf(identifier.value);
+        if (index === -1) {
             return;
         }
         console.log("Popping live var: " + identifier.value);

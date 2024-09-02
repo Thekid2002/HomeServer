@@ -1,16 +1,23 @@
-import {AbstractStatement} from "./AbstractStatement";
-import {ASTVisitor} from "../../ASTVisitor";
+import { AbstractStatement } from "./AbstractStatement";
+import { ASTVisitor } from "../../ASTVisitor";
 import { AbstractNode } from "../AbstractNode";
-import {AbstractExpression} from "../Expressions/AbstractExpression";
-import {AbstractType} from "../Types/AbstractType";
-import {FunctionCallInterface} from "../FunctionCallInterface";
+import { AbstractExpression } from "../Expressions/AbstractExpression";
+import { AbstractType } from "../Types/AbstractType";
+import { FunctionCallInterface } from "../FunctionCallInterface";
 
-export class FunctionCallStatement extends AbstractStatement implements FunctionCallInterface {
+export class FunctionCallStatement
+    extends AbstractStatement
+    implements FunctionCallInterface
+{
     actualParameters: Array<AbstractExpression>;
     expectedParameters: Array<AbstractType> | null = null;
     functionName: string;
 
-    constructor(functionName: string, actualParameters: Array<AbstractExpression>, lineNum: i32) {
+    constructor(
+        functionName: string,
+        actualParameters: Array<AbstractExpression>,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.functionName = functionName;
         this.actualParameters = actualParameters;
@@ -21,12 +28,18 @@ export class FunctionCallStatement extends AbstractStatement implements Function
     }
 
     clone(): AbstractNode {
-        let functionNameClone = this.functionName;
-        let actualParametersClone = new Array<AbstractExpression>();
+        const functionNameClone = this.functionName;
+        const actualParametersClone = new Array<AbstractExpression>();
         for (let i = 0; i < this.actualParameters.length; i++) {
-            actualParametersClone.push(this.actualParameters[i].clone() as AbstractExpression);
+            actualParametersClone.push(
+        this.actualParameters[i].clone() as AbstractExpression
+            );
         }
-        return new FunctionCallStatement(functionNameClone, actualParametersClone, this.lineNum);
+        return new FunctionCallStatement(
+            functionNameClone,
+            actualParametersClone,
+            this.lineNum
+        );
     }
 
     toString(): string {
@@ -40,5 +53,4 @@ export class FunctionCallStatement extends AbstractStatement implements Function
         string += ")";
         return string;
     }
-
 }

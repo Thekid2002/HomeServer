@@ -1,13 +1,17 @@
 import { ParseVisitor } from "../ParseVisitor";
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
-import {Token} from "../../Lexer/Token";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseAbstractExpression } from "../Expressions/ParseAbstractExpression";
+import { Token } from "../../Lexer/Token";
 
 export class ParseFunctionCallStatement extends ParseAbstractStatement {
     functionName: Token;
     actualParameters: Array<ParseAbstractExpression>;
 
-    constructor(functionName: Token, actualParameters: Array<ParseAbstractExpression>, lineNum: i32) {
+    constructor(
+        functionName: Token,
+        actualParameters: Array<ParseAbstractExpression>,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.functionName = functionName;
         this.actualParameters = actualParameters;
@@ -33,5 +37,4 @@ export class ParseFunctionCallStatement extends ParseAbstractStatement {
         string += "}";
         return string;
     }
-
 }

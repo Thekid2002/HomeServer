@@ -1,7 +1,6 @@
+let form = document.getElementById("form");
 
-let form = document.getElementById('form');
-
-form.addEventListener('submit', async (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
     let formData = new FormData(form);
     let object = {};
@@ -9,18 +8,18 @@ form.addEventListener('submit', async (event) => {
         object[key] = value;
     });
     await fetch(window.location.href, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(object)
-    }).then(response => {
-        if(response.status === 200){
-            window.location=document.referrer;
+    }).then((response) => {
+        if (response.status === 200) {
+            window.location = document.referrer;
         } else {
-            response.text().then(text => {
+            response.text().then((text) => {
                 alert(text);
             });
         }
-    })
+    });
 });

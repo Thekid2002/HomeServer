@@ -1,26 +1,26 @@
 function createObject() {
-    let repositoryId = window.location.href.split('?')[1].split('=')[1];
-    window.location.href = `/saveFile/edit?repositoryId=${repositoryId}`;
+    let repositoryId = window.location.href.split("?")[1].split("=")[1];
+    window.location.href = `/saveFile/create?repositoryId=${repositoryId}`;
 }
 
 function editObject(id) {
-    let repositoryId = window.location.href.split('?')[1].split('=')[1];
+    let repositoryId = window.location.href.split("?")[1].split("=")[1];
     window.location.href = `/saveFile/edit?id=${id}&repositoryId=${repositoryId}`;
 }
 
 function deleteObject(id) {
-    let repositoryId = window.location.href.split('?')[1].split('=')[1];
+    let repositoryId = window.location.href.split("?")[1].split("=")[1];
     fetch(`/saveFile/delete?id=${id}&repositoryId=${repositoryId}`, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({})
-    }).then(response => {
-        if(response.status === 200){
+    }).then((response) => {
+        if (response.status === 200) {
             window.location.reload();
         }
-        response.text().then(text => {
+        response.text().then((text) => {
             alert(text);
         });
     });

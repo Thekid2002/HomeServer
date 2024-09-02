@@ -1,7 +1,7 @@
 const examples = [
     {
-        "name": "Small for loop",
-        "code": `import "console" "print" void print(string value);
+        name: "Small for loop",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -15,8 +15,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Big for loop",
-        "code": `import "console" "print" void print(string value);
+        name: "Big for loop",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -34,8 +34,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Fibonacci",
-        "code": `import "console" "print" void print(string value);
+        name: "Fibonacci",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -55,8 +55,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Factorial",
-        "code": `import "console" "print" void print(string value);
+        name: "Factorial",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -73,8 +73,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Fibonacci recursive",
-        "code": `import "console" "print" void print(string value);
+        name: "Fibonacci recursive",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value);
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -95,8 +95,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Simple if statement",
-        "code": `import "console" "print" void print(string value);
+        name: "Simple if statement",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -113,8 +113,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Simple while loop",
-        "code": `import "console" "print" void print(string value);
+        name: "Simple while loop",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -130,8 +130,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Simple function",
-        "code": `import "console" "print" void print(string value);
+        name: "Simple function",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -147,8 +147,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Scan and print examples",
-        "code": `import "console" "print" void print(string value);
+        name: "Scan and print examples",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringDouble" int toStringDouble(double value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
@@ -176,8 +176,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Scan and print bool",
-        "code": `import "console" "print" void print(string value);
+        name: "Scan and print bool",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -191,8 +191,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Simple array",
-        "code": `import "console" "print" void print(string value);
+        name: "Simple array",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -207,8 +207,8 @@ export void _start() {
 }`
     },
     {
-        "name": "Simple array sum",
-        "code": `import "console" "print" void print(string value);
+        name: "Simple array sum",
+        code: `import "console" "print" void print(string value);
 import "js" "toStringInt" string toStringInt(int value);
 import "js" "toStringBool" string toStringBool(bool value); 
 import "js" "toStringDouble" string toStringDouble(double value);
@@ -240,11 +240,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         exampleSelect.addEventListener("change", function () {
             if (window.codeEditor != null) {
-                if(window.selectedFile === "CarlEditor") {
+                if (window.selectedFile === "CarlEditor") {
                     window.codeEditor.setValue(exampleSelect.value);
                 }
                 window.localStorage.setItem("CarlEditor", exampleSelect.value);
-            }else {
+            } else {
                 codeArea.value = exampleSelect.value;
             }
         });

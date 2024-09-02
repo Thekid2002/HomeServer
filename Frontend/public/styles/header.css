@@ -1,39 +1,39 @@
-.header{
-    background-color: #333;
-    font-weight: bold;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    height: 60px;
+.header {
+  background-color: #333;
+  font-weight: bold;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 60px;
 }
 
 .header > div:nth-child(1) {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: start;
-    padding-inline: 20px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: start;
+  padding-inline: 20px;
 }
 
 .header > div:nth-child(2) {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: center;
-    padding-inline: 20px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  padding-inline: 20px;
 }
 
 .header > div:nth-child(3) {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: end;
-    padding-inline: 20px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: end;
+  padding-inline: 20px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }

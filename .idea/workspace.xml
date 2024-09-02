@@ -9,36 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/services/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlCompilersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/carlInstructionsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/saveFileController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/repositoryDto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dto/saveFileDto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/dataColumnType.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/dataColumnType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/saveFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/saveFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/repositoryRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/saveFileRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/repositories/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authenticationService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/authorizationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/authorizationService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/mapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/userService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/carlCompilationHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/fileSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/checkService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/checkService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +24,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -78,22 +52,25 @@
     "JavaScript Debug.CarlDebug.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Typescript",
     "last_opened_file_path": "C:/Users/coolf/Documents/GitHub/HomeServer",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.CarlComStart.executor": "Run",
     "npm.CarlIntStart.executor": "Run",
     "npm.CarlStart.executor": "Run",
     "npm.TestTest.executor": "Run",
+    "npm.start sudo.executor": "Run",
     "npm.start.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/Users/thomas/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "ts.external.directory.path": "C:\\Users\\coolf\\Documents\\GitHub\\HomeServer\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,7 +90,7 @@
       <recent name="$PROJECT_DIR$/Frontend/public/styles" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.start sudo">
     <configuration name="CarlDebug" type="JavascriptDebugType" uri="http://localhost:63342/HomeServer/Backend/views/simple.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -138,9 +115,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start sudo" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
+      <arguments value="sudo" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -150,7 +128,7 @@
       <item itemvalue="npm.CarlComStart" />
       <item itemvalue="npm.CarlIntStart" />
       <item itemvalue="npm.TestTest" />
-      <item itemvalue="npm.start" />
+      <item itemvalue="npm.start sudo" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -196,11 +174,100 @@
       <workItem from="1724051781355" duration="1663000" />
       <workItem from="1724053461462" duration="43786000" />
       <workItem from="1724165007230" duration="795000" />
+      <workItem from="1724947723838" duration="26540000" />
+      <workItem from="1725066045064" duration="1868000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/index.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ToAstVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/ASTPrinter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/FuncEnv.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/VarEnv.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Token.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/TokenType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/ReservedWords.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Lexer/Scanner.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/LivenessAnalysis.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Checkers/CombinedChecker.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Optimizer.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Compiler/Compiler.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionCallStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseCompoundStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAssignment.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIfStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseFunctionDeclaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseDeclaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseReturn.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseIncrement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseAbstractStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseImport.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseProgram.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Statements/ParseLoopStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Interpreter/Interpreter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseMultiplicativeExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAbstractExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseUnaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseEqualityExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseAdditiveExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParseRelationalExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/ParsePowExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/AbstractTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseInt.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseIdentifier.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseDouble.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseFunctionCallExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Expressions/Terms/ParseBool.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/AbstractNode.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/FunctionCallInterface.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/StatementType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/ValueType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Types/AbstractType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreePrinter.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/Parser.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseTreeNode.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Parser/ParseVisitor.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValDouble.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValBool.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValType.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValInt.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValObject.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Values/ValString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/UnaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/AbstractExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/BinaryExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/FunctionCallExpression.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Double.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/ASTString.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/AbstractTerm.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Term.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Identifier.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Int.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Expressions/Terms/Bool.js" />
+        <option value="$PROJECT_DIR$/Frontend/Test/assembly/index.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/Env/Functions/FunctionObject.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionCallStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/CompoundStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Declaration.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/ImportFunction.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Assignment.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Program.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/AbstractStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/Return.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/IfStatement.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/While.js" />
+        <option value="$PROJECT_DIR$/Frontend/CarlCompiler/assembly/AST/Nodes/Statements/FunctionDeclaration.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -217,16 +284,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Backend/repositories/repositoryRepository.js</url>
-          <line>53</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/Backend/repositories/saveFileRepository.ts</url>
+          <line>70</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Backend/controllers/userController.js</url>
-          <line>105</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/Backend/controllers/userController.ts</url>
+          <line>116</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

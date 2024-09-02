@@ -1,13 +1,17 @@
-import {AbstractTerm} from "./AbstractTerm";
-import {ParseAbstractExpression} from "../ParseAbstractExpression";
-import {ParseVisitor} from "../../ParseVisitor";
-import {Token} from "../../../Lexer/Token";
+import { AbstractTerm } from "./AbstractTerm";
+import { ParseAbstractExpression } from "../ParseAbstractExpression";
+import { ParseVisitor } from "../../ParseVisitor";
+import { Token } from "../../../Lexer/Token";
 
 export class ParseFunctionCallExpression extends AbstractTerm {
     functionName: Token;
     actualParameters: Array<ParseAbstractExpression>;
 
-    constructor(functionName: Token, actualParameters: Array<ParseAbstractExpression>, lineNum: i32) {
+    constructor(
+        functionName: Token,
+        actualParameters: Array<ParseAbstractExpression>,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.functionName = functionName;
         this.actualParameters = actualParameters;

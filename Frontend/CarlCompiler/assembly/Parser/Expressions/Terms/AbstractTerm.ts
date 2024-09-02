@@ -1,5 +1,3 @@
-import {ParseAbstractExpression} from "../ParseAbstractExpression";
+import { ParseAbstractExpression } from "../ParseAbstractExpression";
 
-export abstract class AbstractTerm extends ParseAbstractExpression {
-
-}
+export abstract class AbstractTerm extends ParseAbstractExpression {}

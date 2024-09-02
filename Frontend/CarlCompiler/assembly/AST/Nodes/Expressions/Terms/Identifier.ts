@@ -1,5 +1,5 @@
-import {AbstractTerm} from "./AbstractTerm";
-import {ASTVisitor} from "../../../ASTVisitor";
+import { AbstractTerm } from "./AbstractTerm";
+import { ASTVisitor } from "../../../ASTVisitor";
 
 export class Identifier extends AbstractTerm {
     constructor(name: string, lineNum: i32) {
@@ -11,10 +11,7 @@ export class Identifier extends AbstractTerm {
     }
 
     clone(): Identifier {
-        return new Identifier(
-            this.value,
-            this.lineNum
-        );
+        return new Identifier(this.value, this.lineNum);
     }
 
     toString(): string {

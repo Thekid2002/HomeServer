@@ -1,5 +1,5 @@
-import {AbstractTerm} from "./AbstractTerm";
-import {ASTVisitor} from "../../../ASTVisitor";
+import { AbstractTerm } from "./AbstractTerm";
+import { ASTVisitor } from "../../../ASTVisitor";
 
 export class ASTString extends AbstractTerm {
     memoryLocation: i32 = 0;
@@ -17,10 +17,7 @@ export class ASTString extends AbstractTerm {
     }
 
     clone(): ASTString {
-        return new ASTString(
-            this.value,
-            this.lineNum
-        );
+        return new ASTString(this.value, this.lineNum);
     }
 
     toString(): string {

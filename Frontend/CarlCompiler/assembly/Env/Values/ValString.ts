@@ -1,4 +1,4 @@
-import {ValObject} from "./ValObject";
+import { ValObject } from "./ValObject";
 
 export class ValString extends ValObject {
     value: string;

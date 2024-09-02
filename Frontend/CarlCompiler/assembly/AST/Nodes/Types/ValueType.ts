@@ -1,6 +1,6 @@
-import {ASTVisitor} from "../../ASTVisitor";
-import {AbstractType} from "./AbstractType";
-import {AbstractNode} from "../AbstractNode";
+import { ASTVisitor } from "../../ASTVisitor";
+import { AbstractType } from "./AbstractType";
+import { AbstractNode } from "../AbstractNode";
 
 export class ValueType extends AbstractType {
     type: ValueTypeEnum;
@@ -16,18 +16,18 @@ export class ValueType extends AbstractType {
 
     toString(): string {
         switch (this.type) {
-            case ValueTypeEnum.Error:
-                return "Error";
-            case ValueTypeEnum.DOUBLE:
-                return "f64";
-            case ValueTypeEnum.INT:
-                return "i32";
-            case ValueTypeEnum.BOOL:
-                return "i32";
-            case ValueTypeEnum.STRING:
-                return "string";
-            default:
-                return "Unknown";
+        case ValueTypeEnum.Error:
+            return "Error";
+        case ValueTypeEnum.DOUBLE:
+            return "f64";
+        case ValueTypeEnum.INT:
+            return "i32";
+        case ValueTypeEnum.BOOL:
+            return "i32";
+        case ValueTypeEnum.STRING:
+            return "string";
+        default:
+            return "Unknown";
         }
     }
 
@@ -41,11 +41,11 @@ export class ValueType extends AbstractType {
 }
 
 export enum ValueTypeEnum {
-    Error,
-    INT,
-    DOUBLE,
-    BOOL,
-    STRING,
+  Error,
+  INT,
+  DOUBLE,
+  BOOL,
+  STRING,
 }
 
 export const ValueTypeNames: Array<string> = [
@@ -53,5 +53,5 @@ export const ValueTypeNames: Array<string> = [
     "INT",
     "DOUBLE",
     "BOOL",
-    "STRING",
+    "STRING"
 ];

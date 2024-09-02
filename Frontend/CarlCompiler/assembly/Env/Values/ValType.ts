@@ -1,8 +1,7 @@
-import {ValObject} from "./ValObject";
-import {AbstractType} from "../../AST/Nodes/Types/AbstractType";
+import { ValObject } from "./ValObject";
+import { AbstractType } from "../../AST/Nodes/Types/AbstractType";
 
 export class ValType extends ValObject {
-
     type: AbstractType;
 
     constructor(type: AbstractType) {

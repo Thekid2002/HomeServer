@@ -1,5 +1,3 @@
-import {ParseTreeNode} from "../ParseTreeNode";
+import { ParseTreeNode } from "../ParseTreeNode";
 
-export abstract class ParseAbstractStatement extends ParseTreeNode {
-
-}
+export abstract class ParseAbstractStatement extends ParseTreeNode {}

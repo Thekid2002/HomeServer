@@ -1,13 +1,17 @@
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
-import {ParseIdentifier} from "../Expressions/Terms/ParseIdentifier";
-import {ParseAbstractExpression} from "../Expressions/ParseAbstractExpression";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
+import { ParseIdentifier } from "../Expressions/Terms/ParseIdentifier";
+import { ParseAbstractExpression } from "../Expressions/ParseAbstractExpression";
 import { ParseVisitor } from "../ParseVisitor";
 
 export class ParseAssignment extends ParseAbstractStatement {
     identifier: ParseIdentifier;
     expression: ParseAbstractExpression;
 
-    constructor(identifier: ParseIdentifier, expression: ParseAbstractExpression, lineNum: i32) {
+    constructor(
+        identifier: ParseIdentifier,
+        expression: ParseAbstractExpression,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.identifier = identifier;
         this.expression = expression;
@@ -15,7 +19,6 @@ export class ParseAssignment extends ParseAbstractStatement {
 
     accept<T>(visitor: ParseVisitor<T>): T {
         return visitor.visitAssignment(this);
-
     }
 
     toJsonString(): string {

@@ -1,5 +1,3 @@
 export abstract class ValObject {
-
-    public abstract toJsonString(): string;
-
+  public abstract toJsonString(): string;
 }

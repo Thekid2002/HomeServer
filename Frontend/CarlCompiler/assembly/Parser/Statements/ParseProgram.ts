@@ -1,5 +1,5 @@
-import {ParseVisitor} from "../ParseVisitor";
-import {ParseAbstractStatement} from "./ParseAbstractStatement";
+import { ParseVisitor } from "../ParseVisitor";
+import { ParseAbstractStatement } from "./ParseAbstractStatement";
 
 export class ParseProgram extends ParseAbstractStatement {
     body: ParseAbstractStatement | null;
@@ -14,6 +14,6 @@ export class ParseProgram extends ParseAbstractStatement {
     }
 
     toJsonString(): string {
-        return `{"type": "Program", "body": ${this.body !== null? this.body!.toJsonString() : "null"}}`;
+        return `{"type": "Program", "body": ${this.body !== null ? this.body!.toJsonString() : "null"}}`;
     }
 }

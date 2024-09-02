@@ -1,12 +1,17 @@
-import {AbstractExpression} from "./AbstractExpression";
-import {ASTVisitor} from "../../ASTVisitor";
+import { AbstractExpression } from "./AbstractExpression";
+import { ASTVisitor } from "../../ASTVisitor";
 
 export class BinaryExpression extends AbstractExpression {
     primaryOrLeft: AbstractExpression;
     operator: string;
     right: AbstractExpression;
 
-    constructor(primaryOrLeft: AbstractExpression, operator: string, right: AbstractExpression, lineNum: i32) {
+    constructor(
+        primaryOrLeft: AbstractExpression,
+        operator: string,
+        right: AbstractExpression,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.primaryOrLeft = primaryOrLeft;
         this.operator = operator;
@@ -19,14 +24,22 @@ export class BinaryExpression extends AbstractExpression {
 
     clone(): BinaryExpression {
         return new BinaryExpression(
-            this.primaryOrLeft.clone() as AbstractExpression,
-            this.operator,
-            this.right.clone() as AbstractExpression,
-            this.lineNum
+      this.primaryOrLeft.clone() as AbstractExpression,
+      this.operator,
+      this.right.clone() as AbstractExpression,
+      this.lineNum
         );
     }
 
     toString(): string {
-        return "BinaryExpression(" + this.primaryOrLeft.toString() + ", " + this.operator + ", " + this.right.toString() + ")";
+        return (
+            "BinaryExpression(" +
+      this.primaryOrLeft.toString() +
+      ", " +
+      this.operator +
+      ", " +
+      this.right.toString() +
+      ")"
+        );
     }
 }

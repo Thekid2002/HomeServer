@@ -6,4 +6,7 @@ export declare const memory: WebAssembly.Memory;
  * @param type `~lib/string/String`
  * @returns `~lib/string/String`
  */
-export declare function calculateViaLanguage(string: string, type: string): string;
+export declare function calculateViaLanguage(
+  string: string,
+  type: string,
+): string;

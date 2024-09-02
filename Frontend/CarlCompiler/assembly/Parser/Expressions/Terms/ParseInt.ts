@@ -1,6 +1,6 @@
-import {ParseVisitor} from "../../ParseVisitor";
-import {Token} from "../../../Lexer/Token";
-import {AbstractTerm} from "./AbstractTerm";
+import { ParseVisitor } from "../../ParseVisitor";
+import { Token } from "../../../Lexer/Token";
+import { AbstractTerm } from "./AbstractTerm";
 
 export class ParseInt extends AbstractTerm {
     value: Token;

@@ -1,4 +1,4 @@
-import {calculateViaLanguage} from "../build/simpleCalculator/SCRelease.js";
+import { calculateViaLanguage } from "../build/simpleCalculator/SCRelease.js";
 
 let display = document.getElementById("numInput");
 let parseOutput = document.getElementById("parseOutput");
@@ -12,15 +12,15 @@ let spinner = document.getElementById("spinner");
 let startTime;
 
 let search = window.document.URL;
-let query = search.split('?')[1];
+let query = search.split("?")[1];
 
 console.log(query);
-if(query) {
-    let queryValues = query.split('&');
+if (query) {
+    let queryValues = query.split("&");
     let keys = [];
     let values = [];
     for (let i = 0; i < queryValues.length; i++) {
-        let split = queryValues[i].split(':');
+        let split = queryValues[i].split(":");
         keys.push(split[0]);
         values.push(split[1].replaceAll("%20", " "));
     }
@@ -37,7 +37,6 @@ if(query) {
         display.value = values[keys.indexOf("code")];
     }
 
-
     if (keys.includes("calculate")) {
         if (values[keys.indexOf("calculate")] === "true") {
             calculate();
@@ -45,26 +44,31 @@ if(query) {
     }
 }
 
-
 let prevInputs = document.getElementById("previousInputs");
 let prevInputsValues = [];
 let prevInputsResults = [];
-display.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+display.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
         calculate();
     }
 });
 
 export function pressKey(key) {
-    if (key === 'sin' || key === 'cos' || key === 'tan' || key === 'log' || key === 'sqrt') {
-        return display.value += key + '(';
+    if (
+        key === "sin" ||
+    key === "cos" ||
+    key === "tan" ||
+    key === "log" ||
+    key === "sqrt"
+    ) {
+        return (display.value += key + "(");
     }
 
-    if (key === 'C') {
+    if (key === "C") {
         return clearDisplay();
     }
 
-    if (key === '=') {
+    if (key === "=") {
         return calculate();
     }
 
@@ -134,16 +138,16 @@ function calculate() {
             printTokens(value.tokens);
         }
 
-        if(value.compilerOutput){
-            compilerOutput.innerHTML = value.compilerOutput
+        if (value.compilerOutput) {
+            compilerOutput.innerHTML = value.compilerOutput;
         }
 
         spinner.style.display = "none";
-        return display.value = value.value || "Error: No value returned.";
-    }, 0);  // Adjust the delay as needed
+        return (display.value = value.value || "Error: No value returned.");
+    }, 0); // Adjust the delay as needed
 }
 export function setInput(value) {
-    return document.getElementById("numInput").value = value;
+    return (document.getElementById("numInput").value = value);
 }
 
 function printLexerErrors(errors) {
@@ -152,7 +156,6 @@ function printLexerErrors(errors) {
         astOutput.innerHTML += "<pre>" + errors[i - 1] + "</pre><br>";
     }
 }
-
 
 function printAstErrors(errors) {
     parseOutput.innerHTML = "<pre>" + "---PARSE ERRORS---" + "</pre><br>";
@@ -190,7 +193,8 @@ function printEval(evaluation) {
     let values = Object.values(evaluation);
 
     for (let i = keys.length - 1; i >= 0; i--) {
-        evalOutput.innerHTML += "<pre>" + keys[i] + " : " + values[i] + "</pre><br>";
+        evalOutput.innerHTML +=
+      "<pre>" + keys[i] + " : " + values[i] + "</pre><br>";
     }
 }
 
@@ -209,7 +213,6 @@ function resetOutputs() {
     printOutput.innerHTML = "";
     evalOutput.innerHTML = "";
 }
-
 
 export function clearDisplay() {
     document.getElementById("numInput").value = "";

@@ -1,8 +1,11 @@
-import {AbstractType} from "../AST/Nodes/Types/AbstractType";
-import {ValObject} from "./Values/ValObject";
+import { AbstractType } from "../AST/Nodes/Types/AbstractType";
+import { ValObject } from "./Values/ValObject";
 
 export class VarEnv {
-    public static globalVars: Map<string, ValueType> = new Map<string, ValueType>();
+    public static globalVars: Map<string, ValueType> = new Map<
+    string,
+    ValueType
+  >();
     public vars: Map<string, ValueType>;
     public parent: VarEnv | null = null;
     public children: Array<VarEnv> = new Array<VarEnv>();
@@ -13,7 +16,7 @@ export class VarEnv {
     }
 
     public enterScope(): VarEnv {
-        let newEnv = new VarEnv(this);
+        const newEnv = new VarEnv(this);
         this.children.push(newEnv);
         return newEnv;
     }
@@ -34,7 +37,7 @@ export class VarEnv {
         if (this.vars.has(name)) {
             return this.vars.get(name).type;
         }
-        if(this.parent !== null) {
+        if (this.parent !== null) {
             return this.parent!.lookUpType(name);
         }
 
@@ -64,14 +67,14 @@ export class VarEnv {
     getDeclarations(reduceParameters: Array<string> | null): string {
         let string = "";
         for (let i = 0; i < this.vars.size; i++) {
-            let key = this.vars.keys()[i];
-            if(reduceParameters !== null && reduceParameters.includes(key)) {
+            const key = this.vars.keys()[i];
+            if (reduceParameters !== null && reduceParameters.includes(key)) {
                 continue;
             }
-            let type = this.vars.values()[i];
-            if(type.toString() === "string") {
+            const type = this.vars.values()[i];
+            if (type.toString() === "string") {
                 string += `(local $${this.vars.keys()[i]} i32)\n`;
-            }else {
+            } else {
                 string += `(local $${this.vars.keys()[i]} ${this.vars.values()[i].toString()})\n`;
             }
         }
@@ -87,9 +90,11 @@ export class VarEnv {
             const key = keysArray[i].toString();
             const value = this.vars.get(keysArray[i]);
 
-            string += "\"" + key + "\": " + (value !== null ? value.toJsonString() : "null");
+            string +=
+        "\"" + key + "\": " + (value !== null ? value.toJsonString() : "null");
 
-            if (i < keysArray.length - 1) { // Correct condition to avoid trailing comma
+            if (i < keysArray.length - 1) {
+                // Correct condition to avoid trailing comma
                 string += ", ";
             }
         }

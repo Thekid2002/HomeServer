@@ -1,59 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <script type="module">
-    </script>
-</head>
-<body>
-<h1>Upload</h1>
-<div>
-    <a href="/simple.html">Calculator</a>
-    <a href="/index.html">Upload</a>
-    <a href="/files.html">Files</a>
-    <a href="/editVideo.html">Edit Video</a>
-</div>
-<form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="myFile">
-    <button type="submit">Upload</button>
-</form>
-<div id="response"></div>
+  <head>
+    <script type="module"></script>
+  </head>
+  <body>
+    <h1>Upload</h1>
+    <div>
+      <a href="/simple.html">Calculator</a>
+      <a href="/index.html">Upload</a>
+      <a href="/files.html">Files</a>
+      <a href="/editVideo.html">Edit Video</a>
+    </div>
+    <form
+      id="uploadForm"
+      action="/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="myFile" />
+      <button type="submit">Upload</button>
+    </form>
+    <div id="response"></div>
 
-<script>
-    let uploadForm = document.getElementById('uploadForm');
-    let fileInput = document.querySelector('input[type="file"]');
+    <script>
+      let uploadForm = document.getElementById("uploadForm");
+      let fileInput = document.querySelector('input[type="file"]');
 
-    uploadForm.addEventListener('dragover', function (e) {
+      uploadForm.addEventListener("dragover", function (e) {
         e.preventDefault();
-    });
+      });
 
-    uploadForm.addEventListener('drop', function (e) {
+      uploadForm.addEventListener("drop", function (e) {
         e.preventDefault();
 
         var files = e.dataTransfer.files;
         for (var i = 0; i < files.length; i++) {
-            fileInput.files = files;
+          fileInput.files = files;
         }
-    });
+      });
 
-    uploadForm.addEventListener('submit', function (e) {
+      uploadForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         var formData = new FormData(this);
 
         fetch(this.action, {
-            method: this.method,
-            body: formData
+          method: this.method,
+          body: formData,
         })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                document.getElementById("response").innerText = data;
-            })
-            .catch(error => {
-                console.error(error);
-                document.getElementById("response").innerText = error;
-            });
-    });
-</script>
-</body>
+          .then((response) => response.text())
+          .then((data) => {
+            console.log(data);
+            document.getElementById("response").innerText = data;
+          })
+          .catch((error) => {
+            console.error(error);
+            document.getElementById("response").innerText = error;
+          });
+      });
+    </script>
+  </body>
 </html>

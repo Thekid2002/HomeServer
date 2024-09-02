@@ -1,14 +1,21 @@
-import {AbstractExpression} from "./AbstractExpression";
-import {ASTVisitor} from "../../ASTVisitor";
-import {FunctionCallInterface} from "../FunctionCallInterface";
-import {AbstractType} from "../Types/AbstractType";
+import { AbstractExpression } from "./AbstractExpression";
+import { ASTVisitor } from "../../ASTVisitor";
+import { FunctionCallInterface } from "../FunctionCallInterface";
+import { AbstractType } from "../Types/AbstractType";
 
-export class FunctionCallExpression extends AbstractExpression implements FunctionCallInterface {
+export class FunctionCallExpression
+    extends AbstractExpression
+    implements FunctionCallInterface
+{
     actualParameters: Array<AbstractExpression>;
     expectedParameters: Array<AbstractType> | null = null;
     functionName: string;
 
-    constructor(functionName: string, actualParameters: Array<AbstractExpression>, lineNum: i32) {
+    constructor(
+        functionName: string,
+        actualParameters: Array<AbstractExpression>,
+        lineNum: i32
+    ) {
         super(lineNum);
         this.functionName = functionName;
         this.actualParameters = actualParameters;
@@ -31,11 +38,17 @@ export class FunctionCallExpression extends AbstractExpression implements Functi
     }
 
     clone(): FunctionCallExpression {
-        let functionNameClone = this.functionName;
-        let actualParametersClone = new Array<AbstractExpression>();
+        const functionNameClone = this.functionName;
+        const actualParametersClone = new Array<AbstractExpression>();
         for (let i = 0; i < this.actualParameters.length; i++) {
-            actualParametersClone.push(this.actualParameters[i].clone() as AbstractExpression);
+            actualParametersClone.push(
+        this.actualParameters[i].clone() as AbstractExpression
+            );
         }
-        return new FunctionCallExpression(functionNameClone, actualParametersClone, this.lineNum);
+        return new FunctionCallExpression(
+            functionNameClone,
+            actualParametersClone,
+            this.lineNum
+        );
     }
 }

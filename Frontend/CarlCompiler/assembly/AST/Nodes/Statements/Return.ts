@@ -1,7 +1,7 @@
 import { ASTVisitor } from "../../ASTVisitor";
 import { AbstractNode } from "../AbstractNode";
-import {AbstractStatement} from "./AbstractStatement";
-import {AbstractExpression} from "../Expressions/AbstractExpression";
+import { AbstractStatement } from "./AbstractStatement";
+import { AbstractExpression } from "../Expressions/AbstractExpression";
 
 export class Return extends AbstractStatement {
     public expression: AbstractExpression;
@@ -15,10 +15,12 @@ export class Return extends AbstractStatement {
         return visitor.visitReturn(this);
     }
     clone(): AbstractNode {
-        return new Return(this.expression.clone() as AbstractExpression, this.lineNum);
+        return new Return(
+      this.expression.clone() as AbstractExpression,
+      this.lineNum
+        );
     }
     toString(): string {
         return "Return(" + this.expression.toString() + ")";
     }
-
 }
