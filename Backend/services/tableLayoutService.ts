@@ -124,8 +124,7 @@ export const getRepositoryLayout = function (
             "Icon",
             false,
             false,
-            DataColumnEnum.icon,
-            iconsKeyValuesArray
+            DataColumnEnum.value,
         )
     );
 
@@ -219,12 +218,3 @@ function turnEnumIntoKeyValueArray(enumObject: any): { key: any; value: any }[] 
     }));
     return array.splice(array.length/2, array.length-1);
 }
-
-
-const iconsKeyValuesArray = [
-    {key: "local_fire_department", value: "fire"},
-    {key: "water_drop", value: "water"},
-    {key: "shower", value: "shower"},
-    {key: "ac_unit", value: "snow"},
-]
-

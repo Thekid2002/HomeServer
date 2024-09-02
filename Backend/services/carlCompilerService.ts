@@ -21,9 +21,11 @@ export async function getRepositoryPickerPage(user: User, req: Request): Promise
     for (let i = 1; i < repositories.length + 1; i++) {
         body += `<div onclick="window.location.href = '/repositories/open?id=${repositories[i-1].id}'" class="picker-grid-item ${repositories[i-1].id === repoId ? "active" : ""}">`
         body += `<div class="picker-item-header">` +
-            `<span class="material-symbols-outlined">` +
+            `<button> <span class="material-symbols-outlined">` +
             (repositories[i-1].id === repoId ? `edit` : 'save') +
-            `</span></div><div class="picker-item-center">`;
+            `</button></span><button class="clickable-icon-button" onclick="event.stopPropagation(); window.location.href = '/repositories/edit?id=${repositories[i-1].id}'"><span class="material-symbols-outlined">settings</span></button></div>`
+            +
+        `<div class="picker-item-center">`;
         body += repositories[i-1].icon ? `<span class="material-symbols-outlined">${repositories[i-1].icon}</span>` : "";
         body += `<p style="font-size: 27px">${repositories[i-1].name}</p>`
         body += `<p>${repositories[i-1].description}</p>`

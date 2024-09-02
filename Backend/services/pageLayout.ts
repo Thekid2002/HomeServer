@@ -8,6 +8,7 @@ import { DataLayout } from "../models/dataLayout";
 import { mapDateTimeToIsoString } from "./mapper";
 import { Request } from "express";
 import { Repository } from "../models/repository";
+import {col} from "sequelize";
 
 let header = null;
 
@@ -180,8 +181,6 @@ async function renderTablePage(
                 const match = column.listForSelect!.find(
                     (item) => item.key === row[column.key]
                 );
-                console.log(column.listForSelect);
-                console.log("hej " + column.listForSelect + " " + column.key + " " + row[column.key]);
                 if (match) {
                     body += `<td>${match.value}</td>`;
                 } else {
@@ -309,7 +308,7 @@ export async function renderPageObjectCreateEditPage(
 
         if (column.type === DataColumnEnum.selectFromKeyValueArray || column.type === DataColumnEnum.selectEnum) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
+            body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}>`;
             if (!column.required) {
                 body += "<option value=\"null\">null</option>";
             }
@@ -326,42 +325,26 @@ export async function renderPageObjectCreateEditPage(
         if (column.type === DataColumnEnum.value) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
             if(isCreate) {
-                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key}" ${column.readonly ? "readonly" : ""}><br>`;
+                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key + (column.required ? "*" : "")}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}"><br>`;
             }
             else {
-                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key}" value="${!object ? "null" : object[column.key]}"  ${column.readonly ? "readonly" : ""}><br>`;
+                body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key + (column.required ? "*" : "")}" value="${!object ? "null" : object[column.key]}"  ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}"><br>`;
             }
-        }
-
-        if (column.type === DataColumnEnum.icon) {
-            body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<select id="${column.key}" name="${column.key}" ${column.readonly ? "readonly" : ""}>`;
-            if (!column.required) {
-                body += "<option value=\"null\">null</option>";
-            }
-            for (let j = 0; j < column.listForSelect!.length; j++) {
-                if (parseInt(!object ? null : object[column.key]) === column.listForSelect![j].key) {
-                    body += `<option value="${column.listForSelect![j].key}" selected>${column.listForSelect![j].value}</option>`;
-                } else {
-                    body += `<option value="${column.listForSelect![j].key}">${column.listForSelect![j].value}</option>`;
-                }
-            }
-            body += "</select><br>";;
         }
 
         if (column.type === DataColumnEnum.dateTime) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<input type="datetime-local" id="${column.key}" name="${column.key}" value="${!object ? "null" : object[column.key]}" ${column.readonly ? "readonly" : ""}><br>`;
+            body += `<input type="datetime-local" id="${column.key}" name="${column.key}" value="${!object ? "null" : object[column.key]}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}><br>`;
         }
 
         if (column.type === DataColumnEnum.boolean) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<input type="checkbox" id="${column.key}" name="${column.key}" ${!object ? "" : object[column.key] ? "checked" : ""} ${column.readonly ? "readonly" : ""}><br>`;
+            body += `<input type="checkbox" id="${column.key}" name="${column.key}" ${!object ? "" : object[column.key] ? "checked" : ""} ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}><br>`;
         }
 
         if (column.type === DataColumnEnum.textArea) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<textarea id="${column.key}" name="${column.key}" placeholder="${column.key}" ${column.readonly ? "readonly" : ""}>${!object ? "null" : object[column.key]}</textarea><br>`;
+            body += `<textarea id="${column.key}" name="${column.key}" placeholder="${column.key + (column.required ? "*" : "")}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}>${!object ? "null" : object[column.key]}</textarea><br>`;
         }
 
         if (column.type === DataColumnEnum.link) {

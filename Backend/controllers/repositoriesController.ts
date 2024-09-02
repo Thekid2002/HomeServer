@@ -11,7 +11,7 @@ import {
     mapRepositoryListToRepositoryDtoList,
     mapRepositoryToRepositoryDto
 } from "../services/mapper";
-import { getRepositoryLayout } from "../services/tableLayoutService";
+import {getRepositoryLayout} from "../services/tableLayoutService";
 import { NotAuthorizedError } from "../errors/notAuthorizedError";
 import {
     createRepository,
@@ -33,6 +33,7 @@ import { Repository } from "../models/repository";
 import { SaveFile } from "../models/saveFile";
 import { checkListItem, checkString } from "../services/checkService";
 import { sequelize } from "../services/database";
+import {ValidationError} from "../errors/validationError";
 
 export const RepositoriesRouter = express.Router();
 export const RepositoriesRoute = "repositories";
@@ -114,7 +115,7 @@ RepositoriesRouter.get("/edit", async (req, res) => {
             throw new NotAuthorizedError("Unauthorized");
         }
 
-        const repoDto = await mapRepositoryToRepositoryDto(repository, await repository.getUser(), await repository.getSaveFiles());
+        const repoDto = await mapRepositoryToRepositoryDto(repository, await repository.getUser(), (await repository.getSaveFiles()).sort((a, b) => a.id - b.id));
 
         const values: {key: number, value: string}[] = repoDto.saveFiles ? repoDto.saveFiles.map((file) => ({
             key: file.id,
@@ -273,12 +274,12 @@ RepositoriesRouter.post("/edit", async (req, res) => {
         const { name, description, entryPointFileId, runtimeFileId, runtimeImportFileId, icon } = req.body;
         const saveFileIds = (await repository.getSaveFiles()).map(save => save.id);
 
-        repository.name = checkString(name, false, 2, 256);
-        repository.description = checkString(description, false, 0);
+        repository.name = checkString("Name", name, false, 2, 256);
+        repository.description = checkString("Description", description, false, 0);
         repository.entryPointFileId = checkListItem(parseInt(entryPointFileId), saveFileIds, true);
         repository.runtimeFileId = checkListItem(parseInt(runtimeFileId), saveFileIds, true);
         repository.runtimeImportFileId = checkListItem(parseInt(runtimeImportFileId), saveFileIds, true);
-        repository.icon = checkString(icon, true, 0);
+        repository.icon = checkString("Icon", icon,true, 0, 256);
 
         await updateRepository(repository, transaction);
 
@@ -307,9 +308,9 @@ RepositoriesRouter.post("/create", async (req, res) => {
         );
         const activeUser = await getUserFromRequest(req, true) as User;
 
-        const name = checkString(req.body.name, false, 2, 256);
-        const description = checkString(req.body.description, false, 0);
-        const icon = checkString(req.body.icon, true, 0);
+        const name = checkString("Name", req.body.name, false, 2, 256);
+        const description = checkString("Description", req.body.description, false, 0);
+        const icon = checkString("Icon", req.body.icon,true, 0, 256);
 
         await createRepository(name, description, activeUser.id, icon, transaction);
 
@@ -318,12 +319,16 @@ RepositoriesRouter.post("/create", async (req, res) => {
     } catch (e: any) {
         await transaction.rollback();
         console.log(e);
-        if (e.name === "NotFoundError") {
+        if (e instanceof NotFoundError) {
             return res.status(500).send("Repository not found");
         }
-        if (e.name === "UnauthorizedError") {
+        if (e instanceof NotAuthorizedError) {
             return res.status(401).send("Unauthorized");
         }
+        if(e instanceof ValidationError) {
+            return res.status(400).send(e.message);
+        }
+
         return res.status(500).send("Internal server error");
     }
 });

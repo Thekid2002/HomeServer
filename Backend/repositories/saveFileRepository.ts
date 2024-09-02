@@ -49,7 +49,8 @@ export async function getAllSaveFiles(includeRepository = false, includeUsers = 
 
     // Fetch save files with associated repositories
     const saveFiles = await SaveFile.findAll({
-        include: includes
+        include: includes,
+        order: [['id', 'ASC']]
     });
 
     return saveFiles;
@@ -82,7 +83,8 @@ export async function getAllSaveFilesByRepositoryId(repositoryId: number, includ
         where: {
             repositoryId
         },
-        include: repositoryInclude
+        include: repositoryInclude,
+        order: [['id', 'ASC']]
     });
 
     return saveFiles;

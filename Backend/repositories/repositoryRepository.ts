@@ -19,11 +19,9 @@ export async function createRepository(name: string, description: string, userId
     );
 
     const saveFiles = await createDefaultSaveFiles(repository.id, transaction);
-    const saveFileIds = saveFiles.map((saveFile) => {
-        const saveFileValues = saveFile.dataValues;
-        return saveFileValues.id;
-    });
+    const saveFileIds = saveFiles.map((saveFile) => saveFile.id);
 
+    console.log("Save file ids:", saveFileIds);
     await repository.update({
         entryPointFileId: saveFileIds[0],
         runtimeFileId: saveFileIds[1],
@@ -90,7 +88,9 @@ export async function deleteRepository(repositoryId: number): Promise<void> {
 export async function getAllRepositories(): Promise<Repository[]> {
     log("Getting all repositories");
 
-    return await Repository.findAll();
+    return await Repository.findAll({
+        order: [['id', 'ASC']]
+    });
 }
 
 export async function getAllRepositoriesByUserId(
@@ -115,6 +115,9 @@ export async function getAllRepositoriesByUserId(
                     model: SaveFile,
                     as: "saveFiles"
                 }
+            ],
+            order: [
+                ['id', 'ASC']
             ]
         });
 

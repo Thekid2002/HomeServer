@@ -1,19 +1,22 @@
+import {ValidationError} from "../errors/validationError";
+
 export function checkString(
+    key: string,
     value: string,
     allowNull = false,
     minLength: number = 0,
     maxLength: number = 4096
 ): string {
-    if (!allowNull && value === null) {
-        throw new Error("Value is missing");
+    if (!allowNull && !value) {
+        throw new ValidationError(key + " is not allowed to be empty/null");
     }
 
     if (value.length < minLength || value.length > maxLength) {
-        throw new Error(`Invalid value: ${value}`);
+        throw new ValidationError(key + ` must be between ${minLength} and ${maxLength} characters`);
     }
 
     if (hasIllegalCharacters(value)) {
-        throw new Error(`Illegal characters in value: ${value}`);
+        throw new ValidationError(key + ` contains illegal characters`);
     }
 
     return value;
@@ -21,7 +24,7 @@ export function checkString(
 
 export function checkEnum(value: number, $enum: any, allowNull = false): number {
     if (!allowNull && value === null) {
-        throw new Error("Value is missing");
+        throw new ValidationError("Value is missing");
     }
 
     const enumValues = Object.keys($enum).map((key) => (
@@ -29,7 +32,7 @@ export function checkEnum(value: number, $enum: any, allowNull = false): number 
     )).splice(Object.keys($enum).length / 2, Object.keys($enum).length - 1);
 
     if (!enumValues.includes(value)) {
-        throw new Error(`Enum ${enumValues} does not contain value: ${value}`);
+        throw new ValidationError(`Enum ${enumValues} does not contain value: ${value}`);
     }
 
     return value;
@@ -41,11 +44,11 @@ export function checkListItem(value: number, list: number[], allowNull = false):
     }
 
     if (!allowNull && value === null) {
-        throw new Error("Value is missing");
+        throw new ValidationError("Value is missing");
     }
 
     if (!list.includes(value)) {
-        throw new Error(`Invalid value: ${value} is not in list ${list}`);
+        throw new ValidationError(`Invalid value: ${value} is not in list ${list}`);
     }
 
     return value;
@@ -53,11 +56,11 @@ export function checkListItem(value: number, list: number[], allowNull = false):
 
 export function checkPhone(phone: string, allowNull = false): string {
     if (!allowNull && phone === null) {
-        throw new Error("Phone is missing");
+        throw new ValidationError("Phone is missing");
     }
 
     if (!phone.match(/^[+0-9]*$/)) {
-        throw new Error(`Invalid phone: ${phone}`);
+        throw new ValidationError(`Invalid phone: ${phone}`);
     }
 
     return phone;
@@ -65,15 +68,15 @@ export function checkPhone(phone: string, allowNull = false): string {
 
 export function checkEmail(email: string, allowNull = false): string {
     if (!allowNull && email === null) {
-        throw new Error("Email is missing");
+        throw new ValidationError("Email is missing");
     }
 
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        throw new Error(`Invalid email: ${email}`);
+        throw new ValidationError(`Invalid email: ${email}`);
     }
 
     if (hasIllegalCharacters(email)) {
-        throw new Error(`Illegal characters in email: ${email}`);
+        throw new ValidationError(`Illegal characters in email: ${email}`);
     }
 
     return email;

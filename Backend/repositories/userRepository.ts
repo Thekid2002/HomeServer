@@ -71,7 +71,8 @@ export async function getAllUsers(
 
     // Fetch users and include associated repositories
     const users = await User.findAll({
-        include: repoInclude
+        include: repoInclude,
+        order: [['id', 'ASC']]
     });
 
     return users;

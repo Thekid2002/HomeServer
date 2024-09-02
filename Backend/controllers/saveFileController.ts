@@ -48,7 +48,7 @@ SaveFileRouter.get("/get", async (req, res) => {
         ) {
             throw new NotAuthorizedError("Unauthorized");
         }
-        res.send(await mapSaveFilesToSaveFileDtoList(await repository.getSaveFiles(), repository));
+        res.send(await mapSaveFilesToSaveFileDtoList((await repository.getSaveFiles()).sort((a, b) => a.id - b.id), repository));
     } catch (e) {
         console.error(e);
         res.status(500).send(e);

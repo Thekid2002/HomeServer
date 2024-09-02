@@ -24,11 +24,11 @@ AuthenticationRouter.get("/login", async (req, res) => {
 AuthenticationRouter.post("/signup", async (req, res) => {
     const transaction = await sequelize.transaction();
     try {
-        const firstname = checkString(req.body.firstname, false, 2, 256);
-        const surname = checkString(req.body.surname, false, 2, 256);
+        const firstname = checkString("Firstname", req.body.firstname, false, 2, 256);
+        const surname = checkString("Surname", req.body.surname, false, 2, 256);
         const phone = checkPhone(req.body.phone, false);
         const email = checkEmail(req.body.email, false);
-        const password = checkString(req.body.password, false, 8, 256)
+        const password = checkString("Password", req.body.password, false, 8, 256)
         await signupUser(firstname, surname, phone, email, password, transaction);
         await transaction.commit();
         res.send(`User ${email} signed up`);
@@ -43,7 +43,7 @@ AuthenticationRouter.post("/login", async (req, res) => {
     try {
         const email = checkEmail(req.body.email, false);
         console.log("Logging in user: " + email);
-        const password = checkString(req.body.password, false, 0, 256);
+        const password = checkString("Password", req.body.password, false, 0, 256);
         const auth = await loginUser(email, password, null);
         res.send(JSON.stringify(auth));
     } catch (e: any) {

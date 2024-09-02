@@ -51,10 +51,10 @@ UserController.post("/profile", async (req, res) => {
             RoleEnum.USER
         ]);
 
-        const firstname = checkString(req.body.firstname, false, 2, 256);
-        const surname = checkString(req.body.surname, false, 2, 256);
-        const phone = checkString(req.body.phone, false, 2, 256);
-        const email = checkString(req.body.email, false, 2, 256);
+        const firstname = checkString("Firstname", req.body.firstname, false, 2, 256);
+        const surname = checkString("Surname", req.body.surname, false, 2, 256);
+        const phone = checkPhone(req.body.phone, false);
+        const email = checkEmail(req.body.email, false);
 
         const user: User = await getUserFromRequest(req, true) as User;
         user.firstname = firstname;
@@ -171,8 +171,8 @@ UserController.post("/edit", async (req, res) => {
         }
 
         const id = parseInt(queryId);
-        const firstname = checkString(req.body.firstname, false, 2, 256);
-        const surname = checkString(req.body.surname, false, 2, 256);
+        const firstname = checkString("Firstname", req.body.firstname, false, 2, 256);
+        const surname = checkString("Surname", req.body.surname, false, 2, 256);
         const phone = checkPhone(req.body.phone, false);
         const email = checkEmail(req.body.email, false);
         const role = checkEnum(parseInt(req.body.role), RoleEnum, false);
@@ -202,11 +202,11 @@ UserController.post("/create", async (req, res) => {
     const transaction: Transaction = await sequelize.transaction();
     try {
         await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ]);
-        const firstname = checkString(req.body.firstname, false, 2, 256);
-        const surname = checkString(req.body.surname, false, 2, 256);
+        const firstname = checkString("Firstname", req.body.firstname, false, 2, 256);
+        const surname = checkString("Surname", req.body.surname, false, 2, 256);
         const phone = checkPhone(req.body.phone, false);
         const email = checkEmail(req.body.email, false);
-        const password = checkString(req.body.password, false, 8, 256);
+        const password = checkString("Password", req.body.password, false, 8, 256);
         let role = checkEnum(parseInt(req.body.role), RoleEnum, false);
         await createUser(
             firstname,

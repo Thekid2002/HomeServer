@@ -113,7 +113,7 @@ export async function mapRepositoryListToRepositoryDtoList(repositories: Reposit
     }
     const repositoryDtos: RepositoryDto[] = [];
     for (let i = 0; i < repositories.length; i++) {
-        repositoryDtos.push(await mapRepositoryToRepositoryDto(repositories[i], await repositories[i].getUser(), await repositories[i].getSaveFiles()));
+        repositoryDtos.push(await mapRepositoryToRepositoryDto(repositories[i], await repositories[i].getUser(), (await repositories[i].getSaveFiles()).sort((a, b) => a.id - b.id)));
     }
     return repositoryDtos;
 }
