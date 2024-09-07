@@ -98,6 +98,27 @@ export const getUserLayout = function (creating = false) {
     return userLayout;
 };
 
+export const getPagesLayout = function (creating = false) {
+    const pagesLayout = new DataLayout([]);
+    if (!creating) {
+        pagesLayout.columns.push(
+            new DataColumnType("id", "ID", false, true, DataColumnEnum.value, null, [
+                RoleEnum.SUPER_ADMIN
+            ])
+        );
+    }
+
+    pagesLayout.columns.push(
+        new DataColumnType("pageUrl", "Open", true, false, DataColumnEnum.link, null, null, null, "/pages/")
+    );
+    pagesLayout.columns.push(
+        new DataColumnType("pageName", "Page Name", true, false)
+    );
+    pagesLayout.columns.push(new DataColumnType("title", "Title", true, false));
+    pagesLayout.columns.push(new DataColumnType("body", "Body", true, false, DataColumnEnum.textArea));
+    return pagesLayout;
+};
+
 export const getRepositoryLayout = function (
     creating = false,
     saveFiles: {key: number, value: string}[],
@@ -124,7 +145,7 @@ export const getRepositoryLayout = function (
             "Icon",
             false,
             false,
-            DataColumnEnum.value,
+            DataColumnEnum.value
         )
     );
 

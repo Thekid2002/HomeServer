@@ -8,7 +8,8 @@ import { DataLayout } from "../models/dataLayout";
 import { mapDateTimeToIsoString } from "./mapper";
 import { Request } from "express";
 import { Repository } from "../models/repository";
-import {col} from "sequelize";
+import { col } from "sequelize";
+import { checkString } from "./checkService";
 
 let header = null;
 
@@ -53,6 +54,7 @@ async function getHeader(req: Request) {
             <button onclick="goToPage('carlCompilers/simple')">Simple Calculator</button>
             <button onclick="goToPage('carlInstructions')">Carl Instructions</button>
             <button onclick="goToPage('carlCompilers/ide')">Ide</button>
+            <button onclick="goToPage('pages')">Pages</button>
         </div>
         <div>`;
     if (await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ], false)) {
@@ -192,11 +194,11 @@ async function renderTablePage(
                 body += `<td>${row[column.key]}</td>`;
             }
 
-            if(column.type === DataColumnEnum.icon) {
-                if(row[column.key]) {
+            if (column.type === DataColumnEnum.icon) {
+                if (row[column.key]) {
                     body += `<td><span class="material-symbols-outlined">${row[column.key]}</span></td>`;
-                }else {
-                    body += `<td></td>`;
+                } else {
+                    body += "<td></td>";
                 }
             }
 
@@ -209,7 +211,7 @@ async function renderTablePage(
             }
 
             if (column.type === DataColumnEnum.textArea) {
-                body += `<td>${row[column.key] ? row[column.key].substring(0, 23) + "..." : "null"}</td>`;
+                body += "<td></td>";
             }
 
             if (column.type === DataColumnEnum.link) {
@@ -324,7 +326,7 @@ export async function renderPageObjectCreateEditPage(
 
         if (column.type === DataColumnEnum.value) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            if(isCreate) {
+            if (isCreate) {
                 body += `<input type="text" id="${column.key}" name="${column.key}" placeholder="${column.key + (column.required ? "*" : "")}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}"><br>`;
             }
             else {
@@ -349,7 +351,11 @@ export async function renderPageObjectCreateEditPage(
 
         if (column.type === DataColumnEnum.link) {
             body += `<label for="${column.key}">${column.title}</label><br>`;
-            body += `<a href="${!object ? "null" : object[column.key]}">${column.title}</a><br>`;
+            if (await checkIsAuthorizedWithRoles(req, [ RoleEnum.SUPER_ADMIN ], false)) {
+                body += `<input id="${column.key}" name="${column.key}" placeholder="${column.key + (column.required ? "*" : "")}" value="${!object ? "null" : object[column.key]}" ${column.readonly ? "readonly" : ""} ${column.required ? "required" : ""}><br>`;
+            } else {
+                body += `<a href="${!object ? "null" : object[column.key]}">${!object ? "null" : object[column.key]}</a><br>`;
+            }
         }
 
         body += "</div>";

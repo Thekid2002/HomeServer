@@ -28,6 +28,7 @@ import {
     SaveFileRouter
 } from "./controllers/saveFileController";
 import * as http from "node:http";
+import {PagesRoute, PagesRouter} from "./controllers/pagescontroller";
 
 __dirname = path
     .dirname(__filename)
@@ -72,6 +73,7 @@ app.use(`/${AuthorizationRoute}`, AuthorizationRouter);
 app.use(`/${CarlCompilersRoute}`, CarlCompilersRouter);
 app.use(`/${UserRoute}`, UserController);
 app.use(`/${SaveFileRoute}`, SaveFileRouter);
+app.use(`/${PagesRoute}`, PagesRouter)
 
 app.use("*", async (req, res, next) => {
     if (req.method !== "GET") {

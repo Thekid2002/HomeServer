@@ -3,6 +3,7 @@ import { User } from "../models/user";
 import { Repository } from "../models/repository";
 import { SaveFile } from "../models/saveFile";
 import { DataTypes, Sequelize } from "sequelize";
+import { Page } from "../models/page";
 
 // Create a Sequelize instance
 export const sequelize = new Sequelize(
@@ -159,6 +160,45 @@ SaveFile.init(
     {
         sequelize,
         modelName: "SaveFile",
+        timestamps: true
+    }
+);
+
+Page.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        pageUrl: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pageName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        body: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        stylesheets: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: false
+        },
+        scripts: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: false
+        }
+    },
+    {
+        sequelize,
+        modelName: "Page",
         timestamps: true
     }
 );

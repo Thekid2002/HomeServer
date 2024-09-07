@@ -9,10 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a354ecac-c45f-47ad-aea1-02fe67ee7db2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Backend/controllers/pagescontroller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/models/page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/repositories/pageRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/public/code/pages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/controllers/repositoriesController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/controllers/repositoriesController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/checkService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/checkService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/pageLayout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/pageLayout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/tableLayoutService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/tableLayoutService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/code/AllUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/code/AllUsers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +30,17 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,34 +57,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.CarlDebug.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Typescript",
-    "last_opened_file_path": "C:/Users/coolf/Documents/GitHub/HomeServer",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.CarlComStart.executor": "Run",
-    "npm.CarlIntStart.executor": "Run",
-    "npm.CarlStart.executor": "Run",
-    "npm.TestTest.executor": "Run",
-    "npm.start sudo.executor": "Run",
-    "npm.start.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
-    "ts.external.directory.path": "C:\\Users\\coolf\\Documents\\GitHub\\HomeServer\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.CarlDebug.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/coolf/Documents/GitHub/HomeServer&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.CarlComStart.executor&quot;: &quot;Run&quot;,
+    &quot;npm.CarlIntStart.executor&quot;: &quot;Run&quot;,
+    &quot;npm.CarlStart.executor&quot;: &quot;Run&quot;,
+    &quot;npm.TestTest.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start sudo.executor&quot;: &quot;Debug&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/thomas/Desktop/HomeServer/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Backend/views" />
@@ -90,7 +101,7 @@
       <recent name="$PROJECT_DIR$/Frontend/public/styles" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start sudo">
+  <component name="RunManager" selected="npm.start">
     <configuration name="CarlDebug" type="JavascriptDebugType" uri="http://localhost:63342/HomeServer/Backend/views/simple.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -115,10 +126,9 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start sudo" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
-      <arguments value="sudo" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -128,7 +138,7 @@
       <item itemvalue="npm.CarlComStart" />
       <item itemvalue="npm.CarlIntStart" />
       <item itemvalue="npm.TestTest" />
-      <item itemvalue="npm.start sudo" />
+      <item itemvalue="npm.start" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -176,6 +186,7 @@
       <workItem from="1724165007230" duration="795000" />
       <workItem from="1724947723838" duration="26540000" />
       <workItem from="1725066045064" duration="1868000" />
+      <workItem from="1725687994202" duration="2651000" />
     </task>
     <servers />
   </component>
